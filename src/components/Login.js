@@ -1,8 +1,11 @@
 import React from "react";
 
-function Login () {
+const Login = () => {
     return(
-        <h1>This is the Login Component</h1>
+        <div>
+            <h1>This is the Login Component</h1>
+            <p>Will I ever make it as a developer?</p>
+        </div>
     );
 }
 
