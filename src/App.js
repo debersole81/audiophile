@@ -1,12 +1,10 @@
-import React from "react"; 
-import Dashboard from "./components/Dashboard";
+import React from "react";
 import Login from "./components/Login";
 
-function App() {
+const App = () => {
   return (
     <div>
-      <Dashboard />
-      <Login />         
+      <Login />
     </div>
   );
 }
