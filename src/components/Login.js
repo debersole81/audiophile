@@ -1,6 +1,6 @@
 import React from "react";
 
-const Login = () => {
+const Login = (props) => {
     return(
         <div>
             <h1>Login</h1>
@@ -21,7 +21,7 @@ const Login = () => {
                 />
                 </label>
                 <br />
-                <button>
+                <button onClick={props.loginSubmit}>
                     Submit
                 </button>
                 <br />
