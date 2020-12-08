@@ -6,15 +6,16 @@ import Login from "./components/Login";
 
 const App = () => {
   
-  const handleChange = (e) => { //runs when submit button on login component is clicked
+  const loginSubmit = (e) => { //runs when submit button on login component is clicked
     console.log("clicked");
   };
 
   return (
     <BrowserRouter>
       <div>
-  <Route path="/login" render={() => <Login handleChange={handleChange} /> } />
-  <Route path="/dashboard" component={Dashboard} />
+        <Route path="/login" />
+          <Login loginSubmit={loginSubmit} /> 
+        <Route path="/dashboard" component={Dashboard} />
       </div>
     </BrowserRouter>
   );
