@@ -13,8 +13,8 @@ const App = () => {
   return (
     <BrowserRouter>
       <div>
-        <Route path="/login" component={Login} />
-        <Route path="/dashboard" component={Dashboard} />
+  <Route path="/login" render={() => <Login handleChange={handleChange} /> } />
+  <Route path="/dashboard" component={Dashboard} />
       </div>
     </BrowserRouter>
   );
