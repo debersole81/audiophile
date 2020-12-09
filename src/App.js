@@ -7,6 +7,7 @@ import Login from "./components/Login";
 const App = () => {
   
   const loginSubmit = (e) => { //runs when submit button on login component is clicked
+    e.preventDefault();
     console.log("clicked");
   };
 
