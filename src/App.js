@@ -6,8 +6,14 @@ import Login from "./components/Login";
 
 function App () {
   
+  const userData = {
+      id: 1,
+      username: "test user",
+      password: "test password",
+  };
   
-  
+  console.log(userData);
+
   const loginSubmit = (e) => { //runs when submit button on login component is clicked
     e.preventDefault();
     console.log("clicked");
