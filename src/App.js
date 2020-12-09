@@ -1,10 +1,12 @@
-import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import React, { useState } from "react";
+import { BrowserRouter, Route } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 
 
-const App = () => {
+function App () {
+  
+  
   
   const loginSubmit = (e) => { //runs when submit button on login component is clicked
     e.preventDefault();
