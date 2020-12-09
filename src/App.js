@@ -1,18 +1,20 @@
 import React, { useState } from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 
 
 function App () {
   
-  const userData = {
+  const userData = [ //user test data
+    {
       id: 1,
-      username: "test user",
-      password: "test password",
-  };
+      username: "Testuser",
+      password: "TestPassword",
+    },
+  ];
   
-  console.log(userData);
+  console.log(userData[0].username);
 
   const loginSubmit = (e) => { //runs when submit button on login component is clicked
     e.preventDefault();
@@ -22,9 +24,12 @@ function App () {
   return (
     <BrowserRouter>
       <div>
-        <Route path="/login" />
-          <Login loginSubmit={loginSubmit} /> 
-        <Route path="/dashboard" component={Dashboard} />
+        <Switch>
+          <Route path="/login" />
+            <Login loginSubmit={loginSubmit} />
+            <Dashboard /> 
+          <Route />
+        </Switch>
       </div>
     </BrowserRouter>
   );
