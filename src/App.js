@@ -27,8 +27,8 @@ function App () {
   };
 
   const loginVariables = { //holds state and props variables for passing to child components
-    loginSubmit: {loginSubmit},
-    setloginInput: {setloginInput}
+    loginSubmit: loginSubmit,
+    setloginInput: setloginInput
   };
 
   return (
@@ -36,7 +36,7 @@ function App () {
       <div>
         <Switch>
           <Route path="/login" />
-            <Login loginSubmit={loginSubmit} />
+            <Login {...loginVariables} />
             <Dashboard /> 
           <Route />
         </Switch>
