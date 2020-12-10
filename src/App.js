@@ -16,6 +16,11 @@ function App () {
   
   console.log(userData[0].username);
 
+  const [state, setState] = useState({ //login form state manager
+    username: "",
+    password: "",
+  });
+
   const loginSubmit = (e) => { //runs when submit button on login component is clicked
     e.preventDefault();
     console.log("clicked");
