@@ -11,6 +11,7 @@ function Login (props, state) {
                     name="username"
                     placeholder="Username"
                     value={state.username}
+                    onChange={props.loginHandleChange}
                 />
                 </label>
                 <br />
@@ -20,6 +21,7 @@ function Login (props, state) {
                     name="password"
                     placeholder="Password"
                     value={state.password}
+                    onChange={props.loginHandleChange}
                 />
                 </label>
                 <br />
