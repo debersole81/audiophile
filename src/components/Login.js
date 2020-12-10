@@ -1,6 +1,6 @@
 import React from "react";
 
-function Login (props) {
+function Login (props, state) {
     return(
         <div>
             <h1>Login</h1>
@@ -10,6 +10,7 @@ function Login (props) {
                     type="text"
                     name="username"
                     placeholder="Username"
+                    value={state.username}
                 />
                 </label>
                 <br />
@@ -18,6 +19,7 @@ function Login (props) {
                     type="text"
                     name="password"
                     placeholder="Password"
+                    value={state.password}
                 />
                 </label>
                 <br />
