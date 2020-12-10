@@ -21,6 +21,13 @@ function App () {
     password: "",
   });
 
+  const loginUserInput = (e) => { //runs when user inputs data into login form fields
+    setloginInput({
+      ...loginInput,
+      [e.target.name]: [e.target.value],
+    });
+  };
+
   const loginSubmit = (e) => { //runs when submit button on login component is clicked
     e.preventDefault();
     console.log("clicked");
