@@ -6,7 +6,7 @@ import Login from "./components/Login";
 
 function App () {
   
-  const userData = [ //user test data
+  const userData = [ //user test database
     {
       id: 1,
       username: "Testuser",
@@ -16,14 +16,14 @@ function App () {
   
   console.log(userData);
 
-  const [loginState, setLoginState] = useState([{ //login form state manager
+  const [loginState, setLoginState] = useState([{ //login form state manager. returns an array of user input
     username: "",
     password: "",
   }]);
 
   console.log(loginState);
 
-  const loginHandleChange = (e) => { //handles changes to login form fields based on user-submitted data
+  const loginHandleChange = (e) => { //handles changes to login form fields based on user input
     setLoginState({
       ...loginState,
       [e.target.name]: [e.target.value],
