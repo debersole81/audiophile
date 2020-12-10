@@ -16,14 +16,14 @@ function App () {
   
   console.log(userData[0].username);
 
-  const [loginInput, setLoginInput] = useState({ //login form state manager
+  const [loginState, setLoginState] = useState({ //login form state manager
     username: "",
     password: "",
   });
 
   const loginHandleChange = (e) => { //handles changes to login form fields based on user-submitted data
-    setLoginInput({
-      ...loginInput,
+    setLoginState({
+      ...loginState,
       [e.target.name]: [e.target.value],
     });
   };
@@ -35,7 +35,7 @@ function App () {
 
   const loginVariables = { //holds state and props variables for passing to child components
     loginSubmit: loginSubmit,
-    loginInput: loginInput,
+    loginState: loginState,
     loginHandleChange: loginHandleChange
   };
 
