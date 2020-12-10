@@ -26,6 +26,11 @@ function App () {
     console.log("clicked");
   };
 
+  const loginVariables = { //holds state and props variables for passing to child components
+    loginSubmit: {loginSubmit},
+    setloginInput: {setloginInput}
+  };
+
   return (
     <BrowserRouter>
       <div>
