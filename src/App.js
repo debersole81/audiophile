@@ -16,7 +16,7 @@ function App () {
   
   console.log(userData[0].username);
 
-  const [state, setState] = useState({ //login form state manager
+  const [loginInput, setloginInput] = useState({ //login form state manager
     username: "",
     password: "",
   });
