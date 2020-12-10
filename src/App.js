@@ -35,7 +35,7 @@ function App () {
 
   const loginVariables = { //holds state and props variables for passing to child components
     loginSubmit: loginSubmit,
-    setloginInput: setloginInput,
+    loginInput: loginInput,
     loginhandleChange: loginhandleChange
   };
 
