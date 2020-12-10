@@ -21,7 +21,7 @@ function App () {
     password: "",
   });
 
-  const loginUserInput = (e) => { //runs when user inputs data into login form fields
+  const loginhandleChange = (e) => { //handles changes to login form fields based on user-submitted data
     setloginInput({
       ...loginInput,
       [e.target.name]: [e.target.value],
@@ -36,7 +36,7 @@ function App () {
   const loginVariables = { //holds state and props variables for passing to child components
     loginSubmit: loginSubmit,
     setloginInput: setloginInput,
-    loginUserInput: loginUserInput
+    loginhandleChange: loginhandleChange
   };
 
   return (
