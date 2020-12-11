@@ -2,7 +2,9 @@ import React from "react";
 
 function Dashboard () {
     return(
-        <h1>This is the dashboard</h1>
+        <div>
+            <h1>This is the dashboard</h1>       
+        </div>
     );
 };
 
