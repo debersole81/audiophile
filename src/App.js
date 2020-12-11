@@ -42,8 +42,9 @@ function App () {
     
     //username and password validation
     let usernameValidation = false; //username validation is false by default
+    let passwordValidation = false; //password validation is false by default
     
-    console.log(usernameValidation);
+    console.log(passwordValidation);
   };
 
   const loginVariables = { //holds state and props variables for passing to child components
