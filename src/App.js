@@ -11,6 +11,11 @@ function App () {
       id: 1,
       username: "Testuser",
       password: "TestPassword",
+    },
+    {
+      id: 2,
+      username: "Testuser2",
+      password: "TestPassword2",
     },          
   ];
   
