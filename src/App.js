@@ -59,7 +59,7 @@ function App () {
     console.log([usernameValidation, passwordValidation]);
   };
 
-  const loginVariables = { //holds state and props variables for passing to child components
+  const loginVariables = { //variable that holds state and props for passing to child components
     loginSubmit: loginSubmit,
     loginState: loginState,
     loginHandleChange: loginHandleChange
