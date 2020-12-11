@@ -38,8 +38,9 @@ function App () {
     const loginUsername = loginState.username; //retains the username input value from the login form
     const loginPassword = loginState.password; //retains the password input value from the login form 
     const userUsername = userDatabase.map(username => username.username); //maps through userDatabase and returns an array containing the username key value in each element
-
-    console.log([userUsername]);
+    const userPassword = userDatabase.map(password => password.password); //maps through userDatabase and returns an array containing the password key value in each element
+    
+    console.log([userUsername, userPassword]);
     
   };
 
