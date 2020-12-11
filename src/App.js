@@ -6,12 +6,12 @@ import Login from "./components/Login";
 
 function App () {
   
-  const userData = [ //user test database
+  const userDatabase = [ //user test database
     {
       id: 1,
       username: "Testuser",
       password: "TestPassword",
-    },
+    },          
   ];
   
   const [loginState, setLoginState] = useState([{ //login form state manager. returns an array of user input
