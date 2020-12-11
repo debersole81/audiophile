@@ -19,7 +19,8 @@ function App () {
     },          
   ];
   
-  const [loginState, setLoginState] = useState([{ //login form state manager. returns an array of user input
+  //user authentication from login form user submission
+    const [loginState, setLoginState] = useState([{ //login form state manager. returns an array of user input
     username: "",
     password: "",
   }]);
@@ -59,6 +60,9 @@ function App () {
     console.log([usernameValidation, passwordValidation]);
   };
 
+  //user authentication
+
+
   const loginVariables = { //variable that holds state and props for passing to child components
     loginSubmit: loginSubmit,
     loginState: loginState,
@@ -69,9 +73,8 @@ function App () {
     <BrowserRouter>
       <div>
         <Switch>
-          <Route path="/login" />
-            <Login {...loginVariables} />
-            <Dashboard /> 
+          <Route exact path="/Login" render={(props) => <Login {...loginVariables} />} />
+          <Route path="/Dashboard" component={Dashboard} /> 
           <Route />
         </Switch>
       </div>
