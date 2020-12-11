@@ -40,8 +40,10 @@ function App () {
     const userUsername = userDatabase.map(username => username.username); //maps through userDatabase and returns an array containing the username key value in each element
     const userPassword = userDatabase.map(password => password.password); //maps through userDatabase and returns an array containing the password key value in each element
     
-    console.log([userUsername, userPassword]);
+    //username and password validation
+    let usernameValidation = false; //username validation is false by default
     
+    console.log(usernameValidation);
   };
 
   const loginVariables = { //holds state and props variables for passing to child components
