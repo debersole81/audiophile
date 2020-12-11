@@ -14,14 +14,10 @@ function App () {
     },
   ];
   
-  console.log(userData);
-
   const [loginState, setLoginState] = useState([{ //login form state manager. returns an array of user input
     username: "",
     password: "",
   }]);
-
-  console.log(loginState);
 
   const loginHandleChange = (e) => { //handles changes to login form fields based on user input
     setLoginState({
@@ -33,6 +29,11 @@ function App () {
   const loginSubmit = (e) => { //runs when submit button on login component is clicked.
     e.preventDefault();
 
+    //username and password variables and arrays
+    const loginUsername = loginState.username; //retains the username input value from the login form
+    const loginPassword = loginState.password; //retains the password input value from the login form 
+    
+    console.log([loginUsername, loginPassword]);
     
   };
 
