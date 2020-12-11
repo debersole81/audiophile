@@ -44,13 +44,19 @@ function App () {
     let usernameValidation = false; //username validation is false by default
     let passwordValidation = false; //password validation is false by default
     
-    userUsername.forEach((value) => { //compares username input value from login form to each username in userDatabase. if equal, returns userValidation as true
+    userUsername.forEach((value) => { //compares username input value from login form to each username in userDatabase. if equal, returns usernameValidation as true
       if(value == loginUsername) {
         usernameValidation = true;
       };
     });
+    
+    userPassword.forEach((value) => { //compares password input value from login form to each password in userDatabase. if equal, returns passwordValidation as false
+      if(value == loginPassword) {
+        passwordValidation = true;
+      };
+    });
 
-    console.log(usernameValidation);
+    console.log([usernameValidation, passwordValidation]);
   };
 
   const loginVariables = { //holds state and props variables for passing to child components
