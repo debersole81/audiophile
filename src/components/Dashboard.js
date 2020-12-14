@@ -1,10 +1,10 @@
 import React from "react";
 
-function Dashboard () {
+function Dashboard (props) {
     return(
         <div>
             <h1>This is the dashboard</h1>       
-            <button>
+            <button onClick={props.logoutSubmit}>
                 Logout
             </button>
         </div>
