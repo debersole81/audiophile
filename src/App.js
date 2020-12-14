@@ -59,7 +59,7 @@ function App () {
       };
     });
     
-    if(usernameValidation && passwordValidation === true) {
+    if(usernameValidation && passwordValidation === true) { //compares userValidation and passwordValidation. if both are true, sets login element in loginState to true
       setLoginState({
         ...loginState,
         login: true,
