@@ -35,7 +35,7 @@ function App () {
   };
   
   const loginSubmit = (e) => { //runs when submit button on login component is clicked.
-    e.preventDefault();
+    e.preventDefault(); //prevents login component from re-rendering on click
 
     //username and password variables and arrays
     const loginUsername = loginState.username; //retains the username input value from the login form
@@ -71,10 +71,10 @@ function App () {
   };
 
   //user logout
-  const logoutSubmit = (e) => {
-    e.preventDefault();
+  const logoutSubmit = (e) => { //runs when logout button on dashboard is clicked.
+    e.preventDefault(); //prevents dashboard component from re-rendering on click. 
 
-    setLoginState({
+    setLoginState({ //sets login element in loginState to false.
       ...loginState,
       login: false,
     });
