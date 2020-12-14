@@ -24,6 +24,7 @@ function App () {
     const [loginState, setLoginState] = useState([{ //login form state manager. returns an array of user input
     username: "",
     password: "",
+    login: false,
   }]);
 
   const loginHandleChange = (e) => { //handles changes to login form fields based on user input
@@ -57,8 +58,6 @@ function App () {
         passwordValidation = true;
       };
     });
-
-    console.log([usernameValidation, passwordValidation]);
   };
 
   //user logout
@@ -68,9 +67,9 @@ function App () {
     console.log("clicked");
   };
 
-  //user authentication for component routing/rendering
+  //set user authentication state for conditional component routing/rendering
 
-
+  
   const loginVariables = { //variable that holds state and props for passing to child components
     loginSubmit: loginSubmit,
     loginState: loginState,
@@ -89,7 +88,7 @@ function App () {
       </div>
     </BrowserRouter>
   );
-}
+};
 
 
 export default App;
