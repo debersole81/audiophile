@@ -62,10 +62,10 @@ function App () {
 
   //logout from dashboard
   const logoutSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     console.log("clicked");
-  }
+  };
 
   //user authentication
 
@@ -73,7 +73,8 @@ function App () {
   const loginVariables = { //variable that holds state and props for passing to child components
     loginSubmit: loginSubmit,
     loginState: loginState,
-    loginHandleChange: loginHandleChange
+    loginHandleChange: loginHandleChange,
+    logoutSubmit: logoutSubmit
   };
 
   return (
@@ -81,7 +82,7 @@ function App () {
       <div>
         <Switch>
           <Route exact path="/Login" render={(props) => <Login {...loginVariables} />} />
-          <Route path="/Dashboard" render={(props) => <Dashboard {...logoutSubmit} />} /> 
+          <Route path="/Dashboard" render={(props) => <Dashboard logoutSubmit={logoutSubmit} />} /> 
           <Route />
         </Switch>
       </div>
