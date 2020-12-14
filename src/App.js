@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route,  } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 
@@ -58,6 +58,16 @@ function App () {
         passwordValidation = true;
       };
     });
+    
+    if(usernameValidation && passwordValidation === true) {
+      setLoginState({
+        ...loginState,
+        login: true,
+      });
+    };
+
+    console.log(loginState.login);
+
   };
 
   //user logout
@@ -88,7 +98,7 @@ function App () {
       </div>
     </BrowserRouter>
   );
-};
+}
 
 
 export default App;
