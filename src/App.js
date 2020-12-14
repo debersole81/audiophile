@@ -74,6 +74,12 @@ function App () {
   const logoutSubmit = (e) => {
     e.preventDefault();
 
+    setLoginState({
+      ...loginState,
+      login: false,
+    });
+    
+    console.log(loginState.login);
     console.log("clicked");
   };
 
