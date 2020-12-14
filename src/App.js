@@ -60,6 +60,13 @@ function App () {
     console.log([usernameValidation, passwordValidation]);
   };
 
+  //logout from dashboard
+  const logoutSubmit = (e) => {
+    e.preventDefault()
+
+    console.log("clicked");
+  }
+
   //user authentication
 
 
