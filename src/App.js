@@ -24,7 +24,7 @@ function App () {
     const [loginState, setLoginState] = useState([{ //login form state manager. returns an array of user input
     username: "",
     password: "",
-    login: false,
+    loggedIn: false,
   }]);
 
   const loginHandleChange = (e) => { //handles changes to login form fields based on user input
@@ -62,11 +62,11 @@ function App () {
     if(usernameValidation && passwordValidation === true) { //compares userValidation and passwordValidation. if both are true, sets login element in loginState to true
       setLoginState({
         ...loginState,
-        login: true,
+        loggedIn: true,
       });
     };
 
-    console.log(loginState.login);
+    console.log(loginState.loggedIn);
 
   };
 
@@ -76,10 +76,10 @@ function App () {
 
     setLoginState({ //sets login element in loginState to false.
       ...loginState,
-      login: false,
+      loggedIn: false,
     });
     
-    console.log(loginState.login);
+    console.log(loginState.loggedIn);
     console.log("clicked");
   };
 
@@ -89,8 +89,7 @@ function App () {
   const loginVariables = { //variable that holds state and props for passing to child components
     loginSubmit: loginSubmit,
     loginState: loginState,
-    loginHandleChange: loginHandleChange,
-    logoutSubmit: logoutSubmit
+    loginHandleChange: loginHandleChange,  
   };
 
   return (
@@ -98,7 +97,7 @@ function App () {
       <div>
         <Switch>
           <Route exact path="/" render={(props) => <Login {...loginVariables} />} />
-          <Route exact path="/Dashboard" render={(props) => <Dashboard logoutSubmit={logoutSubmit} />} /> 
+          <Route exact path="/dashboard" render={(props) => <Dashboard logoutSubmit={logoutSubmit} />} /> 
           <Route />
         </Switch>
       </div>
