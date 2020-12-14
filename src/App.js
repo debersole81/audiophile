@@ -81,7 +81,7 @@ function App () {
       <div>
         <Switch>
           <Route exact path="/Login" render={(props) => <Login {...loginVariables} />} />
-          <Route path="/Dashboard" component={Dashboard} /> 
+          <Route path="/Dashboard" render={(props) => <Dashboard {...logoutSubmit} />} /> 
           <Route />
         </Switch>
       </div>
