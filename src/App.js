@@ -19,7 +19,8 @@ function App () {
     },          
   ];
   
-  //user authentication from login form user submission
+  //managing user authentication
+  //user login
     const [loginState, setLoginState] = useState([{ //login form state manager. returns an array of user input
     username: "",
     password: "",
@@ -60,14 +61,14 @@ function App () {
     console.log([usernameValidation, passwordValidation]);
   };
 
-  //logout from dashboard
+  //user logout
   const logoutSubmit = (e) => {
     e.preventDefault();
 
     console.log("clicked");
   };
 
-  //user authentication
+  //user authentication for component routing/rendering
 
 
   const loginVariables = { //variable that holds state and props for passing to child components
