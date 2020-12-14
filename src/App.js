@@ -71,7 +71,7 @@ function App () {
   };
 
   //user logout
-  const logoutSubmit = (e) => { //runs when logout button on dashboard is clicked.
+  const logoutSubmit = (e) => { //runs when logout button on dashboard component is clicked.
     e.preventDefault(); //prevents dashboard component from re-rendering on click. 
 
     setLoginState({ //sets login element in loginState to false.
@@ -97,8 +97,8 @@ function App () {
     <BrowserRouter>
       <div>
         <Switch>
-          <Route exact path="/Login" render={(props) => <Login {...loginVariables} />} />
-          <Route path="/Dashboard" render={(props) => <Dashboard logoutSubmit={logoutSubmit} />} /> 
+          <Route exact path="/" render={(props) => <Login {...loginVariables} />} />
+          <Route exact path="/Dashboard" render={(props) => <Dashboard logoutSubmit={logoutSubmit} />} /> 
           <Route />
         </Switch>
       </div>
