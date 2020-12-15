@@ -50,11 +50,14 @@ function App () {
     let usernameValidation = false; //username validation is false by default
     let passwordValidation = false; //password validation is false by default
     
-    userUsername.forEach((value) => { //compares username input value from login form to each username in userDatabase. if equal, returns usernameValidation as true
+    userUsername.forEach((value) => { //compares username input value from login form to each username in userDatabase. if equal, returns usernameValidation as true and pushes input value to a new array
       if(value == loginUsername) {
         usernameValidation = true;
+          return(userNameLookup.push(value)); 
       };
     });
+
+    console.log(userNameLookup);
     
     // userPassword.forEach((value) => { //compares password input value from login form to each password in userDatabase. if equal, returns passwordValidation as false
     //   if(value == loginPassword) {
