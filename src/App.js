@@ -41,8 +41,10 @@ function App () {
     const loginUsername = loginState.username; //retains the username input value from the login form
     const loginPassword = loginState.password; //retains the password input value from the login form 
     const userUsername = userDatabase.map(username => username.username); //maps through userDatabase and returns an array containing the username key value in each element
-    const userPassword = userDatabase.map(password => password.password); //maps through userDatabase and returns an array containing the password key value in each element
+    const userId = userDatabase.map(id => id.id); //maps through userDatabase and returns an array containing the id key value in each element
     
+    console.log(userId);
+
     //username and password validation
     let usernameValidation = false; //username validation is false by default
     let passwordValidation = false; //password validation is false by default
@@ -66,7 +68,7 @@ function App () {
       });
     };
 
-    console.log(loginState.loggedIn);
+    // console.log(loginState.loggedIn);
 
   };
 
@@ -98,7 +100,7 @@ function App () {
       <div>
         <Switch>
           <Route exact path="/" render={(props) => <Login {...loginVariables} />} />
-          <Route exact path="/dashboard" render={(props) => <Dashboard {...loginVariables} />} /> 
+          <Route exact path="/dashboard" render={loginState.loggedIn ? (props) => <Dashboard logoutSubmit={logoutSubmit} /> : () => <Login />} /> 
           <Route />
         </Switch>
       </div>
