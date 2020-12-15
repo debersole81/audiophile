@@ -1,6 +1,13 @@
 import React from "react";
 
-function Dashboard (props) {
+function Dashboard (props, state) {
+
+// const stateTest= () => {
+//     console.log (loginState.loggedIn);
+
+// };
+console.log(state.loginState);
+
     return(
         <div>
             <h1>This is the dashboard</h1>       
