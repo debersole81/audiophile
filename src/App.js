@@ -41,9 +41,10 @@ function App () {
     const loginUsername = loginState.username; //retains the username input value from the login form
     const loginPassword = loginState.password; //retains the password input value from the login form 
     const userUsername = userDatabase.map(username => username.username); //maps through userDatabase and returns an array containing the username key value in each element
+    const userNameLookup= []; //empty array that will store the truthy value from the nested coniditonal statement userUsername.forEach method
     const userId = userDatabase.map(id => id.id); //maps through userDatabase and returns an array containing the id key value in each element
     
-    console.log(userId);
+    // console.log(userId);
 
     //username and password validation
     let usernameValidation = false; //username validation is false by default
@@ -55,11 +56,11 @@ function App () {
       };
     });
     
-    userPassword.forEach((value) => { //compares password input value from login form to each password in userDatabase. if equal, returns passwordValidation as false
-      if(value == loginPassword) {
-        passwordValidation = true;
-      };
-    });
+    // userPassword.forEach((value) => { //compares password input value from login form to each password in userDatabase. if equal, returns passwordValidation as false
+    //   if(value == loginPassword) {
+    //     passwordValidation = true;
+    //   };
+    // });
     
     if(usernameValidation && passwordValidation === true) { //compares userValidation and passwordValidation. if both are true, sets login element in loginState to true
       setLoginState({
