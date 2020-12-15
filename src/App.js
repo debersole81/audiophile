@@ -21,7 +21,7 @@ function App () {
   
   //managing user authentication
   //user login
-    const [loginState, setLoginState] = useState([{ //login form state manager. returns an array of user input
+  const [loginState, setLoginState] = useState([{ //login form state manager. returns an array of user input
     username: "",
     password: "",
     loggedIn: false,
@@ -89,7 +89,8 @@ function App () {
   const loginVariables = { //variable that holds state and props for passing to child components
     loginSubmit: loginSubmit,
     loginState: loginState,
-    loginHandleChange: loginHandleChange,  
+    loginHandleChange: loginHandleChange,
+    logoutSubmit: logoutSubmit,  
   };
 
   return (
@@ -97,7 +98,7 @@ function App () {
       <div>
         <Switch>
           <Route exact path="/" render={(props) => <Login {...loginVariables} />} />
-          <Route exact path="/dashboard" render={(props) => <Dashboard logoutSubmit={logoutSubmit} />} /> 
+          <Route exact path="/dashboard" render={(props) => <Dashboard {...loginVariables} />} /> 
           <Route />
         </Switch>
       </div>
