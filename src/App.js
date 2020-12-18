@@ -37,14 +37,14 @@ function App () {
   const loginSubmit = (e) => { //runs when submit button on login component is clicked.
     e.preventDefault(); //prevents login component from re-rendering on click
 
+
     //username and password variables and arrays
     const loginUsername = loginState.username; //retains the username input value from the login form
     const loginPassword = loginState.password; //retains the password input value from the login form 
     const userUsername = userDatabase.map(username => username.username); //maps through userDatabase and returns an array containing the username key value in each element
     const userNameMatchValue = []; //empty array that will store the truthy value from the nested coniditonal statement userUsername.forEach method
-    
-    // console.log(userId);
-    
+
+
     //username and password validation
     let usernameValidation = false; //username validation is false by default
     let passwordValidation = false; //password validation is false by default
@@ -56,13 +56,15 @@ function App () {
       };
     });
     
-    console.log(userNameMatchValue);
-    
     const userNameValueString = userNameMatchValue.toString(); //converts the userNameMatchValue array to a string and assigns it to a new variable, userNameValueString
 
-    console.log(userNameValueString);
-
-    let userId = userDatabase.find(item => item.username === userNameValueString); //searches userDatabase and returns an array object with a username property that matches the userNameValueString value. returns undefined if no match.
+    let userId = userDatabase.find(item => item.username === userNameValueString); //searches userDatabase and returns an array object with a username attribute that matches the userNameValueString value. returns undefined if no match.
+    
+    if(userId === undefined) { //if userDatabase.find returns an undefined value for userId, sets userId to null. 
+      userId = null;
+    } else {
+      userId = userId.id; //if userDatabase.find returns a matching object, sets userId equal to the object's id attribute.
+    };
 
     console.log(userId);
 
@@ -83,6 +85,7 @@ function App () {
 
   };
 
+  
   //user logout
   const logoutSubmit = (e) => { //runs when logout button on dashboard component is clicked.
     e.preventDefault(); //prevents dashboard component from re-rendering on click. 
