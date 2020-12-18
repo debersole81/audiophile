@@ -68,6 +68,10 @@ function App () {
 
     console.log(userId);
 
+    let userPassword = userDatabase.find(item => item.id === userId); //searches userDatabase and returns an array object with an id attribute that matches the userId value. returns undefined if no match.
+   
+    console.log(userPassword);
+    
     // userPassword.forEach((value) => { //compares password input value from login form to each password in userDatabase. if equal, returns passwordValidation as false
     //   if(value == loginPassword) {
     //     passwordValidation = true;
