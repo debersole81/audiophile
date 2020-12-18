@@ -42,7 +42,7 @@ function App () {
     const loginPassword = loginState.password; //retains the password input value from the login form 
     const userUsername = userDatabase.map(username => username.username); //maps through userDatabase and returns an array containing the username key value in each element
     const userNameLookup= []; //empty array that will store the truthy value from the nested coniditonal statement userUsername.forEach method
-    const userId = userDatabase.map(id => id.id); //maps through userDatabase and returns an array containing the id key value in each element
+    
     
     // console.log(userId);
 
