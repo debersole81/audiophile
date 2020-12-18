@@ -62,6 +62,9 @@ function App () {
 
     console.log(userNameValueString);
 
+    let userId = userDatabase.find(item => item.username === userNameValueString); //searches userDatabase and returns an array object with a username property that matches the userNameValueString value. returns undefined if no match.
+
+    console.log(userId);
 
     // userPassword.forEach((value) => { //compares password input value from login form to each password in userDatabase. if equal, returns passwordValidation as false
     //   if(value == loginPassword) {
