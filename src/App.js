@@ -58,7 +58,7 @@ function App () {
     
     console.log(userNameMatchValue);
     
-    const userNameValueString = userNameMatchValue.toString();
+    const userNameValueString = userNameMatchValue.toString(); //converts the userNameMatchValue array to a string and assigns it to a new variable, userNameValueString
 
     console.log(userNameValueString);
 
