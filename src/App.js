@@ -49,7 +49,7 @@ function App () {
     let usernameValidation = false; //username validation is false by default
     let passwordValidation = false; //password validation is false by default
     
-    userUsername.forEach((value) => { //compares username input value from login form to each username in userDatabase. if equal, returns usernameValidation as true and pushes input value to a new array
+    userUsername.forEach((value) => { //compares username input value from login form to each username in userDatabase. if equal, sets usernameValidation as true and pushes input value to a new array
       if(value == loginUsername) {
         usernameValidation = true;
         return(userNameMatchValue.push(value)); 
@@ -63,26 +63,22 @@ function App () {
     if(userId === undefined) { //if userDatabase.find returns an undefined value for userId, sets userId to null. 
       userId = null;
     } else {
-      userId = userId.id; //if userDatabase.find returns a matching object, sets userId equal to the object's id attribute.
+      userId = userId.id; //if userDatabase.find returns a matching object, sets userId equal to the object's id property.
     };
-
-    console.log(userId);
 
     let userPassword = userDatabase.find(item => item.id === userId); //searches userDatabase and returns an array object with an id attribute that matches the userId value. returns undefined if no match.
    
-    if(userPassword === undefined) {
+    if(userPassword === undefined) { //if userDatabase.find returns an undefined value for userPassword, sets userPassword to null.
       userPassword = null;
     } else {
-      userPassword = userPassword.password;
+      userPassword = userPassword.password; //if userDatabase.find returns a matching object, sets userPassword equal to the object's password property.
     };
 
-    console.log(userPassword);
-    
-    // userPassword.forEach((value) => { //compares password input value from login form to each password in userDatabase. if equal, returns passwordValidation as false
-    //   if(value == loginPassword) {
-    //     passwordValidation = true;
-    //   };
-    // });
+    if(userPassword == loginPassword) { //compares password input value from login form to userPassword value. if equal, sets passwordValidation to true.
+      passwordValidation = true;
+    };
+
+    console.log(passwordValidation);
     
     if(usernameValidation && passwordValidation === true) { //compares userValidation and passwordValidation. if both are true, sets login element in loginState to true
       setLoginState({
