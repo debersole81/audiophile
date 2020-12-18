@@ -78,17 +78,12 @@ function App () {
       passwordValidation = true;
     };
 
-    console.log(passwordValidation);
-    
     if(usernameValidation && passwordValidation === true) { //compares userValidation and passwordValidation. if both are true, sets login element in loginState to true
       setLoginState({
         ...loginState,
         loggedIn: true,
       });
     };
-
-    // console.log(loginState.loggedIn);
-
   };
 
   
