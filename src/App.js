@@ -21,12 +21,12 @@ function App () {
   
   //managing user authentication
   //user login
-  const [loginInput, setLoginInput] = useState([{ //login form state manager. returns an array of user input
+  const [loginInput, setLoginInput] = useState([{ //login form state manager.
     username: "",
     password: "",
   }]);
 
-  const [userAuth, setUserAuth] = useState(false);
+  const [userAuth, setUserAuth] = useState(false); //user authentication state manager.
 
   const loginHandleChange = (e) => { //handles changes to login form fields based on user input
     setLoginInput({
@@ -39,11 +39,13 @@ function App () {
     e.preventDefault(); //prevents login component from re-rendering on click
 
 
+
     //username and password variables and arrays
     const loginUsername = loginInput.username; //retains the username input value from the login form
     const loginPassword = loginInput.password; //retains the password input value from the login form 
-    const userUsername = userDatabase.map(username => username.username); //maps through userDatabase and returns an array containing the username key value in each element
-    const userNameMatchValue = []; //empty array that will store the truthy value from the nested coniditonal statement userUsername.forEach method
+    const userUsername = userDatabase.map(username => username.username); //maps through userDatabase and returns an array containing the username property value in each element
+    const userNameMatchValue = []; //empty array that will store the truthy value from the nested coniditonal statement in the userUsername.forEach method
+
 
 
     //username and password validation
@@ -79,6 +81,8 @@ function App () {
       passwordValidation = true;
     };
 
+
+
     //setting user authentication
     if(usernameValidation && passwordValidation === true) { //if userValidation and passwordValidation are both true, sets userAuth variable to true.
       setUserAuth(true);
@@ -86,6 +90,7 @@ function App () {
   };
 
   
+
   //user logout
   const logoutSubmit = (e) => { //runs when logout button on dashboard component is clicked.
     e.preventDefault(); //prevents dashboard component from re-rendering on click. 
