@@ -95,7 +95,7 @@ function App () {
   const logoutSubmit = (e) => { //runs when logout button on dashboard component is clicked.
     e.preventDefault(); //prevents dashboard component from re-rendering on click. 
 
-    setLoginInput({ //sets login element in loginInput to false.
+    setUserAuth({ //sets login element in loginInput to false.
       ...loginInput,
       loggedIn: false,
     });
@@ -111,7 +111,8 @@ function App () {
     loginSubmit: loginSubmit,
     loginInput: loginInput,
     loginHandleChange: loginHandleChange,
-    logoutSubmit: logoutSubmit,  
+    logoutSubmit: logoutSubmit,
+    userAuth: userAuth,  
   };
 
   return (
