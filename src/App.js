@@ -79,11 +79,9 @@ function App () {
       passwordValidation = true;
     };
 
-    if(usernameValidation && passwordValidation === true) { //compares userValidation and passwordValidation. if both are true, sets login element in loginInput to true
-      setLoginInput({
-        ...loginInput,
-        loggedIn: true,
-      });
+    //setting user authentication
+    if(usernameValidation && passwordValidation === true) { //if userValidation and passwordValidation are both true, sets userAuth variable to true.
+      setUserAuth(true);
     };
   };
 
