@@ -27,7 +27,7 @@ function App () {
   }]);
 
   const loginHandleChange = (e) => { //handles changes to login form fields based on user input
-    setloginInput({
+    setLoginInput({
       ...loginInput,
       [e.target.name]: [e.target.value],
     });
@@ -78,7 +78,7 @@ function App () {
     };
 
     if(usernameValidation && passwordValidation === true) { //compares userValidation and passwordValidation. if both are true, sets login element in loginInput to true
-      setloginInput({
+      setLoginInput({
         ...loginInput,
         loggedIn: true,
       });
@@ -90,7 +90,7 @@ function App () {
   const logoutSubmit = (e) => { //runs when logout button on dashboard component is clicked.
     e.preventDefault(); //prevents dashboard component from re-rendering on click. 
 
-    setloginInput({ //sets login element in loginInput to false.
+    setLoginInput({ //sets login element in loginInput to false.
       ...loginInput,
       loggedIn: false,
     });
