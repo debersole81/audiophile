@@ -26,6 +26,8 @@ function App () {
     password: "",
   }]);
 
+  const [userAuth, setUserAuth] = useState(false);
+
   const loginHandleChange = (e) => { //handles changes to login form fields based on user input
     setLoginInput({
       ...loginInput,
