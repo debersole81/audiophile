@@ -21,10 +21,9 @@ function App () {
   
   //managing user authentication
   //user login
-  const [loginState, setLoginState] = useState([{ //login form state manager. returns an array of user input
+  const [loginInput, setLoginInput] = useState([{ //login form state manager. returns an array of user input
     username: "",
     password: "",
-    loggedIn: false,
   }]);
 
   const loginHandleChange = (e) => { //handles changes to login form fields based on user input
