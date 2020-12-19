@@ -27,8 +27,8 @@ function App () {
   }]);
 
   const loginHandleChange = (e) => { //handles changes to login form fields based on user input
-    setLoginState({
-      ...loginState,
+    setloginInput({
+      ...loginInput,
       [e.target.name]: [e.target.value],
     });
   };
@@ -38,8 +38,8 @@ function App () {
 
 
     //username and password variables and arrays
-    const loginUsername = loginState.username; //retains the username input value from the login form
-    const loginPassword = loginState.password; //retains the password input value from the login form 
+    const loginUsername = loginInput.username; //retains the username input value from the login form
+    const loginPassword = loginInput.password; //retains the password input value from the login form 
     const userUsername = userDatabase.map(username => username.username); //maps through userDatabase and returns an array containing the username key value in each element
     const userNameMatchValue = []; //empty array that will store the truthy value from the nested coniditonal statement userUsername.forEach method
 
@@ -77,9 +77,9 @@ function App () {
       passwordValidation = true;
     };
 
-    if(usernameValidation && passwordValidation === true) { //compares userValidation and passwordValidation. if both are true, sets login element in loginState to true
-      setLoginState({
-        ...loginState,
+    if(usernameValidation && passwordValidation === true) { //compares userValidation and passwordValidation. if both are true, sets login element in loginInput to true
+      setloginInput({
+        ...loginInput,
         loggedIn: true,
       });
     };
@@ -90,12 +90,12 @@ function App () {
   const logoutSubmit = (e) => { //runs when logout button on dashboard component is clicked.
     e.preventDefault(); //prevents dashboard component from re-rendering on click. 
 
-    setLoginState({ //sets login element in loginState to false.
-      ...loginState,
+    setloginInput({ //sets login element in loginInput to false.
+      ...loginInput,
       loggedIn: false,
     });
     
-    console.log(loginState.loggedIn);
+    console.log(loginInput.loggedIn);
     console.log("clicked");
   };
 
@@ -104,7 +104,7 @@ function App () {
   
   const loginVariables = { //variable that holds state and props for passing to child components
     loginSubmit: loginSubmit,
-    loginState: loginState,
+    loginInput: loginInput,
     loginHandleChange: loginHandleChange,
     logoutSubmit: logoutSubmit,  
   };
@@ -114,7 +114,7 @@ function App () {
       <div>
         <Switch>
           <Route exact path="/" render={(props) => <Login {...loginVariables} />} />
-          <Route exact path="/dashboard" render={loginState.loggedIn ? (props) => <Dashboard logoutSubmit={logoutSubmit} /> : () => <Login />} /> 
+          <Route exact path="/dashboard" render={loginInput.loggedIn ? (props) => <Dashboard logoutSubmit={logoutSubmit} /> : () => <Login />} /> 
           <Route />
         </Switch>
       </div>
