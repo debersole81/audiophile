@@ -120,8 +120,8 @@ function App () {
       <div>
         <Switch>
           <Route exact path="/" render={(props) => <Login {...loginVariables} />} />
-          <Route exact path="/dashboard" render={loginInput.loggedIn ? (props) => <Dashboard logoutSubmit={logoutSubmit} /> : () => <Login />} /> 
-          <Route />
+          <Route exact path="/dashboard" render={(props) => <Dashboard logoutSubmit={logoutSubmit} />} /> 
+          
         </Switch>
       </div>
     </BrowserRouter>
