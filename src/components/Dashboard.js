@@ -3,8 +3,12 @@ import { useHistory } from "react-router-dom";
 
 function Dashboard (props) {
 
-//react router hooks    
-const history = useHistory();
+    //react router hooks    
+    const history = useHistory();
+
+    if(props.userAuth === false) {
+        history.push("/");
+    }
 
     return(
         <div>
