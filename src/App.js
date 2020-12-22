@@ -122,7 +122,7 @@ function App () {
     <div>
       <Switch>
         <Route exact path="/" render={(props) => <Login {...passingToChildren} />} />
-        <Route exact path="/dashboard" render={(props) => <Dashboard logoutSubmit={logoutSubmit} />} /> 
+        <Route exact path="/dashboard" render={(props) => <Dashboard {...passingToChildren} />} /> 
         
       </Switch>
     </div>
