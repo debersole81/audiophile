@@ -6,8 +6,8 @@ function Dashboard (props) {
     //react router hooks    
     const history = useHistory();
 
-    if(props.userAuth === false) {
-        history.push("/");
+    if(props.userAuth === false) { //prevents user from accessing dashboard without authenticating 
+        history.push("/"); //if userAuth is false, redirects to login
     }
 
     return(
