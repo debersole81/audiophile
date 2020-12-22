@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, useHistory } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 
@@ -18,6 +18,9 @@ function App () {
       password: "TestPassword2",
     },          
   ];
+  
+  //react router hooks
+  const history = useHistory();
   
   //managing user authentication
   //user login
