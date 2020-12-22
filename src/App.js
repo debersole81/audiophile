@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter, Switch, Route,  } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 
@@ -116,15 +116,13 @@ function App () {
   };
 
   return (
-    <BrowserRouter>
-      <div>
+    <div>
         <Switch>
           <Route exact path="/" render={(props) => <Login {...loginVariables} />} />
           <Route exact path="/dashboard" render={(props) => <Dashboard logoutSubmit={logoutSubmit} />} /> 
           
         </Switch>
-      </div>
-    </BrowserRouter>
+     </div>
   );
 }
 
