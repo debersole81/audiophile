@@ -104,13 +104,15 @@ function App () {
   const logoutSubmit = (e) => { //runs when logout button on dashboard component is clicked.
     e.preventDefault(); //prevents dashboard component from re-rendering on click. 
 
-    setUserAuth({ //sets login element in loginInput to false.
-      ...loginInput,
-      loggedIn: false,
-    });
+    history.push("/");
+
+    // setUserAuth({ //sets login element in loginInput to false.
+    //   ...loginInput,
+    //   loggedIn: false,
+    // });
     
-    console.log(loginInput.loggedIn);
-    console.log("clicked");
+    // console.log(loginInput.loggedIn);
+    // console.log("clicked");
   };
 
   //set user authentication state for conditional component routing/rendering
