@@ -89,8 +89,15 @@ function App () {
     //setting user authentication
     if(usernameValidation && passwordValidation === true) { //if userValidation and passwordValidation are both true, sets userAuth variable to true.
       setUserAuth(true);
-      history.push("/dashboard");      
+      // history.push("/dashboard"); //if userAuth is true, pushes user to the dashboard component.      
     };
+
+    if(userAuth === true) {
+      history.push("/dashboard");
+    }
+
+    console.log(userAuth);
+    
   };
 
   
@@ -99,18 +106,15 @@ function App () {
   const logoutSubmit = (e) => { //runs when logout button on dashboard component is clicked.
     e.preventDefault(); //prevents dashboard component from re-rendering on click. 
 
-    history.push("/");
-
-    // setUserAuth({ //sets login element in loginInput to false.
-    //   ...loginInput,
-    //   loggedIn: false,
-    // });
-    
-    // console.log(loginInput.loggedIn);
-    // console.log("clicked");
+    //removing user authentication
+    setUserAuth(false); //sets UserAuth value to false
+    setLoginInput([{ //clears username and password values from LoginInput state
+      username: "",
+      password: "",
+    }]);
+    history.push("/"); //redirects user back to the login form.
   };
 
-  //set user authentication state for conditional component routing/rendering
 
   
   const loginVariables = { //variable that holds state and props for passing to child components
