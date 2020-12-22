@@ -90,14 +90,7 @@ function App () {
     if(usernameValidation && passwordValidation === true) { //if userValidation and passwordValidation are both true, sets userAuth variable to true.
       setUserAuth(true);
       history.push("/dashboard"); //if userAuth is true, pushes user to the dashboard component.      
-    };
-
-    // if(userAuth === true) {
-    //   history.push("/dashboard");
-    // }
-
-    console.log(userAuth);
-    
+    };   
   };
 
   
