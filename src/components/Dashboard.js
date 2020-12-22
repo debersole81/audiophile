@@ -1,12 +1,10 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
-function Dashboard (props, state) {
+function Dashboard (props) {
 
-// const stateTest= () => {
-//     console.log (loginState.loggedIn);
-
-// };
-console.log(state.loginState);
+//react router hooks    
+const history = useHistory();
 
     return(
         <div>
