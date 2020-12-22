@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter, Switch, Route,  } from "react-router-dom";
+import { Switch, Route, useHistory } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 
@@ -18,6 +18,9 @@ function App () {
       password: "TestPassword2",
     },          
   ];
+  
+  //react router hooks
+  const history = useHistory();
   
   //managing user authentication
   //user login
@@ -38,7 +41,7 @@ function App () {
   const loginSubmit = (e) => { //runs when submit button on login component is clicked.
     e.preventDefault(); //prevents login component from re-rendering on click
 
-
+    // history.push("/dashboard");
 
     //username and password variables and arrays
     const loginUsername = loginInput.username; //retains the username input value from the login form
@@ -86,7 +89,8 @@ function App () {
     //setting user authentication
     if(usernameValidation && passwordValidation === true) { //if userValidation and passwordValidation are both true, sets userAuth variable to true.
       setUserAuth(true);
-    };
+      history.push("/dashboard"); //if userAuth is true, pushes user to the dashboard component.      
+    };   
   };
 
   
@@ -95,19 +99,18 @@ function App () {
   const logoutSubmit = (e) => { //runs when logout button on dashboard component is clicked.
     e.preventDefault(); //prevents dashboard component from re-rendering on click. 
 
-    setUserAuth({ //sets login element in loginInput to false.
-      ...loginInput,
-      loggedIn: false,
-    });
-    
-    console.log(loginInput.loggedIn);
-    console.log("clicked");
+    //removing user authentication
+    setUserAuth(false); //sets UserAuth value to false
+    setLoginInput([{ //clears username and password values from LoginInput state
+      username: "",
+      password: "",
+    }]);
+    history.push("/"); //redirects user back to the login form.
   };
 
-  //set user authentication state for conditional component routing/rendering
 
   
-  const loginVariables = { //variable that holds state and props for passing to child components
+  const passingToChildren = { //variable that holds state and props for passing to child components
     loginSubmit: loginSubmit,
     loginInput: loginInput,
     loginHandleChange: loginHandleChange,
@@ -116,15 +119,13 @@ function App () {
   };
 
   return (
-    <BrowserRouter>
-      <div>
-        <Switch>
-          <Route exact path="/" render={(props) => <Login {...loginVariables} />} />
-          <Route exact path="/dashboard" render={loginInput.loggedIn ? (props) => <Dashboard logoutSubmit={logoutSubmit} /> : () => <Login />} /> 
-          <Route />
-        </Switch>
-      </div>
-    </BrowserRouter>
+    <div>
+      <Switch>
+        <Route exact path="/" render={(props) => <Login {...passingToChildren} />} />
+        <Route exact path="/dashboard" render={(props) => <Dashboard {...passingToChildren} />} /> 
+        
+      </Switch>
+    </div>
   );
 }
 

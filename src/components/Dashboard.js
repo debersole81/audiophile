@@ -1,12 +1,14 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
-function Dashboard (props, state) {
+function Dashboard (props) {
 
-// const stateTest= () => {
-//     console.log (loginState.loggedIn);
+    //react router hooks    
+    const history = useHistory();
 
-// };
-console.log(state.loginState);
+    if(props.userAuth === false) { //prevents user from accessing dashboard without authenticating 
+        history.push("/"); //if userAuth is false, redirects to login
+    }
 
     return(
         <div>
