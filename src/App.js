@@ -110,7 +110,7 @@ function App () {
 
 
   
-  const loginVariables = { //variable that holds state and props for passing to child components
+  const passingToChildren = { //variable that holds state and props for passing to child components
     loginSubmit: loginSubmit,
     loginInput: loginInput,
     loginHandleChange: loginHandleChange,
@@ -120,12 +120,12 @@ function App () {
 
   return (
     <div>
-        <Switch>
-          <Route exact path="/" render={(props) => <Login {...loginVariables} />} />
-          <Route exact path="/dashboard" render={(props) => <Dashboard logoutSubmit={logoutSubmit} />} /> 
-          
-        </Switch>
-     </div>
+      <Switch>
+        <Route exact path="/" render={(props) => <Login {...passingToChildren} />} />
+        <Route exact path="/dashboard" render={(props) => <Dashboard logoutSubmit={logoutSubmit} />} /> 
+        
+      </Switch>
+    </div>
   );
 }
 
