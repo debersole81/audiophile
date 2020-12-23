@@ -32,9 +32,10 @@ function App () {
   const [userAuth, setUserAuth] = useState(false); //user authentication state manager.
 
   const loginHandleChange = (e) => { //handles changes to login form fields based on user input
+    console.log(loginInput);
     setLoginInput({
       ...loginInput,
-      [e.target.name]: [e.target.value],
+      [e.target.name]: e.target.value, //logs a string value from user input fields on login form
     });
   };
   
@@ -56,7 +57,7 @@ function App () {
     let passwordValidation = false; //password validation is false by default
     
     userUsername.forEach((value) => { //compares username input value from login form to each username in userDatabase. if equal, sets usernameValidation as true and pushes input value to a new array
-      if(value == loginUsername) {
+      if(value === loginUsername) {
         usernameValidation = true;
         return(userNameMatchValue.push(value)); 
       };
@@ -80,7 +81,7 @@ function App () {
       userPassword = userPassword.password; //if userDatabase.find returns a matching object, sets userPassword equal to the object's password property.
     };
 
-    if(userPassword == loginPassword) { //compares password input value from login form to userPassword value. if equal, sets passwordValidation to true.
+    if(userPassword === loginPassword) { //compares password input value from login form to userPassword value. if equal, sets passwordValidation to true.
       passwordValidation = true;
     };
 
