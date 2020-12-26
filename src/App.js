@@ -48,6 +48,7 @@ function App () {
     const loginPassword = loginInput.password; //retains the password input value from the login form 
     let usernameValidation = -1; //username validation is referencing the index number of the userDatabase object and is set to -1 by default
     let passwordValidation = false; //password validation is false by default
+    let databasePassword = null; //placeholder for the password value that is stored in the userDatabase. will be updated by the userDatabase.some method 
     
     userUsername.forEach((value) => { //compares username input value from login form to each username in userDatabase. if equal, sets usernameValidation as true and pushes input value to a new array
       if(value === loginUsername) {
