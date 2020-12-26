@@ -58,12 +58,14 @@ function App () {
       if(value.username === loginUsername) {
         console.log(index + ": " + value.username + ", " + value.password);
         usernameValidation = index; //sets the value of usernameValidation to the index number of the matching object from the user database.
-          
+          if(usernameValidation !== -1) { //if usernameValidation has a valid index number from the user database 
+            return(databasePassword = userDatabase[usernameValidation].password); //break the userDatabse.some loop and return the databasePassword variable equal to the password element value for the index number that usernameValidation is equal to.
+          };  
       };
     });
 
     console.log(usernameValidation);
-
+    console.log(databasePassword);
 
     //setting user authentication
     if(usernameValidation && passwordValidation === true) { //if userValidation and passwordValidation are both true, sets userAuth variable to true.
