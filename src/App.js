@@ -66,6 +66,13 @@ function App () {
 
     console.log(usernameValidation);
     console.log(databasePassword);
+    
+    if(loginPassword === databasePassword) { //if password entered by the user equals the password stored in the databse for that user, set passwordValidation to true
+      passwordValidation = true;
+    };
+
+    console.log(passwordValidation);
+
 
     //setting user authentication
     if(usernameValidation && passwordValidation === true) { //if userValidation and passwordValidation are both true, sets userAuth variable to true.
