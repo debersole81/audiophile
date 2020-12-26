@@ -43,9 +43,9 @@ function App () {
     e.preventDefault(); //prevents login component from re-rendering on click
 
 
-    //username and password variables and arrays
-    const loginUsername = loginInput.username; //retains the username input value from the login form
-    const loginPassword = loginInput.password; //retains the password input value from the login form 
+    //username and password variables
+    let loginUsername = loginInput.username; //retains the username input value from the login form
+    let loginPassword = loginInput.password; //retains the password input value from the login form 
 
 
 
