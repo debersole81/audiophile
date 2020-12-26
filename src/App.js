@@ -42,13 +42,10 @@ function App () {
   const loginSubmit = (e) => { //runs when submit button on login component is clicked.
     e.preventDefault(); //prevents login component from re-rendering on click
 
-    // history.push("/dashboard");
 
     //username and password variables and arrays
     const loginUsername = loginInput.username; //retains the username input value from the login form
     const loginPassword = loginInput.password; //retains the password input value from the login form 
-    const userUsername = userDatabase.map(username => username.username); //maps through userDatabase and returns an array containing the username property value in each element
-    const userNameMatchValue = []; //empty array that will store the truthy value from the nested coniditonal statement in the userUsername.forEach method
 
 
 
