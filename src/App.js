@@ -48,37 +48,21 @@ function App () {
     const loginPassword = loginInput.password; //retains the password input value from the login form 
     let usernameValidation = -1; //username validation is referencing the index number of the userDatabase object and is set to -1 by default
     let passwordValidation = false; //password validation is false by default
-    let databasePassword = null; //placeholder for the password value that is stored in the userDatabase. will be updated by the userDatabase.some method 
+    let databasePassword = null; //placeholder for the password value that is stored in the userDatabase. will be updated by the userDatabase.some method
+    let userAuth = false; //variable that will hold the result of user authentication. if true, user is authenticated and will login into the app. if false, user is not authenticated.
     
-    userUsername.forEach((value) => { //compares username input value from login form to each username in userDatabase. if equal, sets usernameValidation as true and pushes input value to a new array
-      if(value === loginUsername) {
-        usernameValidation = true;
-        return(userNameMatchValue.push(value)); 
+
+
+    //verifying username and password
+    userDatabase.some((value, index) => { //compares the username value that the user enters into the login form against each object in the user database. 
+      if(value.username === loginUsername) {
+        console.log(index + ": " + value.username + ", " + value.password);
+        usernameValidation = index; //sets the value of usernameValidation to the index number of the matching object from the user database.
+          
       };
     });
-    
-    const userNameValueString = userNameMatchValue.toString(); //converts the userNameMatchValue array to a string and assigns it to a new variable, userNameValueString
 
-    let userId = userDatabase.find(item => item.username === userNameValueString); //searches userDatabase and returns an array object with a username attribute that matches the userNameValueString value. returns undefined if no match.
-    
-    if(userId === undefined) { //if userDatabase.find returns an undefined value for userId, sets userId to null. 
-      userId = null;
-    } else {
-      userId = userId.id; //if userDatabase.find returns a matching object, sets userId equal to the object's id property.
-    };
-
-    let userPassword = userDatabase.find(item => item.id === userId); //searches userDatabase and returns an array object with an id attribute that matches the userId value. returns undefined if no match.
-   
-    if(userPassword === undefined) { //if userDatabase.find returns an undefined value for userPassword, sets userPassword to null.
-      userPassword = null;
-    } else {
-      userPassword = userPassword.password; //if userDatabase.find returns a matching object, sets userPassword equal to the object's password property.
-    };
-
-    if(userPassword === loginPassword) { //compares password input value from login form to userPassword value. if equal, sets passwordValidation to true.
-      passwordValidation = true;
-    };
-
+    console.log(usernameValidation);
 
 
     //setting user authentication
