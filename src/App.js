@@ -44,12 +44,8 @@ function App () {
 
 
     //username and password variables
-    let loginUsername = loginInput.username; //retains the username input value from the login form
-    let loginPassword = loginInput.password; //retains the password input value from the login form 
-
-
-
-    //username and password validation
+    const loginUsername = loginInput.username; //retains the username input value from the login form
+    const loginPassword = loginInput.password; //retains the password input value from the login form 
     let usernameValidation = false; //username validation is false by default
     let passwordValidation = false; //password validation is false by default
     
