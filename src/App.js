@@ -73,7 +73,7 @@ function App () {
     };   
   };
 
-  
+
   //user logout
   const logoutSubmit = (e) => { //runs when logout button on dashboard component is clicked.
     e.preventDefault(); //prevents dashboard component from re-rendering on click. 
@@ -88,7 +88,6 @@ function App () {
   };
 
 
-  
   const passingToChildren = { //variable that holds state and props for passing to child components
     loginSubmit: loginSubmit,
     loginInput: loginInput,
@@ -97,6 +96,7 @@ function App () {
     userAuth: userAuth,  
   };
 
+  
   return (
     <div>
       <Switch>
