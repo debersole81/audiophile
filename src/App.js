@@ -49,7 +49,6 @@ function App () {
     let usernameValidation = -1; //username validation is referencing the index number of the userDatabase object and is set to -1 by default
     let passwordValidation = false; //password validation is false by default
     let databasePassword = null; //placeholder for the password value that is stored in the userDatabase. will be updated by the userDatabase.some method
-    let userAuth = false; //variable that will hold the result of user authentication. if true, user is authenticated and will login into the app. if false, user is not authenticated.
     
 
 
