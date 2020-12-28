@@ -53,12 +53,11 @@ function App () {
 
 
     //verifying username and password
-    userDatabase.some((value, index) => { //compares the username value that the user enters into the login form against each object in the user database. 
-      if(value.username === loginUsername) {
-        console.log(index + ": " + value.username + ", " + value.password);
+    userDatabase.forEach((value, index) => {  
+      if(value.username === loginUsername) { //compares the username value that the user enters into the login form against each object in the user database.
         usernameValidation = index; //sets the value of usernameValidation to the index number of the matching object from the user database.
           if(usernameValidation !== -1) { //if usernameValidation has a valid index number from the user database 
-            return(databasePassword = userDatabase[usernameValidation].password); //break the userDatabse.some loop and return the databasePassword variable equal to the password element value for the index number that usernameValidation is equal to.
+            return(databasePassword = userDatabase[usernameValidation].password); //break the forEach loop and return the databasePassword variable from the object with the index number stored in usernameValidation.
           };  
       };
     });
