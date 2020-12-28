@@ -51,7 +51,6 @@ function App () {
     let databasePassword = null; //placeholder for the password value that is stored in the userDatabase. will be updated by the userDatabase.some method
     
 
-
     //verifying username and password
     userDatabase.forEach((value, index) => {  
       if(value.username === loginUsername) { //compares the username value that the user enters into the login form against each object in the user database.
@@ -61,15 +60,10 @@ function App () {
           };  
       };
     });
-
-    console.log(usernameValidation);
-    console.log(databasePassword);
     
     if(loginPassword === databasePassword) { //if password entered by the user equals the password stored in the databse for that user, set passwordValidation to true
       passwordValidation = true;
     };
-
-    console.log(passwordValidation);
 
 
     //setting user authentication
@@ -80,7 +74,6 @@ function App () {
   };
 
   
-
   //user logout
   const logoutSubmit = (e) => { //runs when logout button on dashboard component is clicked.
     e.preventDefault(); //prevents dashboard component from re-rendering on click. 
