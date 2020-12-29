@@ -5,12 +5,9 @@ function Search () {
 
     return(
         <div>
-            <h1>This is the search component</h1>
-            <button>
-                Back
-            </button>
+            <h1>Search</h1>
         </div>
     );
-};
+}
 
 export default Search;
