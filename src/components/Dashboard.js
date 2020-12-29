@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory, Link, Route } from "react-router-dom";
+import { useHistory, Link, Route, Switch } from "react-router-dom";
 
 function Dashboard (props) {
 
