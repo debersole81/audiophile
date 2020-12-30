@@ -13,13 +13,14 @@ function Dashboard (props) {
 
     return(
         <div>
-            <h1>This is the dashboard</h1>       
-                <Switch>
-                    <Route exact path="/collection" />
-                    <Route exact path="/wishlist" />
-                    <Route exact path="/randomizer" />
-                    <Route exact path="/search" />
-                </Switch>            
+            <Link to="/dashboard/search"> Search </Link>            
+            <Switch>
+                <Route exact path="/collection" />
+                <Route exact path="/wishlist" />
+                <Route exact path="/randomizer" />
+                <Route exact path="/dashboard/search" component={Search} />
+            </Switch>
+            <br />            
             <button onClick={props.logoutSubmit}>
                 Logout
             </button>
