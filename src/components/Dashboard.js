@@ -2,6 +2,7 @@ import React from "react";
 import { useHistory, Link, Route, Switch } from "react-router-dom";
 import Search from "./Search";
 import Collection from "./Collection";
+import WishList from "./WishList";
 
 function Dashboard (props) {
 
