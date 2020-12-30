@@ -17,7 +17,7 @@ function Dashboard (props) {
         <div>
             <Switch>
                 <Route exact path="/dashboard/collection" component={Collection} />
-                <Route exact path="/wishlist" />
+                <Route exact path="/dashboard/wishlist" component={WishList} />
                 <Route exact path="/randomizer" />
                 <Route exact path="/dashboard/search" component={Search} />
             </Switch>
