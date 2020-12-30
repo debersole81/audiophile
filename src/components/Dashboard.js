@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory, Link, Route, Switch } from "react-router-dom";
 import Search from "./Search";
+import Collection from "./Collection";
 
 function Dashboard (props) {
 
@@ -13,7 +14,6 @@ function Dashboard (props) {
 
     return(
         <div>
-            <Link to="/dashboard/search"> Search </Link>            
             <Switch>
                 <Route exact path="/collection" />
                 <Route exact path="/wishlist" />
