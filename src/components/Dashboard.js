@@ -4,6 +4,7 @@ import Search from "./Search";
 import Collection from "./Collection";
 import WishList from "./WishList";
 import Randomizer from "./Randomizer";
+import Nav from "./Nav";
 
 function Dashboard (props) {
 
