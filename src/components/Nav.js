@@ -4,6 +4,7 @@ function Nav() {
 
     return (
         <nav>
+            <h3>Logo</h3>
             <ul>
                 <li>Dashboard</li>
                 <li>Collection</li>
