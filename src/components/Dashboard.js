@@ -18,6 +18,12 @@ function Dashboard (props) {
     return(
         <div>
             <Nav />
+            <ul>
+                <li>Collection</li>
+                <li>Wish List</li>
+                <li>Randomizer</li>
+                <li>Search</li>
+            </ul>
             <Switch>
                 <Route exact path="/dashboard/collection" component={Collection} />
                 <Route exact path="/dashboard/wishlist" component={WishList} />
