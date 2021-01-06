@@ -11,8 +11,8 @@ function Nav() {
                 <Link to="/dashboard"><li>Dashboard</li></Link>
                 <Link to="/dashboard/collection"><li>Collection</li></Link>
                 <Link to="/dashboard/wishlist"><li>Wish List</li></Link>
-                <li>Randomizer</li>
-                <li>Search</li>
+                <Link to="/dashboard/randomizer"><li>Randomizer</li></Link>
+                <Link to="/dashboard/search"><li>Search</li></Link>
             </ul>
         </nav>
     );
