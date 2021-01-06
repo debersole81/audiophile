@@ -37,7 +37,7 @@
   }
 }
 
-.Nav {
+.nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -46,3 +46,10 @@
   color: white;
 }
 
+.nav-links {
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
