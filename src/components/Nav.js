@@ -8,7 +8,7 @@ function Nav() {
         <nav className="nav">
             <h3>Logo</h3>
             <ul className="nav-links">
-                <li>Dashboard</li>
+                <Link to="/dashboard"><li>Dashboard</li></Link>
                 <li>Collection</li>
                 <li>Wish List</li>
                 <li>Randomizer</li>
