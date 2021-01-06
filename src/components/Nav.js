@@ -10,7 +10,7 @@ function Nav() {
             <ul className="nav-links">
                 <Link to="/dashboard"><li>Dashboard</li></Link>
                 <Link to="/dashboard/collection"><li>Collection</li></Link>
-                <li>Wish List</li>
+                <Link to="/dashboard/wishlist"><li>Wish List</li></Link>
                 <li>Randomizer</li>
                 <li>Search</li>
             </ul>
