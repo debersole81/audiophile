@@ -9,7 +9,7 @@ function Nav() {
             <h3>Logo</h3>
             <ul className="nav-links">
                 <Link to="/dashboard"><li>Dashboard</li></Link>
-                <li>Collection</li>
+                <Link to="/collection"><li>Collection</li></Link>
                 <li>Wish List</li>
                 <li>Randomizer</li>
                 <li>Search</li>
