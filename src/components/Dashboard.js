@@ -19,7 +19,7 @@ function Dashboard (props) {
         <div>
             <Nav />
             <ul>
-                <li>Collection</li>
+                <Link to="/dashboard/collection"><li>Collection</li></Link>
                 <li>Wish List</li>
                 <li>Randomizer</li>
                 <li>Search</li>
