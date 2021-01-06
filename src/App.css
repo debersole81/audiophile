@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.Nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background: rgb(197, 202, 204);
+  color: white;
+}
+
