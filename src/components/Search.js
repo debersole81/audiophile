@@ -15,6 +15,8 @@ function Search () {
 
         const items = await data.json(); //converts data from fetchItems to .json
         console.log(items);
+
+        setArtists(items.artists); //sets artist state from artist data fetched from discogs API
     };
 
     return(
