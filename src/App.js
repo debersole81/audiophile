@@ -56,7 +56,8 @@ function App () {
       if(value.username === loginUsername) { //compares the username value that the user enters into the login form against each object in the user database.
         usernameValidation = index; //sets the value of usernameValidation to the index number of the matching object from the user database.
           if(usernameValidation !== -1) { //if usernameValidation has a valid index number from the user database 
-            return(databasePassword = userDatabase[usernameValidation].password); //break the forEach loop and return the databasePassword variable from the object with the index number stored in usernameValidation.
+            databasePassword = userDatabase[usernameValidation].password; //break the forEach loop and return the databasePassword variable from the object with the index number stored in usernameValidation.
+            return;
           };  
       };
     });
