@@ -21,7 +21,9 @@ function Search () {
 
     return(
         <div>
-            <h1>Search</h1>
+            {artists.map(artist => ( //maps through artists array and returns key/value data for each artist
+                <h1>{artist.name}</h1> //displays artist name in header
+            ))}
         </div>
     );
 }
