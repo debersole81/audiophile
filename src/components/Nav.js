@@ -6,12 +6,12 @@ function Nav(props) {
 
     const handleDashClickTrue = () => { //sets viewDash in Dashboard component to true
         console.log(props);
-        props.onChangeTrue();
+        props.viewDashTrue();
     };
 
     const handleDashClickFalse = () => { //sets vieDash in Dashboard component to false
         console.log("setting false");
-        props.onChangeFalse();
+        props.viewDashFalse();
     };
 
     return (
