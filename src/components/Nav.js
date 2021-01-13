@@ -4,13 +4,11 @@ import { Link } from "react-router-dom";
 
 function Nav(props) {
 
-    const handleDashClickTrue = () => { //sets viewDash in Dashboard component to true
-        console.log(props);
+    const handleViewDashTrue = () => { //sets viewDash in Dashboard component to true
         props.viewDashTrue();
     };
 
-    const handleDashClickFalse = () => { //sets vieDash in Dashboard component to false
-        console.log("setting false");
+    const handleViewDashFalse = () => { //sets viewDash in Dashboard component to false
         props.viewDashFalse();
     };
 
@@ -18,11 +16,11 @@ function Nav(props) {
         <nav className="nav">
             <h3>Logo</h3>
             <ul className="nav-links">
-                <Link to="/dashboard" onClick={handleDashClickTrue}><li>Dashboard</li></Link>
-                <Link to="/dashboard/collection" onClick={handleDashClickFalse}><li>Collection</li></Link>
-                <Link to="/dashboard/wishlist" onClick={handleDashClickFalse}><li>Wish List</li></Link>
-                <Link to="/dashboard/randomizer" onClick={handleDashClickFalse}><li>Randomizer</li></Link>
-                <Link to="/dashboard/search" onClick={handleDashClickFalse}><li>Search</li></Link>
+                <Link to="/dashboard" onClick={handleViewDashTrue}><li>Dashboard</li></Link>
+                <Link to="/dashboard/collection" onClick={handleViewDashFalse}><li>Collection</li></Link>
+                <Link to="/dashboard/wishlist" onClick={handleViewDashFalse}><li>Wish List</li></Link>
+                <Link to="/dashboard/randomizer" onClick={handleViewDashFalse}><li>Randomizer</li></Link>
+                <Link to="/dashboard/search" onClick={handleViewDashFalse}><li>Search</li></Link>
             </ul>
         </nav>
     );
