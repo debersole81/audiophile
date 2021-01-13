@@ -28,7 +28,7 @@ function Dashboard (props) {
     if(viewDash) { //if viewDash is true, render links to each component on dashboard path.
         return(
             <div>
-                <Nav onChangeTrue={handleViewDashTrue} onChangeFalse={handleViewDashFalse} />
+                <Nav viewDashTrue={handleViewDashTrue} viewDashFalse={handleViewDashFalse} />
                 <Link to="/dashboard/collection" onClick={handleViewDashFalse}> Collection </Link> <br />
                 <Link to="/dashboard/wishlist" onClick={handleViewDashFalse}> Wish List </Link> <br />
                 <Link to="/dashboard/randomizer" onClick={handleViewDashFalse}> Randomizer </Link> <br />
@@ -50,7 +50,7 @@ function Dashboard (props) {
 
     return( //if viewDash is false, remove links to each component on dashboard path
         <div>
-            <Nav onChangeTrue={handleViewDashTrue} onChangeFalse={handleViewDashFalse} />
+            <Nav viewDashTrue={handleViewDashTrue} viewDashFalse={handleViewDashFalse} />
             <Switch>
                 <Route exact path="/dashboard/collection" component={Collection} />
                 <Route exact path="/dashboard/wishlist" component={WishList} />
