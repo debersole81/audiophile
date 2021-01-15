@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from "react";
 
 function Search () {
+    
+    const [artists, setArtists] = useState([]); //artist state manager
 
     useEffect(() => { //runs the fetchItems function after the component mounts
         fetchItems();
     }, []); //empty brackets ensures that useEffect will only run after the component mounts
 
-    const [artists, setArtists] = useState([]); //artist state manager
     
     const fetchItems = async () => { //makes an async call to discogs api
         const data = await fetch ( //fetches data from discogs api and assigns it to a data variable
