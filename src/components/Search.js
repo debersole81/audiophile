@@ -4,6 +4,8 @@ function Search () {
     
     const [artists, setArtists] = useState([]); //artist state manager
 
+    var Discogs = require("disconnect").Client;
+    
     useEffect(() => { //runs the fetchItems function after the component mounts
         fetchItems();
     }, []); //empty brackets ensures that useEffect will only run after the component mounts
