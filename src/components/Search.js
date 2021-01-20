@@ -4,8 +4,14 @@ function Search () {
     
     const [artists, setArtists] = useState([]); //artist state manager
 
+        //Init Discogs
     const Discogs = require("disconnect").Client;
+    
+    //Get release data for a release with the id 176126
     const db = new Discogs().database();
+    db.getRelease(176126, function(err, data) {
+        console.log(data);
+    });
 
 
     useEffect(() => { //runs the fetchItems function after the component mounts
