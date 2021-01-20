@@ -4,8 +4,10 @@ function Search () {
     
     const [artists, setArtists] = useState([]); //artist state manager
 
-    var Discogs = require("disconnect").Client;
-    
+    const Discogs = require("disconnect").Client;
+    const db = new Discogs().database();
+
+
     useEffect(() => { //runs the fetchItems function after the component mounts
         fetchItems();
     }, []); //empty brackets ensures that useEffect will only run after the component mounts
@@ -17,7 +19,7 @@ function Search () {
         );
 
         const items = await data.json(); //converts data from fetchItems to .json
-        console.log(items);
+        // console.log(items);
 
         setArtists(items.artists); //sets artist state from artist data fetched from discogs API
     };
