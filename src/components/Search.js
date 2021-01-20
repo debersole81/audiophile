@@ -4,7 +4,7 @@ function Search () {
     
     const [artists, setArtists] = useState([]); //artist state manager
 
-        //Init Discogs
+    //Init Discogs
     const Discogs = require("disconnect").Client;
     
     //Get release data for a release with the id 176126
