@@ -28,6 +28,14 @@ function Search () {
         }
         url = url.slice(0, -1);
         console.log(url);
+    
+        const options = {
+            method: 'GET',
+            headers: {
+                'Accept' : 'application/json',
+                'User-Agent': 'vinylrecordscatalogue/1.0+localhost:3000'
+            }
+        };
     });
 
 
