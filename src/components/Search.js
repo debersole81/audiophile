@@ -4,20 +4,12 @@ import React, { useState, useEffect } from 'react';
 
 function Search () {
     
-    const [artists, setArtists] = useState([]); //artist state manager
+    /*State managers*/
+    const[error, setError] = useState(null);
+    const[isLoaded, setIsLoaded] = useState(false);
+    const[items, setItems] = useState([]);
+    const [search, setSearch] = useState();
 
-    //HTTPS headers
-    const headers = {
-       Authorization: discogsAuth,       
-    };
-    
-
-    // //Get release data for a release with the id 176126
-    // const db = new Discogs().database();
-    // db.getRelease(176126, function(err, data) {
-    //     console.log(data);
-    // });
-    
 
     useEffect(() => { //runs the fetchItems function after the component mounts
         fetchItems();
