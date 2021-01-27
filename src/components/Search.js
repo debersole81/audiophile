@@ -20,6 +20,13 @@ function Search () {
     const [items, setItems] = useState([]);
     const [search, setSearch] = useState();
 
+    const handleSearchChange = (e) => {
+        setSearch({
+            [e.target.name]: e.target.value
+        });
+    }
+    console.log(search);
+
     useEffect(() => {
         /*Build url*/
         let url = baseURL;
@@ -55,6 +62,16 @@ function Search () {
     return(
         <div>
             <h1>Search</h1>
+            <form>
+                <label> {''}
+                <input
+                    type='text'
+                    name='search'
+                    placeholder='Enter album or artist name to get started'
+                    onChange={handleSearchChange}
+                />
+                </label>
+            </form>
         </div>
     );
 };
