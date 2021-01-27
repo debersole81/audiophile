@@ -1,21 +1,10 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from 'react';
+
+
 
 function Search () {
     
     const [artists, setArtists] = useState([]); //artist state manager
-    
-    // //Init Express
-    // const express = require("express"); //includes express module
-    // const app = express();
-
-    //Discogs client constructor
-    const discogs = require("disconnect").Client; //includes disconnect module and client component
-    
-    //Discogs authentication by consumer key and secret
-    const discogsAuth = {
-       key: "KNMVnsceTtAqbvAVbsPX",
-       secret: "YjfVFNTeaEqVblcDGkanBBRSWPAeIXBO"
-    };
 
     //HTTPS headers
     const headers = {
