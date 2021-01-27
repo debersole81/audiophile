@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 
-/*Build HTTP header*/
+/*Build HTTP query*/
 const baseURL = 'https://api.discogs.com/database/search?'; //q=Nirvana&key=KNMVnsceTtAqbvAVbsPX&secret=YjfVFNTeaEqVblcDGkanBBRSWPAeIXBO'
 const query = {
     q: 'Foo Fighters',
@@ -36,7 +36,20 @@ function Search () {
                 'User-Agent': 'vinylrecordscatalogue/1.0+localhost:3000'
             }
         };
-    });
+
+        fetch(url, options)
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setItems(result.items);
+                    console.log(result);
+                },
+                (error) => {
+                    setIsLoaded(true);
+                    setError(error);
+                }                
+            );
+    }, []);
 
 
     return(
