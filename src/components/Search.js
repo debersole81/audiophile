@@ -3,16 +3,32 @@ import React, {useState, useEffect} from "react";
 function Search () {
     
     const [artists, setArtists] = useState([]); //artist state manager
-
-    //Init Discogs
-    const Discogs = require("disconnect").Client;
     
-    //Get release data for a release with the id 176126
-    const db = new Discogs().database();
-    db.getRelease(176126, function(err, data) {
-        console.log(data);
-    });
+    // //Init Express
+    // const express = require("express"); //includes express module
+    // const app = express();
 
+    //Discogs client constructor
+    const discogs = require("disconnect").Client; //includes disconnect module and client component
+    
+    //Discogs authentication by consumer key and secret
+    const discogsAuth = {
+       key: "KNMVnsceTtAqbvAVbsPX",
+       secret: "YjfVFNTeaEqVblcDGkanBBRSWPAeIXBO"
+    };
+
+    //HTTPS headers
+    const headers = {
+       Authorization: discogsAuth,       
+    };
+    
+
+    // //Get release data for a release with the id 176126
+    // const db = new Discogs().database();
+    // db.getRelease(176126, function(err, data) {
+    //     console.log(data);
+    // });
+    
 
     useEffect(() => { //runs the fetchItems function after the component mounts
         fetchItems();
@@ -21,11 +37,11 @@ function Search () {
     
     const fetchItems = async () => { //makes an async call to discogs api
         const data = await fetch ( //fetches data from discogs api and assigns it to a data variable
-            `https://api.discogs.com/releases/249504`
+            `https://api.discogs.com/database/search?q=Nirvana`, {headers}
         );
 
         const items = await data.json(); //converts data from fetchItems to .json
-        // console.log(items);
+        console.log(items);
 
         setArtists(items.artists); //sets artist state from artist data fetched from discogs API
     };
