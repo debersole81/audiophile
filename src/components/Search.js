@@ -6,6 +6,7 @@ const baseURL = 'https://api.discogs.com/database/search?'; //q=Nirvana&key=KNMV
 const query = {
     q: '',
     format: 'vinyl',
+    maxResults: '25',
     key: 'KNMVnsceTtAqbvAVbsPX',
     secret: 'YjfVFNTeaEqVblcDGkanBBRSWPAeIXBO'
 };
