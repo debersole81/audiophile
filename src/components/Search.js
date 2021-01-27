@@ -15,9 +15,6 @@ const query = {
 function Search () {
     
     /*State managers*/
-    const [error, setError] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [items, setItems] = useState([]);
     const [search, setSearch] = useState();
 
     const handleSearchChange = (e) => {
