@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 /*Build HTTP header*/
 const baseURL = 'https://api.discogs.com/database/search?'; //q=Nirvana&key=KNMVnsceTtAqbvAVbsPX&secret=YjfVFNTeaEqVblcDGkanBBRSWPAeIXBO'
 const query = {
-    q: '',
+    q: 'Foo Fighters',
     format: 'vinyl',
     maxResults: '25',
     key: 'KNMVnsceTtAqbvAVbsPX',
@@ -26,6 +26,8 @@ function Search () {
         for (let [key, value] of Object.entries(query)) {
             url = url + key + '=' + value + '&';
         }
+        url = url.slice(0, -1);
+        console.log(url);
     });
 
 
