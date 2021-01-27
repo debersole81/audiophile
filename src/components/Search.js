@@ -20,6 +20,13 @@ function Search () {
     const [items, setItems] = useState([]);
     const [search, setSearch] = useState();
 
+    useEffect(() => {
+        /*Build url*/
+        let url = baseURL;
+        for (let [key, value] of Object.entries(query)) {
+            url = url + key + '=' + value + '&';
+        }
+    });
 
 
     return(
@@ -27,6 +34,6 @@ function Search () {
             <h1>Search</h1>
         </div>
     );
-}
+};
 
 export default Search;
