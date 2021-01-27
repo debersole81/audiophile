@@ -25,13 +25,6 @@ function Search () {
     console.log(search);
 
     useEffect(() => {
-        /*Build url*/
-        let url = baseURL;
-        for (let [key, value] of Object.entries(query)) {
-            url = url + key + '=' + value + '&';
-        }
-        url = url.slice(0, -1);
-        console.log(url);
     
         const options = {
             method: 'GET',
