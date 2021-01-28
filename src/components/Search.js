@@ -1,47 +1,25 @@
 import React, { useState, useEffect } from 'react';
+import SearchResults from './SearchResults';
+
+
+
 
 function Search () {
     
     /*State managers*/
-    const [search, setSearch] = useState('');
+    const [search, setSearch] = useState();
 
     /**Change handlers*/    
     const handleSearchChange = (e) => {
+        e.preventDefault();
+
         setSearch({
             [e.target.name]: e.target.value
         });
     }
+
     console.log(search);
-
-    const handleSearchSubmit = (e) => {
-        e.preventDefault()
-        console.log('form submitted');
-    }
-
-
-    /*Build HTTP query*/
-    const baseURL = 'https://api.discogs.com/database/search?'; //q=Nirvana&key=KNMVnsceTtAqbvAVbsPX&secret=YjfVFNTeaEqVblcDGkanBBRSWPAeIXBO'
-    const query = {
-        q: search,
-        format: 'vinyl',
-        maxResults: '25',
-        key: 'KNMVnsceTtAqbvAVbsPX',
-        secret: 'YjfVFNTeaEqVblcDGkanBBRSWPAeIXBO'
-    };
-
-    console.log(query.q);
-
-    // /**Build URL*/
-    // const buildURL = () => {
-    //     let url = baseURL;
-    //     for (let [key, value] of Object.entries(query)) {
-    //         url = url + key + '=' + value + '&';
-    //     };
-    //     url = url.slice(0, -1);
-    // };
-
-    // console.log(buildURL());
-
+    
     return(
         <div>
             <h1>Search</h1>
@@ -54,9 +32,6 @@ function Search () {
                     onChange={handleSearchChange}
                 />
                 </label>
-                <button onClick={handleSearchSubmit}>
-                    Go!
-                </button>    
             </form>
         </div>
     );
