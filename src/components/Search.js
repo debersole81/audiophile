@@ -24,22 +24,6 @@ function Search () {
     }
     console.log(search);
 
-    useEffect(() => {
-    
-        fetch(url, options)
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    setItems(result.items);
-                    console.log(result);
-                },
-                (error) => {
-                    setIsLoaded(true);
-                    setError(error);
-                }                
-            );
-    }, []);
-
 
     return(
         <div>
