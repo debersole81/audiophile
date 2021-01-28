@@ -1,22 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
-
-/*Build HTTP query*/
-const baseURL = 'https://api.discogs.com/database/search?'; //q=Nirvana&key=KNMVnsceTtAqbvAVbsPX&secret=YjfVFNTeaEqVblcDGkanBBRSWPAeIXBO'
-const query = {
-    q: 'Foo Fighters',
-    format: 'vinyl',
-    maxResults: '25',
-    key: 'KNMVnsceTtAqbvAVbsPX',
-    secret: 'YjfVFNTeaEqVblcDGkanBBRSWPAeIXBO'
-};
-
-
 function Search () {
     
     /*State managers*/
     const [search, setSearch] = useState();
 
+    /**Change handlers*/    
     const handleSearchChange = (e) => {
         setSearch({
             [e.target.name]: e.target.value
@@ -24,6 +13,27 @@ function Search () {
     }
     console.log(search);
 
+    /*Build HTTP query*/
+    const baseURL = 'https://api.discogs.com/database/search?'; //q=Nirvana&key=KNMVnsceTtAqbvAVbsPX&secret=YjfVFNTeaEqVblcDGkanBBRSWPAeIXBO'
+    const query = {
+        q: search,
+        format: 'vinyl',
+        maxResults: '25',
+        key: 'KNMVnsceTtAqbvAVbsPX',
+        secret: 'YjfVFNTeaEqVblcDGkanBBRSWPAeIXBO'
+    };
+
+    console.log(query.q);
+
+    /**Build URL*/
+    const buildURL = () => {
+
+        let url = baseURL;
+        for (let [key, value] of Object.entries(query)) {
+            url = url + key + '=' + value + '&';
+        };
+        url = url.slice(0, -1);
+    };
 
     return(
         <div>
