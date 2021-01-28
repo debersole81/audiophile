@@ -27,7 +27,6 @@ function Search () {
 
     /**Build URL*/
     const buildURL = () => {
-
         let url = baseURL;
         for (let [key, value] of Object.entries(query)) {
             url = url + key + '=' + value + '&';
@@ -47,6 +46,9 @@ function Search () {
                     onChange={handleSearchChange}
                 />
                 </label>
+                <button onClick={buildURL}>
+                    Go!
+                </button>
             </form>
         </div>
     );
