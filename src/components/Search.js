@@ -26,14 +26,6 @@ function Search () {
 
     useEffect(() => {
     
-        const options = {
-            method: 'GET',
-            headers: {
-                'Accept' : 'application/json',
-                'User-Agent': 'vinylrecordscatalogue/1.0+localhost:3000'
-            }
-        };
-
         fetch(url, options)
             .then(res => res.json())
             .then(
