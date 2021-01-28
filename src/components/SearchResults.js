@@ -9,6 +9,16 @@ function SearchResults () {
 
     useEffect(() => {
         
+        /**Buld HTTP query*/
+        const baseURL = 'https://api.discogs.com/database/search?'; //q=Nirvana&key=KNMVnsceTtAqbvAVbsPX&secret=YjfVFNTeaEqVblcDGkanBBRSWPAeIXBO'
+        const query = {
+            q: search,
+            format: 'vinyl',
+            maxResults: '25',
+            key: 'KNMVnsceTtAqbvAVbsPX',
+            secret: 'YjfVFNTeaEqVblcDGkanBBRSWPAeIXBO'
+        } 
+
         /**Build URL*/
         let url = baseURL;
         for (let [key, value] of Object.entries(query)) {
