@@ -8,6 +8,7 @@ function SearchResults () {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
+        
         /**Build URL*/
         let url = baseURL;
         for (let [key, value] of Object.entries(query)) {
@@ -15,6 +16,7 @@ function SearchResults () {
         }
         url = url.slice(0, -1);
         
+        /**Build request method and headers*/
         const options = {
             method: 'GET',
             headers: {
@@ -23,7 +25,20 @@ function SearchResults () {
             }
         };
 
-    }, []);
+        /**Initiate HTTP request to Discogs, then handle response*/
+        fetch(url, options)
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setItems(result.items);
+                    console.log(result);
+                },
+                (error) => {
+                    setIsLoaded(true);
+                    setError(error);
+                }
+            );
+    }, []); //[] tells useEffect to run only when component mounts
 
 };
 
