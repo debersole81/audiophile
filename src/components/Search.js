@@ -46,6 +46,7 @@ function Search () {
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        /**Call Discogs API*/
         callDiscogsAPI(search)
         .then(res => res.json())
         .then(
