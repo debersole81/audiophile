@@ -39,10 +39,24 @@ function Search () {
         // setTimeout(() => {
         //     setApiTimeoutElapse(true);
         // }, 1000);
-    }
-
+    };
 
     console.log(search);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        callDiscogsAPI(search)
+        .then(res => res.json())
+        .then(
+            (result) => {
+                setItems(result.items);
+                console.log(result);
+            }
+        );
+
+    }
+
     
     return(
         <div>
@@ -56,6 +70,7 @@ function Search () {
                     onChange={handleSearchChange}
                 />
                 </label>
+                <button onClick={handleSubmit}>Go!</button>                
             </form>
         </div>
     );
