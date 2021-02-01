@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { defaultQuery, buildURL, defaultGETOptions } from '../apiParameters'
+
 
 function SearchResults () {
 
@@ -7,38 +9,14 @@ function SearchResults () {
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
 
-    useEffect(() => {
-        
-        /**Buld HTTP query*/
-        const baseURL = 'https://api.discogs.com/database/search?'; //q=Nirvana&key=KNMVnsceTtAqbvAVbsPX&secret=YjfVFNTeaEqVblcDGkanBBRSWPAeIXBO'
-        const query = {
-            q: '',
-            format: 'vinyl',
-            maxResults: '25',
-            key: 'KNMVnsceTtAqbvAVbsPX',
-            secret: 'YjfVFNTeaEqVblcDGkanBBRSWPAeIXBO'
-        } 
-
-        /**Build URL*/
-        let url = baseURL;
-        for (let [key, value] of Object.entries(query)) {
-            url = url + key + '=' + value + '&';
-        }
-        url = url.slice(0, -1);
-        
-        /**Build request method and headers*/
-        const options = {
-            method: 'GET',
-            headers: {
-                'Accept' : 'application/json',
-                'User-Agent' : 'vinylrecordscatalogue/1.0+localhost:3000'
-            }
-        };
+    useEffect(() => { //this will just do calldiscogs api and return .json
+        /**Build URL*/        
+        buildURL(defaultQuery)
 
         /**Initiate HTTP request to Discogs, then handle response*/
-        fetch(url, options)
-            .then(res => res.json())
-            .then(
+        fetch(url, defaultGETOptions)
+            .then(res => res.json()) //abstract this
+            .then( //output of callDiscogs api function
                 (result) => {
                     setItems(result.items);
                     console.log(result);
