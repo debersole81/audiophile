@@ -23,7 +23,7 @@ const callDiscogsAPI = (q, page, per_page) => {
     url = url.slice(0, -1);
 
     /**Build HTTP request method + headers*/
-    const requestMethod = {
+    const requestOptions = {
         method: 'GET',
         headers: {
             'Accept' : 'application/json',
@@ -31,6 +31,7 @@ const callDiscogsAPI = (q, page, per_page) => {
         }
     };
 
+    return fetch(url, requestOptions);
 }
 
 export default callDiscogsAPI;
