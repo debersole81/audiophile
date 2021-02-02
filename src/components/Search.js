@@ -57,7 +57,7 @@ function Search () {
         .then(res => res.json())
         .then(
             (result) => {
-                setItems(result.items);
+                setItems(result);
                 console.log(result);
             }
         );
