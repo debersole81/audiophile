@@ -75,7 +75,8 @@ function Search () {
                 />
                 </label>
                 <button onClick={handleSubmit}>Go!</button>                
-            </form>            
+            </form>
+            <SearchResults />            
         </div>
     );
 };
