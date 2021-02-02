@@ -16,7 +16,9 @@ function Search () {
 
 
     /**Change handlers*/    
-    const handleSearchChange = (e) => { //will run the search drop down
+    
+    /**Search form onChange handler*/
+    const handleSearchChange = (e) => {
         e.preventDefault();
         
         setSearch({
@@ -46,6 +48,7 @@ function Search () {
 
     console.log(search);
 
+    /**Search form button onClick handler*/
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -76,7 +79,7 @@ function Search () {
                 </label>
                 <button onClick={handleSubmit}>Go!</button>                
             </form>
-            <SearchResults />            
+            <SearchResults items={items}/>            
         </div>
     );
 };
