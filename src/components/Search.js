@@ -10,7 +10,10 @@ function Search () {
     /*State managers*/
     const [search, setSearch] = useState();
     const [items, setItems] = useState();
-    const [apiTimeoutElapse, setApiTimeoutElapse] = useState(true);
+    // const [apiTimeoutElapse, setApiTimeoutElapse] = useState(true);
+    // const [error, setError] = useState(null);
+    // const [isLoaded, setIsLoaded] = useState(false);
+
 
     /**Change handlers*/    
     const handleSearchChange = (e) => { //will run the search drop down
