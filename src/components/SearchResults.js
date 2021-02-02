@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { defaultQuery, buildURL, defaultGETOptions } from '../apiParameters'
+import React from 'react';
 
 
 function SearchResults () {
