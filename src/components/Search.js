@@ -8,7 +8,7 @@ import SearchResults from './SearchResults';
 function Search () {
     
     /*State managers*/
-    const [search, setSearch] = useState();
+    const [search, setSearch] = useState('');
     const [items, setItems] = useState();
     // const [apiTimeoutElapse, setApiTimeoutElapse] = useState(true);
     // const [error, setError] = useState(null);
@@ -46,18 +46,19 @@ function Search () {
         // }, 1000);
     };
 
-    console.log(search);
-
+    console.log(search.search);
+    console.log(items);
+    
     /**Search form button onClick handler*/
     const handleSubmit = (e) => {
         e.preventDefault();
 
         /**Call Discogs API*/
-        callDiscogsAPI(search)
+        callDiscogsAPI(search.search)
         .then(res => res.json())
         .then(
             (result) => {
-                setItems(result);
+                setItems(result.results);
                 console.log(result);
             }
         );
