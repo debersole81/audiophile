@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import callDiscogsAPI from '../CallDiscogsAPI'
 import SearchResults from './SearchResults';
 
@@ -75,7 +75,7 @@ function Search () {
                 />
                 </label>
                 <button onClick={handleSubmit}>Go!</button>                
-            </form>
+            </form>            
         </div>
     );
 };
