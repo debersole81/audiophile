@@ -4,10 +4,10 @@ const callDiscogsAPI = (q, page = 1, per_page = 25) => {
 
     /**Build Query*/
     const buildQuery = {
+        q,
         format: 'vinyl',
         key: 'KNMVnsceTtAqbvAVbsPX',
         secret: 'YjfVFNTeaEqVblcDGkanBBRSWPAeIXBO',
-        q,
         page,
         per_page,
     };
