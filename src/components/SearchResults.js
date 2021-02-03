@@ -21,7 +21,8 @@ function SearchResults (state) {
                             <Card style={{ width: '12rem' }}>
                                 <Card.Img variant='top' src={results.cover_image} style={{ height: '12rem' }} alt='Album Cover Art'/>
                                 <Card.Body>
-                                    
+                                    <Card.Title className='text-truncate'>{results.title.split(' - ')[1]}</Card.Title>
+                                    <Card.Subtitle className='mb-2 text-muted'>{results.title.split(' - ')[0]}</Card.Subtitle>   
                                 </Card.Body>
                             </Card>
                         </Col>
