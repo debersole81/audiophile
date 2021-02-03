@@ -20,7 +20,9 @@ function SearchResults (state) {
                         <Col key={results.id} style={{ padding: '1rem' }}>
                             <Card style={{ width: '12rem' }}>
                                 <Card.Img variant='top' src={results.cover_image} style={{ height: '12rem' }} alt='Album Cover Art'/>
-                                
+                                <Card.Body>
+                                    
+                                </Card.Body>
                             </Card>
                         </Col>
                     )};
