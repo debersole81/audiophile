@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import callDiscogsAPI from '../CallDiscogsAPI'
 import SearchResults from './SearchResults';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Jumbotron from 'react-bootstrap/Jumbotron';
 
 
 
@@ -59,7 +63,6 @@ function Search () {
         .then(
             (result) => {
                 setItems(result.results);
-                console.log(result);
             }
         );
 
@@ -67,7 +70,7 @@ function Search () {
 
     
     return(
-        <div>
+        <Container>
             <h1>Search</h1>
             <form>
                 <label> {''}
@@ -81,7 +84,7 @@ function Search () {
                 <button onClick={handleSubmit}>Go!</button>                
             </form>
             <SearchResults items={items}/>            
-        </div>
+        </Container>
     );
 };
 
