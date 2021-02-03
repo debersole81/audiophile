@@ -13,9 +13,11 @@ function SearchResults (state) {
     if(state.items !== undefined) {
         return(
             <Container>
-                {state.items.map((results) =>
-                    <h1>{results.title}</h1>
-                )};
+                <Row>
+                    {state.items.map((results) =>
+                        <h1>{results.title}</h1>
+                    )};
+                </Row>
             </Container>
         );
     }
