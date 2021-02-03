@@ -73,6 +73,7 @@ function Search () {
         <React.Fragment>
             <Jumbotron className='text-center'>
                 <h1>Search Vinyl Records</h1>
+                <p className='lead text-muted'>Find vinyl records to add to your collection or wishlist.</p>
                 <form>
                     <label> {''}
                     <input
