@@ -2,6 +2,7 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
@@ -16,6 +17,9 @@ function SearchResults (state) {
                 <Row>
                     {state.items.map((results) =>
                         <Col key={results.id} style={{ padding: '1rem' }}>
+                            <Card style={{ width: '12rem' }}>
+
+                            </Card>
                         </Col>
                     )};
                 </Row>
