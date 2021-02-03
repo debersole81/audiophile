@@ -1,4 +1,9 @@
 import React from 'react';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 
 function SearchResults (state) {
@@ -7,11 +12,11 @@ function SearchResults (state) {
 
     if(state.items !== undefined) {
         return(
-            <div>
+            <Container>
                 {state.items.map((results) =>
                     <h1>{results.title}</h1>
                 )};
-            </div>
+            </Container>
         );
     }
 
