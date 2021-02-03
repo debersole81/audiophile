@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Jumbotron from 'react-bootstrap/Jumbotron';
+import Button from 'react-bootstrap/Button';
 
 
 
@@ -74,17 +75,13 @@ function Search () {
             <Jumbotron className='text-center'>
                 <h1>Search Vinyl Records</h1>
                 <p className='lead text-muted'>Find vinyl records to add to your collection or wishlist.</p>
-                <form>
-                    <label> {''}
-                    <input
-                        type='text'
-                        name='search'
-                        placeholder='Enter album or artist name to get started'
-                        onChange={handleSearchChange}
-                    />
-                    </label>
-                    <button onClick={handleSubmit}>Go!</button>                
-                </form>
+                    <Form>
+                        <Form.Group className='Form'>
+                            <Form.Label srOnly>Search</Form.Label>
+                            <Form.Control className='col-sm-8' type='text' name='search' placeholder='Type an album or artist name.' onChange={handleSearchChange}/>
+                            <Button variant='secondary' type='submit' size='md' onClick={handleSubmit}>Go!</Button>
+                        </Form.Group>
+                    </Form>
             </Jumbotron>            
             <SearchResults items={items}/>
         </React.Fragment>
