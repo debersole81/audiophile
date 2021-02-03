@@ -1,32 +1,88 @@
-import React, {useState, useEffect} from "react";
+import React, { useState } from 'react';
+import callDiscogsAPI from '../CallDiscogsAPI'
+import SearchResults from './SearchResults';
+
+
+
 
 function Search () {
     
-    const [artists, setArtists] = useState([]); //artist state manager
+    /*State managers*/
+    const [search, setSearch] = useState('');
+    const [items, setItems] = useState();
+    // const [apiTimeoutElapse, setApiTimeoutElapse] = useState(true);
+    // const [error, setError] = useState(null);
+    // const [isLoaded, setIsLoaded] = useState(false);
 
-    useEffect(() => { //runs the fetchItems function after the component mounts
-        fetchItems();
-    }, []); //empty brackets ensures that useEffect will only run after the component mounts
 
+    /**Change handlers*/    
     
-    const fetchItems = async () => { //makes an async call to discogs api
-        const data = await fetch ( //fetches data from discogs api and assigns it to a data variable
-            `https://api.discogs.com/releases/249504`
-        );
+    /**Search form onChange handler*/
+    const handleSearchChange = (e) => {
+        e.preventDefault();
+        
+        setSearch({
+            [e.target.name]: e.target.value
+        });
+        
+        // if(apiTimeoutElapse && search.length > 4) {
+          
+        // //    useEffect(() => {
 
-        const items = await data.json(); //converts data from fetchItems to .json
-        console.log(items);
+        // //    }
+           
+        
+        // /**Call discogsAPI (search, per_page, page(use default value as 1))*/
 
-        setArtists(items.artists); //sets artist state from artist data fetched from discogs API
+
+
+        //     setApiTimeoutElapse(false);
+
+            
+        // }
+    
+        // setTimeout(() => {
+        //     setApiTimeoutElapse(true);
+        // }, 1000);
     };
 
+    console.log(search.search);
+    console.log(items);
+    
+    /**Search form button onClick handler*/
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        /**Call Discogs API*/
+        callDiscogsAPI(search.search)
+        .then(res => res.json())
+        .then(
+            (result) => {
+                setItems(result.results);
+                console.log(result);
+            }
+        );
+
+    }
+
+    
     return(
         <div>
-            {artists.map(artist => ( //maps through artists array and returns key/value data for each artist
-                <h1 key={artist.id}>{artist.name}</h1> //displays artist name in header
-            ))}
+            <h1>Search</h1>
+            <form>
+                <label> {''}
+                <input
+                    type='text'
+                    name='search'
+                    placeholder='Enter album or artist name to get started'
+                    onChange={handleSearchChange}
+                />
+                </label>
+                <button onClick={handleSubmit}>Go!</button>                
+            </form>
+            <SearchResults items={items}/>            
         </div>
     );
-}
+};
 
 export default Search;
