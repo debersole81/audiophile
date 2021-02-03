@@ -71,7 +71,8 @@ function Search () {
     
     return(
         <Container>
-            <h1>Search</h1>
+            <Jumbotron className='text-center'>
+            <h1>Search Vinyl Records</h1>
             <form>
                 <label> {''}
                 <input
@@ -83,7 +84,8 @@ function Search () {
                 </label>
                 <button onClick={handleSubmit}>Go!</button>                
             </form>
-            <SearchResults items={items}/>            
+            </Jumbotron>            
+            <SearchResults items={items}/>
         </Container>
     );
 };
