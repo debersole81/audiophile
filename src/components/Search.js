@@ -70,23 +70,23 @@ function Search () {
 
     
     return(
-        <Container>
+        <React.Fragment>
             <Jumbotron className='text-center'>
-            <h1>Search Vinyl Records</h1>
-            <form>
-                <label> {''}
-                <input
-                    type='text'
-                    name='search'
-                    placeholder='Enter album or artist name to get started'
-                    onChange={handleSearchChange}
-                />
-                </label>
-                <button onClick={handleSubmit}>Go!</button>                
-            </form>
+                <h1>Search Vinyl Records</h1>
+                <form>
+                    <label> {''}
+                    <input
+                        type='text'
+                        name='search'
+                        placeholder='Enter album or artist name to get started'
+                        onChange={handleSearchChange}
+                    />
+                    </label>
+                    <button onClick={handleSubmit}>Go!</button>                
+                </form>
             </Jumbotron>            
             <SearchResults items={items}/>
-        </Container>
+        </React.Fragment>
     );
 };
 
