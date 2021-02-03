@@ -15,7 +15,8 @@ function SearchResults (state) {
             <Container>
                 <Row>
                     {state.items.map((results) =>
-                        <h1>{results.title}</h1>
+                        <Col key={results.id} style={{ padding: '1rem' }}>
+                        </Col>
                     )};
                 </Row>
             </Container>
