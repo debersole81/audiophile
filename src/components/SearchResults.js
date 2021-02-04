@@ -1,11 +1,9 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
 
 
 function SearchResults (state) {
@@ -23,6 +21,10 @@ function SearchResults (state) {
                                 <Card.Body>
                                     <Card.Title className='text-truncate'>{results.title.split(' - ')[1]}</Card.Title>
                                     <Card.Subtitle className='mb-2 text-muted'>{results.title.split(' - ')[0]}</Card.Subtitle>   
+                                    <Card.Text>
+                                        {results.label[0]}<br/>
+                                        {results.year}<br/>
+                                    </Card.Text>
                                 </Card.Body>
                             </Card>
                         </Col>
