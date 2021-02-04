@@ -13,7 +13,7 @@ function Search () {
     /*State managers*/
     const [search, setSearch] = useState('');
     const [items, setItems] = useState();
-    const [pages, setPages] = useState();
+    const [page, setPage] = useState();
     const [totalPages, setTotalPages] = useState();
     // const [apiTimeoutElapse, setApiTimeoutElapse] = useState(true);
     // const [error, setError] = useState(null);
