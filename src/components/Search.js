@@ -11,14 +11,13 @@ import Button from 'react-bootstrap/Button'
 function Search () {
     
     /*State managers*/
-    const [search, setSearch] = useState('');
+    const [search, setSearch] = useState(''); //Is it cheaper (on resources) to have as few useState calls as possible?
     const [items, setItems] = useState();
     const [page, setPage] = useState();
     const [totalPages, setTotalPages] = useState();
     // const [apiTimeoutElapse, setApiTimeoutElapse] = useState(true);
     // const [error, setError] = useState(null);
     // const [isLoaded, setIsLoaded] = useState(false);
-
 
     /**Change handlers*/    
     
@@ -50,10 +49,7 @@ function Search () {
         //     setApiTimeoutElapse(true);
         // }, 1000);
     };
-
-    console.log(search.search);
-    console.log(items);
-    
+ 
     /**Search form button onSubmit handler*/
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -64,14 +60,13 @@ function Search () {
         .then(
             (result) => {
                 setItems(result.results);
+                setPage(result.pagination.page);
+                setTotalPages(result.pagination.pages);
                 console.log(result);
-                console.log(result.pagination.pages);
             }
         );
 
     };
-
-    console.log(items);
 
     /**Pagination next page handler*/
     const handleNextPage = (e) => {
