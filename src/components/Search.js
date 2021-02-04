@@ -62,6 +62,7 @@ function Search () {
         .then(
             (result) => {
                 setItems(result.results);
+                console.log(result);
             }
         );
 
@@ -74,10 +75,10 @@ function Search () {
                 <h1>Search Vinyl Records</h1>
                 <p className='lead text-muted'>Find vinyl records to add to your collection or wishlist.</p>
                     <Form className='form-inline justify-content-center'>
-                        <Form.Group>
+                        <Form.Group className='form-group'>
                             <Form.Label srOnly>Search</Form.Label>
-                            <Form.Control className='col-sm-8' type='text' name='search' placeholder='Type an album or artist name.' onChange={handleSearchChange}/>
-                            <Button variant='secondary' type='submit' size='md' onClick={handleSubmit}>Go!</Button>
+                            <Form.Control className='form-control' type='text' name='search' placeholder='Type an album or artist name.' onChange={handleSearchChange}/>
+                            <Button className='btn' variant='secondary' type='submit' size='md' onClick={handleSubmit}>Go!</Button>
                         </Form.Group>
                     </Form>
             </Jumbotron>            
