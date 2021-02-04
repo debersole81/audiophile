@@ -72,18 +72,18 @@ function Search () {
     const handleNextPage = (e) => {
         e.preventDefault();
 
-        // const page = (result.pagination.page < result.pagination.pages) ? result.pagination.page++ : result.pagination.page;
+        const pageNum = (page < totalPages) ? page++ : page;
             
-        // /**Call Discogs API*/
-        // callDiscogsAPI(search.search, page)
-        // .then(res => res.json())
-        // .then(
-        //     (result) => {
-        //         setItems(result.results);
-        //         console.log(result);
-        //         console.log(result.pagination.page);
-        //     }
-        // );
+        /**Call Discogs API*/
+        callDiscogsAPI(search.search, pageNum)
+        .then(res => res.json())
+        .then(
+            (result) => {
+                setItems(result.results);
+                setPage(result.pagination.page);
+                setTotalPages(result.pagination.pages);
+            }
+        );
     }
 
     
