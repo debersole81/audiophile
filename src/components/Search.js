@@ -13,6 +13,8 @@ function Search () {
     /*State managers*/
     const [search, setSearch] = useState('');
     const [items, setItems] = useState();
+    const [pages, setPages] = useState();
+    const [totalPages, setTotalPages] = useState();
     // const [apiTimeoutElapse, setApiTimeoutElapse] = useState(true);
     // const [error, setError] = useState(null);
     // const [isLoaded, setIsLoaded] = useState(false);
@@ -52,7 +54,7 @@ function Search () {
     console.log(search.search);
     console.log(items);
     
-    /**Search form button onClick handler*/
+    /**Search form button onSubmit handler*/
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -63,9 +65,30 @@ function Search () {
             (result) => {
                 setItems(result.results);
                 console.log(result);
+                console.log(result.pagination.pages);
             }
         );
 
+    };
+
+    console.log(items);
+
+    /**Pagination next page handler*/
+    const handleNextPage = (e) => {
+        e.preventDefault();
+
+        // const page = (result.pagination.page < result.pagination.pages) ? result.pagination.page++ : result.pagination.page;
+            
+        // /**Call Discogs API*/
+        // callDiscogsAPI(search.search, page)
+        // .then(res => res.json())
+        // .then(
+        //     (result) => {
+        //         setItems(result.results);
+        //         console.log(result);
+        //         console.log(result.pagination.page);
+        //     }
+        // );
     }
 
     
