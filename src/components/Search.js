@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import callDiscogsAPI from '../CallDiscogsAPI'
 import SearchResults from './SearchResults';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Jumbotron from 'react-bootstrap/Jumbotron';
-import Button from 'react-bootstrap/Button';
+import Button from 'react-bootstrap/Button'
 
 
 
@@ -75,8 +74,8 @@ function Search () {
             <Jumbotron className='text-center'>
                 <h1>Search Vinyl Records</h1>
                 <p className='lead text-muted'>Find vinyl records to add to your collection or wishlist.</p>
-                    <Form>
-                        <Form.Group className='Form'>
+                    <Form className='form-inline justify-content-center'>
+                        <Form.Group>
                             <Form.Label srOnly>Search</Form.Label>
                             <Form.Control className='col-sm-8' type='text' name='search' placeholder='Type an album or artist name.' onChange={handleSearchChange}/>
                             <Button variant='secondary' type='submit' size='md' onClick={handleSubmit}>Go!</Button>
