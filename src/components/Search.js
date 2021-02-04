@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import callDiscogsAPI from '../CallDiscogsAPI'
 import SearchResults from './SearchResults';
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Button from 'react-bootstrap/Button'
