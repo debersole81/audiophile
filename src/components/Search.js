@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import callDiscogsAPI from '../CallDiscogsAPI'
 import SearchResults from './SearchResults';
+import Pagination from './Pagination'
 import Form from 'react-bootstrap/Form';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Button from 'react-bootstrap/Button'
@@ -84,6 +85,12 @@ function Search () {
         );
     }
 
+    /**Passing props*/
+    const passingProps = {
+        items: items,
+        currentPage: currentPage,
+        totalPages: totalPages,
+    };
     
     return(
         <React.Fragment>
@@ -98,7 +105,8 @@ function Search () {
                         </Form.Group>
                     </Form>
             </Jumbotron>            
-            <SearchResults items={items}/>
+            <SearchResults {...passingProps}/>
+            <Pagination {...passingProps}/>
         </React.Fragment>
     );
 };
