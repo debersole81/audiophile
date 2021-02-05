@@ -12,8 +12,7 @@ function Search () {
     /*State managers*/
     const [search, setSearch] = useState(''); //Is it cheaper (on resources) to have as few useState calls as possible?
     const [items, setItems] = useState();
-    const [currentPage, setCurrentPage] = useState();
-    const [totalPages, setTotalPages] = useState();
+    const [pagination, setPagination] = useState([]);
     // const [apiTimeoutElapse, setApiTimeoutElapse] = useState(true);
     // const [error, setError] = useState(null);
     // const [isLoaded, setIsLoaded] = useState(false);
@@ -59,19 +58,21 @@ function Search () {
         .then(
             (result) => {
                 setItems(result.results);
-                setCurrentPage(result.pagination.page);
-                setTotalPages(result.pagination.pages);
+                setPagination(result.pagination);
                 console.log(result);
             }
         );
 
     };
 
+    console.log(items);
+    console.log(pagination);
+
     /**Pagination next page handler*/
     const handleNextPage = (e) => {
         e.preventDefault();
 
-        let pageNum = (currentPage < totalPages) ? currentPage++ : currentPage;
+        let pageNum = (pagination.page < pagination.pages) ? pagination.page + 1 : pagination.page;
             
         /**Call Discogs API*/
         callDiscogsAPI(search.search, pageNum)
@@ -79,8 +80,7 @@ function Search () {
         .then(
             (result) => {
                 setItems(result.results);
-                setCurrentPage(result.pagination.page);
-                setTotalPages(result.pagination.pages);
+                setPagination(result.pagination);
             }
         );
     }
@@ -88,8 +88,7 @@ function Search () {
     /**Passing props*/
     const passingProps = {
         items: items,
-        currentPage: currentPage,
-        totalPages: totalPages,
+        pagination: pagination,
         handleNextPage: handleNextPage,
     };
     
