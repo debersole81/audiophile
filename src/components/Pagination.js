@@ -2,18 +2,21 @@ import React from 'react';
 
 function Pagination (props) {
 
+    console.log(props.pagination);
+    console.log(props.pagination.page);
+
     /**Build page links*/
     const pageLinks = []
 
-    for(let i = 1; i <= props.totalPages + 1; i++){
-        let active = (props.currentPage === i) ? 'active' : '';
+    for(let i = 1; i <= props.pagination.pages + 1; i++){
+        let active = (props.pagination.page === i) ? 'active' : '';
         
-        pageLinks.push(<li key={i} className={`page item ${active}`} onClick={props.handleNextPage}><a href='#'>{i}</a></li>)
+        pageLinks.push(<li key={i} className={`page-item ${active}`}><button onClick={props.handleNextPage}>{i}</button></li>)
     };
 
     console.log(pageLinks);
 
-    if(props.totalPages > 1){
+    if(props.pagination.pages > 1){
         return(
         <div className='container'>
             <div className='row'>
