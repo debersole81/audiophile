@@ -8,12 +8,20 @@ function Pagination (props) {
     for(let i = 1; i <= props.totalPages + 1; i++){
         let active = (props.currentPage === i) ? 'active' : '';
         
-        pageLinks.push(<li key={i} className={`page item ${active}`} >{i}</li>)
+        pageLinks.push(<li key={i} className={`page item ${active}`} onClick={props.handleNextPage}><a href='#'>{i}</a></li>)
     };
+
+    console.log(pageLinks);
 
     if(props.totalPages > 1){
         return(
-        <h1>Pagination links</h1>
+        <div className='container'>
+            <div className='row'>
+                <ul className='pagination'>
+                    { pageLinks }
+                </ul>
+            </div>
+        </div>
         )
     };
 
