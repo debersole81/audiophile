@@ -6,14 +6,12 @@ import Jumbotron from 'react-bootstrap/Jumbotron';
 import Button from 'react-bootstrap/Button'
 
 
-
-
 function Search () {
     
     /*State managers*/
     const [search, setSearch] = useState(''); //Is it cheaper (on resources) to have as few useState calls as possible?
     const [items, setItems] = useState();
-    const [page, setPage] = useState();
+    const [currentPage, setCurrentPage] = useState();
     const [totalPages, setTotalPages] = useState();
     // const [apiTimeoutElapse, setApiTimeoutElapse] = useState(true);
     // const [error, setError] = useState(null);
@@ -60,7 +58,7 @@ function Search () {
         .then(
             (result) => {
                 setItems(result.results);
-                setPage(result.pagination.page);
+                setCurrentPage(result.pagination.page);
                 setTotalPages(result.pagination.pages);
                 console.log(result);
             }
@@ -72,7 +70,7 @@ function Search () {
     const handleNextPage = (e) => {
         e.preventDefault();
 
-        const pageNum = (page < totalPages) ? page++ : page;
+        const pageNum = (currentPage < totalPages) ? currentPage++ : currentPage;
             
         /**Call Discogs API*/
         callDiscogsAPI(search.search, pageNum)
@@ -80,7 +78,7 @@ function Search () {
         .then(
             (result) => {
                 setItems(result.results);
-                setPage(result.pagination.page);
+                setCurrentPage(result.pagination.page);
                 setTotalPages(result.pagination.pages);
             }
         );
