@@ -5,15 +5,15 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 
 
-function SearchResults (state) { //why is this state here and not props (comapre against pagination that is accessing object items)
+function SearchResults (props) {
 
-    console.log(state.items);
+    console.log(props.items);
 
-    if(state.items !== undefined) {
+    if(Array.isArray(props.items) && props.items.length) {
         return(
             <Container>
                 <Row>
-                    {state.items.map((results) =>
+                    {props.items.map((results) =>
                         <Col key={results.id} style={{ padding: '1rem' }}>
                             <Card style={{ width: '12rem' }}>
                                 <Card.Img variant='top' src={results.cover_image} style={{ height: '12rem' }} alt='Album Cover Art'/>
