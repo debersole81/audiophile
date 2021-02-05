@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 
 
-function SearchResults (state) {  //should this be state or props?
+function SearchResults (state) { //why is this state here and not props (comapre against pagination that is accessing object items)
 
     console.log(state.items);
 
@@ -19,7 +19,7 @@ function SearchResults (state) {  //should this be state or props?
                                 <Card.Img variant='top' src={results.cover_image} style={{ height: '12rem' }} alt='Album Cover Art'/>
                                 <Card.Body>
                                     <Card.Title className='text-truncate'>{results.title.split(' - ')[1]}</Card.Title>
-                                    <Card.Subtitle className='mb-2 text-muted'>{results.title.split(' - ')[0]}</Card.Subtitle>   
+                                    <Card.Subtitle className='mb-2 text-truncate text-muted'>{results.title.split(' - ')[0]}</Card.Subtitle>   
                                     <Card.Text>
                                         {results.label[0]}<br/>
                                         {results.year}<br/>
