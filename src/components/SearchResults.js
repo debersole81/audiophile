@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 
 
-function SearchResults (state) {
+function SearchResults (state) {  //should this be state or props?
 
     console.log(state.items);
 
