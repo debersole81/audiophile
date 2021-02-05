@@ -71,7 +71,7 @@ function Search () {
     const handleNextPage = (e) => {
         e.preventDefault();
 
-        const pageNum = (currentPage < totalPages) ? currentPage++ : currentPage;
+        let pageNum = (currentPage < totalPages) ? currentPage++ : currentPage;
             
         /**Call Discogs API*/
         callDiscogsAPI(search.search, pageNum)
@@ -90,6 +90,7 @@ function Search () {
         items: items,
         currentPage: currentPage,
         totalPages: totalPages,
+        handleNextPage: handleNextPage,
     };
     
     return(
