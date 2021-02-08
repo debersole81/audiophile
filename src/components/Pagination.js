@@ -21,7 +21,7 @@ function paginationFunc (props) {
     if(props.pagination.pages > 1){
         return(
         <React.Fragment>
-            <Pagination className='mt-3'>
+            <Pagination className='mt-3 justify-content-md-center'>
                 <Pagination.First>First</Pagination.First>
                 <Pagination.Prev>Previous</Pagination.Prev>
                 <Pagination.Item>{1}</Pagination.Item>
