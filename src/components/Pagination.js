@@ -22,7 +22,7 @@ function paginationFunc (props) {
         return(
         <React.Fragment>
             <Pagination className='mt-3 justify-content-md-center'>
-                <Pagination.First>First</Pagination.First>
+                <Pagination.First className={props.pagination.page === 1 ? 'disabled' : ''}>First</Pagination.First>
                 <Pagination.Prev>Previous</Pagination.Prev>
                 <Pagination.Item>{1}</Pagination.Item>
                 <Pagination.Next>Next</Pagination.Next>
