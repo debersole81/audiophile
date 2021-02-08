@@ -21,7 +21,13 @@ function paginationFunc (props) {
     if(props.pagination.pages > 1){
         return(
         <React.Fragment>
-            
+            <Pagination className='mt-3'>
+                <Pagination.First>First</Pagination.First>
+                <Pagination.Prev>Previous</Pagination.Prev>
+                <Pagination.Item>{1}</Pagination.Item>
+                <Pagination.Next>Next</Pagination.Next>
+                <Pagination.Last>Last</Pagination.Last>
+            </Pagination>
         </React.Fragment>
         )
     };
