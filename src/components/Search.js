@@ -69,7 +69,7 @@ function Search () {
     console.log(pagination);
 
     /**Pagination next page handler*/
-    const handleNextPage = (e) => {
+    const handlePagination = (e) => {
         e.preventDefault();
 
         let pageNum = (pagination.page < pagination.pages) ? pagination.page + 1 : pagination.page;
@@ -89,7 +89,7 @@ function Search () {
     const passingProps = {
         items: items,
         pagination: pagination,
-        handleNextPage: handleNextPage,
+        handlePagination: handlePagination,
     };
     
     return(
