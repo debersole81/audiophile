@@ -1,6 +1,7 @@
 import React from 'react';
+import Pagination from 'react-bootstrap/Pagination';
 
-function Pagination (props) {
+function paginationFunc (props) {
 
     console.log(props);
     console.log(props.pagination);
@@ -19,13 +20,9 @@ function Pagination (props) {
 
     if(props.pagination.pages > 1){
         return(
-        <div className='container'>
-            <div className='row'>
-                <ul className='pagination'>
-                    { pageLinks }
-                </ul>
-            </div>
-        </div>
+        <React.Fragment>
+            
+        </React.Fragment>
         )
     };
 
@@ -34,4 +31,4 @@ function Pagination (props) {
 }
 
 
-export default Pagination;
+export default paginationFunc;
