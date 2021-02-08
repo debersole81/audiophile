@@ -27,7 +27,7 @@ function SearchResults (props) {
                                 </Card.Body>
                             </Card>
                         </Col>
-                    )};
+                    )}
                 </Row>
             </Container>
         );
