@@ -20,7 +20,7 @@ function Search () {
 
     /**Change handlers*/    
     
-    /**Search form onChange handler*/
+    /**Search form change handler*/
     const handleSearchChange = (e) => {
         e.preventDefault();
         
@@ -49,7 +49,7 @@ function Search () {
         // }, 1000);
     };
  
-    /**Search form button onSubmit handlers*/
+    /**Search form button handler*/
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -69,13 +69,13 @@ function Search () {
     console.log(data);
     console.log(pagination);
 
-    /**Pagination handler*/
-    const handlePagination = () => {
+    /**Pagination handlers*/
+    const handleCurrentPage = (e) => {
         
-        console.log(pagination.page);
+        setCurrentPage(e.target.id);
 
-        // let pageNum = (pagination.page < pagination.pages) ? pagination.page + 1 : pagination.page;
-            
+        const pageNum = currentPage;
+
         /**Call Discogs API*/
         // callDiscogsAPI(search.search, pagination.page)
         // .then(res => res.json())
@@ -92,7 +92,7 @@ function Search () {
         data: data,
         pagination: pagination,
         setPagination: setPagination,
-        handlePagination: handlePagination,
+        handleCurrentPage: handleCurrentPage,
     };
     
     return(
