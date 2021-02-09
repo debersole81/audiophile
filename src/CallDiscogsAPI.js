@@ -1,6 +1,6 @@
 /**Abstraction for Discogs API call*/
 
-const callDiscogsAPI = (q, page, per_page = 24) => {
+const callDiscogsAPI = (q, page, per_page) => {
 
     /**Build Query*/
     const buildQuery = {
