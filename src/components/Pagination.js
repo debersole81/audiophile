@@ -8,12 +8,12 @@ function paginationFunc (props) {
     console.log(props.pagination.page);
 
     /**Build array to store each page as a number*/
-    const currentPage = props.pagination.page
+    const activePage = props.pagination.page
     const pages = []
 
     for(let i = 1; i <= props.pagination.pages + 1; i++){    
         pages.push(
-            <Pagination.Item key={i} className={(i === currentPage ? 'active' : '')}>
+            <Pagination.Item key={i} className={(i === activePage ? 'active' : null)}>
                 {i}
             </Pagination.Item>
         )
