@@ -10,9 +10,10 @@ import Button from 'react-bootstrap/Button'
 function Search () {
     
     /*State managers*/
-    const [search, setSearch] = useState(''); //Is it cheaper (on resources) to have as few useState calls as possible?
+    const [search, setSearch] = useState(''); 
     const [data, setData] = useState([]);
     const [pagination, setPagination] = useState({});
+    const [currentPage, setCurrentPage] = useState(1);
     // const [apiTimeoutElapse, setApiTimeoutElapse] = useState(true);
     // const [error, setError] = useState(null);
     // const [isLoaded, setIsLoaded] = useState(false);
