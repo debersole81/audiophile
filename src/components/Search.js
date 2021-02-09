@@ -11,7 +11,7 @@ function Search () {
     
     /*State managers*/
     const [search, setSearch] = useState(''); //Is it cheaper (on resources) to have as few useState calls as possible?
-    const [items, setItems] = useState([]);
+    const [data, setData] = useState([]);
     const [pagination, setPagination] = useState({});
     // const [apiTimeoutElapse, setApiTimeoutElapse] = useState(true);
     // const [error, setError] = useState(null);
@@ -48,7 +48,7 @@ function Search () {
         // }, 1000);
     };
  
-    /**Search form button onSubmit handler*/
+    /**Search form button onSubmit handlers*/
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -57,7 +57,7 @@ function Search () {
         .then(res => res.json())
         .then(
             (result) => {
-                setItems(result.results);
+                setData(result.results);
                 setPagination(result.pagination);
                 console.log(result);
             }
@@ -65,30 +65,32 @@ function Search () {
 
     };
 
-    console.log(items);
+    console.log(data);
     console.log(pagination);
 
-    /**Pagination next page handler*/
-    const handlePagination = (e) => {
-        e.preventDefault();
+    /**Pagination handler*/
+    const handlePagination = () => {
+        
+        console.log(pagination.page);
 
-        let pageNum = (pagination.page < pagination.pages) ? pagination.page + 1 : pagination.page;
+        // let pageNum = (pagination.page < pagination.pages) ? pagination.page + 1 : pagination.page;
             
         /**Call Discogs API*/
-        callDiscogsAPI(search.search, pageNum)
-        .then(res => res.json())
-        .then(
-            (result) => {
-                setItems(result.results);
-                setPagination(result.pagination);
-            }
-        );
+        // callDiscogsAPI(search.search, pagination.page)
+        // .then(res => res.json())
+        // .then(
+        //     (result) => {
+        //         setData(result.results);
+        //         setPagination(result.pagination);
+        //     }
+        // );
     }
 
     /**Passing props*/
     const passingProps = {
-        items: items,
+        data: data,
         pagination: pagination,
+        setPagination: setPagination,
         handlePagination: handlePagination,
     };
     
