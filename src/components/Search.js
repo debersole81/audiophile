@@ -13,7 +13,6 @@ function Search () {
     const [search, setSearch] = useState(''); 
     const [data, setData] = useState([]);
     const [pagination, setPagination] = useState({});
-    const [currentPage, setCurrentPage] = useState(1);
     // const [apiTimeoutElapse, setApiTimeoutElapse] = useState(true);
     // const [error, setError] = useState(null);
     // const [isLoaded, setIsLoaded] = useState(false);
@@ -71,20 +70,20 @@ function Search () {
 
     /**Pagination handlers*/
     const handleCurrentPage = (e) => {
+        e.preventDefault();
         
-        setCurrentPage(e.target.id);
-
-        const pageNum = currentPage;
+        const pageNum = e.target.id;
+        console.log(pageNum);
 
         /**Call Discogs API*/
-        // callDiscogsAPI(search.search, pagination.page)
-        // .then(res => res.json())
-        // .then(
-        //     (result) => {
-        //         setData(result.results);
-        //         setPagination(result.pagination);
-        //     }
-        // );
+        callDiscogsAPI(search.search, pageNum)
+        .then(res => res.json())
+        .then(
+            (result) => {
+                setData(result.results);
+                setPagination(result.pagination);
+            }
+        );
     }
 
     /**Passing props*/
