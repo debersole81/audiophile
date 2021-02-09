@@ -7,14 +7,15 @@ import Card from 'react-bootstrap/Card';
 
 function SearchResults (props) {
 
-    console.log(props.items);
+    console.log(props.data);
 
-    if(Array.isArray(props.items) && props.items.length) {
+    if(Array.isArray(props.data) && props.data.length) {
         return(
             <Container>
                 <Row>
-                    {props.items.map((results) =>
+                    {props.data.map((results, index) =>
                         <Col key={results.id} style={{ padding: '1rem' }}>
+                            <ul>{index}</ul>
                             <Card style={{ width: '12rem' }}>
                                 <Card.Img variant='top' src={results.cover_image} style={{ height: '12rem' }} alt='Album Cover Art'/>
                                 <Card.Body>
