@@ -11,9 +11,9 @@ function paginationFunc (props) {
     const activePage = props.pagination.page
     const pages = []
 
-    for(let i = 1; i <= props.pagination.pages + 1; i++){    
+    for(let i = 1; i <= props.pagination.pages; i++){    
         pages.push(
-            <Pagination.Item key={i} className={(i === activePage ? 'active' : null)}>
+            <Pagination.Item key={i} id={i} className={(i === activePage ? 'active' : null)} onClick={props.handleCurrentPage}>
                 {i}
             </Pagination.Item>
         )
