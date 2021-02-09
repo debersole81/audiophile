@@ -7,16 +7,14 @@ function paginationFunc (props) {
     console.log(props.pagination);
     console.log(props.pagination.page);
 
-    /**Build page links*/
-    const pageLinks = []
+    /**Build array to store each page as a number*/
+    const pages = []
 
-    for(let i = 1; i <= props.pagination.pages + 1; i++){
-        let active = (props.pagination.page === i) ? 'active' : '';
-        
-        pageLinks.push(<li key={i} className={`page-item ${active}`}><button onClick={props.handleNextPage}>{i}</button></li>)
+    for(let i = 1; i <= props.pagination.pages + 1; i++){    
+        pages.push(i)
     };
 
-    console.log(pageLinks);
+    console.log(pages);
 
     if(props.pagination.pages > 1){
         return(
@@ -24,8 +22,8 @@ function paginationFunc (props) {
             <Pagination className='mt-3 justify-content-md-center'>
                 <Pagination.First className={props.pagination.page === 1 ? 'disabled' : ''}>First</Pagination.First>
                 <Pagination.Prev className={props.pagination.page === 1 ? 'disable' : ''}>Previous</Pagination.Prev>
-                <Pagination.Item>{1}</Pagination.Item>
-                <Pagination.Next className={props.pagination.page === props.pagination.pages ? 'disabled' : ''}>Next</Pagination.Next>
+                <Pagination.Item>{pages}</Pagination.Item>
+                <Pagination.Next className={props.pagination.page === props.pagination.pages ? 'disabled' : ''} onClick={() => props.handlePagination(props.pagination.page + 2)}>Next</Pagination.Next>
                 <Pagination.Last className={props.pagination.page === props.pagination.pages ? 'disabled' : ''}>Last</Pagination.Last>
             </Pagination>
         </React.Fragment>
