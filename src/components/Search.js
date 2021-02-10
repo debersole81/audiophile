@@ -13,6 +13,9 @@ function Search () {
     const [search, setSearch] = useState(''); 
     const [data, setData] = useState([]);
     const [pagination, setPagination] = useState({});
+    const [pageNumberLimit, setPageNumberLimit] = useState(5);
+    const [minPageNumberLimit, setMinPageNumberLimit] = useState(0);
+    const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(5);
     // const [apiTimeoutElapse, setApiTimeoutElapse] = useState(true);
     // const [error, setError] = useState(null);
     // const [isLoaded, setIsLoaded] = useState(false);
