@@ -137,6 +137,24 @@ function Search () {
         );  
     };
 
+    /**Last page handler. Fires when Pagniation.Last is clicked in Pagination.js*/
+    const handleLastPage = (e) => {
+        e.preventDefault();
+
+        const pageNum = pagination.pages;
+
+        /**Call Discogs API*/
+        callDiscogsAPI(search.search, pageNum)
+        .then(res => res.json())
+        .then(
+            (result) => {
+                setData(result.results);
+                setPagination(result.pagination);
+            }
+        );  
+    };
+
+
     /**Passing props*/
     const passingProps = {
         data: data,
@@ -146,6 +164,7 @@ function Search () {
         handleFirstPage: handleFirstPage,
         handlePrevPage: handlePrevPage,
         handleNextPage: handleNextPage,
+        handleLastPage: handleLastPage,
     };
     
     return(
