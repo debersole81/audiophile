@@ -120,6 +120,23 @@ function Search () {
         );  
     };
 
+    /**Next page handler. Fires when Pagination.Next is clicked in Pagination.js*/
+    const handleNextPage = (e) => {
+        e.preventDefault();
+
+        const pageNum = (pagination.page < pagination.pages) ? pagination.pages + 1 : pagination.page;
+
+        /**Call Discogs API*/
+        callDiscogsAPI(search.search, pageNum)
+        .then(res => res.json())
+        .then(
+            (result) => {
+                setData(result.results);
+                setPagination(result.pagination);
+            }
+        );  
+    };
+
     /**Passing props*/
     const passingProps = {
         data: data,
@@ -128,6 +145,7 @@ function Search () {
         handleCurrentPage: handleCurrentPage,
         handleFirstPage: handleFirstPage,
         handlePrevPage: handlePrevPage,
+        handleNextPage: handleNextPage,
     };
     
     return(
