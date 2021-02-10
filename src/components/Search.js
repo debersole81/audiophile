@@ -124,7 +124,7 @@ function Search () {
     const handleNextPage = (e) => {
         e.preventDefault();
 
-        const pageNum = (pagination.page < pagination.pages) ? pagination.pages + 1 : pagination.page;
+        const pageNum = (pagination.page < pagination.pages) ? pagination.page + 1 : pagination.page;
 
         /**Call Discogs API*/
         callDiscogsAPI(search.search, pageNum)
