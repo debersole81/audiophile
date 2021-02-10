@@ -162,12 +162,14 @@ function Search () {
     const passingProps = {
         data: data,
         pagination: pagination,
-        setPagination: setPagination,
+        pageNumberLimit: pageNumberLimit,
+        minPageNumberLimit: minPageNumberLimit,
+        maxPageNumberLimit: maxPageNumberLimit,
         handleCurrentPage: handleCurrentPage,
         handleFirstPage: handleFirstPage,
         handlePrevPage: handlePrevPage,
         handleNextPage: handleNextPage,
-        handleLastPage: handleLastPage,
+        handleLastPage: handleLastPage,        
     };
     
     return(
