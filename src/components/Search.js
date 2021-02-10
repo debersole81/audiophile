@@ -118,6 +118,12 @@ function Search () {
 
         const pageNum = (pagination.page > 1) ? pagination.page - 1 : pagination.page;
 
+        /**Decrement min and max page number limits by 5*/
+        if((pageNum - 1) % pageNumberLimit === 0) {
+            setMinPageNumberLimit(minPageNumberLimit - pageNumberLimit);
+            setMaxPageNumberLimit(maxPageNumberLimit - pageNumberLimit)
+        }
+
         /**Call Discogs API*/
         callDiscogsAPI(search.search, pageNum)
         .then(res => res.json())
