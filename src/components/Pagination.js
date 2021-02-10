@@ -21,7 +21,7 @@ function paginationFunc (props) {
 
     console.log(pages);
 
-    if(props.pagination.pages > 1){
+    if(props.pagination.page < props.maxPageNumberLimit + 1 && props.pagination.page > props.minPageNumberLimit){
         return(
         <React.Fragment>
             <Pagination className='mt-3 justify-content-md-center'>
