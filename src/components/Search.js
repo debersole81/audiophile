@@ -84,9 +84,25 @@ function Search () {
                 setPagination(result.pagination);
             }
         );
-    }
+    };
 
-    
+    /**First page handler. First when first element is clicked in Pagination.js */
+    const handleFirstPage = (e) => {
+        e.preventDefault();
+
+        const pageNum = 1;
+
+        /**Call Discogs API*/
+        callDiscogsAPI(search.search, pageNum)
+        .then(res => res.json())
+        .then(
+            (result) => {
+                setData(result.results);
+                setPagination(result.pagination);
+            }
+        );       
+    };
+
 
     /**Passing props*/
     const passingProps = {
@@ -94,6 +110,7 @@ function Search () {
         pagination: pagination,
         setPagination: setPagination,
         handleCurrentPage: handleCurrentPage,
+        handleFirstPage: handleFirstPage,
     };
     
     return(
