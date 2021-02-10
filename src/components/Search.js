@@ -18,7 +18,6 @@ function Search () {
     // const [isLoaded, setIsLoaded] = useState(false);
 
     /**Change handlers*/    
-    
     /**Search form change handler*/
     const handleSearchChange = (e) => {
         e.preventDefault();
@@ -69,7 +68,8 @@ function Search () {
     console.log(pagination);
 
     /**Pagination handlers*/
-    const handleCurrentPage = (e) => {
+    /**Current page handler. Fires when a page number is clicked in Pagination.js*/
+    const handleCurrentPage = (e) => { 
         e.preventDefault();
         
         const pageNum = e.target.id;
@@ -85,6 +85,8 @@ function Search () {
             }
         );
     }
+
+    
 
     /**Passing props*/
     const passingProps = {
