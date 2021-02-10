@@ -28,7 +28,7 @@ function paginationFunc (props) {
                 <Pagination.First className={props.pagination.page === 1 ? 'disabled' : ''} onClick={props.handleFirstPage}>First</Pagination.First>
                 <Pagination.Prev className={props.pagination.page === 1 ? 'disabled' : ''} onClick={props.handlePrevPage}>Previous</Pagination.Prev>
                 {pages}
-                <Pagination.Next className={props.pagination.page === props.pagination.pages ? 'disabled' : ''} onClick={() => props.handlePagination(props.pagination.page + 2)}>Next</Pagination.Next>
+                <Pagination.Next className={props.pagination.page === props.pagination.pages ? 'disabled' : ''} onClick={props.handleNextPage}>Next</Pagination.Next>
                 <Pagination.Last className={props.pagination.page === props.pagination.pages ? 'disabled' : ''}>Last</Pagination.Last>
             </Pagination>
         </React.Fragment>
