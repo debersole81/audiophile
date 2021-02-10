@@ -25,7 +25,7 @@ function paginationFunc (props) {
         return(
         <React.Fragment>
             <Pagination className='mt-3 justify-content-md-center'>
-                <Pagination.First className={props.pagination.page === 1 ? 'disabled' : ''}>First</Pagination.First>
+                <Pagination.First className={props.pagination.page === 1 ? 'disabled' : ''} onClick={props.handleFirstPage}>First</Pagination.First>
                 <Pagination.Prev className={props.pagination.page === 1 ? 'disable' : ''}>Previous</Pagination.Prev>
                 {pages}
                 <Pagination.Next className={props.pagination.page === props.pagination.pages ? 'disabled' : ''} onClick={() => props.handlePagination(props.pagination.page + 2)}>Next</Pagination.Next>
