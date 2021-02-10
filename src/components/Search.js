@@ -95,6 +95,12 @@ function Search () {
 
         const pageNum = 1;
 
+        /**Set min and max page number limits to initial values*/
+        if(pageNum === 1) {
+            setMinPageNumberLimit(0);
+            setMaxPageNumberLimit(5);
+        };
+
         /**Call Discogs API*/
         callDiscogsAPI(search.search, pageNum)
         .then(res => res.json())
