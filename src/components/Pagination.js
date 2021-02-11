@@ -31,7 +31,7 @@ function paginationFunc (props) {
     };
 
     return(null);
-}
+};
 
 
 export default paginationFunc;
