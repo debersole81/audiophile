@@ -18,7 +18,7 @@ function SearchResults (props) {
                                 <Card.Body>
                                     <Card.Title className='text-truncate'>{results.title.split(' - ')[1]}</Card.Title>
                                     <Card.Subtitle className='mb-2 text-truncate text-muted'>{results.title.split(' - ')[0]}</Card.Subtitle>   
-                                    <Card.Text>
+                                    <Card.Text className='text-truncate'>
                                         {results.label[0]}<br/>
                                         {results.year}<br/>
                                     </Card.Text>
