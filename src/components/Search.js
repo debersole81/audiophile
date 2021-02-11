@@ -99,7 +99,7 @@ function Search () {
 
         const pageNum = 1;
 
-        /**Set min and max page number limits to initial values*/
+        /**Set min and max page number values to initial values*/
         setMinPaginationNum(0);
         setMaxPaginationNum(5);
         
@@ -120,7 +120,7 @@ function Search () {
 
         const pageNum = (pagination.page > 1) ? pagination.page - 1 : pagination.page;
 
-        /**Decrement min and max page number limits by 5*/
+        /**Decrement min and max page number values by 5*/
         if((pageNum) % paginationDisplayLimit === 0) {
             setMinPaginationNum(minPaginationNum - paginationDisplayLimit);
             setMaxPaginationNum(maxPaginationNum - paginationDisplayLimit)
@@ -142,6 +142,12 @@ function Search () {
         e.preventDefault();
 
         const pageNum = (pagination.page < pagination.pages) ? pagination.page + 1 : pagination.page;
+
+        /**Incrememnt min and max page number values by 5*/
+        if(pageNum > maxPaginationNum) {
+            setMinPaginationNum(minPaginationNum + paginationDisplayLimit);
+            setMaxPaginationNum(maxPaginationNum + paginationDisplayLimit);
+        }
 
         /**Call Discogs API*/
         callDiscogsAPI(search.search, pageNum)
