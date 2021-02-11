@@ -10,14 +10,14 @@ import Button from 'react-bootstrap/Button'
 function Search () {
     
     /**Global variables*/
+    
     /**Pagination display limit*/
     const paginationDisplayLimit = 5;
 
-    /*State managers*/
+    /*State variables*/
     const [search, setSearch] = useState(''); 
     const [data, setData] = useState([]);
     const [pagination, setPagination] = useState({});
-    // const [paginationDisplayLimit, setPaginationDisplayLimit] = useState(5); //change this to pageDisplayLimit. determine where to call setState (in search button submit handler).
     const [minPaginationNum, setMinPaginationNum] = useState(0);
     const [maxPaginationNum, setMaxPaginationNum] = useState(5);
     // const [apiTimeoutElapse, setApiTimeoutElapse] = useState(true);
@@ -25,6 +25,7 @@ function Search () {
     // const [isLoaded, setIsLoaded] = useState(false);
 
     /**Change handlers*/    
+    
     /**Search form change handler*/
     const handleSearchChange = (e) => {
         e.preventDefault();
@@ -71,16 +72,13 @@ function Search () {
 
     };
 
-    console.log(data);
-    console.log(pagination);
-
     /**Pagination handlers*/
+
     /**Current page handler. Fires when a page number is clicked in Pagination.js*/
     const handleCurrentPage = (e) => { 
         e.preventDefault();
         
         const pageNum = e.target.id;
-        console.log(pageNum);
 
         /**Call Discogs API*/
         callDiscogsAPI(search.search, pageNum)
@@ -91,6 +89,9 @@ function Search () {
                 setPagination(result.pagination);
             }
         );
+
+        /*Scroll to the top of the window after refreshing results*/
+        window.scrollTo(0,0);        
     };
 
     /**First page handler. Fires when Pagination.First is clicked in Pagination.js */
@@ -111,7 +112,10 @@ function Search () {
                 setData(result.results);
                 setPagination(result.pagination);
             }
-        );       
+        );
+        
+        /*Scroll to the top of the window after refreshing results*/
+        window.scrollTo(0,0);  
     };
 
     /**Previous page handler. Fires when Pagination.Prev is clicked in Pagination.js*/
@@ -134,7 +138,10 @@ function Search () {
                 setData(result.results);
                 setPagination(result.pagination);
             }
-        );  
+        );
+
+        /*Scroll to the top of the window after refreshing results*/
+        window.scrollTo(0,0);        
     };
 
     /**Next page handler. Fires when Pagination.Next is clicked in Pagination.js*/
@@ -157,7 +164,10 @@ function Search () {
                 setData(result.results);
                 setPagination(result.pagination);
             }
-        );  
+        );
+        
+        /*Scroll to the top of the window after refreshing results*/
+        window.scrollTo(0,0);        
     };
 
     /**Last page handler. Fires when Pagniation.Last is clicked in Pagination.js*/
@@ -166,9 +176,9 @@ function Search () {
 
         const pageNum = pagination.pages;
 
-        /**Use total number of pages from API call response to set min and max pagination number values*/
-        setMinPaginationNum((pagination.pages + 1) - paginationDisplayLimit);
-        setMaxPaginationNum(pagination.pages);
+        /**Set min and max pagination number values using the total number of pages returned from API call*/
+        setMinPaginationNum(pageNum - paginationDisplayLimit);
+        setMaxPaginationNum(pageNum);
 
         /**Call Discogs API*/
         callDiscogsAPI(search.search, pageNum)
@@ -178,9 +188,11 @@ function Search () {
                 setData(result.results);
                 setPagination(result.pagination);
             }
-        );  
+        );
+        
+        /*Scroll to the top of the window after refreshing results*/
+        window.scrollTo(0,0);        
     };
-
 
     /**Passing props*/
     const passingProps = {
