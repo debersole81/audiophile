@@ -7,8 +7,6 @@ import Card from 'react-bootstrap/Card';
 
 function SearchResults (props) {
 
-    console.log(props.data);
-
     if(Array.isArray(props.data) && props.data.length) {
         return(
             <Container>
