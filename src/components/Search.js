@@ -9,13 +9,17 @@ import Button from 'react-bootstrap/Button'
 
 function Search () {
     
+    /**Global variables*/
+    /**Pagination display limit*/
+    const paginationDisplayLimit = 5;
+
     /*State managers*/
     const [search, setSearch] = useState(''); 
     const [data, setData] = useState([]);
     const [pagination, setPagination] = useState({});
-    const [pageNumberLimit, setPageNumberLimit] = useState(5);
-    const [minPageNumberLimit, setMinPageNumberLimit] = useState(0);
-    const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(5);
+    // const [paginationDisplayLimit, setPaginationDisplayLimit] = useState(5); //change this to pageDisplayLimit. determine where to call setState (in search button submit handler).
+    const [minPaginationNum, setMinPaginationNum] = useState(0);
+    const [maxPaginationNum, setMaxPaginationNum] = useState(5);
     // const [apiTimeoutElapse, setApiTimeoutElapse] = useState(true);
     // const [error, setError] = useState(null);
     // const [isLoaded, setIsLoaded] = useState(false);
@@ -53,7 +57,7 @@ function Search () {
     /**Search form button handler*/
     const handleSubmit = (e) => {
         e.preventDefault();
-
+        
         /**Call Discogs API*/
         callDiscogsAPI(search.search)
         .then(res => res.json())
@@ -96,11 +100,9 @@ function Search () {
         const pageNum = 1;
 
         /**Set min and max page number limits to initial values*/
-        if(pageNum === 1) {
-            setMinPageNumberLimit(0);
-            setMaxPageNumberLimit(5);
-        };
-
+        setMinPaginationNum(0);
+        setMaxPaginationNum(5);
+        
         /**Call Discogs API*/
         callDiscogsAPI(search.search, pageNum)
         .then(res => res.json())
@@ -119,9 +121,9 @@ function Search () {
         const pageNum = (pagination.page > 1) ? pagination.page - 1 : pagination.page;
 
         /**Decrement min and max page number limits by 5*/
-        if((pageNum - 1) % pageNumberLimit === 0) {
-            setMinPageNumberLimit(minPageNumberLimit - pageNumberLimit);
-            setMaxPageNumberLimit(maxPageNumberLimit - pageNumberLimit)
+        if((pageNum) % paginationDisplayLimit === 0) {
+            setMinPaginationNum(minPaginationNum - paginationDisplayLimit);
+            setMaxPaginationNum(maxPaginationNum - paginationDisplayLimit)
         }
 
         /**Call Discogs API*/
@@ -174,9 +176,9 @@ function Search () {
     const passingProps = {
         data: data,
         pagination: pagination,
-        pageNumberLimit: pageNumberLimit,
-        minPageNumberLimit: minPageNumberLimit,
-        maxPageNumberLimit: maxPageNumberLimit,
+        paginationDisplayLimit: paginationDisplayLimit,
+        minPaginationNum: minPaginationNum,
+        maxPaginationNum: maxPaginationNum,
         handleCurrentPage: handleCurrentPage,
         handleFirstPage: handleFirstPage,
         handlePrevPage: handlePrevPage,
