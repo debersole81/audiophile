@@ -3,10 +3,6 @@ import Pagination from 'react-bootstrap/Pagination';
 
 function paginationFunc (props) {
 
-    console.log(props);
-    console.log(props.pagination);
-    console.log(props.pagination.page);
-
     /**Build array to store each page as a number*/
     const activePage = props.pagination.page
     const pages = []
@@ -35,7 +31,6 @@ function paginationFunc (props) {
     };
 
     return(null);
-
 }
 
 
