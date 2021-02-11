@@ -21,13 +21,16 @@ function paginationFunc (props) {
 
     console.log(pages);
 
-    if(props.pagination.page < props.maxPageNumberLimit + 1 && props.pagination.page > props.minPageNumberLimit){
+    const maxLimit = 5
+    const minLimit = 0
+
+    if(props.pagination.pages > 1){
         return(
         <React.Fragment>
             <Pagination className='mt-3 justify-content-md-center'>
                 <Pagination.First className={props.pagination.page === 1 ? 'disabled' : ''} onClick={props.handleFirstPage}>First</Pagination.First>
                 <Pagination.Prev className={props.pagination.page === 1 ? 'disabled' : ''} onClick={props.handlePrevPage}>Previous</Pagination.Prev>
-                {pages}
+                {pages.map((page) => (page.props.id < maxLimit + 1 && page.props.id > minLimit) ? page : null)}
                 <Pagination.Next className={props.pagination.page === props.pagination.pages ? 'disabled' : ''} onClick={props.handleNextPage}>Next</Pagination.Next>
                 <Pagination.Last className={props.pagination.page === props.pagination.pages ? 'disabled' : ''} onClick={props.handleLastPage}>Last</Pagination.Last>
             </Pagination>
