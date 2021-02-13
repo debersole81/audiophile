@@ -211,8 +211,8 @@ function Search () {
     return(
         <React.Fragment>
             <Jumbotron className='text-center'>
-                <h1>Search Vinyl Records</h1>
-                <p className='lead text-muted'>Find vinyl records to add to your collection or wishlist.</p>
+                <h1>Search Albums</h1>
+                <p className='lead text-muted'>Find albums to add to your collection or wishlist.</p>
                     <Form className='form-inline justify-content-center'>
                         <Form.Group className='form-group'>
                             <Form.Label srOnly>Search</Form.Label>
