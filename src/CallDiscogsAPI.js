@@ -5,8 +5,8 @@ const callDiscogsAPI = (q, page, per_page = 25) => {
     /**Build Query*/
     const buildQuery = {
         q,
-        format: 'vinyl',
-        type: 'release',
+        format: 'album',
+        type: 'master',
         key: 'KNMVnsceTtAqbvAVbsPX',
         secret: 'YjfVFNTeaEqVblcDGkanBBRSWPAeIXBO',
         page,
