@@ -4,11 +4,15 @@ import { Link } from "react-router-dom";
 
 function Nav(props) {
 
-    const handleViewDashTrue = () => { //sets viewDash in Dashboard component to true
+    /**Change handlers*/
+
+    /**Render the dashboard.*/
+    const handleViewDashTrue = () => {
         props.viewDashTrue();
     };
 
-    const handleViewDashFalse = () => { //sets viewDash in Dashboard component to false
+    /**Hide the dashboard*/
+    const handleViewDashFalse = () => {
         props.viewDashFalse();
     };
 
