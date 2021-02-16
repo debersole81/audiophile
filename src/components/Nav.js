@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from "react-router-dom";
 
-function Nav(props) {
+function Header(props) {
 
     /**Change handlers*/
 
@@ -31,4 +31,4 @@ function Nav(props) {
     );
 };
 
-export default Nav;
+export default Header;
