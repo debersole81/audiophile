@@ -19,7 +19,7 @@ function Header(props) {
     };
 
     return (
-        <nav className="nav">
+        <Navbar>
             <h3>Logo</h3>
             <ul className="nav-links">
                 <Link to="/dashboard" onClick={handleViewDashTrue}><li>Dashboard</li></Link>
@@ -28,7 +28,7 @@ function Header(props) {
                 <Link to="/dashboard/randomizer" onClick={handleViewDashFalse}><li>Randomizer</li></Link>
                 <Link to="/dashboard/search" onClick={handleViewDashFalse}><li>Search</li></Link>
             </ul>
-        </nav>
+        </Navbar>
     );
 };
 
