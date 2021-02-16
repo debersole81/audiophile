@@ -18,24 +18,24 @@ function Header(props) {
     };
 
     return (
-        <Navbar>
+        <Navbar bg='dark' variant='dark' className='p-4 mb-2'>
             <Navbar.Brand href='#home'>AudioFile</Navbar.Brand>        
             <Navbar.Toggle aria-controls='basic-navbar-nav' />
             <Navbar.Collapse id='basic-navbar-nav'>
-                <Nav className='mr-auto'>
-                    <LinkContainer to='/dashboard' onClick={handleViewDashTrue}>
+                <Nav className='ml-auto'>
+                    <LinkContainer exact to='/dashboard' onClick={handleViewDashTrue}>
                         <Nav.Link>Dashboard</Nav.Link>
                     </LinkContainer>
-                    <LinkContainer to ='/dashboard/collection' onClick={handleViewDashFalse}>
+                    <LinkContainer exact to ='/dashboard/collection' onClick={handleViewDashFalse}>
                         <Nav.Link>Collection</Nav.Link>
                     </LinkContainer>
-                    <LinkContainer to='/dashboard/wishlist' onClick={handleViewDashFalse}>
+                    <LinkContainer exact to='/dashboard/wishlist' onClick={handleViewDashFalse}>
                         <Nav.Link>Wish List</Nav.Link>
                     </LinkContainer>
-                    <LinkContainer to="/dashboard/randomizer" onClick={handleViewDashFalse}>
+                    <LinkContainer exact to="/dashboard/randomizer" onClick={handleViewDashFalse}>
                         <Nav.Link>Randomizer</Nav.Link>
                     </LinkContainer>
-                    <LinkContainer to="/dashboard/search" onClick={handleViewDashFalse}>
+                    <LinkContainer exact to="/dashboard/search" onClick={handleViewDashFalse}>
                         <Nav.Link>Search</Nav.Link>
                     </LinkContainer>
                 </Nav>
