@@ -1,7 +1,6 @@
 import React from "react";
 import "../App.css";
 import { Link } from "react-router-dom";
-import Navbar from 'react-bootstrap/Navbar';
 
 function Nav(props) {
 
@@ -18,7 +17,7 @@ function Nav(props) {
     };
 
     return (
-        <Navbar>
+        <nav className="nav">
             <h3>Logo</h3>
             <ul className="nav-links">
                 <Link to="/dashboard" onClick={handleViewDashTrue}><li>Dashboard</li></Link>
@@ -27,7 +26,7 @@ function Nav(props) {
                 <Link to="/dashboard/randomizer" onClick={handleViewDashFalse}><li>Randomizer</li></Link>
                 <Link to="/dashboard/search" onClick={handleViewDashFalse}><li>Search</li></Link>
             </ul>
-        </Navbar>
+        </nav>
     );
 };
 
