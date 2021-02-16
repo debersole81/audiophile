@@ -1,6 +1,7 @@
 import React from "react";
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import Button from 'react-bootstrap/Button';
 import { LinkContainer } from 'react-router-bootstrap';
 
 function Header(props) {
@@ -38,6 +39,7 @@ function Header(props) {
                     <LinkContainer exact to="/dashboard/search" onClick={handleViewDashFalse}>
                         <Nav.Link>Search</Nav.Link>
                     </LinkContainer>
+                    <Button variant='outline-light' className='ml-5 btn-sm'>Logout</Button>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
