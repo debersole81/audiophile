@@ -20,7 +20,9 @@ function Header(props) {
 
     return (
         <Navbar>
-            <Navbar.Brand href='#home'>AudioFile</Navbar.Brand>
+            <Navbar.Brand href='#home'>AudioFile</Navbar.Brand>        
+            <Navbar.Toggle aria-controls='basic-navbar-nav' />
+            <Navbar.Collapse id='basic-navbar-nav'>
             <ul className="nav-links">
                 <Link to="/dashboard" onClick={handleViewDashTrue}><li>Dashboard</li></Link>
                 <Link to="/dashboard/collection" onClick={handleViewDashFalse}><li>Collection</li></Link>
@@ -28,6 +30,7 @@ function Header(props) {
                 <Link to="/dashboard/randomizer" onClick={handleViewDashFalse}><li>Randomizer</li></Link>
                 <Link to="/dashboard/search" onClick={handleViewDashFalse}><li>Search</li></Link>
             </ul>
+            </Navbar.Collapse>
         </Navbar>
     );
 };
