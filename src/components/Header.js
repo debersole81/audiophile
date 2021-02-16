@@ -2,7 +2,6 @@ import React from "react";
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { LinkContainer } from 'react-router-bootstrap';
-import { Link } from "react-router-dom";
 
 function Header(props) {
 
@@ -23,13 +22,23 @@ function Header(props) {
             <Navbar.Brand href='#home'>AudioFile</Navbar.Brand>        
             <Navbar.Toggle aria-controls='basic-navbar-nav' />
             <Navbar.Collapse id='basic-navbar-nav'>
-            <ul className="nav-links">
-                <Link to="/dashboard" onClick={handleViewDashTrue}><li>Dashboard</li></Link>
-                <Link to="/dashboard/collection" onClick={handleViewDashFalse}><li>Collection</li></Link>
-                <Link to="/dashboard/wishlist" onClick={handleViewDashFalse}><li>Wish List</li></Link>
-                <Link to="/dashboard/randomizer" onClick={handleViewDashFalse}><li>Randomizer</li></Link>
-                <Link to="/dashboard/search" onClick={handleViewDashFalse}><li>Search</li></Link>
-            </ul>
+                <Nav className='mr-auto'>
+                    <LinkContainer to='/dashboard' onClick={handleViewDashTrue}>
+                        <Nav.Link>Dashboard</Nav.Link>
+                    </LinkContainer>
+                    <LinkContainer to ='/dashboard/collection' onClick={handleViewDashFalse}>
+                        <Nav.Link>Collection</Nav.Link>
+                    </LinkContainer>
+                    <LinkContainer to='/dashboard/wishlist' onClick={handleViewDashFalse}>
+                        <Nav.Link>Wish List</Nav.Link>
+                    </LinkContainer>
+                    <LinkContainer to="/dashboard/randomizer" onClick={handleViewDashFalse}>
+                        <Nav.Link>Randomizer</Nav.Link>
+                    </LinkContainer>
+                    <LinkContainer to="/dashboard/search" onClick={handleViewDashFalse}>
+                        <Nav.Link>Search</Nav.Link>
+                    </LinkContainer>
+                </Nav>
             </Navbar.Collapse>
         </Navbar>
     );
