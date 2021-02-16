@@ -20,7 +20,7 @@ function Header(props) {
 
     return (
         <Navbar>
-            <h3>Logo</h3>
+            <Navbar.Brand href='#home'>AudioFile</Navbar.Brand>
             <ul className="nav-links">
                 <Link to="/dashboard" onClick={handleViewDashTrue}><li>Dashboard</li></Link>
                 <Link to="/dashboard/collection" onClick={handleViewDashFalse}><li>Collection</li></Link>
