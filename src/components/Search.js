@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import callDiscogsAPI from '../CallDiscogsAPI'
+import callDiscogsAPI from '../helper-functions/CallDiscogsAPI'
 import SearchResults from './SearchResults';
 import Pagination from './Pagination'
 import Form from 'react-bootstrap/Form';
