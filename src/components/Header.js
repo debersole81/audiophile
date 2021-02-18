@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import { LinkContainer } from 'react-router-bootstrap';
-import audioPhileLogo from '../assets/audiophile-logo.svg';
+import audioPhileLogoText from '../assets/audiophile-logo-text-white.svg';
 
 function Header(props) {
 
@@ -20,12 +20,12 @@ function Header(props) {
     };
 
     return (
-        <Navbar bg='dark' variant='dark' className='p-4 mb-2'>
+        <Navbar bg='dark' variant='dark' className='p-4 mb-5' expand='lg'>
             <Navbar.Brand href='#home'>
                 <img
-                    src ={audioPhileLogo}
-                    width='100'
-                    height='100'
+                    src={audioPhileLogoText}
+                    height={30}
+                    width={225}
                     className='d-inline-block align-top'
                     alt='AudioPhile logo'
                 />                    
@@ -48,7 +48,7 @@ function Header(props) {
                     <LinkContainer exact to="/dashboard/search" onClick={handleViewDashFalse}>
                         <Nav.Link>Search</Nav.Link>
                     </LinkContainer>
-                    <Button variant='outline-light' className='ml-5 btn-sm'>Logout</Button>
+                    <Button variant='outline-light' className='btn-sm'>Logout</Button>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
