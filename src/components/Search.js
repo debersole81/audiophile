@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import callDiscogsAPI from '../helper-functions/CallDiscogsAPI'
+import discogsAPISearch from '../helper-functions/DiscogsAPISearch'
 import SearchResults from './SearchResults';
 import Pagination from './Pagination'
 import Form from 'react-bootstrap/Form';
@@ -60,7 +60,7 @@ function Search () {
         e.preventDefault();
         
         /**Call Discogs API*/
-        callDiscogsAPI(search.search)
+        discogsAPISearch(search.search)
         .then(res => res.json())
         .then(
             (result) => {
@@ -81,7 +81,7 @@ function Search () {
         const pageNum = e.target.id;
 
         /**Call Discogs API*/
-        callDiscogsAPI(search.search, pageNum)
+        discogsAPISearch(search.search, pageNum)
         .then(res => res.json())
         .then(
             (result) => {
@@ -105,7 +105,7 @@ function Search () {
         setMaxPaginationNum(5);
         
         /**Call Discogs API*/
-        callDiscogsAPI(search.search, pageNum)
+        discogsAPISearch(search.search, pageNum)
         .then(res => res.json())
         .then(
             (result) => {
@@ -131,7 +131,7 @@ function Search () {
         }
 
         /**Call Discogs API*/
-        callDiscogsAPI(search.search, pageNum)
+        discogsAPISearch(search.search, pageNum)
         .then(res => res.json())
         .then(
             (result) => {
@@ -157,7 +157,7 @@ function Search () {
         }
 
         /**Call Discogs API*/
-        callDiscogsAPI(search.search, pageNum)
+        discogsAPISearch(search.search, pageNum)
         .then(res => res.json())
         .then(
             (result) => {
@@ -181,7 +181,7 @@ function Search () {
         setMaxPaginationNum(pageNum);
 
         /**Call Discogs API*/
-        callDiscogsAPI(search.search, pageNum)
+        discogsAPISearch(search.search, pageNum)
         .then(res => res.json())
         .then(
             (result) => {
