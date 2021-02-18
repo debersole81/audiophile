@@ -59,7 +59,7 @@ function Search () {
     const handleSubmit = (e) => {
         e.preventDefault();
         
-        /**Call Discogs API*/
+        /**Call Discogs API search endpoint*/
         discogsAPISearch(search.search)
         .then(res => res.json())
         .then(
@@ -80,7 +80,7 @@ function Search () {
         
         const pageNum = e.target.id;
 
-        /**Call Discogs API*/
+        /**Call Discogs API search endpoint*/
         discogsAPISearch(search.search, pageNum)
         .then(res => res.json())
         .then(
@@ -104,7 +104,7 @@ function Search () {
         setMinPaginationNum(0);
         setMaxPaginationNum(5);
         
-        /**Call Discogs API*/
+        /**Call Discogs API search endpoint*/
         discogsAPISearch(search.search, pageNum)
         .then(res => res.json())
         .then(
@@ -130,7 +130,7 @@ function Search () {
             setMaxPaginationNum(maxPaginationNum - paginationDisplayLimit)
         }
 
-        /**Call Discogs API*/
+        /**Call Discogs API search endpoint*/
         discogsAPISearch(search.search, pageNum)
         .then(res => res.json())
         .then(
@@ -156,7 +156,7 @@ function Search () {
             setMaxPaginationNum(maxPaginationNum + paginationDisplayLimit);
         }
 
-        /**Call Discogs API*/
+        /**Call Discogs API search endpoint*/
         discogsAPISearch(search.search, pageNum)
         .then(res => res.json())
         .then(
@@ -180,7 +180,7 @@ function Search () {
         setMinPaginationNum(pageNum - paginationDisplayLimit);
         setMaxPaginationNum(pageNum);
 
-        /**Call Discogs API*/
+        /**Call Discogs API search endpoint*/
         discogsAPISearch(search.search, pageNum)
         .then(res => res.json())
         .then(
