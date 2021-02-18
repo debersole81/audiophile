@@ -28,7 +28,7 @@ function Dashboard (props) {
     if(viewDash) { //if viewDash is true, render links to each component on dashboard path.
         return(
             <div>
-                <Header viewDashTrue={handleViewDashTrue} viewDashFalse={handleViewDashFalse} />
+                <Header viewDashTrue={handleViewDashTrue} viewDashFalse={handleViewDashFalse} logoutSubmit={props.logoutSubmit} />
                 <Link to="/dashboard/collection" onClick={handleViewDashFalse}> Collection </Link> <br />
                 <Link to="/dashboard/wishlist" onClick={handleViewDashFalse}> Wish List </Link> <br />
                 <Link to="/dashboard/randomizer" onClick={handleViewDashFalse}> Randomizer </Link> <br />
@@ -39,10 +39,6 @@ function Dashboard (props) {
                     <Route exact path="/dashboard/randomizer" component={Randomizer} />
                     <Route exact path="/dashboard/search" component={Search} />
                 </Switch>
-                <br />            
-                <button onClick={props.logoutSubmit}>
-                    Logout
-                </button>
             </div>
         );
     
@@ -50,7 +46,7 @@ function Dashboard (props) {
 
     return( //if viewDash is false, remove links to each component on dashboard path
         <div>
-            <Header viewDashTrue={handleViewDashTrue} viewDashFalse={handleViewDashFalse} />
+            <Header viewDashTrue={handleViewDashTrue} viewDashFalse={handleViewDashFalse} logoutSubmit={props.logoutSubmit} />
             <Switch>
                 <Route exact path="/dashboard/collection" component={Collection} />
                 <Route exact path="/dashboard/wishlist" component={WishList} />
@@ -58,9 +54,6 @@ function Dashboard (props) {
                 <Route exact path="/dashboard/search" component={Search} />
             </Switch>
             <br />            
-            <button onClick={props.logoutSubmit}>
-                Logout
-            </button>
         </div>
     );
 };
