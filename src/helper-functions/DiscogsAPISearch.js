@@ -1,4 +1,4 @@
-/**Abstraction for Discogs API call*/
+/**Abstraction for call to Discogs API search endpoint*/
 
 const discogsAPISearch = (q, page, per_page = 25) => {
 
@@ -33,6 +33,6 @@ const discogsAPISearch = (q, page, per_page = 25) => {
     };
 
     return fetch(url, requestOptions);
-}
+};
 
 export default discogsAPISearch;
