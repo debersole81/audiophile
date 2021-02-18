@@ -31,11 +31,11 @@ function SearchResults (props) {
         );
     }
 
-    return(
-        <div>
-            <h1>Search for something!</h1>
-        </div>
-    );
+    return(null);
+    //     <Container className='text-center'>
+    //         <h1>Search for something!</h1>
+    //     </Container>
+    // );
 };
 
 
