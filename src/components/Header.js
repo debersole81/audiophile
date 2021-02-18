@@ -48,7 +48,7 @@ function Header(props) {
                     <LinkContainer exact to="/dashboard/search" onClick={handleViewDashFalse}>
                         <Nav.Link>Search</Nav.Link>
                     </LinkContainer>
-                    <Button variant='outline-light' className='btn-sm'>Logout</Button>
+                    <Button variant='outline-light' className='btn-sm' onClick={props.logoutSubmit}>Logout</Button>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
