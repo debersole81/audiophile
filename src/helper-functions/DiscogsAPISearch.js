@@ -1,6 +1,6 @@
 /**Abstraction for Discogs API call*/
 
-const callDiscogsAPI = (q, page, per_page = 25) => {
+const discogsAPISearch = (q, page, per_page = 25) => {
 
     /**Build Query*/
     const buildQuery = {
@@ -35,4 +35,4 @@ const callDiscogsAPI = (q, page, per_page = 25) => {
     return fetch(url, requestOptions);
 }
 
-export default callDiscogsAPI;
+export default discogsAPISearch;
