@@ -41,8 +41,7 @@ function App () {
   
   const loginSubmit = (e) => { //runs when submit button on login component is clicked.
     e.preventDefault(); //prevents login component from re-rendering on click
-
-
+    
     //username and password variables
     const loginUsername = loginInput.username; //retains the username input value from the login form
     const loginPassword = loginInput.password; //retains the password input value from the login form 
