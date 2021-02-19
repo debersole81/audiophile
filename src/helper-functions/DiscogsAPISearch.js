@@ -5,8 +5,9 @@ const discogsAPISearch = (q, page, per_page = 25) => {
     /**Build Query*/
     const buildQuery = {
         q,
-        format: 'album',
+        // format: 'album',
         type: 'master',
+        // artist: 'zz top',
         key: 'KNMVnsceTtAqbvAVbsPX',
         secret: 'YjfVFNTeaEqVblcDGkanBBRSWPAeIXBO',
         page,
