@@ -1,10 +1,12 @@
 import React from 'react';
-import discogsAPIRelease from '../helper-functions/DiscogsAPIRelease';
+import discogsAPIMaster from '../helper-functions/DiscogsAPIMaster';
+
+//To view the status of changes, setup a route for this component in App.js. Remove when complete.
 
 function Album () {
 
-    /**Test call to Discogs API release endpoint*/
-    discogsAPIRelease()
+    /**Test call to Discogs API master endpoint*/
+    discogsAPIMaster(17243)
     .then(res => res.json())
     .then(
         (result) => {
@@ -18,7 +20,7 @@ function Album () {
             <h1>Album View</h1>
         </div>
     )
-
+    
 };
 
 export default Album;
