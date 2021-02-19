@@ -1,11 +1,11 @@
-/**Abstraction for call to Discogs API release endpoint*/
+/**Abstraction for call to Discogs API master release endpoint*/
 
-const discogsAPIRelease = (release_id = 62129) => {
+const discogsAPIMaster = (masterId) => {
 
     /**Build URL*/
-    const baseURL = 'https://api.discogs.com/database/releases/';
+    const baseURL = 'https://api.discogs.com/masters/';
 
-    const url = baseURL + release_id;
+    const url = baseURL + masterId;
 
     /**Build HTTP request method + headers*/
     const requestOptions = {
@@ -20,5 +20,5 @@ const discogsAPIRelease = (release_id = 62129) => {
 
 };
 
-export default discogsAPIRelease; 
+export default discogsAPIMaster; 
 
