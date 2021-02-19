@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Switch, Route, useHistory } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
+import Album from './components/Album';
 
 
 function App () {
@@ -102,6 +103,7 @@ function App () {
       <Switch>
         <Route exact path="/" render={(props) => <Login {...passingToChildren} />} />
         <Route path="/dashboard" render={(props) => <Dashboard {...passingToChildren} />} /> 
+        <Route path='/album' component={Album} />
       </Switch>
     </div>
   );
