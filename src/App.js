@@ -26,31 +26,33 @@ function App () {
   /**Global variables*/
   const history = useHistory();
   
+
   /**State variables*/
 
-  /**Login component state variables */
-  /**Login form state object*/
+  //Login component state variables
+  //Login form state object
   const [loginInput, setLoginInput] = useState([{
     username: "",
     password: "",
   }]);
 
-  /**User authentication state variable*/
+  //User authentication state variable
   const [userAuth, setUserAuth] = useState(false);
 
 
+  /**Callback functions*/
 
-
-
-
-  const loginHandleChange = (e) => { //handles changes to login form fields based on user input
+  //Login component callback functions
+  //Handle login form input fields
+  const loginHandleChange = (e) => {
     console.log(loginInput);
     setLoginInput({
       ...loginInput,
-      [e.target.name]: e.target.value, //logs a string value from user input fields on login form
+      [e.target.name]: e.target.value,
     });
   };
-  
+
+  //Handle login form submit
   const loginSubmit = (e) => { //runs when submit button on login component is clicked.
     e.preventDefault(); //prevents login component from re-rendering on click
     
