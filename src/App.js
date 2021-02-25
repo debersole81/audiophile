@@ -23,27 +23,31 @@ function App () {
     },          
   ];
   
+
+  
   /**Global variables*/
   const history = useHistory();
   
 
+
   /**State variables*/
 
-  //Login component state variables
-  //Login form state object
+  /*Login component state variables*/
+  /*Login form state object*/
   const [loginInput, setLoginInput] = useState([{
     username: "",
     password: "",
   }]);
 
-  //User authentication state variable
+  /*User authentication state variable*/
   const [userAuth, setUserAuth] = useState(false);
+
 
 
   /**Callback functions*/
 
-  //Login component callback functions
-  //Handle login form input fields
+  /*Login component callback functions*/
+  /*Handle login form input fields*/
   const loginHandleChange = (e) => {
     console.log(loginInput);
     setLoginInput({
@@ -52,35 +56,33 @@ function App () {
     });
   };
 
-  //Handle login form submit
-  const loginSubmit = (e) => { //runs when submit button on login component is clicked.
-    e.preventDefault(); //prevents login component from re-rendering on click
+  /*Handle login form submit*/
+  const loginSubmit = (e) => { 
+    e.preventDefault();
     
-    //username and password variables
-    const loginUsername = loginInput.username; //retains the username input value from the login form
-    const loginPassword = loginInput.password; //retains the password input value from the login form 
-    let usernameValidation = -1; //username validation is referencing the index number of the userDatabase object and is set to -1 by default
-    let passwordValidation = false; //password validation is false by default
-    let databasePassword = null; //placeholder for the password value that is stored in the userDatabase. will be updated by the userDatabase.some method
+    const loginUsername = loginInput.username;
+    const loginPassword = loginInput.password; 
     
-
-    //verifying username and password
+    let usernameValidation = -1;  
+    let passwordValidation = false; 
+    let databasePassword = null;
+    
+    //Verify username and password against the user database object
     userDatabase.forEach((value, index) => {  
-      if(value.username === loginUsername) { //compares the username value that the user enters into the login form against each object in the user database.
-        usernameValidation = index; //sets the value of usernameValidation to the index number of the matching object from the user database.
-          if(usernameValidation !== -1) { //if usernameValidation has a valid index number from the user database 
-            databasePassword = userDatabase[usernameValidation].password; //break the forEach loop and return the databasePassword variable from the object with the index number stored in usernameValidation.
+      if(value.username === loginUsername) {
+        usernameValidation = index;
+          if(usernameValidation !== -1) { 
+            databasePassword = userDatabase[usernameValidation].password;
             return;
           };  
       };
     });
     
-    if(loginPassword === databasePassword) { //if password entered by the user equals the password stored in the databse for that user, set passwordValidation to true
+    if(loginPassword === databasePassword) {
       passwordValidation = true;
     };
 
-
-    //setting user authentication
+    //Set userAuth state variable
     if(usernameValidation > -1 && passwordValidation === true) { //if userValidation is a valid index number and passwordValidation is true, set the userAuth variable to true.
       setUserAuth(true);
       history.push("/dashboard"); //if userAuth is true, pushes user to the dashboard component.      
