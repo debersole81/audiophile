@@ -194,7 +194,7 @@ function Search () {
         window.scrollTo(0,0);        
     };
 
-    /**Passing props*/
+    /**Passing props*/ //only pass down what each component needs
     const passingProps = {
         data: data,
         pagination: pagination,
@@ -208,6 +208,8 @@ function Search () {
         handleLastPage: handleLastPage,        
     };
     
+    //Set conditional to render album (endpoint needs to switch from /search to /album). Usehistory hook?
+
     return(
         <React.Fragment>
             <Jumbotron className='text-center'>
