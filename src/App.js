@@ -7,8 +7,8 @@ import Collection from './components/Collection';
 import WishList from './components/WishList';
 import Randomizer from './components/Randomizer';
 
-function App () {
-  
+function App() {
+
   /**User database object*/
   const userDatabase = [
     {
@@ -20,15 +20,11 @@ function App () {
       id: 2,
       username: "Testuser2",
       password: "TestPassword2",
-    },          
+    },
   ];
-  
 
-  
   /**Global variables*/
   const history = useHistory();
-  
-
 
   /**State variables*/
 
@@ -41,8 +37,6 @@ function App () {
 
   /*User authentication state variable*/
   const [userAuth, setUserAuth] = useState(false);
-
-
 
   /**Callback functions*/
 
@@ -57,50 +51,49 @@ function App () {
   };
 
   /*Handle login form submit*/
-  const loginSubmit = (e) => { 
+  const loginSubmit = (e) => {
     e.preventDefault();
-    
+
     const loginUsername = loginInput.username;
-    const loginPassword = loginInput.password; 
-    
-    let usernameValidation = -1;  
-    let passwordValidation = false; 
+    const loginPassword = loginInput.password;
+
+    let usernameValidation = -1;
+    let passwordValidation = false;
     let databasePassword = null;
-    
+
     //Verify username and password against the user database object
-    userDatabase.forEach((value, index) => {  
-      if(value.username === loginUsername) {
+    userDatabase.forEach((value, index) => {
+      if (value.username === loginUsername) {
         usernameValidation = index;
-          if(usernameValidation !== -1) { 
-            databasePassword = userDatabase[usernameValidation].password;
-            return;
-          };  
+        if (usernameValidation !== -1) {
+          databasePassword = userDatabase[usernameValidation].password;
+          return;
+        };
       };
     });
-    
-    if(loginPassword === databasePassword) {
+
+    if (loginPassword === databasePassword) {
       passwordValidation = true;
     };
 
-    //Set userAuth state variable
-    if(usernameValidation > -1 && passwordValidation === true) { //if userValidation is a valid index number and passwordValidation is true, set the userAuth variable to true.
+    //Set userAuth state variable, render the dashboard component
+    if (usernameValidation > -1 && passwordValidation === true) {
       setUserAuth(true);
-      history.push("/dashboard"); //if userAuth is true, pushes user to the dashboard component.      
-    };   
+      history.push('/dashboard');      
+    };
   };
 
+  /*Handle logout button submit*/
+  const logoutSubmit = (e) => {
+    e.preventDefault(); 
 
-  //user logout
-  const logoutSubmit = (e) => { //runs when logout button on dashboard component is clicked.
-    e.preventDefault(); //prevents dashboard component from re-rendering on click. 
-
-    //removing user authentication
-    setUserAuth(false); //sets UserAuth value to false
-    setLoginInput([{ //clears username and password values from LoginInput state
-      username: "",
-      password: "",
+    //Set userAuth state variable, render the login component
+    setUserAuth(false);
+    setLoginInput([{
+      username: '',
+      password: '',
     }]);
-    history.push("/"); //redirects user back to the login form.
+    history.push('/');
   };
 
 
@@ -109,15 +102,15 @@ function App () {
     loginInput: loginInput,
     loginHandleChange: loginHandleChange,
     logoutSubmit: logoutSubmit,
-    userAuth: userAuth,  
+    userAuth: userAuth,
   };
 
-  
+
   return (
     <div>
       <Switch>
         <Route exact path="/" render={(props) => <Login {...passingToChildren} />} />
-        <Route path="/dashboard" render={(props) => <Dashboard {...passingToChildren} />} /> 
+        <Route path="/dashboard" render={(props) => <Dashboard {...passingToChildren} />} />
       </Switch>
     </div>
   );
