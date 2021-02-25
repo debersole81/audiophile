@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Switch, Route, useHistory } from 'react-router-dom';
+import { Link, Route, Switch, useHistory } from 'react-router-dom';
 import Login from './components/Login';
 import Header from './components/Header'
 import Dashboard from "./components/Dashboard";
