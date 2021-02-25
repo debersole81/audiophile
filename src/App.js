@@ -26,14 +26,22 @@ function App () {
   /**Global variables*/
   const history = useHistory();
   
-  //managing user authentication
-  //user login
-  const [loginInput, setLoginInput] = useState([{ //login form state manager.
+  /**State variables*/
+
+  /**Login component state variables */
+  /**Login form state object*/
+  const [loginInput, setLoginInput] = useState([{
     username: "",
     password: "",
   }]);
 
-  const [userAuth, setUserAuth] = useState(false); //user authentication state manager.
+  /**User authentication state variable*/
+  const [userAuth, setUserAuth] = useState(false);
+
+
+
+
+
 
   const loginHandleChange = (e) => { //handles changes to login form fields based on user input
     console.log(loginInput);
