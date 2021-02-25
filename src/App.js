@@ -9,7 +9,8 @@ import Randomizer from './components/Randomizer';
 
 function App () {
   
-  const userDatabase = [ //user test database
+  /**User database object*/
+  const userDatabase = [
     {
       id: 1,
       username: "Testuser",
