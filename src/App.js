@@ -1,8 +1,11 @@
-import React, { useState } from "react";
-import { Switch, Route, useHistory } from "react-router-dom";
+import React, { useState } from 'react';
+import { Switch, Route, useHistory } from 'react-router-dom';
+import Login from './components/Login';
+import Header from './components/Header'
 import Dashboard from "./components/Dashboard";
-import Login from "./components/Login";
-
+import Collection from './components/Collection';
+import WishList from './components/WishList';
+import Randomizer from './components/Randomizer';
 
 function App () {
   
