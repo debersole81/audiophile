@@ -23,7 +23,7 @@ function App () {
     },          
   ];
   
-  //react router hooks
+  /**Global variables*/
   const history = useHistory();
   
   //managing user authentication
