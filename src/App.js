@@ -4,8 +4,9 @@ import Login from './components/Login';
 import Header from './components/Header'
 import Dashboard from "./components/Dashboard";
 import Collection from './components/Collection';
-import WishList from './components/WishList';
 import Randomizer from './components/Randomizer';
+import Search from './components/Search';
+import WishList from './components/WishList';
 
 function App() {
 
@@ -79,13 +80,13 @@ function App() {
     //Set userAuth state variable, render the dashboard component
     if (usernameValidation > -1 && passwordValidation === true) {
       setUserAuth(true);
-      history.push('/dashboard');      
+      history.push('/dashboard');
     };
   };
 
   /*Handle logout button submit*/
   const logoutSubmit = (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
 
     //Set userAuth state variable, render the login component
     setUserAuth(false);
@@ -96,7 +97,6 @@ function App() {
     history.push('/');
   };
 
-//stopped here
   const passingToChildren = { //variable that holds state and props for passing to child components
     loginSubmit: loginSubmit,
     loginInput: loginInput,
@@ -109,8 +109,12 @@ function App() {
   return (
     <div>
       <Switch>
-        <Route exact path="/" render={(props) => <Login {...passingToChildren} />} />
-        <Route path="/dashboard" render={(props) => <Dashboard {...passingToChildren} />} />
+        <Route exact path='/' render={(props) => <Login {...passingToChildren} />} />
+        <Route exact path='/dashboard' render={(props) => <Dashboard {...passingToChildren} />} />
+        <Route exact path='/collection' component={Collection} />
+        <Route exact path='/wishlist' component={WishList} />
+        <Route exact path='/randomizer' component={Randomizer} />
+        <Route exact path='/search' component={Search} />
       </Switch>
     </div>
   );
