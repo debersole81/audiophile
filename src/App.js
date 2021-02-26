@@ -106,10 +106,18 @@ function App() {
   };
 
 
+  if (userAuth === false) {
+    return (
+      <div>
+        <Route exact path='/' render={(props) => <Login {...passingToChildren} />} />
+      </div>
+    );
+  };
+
   return (
     <div>
+      <Header />
       <Switch>
-        <Route exact path='/' render={(props) => <Login {...passingToChildren} />} />
         <Route exact path='/dashboard' render={(props) => <Dashboard {...passingToChildren} />} />
         <Route exact path='/collection' component={Collection} />
         <Route exact path='/wishlist' component={WishList} />
