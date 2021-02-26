@@ -96,7 +96,7 @@ function App() {
     history.push('/');
   };
 
-
+//stopped here
   const passingToChildren = { //variable that holds state and props for passing to child components
     loginSubmit: loginSubmit,
     loginInput: loginInput,
