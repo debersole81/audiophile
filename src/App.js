@@ -44,7 +44,6 @@ function App() {
   /*Login component callback functions*/
   /*Handle login form input fields*/
   const loginHandleChange = (e) => {
-    console.log(loginInput);
     setLoginInput({
       ...loginInput,
       [e.target.name]: e.target.value,
@@ -77,10 +76,9 @@ function App() {
       passwordValidation = true;
     };
 
-    //Set userAuth state variable, render the dashboard component
+    //Set userAuth state variable to true
     if (usernameValidation > -1 && passwordValidation === true) {
       setUserAuth(true);
-      history.push('/dashboard');
     };
   };
 
@@ -88,13 +86,12 @@ function App() {
   const logoutSubmit = (e) => {
     e.preventDefault();
 
-    //Set userAuth state variable, render the login component
+    //Set userAuth state variable to false and clear loginInput state
     setUserAuth(false);
     setLoginInput([{
       username: '',
       password: '',
     }]);
-    history.push('/');
   };
 
   const passingToChildren = { //variable that holds state and props for passing to child components
