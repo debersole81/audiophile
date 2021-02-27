@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import { Link, Redirect, Route, Switch, useHistory } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Login from './components/Login';
-import Header from './components/Header'
-import Dashboard from "./components/Dashboard";
-import Collection from './components/Collection';
-import Randomizer from './components/Randomizer';
-import Search from './components/Search';
-import WishList from './components/WishList';
 import ProtectedRoute from './components/ProtectedRoute'
 
 function App() {
@@ -24,9 +18,6 @@ function App() {
       password: "TestPassword2",
     },
   ];
-
-  /**Global variables*/
-  const history = useHistory();
 
   /**State variables*/
 
@@ -103,30 +94,11 @@ function App() {
     userAuth: userAuth,
   };
 
-//can I render all of the components inside of the truthy statement?
-
   return (
     <div>
-        
-        <Route render={(props) => {
-          return userAuth ? 
-          (<ProtectedRoute />) : (<Login />)}} />
-        
-        
-      //   {/* <Route exact path='/' render={(props) => {
-      //     return (
-      //       userAuth === true ?
-      //       <Redirect to='/dashboard' /> : <Login />
-      //       )
-      //     }} />
-      //   <Header />
-      //   <Switch>
-      //   <Route exact path='/dashboard' render={(props) => <Dashboard {...passingToChildren} />} />
-      //   <Route exact path='/collection' component={Collection} />
-      //   <Route exact path='/wishlist' component={WishList} />
-      //   <Route exact path='/randomizer' component={Randomizer} />
-      //   <Route exact path='/search' component={Search} />
-      // </Switch> */}
+      <Route render={(props) => {
+        return userAuth ? (<ProtectedRoute />) : (<Login />)
+      }} />
     </div>
   );
 }
