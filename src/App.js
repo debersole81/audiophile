@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, Route, Switch, useHistory } from 'react-router-dom';
+import { Link, Redirect, Route, Switch, useHistory } from 'react-router-dom';
 import Login from './components/Login';
 import Header from './components/Header'
 import Dashboard from "./components/Dashboard";
@@ -7,6 +7,7 @@ import Collection from './components/Collection';
 import Randomizer from './components/Randomizer';
 import Search from './components/Search';
 import WishList from './components/WishList';
+import ProtectedRoute from './components/ProtectedRoute'
 
 function App() {
 
@@ -37,7 +38,7 @@ function App() {
   }]);
 
   /*User authentication state variable*/
-  const [userAuth, setUserAuth] = useState(false);
+  const [userAuth, setUserAuth] = useState(true);
 
   /**Callback functions*/
 
@@ -50,7 +51,7 @@ function App() {
     });
   };
 
-  /*Handle login form submit*/
+  /*Handle login form button submit*/
   const loginSubmit = (e) => {
     e.preventDefault();
 
@@ -102,25 +103,30 @@ function App() {
     userAuth: userAuth,
   };
 
-
-  if (userAuth === false) {
-    return (
-      <div>
-        <Route exact path='/' render={(props) => <Login {...passingToChildren} />} />
-      </div>
-    );
-  };
+//can I render all of the components inside of the truthy statement?
 
   return (
     <div>
-      <Header />
-      <Switch>
-        <Route exact path='/dashboard' render={(props) => <Dashboard {...passingToChildren} />} />
-        <Route exact path='/collection' component={Collection} />
-        <Route exact path='/wishlist' component={WishList} />
-        <Route exact path='/randomizer' component={Randomizer} />
-        <Route exact path='/search' component={Search} />
-      </Switch>
+        
+        <Route render={(props) => {
+          return userAuth ? 
+          (<ProtectedRoute />) : (<Login />)}} />
+        
+        
+      //   {/* <Route exact path='/' render={(props) => {
+      //     return (
+      //       userAuth === true ?
+      //       <Redirect to='/dashboard' /> : <Login />
+      //       )
+      //     }} />
+      //   <Header />
+      //   <Switch>
+      //   <Route exact path='/dashboard' render={(props) => <Dashboard {...passingToChildren} />} />
+      //   <Route exact path='/collection' component={Collection} />
+      //   <Route exact path='/wishlist' component={WishList} />
+      //   <Route exact path='/randomizer' component={Randomizer} />
+      //   <Route exact path='/search' component={Search} />
+      // </Switch> */}
     </div>
   );
 }
