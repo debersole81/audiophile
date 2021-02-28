@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Route } from 'react-router-dom';
 import Login from './components/Login';
-import ProtectedRoute from './components/ProtectedRoute'
+import ProtectedComponents from './components/ProtectedComponents'
 
 function App() {
   
@@ -110,7 +110,7 @@ function App() {
   return (
     <div>
       <Route render={(props) => {
-        return userAuth ? (<ProtectedRoute {...passingHeaderProps} />) : (<Login {...passingLoginProps}/>)
+        return userAuth ? (<ProtectedComponents {...passingHeaderProps} />) : (<Login {...passingLoginProps}/>)
       }} />
     </div>
   );
