@@ -4,6 +4,13 @@ import Login from './components/Login';
 import ProtectedRoute from './components/ProtectedRoute'
 
 function App() {
+  
+  /**Notes*/
+
+  //Build a sign up form
+  //Build error handling for invalid username/password
+  //Implement Bootstrap
+
 
   /**User database object*/
   const userDatabase = [
