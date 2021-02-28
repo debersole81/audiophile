@@ -86,13 +86,18 @@ function App() {
     }]);
   };
 
-  const passingToChildren = { //variable that holds state and props for passing to child components
+  /**Props objects*/
+
+  //Pass props to the login component
+  const passingLoginProps = { 
     loginSubmit: loginSubmit,
     loginInput: loginInput,
     loginHandleChange: loginHandleChange,
-    logoutSubmit: logoutSubmit,
-    userAuth: userAuth,
   };
+
+  const passingHeaderProps = {
+    logoutSubmit: logoutSubmit
+  }
 
   return (
     <div>
