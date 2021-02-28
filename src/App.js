@@ -95,6 +95,7 @@ function App() {
     loginHandleChange: loginHandleChange,
   };
 
+  //Pass props to the header component
   const passingHeaderProps = {
     logoutSubmit: logoutSubmit
   }
@@ -102,7 +103,7 @@ function App() {
   return (
     <div>
       <Route render={(props) => {
-        return userAuth ? (<ProtectedRoute />) : (<Login />)
+        return userAuth ? (<ProtectedRoute {...passingHeaderProps} />) : (<Login {...passingLoginProps}/>)
       }} />
     </div>
   );
