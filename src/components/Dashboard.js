@@ -8,18 +8,6 @@ import Header from "./Header";
 
 function Dashboard (props) {
 
-
-    const [viewDash, setViewDash] = useState(true); //dashboard state manager
-
-    const handleViewDashTrue = () => { //sets viewDash to true
-        setViewDash(true);
-    };
-
-    const handleViewDashFalse = () => { //sets viewDash to false
-        setViewDash(false);
-    };
-
-    if(viewDash) { //if viewDash is true, render links to each component on dashboard path.
         return(
             <div>
                 <Header viewDashTrue={handleViewDashTrue} viewDashFalse={handleViewDashFalse} logoutSubmit={props.logoutSubmit} />
