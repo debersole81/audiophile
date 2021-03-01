@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import { Link, Route, Switch} from "react-router-dom";
 import Search from "./Search";
 import Collection from "./Collection";
@@ -8,12 +8,6 @@ import Header from "./Header";
 
 function Dashboard (props) {
 
-    // //react router hooks    
-    // const history = useHistory(); //history points to the useHistory hook
-
-    // if(props.userAuth === false) { //prevents user from accessing dashboard without authenticating 
-    //     history.push("/"); //if userAuth is false, redirects to login
-    // }
 
     const [viewDash, setViewDash] = useState(true); //dashboard state manager
 
