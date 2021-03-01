@@ -1,43 +1,28 @@
-import React from "react";
-import { Link, Route, Switch} from "react-router-dom";
-import Search from "./Search";
-import Collection from "./Collection";
-import WishList from "./WishList";
-import Randomizer from "./Randomizer";
-import Header from "./Header";
+import React from 'react';
+import { Link, Route, Switch } from 'react-router-dom';
+import Search from './Search';
+import Collection from './Collection';
+import WishList from './WishList';
+import Randomizer from './Randomizer';
+import Header from './Header';
 
-function Dashboard (props) {
+function Dashboard(props) {
 
-        return(
-            <div>
-                <Header viewDashTrue={handleViewDashTrue} viewDashFalse={handleViewDashFalse} logoutSubmit={props.logoutSubmit} />
-                <Link to="/dashboard/collection" onClick={handleViewDashFalse}> Collection </Link> <br />
-                <Link to="/dashboard/wishlist" onClick={handleViewDashFalse}> Wish List </Link> <br />
-                <Link to="/dashboard/randomizer" onClick={handleViewDashFalse}> Randomizer </Link> <br />
-                <Link to="/dashboard/search" onClick={handleViewDashFalse}> Search </Link>
-                <Switch>
-                    <Route exact path="/dashboard/collection" component={Collection} />
-                    <Route exact path="/dashboard/wishlist" component={WishList} />
-                    <Route exact path="/dashboard/randomizer" component={Randomizer} />
-                    <Route exact path="/dashboard/search" component={Search} />
-                </Switch>
-            </div>
-        );
-    
-    }
-
-    return( //if viewDash is false, remove links to each component on dashboard path
+    return (
         <div>
-            <Header viewDashTrue={handleViewDashTrue} viewDashFalse={handleViewDashFalse} logoutSubmit={props.logoutSubmit} />
+            <Link to='/collection'> Collection </Link> <br />
+            <Link to='/wishlist'> Wish List </Link> <br />
+            <Link to='/randomizer'> Randomizer </Link> <br />
+            <Link to='/search'> Search </Link>
             <Switch>
                 <Route exact path="/dashboard/collection" component={Collection} />
                 <Route exact path="/dashboard/wishlist" component={WishList} />
                 <Route exact path="/dashboard/randomizer" component={Randomizer} />
                 <Route exact path="/dashboard/search" component={Search} />
             </Switch>
-            <br />            
         </div>
     );
+
 };
 
 export default Dashboard;
