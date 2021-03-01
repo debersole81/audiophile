@@ -5,6 +5,8 @@ import ProtectedComponents from './components/ProtectedComponents'
 
 function App() {
   
+  console.log('Render: App Component');
+
   /**Notes*/
 
   //Build a sign up form
