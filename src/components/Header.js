@@ -21,19 +21,19 @@ function Header(props) {
             <Navbar.Toggle aria-controls='basic-navbar-nav' />
             <Navbar.Collapse id='basic-navbar-nav'>
                 <Nav className='ml-auto'>
-                    <LinkContainer exact to='/dashboard'>
+                    <LinkContainer exact to='/'>
                         <Nav.Link>Dashboard</Nav.Link>
                     </LinkContainer>
-                    <LinkContainer exact to='/dashboard/collection'>
+                    <LinkContainer exact to='/collection'>
                         <Nav.Link>Collection</Nav.Link>
                     </LinkContainer>
-                    <LinkContainer exact to='/dashboard/wishlist'>
+                    <LinkContainer exact to='/wishlist'>
                         <Nav.Link>Wish List</Nav.Link>
                     </LinkContainer>
-                    <LinkContainer exact to="/dashboard/randomizer">
+                    <LinkContainer exact to="/randomizer">
                         <Nav.Link>Randomizer</Nav.Link>
                     </LinkContainer>
-                    <LinkContainer exact to="/dashboard/search">
+                    <LinkContainer exact to="/search">
                         <Nav.Link>Search</Nav.Link>
                     </LinkContainer>
                     <Button variant='outline-light' className='btn-sm' onClick={props.logoutSubmit}>Logout</Button>
