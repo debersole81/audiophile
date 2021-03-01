@@ -1,4 +1,5 @@
 import React from "react";
+import { Route, Switch } from 'react-router-dom';
 import Album from './Album';
 import Collection from './Collection';
 import Dashboard from './Dashboard';
@@ -8,11 +9,15 @@ import Search from './Search';
 import WishList from './WishList';
 
 
-function ProtectedComponents (props) {
-   
-    return(
-        
-        <h1>This is a protected route</h1>
+function ProtectedComponents(props) {
+
+    return (
+        <div>
+            <Header />
+            <Switch>
+                <Route exact path='/' component={Dashboard} />
+            </Switch>
+        </div>
     );
 };
 
