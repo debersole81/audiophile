@@ -17,8 +17,9 @@ function ProtectedComponents(props) {
     /**Search component state variables*/
     const [search, setSearch] = useState('');
     const [searchData, setSearchData] = useState([]);
+    const [searchPagination, setSearchPagination] = useState({});
 
-    
+
     return (
         <div>
             <Header logoutSubmit={props.logoutSubmit} />
