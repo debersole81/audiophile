@@ -1,22 +1,20 @@
-/**Abstraction for call to Discogs API search endpoint*/
+/**Helper function for Discogs API Search endpoint call*/
 
 const discogsAPISearch = (q, page, per_page = 25) => {
 
     /**Build Query*/
     const buildQuery = {
         q,
-        // format: 'album',
         type: 'master',
-        // artist: 'zz top',
         key: 'KNMVnsceTtAqbvAVbsPX',
         secret: 'YjfVFNTeaEqVblcDGkanBBRSWPAeIXBO',
         page,
         per_page,
     };
-    
+
     /**Build URL*/
     const baseURL = 'https://api.discogs.com/database/search?';
-    
+
     let url = baseURL;
 
     for (let [key, value] of Object.entries(buildQuery)) {
@@ -28,8 +26,8 @@ const discogsAPISearch = (q, page, per_page = 25) => {
     const requestOptions = {
         method: 'GET',
         headers: {
-            'Accept' : 'application/json',
-            'User-Agent' : 'vinylrecordscatalogue/1.0+localhost:3000'
+            'Accept': 'application/json',
+            'User-Agent': 'vinylrecordscatalogue/1.0+localhost:3000'
         }
     };
 
