@@ -42,6 +42,28 @@ function ProtectedComponents(props) {
             );
     });
 
+    /**SearchResults component pagination callback functions*/
+    /**Handle current page click*/
+    const handleCurrentSearchResultsPage = (e) => {
+        e.preventdefault();
+
+        //Assign Pagination component page id to pageNum variable
+        const pageNum = e.target.id;
+
+        //Call Discogs API Search endpoint
+        DiscogsAPISearch(search, pageNum)
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setSearchData(result.results);
+                    setSearchPagination(result.pagination);
+                }
+            );
+        
+        //Scroll to the top of the browser window after refreshing results
+        window.scroll(0,0);
+    };
+
     return (
         <div>
             <Header logoutSubmit={props.logoutSubmit} />
