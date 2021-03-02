@@ -182,7 +182,7 @@ function ProtectedComponents(props) {
                 <Route exact path='/collection' component={Collection} />
                 <Route exact path='/wishlist' component={WishList} />
                 <Route exact path='/randomizer' component={Randomizer} />
-                <Route exact path='/search' component={Search} />
+                <Route exact path='/search' render={(props) => <Search {...passingSearchProps} />} />
                 <Route exact path='/album' component={Album} />
             </Switch>
         </div>
