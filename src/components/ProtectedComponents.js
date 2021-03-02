@@ -144,6 +144,28 @@ function ProtectedComponents(props) {
         window.scrollTo(0, 0);
     };
 
+    /**Handle last page button click*/
+    const handleLastSearchResultsPage = (e) => {
+        e.preventdefault();
+
+        //Set min page to total search result pages - 5 and max page to the value to total search result pages
+        setSearchResultsMinPages(searchResultsPagination.pages - 5);
+        setSearchResultsMaxPages(searchResultsPagination.pages);
+
+        //Call Discogs API Search endpoint
+        DiscogsAPISearch(search, searchResultsPagination.pages)
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setSearchData(result.results);
+                    setSearchResultsPagination(result.pagination);
+                }
+            );
+
+        //Scroll to the top of the browser window after refreshing results
+        window.scrollTo(0, 0);
+    };
+
     return (
         <div>
             <Header logoutSubmit={props.logoutSubmit} />
