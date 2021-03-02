@@ -9,22 +9,6 @@ import Button from 'react-bootstrap/Button'
 
 function Search () {
     
-    /**Global variables*/
-    
-    /**Pagination display limit*/
-    const paginationDisplayLimit = 5;
-
-    /*State variables*/
-    //const [search, setSearch] = useState(''); //done
-    //const [data, setData] = useState([]); //done
-    //const [pagination, setPagination] = useState({}); //done
-    // const [minPaginationNum, setMinPaginationNum] = useState(0);
-    // const [maxPaginationNum, setMaxPaginationNum] = useState(5);
-    // const [apiTimeoutElapse, setApiTimeoutElapse] = useState(true);
-    // const [error, setError] = useState(null);
-    // const [isLoaded, setIsLoaded] = useState(false);
-
-    /**Change handlers*/    
     
 
 
