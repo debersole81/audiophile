@@ -8,7 +8,6 @@ function App() {
   console.log('Render: App Component');
 
   /**Notes*/
-
   //Build a sign up form
   //Build error handling for invalid username/password
   //Implement Bootstrap
@@ -29,7 +28,6 @@ function App() {
   ];
 
   /**State variables*/
-
   /*Login component state variables*/
   /*Login form state object*/
   const [loginInput, setLoginInput] = useState([{
@@ -40,8 +38,7 @@ function App() {
   /*User authentication state variable*/
   const [userAuth, setUserAuth] = useState(true);
 
-  /**Callback functions*/
-
+  /**Callback functions*/ 
   /*Login component callback functions*/
   /*Handle login form input fields*/
   const loginHandleChange = (e) => {
@@ -96,7 +93,6 @@ function App() {
   };
 
   /**Props objects*/
-
   //Pass props to the login component
   const passingLoginProps = {
     loginSubmit: loginSubmit,
