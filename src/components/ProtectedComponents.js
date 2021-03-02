@@ -21,8 +21,8 @@ function ProtectedComponents(props) {
     
     /**SearchResults component state variables*/
     const [searchResultsPagination, setSearchResultsPagination] = useState({});
-    const [searchResultsMinPagination, setSearchResultsMinPagination] = useState(0);
-    const [searchResultsMaxPagination, setSearchResultsMaxPagination] = useState(5);
+    const [searchResultsMinPages, setSearchResultsMinPages] = useState(0);
+    const [searchResultsMaxPages, setSearchResultsMaxPages] = useState(5);
 
     /**Callback functions*/
     /**Search component callback functions*/
@@ -60,7 +60,7 @@ function ProtectedComponents(props) {
             .then(
                 (result) => {
                     setSearchData(result.results);
-                    setSearchPagination(result.pagination);
+                    setSearchResultsPagination(result.pagination);
                 }
             );
         
@@ -68,6 +68,16 @@ function ProtectedComponents(props) {
         window.scroll(0,0);
     };
 
+        /**Handle first page click*/
+        const handleFirstSearchResultsPage = (e) => {
+            e.preventdefault();
+            
+            //Set min and max page numbers to initial values
+            setSearchResultsMinPages(0);
+            setSearchResultsMaxPages(5);
+            
+        }
+    
 
     return (
         <div>
