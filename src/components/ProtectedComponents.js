@@ -11,9 +11,11 @@ import WishList from './WishList';
 
 function ProtectedComponents(props) {
 
+    console.log('Render: Protected Components');
+
     return (
         <div>
-            <Header />
+            <Header {...props.passingHeaderProps}/>
             <Switch>
                 <Route exact path='/' component={Dashboard} />
                 <Route exact path='/collection' component={Collection} />
