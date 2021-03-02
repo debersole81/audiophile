@@ -9,23 +9,8 @@ import Button from 'react-bootstrap/Button'
 
 function Search () {
     
-    
-
-
-    /**Passing props*/ //only pass down what each component needs
-    const passingProps = {
-        data: data,
-        pagination: pagination,
-        paginationDisplayLimit: paginationDisplayLimit,
-        minPaginationNum: minPaginationNum,
-        maxPaginationNum: maxPaginationNum,
-        handleCurrentPage: handleCurrentPage,
-        handleFirstPage: handleFirstPage,
-        handlePrevPage: handlePrevPage,
-        handleNextPage: handleNextPage,
-        handleLastPage: handleLastPage,        
-    };
-    
+ 
+ 
     return(
         <React.Fragment>
             <Jumbotron className='text-center'>
@@ -39,8 +24,8 @@ function Search () {
                         </Form.Group>
                     </Form>
             </Jumbotron>            
-            <SearchResults {...passingProps}/>
-            <Pagination {...passingProps}/>
+            <SearchResults/>
+            <Pagination/>
         </React.Fragment>
     );
 };
