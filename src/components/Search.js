@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import discogsAPISearch from '../helper-functions/DiscogsAPISearch'
+import React from 'react';
 import SearchResults from './SearchResults';
 import Pagination from './Pagination'
 import Form from 'react-bootstrap/Form';
