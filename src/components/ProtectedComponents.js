@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Route, Switch } from 'react-router-dom';
 import Album from './Album';
 import Collection from './Collection';
@@ -13,9 +13,15 @@ function ProtectedComponents(props) {
 
     console.log('Render: Protected Components');
 
+    /**State variables*/
+    /**Search component state variables*/
+    const [search, setSearch] = useState('');
+    const [searchData, setSearchData] = useState([]);
+
+    
     return (
         <div>
-            <Header logoutSubmit={props.logoutSubmit}/>
+            <Header logoutSubmit={props.logoutSubmit} />
             <Switch>
                 <Route exact path='/' component={Dashboard} />
                 <Route exact path='/collection' component={Collection} />
