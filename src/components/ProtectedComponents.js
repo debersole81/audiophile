@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { Route, Switch } from 'react-router-dom';
 import Album from './Album';
 import Collection from './Collection';
@@ -19,6 +19,12 @@ function ProtectedComponents(props) {
     const [searchData, setSearchData] = useState([]);
     const [searchPagination, setSearchPagination] = useState({});
 
+    /**Callback functions*/
+    /**Search component callback functions*/
+    /**Handle search form input field*/
+    const handleSearch = useCallback(({ target }) => {
+        setSearch(target.value);
+    });
 
     return (
         <div>
