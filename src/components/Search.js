@@ -16,7 +16,7 @@ function Search(props) {
                 <Form className='form-inline justify-content-center' onSubmit={props.handleSearchSubmit}>
                     <Form.Group className='form-group'>
                         <Form.Label srOnly>Search</Form.Label>
-                        <Form.Control className='form-control' type='text' name='search' placeholder='Type an album or artist name.' />
+                        <Form.Control className='form-control' type='text' name='search' placeholder='Type an album or artist name.' value={props.search} onChange={props.handleSearch} />
                     </Form.Group>
                 </Form>
             </Jumbotron>
