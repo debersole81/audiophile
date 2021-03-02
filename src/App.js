@@ -4,7 +4,7 @@ import Login from './components/Login';
 import ProtectedComponents from './components/ProtectedComponents'
 
 function App() {
-  
+
   console.log('Render: App Component');
 
   /**Notes*/
@@ -98,7 +98,7 @@ function App() {
   /**Props objects*/
 
   //Pass props to the login component
-  const passingLoginProps = { 
+  const passingLoginProps = {
     loginSubmit: loginSubmit,
     loginInput: loginInput,
     loginHandleChange: loginHandleChange,
@@ -112,7 +112,7 @@ function App() {
   return (
     <div>
       <Route render={(props) => {
-        return userAuth ? (<ProtectedComponents {...passingHeaderProps} />) : (<Login {...passingLoginProps}/>)
+        return userAuth ? (<ProtectedComponents {...passingHeaderProps} />) : (<Login {...passingLoginProps} />)
       }} />
     </div>
   );
