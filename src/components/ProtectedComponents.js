@@ -29,27 +29,29 @@ function ProtectedComponents(props) {
     /**Handle search form input field*/
     const handleSearch = useCallback(({ target }) => {
         setSearch(target.value);
-    });
+    },[]);
+
+    console.log(search);
 
     /**Handle search form submit*/
     const handleSearchSubmit = useCallback((e) => {
-        e.preventdefault();
-
-        //Call Discogs API Search endpoint
-        DiscogsAPISearch(search)
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    setSearchData(result.results);
-                    setSearchResultsPagination(result.pagination);
-                }
-            );
-    });
+        e.preventDefault();
+        console.log('submitted');
+        // //Call Discogs API Search endpoint
+        // DiscogsAPISearch(search)
+        //     .then(res => res.json())
+        //     .then(
+        //         (result) => {
+        //             setSearchData(result.results);
+        //             setSearchResultsPagination(result.pagination);
+        //         }
+        //     );
+    },[]);
 
     /**SearchResults component pagination callback functions*/
     /**Handle current page click*/
     const handleCurrentSearchResultsPage = (e) => {
-        e.preventdefault();
+        e.preventDefault();
 
         //Assign Pagination component page id to pageNum variable
         const pageNum = e.target.id;
@@ -70,7 +72,7 @@ function ProtectedComponents(props) {
 
     /**Handle first page button click*/
     const handleFirstSearchResultsPage = (e) => {
-        e.preventdefault();
+        e.preventDefault();
 
         //Set min and max pages to initial values
         setSearchResultsMinPages(0);
@@ -92,7 +94,7 @@ function ProtectedComponents(props) {
 
     /**Handle previous page button click*/
     const handlePreviousSearchResultsPage = (e) => {
-        e.preventdefault();
+        e.preventDefault();
 
         //If search result total pages are greater than 1, assign a value to pageNum that is equal to the current page - 1
         const pageNum = (searchResultsPagination.page > 1) ? searchResultsPagination.page - 1 : searchResultsPagination.page;
@@ -119,7 +121,7 @@ function ProtectedComponents(props) {
 
     /**Handle next page button click*/
     const handleNextSearchResultsPage = (e) => {
-        e.preventdefault();
+        e.preventDefault();
 
         //If the current search result page is less than the total search result pages, assign a value to pageNum that is equal to the current page + 1
         const pageNum = (searchResultsPagination.page < searchResultsPagination.pages) ? searchResultsPagination.page + 1 : searchResultsPagination.page;
@@ -146,7 +148,7 @@ function ProtectedComponents(props) {
 
     /**Handle last page button click*/
     const handleLastSearchResultsPage = (e) => {
-        e.preventdefault();
+        e.preventDefault();
 
         //Set min page to total search result pages - 5 and max page to the value to total search result pages
         setSearchResultsMinPages(searchResultsPagination.pages - 5);
