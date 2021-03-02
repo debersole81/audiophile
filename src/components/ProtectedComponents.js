@@ -17,9 +17,9 @@ function ProtectedComponents(props) {
     /**State variables*/
     /**Search component state variables*/
     const [search, setSearch] = useState('');
-    const [searchData, setSearchData] = useState([]);
 
     /**SearchResults component state variables*/
+    const [searchData, setSearchData] = useState([]);
     const [searchResultsPagination, setSearchResultsPagination] = useState({});
     const [searchResultsMinPages, setSearchResultsMinPages] = useState(0);
     const [searchResultsMaxPages, setSearchResultsMaxPages] = useState(5);
@@ -164,6 +164,14 @@ function ProtectedComponents(props) {
 
         //Scroll to the top of the browser window after refreshing results
         window.scrollTo(0, 0);
+    };
+
+    /**Props objects*/
+    /**Search component props*/
+    const passingSearchProps = {
+        search: search,
+        handleSearch: handleSearch,
+        handleSearchSubmit: handleSearchSubmit,
     };
 
     return (
