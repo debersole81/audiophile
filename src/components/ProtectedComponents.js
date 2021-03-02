@@ -18,7 +18,7 @@ function ProtectedComponents(props) {
     /**Search component state variables*/
     const [search, setSearch] = useState('');
     const [searchData, setSearchData] = useState([]);
-    
+
     /**SearchResults component state variables*/
     const [searchResultsPagination, setSearchResultsPagination] = useState({});
     const [searchResultsMinPages, setSearchResultsMinPages] = useState(0);
@@ -63,21 +63,33 @@ function ProtectedComponents(props) {
                     setSearchResultsPagination(result.pagination);
                 }
             );
-        
+
         //Scroll to the top of the browser window after refreshing results
-        window.scroll(0,0);
+        window.scroll(0, 0);
     };
 
-        /**Handle first page click*/
-        const handleFirstSearchResultsPage = (e) => {
-            e.preventdefault();
-            
-            //Set min and max page numbers to initial values
-            setSearchResultsMinPages(0);
-            setSearchResultsMaxPages(5);
-            
-        }
-    
+    /**Handle first page click*/
+    const handleFirstSearchResultsPage = (e) => {
+        e.preventdefault();
+
+        //Set min and max page numbers to initial values
+        setSearchResultsMinPages(0);
+        setSearchResultsMaxPages(5);
+
+        //Call Discogs API Search endpoint
+        DiscogsAPISearch(search, 1)
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setSearchData(result.results);
+                    setSearchResultsPagination(result.pagination);
+                }
+            );
+        
+        //Scroll to the top of the browser window after refreshing results
+        window.scrollTo(0,0);
+    };
+
 
     return (
         <div>
