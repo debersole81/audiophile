@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from "react";
 import { Route, Switch } from 'react-router-dom';
+import DiscogsAPISearch from '../helper-functions/DiscogsAPISearch';
 import Album from './Album';
 import Collection from './Collection';
 import Dashboard from './Dashboard';
@@ -24,6 +25,21 @@ function ProtectedComponents(props) {
     /**Handle search form input field*/
     const handleSearch = useCallback(({ target }) => {
         setSearch(target.value);
+    });
+
+    /**Handle search form submit*/
+    const handleSearchSubmit = useCallback((e) => {
+        e.preventdefault();
+
+        //Call Discogs API Search endpoint
+        DiscogsAPISearch(search)
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setSearchData(result.results);
+                    setSearchPagination(result.pagination);
+                }
+            );
     });
 
     return (
