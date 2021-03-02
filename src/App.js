@@ -48,7 +48,7 @@ function App() {
     });
   };
 
-  /*Handle login form button submit*/
+  /*Handle login form button click*/
   const loginSubmit = (e) => {
     e.preventDefault();
 
@@ -93,14 +93,14 @@ function App() {
   };
 
   /**Props objects*/
-  //Pass props to the login component
+  /*Login component props*/
   const passingLoginProps = {
     loginSubmit: loginSubmit,
     loginInput: loginInput,
     loginHandleChange: loginHandleChange,
   };
 
-  //Pass props to the header component
+  /*Header component props*/
   const passingHeaderProps = {
     logoutSubmit: logoutSubmit
   }
