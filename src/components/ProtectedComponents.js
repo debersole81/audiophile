@@ -15,7 +15,7 @@ function ProtectedComponents(props) {
 
     return (
         <div>
-            <Header {...props.passingHeaderProps}/>
+            <Header logoutSubmit={props.logoutSubmit}/>
             <Switch>
                 <Route exact path='/' component={Dashboard} />
                 <Route exact path='/collection' component={Collection} />
