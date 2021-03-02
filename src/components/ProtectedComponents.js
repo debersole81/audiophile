@@ -68,11 +68,11 @@ function ProtectedComponents(props) {
         window.scroll(0, 0);
     };
 
-    /**Handle first page click*/
+    /**Handle first page button click*/
     const handleFirstSearchResultsPage = (e) => {
         e.preventdefault();
 
-        //Set min and max page numbers to initial values
+        //Set min and max pages to initial values
         setSearchResultsMinPages(0);
         setSearchResultsMaxPages(5);
 
@@ -85,11 +85,37 @@ function ProtectedComponents(props) {
                     setSearchResultsPagination(result.pagination);
                 }
             );
-        
+
         //Scroll to the top of the browser window after refreshing results
-        window.scrollTo(0,0);
+        window.scrollTo(0, 0);
     };
 
+    /**Handle previous page button click*/
+    const handlePreviousSearchResultsPage = (e) => {
+        e.preventdefault();
+
+        //If search result total pages are greater than 1, assign a value to pageNum that is equal to the current page - 1
+        const pageNum = (searchResultsPagination.page > 1) ? searchResultsPagination.page - 1 : searchResultsPagination.page;
+
+        //Decrement min and max pages by 5
+        if ((pageNum) % 5 === 0) {
+            setSearchResultsMinPages(searchResultsMinPages - 5);
+            setSearchResultsMaxPages(searchResultsMaxPages - 5);
+        };
+
+        //Call Discogs API Search endpoint
+        DiscogsAPISearch(search, pageNum)
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setSearchData(result.results);
+                    setSearchResultsPagination(result.pagination);
+                }
+            );
+
+        //Scroll to the top of the browser window after refreshing results
+        window.scrollTo(0, 0);
+    };
 
     return (
         <div>
