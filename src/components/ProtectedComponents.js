@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
 import { Route, Switch } from 'react-router-dom';
 import DiscogsAPISearch from '../helper-functions/DiscogsAPISearch';
 import Album from './Album';
@@ -24,17 +24,18 @@ function ProtectedComponents(props) {
     const [searchResultsMinPages, setSearchResultsMinPages] = useState(0);
     const [searchResultsMaxPages, setSearchResultsMaxPages] = useState(5);
 
+    /**Album component state variables*/
+    const [albumData, setAlbumData] = useState({});
+
     /**Callback functions*/
     /**Search component callback functions*/
     /**Handle search form input field*/
-    const handleSearch = useCallback(({ target }) => {
+    const handleSearch = (({ target }) => {
         setSearch(target.value);
-    }, []);
-
-    console.log(search);
+    });
 
     /**Handle search form submit*/
-    const handleSearchSubmit = useCallback((e) => {
+    const handleSearchSubmit = ((e) => {
         e.preventDefault();
 
         //Call Discogs API Search endpoint
@@ -46,7 +47,7 @@ function ProtectedComponents(props) {
                     setSearchResultsPagination(result.pagination);
                 }
             );
-    }, []);
+    });
 
     /**SearchResults component pagination callback functions*/
     /**Handle current page click*/
@@ -189,7 +190,7 @@ function ProtectedComponents(props) {
 
     return (
         <div>
-            {/* <Header logoutSubmit={props.headerProps.logoutSubmit} /> */}
+            <Header logoutSubmit={props.headerProps.logoutSubmit} />
             <Switch>
                 <Route exact path='/' component={Dashboard} />
                 <Route exact path='/collection' component={Collection} />
