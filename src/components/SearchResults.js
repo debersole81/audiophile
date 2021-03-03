@@ -15,7 +15,7 @@ function SearchResults(props) {
                 <Row>
                     {props.searchData.map((results) =>
                         <Col key={results.id} style={{ padding: '1rem' }}>
-                            <Card style={{ width: '12rem' }}>
+                            <Card style={{ width: '12rem' }} id={results.master_id} onClick={props.handleAlbumClick}>
                                 <Card.Img variant='top' src={results.cover_image} style={{ height: '12rem' }} alt='Album Cover Art' />
                                 <Card.Body>
                                     <Card.Title className='text-truncate'>{results.title.split(' - ')[1]}</Card.Title>
