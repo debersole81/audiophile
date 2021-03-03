@@ -38,7 +38,7 @@ function App() {
   /*User authentication state variable*/
   const [userAuth, setUserAuth] = useState(true);
 
-  /**Callback functions*/ 
+  /**Callback functions*/
   /*Login component callback functions*/
   /*Handle login form input fields*/
   const loginHandleChange = (e) => {
@@ -94,21 +94,15 @@ function App() {
 
   /**Props objects*/
   /*Login component props*/
-  const passingLoginProps = {
-    loginSubmit: loginSubmit,
-    loginInput: loginInput,
-    loginHandleChange: loginHandleChange,
-  };
+  const passingLoginProps = { loginSubmit, loginInput, loginHandleChange };
 
   /*Header component props*/
-  const passingHeaderProps = {
-    logoutSubmit: logoutSubmit
-  }
+  const passingHeaderProps = { logoutSubmit };
 
   return (
     <div>
       <Route render={(props) => {
-        return userAuth ? (<ProtectedComponents {...passingHeaderProps} />) : (<Login {...passingLoginProps} />)
+        return userAuth ? (<ProtectedComponents passingHeaderProps={passingHeaderProps} />) : (<Login passingLoginProps={passingLoginProps} />)
       }} />
     </div>
   );
