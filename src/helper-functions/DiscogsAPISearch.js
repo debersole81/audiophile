@@ -6,6 +6,7 @@ const discogsAPISearch = (q, page, per_page = 25) => {
     const buildQuery = {
         q,
         type: 'master',
+        format: 'album',
         key: 'KNMVnsceTtAqbvAVbsPX',
         secret: 'YjfVFNTeaEqVblcDGkanBBRSWPAeIXBO',
         page,
