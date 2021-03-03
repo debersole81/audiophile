@@ -1,30 +1,33 @@
 import React from 'react';
 import Pagination from 'react-bootstrap/Pagination';
 
-function paginationFunc (props) {
+function SearchResultsPagination (props) {
 
-    /**Build array to store each page as a number*/
-    const activePage = props.pagination.page
+    console.log(props.searchResultsPagination);
+
+    /**Global variables*/
+    const activePage = props.searchResultsPagination.page
+    //Empty array to store each page as a number
     const pages = []
 
-    /**Push formatted pages onto pages array*/
-    for(let i = 1; i <= props.pagination.pages; i++){    
+    /**Format pages and push onto pages array*/
+    for(let i = 1; i <= props.searchResultsPagination.pages; i++){    
         pages.push(
-            <Pagination.Item key={i} id={i} className={(i === activePage ? 'active' : null)} onClick={props.handleCurrentPage}>
+            <Pagination.Item key={i} id={i} className={(i === activePage ? 'active' : null)} onClick={props.handleCurrentSearchResultsPage}>
                 {i}
             </Pagination.Item>
         )
     };
 
-    if(props.pagination.pages > 1){
+    if(props.searchResultsPagination.pages > 1){
         return(
         <React.Fragment>
             <Pagination className='mt-3 justify-content-md-center'>
-                <Pagination.First className={props.pagination.page === 1 ? 'disabled' : ''} onClick={props.handleFirstPage}>First</Pagination.First>
-                <Pagination.Prev className={props.pagination.page === 1 ? 'disabled' : ''} onClick={props.handlePrevPage}>Previous</Pagination.Prev>
-                {pages.map((page) => (page.props.id < props.maxPaginationNum + 1 && page.props.id > props.minPaginationNum) ? page : null)}
-                <Pagination.Next className={props.pagination.page === props.pagination.pages ? 'disabled' : ''} onClick={props.handleNextPage}>Next</Pagination.Next>
-                <Pagination.Last className={props.pagination.page === props.pagination.pages ? 'disabled' : ''} onClick={props.handleLastPage}>Last</Pagination.Last>
+                <Pagination.First className={props.searchResultsPagination.page === 1 ? 'disabled' : ''} onClick={props.handleFirstSearchResultsPage}>First</Pagination.First>
+                <Pagination.Prev className={props.searchResultsPagination.page === 1 ? 'disabled' : ''} onClick={props.handlePreviousSearchResultsPage}>Previous</Pagination.Prev>
+                {pages.map((page) => (page.props.id < props.searchResultsMaxPages + 1 && page.props.id > props.searchResultsMinPages) ? page : null)}
+                <Pagination.Next className={props.searchResultsPagination.page === props.searchResultsPagination.pages ? 'disabled' : ''} onClick={props.handleNextSearchResultsPage}>Next</Pagination.Next>
+                <Pagination.Last className={props.searchResultsPagination.page === props.searchResultsPagination.pages ? 'disabled' : ''} onClick={props.handleLastSearchResultsPage}>Last</Pagination.Last>
             </Pagination>
         </React.Fragment>
         )
@@ -34,4 +37,4 @@ function paginationFunc (props) {
 };
 
 
-export default paginationFunc;
+export default SearchResultsPagination;
