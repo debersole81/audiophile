@@ -170,17 +170,26 @@ function ProtectedComponents(props) {
 
     /**Props objects*/
     /**Search component props*/
-    const passingSearchProps = { search, handleSearch, handleSearchSubmit };
+    const searchProps = { search, handleSearch, handleSearchSubmit };
 
     /**SearchResults component props*/
-    const passingSearchResultsProps = { searchData };
+    const searchResultsProps = { searchData };
 
     /**Pagination component props*/
-    const passingSearchResultsPaginationProps = { searchResultsPagination, searchResultsMinPages, searchResultsMaxPages };
+    const searchResultsPaginationProps = { 
+        searchResultsPagination, 
+        searchResultsMinPages, 
+        searchResultsMaxPages,
+        handleCurrentSearchResultsPage,
+        handleFirstSearchResultsPage,
+        handlePreviousSearchResultsPage,
+        handleNextSearchResultsPage,
+        handleLastSearchResultsPage,        
+     };
 
     return (
         <div>
-            <Header logoutSubmit={props.logoutSubmit} />
+            <Header logoutSubmit={props.headerProps.logoutSubmit} />
             <Switch>
                 <Route exact path='/' component={Dashboard} />
                 <Route exact path='/collection' component={Collection} />
@@ -188,9 +197,9 @@ function ProtectedComponents(props) {
                 <Route exact path='/randomizer' component={Randomizer} />
                 <Route exact path='/search' render={(props) =>
                     <Search
-                        passingSearchProps={passingSearchProps}
-                        passingSearchResultsProps={passingSearchResultsProps}
-                        passingSearchResultsPaginationProps={passingSearchResultsPaginationProps} />}
+                        searchProps={searchProps}
+                        searchResultsProps={searchResultsProps}
+                        searchResultsPaginationProps={searchResultsPaginationProps} />}
                 />
                 <Route exact path='/album' component={Album} />
             </Switch>
