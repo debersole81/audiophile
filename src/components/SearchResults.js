@@ -4,24 +4,25 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 
-//only pass data to this component
+function SearchResults(props) {
+    
+    console.log('Render: Search Results Component');
+    console.log(props.searchData);
 
-function SearchResults (props) {
-
-    if(Array.isArray(props.data) && props.data.length) {
-        return(
+    if (Array.isArray(props.searchData) && props.searchData.length) {
+        return (
             <Container>
                 <Row>
-                    {props.data.map((results) =>
+                    {props.searchData.map((results) =>
                         <Col key={results.id} style={{ padding: '1rem' }}>
                             <Card style={{ width: '12rem' }}>
-                                <Card.Img variant='top' src={results.cover_image} style={{ height: '12rem' }} alt='Album Cover Art'/>
+                                <Card.Img variant='top' src={results.cover_image} style={{ height: '12rem' }} alt='Album Cover Art' />
                                 <Card.Body>
                                     <Card.Title className='text-truncate'>{results.title.split(' - ')[1]}</Card.Title>
-                                    <Card.Subtitle className='mb-2 text-truncate text-muted'>{results.title.split(' - ')[0]}</Card.Subtitle>   
+                                    <Card.Subtitle className='mb-2 text-truncate text-muted'>{results.title.split(' - ')[0]}</Card.Subtitle>
                                     <Card.Text className='text-truncate'>
-                                        {results.label[0]}<br/>
-                                        {results.year}<br/>
+                                        {results.label[0]}<br />
+                                        {results.year}<br />
                                     </Card.Text>
                                 </Card.Body>
                             </Card>
@@ -32,8 +33,8 @@ function SearchResults (props) {
         );
     }
 
-    return(null);
-    //     <Container className='text-center'>
+    return (null);
+    // //     <Container className='text-center'>
     //         <h1>Search for something!</h1>
     //     </Container>
     // );
