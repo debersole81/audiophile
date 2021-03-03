@@ -11,7 +11,7 @@ function Login (props, state) {
                     name="username"
                     placeholder="Username"
                     value={state.username}
-                    onChange={props.loginHandleChange}
+                    onChange={props.loginProps.loginHandleChange}
                 />
                 </label>
                 <br />
@@ -21,11 +21,11 @@ function Login (props, state) {
                     name="password"
                     placeholder="Password"
                     value={state.password}
-                    onChange={props.loginHandleChange}
+                    onChange={props.loginProps.loginHandleChange}
                 />
                 </label>
                 <br />
-                <button onClick={props.loginSubmit}>
+                <button onClick={props.loginProps.loginSubmit}>
                     Submit
                 </button>
                 <br />
