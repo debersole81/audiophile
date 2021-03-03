@@ -94,15 +94,15 @@ function App() {
 
   /**Props objects*/
   /*Login component props*/
-  const passingLoginProps = { loginSubmit, loginInput, loginHandleChange };
+  const loginProps = { loginSubmit, loginInput, loginHandleChange };
 
   /*Header component props*/
-  const passingHeaderProps = { logoutSubmit };
+  const headerProps = { logoutSubmit };
 
   return (
     <div>
       <Route render={(props) => {
-        return userAuth ? (<ProtectedComponents passingHeaderProps={passingHeaderProps} />) : (<Login passingLoginProps={passingLoginProps} />)
+        return userAuth ? (<ProtectedComponents headerProps={headerProps} />) : (<Login loginProps={loginProps} />)
       }} />
     </div>
   );
