@@ -1,4 +1,4 @@
-/**Abstraction for call to Discogs API master release endpoint*/
+/**Helper function for Discogs API Search endpoint call*/
 
 const discogsAPIMaster = (masterId) => {
 
@@ -11,8 +11,8 @@ const discogsAPIMaster = (masterId) => {
     const requestOptions = {
         method: 'GET',
         headers: {
-            'Accept' : 'application/json',
-            'User-Agent' : 'vinylrecordscatalogue/1.0+localhost:3000'
+            'Accept': 'application/json',
+            'User-Agent': 'vinylrecordscatalogue/1.0+localhost:3000'
         }
     };
 
@@ -20,5 +20,5 @@ const discogsAPIMaster = (masterId) => {
 
 };
 
-export default discogsAPIMaster; 
+export default discogsAPIMaster;
 
