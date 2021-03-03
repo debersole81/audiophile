@@ -29,7 +29,7 @@ function ProtectedComponents(props) {
     /**Handle search form input field*/
     const handleSearch = useCallback(({ target }) => {
         setSearch(target.value);
-    },[]);
+    }, []);
 
     console.log(search);
 
@@ -46,7 +46,7 @@ function ProtectedComponents(props) {
                     setSearchResultsPagination(result.pagination);
                 }
             );
-    },[]);
+    }, []);
 
     /**SearchResults component pagination callback functions*/
     /**Handle current page click*/
@@ -170,23 +170,13 @@ function ProtectedComponents(props) {
 
     /**Props objects*/
     /**Search component props*/
-    const passingSearchProps = {
-        search: search,
-        handleSearch: handleSearch,
-        handleSearchSubmit: handleSearchSubmit,
-    };
+    const passingSearchProps = { search, handleSearch, handleSearchSubmit };
 
     /**SearchResults component props*/
-    const passingSearchResultsProps = {
-        searchData: searchData,
-    };
+    const passingSearchResultsProps = { searchData };
 
     /**Pagination component props*/
-    const passingSearchResultsPaginationProps ={
-        searchResultsPagination: searchResultsPagination,
-        searchResultsMinPages: searchResultsMinPages,
-        searchResultsMaxPages: searchResultsMaxPages,
-    }
+    const passingSearchResultsPaginationProps = { searchResultsPagination, searchResultsMinPages, searchResultsMaxPages };
 
     return (
         <div>
@@ -196,7 +186,12 @@ function ProtectedComponents(props) {
                 <Route exact path='/collection' component={Collection} />
                 <Route exact path='/wishlist' component={WishList} />
                 <Route exact path='/randomizer' component={Randomizer} />
-                <Route exact path='/search' render={(props) => <Search {...passingSearchProps} {...passingSearchResultsProps} {...passingSearchResultsPaginationProps} />} />
+                <Route exact path='/search' render={(props) =>
+                    <Search
+                        passingSearchProps={passingSearchProps}
+                        passingSearchResultsProps={passingSearchResultsProps}
+                        passingSearchResultsPaginationProps={passingSearchResultsPaginationProps} />}
+                />
                 <Route exact path='/album' component={Album} />
             </Switch>
         </div>
