@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 
 function SearchResults(props) {
-    
+
     console.log('Render: Search Results Component');
     console.log(props.searchData);
 
