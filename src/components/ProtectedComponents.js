@@ -36,16 +36,16 @@ function ProtectedComponents(props) {
     /**Handle search form submit*/
     const handleSearchSubmit = useCallback((e) => {
         e.preventDefault();
-        console.log('submitted');
-        // //Call Discogs API Search endpoint
-        // DiscogsAPISearch(search)
-        //     .then(res => res.json())
-        //     .then(
-        //         (result) => {
-        //             setSearchData(result.results);
-        //             setSearchResultsPagination(result.pagination);
-        //         }
-        //     );
+
+        //Call Discogs API Search endpoint
+        DiscogsAPISearch(search)
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setSearchData(result.results);
+                    setSearchResultsPagination(result.pagination);
+                }
+            );
     },[]);
 
     /**SearchResults component pagination callback functions*/
