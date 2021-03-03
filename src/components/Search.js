@@ -30,8 +30,8 @@ function Search(props) {
                     </Form.Group>
                 </Form>
             </Jumbotron>
-            <SearchResults passingSearchResultsProps={props.searchResultsProps} />
-            <SearchResultsPagination passingSearchResultsPaginationProps={props.searchResultsPaginationProps} />
+            <SearchResults {...props.searchResultsProps} />
+            <SearchResultsPagination {...props.searchResultsPaginationProps} />
         </React.Fragment>
     );
 };
