@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -55,4 +55,8 @@
   color: white;
 }
 
+ */
 
+ .album-links {
+   cursor: pointer;
+ }
