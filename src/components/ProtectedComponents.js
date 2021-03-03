@@ -181,6 +181,13 @@ function ProtectedComponents(props) {
         searchData: searchData,
     };
 
+    /**Pagination component props*/
+    const passingSearchResultsPaginationProps ={
+        searchResultsPagination: searchResultsPagination,
+        searchResultsMinPages: searchResultsMinPages,
+        searchResultsMaxPages: searchResultsMaxPages,
+    }
+
     return (
         <div>
             <Header logoutSubmit={props.logoutSubmit} />
@@ -189,7 +196,7 @@ function ProtectedComponents(props) {
                 <Route exact path='/collection' component={Collection} />
                 <Route exact path='/wishlist' component={WishList} />
                 <Route exact path='/randomizer' component={Randomizer} />
-                <Route exact path='/search' render={(props) => <Search {...passingSearchProps} {...passingSearchResultsProps} />} />
+                <Route exact path='/search' render={(props) => <Search {...passingSearchProps} {...passingSearchResultsProps} {...passingSearchResultsPaginationProps} />} />
                 <Route exact path='/album' component={Album} />
             </Switch>
         </div>
