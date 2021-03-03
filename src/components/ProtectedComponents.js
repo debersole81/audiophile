@@ -49,7 +49,13 @@ function ProtectedComponents(props) {
             );
     });
 
-    /**SearchResults component pagination callback functions*/
+    /**SearchResults component callback functions*/
+    /**Handle album click*/
+    const handleAlbumClick = (e) => {
+        console.log('Album click');
+    }
+
+    /**SearchResultsPagination component callback functions*/
     /**Handle current page click*/
     const handleCurrentSearchResultsPage = (e) => {
         e.preventDefault();
@@ -176,17 +182,17 @@ function ProtectedComponents(props) {
     /**SearchResults component props*/
     const searchResultsProps = { searchData };
 
-    /**Pagination component props*/
-    const searchResultsPaginationProps = { 
-        searchResultsPagination, 
-        searchResultsMinPages, 
+    /**SearchResultsPagination component props*/
+    const searchResultsPaginationProps = {
+        searchResultsPagination,
+        searchResultsMinPages,
         searchResultsMaxPages,
         handleCurrentSearchResultsPage,
         handleFirstSearchResultsPage,
         handlePreviousSearchResultsPage,
         handleNextSearchResultsPage,
-        handleLastSearchResultsPage,        
-     };
+        handleLastSearchResultsPage,
+    };
 
     return (
         <div>
