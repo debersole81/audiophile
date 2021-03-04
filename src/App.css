@@ -60,3 +60,7 @@
  .album-links {
    cursor: pointer;
  }
+
+ .album-button-right {
+   justify-content: flex-end;
+ }
