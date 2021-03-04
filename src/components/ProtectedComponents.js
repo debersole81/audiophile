@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, useHistory } from 'react-router-dom';
 import DiscogsAPISearch from '../helper-functions/DiscogsAPISearch';
 import DiscogsAPIMasterRelease from '../helper-functions/DiscogsAPIMasterRelease';
 import Album from './Album';
@@ -15,6 +15,9 @@ function ProtectedComponents(props) {
 
     console.log('Render: Protected Components');
 
+    /**Global variables*/
+    const history = useHistory();
+    
     /**State variables*/
     /**Search component state variables*/
     const [search, setSearch] = useState('');
@@ -55,8 +58,6 @@ function ProtectedComponents(props) {
     const handleAlbumClick = (e) => {
         e.preventDefault();
 
-        console.log(e.target.id);
-
         // Call Discogs API Master Release endpoint
         DiscogsAPIMasterRelease(e.target.id)
             .then(res => res.json())
@@ -65,7 +66,8 @@ function ProtectedComponents(props) {
                     console.log(result);
                 }
             );
-            
+        
+        history.push('/album');
     };
 
     /**SearchResultsPagination component callback functions*/
