@@ -56,14 +56,16 @@ function ProtectedComponents(props) {
         e.preventDefault();
 
         console.log(e.target.id);
-        //Call Discogs API Master Release endpoint
-        // DiscogsAPIMasterRelease(e.target.id)
-        //     .then(res => res.json())
-        //     .then(
-        //         (result) => {
-        //             console.log(result);
-        //         }
-        //     );
+
+        // Call Discogs API Master Release endpoint
+        DiscogsAPIMasterRelease(e.target.id)
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    console.log(result);
+                }
+            );
+            
     };
 
     /**SearchResultsPagination component callback functions*/
