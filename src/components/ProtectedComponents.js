@@ -17,7 +17,7 @@ function ProtectedComponents(props) {
 
     /**Global variables*/
     const history = useHistory();
-    
+
     /**State variables*/
     /**Search component state variables*/
     const [search, setSearch] = useState('');
@@ -64,9 +64,10 @@ function ProtectedComponents(props) {
             .then(
                 (result) => {
                     console.log(result);
+                    setAlbumData(result);
                 }
             );
-        
+
         history.push('/album');
     };
 
