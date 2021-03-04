@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Route, Switch } from 'react-router-dom';
 import DiscogsAPISearch from '../helper-functions/DiscogsAPISearch';
+import DiscogsAPIMasterRelease from '../helper-functions/DiscogsAPIMasterRelease';
 import Album from './Album';
 import Collection from './Collection';
 import Dashboard from './Dashboard';
@@ -52,8 +53,18 @@ function ProtectedComponents(props) {
     /**SearchResults component callback functions*/
     /**Handle album click*/
     const handleAlbumClick = (e) => {
-        console.log('Album click');
-    }
+        e.preventDefault();
+
+        console.log(e.target.id);
+        //Call Discogs API Master Release endpoint
+        // DiscogsAPIMasterRelease(e.target.id)
+        //     .then(res => res.json())
+        //     .then(
+        //         (result) => {
+        //             console.log(result);
+        //         }
+        //     );
+    };
 
     /**SearchResultsPagination component callback functions*/
     /**Handle current page click*/
