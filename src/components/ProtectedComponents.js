@@ -210,6 +210,9 @@ function ProtectedComponents(props) {
         handleLastSearchResultsPage,
     };
 
+    /**Album component props*/
+    const albumProps = { albumData };
+
     return (
         <div>
             <Header logoutSubmit={props.headerProps.logoutSubmit} />
@@ -224,7 +227,7 @@ function ProtectedComponents(props) {
                         searchResultsProps={searchResultsProps}
                         searchResultsPaginationProps={searchResultsPaginationProps} />}
                 />
-                <Route exact path='/album' component={Album} />
+                <Route exact path='/album' render={(props) => <Album albumProps={albumProps} />} />
             </Switch>
         </div>
     );
