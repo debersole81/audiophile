@@ -2,16 +2,23 @@
 
 const discogsAPIMasterRelease = (masterId) => {
 
+    /**Build Query */
+    const buildQuery = {
+        key: 'KNMVnsceTtAqbvAVbsPX',
+        secret: 'YjfVFNTeaEqVblcDGkanBBRSWPAeIXBO',
+    };
+
     /**Build URL*/
     const baseURL = 'https://api.discogs.com/masters/';
-
-    const url = baseURL + masterId;
-
+    
+    let url = baseURL + masterId;
+    
     /**Build HTTP request method + headers*/
     const requestOptions = {
         method: 'GET',
         headers: {
             'Accept': 'application/json',
+            'Authorization': 'Discogs key=KNMVnsceTtAqbvAVbsPX, secret=YjfVFNTeaEqVblcDGkanBBRSWPAeIXBO',
             'User-Agent': 'vinylrecordscatalogue/1.0+localhost:3000'
         }
     };
