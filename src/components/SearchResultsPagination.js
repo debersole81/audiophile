@@ -3,7 +3,7 @@ import Pagination from 'react-bootstrap/Pagination';
 
 function SearchResultsPagination (props) {
 
-    console.log(props.searchResultsPagination);
+    console.log('Render: SearchResultsPagination Component');
 
     /**Global variables*/
     const activePage = props.searchResultsPagination.page
