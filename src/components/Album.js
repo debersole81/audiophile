@@ -3,20 +3,22 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
+import Button from 'react-bootstrap/Button';
 
 function Album({ albumProps: { albumData } }) {
 
     console.log('Render: Album Component');
-    
+
     console.log(albumData);
 
     return (
         <Container>
-            <Row xs={2} md={4} lg={6}>
-                <Col md={4}>
+            <Row>
+                <Col>
                     <Image src={albumData.images[0].uri} style={{ height: '18rem', width: '18rem' }} alt='Album Cover Art' />
+                    <Button variant='outline-dark' className='mt-2' style={{ width: '18rem' }} block>View More Images</Button>
                 </Col>
-                <Col md={{ span: 2, offset: 2 }}>
+                <Col>
                     <h3>Album Details</h3>
                 </Col>
             </Row>
