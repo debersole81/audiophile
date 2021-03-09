@@ -66,9 +66,10 @@ function ProtectedComponents(props) {
                 (result) => {
                     console.log(result);
                     setAlbumData(result);
+                    history.push('/album');
                 }
             )
-            .then(history.push('/album'));
+            // .then(history.push('/album'));
     };
 
     /**SearchResultsPagination component callback functions*/
