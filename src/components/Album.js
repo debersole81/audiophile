@@ -12,9 +12,9 @@ function Album({ albumProps: { albumData } }) {
     //                         Notes
     //================================================================
     //Need to develop a way to restore previous state (albumData) after a page reload in the browser
-        //Two researched options to accomplish:
-            //Save state loclally via localstorage/indexedDB
-            //Save state at server side  
+    //Two researched options to accomplish:
+    //Save state loclally via localstorage/indexedDB
+    //Save state at server side  
     //================================================================
 
     console.log('Render: Album Component');
@@ -22,10 +22,10 @@ function Album({ albumProps: { albumData } }) {
 
     /**State variables*/
     /**Album images modal component state variables*/
-    const [showModal, setShowModal] = useState(false); 
+    const [showModal, setShowModal] = useState(false);
 
     /**Callback functions*/
-    /**Handle album images modal button click in album component*/
+    /**Handle album images modal button click in Album component*/
     const handleShowModal = (e) => {
         e.preventDefault();
 
@@ -41,6 +41,10 @@ function Album({ albumProps: { albumData } }) {
         setShowModal(false);
     };
 
+    /**Props objects*/
+    /**AlbumImagesModal component props*/
+    const albumImagesModalProps = { albumData, handleCloseModal };
+
     return (
         <Container>
             <Row>
@@ -52,9 +56,9 @@ function Album({ albumProps: { albumData } }) {
                     <h3>Album Details</h3>
                 </Col>
             </Row>
-            {showModal ? <AlbumImagesModal albumImages={albumData.images}/> : null}
+            {showModal ? <AlbumImagesModal albumImagesModalProps={albumImagesModalProps} /> : null}
         </Container>
-        
+
     );
 
 };
