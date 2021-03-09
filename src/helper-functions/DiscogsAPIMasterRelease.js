@@ -2,12 +2,6 @@
 
 const discogsAPIMasterRelease = (masterId) => {
 
-    /**Build Query */
-    const buildQuery = {
-        key: 'KNMVnsceTtAqbvAVbsPX',
-        secret: 'YjfVFNTeaEqVblcDGkanBBRSWPAeIXBO',
-    };
-
     /**Build URL*/
     const baseURL = 'https://api.discogs.com/masters/';
     
