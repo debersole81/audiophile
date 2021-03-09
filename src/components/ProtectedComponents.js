@@ -39,9 +39,9 @@ function ProtectedComponents(props) {
     });
 
     /**Handle search form submit*/
-    const handleSearchSubmit = ((e) => {
+    const handleSearchSubmit = (e) => {
         e.preventDefault();
-
+        console.log('submitted');
         //Call Discogs API Search endpoint
         DiscogsAPISearch(search)
             .then(res => res.json())
@@ -51,12 +51,13 @@ function ProtectedComponents(props) {
                     setSearchResultsPagination(result.pagination);
                 }
             );
-    });
+    };
 
     /**SearchResults component callback functions*/
     /**Handle album click*/
     const handleAlbumClick = (e) => {
         e.preventDefault();
+        console.log('clicked');
 
         // Call Discogs API Master Release endpoint
         DiscogsAPIMasterRelease(e.target.id)
@@ -66,9 +67,8 @@ function ProtectedComponents(props) {
                     console.log(result);
                     setAlbumData(result);
                 }
-            );
-
-        history.push('/album');
+            )
+            .then(history.push('/album'));
     };
 
     /**SearchResultsPagination component callback functions*/
