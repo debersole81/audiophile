@@ -6,6 +6,8 @@ import Image from 'react-bootstrap/Image';
 
 function Album({ albumProps: { albumData } }) {
 
+    console.log('Render: Album Component');
+    
     console.log(albumData);
 
     return (
