@@ -1,8 +1,15 @@
 import React from 'react';
+import Modal from 'react-bootstrap/Modal';
 
-function AlbumImagesModal() {
-    return(
-        <h1>A bunch of images</h1>
+function AlbumImagesModal({ albumImagesModalProps: { albumData, handleCloseModal } }) {
+
+    console.log(albumData);
+    console.log(handleCloseModal);
+
+    return (
+        <Modal>
+
+        </Modal>
     );
 };
 
