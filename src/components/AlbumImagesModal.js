@@ -7,7 +7,7 @@ function AlbumImagesModal({ albumImagesModalProps: { albumData, handleCloseModal
     console.log(handleCloseModal);
 
     return (
-        <Modal>
+        <Modal onHide={handleCloseModal}>
 
         </Modal>
     );
