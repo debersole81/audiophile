@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import AlbumImagesModal from './AlbumImagesModal';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -8,8 +9,12 @@ import Button from 'react-bootstrap/Button';
 function Album({ albumProps: { albumData } }) {
 
     console.log('Render: Album Component');
-
     console.log(albumData);
+
+    /**State variables*/
+    /**Album images modal component state variables*/
+    const [showModal, setShowModal] = useState(false); 
+
 
     return (
         <Container>
