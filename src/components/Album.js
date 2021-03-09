@@ -37,7 +37,9 @@ function Album({ albumProps: { albumData } }) {
                     <h3>Album Details</h3>
                 </Col>
             </Row>
+            {showModal ? <AlbumImagesModal/> : null}
         </Container>
+        
     );
 
 };
