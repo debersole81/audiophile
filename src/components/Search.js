@@ -7,9 +7,7 @@ import Jumbotron from 'react-bootstrap/Jumbotron';
 
 function Search(props) {
 
-    console.log(props.searchProps);
-    console.log(props.searchResultsProps);
-    console.log(props.searchResultsPaginationProps);
+    console.log('Render: Search Component');
 
     return (
         <React.Fragment>
