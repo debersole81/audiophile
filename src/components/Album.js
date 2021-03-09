@@ -12,14 +12,14 @@ function Album({ albumProps: { albumData } }) {
         <Container>
             <Row xs={2} md={4} lg={6}>
                 <Col md={4}>
-                    <Image src={albumData.images[0].resource_url} style={{ height: '18rem', width: '18rem' }} />
+                    <Image src={albumData.images[0].uri} style={{ height: '18rem', width: '18rem' }} alt='Album Cover Art' />
                 </Col>
                 <Col md={{ span: 2, offset: 2 }}>
-                    <h1>Album Details</h1>
+                    <h3>Album Details</h3>
                 </Col>
             </Row>
         </Container>
-    )
+    );
 
 };
 
