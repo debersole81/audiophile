@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import AlbumImagesModal from './AlbumImagesModal';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -43,10 +42,6 @@ function Album({ albumProps: { albumData } }) {
 
     console.log(showModal);
 
-    /**Props objects*/
-    /**AlbumImagesModal component props*/
-    const albumImagesModalProps = { albumData, handleCloseModal };
-
     return (
         <Container>
             <Row>
@@ -64,7 +59,6 @@ function Album({ albumProps: { albumData } }) {
                     <h3>Album Details</h3>
                 </Col>
             </Row>
-            {/* {showModal ? <AlbumImagesModal albumImagesModalProps={albumImagesModalProps} /> : null} */}
         </Container>
 
     );
