@@ -5,6 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 function Album({ albumProps: { albumData } }) {
 
@@ -25,7 +26,7 @@ function Album({ albumProps: { albumData } }) {
     const [showModal, setShowModal] = useState(false);
 
     /**Callback functions*/
-    /**Handle album images modal button click in Album component*/
+    /**Handle show more images button click*/
     const handleShowModal = (e) => {
         e.preventDefault();
 
@@ -33,13 +34,14 @@ function Album({ albumProps: { albumData } }) {
         setShowModal(true);
     };
 
-    /**Handle album images modal close button click in AlbumImagesModal component*/
-    const handleCloseModal = (e) => {
-        e.preventDefault();
-
+    /**Handle modal close button click*/
+    const handleCloseModal = () => {
+        
         //Set showModal to false
         setShowModal(false);
     };
+
+    console.log(showModal);
 
     /**Props objects*/
     /**AlbumImagesModal component props*/
@@ -50,13 +52,19 @@ function Album({ albumProps: { albumData } }) {
             <Row>
                 <Col>
                     <Image src={albumData.images[0].uri} style={{ height: '18rem', width: '18rem' }} alt='Album Cover Art' />
-                    <Button variant='outline-dark' className='mt-2' style={{ width: '18rem' }} onClick={handleShowModal} block>View More Images</Button>
+                    <Button variant='outline-dark' className='mt-2' style={{ width: '18rem' }} onClick={handleShowModal} block>Show More Images</Button>
+                    <Modal show={showModal} onHide={handleCloseModal} size='lg' aria-labelledby='contained-modal-title-vcenter' centered>
+                        <Modal.Header closeButton />
+                        <Modal.Body id='contained-modal-title-vcenter'>
+                            <h1>This is a Modal</h1>
+                        </Modal.Body>
+                    </Modal>
                 </Col>
                 <Col>
                     <h3>Album Details</h3>
                 </Col>
             </Row>
-            {showModal ? <AlbumImagesModal albumImagesModalProps={albumImagesModalProps} /> : null}
+            {/* {showModal ? <AlbumImagesModal albumImagesModalProps={albumImagesModalProps} /> : null} */}
         </Container>
 
     );
