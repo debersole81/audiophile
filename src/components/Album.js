@@ -55,7 +55,7 @@ function Album({ albumProps: { albumData } }) {
         
         if (element.type === 'secondary') {
             images.push(
-                <Carousel.Item>
+                <Carousel.Item key={index}>
                     <img
                         className='d-block w-100'
                         src={element.uri}
