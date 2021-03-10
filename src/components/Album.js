@@ -79,7 +79,7 @@ function Album({ albumProps: { albumData } }) {
                         <Modal.Header closeButton />
                         <Modal.Body id='contained-modal-title-vcenter'>
                             <Carousel>
-
+                                {images}
                             </Carousel>
                         </Modal.Body>
                     </Modal>
