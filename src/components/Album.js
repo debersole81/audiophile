@@ -41,17 +41,12 @@ function Album({ albumProps: { albumData } }) {
         setShowModal(false);
     };
 
-    console.log(showModal);
-
     /**Prepare images for carousel react bootstrap component*/
     //Build empty array
     const images = [];
 
     //Format images and push onto images array
     albumData.images.forEach((element, index) => {
-        
-        console.log(element);
-        console.log(index);
         
         if (element.type === 'secondary') {
             images.push(
@@ -65,9 +60,6 @@ function Album({ albumProps: { albumData } }) {
             )
         };
     });
-
-    console.log(images);
-
 
     return (
         <Container>
