@@ -77,7 +77,8 @@ function Album({ albumProps: { albumData } }) {
                     </Modal>
                 </Col>
                 <Col>
-                    <h3>{albumData.title}</h3>
+                    <h3 className='mb-3'>{albumData.title}</h3>
+                    <h4>{albumData.artists[0].name}</h4>
                 </Col>
             </Row>
         </Container>
