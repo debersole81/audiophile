@@ -17,6 +17,8 @@ const discogsAPIRelease = (main_release) => {
         }
     };
 
+    return fetch(url, requestOptions);
+
 };
 
 export default discogsAPIRelease;
