@@ -85,7 +85,7 @@ function Album({ albumProps: { albumData } }) {
         <Container>
             <Row>
                 <Col>
-                    <Image src={albumData.images[0].uri} style={{ height: '18rem', width: '18rem' }} alt='Album Cover Art' />
+                    <Image src={albumReleaseData.images[0].uri} style={{ height: '18rem', width: '18rem' }} alt='Album Cover Art' />
                     <Button variant='outline-dark' className='mt-2' style={{ width: '18rem' }} onClick={handleShowModal} block>See More Images</Button>
                     <Modal show={showModal} onHide={handleCloseModal} size='lg' aria-labelledby='contained-modal-title-vcenter' centered>
                         <Modal.Header closeButton />
