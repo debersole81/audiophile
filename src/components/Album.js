@@ -28,7 +28,19 @@ function Album({ albumProps: { albumData } }) {
 
     /**Album images modal component state variable*/
     const [showModal, setShowModal] = useState(false);
-    
+
+    /**API calls*/
+    /**Call Discogs Release endpoint */
+    useEffect(() => {
+        DiscogsAPIRelease(albumData.main_release)
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    console.log(result);
+                }
+            );
+    }, []);
+
     /**Callback functions*/
     /**Handle show more images button click*/
     const handleShowModal = (e) => {
@@ -64,13 +76,6 @@ function Album({ albumProps: { albumData } }) {
             )
         };
     });
-
-    useEffect(() => {
-        fetch('https://api.discogs.com/releases/1582643')
-            .then(res => res.json())
-            .then((result) => console.log(result))
-    }, []);
-
 
     return (
         <Container>
