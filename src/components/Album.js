@@ -31,15 +31,19 @@ function Album({ albumProps: { albumData } }) {
 
     /**API calls*/
     /**Call Discogs Release endpoint */
+
     useEffect(() => {
         DiscogsAPIRelease(albumData.main_release)
             .then(res => res.json())
             .then(
                 (result) => {
-                    console.log(result);
+                    setAlbumReleaseData(result);
                 }
             );
-    }, []);
+    }, [albumData.main_release]);
+
+    console.log(albumReleaseData);
+
 
     /**Callback functions*/
     /**Handle show more images button click*/
