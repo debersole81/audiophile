@@ -16,7 +16,8 @@ function Album({ albumProps: { albumData } }) {
     //Need to develop a way to restore previous state (albumData) after a page reload in the browser
     //Two researched options to accomplish:
     //Save state loclally via localstorage/indexedDB
-    //Save state at server side  
+    //Save state at server side 
+    //Make a wrapper for modal to prevent album component render on modal open and close
     //================================================================
 
     console.log('Render: Album Component');
@@ -55,8 +56,7 @@ function Album({ albumProps: { albumData } }) {
     };
 
     /**Handle modal close button click*/
-    const handleCloseModal = () => {
-
+    const handleCloseModal = (e) => {
         //Set showModal to false
         setShowModal(false);
     };
@@ -66,7 +66,7 @@ function Album({ albumProps: { albumData } }) {
     const images = [];
 
     //Format images and push onto images array
-    albumData.images.forEach((element, index) => {
+    albumReleaseData.images.forEach((element, index) => {
 
         if (element.type === 'secondary') {
             images.push(
