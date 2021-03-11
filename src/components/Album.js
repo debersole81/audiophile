@@ -77,7 +77,7 @@ function Album({ albumProps: { albumData } }) {
                     </Modal>
                 </Col>
                 <Col>
-                    <h3>Album Details</h3>
+                    <h3>{albumData.title}</h3>
                 </Col>
             </Row>
         </Container>
