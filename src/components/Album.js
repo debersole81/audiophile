@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import DiscogsAPIRelease from '../helper-functions/DiscogsAPIRelease';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -22,9 +23,12 @@ function Album({ albumProps: { albumData } }) {
     console.log(albumData);
 
     /**State variables*/
-    /**Album images modal component state variables*/
-    const [showModal, setShowModal] = useState(false);
+    /**Album release data state variable*/
+    const [albumReleaseData, setAlbumReleaseData] = useState({});
 
+    /**Album images modal component state variable*/
+    const [showModal, setShowModal] = useState(false);
+    
     /**Callback functions*/
     /**Handle show more images button click*/
     const handleShowModal = (e) => {
@@ -47,7 +51,7 @@ function Album({ albumProps: { albumData } }) {
 
     //Format images and push onto images array
     albumData.images.forEach((element, index) => {
-        
+
         if (element.type === 'secondary') {
             images.push(
                 <Carousel.Item key={index}>
@@ -60,6 +64,13 @@ function Album({ albumProps: { albumData } }) {
             )
         };
     });
+
+    useEffect(() => {
+        fetch('https://api.discogs.com/releases/1582643')
+            .then(res => res.json())
+            .then((result) => console.log(result))
+    }, []);
+
 
     return (
         <Container>
@@ -79,6 +90,7 @@ function Album({ albumProps: { albumData } }) {
                 <Col>
                     <h3 className='mb-3'>{albumData.title}</h3>
                     <h4>{albumData.artists[0].name}</h4>
+                    <p>Label: Capitol Records</p>
                 </Col>
             </Row>
         </Container>
