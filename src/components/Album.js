@@ -97,9 +97,11 @@ function Album({ albumProps: { albumData } }) {
                     </Modal>
                 </Col>
                 <Col>
-                    <h3 className='mb-3'>{albumData.title}</h3>
-                    <h4>{albumData.artists[0].name}</h4>
-                    <p>Label: Capitol Records</p>
+                    <h3 className='mb-4'>{albumData.title}</h3>
+                    <div className='text-muted'>
+                        <h4>{albumData.artists[0].name}</h4>
+                        <p>{albumReleaseData.labels[0].name} - {albumReleaseData.labels[0].catno}</p>
+                    </div>
                 </Col>
             </Row>
         </Container>
