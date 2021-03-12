@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Route, Switch, useHistory } from 'react-router-dom';
 import DiscogsAPISearch from '../helper-functions/DiscogsAPISearch';
 import DiscogsAPIMasterRelease from '../helper-functions/DiscogsAPIMasterRelease';
+import DiscogsAPIRelease from '../helper-functions/DiscogsAPIRelease';
 import Album from './Album';
 import Collection from './Collection';
 import Dashboard from './Dashboard';
@@ -42,6 +43,7 @@ function ProtectedComponents(props) {
     const handleSearchSubmit = (e) => {
         e.preventDefault();
         console.log('submitted');
+        
         //Call Discogs API Search endpoint
         DiscogsAPISearch(search)
             .then(res => res.json())
@@ -59,18 +61,26 @@ function ProtectedComponents(props) {
         e.preventDefault();
         console.log('clicked');
 
-        // Call Discogs API Master Release endpoint
+        // Call Discogs API Master Release endpoint to retreive main_release ID
+        // Then call Discgos API Release endpoint passing main_release ID as param
         DiscogsAPIMasterRelease(e.target.id)
-            .then(res => res.json())
+            .then(resOne => resOne.json())
             .then(
                 (result) => {
-                    console.log(result);
-                    setAlbumData(result);
-                    history.push('/album');
-                }
-            )
-            // .then(history.push('/album'));
+                    console.log(result)
+                    console.log(result.main_release);
+                    DiscogsAPIRelease(result.main_release)
+                        .then(resTwo => resTwo.json())
+                        .then(
+                            (result) => {
+                                console.log(result)
+                                setAlbumData(result)
+                                // history.push('/album');
+                            })
+                })
     };
+
+    console.log(albumData);
 
     /**SearchResultsPagination component callback functions*/
     /**Handle current page click*/
