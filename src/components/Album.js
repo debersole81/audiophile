@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import DiscogsAPIRelease from '../helper-functions/DiscogsAPIRelease';
+import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -43,53 +42,53 @@ function Album({ albumProps: { albumData } }) {
         setShowModal(false);
     };
 
-    // /**Prepare images for carousel react bootstrap component*/
-    // //Build empty array
-    // const images = [];
+    /**Prepare images for carousel react bootstrap component*/
+    //Build empty array
+    const images = [];
 
-    // //Format images and push onto images array
-    // albumReleaseData.images.forEach((element, index) => {
+    //Format images and push onto images array
+    albumData.images.forEach((element, index) => {
 
-    //     if (element.type === 'secondary') {
-    //         images.push(
-    //             <Carousel.Item key={index}>
-    //                 <img
-    //                     className='d-block w-100'
-    //                     src={element.uri}
-    //                     alt={`More images slide ${index}`}
-    //                 />
-    //             </Carousel.Item>
-    //         )
-    //     };
-    // });
+        if (element.type === 'secondary') {
+            images.push(
+                <Carousel.Item key={index}>
+                    <img
+                        className='d-block w-100'
+                        src={element.uri}
+                        alt={`More images slide ${index}`}
+                    />
+                </Carousel.Item>
+            )
+        };
+    });
 
-    return (null
-        // <Container>
-        //     <Row>
-        //         <Col>
-        //             <Image src={albumReleaseData.images[0].uri} style={{ height: '18rem', width: '18rem' }} alt='Album Cover Art' />
-        //             <Button variant='outline-dark' className='mt-2' style={{ width: '18rem' }} onClick={handleShowModal} block>See More Images</Button>
-        //             <Modal show={showModal} onHide={handleCloseModal} size='lg' aria-labelledby='contained-modal-title-vcenter' centered>
-        //                 <Modal.Header closeButton />
-        //                 <Modal.Body id='contained-modal-title-vcenter'>
-        //                     <Carousel>
-        //                         {images}
-        //                     </Carousel>
-        //                 </Modal.Body>
-        //             </Modal>
-        //         </Col>
-        //         <Col>
-        //             <h3 className='mb-4'>{albumReleaseData.title}</h3>
-        //             <div className='text-muted'>
-        //                 <h4 className>{albumReleaseData.artists[0].name}</h4>
-        //                 <p style={{margin: 0}}>{albumReleaseData.labels[0].name} - {albumReleaseData.labels[0].catno}</p>
-        //                 <p style={{margin: 0}}>{albumReleaseData.formats[0].name}</p>
-        //                 <p style={{margin: 0}}>{albumReleaseData.country} &#8226; {albumReleaseData.year}</p>
-        //             </div>
-        //         </Col>
-        //     </Row>
-        // </Container>
+    return (
 
+        <Container>
+            <Row>
+                <Col>
+                    <Image src={albumData.images[0].uri} style={{ height: '18rem', width: '18rem' }} alt='Album Cover Art' />
+                    <Button variant='outline-dark' className='mt-2' style={{ width: '18rem' }} onClick={handleShowModal} block>See More Images</Button>
+                    <Modal show={showModal} onHide={handleCloseModal} size='lg' aria-labelledby='contained-modal-title-vcenter' centered>
+                        <Modal.Header closeButton />
+                        <Modal.Body id='contained-modal-title-vcenter'>
+                            <Carousel>
+                                {images}
+                            </Carousel>
+                        </Modal.Body>
+                    </Modal>
+                </Col>
+                <Col>
+                    <h3 className='mb-4'>{albumData.title}</h3>
+                    <div className='text-muted'>
+                        <h4>{albumData.artists[0].name}</h4>
+                        <p style={{ margin: 0 }}>{albumData.labels[0].name} - {albumData.labels[0].catno}</p>
+                        <p style={{ margin: 0 }}>{albumData.formats[0].name}</p>
+                        <p style={{ margin: 0 }}>{albumData.country} &#8226; {albumData.year}</p>
+                    </div>
+                </Col>
+            </Row>
+        </Container>
     );
 
 };
