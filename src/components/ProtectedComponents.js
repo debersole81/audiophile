@@ -64,18 +64,18 @@ function ProtectedComponents(props) {
         // Call Discogs API Master Release endpoint to retreive main_release ID
         // Then call Discgos API Release endpoint passing main_release ID as param
         DiscogsAPIMasterRelease(e.target.id)
-            .then(resOne => resOne.json())
+            .then(masterres => masterres.json())
             .then(
                 (result) => {
                     console.log(result)
                     console.log(result.main_release);
                     DiscogsAPIRelease(result.main_release)
-                        .then(resTwo => resTwo.json())
+                        .then(releaseres => releaseres.json())
                         .then(
                             (result) => {
                                 console.log(result)
                                 setAlbumData(result)
-                                // history.push('/album');
+                                history.push('/album');
                             })
                 })
     };
