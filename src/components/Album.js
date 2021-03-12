@@ -24,27 +24,9 @@ function Album({ albumProps: { albumData } }) {
     console.log(albumData);
 
     /**State variables*/
-    /**Album release data state variable*/
-    const [albumReleaseData, setAlbumReleaseData] = useState({});
 
     /**Album images modal component state variable*/
     const [showModal, setShowModal] = useState(false);
-
-    /**API calls*/
-    /**Call Discogs Release endpoint */
-
-    useEffect(() => {
-        DiscogsAPIRelease(albumData.main_release)
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    setAlbumReleaseData(result);
-                }
-            );
-    }, [albumData.main_release]);
-
-    console.log(albumReleaseData);
-
 
     /**Callback functions*/
     /**Handle show more images button click*/
@@ -61,53 +43,52 @@ function Album({ albumProps: { albumData } }) {
         setShowModal(false);
     };
 
-    /**Prepare images for carousel react bootstrap component*/
-    //Build empty array
-    const images = [];
+    // /**Prepare images for carousel react bootstrap component*/
+    // //Build empty array
+    // const images = [];
 
-    //Format images and push onto images array
-    albumReleaseData.images.forEach((element, index) => {
+    // //Format images and push onto images array
+    // albumReleaseData.images.forEach((element, index) => {
 
-        if (element.type === 'secondary') {
-            images.push(
-                <Carousel.Item key={index}>
-                    <img
-                        className='d-block w-100'
-                        src={element.uri}
-                        alt={`More images slide ${index}`}
-                    />
-                </Carousel.Item>
-            )
-        };
-    });
+    //     if (element.type === 'secondary') {
+    //         images.push(
+    //             <Carousel.Item key={index}>
+    //                 <img
+    //                     className='d-block w-100'
+    //                     src={element.uri}
+    //                     alt={`More images slide ${index}`}
+    //                 />
+    //             </Carousel.Item>
+    //         )
+    //     };
+    // });
 
-    return (
-        <Container>
-            <Row>
-                <Col>
-                    <Image src={albumReleaseData.images[0].uri} style={{ height: '18rem', width: '18rem' }} alt='Album Cover Art' />
-                    <Button variant='outline-dark' className='mt-2' style={{ width: '18rem' }} onClick={handleShowModal} block>See More Images</Button>
-                    <Modal show={showModal} onHide={handleCloseModal} size='lg' aria-labelledby='contained-modal-title-vcenter' centered>
-                        <Modal.Header closeButton />
-                        <Modal.Body id='contained-modal-title-vcenter'>
-                            <Carousel>
-                                {images}
-                            </Carousel>
-                        </Modal.Body>
-                    </Modal>
-                </Col>
-                <Col>
-                    <h3 className='mb-4'>{albumData.title}</h3>
-                    <div className='text-muted'>
-                        <h4 className>{albumData.artists[0].name}</h4>
-                        <p style={{margin: 0}}>{albumReleaseData.labels[0].name} - {albumReleaseData.labels[0].catno}</p>
-                        <p style={{margin: 0}}>{albumReleaseData.formats[0].name}</p>
-                        <p style={{margin: 0}}>{albumReleaseData.genres[0]}</p>
-                        <p style={{margin: 0}}>{albumReleaseData.country} Release</p>
-                    </div>
-                </Col>
-            </Row>
-        </Container>
+    return (null
+        // <Container>
+        //     <Row>
+        //         <Col>
+        //             <Image src={albumReleaseData.images[0].uri} style={{ height: '18rem', width: '18rem' }} alt='Album Cover Art' />
+        //             <Button variant='outline-dark' className='mt-2' style={{ width: '18rem' }} onClick={handleShowModal} block>See More Images</Button>
+        //             <Modal show={showModal} onHide={handleCloseModal} size='lg' aria-labelledby='contained-modal-title-vcenter' centered>
+        //                 <Modal.Header closeButton />
+        //                 <Modal.Body id='contained-modal-title-vcenter'>
+        //                     <Carousel>
+        //                         {images}
+        //                     </Carousel>
+        //                 </Modal.Body>
+        //             </Modal>
+        //         </Col>
+        //         <Col>
+        //             <h3 className='mb-4'>{albumReleaseData.title}</h3>
+        //             <div className='text-muted'>
+        //                 <h4 className>{albumReleaseData.artists[0].name}</h4>
+        //                 <p style={{margin: 0}}>{albumReleaseData.labels[0].name} - {albumReleaseData.labels[0].catno}</p>
+        //                 <p style={{margin: 0}}>{albumReleaseData.formats[0].name}</p>
+        //                 <p style={{margin: 0}}>{albumReleaseData.country} &#8226; {albumReleaseData.year}</p>
+        //             </div>
+        //         </Col>
+        //     </Row>
+        // </Container>
 
     );
 
