@@ -3,6 +3,10 @@
 }
 
 .col {
-  border: solid 2px darkgray;
+  border: solid 3px royalblue;
   background: lightblue;
+}
+
+.search-jumbotron {
+  text-align: center;
 }
