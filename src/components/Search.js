@@ -20,7 +20,11 @@ function Search(props) {
                         <h1>Search Albums</h1>
                     </Col>
                 </Row>
-                <p className='lead text-muted'>Find albums to add to your collection or wishlist.</p>
+                <Row className='row'>
+                    <Col className='col'>
+                        <p className='search-p lead text-muted'>Find an album to add to your collection or wishlist.</p>
+                    </Col>
+                </Row>
                 <Form className='justify-content-center' onSubmit={props.searchProps.handleSearchSubmit}>
                     <Form.Group className='form-group'>
                         <Form.Label srOnly>Search</Form.Label>
