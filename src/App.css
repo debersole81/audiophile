@@ -1,3 +1,5 @@
+/*Row and column visualization styles. For assisting with layout only*/
+
 .row {
   border: solid 2px red;
 }
@@ -7,6 +9,17 @@
   background: lightblue;
 }
 
+/*Search component styles*/
+
 .search-jumbotron {
   text-align: center;
+}
+
+.search-h1 {
+  font-size: 1.5rem;
+}
+
+.search-p {
+  font-size: 1.5rem;
+  padding-top: .5em;
 }
