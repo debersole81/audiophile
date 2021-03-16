@@ -9,6 +9,27 @@
   background: lightblue;
 }
 
+/*Vendor prefix CSS properties*/
+::-webkit-input-placeholder {
+  font-style: italic;
+  font-size: 1rem;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  font-style: italic;  
+  font-size: 1rem;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  font-style: italic;  
+  font-size: 1rem;
+}
+
+:-ms-input-placeholder {  
+  font-style: italic;  
+  font-size: 1rem;
+}
+
 /*Search component styles*/
 
 .search-jumbotron {
