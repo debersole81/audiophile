@@ -25,19 +25,23 @@ function Search(props) {
                         <p className='search-p lead text-muted'>Find an album to add to your collection or wishlist.</p>
                     </Col>
                 </Row>
-                <Form className='justify-content-center' onSubmit={props.searchProps.handleSearchSubmit}>
-                    <Form.Group className='form-group'>
-                        <Form.Label srOnly>Search</Form.Label>
-                        <Form.Control
-                            className='form-control'
-                            type='text'
-                            name='search'
-                            placeholder='Type an album or artist name.'
-                            value={props.searchProps.search}
-                            onChange={props.searchProps.handleSearch}
-                        />
-                    </Form.Group>
-                </Form>
+                <Row className='row'>
+                    <Col className='col'>
+                        <Form className='justify-content-center' onSubmit={props.searchProps.handleSearchSubmit}>
+                            <Form.Group className='form-group'>
+                                <Form.Label srOnly>Search</Form.Label>
+                                <Form.Control
+                                    className='form-control'
+                                    type='text'
+                                    name='search'
+                                    placeholder='Type an album or artist name.'
+                                    value={props.searchProps.search}
+                                    onChange={props.searchProps.handleSearch}
+                                />
+                            </Form.Group>
+                        </Form>
+                    </Col>
+                </Row>
             </Jumbotron>
             <SearchResults {...props.searchResultsProps} />
             <SearchResultsPagination {...props.searchResultsPaginationProps} />
