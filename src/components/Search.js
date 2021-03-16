@@ -27,11 +27,10 @@ function Search(props) {
                 </Row>
                 <Row className='row'>
                     <Col className='col'>
-                        <Form className='justify-content-center' onSubmit={props.searchProps.handleSearchSubmit}>
-                            <Form.Group className='form-group'>
+                        <Form onSubmit={props.searchProps.handleSearchSubmit}>
+                            <Form.Group>
                                 <Form.Label srOnly>Search</Form.Label>
                                 <Form.Control
-                                    className='form-control'
                                     type='text'
                                     name='search'
                                     placeholder='Type an album or artist name.'
