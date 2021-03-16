@@ -6,16 +6,16 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
-function SearchResults(props) {
+function SearchResults({searchData, handleAlbumClick}) {
 
     console.log('Render: Search Results Component');
-    console.log(props.searchData);
+    console.log(searchData);
 
-    if (Array.isArray(props.searchData) && props.searchData.length) {
+    if (Array.isArray(searchData) && searchData.length) {
         return (
             <Container>
                 <Row>
-                    {props.searchData.map((results) =>
+                    {searchData.map((results) =>
                         <Col key={results.id} style={{ padding: '1rem' }}>
                             <Card style={{ width: '12rem' }}>
                                 <Card.Img variant='top' src={results.cover_image} style={{ height: '12rem' }} alt='Album Cover Art' />
@@ -26,7 +26,7 @@ function SearchResults(props) {
                                         {results.label[0]}<br />
                                         {results.year}<br />
                                     </Card.Text>
-                                    <Button variant='outline-secondary' size='sm' id={results.master_id} onClick={props.handleAlbumClick} block>View</Button>
+                                    <Button variant='outline-secondary' size='sm' id={results.master_id} onClick={handleAlbumClick} block>View</Button>
                                 </Card.Body>
                             </Card>
                         </Col>
