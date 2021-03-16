@@ -1,5 +1,4 @@
 /*Row and column visualization styles. For assisting with layout only*/
-
 .row {
   border: solid 2px red;
 }
@@ -47,4 +46,20 @@
 
 .search-form {
   padding-top: .5rem;
+}
+
+/*Search results component styles*/
+.search-results-col{
+  padding-top: .5em;
+  padding-bottom: .5em;  
+}
+
+.search-results-card {
+  margin-left: auto;
+  margin-right: auto;
+  width: 15em;
+}
+
+.search-results-card-img {
+   height: 15em;
 }
