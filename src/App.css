@@ -1,4 +1,5 @@
 /*Row and column visualization styles. For assisting with layout only*/
+
 .row {
   border: solid 2px red;
 }
@@ -9,23 +10,26 @@
 }
 
 /*Vendor prefix CSS properties*/
+
 ::-webkit-input-placeholder {
   font-style: italic;
   font-size: 1rem;
 }
 
-:-moz-placeholder { /* Firefox 18- */
-  font-style: italic;  
+:-moz-placeholder {
+  /* Firefox 18- */
+  font-style: italic;
   font-size: 1rem;
 }
 
-::-moz-placeholder {  /* Firefox 19+ */
-  font-style: italic;  
+::-moz-placeholder {
+  /* Firefox 19+ */
+  font-style: italic;
   font-size: 1rem;
 }
 
-:-ms-input-placeholder {  
-  font-style: italic;  
+:-ms-input-placeholder {
+  font-style: italic;
   font-size: 1rem;
 }
 
@@ -49,17 +53,20 @@
 }
 
 /*Search results component styles*/
-.search-results-col{
+
+.search-results-col {
   padding-top: .5em;
-  padding-bottom: .5em;  
+  padding-bottom: .5em;
+ 
 }
 
 .search-results-card {
+  display: flex;
   margin-left: auto;
   margin-right: auto;
-  width: 15em;
+  width: 18em;
 }
 
 .search-results-card-img {
-   height: 15em;
+  height: 18em;
 }
