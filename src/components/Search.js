@@ -1,11 +1,11 @@
 import React from 'react';
+import '../App.css';
 import SearchResults from './SearchResults';
 import SearchResultsPagination from './SearchResultsPagination'
 import Form from 'react-bootstrap/Form';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import '../App.css';
 
 
 function Search(props) {
