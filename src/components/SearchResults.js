@@ -4,7 +4,6 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
-import CardColumns from 'react-bootstrap/CardColumns';
 import Button from 'react-bootstrap/Button';
 
 function SearchResults({ searchData, handleAlbumClick }) {
@@ -17,7 +16,7 @@ function SearchResults({ searchData, handleAlbumClick }) {
             <Container>
                 <Row>
                     {searchData.map((results) =>
-                        <Col key={results.id} className='search-results-col'>
+                        <Col key={results.id} className='col search-results-col' md={6} lg={4}>
                             <Card className='search-results-card'>
                                 <Card.Img className='search-results-card-img' variant='top' src={results.cover_image} alt='Album Cover Art' />
                                 <Card.Body>
