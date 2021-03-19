@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../App.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -67,7 +68,7 @@ function Album({ albumProps: { albumData } }) {
         <Container>
             <Row>
                 <Col className='col' xs={12} s={12} md={6} lg={6}>
-                    <Image src={albumData.images[0].uri} style={{ height: '18rem', width: '18rem' }} alt='Album Cover Art' />
+                    <Image src={albumData.images[0].uri} className='album-image' alt='Album Cover Art' />
                     <Button variant='outline-dark' className='mt-2' style={{ width: '18rem' }} onClick={handleShowModal} block>See More Images</Button>
                     <Modal show={showModal} onHide={handleCloseModal} size='lg' aria-labelledby='contained-modal-title-vcenter' centered>
                         <Modal.Header closeButton />
