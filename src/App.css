@@ -1,4 +1,5 @@
 /*Row and Column visualization styles. For assisting with layout only*/
+
 .row {
   border: solid 2px red;
 }
@@ -9,6 +10,7 @@
 }
 
 /*Vendor prefix CSS properties*/
+
 ::-webkit-input-placeholder {
   font-style: italic;
   font-size: 1rem;
@@ -32,6 +34,7 @@
 }
 
 /*Search Component Styles*/
+
 .search-jumbotron {
   text-align: center;
 }
@@ -50,6 +53,7 @@
 }
 
 /*Search Results Component Styles*/
+
 .search-results-col {
   padding-top: .5rem;
   padding-bottom: .5rem;
@@ -58,6 +62,7 @@
 .overflow {
   overflow: hidden;
 }
+
 .search-results-card {
   display: flex;
   margin-left: auto;
@@ -68,6 +73,7 @@
 .search-results-card:hover {
   box-shadow: 5px 10px 20px 1px rgba(0, 0, 0, 0.253);
 }
+
 .search-results-card-img {
   height: 18rem;
   transform: scale(1);
@@ -83,12 +89,7 @@
 }
 
 /*Album Component Styles*/
-.album-image {
-  display: flex;
-  justify-content: center;
-  height: '18rem';
-  width: '18rem';
-  margin-left: auto;
-  margin-right: auto;
-}
 
+.album-col {
+  justify-content: center;
+}
