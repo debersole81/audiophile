@@ -69,7 +69,7 @@ function Album({ albumProps: { albumData } }) {
             <Row>
                 <Col className='col album-col' xs={12} s={12} md={6} lg={6}>
                     <Image fluid src={albumData.images[0].uri} className='album-image' alt='Album Cover Art' />
-                    <Button variant='outline-dark' onClick={handleShowModal} block>See More Images</Button>
+                    <Button variant='dark' className='album-button' onClick={handleShowModal} block>See More Images</Button>
                     <Modal show={showModal} onHide={handleCloseModal} size='lg' aria-labelledby='contained-modal-title-vcenter' centered>
                         <Modal.Header closeButton />
                         <Modal.Body id='contained-modal-title-vcenter'>
