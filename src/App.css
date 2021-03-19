@@ -68,6 +68,16 @@
 
 .search-results-card-img {
   height: 18rem;
+  transform: scale(1);
+  transition: transform 0.5s ease;
+}
+
+.search-results-card-img:hover {
+  transform: scale(1.8);
+}
+
+.overflow {
+  overflow: hidden;
 }
 
 .search-results-card:hover {
