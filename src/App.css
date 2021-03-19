@@ -93,3 +93,7 @@
 .album-col {
   justify-content: center;
 }
+
+.album-button {
+  margin-top: .5em;
+}
