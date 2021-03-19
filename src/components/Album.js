@@ -66,7 +66,7 @@ function Album({ albumProps: { albumData } }) {
 
         <Container>
             <Row>
-                <Col className='col' md={4} lg={4}>
+                <Col className='col' xs={12} s={12} md={6} lg={6}>
                     <Image src={albumData.images[0].uri} style={{ height: '18rem', width: '18rem' }} alt='Album Cover Art' />
                     <Button variant='outline-dark' className='mt-2' style={{ width: '18rem' }} onClick={handleShowModal} block>See More Images</Button>
                     <Modal show={showModal} onHide={handleCloseModal} size='lg' aria-labelledby='contained-modal-title-vcenter' centered>
@@ -78,7 +78,7 @@ function Album({ albumProps: { albumData } }) {
                         </Modal.Body>
                     </Modal>
                 </Col>
-                <Col className='col' md={8} lg={8}>
+                <Col className='col' xs={12} s={12} md={6} lg={6}>
                     <h3 className='mb-4'>{albumData.title}</h3>
                     <div>
                         <h4>{albumData.artists[0].name}</h4>
