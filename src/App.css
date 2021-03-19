@@ -45,7 +45,7 @@
 
 .search-p {
   font-size: 1.5rem;
-  padding-top: .5em;
+  padding-top: .5rem;
 }
 
 .search-form {
@@ -55,8 +55,8 @@
 /*Search results component styles*/
 
 .search-results-col {
-  padding-top: .5em;
-  padding-bottom: .5em;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
  
 }
 
