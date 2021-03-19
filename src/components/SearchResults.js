@@ -28,7 +28,7 @@ function SearchResults({ searchData, handleAlbumClick }) {
                                         {results.label[0]}<br />
                                         {results.year}<br />
                                     </Card.Text>
-                                    <Button variant='outline-secondary' size='sm' id={results.master_id} onClick={handleAlbumClick} block>View</Button>
+                                    <Button variant='outline-dark' size='sm' id={results.master_id} onClick={handleAlbumClick} block>View</Button>
                                 </Card.Body>
                             </Card>
                         </Col>
