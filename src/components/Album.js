@@ -80,11 +80,12 @@ function Album({ albumProps: { albumData } }) {
                     </Modal>
                 </Col>
                 <Col className='col' xs={12} s={12} md={6} lg={6}>
-                    <h3 className='mb-4'>{albumData.title}</h3>
+                    <h3 className='mt-2 mb-1'>{albumData.title}</h3>
+                    <p style={{ margin: 0 }}>{albumData.formats[0].name}</p>
+                    <br />
                     <div>
                         <h4>{albumData.artists[0].name}</h4>
                         <p style={{ margin: 0 }}>{albumData.labels[0].name} - {albumData.labels[0].catno}</p>
-                        <p style={{ margin: 0 }}>{albumData.formats[0].name}</p>
                         <p style={{ margin: 0 }}>{albumData.country} &#8226; {albumData.year}</p>
                     </div>
                 </Col>
