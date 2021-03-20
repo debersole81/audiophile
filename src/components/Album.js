@@ -92,6 +92,16 @@ function Album({ albumProps: { albumData } }) {
                             <p><strong>Release Year:</strong> {albumData.year}</p>
                         </Col>
                     </Row>
+                    <Row>
+                        <Col>
+                            <Button>Library</Button>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                            <Button>Wishlist</Button>
+                        </Col>
+                    </Row>
                 </Col>
             </Row>
         </Container>
