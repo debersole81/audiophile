@@ -83,7 +83,7 @@ function Album({ albumProps: { albumData } }) {
                     <h2 className='mt-3 mb-2'>{albumData.title}</h2>
                     <h3 className='text-muted'>{albumData.artists[0].name}</h3>
                     <Row>
-                        <Col>
+                        <Col className='album-details'>
                             <h5>Album Details</h5>
                             <p style={{ margin: 0 }}>{albumData.formats[0].name}</p>
                             <p style={{ margin: 0 }}>{albumData.labels[0].name} - {albumData.labels[0].catno}</p>
