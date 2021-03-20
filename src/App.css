@@ -45,18 +45,18 @@
 
 .search-p {
   font-size: 1.5rem;
-  padding-top: .5rem;
+  padding-top: .5em;
 }
 
 .search-form {
-  padding-top: .5rem;
+  padding-top: .5em;
 }
 
 /*Search Results Component Styles*/
 
 .search-results-col {
-  padding-top: .5rem;
-  padding-bottom: .5rem;
+  padding-top: .5em;
+  padding-bottom: .5em;
 }
 
 .overflow {
@@ -67,7 +67,7 @@
   display: flex;
   margin-left: auto;
   margin-right: auto;
-  width: 18rem;
+  width: 18em;
 }
 
 .search-results-card:hover {
@@ -75,7 +75,7 @@
 }
 
 .search-results-card-img {
-  height: 18rem;
+  height: 18em;
   transform: scale(1);
   transition: transform 0.5s ease;
 }
@@ -95,7 +95,12 @@
 }
 
 .album-details {
-  padding-top: 1rem;
+  padding-top: 1em;
+}
+
+.album-details p {
+  margin: 0em;
+  font-size: 1rem;
 }
 
 .album-button {
