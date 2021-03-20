@@ -86,8 +86,11 @@ function Album({ albumProps: { albumData } }) {
                         <Col>
                             <h5>Album Details</h5>
                             <p>Format: {albumData.formats[0].name}</p>
-                            <p>Label: {albumData.labels[0].name} - {albumData.labels[0].catno}</p>
-                            <p>Release Country: {albumData.country} &#8226; {albumData.year}</p>
+                            <p>Genre: {albumData.genres[0]}</p>
+                            <p>Label: {albumData.labels[0].name}</p>
+                            <p>Cat #: {albumData.labels[0].catno}</p>
+                            <p>Release Country: {albumData.country}</p>
+                            <p>Release Year: {albumData.year}</p>
                         </Col>
                     </Row>
                 </Col>
