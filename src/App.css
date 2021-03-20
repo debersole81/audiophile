@@ -94,6 +94,10 @@
   justify-content: center;
 }
 
+.album-details {
+  padding-top: 1rem;
+}
+
 .album-button {
   margin-top: .5em;
 }
