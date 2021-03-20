@@ -82,8 +82,8 @@ function Album({ albumProps: { albumData } }) {
                 <Col className='col' xs={12} s={12} md={6} lg={6}>
                     <h2 className='mt-3 mb-2'>{albumData.title}</h2>
                     <h4 className='text-muted'>{albumData.artists[0].name}</h4>
-                    <br />
                     <div>
+                        <h5>Album Details</h5>
                         <p style={{ margin: 0 }}>{albumData.formats[0].name}</p>
                         <p style={{ margin: 0 }}>{albumData.labels[0].name} - {albumData.labels[0].catno}</p>
                         <p style={{ margin: 0 }}>{albumData.country} &#8226; {albumData.year}</p>
