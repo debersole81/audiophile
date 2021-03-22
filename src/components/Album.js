@@ -95,12 +95,12 @@ function Album({ albumProps: { albumData } }) {
                     </Row>
                     <Row>
                         <Col>
-                            <Button><FaRecordVinyl /> ADD TO COLLECTION</Button>
+                            <Button variant='dark' size='sm'><FaRecordVinyl /> ADD TO COLLECTION</Button>
                         </Col>
                     </Row>
                     <Row>
                         <Col>
-                            <Button variant='dark'><FaHeart /> ADD TO WISHLIST</Button>
+                            <Button variant='dark' size='sm'><FaHeart /> ADD TO WISHLIST</Button>
                         </Col>
                     </Row>
                 </Col>
