@@ -64,19 +64,8 @@ function Album({ albumProps: { albumData } }) {
         };
     });
 
-    /**Prepare album styles for display*/
-    //Declare empty array = [];
-    const albumStyles = [];
-
-    //Map through album styles data and push onto albumStyles array
-    albumData.styles.map((style) => {
-        return albumStyles.push(style)
-    });
-
-    console.log(albumStyles);
 
     return (
-
         <Container>
             <Row>
                 <Col className='col album-col' xs={12} s={12} md={6} lg={6}>
@@ -98,7 +87,7 @@ function Album({ albumProps: { albumData } }) {
                         <Col>
                             <p><strong>Format:</strong> {albumData.formats[0].name}</p>
                             <p><strong>Genre:</strong> {albumData.genres[0]}</p>
-                            <p><strong>Style:</strong></p>
+                            <p><strong>Style:</strong> {albumData.styles.join(', ')}</p>
                             <p><strong>Label:</strong> {albumData.labels[0].name}</p>
                             <p><strong>Cat #:</strong> {albumData.labels[0].catno}</p>
                             <p><strong>Release Country:</strong> {albumData.country}</p>
