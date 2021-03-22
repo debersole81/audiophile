@@ -7,6 +7,7 @@ import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Carousel from 'react-bootstrap/Carousel';
+import { FaHeart } from 'react-icons/fa';
 
 function Album({ albumProps: { albumData } }) {
 
@@ -99,7 +100,7 @@ function Album({ albumProps: { albumData } }) {
                     </Row>
                     <Row>
                         <Col>
-                            <Button>Wishlist</Button>
+                            <Button><FaHeart /> Add to Wishlist</Button>
                         </Col>
                     </Row>
                 </Col>
