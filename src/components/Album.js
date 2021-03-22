@@ -100,7 +100,7 @@ function Album({ albumProps: { albumData } }) {
                     </Row>
                     <Row>
                         <Col>
-                            <Button><FaHeart /> Add to Wishlist</Button>
+                            <Button variant='dark'><FaHeart /> ADD TO WISHLIST</Button>
                         </Col>
                     </Row>
                 </Col>
