@@ -1,13 +1,13 @@
 /*Row and Column visualization styles. For assisting with layout only*/
 
-.row {
+/* .row {
   border: solid 2px red;
 }
 
 .col {
   border: solid 3px royalblue;
   background: lightblue;
-}
+} */
 
 /*Vendor prefix CSS properties*/
 
@@ -105,4 +105,12 @@
 
 .album-images-button {
   margin-top: .5em;
+}
+
+.album-add-buttons-col {
+  margin-top: .5em;
+}
+
+.album-add-buttons-row {
+  margin-top: 2em;
 }
