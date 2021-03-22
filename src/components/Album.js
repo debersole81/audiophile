@@ -45,7 +45,7 @@ function Album({ albumProps: { albumData } }) {
     };
 
     /**Prepare images for carousel react bootstrap component*/
-    //Build empty array
+    //Declare empty array
     const images = [];
 
     //Format images and push onto images array
@@ -63,6 +63,17 @@ function Album({ albumProps: { albumData } }) {
             )
         };
     });
+
+    /**Prepare album styles for display*/
+    //Declare empty array = [];
+    const albumStyles = [];
+
+    //Map through album styles data and push onto albumStyles array
+    albumData.styles.map((style) => {
+        return albumStyles.push(style)
+    });
+
+    console.log(albumStyles);
 
     return (
 
@@ -87,6 +98,7 @@ function Album({ albumProps: { albumData } }) {
                         <Col>
                             <p><strong>Format:</strong> {albumData.formats[0].name}</p>
                             <p><strong>Genre:</strong> {albumData.genres[0]}</p>
+                            <p><strong>Style:</strong></p>
                             <p><strong>Label:</strong> {albumData.labels[0].name}</p>
                             <p><strong>Cat #:</strong> {albumData.labels[0].catno}</p>
                             <p><strong>Release Country:</strong> {albumData.country}</p>
