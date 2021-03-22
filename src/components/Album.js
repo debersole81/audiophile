@@ -7,7 +7,7 @@ import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Carousel from 'react-bootstrap/Carousel';
-import { FaHeart } from 'react-icons/fa';
+import { FaHeart, FaRecordVinyl } from 'react-icons/fa';
 
 function Album({ albumProps: { albumData } }) {
 
@@ -95,7 +95,7 @@ function Album({ albumProps: { albumData } }) {
                     </Row>
                     <Row>
                         <Col>
-                            <Button>Collection</Button>
+                            <Button><FaRecordVinyl /> ADD TO COLLECTION</Button>
                         </Col>
                     </Row>
                     <Row>
