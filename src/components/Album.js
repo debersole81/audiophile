@@ -93,14 +93,14 @@ function Album({ albumProps: { albumData } }) {
                             <p><strong>Release Year:</strong> {albumData.year}</p>
                         </Col>
                     </Row>
-                    <Row>
+                    <Row className='album-add-buttons-row'>
                         <Col>
-                            <Button variant='dark' size='sm'><FaRecordVinyl /> ADD TO COLLECTION</Button>
+                            <Button variant='dark' size='sm' block><FaRecordVinyl /> COLLECTION</Button>
                         </Col>
                     </Row>
                     <Row>
-                        <Col>
-                            <Button variant='dark' size='sm'><FaHeart /> ADD TO WISHLIST</Button>
+                        <Col className='album-add-buttons-col'>
+                            <Button variant='dark' size='sm' block><FaHeart /> WISHLIST</Button>
                         </Col>
                     </Row>
                 </Col>
