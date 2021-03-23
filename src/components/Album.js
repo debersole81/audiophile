@@ -10,28 +10,26 @@ import Modal from 'react-bootstrap/Modal';
 import Carousel from 'react-bootstrap/Carousel';
 import { FaHeart, FaRecordVinyl } from 'react-icons/fa';
 
+/**
+ * Develop a way to restor previous state (albumData) after a page reload in the browser
+ * Two researched options to accomplish--
+ * Save state locally via localstorage/indexedDB
+ * Save state at server side
+ * Make a wrapper for modal to pevent album component render on modal open and cloase
+ * 
+ */
+
+/**
+ * Tweaks to wishlist/collection buttons
+ * If the album is in collection, render remove from collection button, don't render wishlist
+ * If the albbum is in wishlist, render remove from wishlist, don't render collection
+ */
+
+/**
+ * Refactor css. Can I move anything inline?
+ */
+
 function Album({ albumProps: { albumData } }) {
-
-        
-    /**
-     * Develop a way to restor previous state (albumData) after a page reload in the browser
-     * Two researched options to accomplish--
-     * Save state locally via localstorage/indexedDB
-     * Save state at server side
-     * Make a wrapper for modal to pevent album component render on modal open and cloase
-     * 
-     */
-
-    /**
-     * Tweaks to wishlist/collection buttons
-     * If the album is in collection, render remove from collection button, don't render wishlist
-     * If the albbum is in wishlist, render remove from wishlist, don't render collection
-     */
-
-    /**
-     * Refactor css. Can I move anything inline?
-     */
-
     console.log('Render: Album Component');
     console.log(albumData);
 
@@ -111,7 +109,7 @@ function Album({ albumProps: { albumData } }) {
                         </Col>
                     </Row>
                 </Col>
-                <AlbumTracks />
+                <AlbumTracks {...albumData} />
             </Row>
         </Container>
     );
