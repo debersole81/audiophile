@@ -116,6 +116,13 @@
 }
 
 /*AlbumTracks Component Styles*/
+.album-tracks-row {
+  margin-top: 1em;
+}
+
 .album-tracks-thead {
-  font-size: 1.5rem;
+  font-weight: bold;
+  color: #FFFFFF;
+  background-color: #343A40;
+  padding: .3em;
 }
