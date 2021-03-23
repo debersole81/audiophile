@@ -1,13 +1,13 @@
 /*Row and Column visualization styles. For assisting with layout only*/
 
-.row {
+/* .row {
   border: solid 2px red;
 }
 
 .col {
   border: solid 3px royalblue;
   background: lightblue;
-}
+} */
 
 /*Vendor prefix CSS properties*/
 
@@ -117,11 +117,11 @@
 
 /*AlbumTracks Component Styles*/
 .album-tracks-row {
-  margin-top: 1em;
+  margin-top: 2.2em;
 }
 
 .album-tracks-thead {
-  font-weight: bold;
+  font-weight:400;
   color: #FFFFFF;
   background-color: #343A40;
   padding: .3em;
