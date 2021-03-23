@@ -23,8 +23,8 @@ function AlbumTracks(albumData) {
         <Container>
             <Row className='row album-tracks-row'>
                 <Col className='col'>
+                    <h5 className='album-tracks-thead'>Tracklist</h5>
                     <Table>
-                        <h5 className='album-tracks-thead'>Tracklist</h5>
                         {albumData.tracklist.map((track, index) =>
                             <tbody key={index}>
                                 <td>{track.position}</td>
