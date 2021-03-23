@@ -25,9 +25,13 @@ function AlbumTracks(albumData) {
                 <Col className='col'>
                     <Table>
                         <h5 className='album-tracks-thead'>Tracklist</h5>
-                        <tbody>
-                            
-                        </tbody>
+                        {albumData.tracklist.map((track, index) =>
+                            <tbody key={index}>
+                                <td>{track.position}</td>
+                                <td>{track.title}</td>
+                                <td>{(track.duration) ? track.duration : '-'}</td>
+                            </tbody>
+                        )}
                     </Table>
                 </Col>
             </Row>
