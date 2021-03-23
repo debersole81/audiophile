@@ -19,7 +19,13 @@ function AlbumTracks(albumData) {
     console.log(albumData);
 
     return (
-        <h1>This will hold the album tracks</h1>
+        <Table>
+            <thead>
+                <tr>
+                    <th>Tracklist</th>
+                </tr>
+            </thead>
+        </Table>
     );
 };
 
