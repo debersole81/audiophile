@@ -74,7 +74,6 @@ function Album({ albumProps: { albumData } }) {
         };
     });
 
-
     return (
         <Container>
             <Row>
