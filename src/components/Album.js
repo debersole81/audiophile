@@ -110,11 +110,6 @@ function Album({ albumProps: { albumData } }) {
                             <Button variant='dark' size='sm' block><FaHeart /> ADD TO WISHLIST</Button>
                         </Col>
                     </Row>
-                    {/* <Row>
-                        <Col className='album-add-buttons-col'>
-                            <Button variant='dark' size='sm' block><FaHeart /> ADD TO WISHLIST</Button>
-                        </Col>
-                    </Row> */}
                 </Col>
             </Row>
         </Container>
