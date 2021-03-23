@@ -90,7 +90,7 @@
 
 /*Album Component Styles*/
 
-.album-col {
+.album-image-col {
   justify-content: center;
 }
 
@@ -104,7 +104,7 @@
 }
 
 .album-images-button {
-  margin-top: .5em;
+  margin-top: .70em;
 }
 
 .album-add-buttons-col {
