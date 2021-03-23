@@ -111,6 +111,7 @@ function Album({ albumProps: { albumData } }) {
                         </Col>
                     </Row>
                 </Col>
+                <AlbumTracks />
             </Row>
         </Container>
     );
