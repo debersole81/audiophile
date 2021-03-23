@@ -21,10 +21,10 @@ function AlbumTracks(albumData) {
 
     return (
         <Container>
-            <Row className='row'>
+            <Row className='row album-tracks-row'>
                 <Col className='col'>
                     <Table>
-                        <thead>Tracklist</thead>
+                        <h5 className='album-tracks-thead'>Tracklist</h5>
                         <tbody>
                             
                         </tbody>
