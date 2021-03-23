@@ -74,8 +74,8 @@ function Album({ albumProps: { albumData } }) {
     return (
         <Container>
             <Row>
-                <Col className='col album-image-col' xs={12} s={12} md={6} lg={6}>
-                    <Image fluid src={albumData.images[0].uri} className='album-image' alt='Album Cover Art' />
+                <Col className='col album-image-col' xs={12} s={12} md={7} lg={6} xl={5}>
+                    <Image fluid src={albumData.images[0].uri} alt='Album Cover Art' />
                     <Button variant='dark' className='album-images-button' onClick={handleShowModal} block>SEE MORE IMAGES</Button>
                     <Modal show={showModal} onHide={handleCloseModal} size='lg' aria-labelledby='contained-modal-title-vcenter' centered>
                         <Modal.Header closeButton />
@@ -86,7 +86,7 @@ function Album({ albumProps: { albumData } }) {
                         </Modal.Body>
                     </Modal>
                 </Col>
-                <Col className='col' xs={12} s={12} md={6} lg={6}>
+                <Col className='col' xs={12} s={12} md={5} lg={6} xl={7}>
                     <h2 className='mt-3 mb-2'>{albumData.title}</h2>
                     <h3 className='text-muted'>{albumData.artists[0].name}</h3>
                     <Row className='album-details'>
@@ -103,13 +103,14 @@ function Album({ albumProps: { albumData } }) {
                     <Row className='album-add-buttons-row'>
                         <Col>
                             <Button variant='dark' size='sm' block><FaRecordVinyl /> ADD TO COLLECTION</Button>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col className='album-add-buttons-col'>
                             <Button variant='dark' size='sm' block><FaHeart /> ADD TO WISHLIST</Button>
                         </Col>
                     </Row>
+                    {/* <Row>
+                        <Col className='album-add-buttons-col'>
+                            <Button variant='dark' size='sm' block><FaHeart /> ADD TO WISHLIST</Button>
+                        </Col>
+                    </Row> */}
                 </Col>
             </Row>
         </Container>
