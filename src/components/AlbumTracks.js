@@ -2,6 +2,7 @@ import React from 'react';
 import '../App.css';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
 
 /**
@@ -19,13 +20,18 @@ function AlbumTracks(albumData) {
     console.log(albumData);
 
     return (
-        <Table>
-            <thead>
-                <tr>
-                    <th>Tracklist</th>
-                </tr>
-            </thead>
-        </Table>
+        <Container>
+            <Row className='row'>
+                <Col className='col'>
+                    <Table>
+                        <thead>Tracklist</thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </Table>
+                </Col>
+            </Row>
+        </Container>
     );
 };
 
