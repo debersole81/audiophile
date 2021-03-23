@@ -1,13 +1,13 @@
 /*Row and Column visualization styles. For assisting with layout only*/
 
-/* .row {
+.row {
   border: solid 2px red;
 }
 
 .col {
   border: solid 3px royalblue;
   background: lightblue;
-} */
+}
 
 /*Vendor prefix CSS properties*/
 
@@ -113,4 +113,9 @@
 
 .album-add-buttons-row {
   margin-top: 2em;
+}
+
+/*AlbumTracks Component Styles*/
+.album-tracks-thead {
+  font-size: 1.5rem;
 }
