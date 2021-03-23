@@ -11,15 +11,21 @@ import { FaHeart, FaRecordVinyl } from 'react-icons/fa';
 
 function Album({ albumProps: { albumData } }) {
 
-    //================================================================
-    //                         Notes
-    //================================================================
-    //Need to develop a way to restore previous state (albumData) after a page reload in the browser
-    //Two researched options to accomplish:
-    //Save state loclally via localstorage/indexedDB
-    //Save state at server side 
-    //Make a wrapper for modal to prevent album component render on modal open and close
-    //================================================================
+        
+    /**
+     * Develop a way to restor previous state (albumData) after a page reload in the browser
+     * Two researched options to accomplish--
+     * Save state locally via localstorage/indexedDB
+     * Save state at server side
+     * Make a wrapper for modal to pevent album component render on modal open and cloase
+     * 
+     */
+
+    /**
+     * Tweaks to wishlist/collection buttons
+     * If the album is in collection, render remove from collection button, don't render wishlist
+     * If the albbum is in wishlist, render remove from wishlist, don't render collection
+     */
 
     console.log('Render: Album Component');
     console.log(albumData);
@@ -85,7 +91,7 @@ function Album({ albumProps: { albumData } }) {
                     <h3 className='text-muted'>{albumData.artists[0].name}</h3>
                     <Row className='album-details'>
                         <Col>
-                            <p><strong>Format:</strong> {albumData.formats[0].text} {albumData.formats[0].name}</p>
+                            <p><strong>Format:</strong> {albumData.formats[0].name}</p>
                             <p><strong>Genre:</strong> {albumData.genres[0]}</p>
                             <p><strong>Style:</strong> {albumData.styles.join(', ')}</p>
                             <p><strong>Label:</strong> {albumData.labels[0].name}</p>
