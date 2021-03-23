@@ -27,6 +27,10 @@ function Album({ albumProps: { albumData } }) {
      * If the albbum is in wishlist, render remove from wishlist, don't render collection
      */
 
+    /**
+     * Refactor css. Can I move anything inline?
+     */
+
     console.log('Render: Album Component');
     console.log(albumData);
 
@@ -86,7 +90,7 @@ function Album({ albumProps: { albumData } }) {
                         </Modal.Body>
                     </Modal>
                 </Col>
-                <Col className='col' xs={12} s={12} md={5} lg={6} xl={7}>
+                <Col className='col mt-1' xs={12} s={12} md={5} lg={6} xl={7}>
                     <h2 className='mt-3 mb-2'>{albumData.title}</h2>
                     <h3 className='text-muted'>{albumData.artists[0].name}</h3>
                     <Row className='album-details'>
