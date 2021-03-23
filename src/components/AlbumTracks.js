@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 /**
  * Pass albumData props
  * Destructure props
@@ -9,9 +8,10 @@ import React from 'react';
  * will need a way to map through each object and add it to the bootstrap table component (forEach? .map?)
  */
 
-console.log('Render: AlbumTracks Component');
+function AlbumTracks(albumData) {
 
-function AlbumTracks() {
+    console.log('Render: AlbumTracks Component');
+    console.log(albumData);
 
     return (
         <h1>This will hold the album tracks</h1>
