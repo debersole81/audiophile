@@ -1,4 +1,8 @@
 import React from 'react';
+import '../App.css';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 /**Notes
  * Build button to 'View Album Versions'
@@ -6,7 +10,7 @@ import React from 'react';
  * Protected components callback will... 
  * ...call Discogs Master Release Versions EP
  * ...setAlbumVersions data
- * ...setAlbumVersions pagination data
+ * ...setAlbumVersions pagination data (but do I need this if I scroll the overflow?)
  * Build button to 'Hide Album Versions'
  * Button will clear albumVersions data in Protected component
  * Button will clear albumVersions data in Protected component
@@ -20,7 +24,13 @@ import React from 'react';
 function AlbumVersions() {
 
     return (
-        <h1>Album versions will display here</h1>
+        <Container>
+            <Row>
+                <Col>
+                    <h5>Album Versions</h5>
+                </Col>
+            </Row>
+        </Container>
     );
 };
 
