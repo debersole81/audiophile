@@ -6,9 +6,12 @@ import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
 
-function AlbumTracks(albumData) {
+function AlbumTracks(props) {
 
     console.log('Render: AlbumTracks Component');
+
+    /*Destructuring props*/
+    const { albumData } = props.albumProps;
     console.log(albumData);
 
     return (
@@ -36,7 +39,7 @@ function AlbumTracks(albumData) {
                     </Table>
                 </Col>
             </Row>
-            <AlbumVersions />
+            <AlbumVersions {...props} />
         </Container>
     );
 };
