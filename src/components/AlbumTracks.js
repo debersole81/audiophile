@@ -34,9 +34,11 @@ function AlbumTracks(albumData) {
                         </thead>
                         {albumData.tracklist.map((track, index) =>
                             <tbody key={index}>
-                                <td>{track.position}</td>
-                                <td>{track.title}</td>
-                                <td>{(track.duration) ? track.duration : '-'}</td>
+                                <tr>
+                                    <td>{track.position}</td>
+                                    <td>{track.title}</td>
+                                    <td>{(track.duration) ? track.duration : '-'}</td>
+                                </tr>
                             </tbody>
                         )}
                     </Table>
