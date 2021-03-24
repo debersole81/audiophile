@@ -29,8 +29,13 @@ import { FaHeart, FaRecordVinyl } from 'react-icons/fa';
  * Refactor css. Can I move anything inline?
  */
 
-function Album({ albumProps: { albumData } }) {
+function Album(props) {
     console.log('Render: Album Component');
+    
+    console.log(props);
+
+    /**Destructure props*/
+    const { albumData } = props.albumProps;
     console.log(albumData);
 
     /**State variables*/
@@ -109,7 +114,7 @@ function Album({ albumProps: { albumData } }) {
                         </Col>
                     </Row>
                 </Col>
-                <AlbumTracks {...albumData} />
+                <AlbumTracks {...albumData} {...props.albumVersionsProps} />
             </Row>
         </Container>
     );
