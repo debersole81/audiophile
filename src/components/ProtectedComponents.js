@@ -234,6 +234,9 @@ function ProtectedComponents(props) {
     /**Album component props*/
     const albumProps = { albumData };
 
+    /**AlbumVersions component props*/
+    const albumVersions = { handleViewAlbumVersions };
+
     return (
         <div>
             <Header logoutSubmit={props.headerProps.logoutSubmit} />
