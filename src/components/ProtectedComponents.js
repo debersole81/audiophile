@@ -208,6 +208,7 @@ function ProtectedComponents(props) {
         e.preventDefault();
 
         console.log('clicked');
+        console.log(e.target.id);
 
     };
 
