@@ -235,7 +235,7 @@ function ProtectedComponents(props) {
     const albumProps = { albumData };
 
     /**AlbumVersions component props*/
-    const albumVersions = { handleViewAlbumVersions };
+    const albumVersionsProps = { handleViewAlbumVersions };
 
     return (
         <div>
@@ -249,9 +249,15 @@ function ProtectedComponents(props) {
                     <Search
                         searchProps={searchProps}
                         searchResultsProps={searchResultsProps}
-                        searchResultsPaginationProps={searchResultsPaginationProps} />}
+                        searchResultsPaginationProps={searchResultsPaginationProps}
+                    />}
                 />
-                <Route exact path='/album' render={(props) => <Album albumProps={albumProps} />} />
+                <Route exact path='/album' render={(props) =>
+                    <Album
+                        albumProps={albumProps}
+                        albumVersionsProps={albumVersionsProps}
+                    />}
+                />
             </Switch>
         </div>
     );
