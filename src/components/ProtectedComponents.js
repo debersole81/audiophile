@@ -43,7 +43,7 @@ function ProtectedComponents(props) {
     const handleSearchSubmit = (e) => {
         e.preventDefault();
         console.log('submitted');
-        
+
         //Call Discogs API Search endpoint
         DiscogsAPISearch(search)
             .then(res => res.json())
@@ -201,6 +201,16 @@ function ProtectedComponents(props) {
         //Scroll to the top of the browser window after refreshing results
         window.scrollTo(0, 0);
     };
+
+    /**AlbumTracks component callback functions*/
+    /**Handle view album versions button click*/
+    const handleViewAlbumVersions = (e) => {
+        e.preventDefault();
+
+        console.log('clicked');
+
+    };
+
 
     /**Props objects*/
     /**Search component props*/
