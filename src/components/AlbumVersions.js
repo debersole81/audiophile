@@ -41,7 +41,7 @@ function AlbumVersions(props) {
                     <h5>Album Versions</h5>
                 </Col>
                 <Col className='col'>
-                    <Button onClick={handleViewAlbumVersions}>View Album Versions</Button>
+                    <Button id={albumData.master_id} onClick={handleViewAlbumVersions}>View Album Versions</Button>
                 </Col>
             </Row>
         </Container>
