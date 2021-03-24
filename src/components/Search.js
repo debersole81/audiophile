@@ -12,6 +12,8 @@ import Col from 'react-bootstrap/Col';
  * Destructure props
  * Add a maginfying glass icon to the search form
  * Add an X that will clear the search form and state
+ * Add spinner while loading
+ * Add 'no results found'
  */
 
 function Search(props) {
