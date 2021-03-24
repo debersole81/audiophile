@@ -8,6 +8,12 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 
+/**Notes
+ * Destructure props
+ * Add a maginfying glass icon to the search form
+ * Add an X that will clear the search form and state
+ */
+
 function Search(props) {
 
     console.log('Render: Search Component');
