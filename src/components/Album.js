@@ -31,9 +31,7 @@ import { FaHeart, FaRecordVinyl } from 'react-icons/fa';
 
 function Album(props) {
     console.log('Render: Album Component');
-
-    console.log(props);
-    
+ 
     /**Destructure props*/
     const { albumData } = props.albumProps;
     console.log(albumData);
