@@ -5,7 +5,8 @@ const discogsAPIMasterReleaseVersions = (masterId) => {
     /**Build URL*/
     const baseURL = 'https://api.discogs.com/masters/';
 
-    let url = baseURL + masterId;
+    let urlAppend = '/versions';
+    let url = baseURL + masterId + urlAppend;
 
     /**Build HTTP request method + headers*/
     const requestOptions = {
