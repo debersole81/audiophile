@@ -32,6 +32,9 @@ function ProtectedComponents(props) {
     /**Album component state variables*/
     const [albumData, setAlbumData] = useState({});
 
+    /**AlbumVersions component state variables*/
+    const [albumVersionsData, setAlbumVersionsData] = useState({});
+
     /**Callback functions*/
     /**Search component callback functions*/
     /**Handle search form input field*/
@@ -208,7 +211,8 @@ function ProtectedComponents(props) {
         e.preventDefault();
 
         console.log('clicked');
-        console.log(e.target.id);
+
+
 
     };
 
