@@ -262,7 +262,7 @@ function ProtectedComponents(props) {
     const albumProps = { albumData };
 
     /**AlbumVersions component props*/
-    const albumVersionsProps = { handleViewAlbumVersions };
+    const albumVersionsProps = { handleViewAlbumVersions, albumVersionsData };
 
     return (
         <div>
