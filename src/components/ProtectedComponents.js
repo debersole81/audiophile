@@ -3,6 +3,7 @@ import { Route, Switch, useHistory } from 'react-router-dom';
 import DiscogsAPISearch from '../helper-functions/DiscogsAPISearch';
 import DiscogsAPIMasterRelease from '../helper-functions/DiscogsAPIMasterRelease';
 import DiscogsAPIRelease from '../helper-functions/DiscogsAPIRelease';
+import discogsAPIMasterReleaseVersions from '../helper-functions/DiscogsAPIMasterReleaseVersions';
 import Album from './Album';
 import Collection from './Collection';
 import Dashboard from './Dashboard';
@@ -48,6 +49,8 @@ function ProtectedComponents(props) {
         console.log('submitted');
 
         //Call Discogs API Search endpoint
+        //Set searchData
+        //Set searchResultsPagination
         DiscogsAPISearch(search)
             .then(res => res.json())
             .then(
@@ -64,8 +67,9 @@ function ProtectedComponents(props) {
         e.preventDefault();
         console.log('clicked');
 
-        // Call Discogs API Master Release endpoint to retreive main_release ID
-        // Then call Discgos API Release endpoint passing main_release ID as param
+        //Call Discogs API Master Release endpoint to retreive main_release ID
+        //Then call Discgos API Release endpoint passing main_release ID as param
+        //Set albumData
         DiscogsAPIMasterRelease(e.target.id)
             .then(masterres => masterres.json())
             .then(
@@ -94,6 +98,8 @@ function ProtectedComponents(props) {
         const pageNum = e.target.id;
 
         //Call Discogs API Search endpoint
+        //Set searchData
+        //Set searchResultsPagination
         DiscogsAPISearch(search, pageNum)
             .then(res => res.json())
             .then(
@@ -116,6 +122,8 @@ function ProtectedComponents(props) {
         setSearchResultsMaxPages(5);
 
         //Call Discogs API Search endpoint
+        //Set searchData
+        //Set searchResultsPagination
         DiscogsAPISearch(search, 1)
             .then(res => res.json())
             .then(
@@ -143,6 +151,8 @@ function ProtectedComponents(props) {
         };
 
         //Call Discogs API Search endpoint
+        //Set searchData
+        //Set searchResultsPagination
         DiscogsAPISearch(search, pageNum)
             .then(res => res.json())
             .then(
@@ -170,6 +180,8 @@ function ProtectedComponents(props) {
         };
 
         //Call Discogs API Search endpoint
+        //Set searchData
+        //Set searchResultsPagination
         DiscogsAPISearch(search, pageNum)
             .then(res => res.json())
             .then(
@@ -192,6 +204,8 @@ function ProtectedComponents(props) {
         setSearchResultsMaxPages(searchResultsPagination.pages);
 
         //Call Discogs API Search endpoint
+        //Set searchData
+        //Set searchResultsPagination
         DiscogsAPISearch(search, searchResultsPagination.pages)
             .then(res => res.json())
             .then(
@@ -212,8 +226,15 @@ function ProtectedComponents(props) {
 
         console.log('clicked');
 
-
-
+        //Call Discogs Master Release Versions endpoint
+        //Set albumVersionsData
+        discogsAPIMasterReleaseVersions(e.target.id)
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    console.log(result);
+                }
+            );
     };
 
 
