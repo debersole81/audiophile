@@ -6,7 +6,13 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
-function AlbumVersionsHeader() {
+function AlbumVersionsHeader(props) {
+
+    /**Destructuring props*/
+    const { albumData } = props.albumProps;
+    const { handleAlbumVersions } = props.albumVersionsProps;
+    
+
     return (
         <Container>
             <Row>
