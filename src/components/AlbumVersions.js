@@ -4,6 +4,8 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import Table from 'react-bootstrap/Table';
+
 
 /**Notes
  * Build button to 'View Album Versions'
@@ -29,9 +31,9 @@ function AlbumVersions(props) {
     /**Destructure props*/
     const { albumData } = props.albumProps;
     const { handleViewAlbumVersions } = props.albumVersionsProps;
-    
-    console.log(albumData);
-    console.log(handleViewAlbumVersions);
+    const { albumVersionsData } = props.albumVersionsProps;
+
+    console.log(albumVersionsData);
 
 
     return (
@@ -42,6 +44,13 @@ function AlbumVersions(props) {
                 </Col>
                 <Col className='col'>
                     <Button id={albumData.master_id} onClick={handleViewAlbumVersions}>View Album Versions</Button>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <Table>
+
+                    </Table>
                 </Col>
             </Row>
         </Container>
