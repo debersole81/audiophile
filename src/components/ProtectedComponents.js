@@ -232,11 +232,12 @@ function ProtectedComponents(props) {
             .then(res => res.json())
             .then(
                 (result) => {
-                    console.log(result);
+                    setAlbumVersionsData(result.versions);                   
                 }
             );
     };
 
+    console.log(albumVersionsData);
 
     /**Props objects*/
     /**Search component props*/
