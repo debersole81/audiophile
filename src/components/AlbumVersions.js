@@ -49,7 +49,15 @@ function AlbumVersions(props) {
             <Row>
                 <Col>
                     <Table>
-
+                        <thead>
+                            <th>Cover Image</th>
+                            <th>Title</th>
+                            <th>Format</th>
+                            <th>Label</th>
+                            <th>Cat #</th>
+                            <th>Release Country</th>
+                            <th>Release Year</th>
+                        </thead>
                     </Table>
                 </Col>
             </Row>
