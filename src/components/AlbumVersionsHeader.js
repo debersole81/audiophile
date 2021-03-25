@@ -8,23 +8,44 @@ import Button from 'react-bootstrap/Button';
 
 function AlbumVersionsHeader(props) {
 
+    console.log(props);
+
     /**Destructuring props*/
     const { albumData } = props.albumProps;
     const { handleAlbumVersions } = props.albumVersionsProps;
-    
+    const { albumVersionsData } = props.albumVersionsProps;
 
-    return (
-        <Container>
-            <Row>
-                <Col>
-                    <h5>Album Versions</h5>
-                </Col>
-                <Col>
-                    <Button></Button>
-                </Col>
-            </Row>
-        </Container>
-    )
+    console.log(albumData);
+    console.log(albumVersionsData);
+
+    // if (albumVersionsData) {
+        return (
+            <Container>
+                <Row>
+                    <Col>
+                        <h5>Album Versions</h5>
+                    </Col>
+                    <Col>
+                        <Button>Hide</Button>
+                    </Col>
+                </Row>
+                {/* <AlbumVersions /> */}
+            </Container>
+        );
+    // };
+
+    // return (
+    //     <Container>
+    //         <Row>
+    //             <Col>
+    //                 <h5>Album Versions</h5>
+    //             </Col>
+    //             <Col>
+    //                 <Button>View</Button>
+    //             </Col>
+    //         </Row>
+    //     </Container>
+    // );
 };
 
 export default AlbumVersionsHeader;
