@@ -9,7 +9,6 @@ import Button from 'react-bootstrap/Button';
 function SearchResults({ searchData, handleAlbumClick }) {
 
     console.log('Render: Search Results Component');
-    console.log(searchData);
 
     if (Array.isArray(searchData) && searchData.length) {
         return (
