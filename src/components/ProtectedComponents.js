@@ -245,6 +245,8 @@ function ProtectedComponents(props) {
         e.preventDefault();
 
         console.log('clicked');
+
+        setAlbumVersionsData({});
     };
 
     /**Props objects*/
