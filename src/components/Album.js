@@ -34,8 +34,7 @@ function Album(props) {
  
     /**Destructure props*/
     const { albumData } = props.albumProps;
-    console.log(albumData);
-
+   
     /**State variables*/
 
     /**Album images modal component state variable*/
