@@ -5,6 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
+import Image from 'react-bootstrap/Image';
 
 /**Notes
  * Each teable row will need to have an onClick and id attribute
@@ -18,17 +19,15 @@ import Table from 'react-bootstrap/Table';
 
 
 
-function AlbumVersions(albumVersionsData) {
+function AlbumVersions(props) {
 
-    console.log(albumVersionsData[0]);
- 
-    // /**Destructure props*/
-    // const { albumData } = props.albumProps;
-    // const { handleViewAlbumVersions } = props.albumVersionsProps;
-    // const { albumVersionsData } = props.albumVersionsProps;
+    console.log('Render: AlbumVersions Component')
+    console.log(props);
 
-    // console.log(albumVersionsData);
+    /**Destructure props*/
+    const { albumVersionsData } = props.albumVersionsProps;
 
+    console.log(albumVersionsData);
 
     return (
         <Row>
@@ -45,7 +44,19 @@ function AlbumVersions(albumVersionsData) {
                             <th>Release Year</th>
                         </tr>
                     </thead>
+                    {albumVersionsData.map((album, index) =>
+                        <tbody key={index}>
+                            <td><Image src={album.thumb} alt='Album Cover Image'/></td>
+                            <td>{album.title}</td>
+                            <td>{album.major_formats[0]}</td>
+                            <td>{album.label}</td>
+                            <td>{album.catno}</td>
+                            <td>{album.country}</td>
+                            <td>{album.released}</td>
+                        </tbody>
+                    )}
                 </Table>
+                <AlbumVersionsPagination />
             </Col>
         </Row>
     );
