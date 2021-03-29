@@ -1,7 +1,6 @@
 import React from 'react';
 import '../App.css';
 import AlbumVersions from '../components/AlbumVersions';
-import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
@@ -39,21 +38,19 @@ function AlbumVersionsHeader(props) {
 
     if (Object.keys(albumVersionsData).length === 0 && albumVersionsData.constructor === Object) {
         return (
-            <Container>
-                <Row>
-                    <Col>
-                        <h5>Album Versions</h5>
-                    </Col>
-                    <Col>
-                        <Button id={albumData.master_id} onClick={handleViewAlbumVersions}>SEE MORE VERSIONS OF THIS ALBUM</Button>
-                    </Col>
-                </Row>
-            </Container>
+            <Row>
+                <Col>
+                    <h5>Album Versions</h5>
+                </Col>
+                <Col>
+                    <Button id={albumData.master_id} onClick={handleViewAlbumVersions}>SEE MORE VERSIONS OF THIS ALBUM</Button>
+                </Col>
+            </Row>
         );
     }
 
     return (
-        <Container>
+        <React.Fragment>
             <Row>
                 <Col>
                     <h5>Album Versions</h5>
@@ -63,7 +60,7 @@ function AlbumVersionsHeader(props) {
                 </Col>
             </Row>
             <AlbumVersions />
-        </Container>
+        </React.Fragment>
     );
 };
 
