@@ -39,7 +39,7 @@ function AlbumTracks(props) {
                     </Table>
                 </Col>
             </Row>
-            <AlbumVersionsHeader {...props}/>
+            <AlbumVersionsHeader albumVersionsProps={props.albumVersionsProps}/>
         </Container>
     );
 };
