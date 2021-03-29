@@ -28,33 +28,23 @@ function AlbumVersions(props) {
 
 
     return (
-        <Container>
-            <Row className='row'>
-                <Col className='col'>
-                    <h5>Album Versions</h5>
-                </Col>
-                <Col className='col'>
-                    {/* <Button id={albumData.master_id} onClick={handleViewAlbumVersions}>View Album Versions</Button> */}
-                </Col>
-            </Row>
-            <Row>
-                <Col>
-                    <Table>
-                        <thead>
-                            <tr>
-                                <th>Cover Image</th>
-                                <th>Title</th>
-                                <th>Format</th>
-                                <th>Label</th>
-                                <th>Cat #</th>
-                                <th>Release Country</th>
-                                <th>Release Year</th>
-                            </tr>
-                        </thead>
-                    </Table>
-                </Col>
-            </Row>
-        </Container>
+        <Row>
+            <Col>
+                <Table>
+                    <thead>
+                        <tr>
+                            <th>Cover Image</th>
+                            <th>Title</th>
+                            <th>Format</th>
+                            <th>Label</th>
+                            <th>Cat #</th>
+                            <th>Release Country</th>
+                            <th>Release Year</th>
+                        </tr>
+                    </thead>
+                </Table>
+            </Col>
+        </Row>
     );
 };
 
