@@ -6,21 +6,12 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
 
-
 /**Notes
- * Build button to 'View Album Versions'
- * Button will fire a callback in ProtectedComponents.js and provide access to master_id
- * Protected components callback will... 
- * ...call Discogs Master Release Versions EP
- * ...setAlbumVersions data
- * ...setAlbumVersions pagination data (but do I need this if I scroll the overflow?)
- * Build button to 'Hide Album Versions'
- * Button will clear albumVersions data in Protected component
- * Button will clear albumVersions data in Protected component
- * View/Hide buttons will render based on an inline conditional that ...
- * ...will evaluate albumVersions state object
- * ...if albumVersions in falsy, render show button
- * ...if albumVersions is truthy, render hide button 
+ * Each teable row will need to have an onClick and id attribute
+ * id attribute will be equal to albumVersionsData.id
+ * onClick attribute will fire a callback in protected components
+ * Callback will call the discogsAPIrelease helper func
+ * Response from callback will set albumData and rerender album component (via history.push)
  */
 
 
@@ -28,12 +19,12 @@ function AlbumVersions(props) {
 
     console.log(props);
 
-    /**Destructure props*/
-    const { albumData } = props.albumProps;
-    const { handleViewAlbumVersions } = props.albumVersionsProps;
-    const { albumVersionsData } = props.albumVersionsProps;
+    // /**Destructure props*/
+    // const { albumData } = props.albumProps;
+    // const { handleViewAlbumVersions } = props.albumVersionsProps;
+    // const { albumVersionsData } = props.albumVersionsProps;
 
-    console.log(albumVersionsData);
+    // console.log(albumVersionsData);
 
 
     return (
@@ -43,7 +34,7 @@ function AlbumVersions(props) {
                     <h5>Album Versions</h5>
                 </Col>
                 <Col className='col'>
-                    <Button id={albumData.master_id} onClick={handleViewAlbumVersions}>View Album Versions</Button>
+                    {/* <Button id={albumData.master_id} onClick={handleViewAlbumVersions}>View Album Versions</Button> */}
                 </Col>
             </Row>
             <Row>
