@@ -26,6 +26,8 @@ function ProtectedComponents(props) {
 
     /**SearchResults component state variables*/
     const [searchData, setSearchData] = useState([]);
+    
+    /**SearchREsultsPagination component state variables*/
     const [searchResultsPagination, setSearchResultsPagination] = useState({});
     const [searchResultsMinPages, setSearchResultsMinPages] = useState(0);
     const [searchResultsMaxPages, setSearchResultsMaxPages] = useState(5);
@@ -35,6 +37,11 @@ function ProtectedComponents(props) {
 
     /**AlbumVersions component state variables*/
     const [albumVersionsData, setAlbumVersionsData] = useState({});
+
+    /**AlbumVersionsPagination component state variables*/
+    const [albumVersionsPagination, setAlbumVersionsPagination] = useState({});
+    const [albumVersionsMinPages, setAlbumVersionsMinPages] = useState(0);
+    const [albumVersionsMaxPages, setAlbumVersionsMaxPages] = useState(5);
 
     /**Callback functions*/
     /**Search component callback functions*/
