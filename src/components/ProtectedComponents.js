@@ -53,7 +53,6 @@ function ProtectedComponents(props) {
     /**Handle search form submit*/
     const handleSearchSubmit = (e) => {
         e.preventDefault();
-        console.log('submitted');
 
         //Call Discogs API Search endpoint
         //Set searchData
@@ -72,7 +71,6 @@ function ProtectedComponents(props) {
     /**Handle album click*/
     const handleAlbumClick = (e) => {
         e.preventDefault();
-        console.log('clicked');
 
         //Clear albumVersions state
         setAlbumVersionsData({});
@@ -96,8 +94,6 @@ function ProtectedComponents(props) {
                             })
                 })
     };
-
-    console.log(albumData);
 
     /**SearchResultsPagination component callback functions*/
     /**Handle current page click*/
@@ -255,8 +251,6 @@ function ProtectedComponents(props) {
     /**Handle hide albun versions button click*/
     const handleHideAlbumVersions = (e) => {
         e.preventDefault();
-
-        console.log('clicked');
 
         setAlbumVersionsData({});
     };
