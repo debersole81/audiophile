@@ -219,7 +219,7 @@ function ProtectedComponents(props) {
         window.scrollTo(0, 0);
     };
 
-    /**AlbumTracks component callback functions*/
+    /**AlbumVersionsHeader component callback functions*/
     /**Handle view album versions button click*/
     const handleViewAlbumVersions = (e) => {
         e.preventDefault();
@@ -239,6 +239,13 @@ function ProtectedComponents(props) {
     };
 
     console.log(albumVersionsData);
+
+    /**Handle hide albun versions button click*/
+    const handleHideAlbumVersions = (e) => {
+        e.preventDefault();
+
+        console.log('clicked');
+    };
 
     /**Props objects*/
     /**Search component props*/
