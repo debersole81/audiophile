@@ -12,13 +12,11 @@ import Button from 'react-bootstrap/Button';
  * ...call Discogs Master Release Versions EP
  * ...setAlbumVersions data
  * ...setAlbumVersions pagination data (but do I need this if I scroll the overflow?)
- * Build button to 'Hide Album Versions'
- * Button will clear albumVersions data in Protected component (need another handler in ProtectedComponents for this)
- * Button will clear albumVersions data in Protected component
- * View/Hide buttons will render based on an inline conditional that ...
- * ...will evaluate albumVersions state object
- * ...if albumVersions in falsy, render show button
- * ...if albumVersions is truthy, render hide button 
+
+ */
+
+/**Refactoring
+ * Is there a better way to view/hide the album versions component without clearing and setting state each time?
  */
 
 
