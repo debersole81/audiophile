@@ -82,13 +82,10 @@ function ProtectedComponents(props) {
             .then(masterres => masterres.json())
             .then(
                 (result) => {
-                    console.log(result)
-                    console.log(result.main_release);
                     DiscogsAPIRelease(result.main_release)
                         .then(releaseres => releaseres.json())
                         .then(
                             (result) => {
-                                console.log(result)
                                 setAlbumData(result)
                                 history.push('/album');
                             })
@@ -278,7 +275,12 @@ function ProtectedComponents(props) {
     const albumProps = { albumData };
 
     /**AlbumVersions component props*/
-    const albumVersionsProps = { handleViewAlbumVersions, handleHideAlbumVersions, albumVersionsData };
+    const albumVersionsProps = { 
+        handleViewAlbumVersions,
+        handleHideAlbumVersions,
+        albumVersionsData,
+        albumVersionsPagination,    
+    };
 
     return (
         <div>
