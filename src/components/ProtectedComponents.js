@@ -67,6 +67,9 @@ function ProtectedComponents(props) {
         e.preventDefault();
         console.log('clicked');
 
+        //Clear albumVersions state
+        setAlbumVersionsData({});
+
         //Call Discogs API Master Release endpoint to retreive main_release ID
         //Then call Discgos API Release endpoint passing main_release ID as param
         //Set albumData
