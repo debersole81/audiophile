@@ -243,12 +243,14 @@ function ProtectedComponents(props) {
             .then(
                 (result) => {
                     console.log(result);
-                    setAlbumVersionsData(result.versions);                   
+                    setAlbumVersionsData(result.versions);
+                    setAlbumVersionsPagination(result.pagination);                   
                 }
             );
     };
 
     console.log(albumVersionsData);
+    console.log(albumVersionsPagination);
 
     /**Handle hide albun versions button click*/
     const handleHideAlbumVersions = (e) => {
