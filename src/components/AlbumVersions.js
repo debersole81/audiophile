@@ -29,6 +29,10 @@ function AlbumVersions(props) {
 
     console.log(albumVersionsData);
 
+    const handleAlbumVersionClick = (e) => {
+        console.log(e.target.id);
+    };
+
     return (
         <Row>
             <Col>
@@ -46,13 +50,14 @@ function AlbumVersions(props) {
                     </thead>
                     {albumVersionsData.map((album, index) =>
                         <tbody key={index}>
-                            <td><Image src={album.thumb} alt='Album Cover Image'/></td>
+                            <td><Image src={album.thumb} alt='Album Cover Image' /></td>
                             <td>{album.title}</td>
                             <td>{album.major_formats[0]}</td>
                             <td>{album.label}</td>
                             <td>{album.catno}</td>
                             <td>{album.country}</td>
                             <td>{album.released}</td>
+                            <td><Button id={album.id} onClick={handleAlbumVersionClick}>VIEW</Button></td>
                         </tbody>
                     )}
                 </Table>
