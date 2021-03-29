@@ -58,7 +58,7 @@ function AlbumVersionsHeader(props) {
                     <Button onClick={handleHideAlbumVersions}>HIDE ALBUM VERSIONS</Button>
                 </Col>
             </Row>
-            <AlbumVersions />
+            <AlbumVersions {...albumVersionsData} />
         </React.Fragment>
     );
 };
