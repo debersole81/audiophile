@@ -13,7 +13,7 @@ import Button from 'react-bootstrap/Button';
  * ...setAlbumVersions data
  * ...setAlbumVersions pagination data (but do I need this if I scroll the overflow?)
  * Build button to 'Hide Album Versions'
- * Button will clear albumVersions data in Protected component
+ * Button will clear albumVersions data in Protected component (need another handler in ProtectedComponents for this)
  * Button will clear albumVersions data in Protected component
  * View/Hide buttons will render based on an inline conditional that ...
  * ...will evaluate albumVersions state object
@@ -29,6 +29,7 @@ function AlbumVersionsHeader(props) {
     /**Destructuring props*/
     const { albumData } = props.albumProps;
     const { handleViewAlbumVersions } = props.albumVersionsProps;
+    const { handleHideAlbumVersions } = props.albumVersionsProps;
     const { albumVersionsData } = props.albumVersionsProps;
 
     console.log(albumData);
