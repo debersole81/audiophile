@@ -57,7 +57,7 @@ function AlbumVersionsHeader(props) {
                     <h5>Album Versions</h5>
                 </Col>
                 <Col>
-                    <Button>HIDE ALBUM VERSIONS</Button>
+                    <Button onClick={handleHideAlbumVersions}>HIDE ALBUM VERSIONS</Button>
                 </Col>
             </Row>
             <AlbumVersions />
