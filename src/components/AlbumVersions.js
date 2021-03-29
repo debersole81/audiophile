@@ -1,6 +1,5 @@
 import React from 'react';
 import '../App.css';
-import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
@@ -12,6 +11,7 @@ import Table from 'react-bootstrap/Table';
  * onClick attribute will fire a callback in protected components
  * Callback will call the discogsAPIrelease helper func
  * Response from callback will set albumData and rerender album component (via history.push)
+ * Set overflow vals on table to create vertical scrolling feature
  */
 
 
