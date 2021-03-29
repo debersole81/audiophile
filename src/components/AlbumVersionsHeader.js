@@ -11,7 +11,7 @@ function AlbumVersionsHeader(props) {
     console.log(props);
 
     /**Destructuring props*/
-    const { handleAlbumVersions } = props.albumVersionsProps;
+    const { handleViewAlbumVersions } = props.albumVersionsProps;
     const { albumVersionsData } = props.albumVersionsProps;
 
     console.log(albumVersionsData);
@@ -26,7 +26,7 @@ function AlbumVersionsHeader(props) {
                         <h5>Album Versions</h5>
                     </Col>
                     <Col>
-                        <Button>SEE MORE VERSIONS OF THIS ALBUM</Button>
+                        <Button onClick={handleViewAlbumVersions}>SEE MORE VERSIONS OF THIS ALBUM</Button>
                     </Col>
                 </Row>
             </Container>
