@@ -18,6 +18,8 @@ function AlbumVersionsHeader(props) {
     console.log(albumData);
     console.log(albumVersionsData);
 
+    //pass handleAlbumVersions and albumVersionsData to the AlbumVersions component
+
     // if (albumVersionsData) {
         return (
             <Container>
@@ -26,7 +28,7 @@ function AlbumVersionsHeader(props) {
                         <h5>Album Versions</h5>
                     </Col>
                     <Col>
-                        <Button>Hide</Button>
+                        <Button>SEE MORE VERSIONS</Button>
                     </Col>
                 </Row>
                 {/* <AlbumVersions /> */}
