@@ -12,8 +12,7 @@ function AlbumTracks(props) {
 
     /*Destructuring props*/
     const { albumData } = props.albumProps;
-    console.log(albumData);
-
+   
     return (
         <Container>
             <Row className='row album-tracks-row'>
