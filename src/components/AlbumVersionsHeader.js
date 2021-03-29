@@ -11,9 +11,11 @@ function AlbumVersionsHeader(props) {
     console.log(props);
 
     /**Destructuring props*/
+    const { albumData } = props.albumProps;
     const { handleViewAlbumVersions } = props.albumVersionsProps;
     const { albumVersionsData } = props.albumVersionsProps;
 
+    console.log(albumData);
     console.log(albumVersionsData);
 
     //pass handleAlbumVersions and albumVersionsData to the AlbumVersions component
