@@ -11,16 +11,14 @@ function AlbumVersionsHeader(props) {
     console.log(props);
 
     /**Destructuring props*/
-    const { albumData } = props.albumProps;
     const { handleAlbumVersions } = props.albumVersionsProps;
     const { albumVersionsData } = props.albumVersionsProps;
 
-    console.log(albumData);
     console.log(albumVersionsData);
 
     //pass handleAlbumVersions and albumVersionsData to the AlbumVersions component
 
-    // if (albumVersionsData) {
+    if (Object.keys(albumVersionsData).length === 0 && albumVersionsData.constructor === Object) {
         return (
             <Container>
                 <Row>
@@ -28,26 +26,26 @@ function AlbumVersionsHeader(props) {
                         <h5>Album Versions</h5>
                     </Col>
                     <Col>
-                        <Button>SEE MORE VERSIONS</Button>
+                        <Button>SEE MORE VERSIONS OF THIS ALBUM</Button>
                     </Col>
                 </Row>
-                {/* <AlbumVersions /> */}
             </Container>
         );
-    // };
+    }
 
-    // return (
-    //     <Container>
-    //         <Row>
-    //             <Col>
-    //                 <h5>Album Versions</h5>
-    //             </Col>
-    //             <Col>
-    //                 <Button>View</Button>
-    //             </Col>
-    //         </Row>
-    //     </Container>
-    // );
+    return (
+        <Container>
+            <Row>
+                <Col>
+                    <h5>Album Versions</h5>
+                </Col>
+                <Col>
+                    <Button>HIDE VERSIONS</Button>
+                </Col>
+            </Row>
+            <AlbumVersions />
+        </Container>
+    );
 };
 
 export default AlbumVersionsHeader;
