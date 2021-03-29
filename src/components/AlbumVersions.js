@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css';
+import AlbumVersionsPagination from '../components/AlbumVersionsPagination';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
@@ -15,10 +16,12 @@ import Table from 'react-bootstrap/Table';
  */
 
 
-function AlbumVersions(props) {
 
-    console.log(props);
 
+function AlbumVersions(albumVersionsData) {
+
+    console.log(albumVersionsData[0]);
+ 
     // /**Destructure props*/
     // const { albumData } = props.albumProps;
     // const { handleViewAlbumVersions } = props.albumVersionsProps;
