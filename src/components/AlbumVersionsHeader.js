@@ -22,6 +22,7 @@ import Button from 'react-bootstrap/Button';
 
 function AlbumVersionsHeader(props) {
 
+    console.log('Render: AlbumVersionsHeader Component');
     console.log(props);
 
     /**Destructuring props*/
@@ -58,7 +59,7 @@ function AlbumVersionsHeader(props) {
                     <Button onClick={handleHideAlbumVersions}>HIDE ALBUM VERSIONS</Button>
                 </Col>
             </Row>
-            <AlbumVersions {...albumVersionsData} />
+            <AlbumVersions albumVersionsProps={props.albumVersionsProps} />
         </React.Fragment>
     );
 };
