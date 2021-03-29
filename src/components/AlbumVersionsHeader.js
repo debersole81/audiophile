@@ -28,7 +28,7 @@ function AlbumVersionsHeader(props) {
                         <h5>Album Versions</h5>
                     </Col>
                     <Col>
-                        <Button onClick={handleViewAlbumVersions}>SEE MORE VERSIONS OF THIS ALBUM</Button>
+                        <Button id={albumData.master_id} onClick={handleViewAlbumVersions}>SEE MORE VERSIONS OF THIS ALBUM</Button>
                     </Col>
                 </Row>
             </Container>
