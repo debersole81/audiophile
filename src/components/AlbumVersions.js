@@ -50,14 +50,14 @@ function AlbumVersions(props) {
                     </thead>
                     {albumVersionsData.map((album, index) =>
                         <tbody key={index}>
-                            <td><Image src={album.thumb} alt='Album Cover Image' /></td>
+                            <td><Image className='album-versions-img' src={album.thumb} alt='Album Cover Image' /></td>
                             <td>{album.title}</td>
                             <td>{album.major_formats[0]}</td>
                             <td>{album.label}</td>
                             <td>{album.catno}</td>
                             <td>{album.country}</td>
                             <td>{album.released}</td>
-                            <td><Button id={album.id} onClick={handleAlbumVersionClick}>VIEW</Button></td>
+                            <td><Button variant='dark' size='sm' id={album.id} onClick={handleAlbumVersionClick}>VIEW</Button></td>
                         </tbody>
                     )}
                 </Table>
