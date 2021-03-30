@@ -1,6 +1,6 @@
 /**Helper function for Discogs API Master Release Versions endpoint call*/
 
-const discogsAPIMasterReleaseVersions = (masterId, page, per_page) => {
+const discogsAPIMasterReleaseVersions = (masterId, page, per_page=25) => {
 
     /**Build Query*/
     const buildQuery = {
