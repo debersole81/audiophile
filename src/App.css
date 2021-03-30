@@ -116,18 +116,27 @@
 }
 
 /*AlbumTracks Component Styles*/
+
 .album-tracks-row {
   margin-top: 2.2em;
 }
 
 .album-tracks-thead {
-  font-weight:400;
+  font-weight: 400;
   color: #FFFFFF;
   background-color: #343A40;
   padding: .3em .3em .3em .5em;
 }
 
 /*AlbumVersionsHeader Component styles*/
+
 .album-versions-header-row {
   margin-top: 2em;
+}
+
+.album-versions-header-thead {
+  font-weight: 400;
+  color: #FFFFFF;
+  background-color: #343A40;
+  padding: .3em .3em .3em .5em;
 }
