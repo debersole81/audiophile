@@ -38,7 +38,7 @@ function AlbumVersionsHeader(props) {
 
     if (Object.keys(albumVersionsData).length === 0 && albumVersionsData.constructor === Object) {
         return (
-            <Row>
+            <Row className="album-versions-header-row">
                 <Col>
                     <h5>Album Versions</h5>
                 </Col>
@@ -51,7 +51,7 @@ function AlbumVersionsHeader(props) {
 
     return (
         <React.Fragment>
-            <Row>
+            <Row className='album-versions-header-row'>
                 <Col>
                     <h5>Album Versions</h5>
                 </Col>
