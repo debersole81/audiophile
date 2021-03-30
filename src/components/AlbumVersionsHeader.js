@@ -40,7 +40,7 @@ function AlbumVersionsHeader(props) {
         return (
             <Row className="album-versions-header-row">
                 <Col>
-                    <h5>Album Versions</h5>
+                    <h5 className='album-versions-header-thead'>Album Versions</h5>
                 </Col>
                 <Col>
                     <Button id={albumData.master_id} onClick={handleViewAlbumVersions}>SEE MORE VERSIONS OF THIS ALBUM</Button>
@@ -52,12 +52,12 @@ function AlbumVersionsHeader(props) {
     return (
         <React.Fragment>
             <Row className='album-versions-header-row'>
-                <Col>
-                    <h5>Album Versions</h5>
+                <Col className='album-versions-header-col'>
+                    <h5 className='album-versions-header-thead'>Album Versions</h5>
+                    <Button className='album-versions-header-button' onClick={handleHideAlbumVersions}>HIDE ALBUM VERSIONS</Button>
                 </Col>
-                <Col>
-                    <Button onClick={handleHideAlbumVersions}>HIDE ALBUM VERSIONS</Button>
-                </Col>
+                {/* <Col>
+                </Col> */}
             </Row>
             <AlbumVersions albumVersionsProps={props.albumVersionsProps} />
         </React.Fragment>
