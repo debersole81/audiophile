@@ -414,7 +414,11 @@ function ProtectedComponents(props) {
     /**AlbumVersionsPagination component props*/
     const albumVersionsPaginationProps = {
         albumVersionsPagination,
-
+        handleCurrentAlbumVersionsPage,
+        handleFirstAlbumVersionsPage,
+        handlePreviousAlbumVersionsPage,
+        handleNextAlbumVersionsPage,
+        handleLastAlbumVersionsPage,
     }
 
 
@@ -437,6 +441,7 @@ function ProtectedComponents(props) {
                     <Album
                         albumProps={albumProps}
                         albumVersionsProps={albumVersionsProps}
+                        albumVersionsPaginationProps={albumVersionsPaginationProps}
                     />}
                 />
             </Switch>
