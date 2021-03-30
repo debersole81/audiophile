@@ -128,6 +128,7 @@
   padding: .3em .3em .3em .5em;
 }
 
+
 /*AlbumVersionsHeader Component styles*/
 
 .album-versions-header-row {
@@ -161,7 +162,19 @@
   float: right;
 }
 
+
+
+/*Responsive styles*/
+
 @media (max-width: 992px) {
+
+  /*AlbumTracks component*/
+  .album-tracks-thead {
+    text-align: center;
+  }
+
+
+  /*AlbumVersionsHeader component*/
   .album-versions-header-h5-col {
     text-align: center;
     padding-bottom: .3em;
@@ -175,4 +188,6 @@
   .album-versions-header-button {
     float: none;
   }
+
+
 }
