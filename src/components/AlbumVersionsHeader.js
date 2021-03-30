@@ -4,6 +4,7 @@ import AlbumVersions from '../components/AlbumVersions';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
 
 /**Notes
  * Build button to 'View Album Versions'
@@ -50,17 +51,17 @@ function AlbumVersionsHeader(props) {
     }
 
     return (
-        <React.Fragment>
+        <Container>
             <Row className='album-versions-header-row'>
                 <Col className='album-versions-header-col'>
                     <h5 className='album-versions-header-thead'>Album Versions</h5>
                 </Col>
-                <Col>
+                <Col className='album-versions-header-col'>
                     <Button variant='outline-light' size='sm' className='album-versions-header-button' onClick={handleHideAlbumVersions}>HIDE ALBUM VERSIONS</Button>
                 </Col>
             </Row>
             <AlbumVersions albumVersionsProps={props.albumVersionsProps} />
-        </React.Fragment>
+        </Container>
     );
 };
 
