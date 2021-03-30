@@ -39,25 +39,27 @@ function AlbumVersionsHeader(props) {
 
     if (Object.keys(albumVersionsData).length === 0 && albumVersionsData.constructor === Object) {
         return (
-            <Row className="album-versions-header-row">
-                <Col>
-                    <h5 className='album-versions-header-thead'>Album Versions</h5>
-                </Col>
-                <Col>
-                    <Button id={albumData.master_id} onClick={handleViewAlbumVersions}>SHOW VERSIONS</Button>
-                </Col>
-            </Row>
+            <Container>
+                <Row className='row album-versions-header-row'>
+                    <Col className='col album-versions-header-h5-col' xs={12} s={12} lg={6}>
+                        <h5 className='album-versions-header-thead'>Album Versions</h5>
+                    </Col>
+                    <Col className='col album-versions-header-button-col' xs={12} s={12} lg={6}>
+                        <Button size='sm' variant='outline-light' className='album-versions-header-button' id={albumData.master_id} onClick={handleViewAlbumVersions}>SHOW VERSIONS</Button>
+                    </Col>
+                </Row>
+            </Container>
         );
     }
 
     return (
         <Container>
-            <Row className='album-versions-header-row'>
-                <Col className='album-versions-header-col'>
+            <Row className='row album-versions-header-row'>
+                <Col className='col album-versions-header-h5-col' xs={12} s={12} lg={6}>
                     <h5 className='album-versions-header-thead'>Album Versions</h5>
                 </Col>
-                <Col className='album-versions-header-col'>
-                    <Button variant='outline-light' size='sm' className='album-versions-header-button' onClick={handleHideAlbumVersions}>HIDE VERSIONS</Button>
+                <Col className='col album-versions-header-button-col' xs={12} s={12} lg={6}>
+                    <Button size='sm' variant='outline-light' className='album-versions-header-button' onClick={handleHideAlbumVersions}>HIDE VERSIONS</Button>
                 </Col>
             </Row>
             <AlbumVersions albumVersionsProps={props.albumVersionsProps} />
