@@ -44,7 +44,7 @@ function AlbumVersionsHeader(props) {
                     <h5 className='album-versions-header-thead'>Album Versions</h5>
                 </Col>
                 <Col>
-                    <Button id={albumData.master_id} onClick={handleViewAlbumVersions}>SEE MORE VERSIONS OF THIS ALBUM</Button>
+                    <Button id={albumData.master_id} onClick={handleViewAlbumVersions}>SHOW VERSIONS</Button>
                 </Col>
             </Row>
         );
@@ -57,7 +57,7 @@ function AlbumVersionsHeader(props) {
                     <h5 className='album-versions-header-thead'>Album Versions</h5>
                 </Col>
                 <Col className='album-versions-header-col'>
-                    <Button variant='outline-light' size='sm' className='album-versions-header-button' onClick={handleHideAlbumVersions}>HIDE ALBUM VERSIONS</Button>
+                    <Button variant='outline-light' size='sm' className='album-versions-header-button' onClick={handleHideAlbumVersions}>HIDE VERSIONS</Button>
                 </Col>
             </Row>
             <AlbumVersions albumVersionsProps={props.albumVersionsProps} />
