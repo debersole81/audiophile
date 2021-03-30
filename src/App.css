@@ -144,10 +144,12 @@
   font-weight: 400;
   background-color: #343A40;
   color: #FFFFFF;
-  padding: .3em .3em .3em .5em;
+  padding-top: .5em;
+  padding-bottom: .3em;
 }
 
 .album-versions-header-button {
   margin-top: .4em;
+  margin-right: .4em;
   float: right;
 }
