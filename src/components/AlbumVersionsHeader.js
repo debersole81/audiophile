@@ -54,10 +54,10 @@ function AlbumVersionsHeader(props) {
             <Row className='album-versions-header-row'>
                 <Col className='album-versions-header-col'>
                     <h5 className='album-versions-header-thead'>Album Versions</h5>
+                </Col>
+                <Col>
                     <Button variant='outline-light' size='sm' className='album-versions-header-button' onClick={handleHideAlbumVersions}>HIDE ALBUM VERSIONS</Button>
                 </Col>
-                {/* <Col>
-                </Col> */}
             </Row>
             <AlbumVersions albumVersionsProps={props.albumVersionsProps} />
         </React.Fragment>
