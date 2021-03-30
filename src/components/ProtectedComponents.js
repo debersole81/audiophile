@@ -252,6 +252,8 @@ function ProtectedComponents(props) {
         setAlbumVersionsData({});
     };
 
+    /**AlbumVersionsPagination component callback functions*/
+
     /**Props objects*/
     /**Search component props*/
     const searchProps = { search, handleSearch, handleSearchSubmit };
@@ -274,13 +276,19 @@ function ProtectedComponents(props) {
     /**Album component props*/
     const albumProps = { albumData };
 
-    /**AlbumVersions component props*/
+    /**AlbumVersions and AlbumVersionsHeader component props*/
     const albumVersionsProps = { 
         handleViewAlbumVersions,
         handleHideAlbumVersions,
-        albumVersionsData,
-        albumVersionsPagination,    
+        albumVersionsData,            
     };
+
+    /**AlbumVersionsPagination component props*/
+    const albumVersionsPaginationProps = {
+        albumVersionsPagination,
+
+    }
+
 
     return (
         <div>
