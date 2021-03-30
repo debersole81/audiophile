@@ -1,13 +1,13 @@
 /*Row and Column visualization styles. For assisting with layout only*/
 
-.row {
+/* .row {
   border: solid 2px red;
 }
 
 .col {
   border: solid 3px royalblue;
   background: lightblue;
-}
+} */
 
 /*Vendor prefix CSS properties*/
 
@@ -134,9 +134,15 @@
   margin-top: 2em;
 }
 
-.album-versions-header-col {
+.album-versions-header-h5-col {
   background-color: #343A40;
   padding-top: .1em;
+}
+
+.album-versions-header-button-col {
+  background-color: #343A40;
+  padding-top: .2em;
+  padding-bottom: .2em;
 }
 
 .album-versions-header-thead {
@@ -144,12 +150,29 @@
   font-weight: 400;
   background-color: #343A40;
   color: #FFFFFF;
-  padding-top: .5em;
-  padding-bottom: .3em;
+  margin-top: .2em;
+  margin-bottom: .2em;
 }
 
 .album-versions-header-button {
-  margin-top: .4em;
+  margin-top: .2em;
   margin-right: .4em;
+  margin-bottom: .2em;
   float: right;
+}
+
+@media (max-width: 992px) {
+  .album-versions-header-h5-col {
+    text-align: center;
+    padding-bottom: .3em;
+  }
+
+  .album-versions-header-button-col {
+    text-align: center;
+    margin-top: .3em;
+  }
+
+  .album-versions-header-button {
+    float: none;
+  }
 }
