@@ -36,7 +36,7 @@ function AlbumVersions(props) {
     return (
         <Row>
             <Col>
-                <Table>
+                <Table responsive>
                     <thead>
                         <tr>
                             <th>Cover Image</th>
