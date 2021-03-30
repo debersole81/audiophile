@@ -18,7 +18,7 @@ function AlbumTracks(props) {
             <Row className='row album-tracks-row'>
                 <Col className='col'>
                     <h5 className='album-tracks-thead'>Tracklist</h5>
-                    <Table bordered>
+                    <Table bordered responsive>
                         <thead>
                             <tr>
                                 <th>Position</th>
