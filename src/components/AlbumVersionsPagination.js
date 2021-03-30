@@ -3,7 +3,19 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Pagination from 'react-bootstrap/Pagination';
 
-function AlbumVersionsPagination() {
+function AlbumVersionsPagination(props) {
+
+    console.log(props);
+
+    /**Destructure props*/
+    const { albumVersionsPagination } = props.albumVersionsPaginationProps;
+    const { handleCurrentAlbumVersionsPage } = props.albumVersionsPaginationProps;
+    const { handleFirstAlbumVersionsPage } = props.albumVersionsPaginationProps;
+    const { handlePreviousAlbumVersionsPage } = props.albumVersionsPaginationProps;
+    const { handleNextAlbumVersionsPage } = props.albumVersionsPaginationProps;
+    const { handleLastAlbumVersionsPage } = props.albumVersionsPaginationProps;
+
+    console.log(albumVersionsPagination);
 
     return (
         <Row className='row'>
