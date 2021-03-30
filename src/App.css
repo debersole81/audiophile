@@ -1,13 +1,13 @@
 /*Row and Column visualization styles. For assisting with layout only*/
 
-/* .row {
+.row {
   border: solid 2px red;
 }
 
 .col {
   border: solid 3px royalblue;
   background: lightblue;
-} */
+}
 
 /*Vendor prefix CSS properties*/
 
@@ -136,8 +136,6 @@
 
 .album-versions-header-col {
   background-color: #343A40;
-  margin-left: 1em;
-  margin-right: 1em;
   padding-top: .1em;
 }
 
