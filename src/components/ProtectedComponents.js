@@ -368,7 +368,7 @@ function ProtectedComponents(props) {
 
         //Set min page to total albumVersions pages - 5 and max page to the value of the total albumVersions pages
         setAlbumVersionsMinPages(albumVersionsPagination.pages - 5);
-        setSearchResultsMaxPages(albumVersionsPagination.pages);
+        setAlbumVersionsMaxPages(albumVersionsPagination.pages);
 
         //Call Discogs API Master Release endpoint
         //Set albumVersionsData
