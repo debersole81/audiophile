@@ -272,8 +272,8 @@ function ProtectedComponents(props) {
                 }
             );
 
-        //Scroll to the top of the browser window after refreshing results
-        window.scroll(0, 0);
+        //Scroll to the top of the albumVersions component after refreshing results
+        window.scroll(0, 1200);
     };
 
     /**Handle first page button click*/
@@ -296,8 +296,8 @@ function ProtectedComponents(props) {
                 }
             );
 
-        //Scroll to the top of the browser window after refreshing results
-        window.scrollTo(0, 0);
+        //Scroll to the top of the albumVersions component after refreshing results
+        window.scroll(0, 1200);
     };
 
     /**Handle previous page button click*/
@@ -325,8 +325,8 @@ function ProtectedComponents(props) {
                 }
             );
 
-        //Scroll to the top of the browser window after refreshing results
-        window.scrollTo(0, 0);
+        //Scroll to the top of the albumVersions component after refreshing results
+        window.scroll(0, 1200);
     };
 
     /**Handle next page button click*/
@@ -354,8 +354,8 @@ function ProtectedComponents(props) {
                 }
             );
 
-        //Scroll to the top of the browser window after refreshing results
-        window.scrollTo(0, 0);
+        //Scroll to the top of the albumVersions component after refreshing results
+        window.scroll(0, 1200);
     };
 
     /**Handle last page button click*/
@@ -378,8 +378,8 @@ function ProtectedComponents(props) {
                 }
             );
 
-        //Scroll to the top of the browser window after refreshing results
-        window.scrollTo(0, 0);
+        //Scroll to the top of the albumVersions component after refreshing results
+        window.scroll(0, 1200);
     };
 
     /**Props objects*/
