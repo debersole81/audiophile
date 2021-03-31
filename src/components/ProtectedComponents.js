@@ -313,8 +313,8 @@ function ProtectedComponents(props) {
 
         //Decrement min and max pages by 5
         if ((pageNum) % 5 === 0) {
-            setAlbumVersionsMinPages(searchResultsMinPages - 5);
-            setAlbumVersionsMaxPages(searchResultsMaxPages - 5);
+            setAlbumVersionsMinPages(albumVersionsMinPages - 5);
+            setAlbumVersionsMaxPages(albumVersionsMaxPages - 5);
         };
 
         //Call Discogs API Master Release endpoint
