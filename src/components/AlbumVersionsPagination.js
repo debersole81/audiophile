@@ -17,8 +17,6 @@ function AlbumVersionsPagination(props) {
     const { handleNextAlbumVersionsPage } = props.albumVersionsPaginationProps;
     const { handleLastAlbumVersionsPage } = props.albumVersionsPaginationProps;
 
-    console.log(albumVersionsPagination);
-
     /**Build pages array*/
     //Variable to hold active page
     const activePage = albumVersionsPagination.page;
@@ -35,8 +33,6 @@ function AlbumVersionsPagination(props) {
             </Pagination.Item>
         );
     };
-
-    console.log(pages);
 
     if (albumVersionsPagination.pages > 1) {
         return (
