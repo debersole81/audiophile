@@ -15,14 +15,26 @@ function AlbumVersionsPagination(props) {
     const { handleNextAlbumVersionsPage } = props.albumVersionsPaginationProps;
     const { handleLastAlbumVersionsPage } = props.albumVersionsPaginationProps;
 
+    console.log(albumVersionsPagination);
+
     /**Build pages array*/
     //Variable to hold active page
-    const activePage = albumVersionsPagination.activePage;
+    const activePage = albumVersionsPagination.page;
 
     //Empty array to store formatted page numbers
     const pages = [];
 
-    console.log(albumVersionsPagination);
+    //Loop over pages and apply formatting
+    for (let i = 1; i <= albumVersionsPagination.pages; i++) {
+        pages.push(
+            <Pagination.Item key={i} id={i} className={(i === activePage ? 'active' : null)} onClick={handleCurrentAlbumVersionsPage}>
+                {i}
+            </Pagination.Item>
+        );
+    };
+
+    console.log(pages);
+
 
     return (
         <Row className='row'>
