@@ -5,7 +5,7 @@ import Pagination from 'react-bootstrap/Pagination';
 
 function AlbumVersionsPagination(props) {
 
-    console.log(props);
+    console.log('Render: AlbumVersionsPagination Component');
 
     /**Destructure props*/
     const { albumVersionsPagination } = props.albumVersionsPaginationProps;
@@ -14,6 +14,11 @@ function AlbumVersionsPagination(props) {
     const { handlePreviousAlbumVersionsPage } = props.albumVersionsPaginationProps;
     const { handleNextAlbumVersionsPage } = props.albumVersionsPaginationProps;
     const { handleLastAlbumVersionsPage } = props.albumVersionsPaginationProps;
+
+    /**Build pages array*/
+    //Declare variable to hold active page
+    const activePage = albumVersionsPagination.activePage;
+
 
     console.log(albumVersionsPagination);
 
