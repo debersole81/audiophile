@@ -9,6 +9,8 @@ function AlbumVersionsPagination(props) {
 
     /**Destructure props*/
     const { albumVersionsPagination } = props.albumVersionsPaginationProps;
+    const { albumVersionsMinPages } = props.albumVersionsPaginationProps;
+    const { albumVersionsMaxPages } = props.albumVersionsPaginationProps;
     const { handleCurrentAlbumVersionsPage } = props.albumVersionsPaginationProps;
     const { handleFirstAlbumVersionsPage } = props.albumVersionsPaginationProps;
     const { handlePreviousAlbumVersionsPage } = props.albumVersionsPaginationProps;
@@ -43,7 +45,7 @@ function AlbumVersionsPagination(props) {
                     <Pagination>
                         <Pagination.First className={albumVersionsPagination.page === 1 ? 'disabled' : ''} onClick={handleFirstAlbumVersionsPage}>First</Pagination.First>
                         <Pagination.Prev className={albumVersionsPagination.page === 1 ? 'disabled' : ''} onClick={handlePreviousAlbumVersionsPage}>Previous</Pagination.Prev>
-                        <Pagination.Item>1</Pagination.Item>
+                        {pages.map((page) => (page.props.id < albumVersionsMaxPages + 1 && page.props.id > albumVersionsMinPages) ? page : null)}
                         <Pagination.Next className={albumVersionsPagination.page === albumVersionsPagination.pages ? 'disabled' : ''} onClick={handleNextAlbumVersionsPage}>Next</Pagination.Next>
                         <Pagination.Last className={albumVersionsPagination.page === albumVersionsPagination.pages ? 'disabled' : ''} onClick={handleLastAlbumVersionsPage}>Last</Pagination.Last>
                     </Pagination>
