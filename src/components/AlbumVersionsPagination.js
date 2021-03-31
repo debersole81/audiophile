@@ -1,4 +1,5 @@
 import React from "react";
+import '../App.css';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Pagination from 'react-bootstrap/Pagination';
@@ -38,12 +39,12 @@ function AlbumVersionsPagination(props) {
         return (
             <Row className='row'>
                 <Col className='col'>
-                    <Pagination>
-                        <Pagination.First className={albumVersionsPagination.page === 1 ? 'disabled' : ''} onClick={handleFirstAlbumVersionsPage}>First</Pagination.First>
-                        <Pagination.Prev className={albumVersionsPagination.page === 1 ? 'disabled' : ''} onClick={handlePreviousAlbumVersionsPage}>Previous</Pagination.Prev>
+                    <Pagination className='flex-wrap justify-content-center'>
+                        <Pagination.First className={albumVersionsPagination.page === 1 ? 'disabled' : ''} onClick={handleFirstAlbumVersionsPage} />
+                        <Pagination.Prev className={albumVersionsPagination.page === 1 ? 'disabled' : ''} onClick={handlePreviousAlbumVersionsPage} />
                         {pages.map((page) => (page.props.id < albumVersionsMaxPages + 1 && page.props.id > albumVersionsMinPages) ? page : null)}
-                        <Pagination.Next className={albumVersionsPagination.page === albumVersionsPagination.pages ? 'disabled' : ''} onClick={handleNextAlbumVersionsPage}>Next</Pagination.Next>
-                        <Pagination.Last className={albumVersionsPagination.page === albumVersionsPagination.pages ? 'disabled' : ''} onClick={handleLastAlbumVersionsPage}>Last</Pagination.Last>
+                        <Pagination.Next className={albumVersionsPagination.page === albumVersionsPagination.pages ? 'disabled' : ''} onClick={handleNextAlbumVersionsPage} />
+                        <Pagination.Last className={albumVersionsPagination.page === albumVersionsPagination.pages ? 'disabled' : ''} onClick={handleLastAlbumVersionsPage} />
                     </Pagination>
                 </Col>
             </Row>
