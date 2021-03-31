@@ -42,7 +42,7 @@ function AlbumVersionsPagination(props) {
                 <Col className='col'>
                     <Pagination>
                         <Pagination.First className={albumVersionsPagination.page === 1 ? 'disabled' : ''} onClick={handleFirstAlbumVersionsPage}>First</Pagination.First>
-                        <Pagination.Prev>Previous</Pagination.Prev>
+                        <Pagination.Prev className={albumVersionsPagination.page === 1 ? 'disabled' : ''} onClick={handlePreviousAlbumVersionsPage}>Previous</Pagination.Prev>
                         <Pagination.Item>1</Pagination.Item>
                         <Pagination.Next>Next</Pagination.Next>
                         <Pagination.Last>Last</Pagination.Last>
