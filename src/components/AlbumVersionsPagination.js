@@ -16,9 +16,11 @@ function AlbumVersionsPagination(props) {
     const { handleLastAlbumVersionsPage } = props.albumVersionsPaginationProps;
 
     /**Build pages array*/
-    //Declare variable to hold active page
+    //Variable to hold active page
     const activePage = albumVersionsPagination.activePage;
 
+    //Empty array to store formatted page numbers
+    const pages = [];
 
     console.log(albumVersionsPagination);
 
