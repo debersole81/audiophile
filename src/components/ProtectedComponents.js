@@ -414,6 +414,8 @@ function ProtectedComponents(props) {
     /**AlbumVersionsPagination component props*/
     const albumVersionsPaginationProps = {
         albumVersionsPagination,
+        albumVersionsMinPages,
+        albumVersionsMaxPages,
         handleCurrentAlbumVersionsPage,
         handleFirstAlbumVersionsPage,
         handlePreviousAlbumVersionsPage,
