@@ -26,6 +26,7 @@ function AlbumVersionsPagination(props) {
 
     //Loop over pages and apply formatting
     for (let i = 1; i <= albumVersionsPagination.pages; i++) {
+        //Push page numbers onto pages array
         pages.push(
             <Pagination.Item key={i} id={i} className={(i === activePage ? 'active' : null)} onClick={handleCurrentAlbumVersionsPage}>
                 {i}
@@ -35,20 +36,23 @@ function AlbumVersionsPagination(props) {
 
     console.log(pages);
 
+    if (albumVersionsPagination.pages > 1) {
+        return (
+            <Row className='row'>
+                <Col className='col'>
+                    <Pagination>
+                        <Pagination.First className={albumVersionsPagination.page === 1 ? 'disabled' : ''} onClick={handleFirstAlbumVersionsPage}>First</Pagination.First>
+                        <Pagination.Prev>Previous</Pagination.Prev>
+                        <Pagination.Item>1</Pagination.Item>
+                        <Pagination.Next>Next</Pagination.Next>
+                        <Pagination.Last>Last</Pagination.Last>
+                    </Pagination>
+                </Col>
+            </Row>
+        );
+    };
 
-    return (
-        <Row className='row'>
-            <Col className='col'>
-                <Pagination>
-                    <Pagination.First>First</Pagination.First>
-                    <Pagination.Prev>Previous</Pagination.Prev>
-                    <Pagination.Item>1</Pagination.Item>
-                    <Pagination.Next>Next</Pagination.Next>
-                    <Pagination.Last>Last</Pagination.Last>
-                </Pagination>
-            </Col>
-        </Row>
-    );
+    return (null);
 };
 
 export default AlbumVersionsPagination;
