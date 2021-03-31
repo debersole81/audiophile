@@ -54,6 +54,10 @@ function ProtectedComponents(props) {
     const handleSearchSubmit = (e) => {
         e.preventDefault();
 
+        //Clear searchResultsMinPages & searchResultsMaxPages state
+        setSearchResultsMinPages(0);
+        setSearchResultsMaxPages(5);
+
         //Call Discogs API Search endpoint
         //Set searchData
         //Set searchResultsPagination
