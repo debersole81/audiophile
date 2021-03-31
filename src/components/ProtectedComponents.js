@@ -79,6 +79,10 @@ function ProtectedComponents(props) {
         //Clear albumVersions state
         setAlbumVersionsData({});
 
+        //Clear albumVersionsMinPages & albumVersionsMaxPages state
+        setAlbumVersionsMinPages(0);
+        setAlbumVersionsMaxPages(5);
+
         //Call Discogs API Master Release endpoint to retreive main_release ID
         //Then call Discgos API Release endpoint passing main_release ID as param
         //Set albumData
