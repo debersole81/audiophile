@@ -1,4 +1,5 @@
 import React from 'react';
+import '../App.css';
 import Pagination from 'react-bootstrap/Pagination';
 
 function SearchResultsPagination(props) {
@@ -25,7 +26,7 @@ function SearchResultsPagination(props) {
     if (props.searchResultsPagination.pages > 1) {
         return (
             <React.Fragment>
-                <Pagination className='mt-3 justify-content-md-center'>
+                <Pagination className='mt-3 flex-wrap justify-content-center'>
                     <Pagination.First className={props.searchResultsPagination.page === 1 ? 'disabled' : ''} onClick={props.handleFirstSearchResultsPage}>First</Pagination.First>
                     <Pagination.Prev className={props.searchResultsPagination.page === 1 ? 'disabled' : ''} onClick={props.handlePreviousSearchResultsPage}>Previous</Pagination.Prev>
                     {pages.map((page) => (page.props.id < props.searchResultsMaxPages + 1 && page.props.id > props.searchResultsMinPages) ? page : null)}
