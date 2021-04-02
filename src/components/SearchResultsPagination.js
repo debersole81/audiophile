@@ -27,11 +27,11 @@ function SearchResultsPagination(props) {
         return (
             <React.Fragment>
                 <Pagination className='mt-3 flex-wrap justify-content-center'>
-                    <Pagination.First className={props.searchResultsPagination.page === 1 ? 'disabled' : ''} onClick={props.handleFirstSearchResultsPage}>First</Pagination.First>
-                    <Pagination.Prev className={props.searchResultsPagination.page === 1 ? 'disabled' : ''} onClick={props.handlePreviousSearchResultsPage}>Previous</Pagination.Prev>
+                    <Pagination.First className={props.searchResultsPagination.page === 1 ? 'disabled' : ''} onClick={props.handleFirstSearchResultsPage} />
+                    <Pagination.Prev className={props.searchResultsPagination.page === 1 ? 'disabled' : ''} onClick={props.handlePreviousSearchResultsPage} />
                     {pages.map((page) => (page.props.id < props.searchResultsMaxPages + 1 && page.props.id > props.searchResultsMinPages) ? page : null)}
-                    <Pagination.Next className={props.searchResultsPagination.page === props.searchResultsPagination.pages ? 'disabled' : ''} onClick={props.handleNextSearchResultsPage}>Next</Pagination.Next>
-                    <Pagination.Last className={props.searchResultsPagination.page === props.searchResultsPagination.pages ? 'disabled' : ''} onClick={props.handleLastSearchResultsPage}>Last</Pagination.Last>
+                    <Pagination.Next className={props.searchResultsPagination.page === props.searchResultsPagination.pages ? 'disabled' : ''} onClick={props.handleNextSearchResultsPage} />
+                    <Pagination.Last className={props.searchResultsPagination.page === props.searchResultsPagination.pages ? 'disabled' : ''} onClick={props.handleLastSearchResultsPage} />
                 </Pagination>
             </React.Fragment>
         )
