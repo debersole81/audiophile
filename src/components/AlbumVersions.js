@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../App.css';
 import AlbumVersionsPagination from '../components/AlbumVersionsPagination';
 import Row from 'react-bootstrap/Row';
@@ -29,6 +29,12 @@ function AlbumVersions(props) {
 
     console.log(albumVersionsData);
 
+    /**Scroll to the bottom of the window on component mount*/
+    useEffect(() => {
+        window.scroll(0, 1200)
+    }, []);
+
+    
     const handleAlbumVersionClick = (e) => {
         console.log(e.target.id);
     };
@@ -63,7 +69,7 @@ function AlbumVersions(props) {
                         </tbody>
                     )}
                 </Table>
-                <AlbumVersionsPagination albumVersionsPaginationProps={props.albumVersionsPaginationProps}/>
+                <AlbumVersionsPagination albumVersionsPaginationProps={props.albumVersionsPaginationProps} />
             </Col>
         </Row>
     );
