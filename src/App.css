@@ -1,13 +1,13 @@
 /*Row and Column visualization styles. For assisting with layout only*/
 
-.row {
+/* .row {
   border: solid 2px red;
 }
 
 .col {
   border: solid 3px royalblue;
   background: lightblue;
-}
+} */
 
 /*Responsive styles*/
 
@@ -54,16 +54,28 @@
   font-size: 1rem;
 }
 
+/*Custom page link styles*/
+.page-link {
+  outline: none !Important;
+  box-shadow: none !Important;
+}
+
+
+
 /*Custom pagination component styles*/
+
+.pagination>li {
+  box-shadow: .3px .3px 4px rgba(0, 0, 0, 0.253);
+}
 
 .pagination>li>a {
   background-color: white;
-  color: #343A40;
+  color: #000000;
 }
 
 .pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover {
-  color: #6C757D;
-  background-color: #eee;
+  color: white;
+  background-color: #343A40;
   border-color: #ddd;
 }
 
@@ -71,6 +83,7 @@
   color: white;
   background-color: #343A40 !Important;
   border: solid 1px #6C757D !Important;
+  box-shadow: .3px .3px 4px #6C757D !Important;
 }
 
 .pagination>.active>a:hover {
