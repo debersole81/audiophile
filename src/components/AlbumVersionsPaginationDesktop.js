@@ -14,7 +14,22 @@ function AlbumVersionsPaginationDesktop(props) {
     const { handleNextAlbumVersionsPage } = props.albumVersionsPaginationProps;
     const { handleLastAlbumVersionsPage } = props.albumVersionsPaginationProps;
 
-    
+    /**Build pages array*/
+    //Variable to hold active page
+    const activePage = albumVersionsPagination.page;
+
+    //Empty array to store formatted page numbers
+    const pages = [];
+
+    //Loop over pages and apply formatting
+    for (let i = 1; i <= albumVersionsPagination.pages; i++) {
+        //Push page numbers onto pages array
+        pages.push(
+            <Pagination.Item key={i} id={i} className={(i === activePage ? 'active' : null)} onClick={handleCurrentAlbumVersionsPage}>
+                {i}
+            </Pagination.Item>
+        );
+    };
 
     return(
         <h1>Desktop version</h1>
