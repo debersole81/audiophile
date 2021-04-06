@@ -8,6 +8,13 @@ function AlbumVersionsPaginationMobile(props) {
 
     console.log('Render: AlbumVersionPaginationMobile Component');
 
+    /** To fix this
+     * Max pages need to be 2
+     * Min pages need to be 0
+     * Each time the prev or next button is clicked, min and max pages will increment by 2 until total pages are reached
+     * Build the state and function callbacks in here and then figure out how to abstract this for use in searchResults component 
+     */
+
     /** Destructure props */
     const { albumVersionsPagination } = props.albumVersionsPaginationProps;
     const { albumVersionsMinPages } = props.albumVersionsPaginationProps;
@@ -35,6 +42,8 @@ function AlbumVersionsPaginationMobile(props) {
         );
     };
 
+    console.log(pages);
+
     if (albumVersionsPagination.pages > 1) {
         return (
             <Row className='row'>
@@ -51,6 +60,7 @@ function AlbumVersionsPaginationMobile(props) {
         );
     };
 
-    return (null);};
+    return (null);
+};
 
 export default AlbumVersionsPaginationMobile;
