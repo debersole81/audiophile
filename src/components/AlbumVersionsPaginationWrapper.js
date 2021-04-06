@@ -9,12 +9,10 @@ function AlbumVersionsPaginationWrapper(props) {
     /** Destructure width variable from useViewPort hook */
     const { width } = useViewPort();
 
-    /** Declare value for minimum breakpoint value  */
-    const breakpoint = 381; 
+    /** Declare variable for minimum breakpoint value  */
+    const breakpoint = 381;
 
-    return (
-        <AlbumVersionsPaginationDesktop {...props} />
-    );
+    return (width < breakpoint ?  null : <AlbumVersionsPaginationDesktop {...props} />);
 };
 
 export default AlbumVersionsPaginationWrapper;
