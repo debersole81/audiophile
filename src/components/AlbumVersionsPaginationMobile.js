@@ -35,10 +35,22 @@ function AlbumVersionsPaginationMobile(props) {
         );
     };
 
+    if (albumVersionsPagination.pages > 1) {
+        return (
+            <Row className='row'>
+                <Col className='col'>
+                    <Pagination className='flex-wrap justify-content-center'>
+                        <Pagination.First className={albumVersionsPagination.page === 1 ? 'disabled' : ''} onClick={handleFirstAlbumVersionsPage} />
+                        <Pagination.Prev className={albumVersionsPagination.page === 1 ? 'disabled' : ''} onClick={handlePreviousAlbumVersionsPage} />
+                        {pages.map((page) => (page.props.id < albumVersionsMaxPages + 1 && page.props.id > albumVersionsMinPages) ? page : null)}
+                        <Pagination.Next className={albumVersionsPagination.page === albumVersionsPagination.pages ? 'disabled' : ''} onClick={handleNextAlbumVersionsPage} />
+                        <Pagination.Last className={albumVersionsPagination.page === albumVersionsPagination.pages ? 'disabled' : ''} onClick={handleLastAlbumVersionsPage} />
+                    </Pagination>
+                </Col>
+            </Row>
+        );
+    };
 
-    return (
-        <h1>Mobile Pagination</h1>
-    );
-};
+    return (null);};
 
 export default AlbumVersionsPaginationMobile;
