@@ -26,7 +26,7 @@
     margin-top: .3em;
   }
   .album-versions-header-button {
-    float: none;
+    float: none !Important;
   }
 }
 
@@ -55,12 +55,11 @@
 }
 
 /*Custom page link styles*/
+
 .page-link {
   outline: none !Important;
   box-shadow: none !Important;
 }
-
-
 
 /*Custom pagination component styles*/
 
