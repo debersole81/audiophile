@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Pagination from 'react-bootstrap/Pagination';
 
-function AlbumVersionsPagination(props) {
+function AlbumVersionsPaginationWrapper(props) {
 
     console.log('Render: AlbumVersionsPagination Component');
 
@@ -54,4 +54,4 @@ function AlbumVersionsPagination(props) {
     return (null);
 };
 
-export default AlbumVersionsPagination;
+export default AlbumVersionsPaginationWrapper;
