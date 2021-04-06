@@ -8,7 +8,7 @@ function AlbumVersionsPaginationDesktop(props) {
 
     console.log('Render: AlbumVersionsPaginationDesktop Component');
 
-    /**Destructure props*/
+    /** Destructure props */
     const { albumVersionsPagination } = props.albumVersionsPaginationProps;
     const { albumVersionsMinPages } = props.albumVersionsPaginationProps;
     const { albumVersionsMaxPages } = props.albumVersionsPaginationProps;
@@ -18,7 +18,7 @@ function AlbumVersionsPaginationDesktop(props) {
     const { handleNextAlbumVersionsPage } = props.albumVersionsPaginationProps;
     const { handleLastAlbumVersionsPage } = props.albumVersionsPaginationProps;
 
-    /**Build pages array*/
+    /** Build pages array */
     //Variable to hold active page
     const activePage = albumVersionsPagination.page;
 
