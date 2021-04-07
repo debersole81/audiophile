@@ -9,9 +9,10 @@ function AlbumVersionsPaginationMobile(props) {
     console.log('Render: AlbumVersionPaginationMobile Component');
 
     /** To fix this
-     * Max pages need to be 2
+     * Max pages need to be 3
      * Min pages need to be 0
-     * Each time the prev or next button is clicked, min and max pages will increment by 2 until total pages are reached
+     * Remove first and last selectors
+     * Each time the prev or next button is clicked, min and max pages will increment by 3 until total pages are reached
      * Build the state and function callbacks in here and then figure out how to abstract this for use in searchResults component 
      */
 
