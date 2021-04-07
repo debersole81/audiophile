@@ -9,7 +9,7 @@ function AlbumVersionsPaginationWrapper(props) {
 
     /** Destructure width variable from useViewPort hook */
     const { width } = useViewPort();
-
+  
     /** Declare variable for minimum breakpoint value  */
     const breakpoint = 381;
 
