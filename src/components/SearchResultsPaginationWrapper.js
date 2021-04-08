@@ -1,6 +1,7 @@
 import React from 'react';
 import { useViewPort } from '../custom-hooks/useViewPort';
 import SearchResultsPaginationDesktop from './SearchResultsPaginationDesktop';
+import SearchResultsPaginationMobile from './SearchResultsPaginationMobile';
 
 
 function SeaarchResultsPaginationWrapper(props) {
@@ -13,7 +14,7 @@ function SeaarchResultsPaginationWrapper(props) {
     /** Declare variable for minimum breakpoint value */
     const breakpoint = 381;
 
-    return ( <SearchResultsPaginationDesktop /> );
+    return ( width > breakpoint ? <SearchResultsPaginationDesktop {...props} /> : <SearchResultsPaginationMobile {...props} />  );
 };
 
 export default SeaarchResultsPaginationWrapper;
