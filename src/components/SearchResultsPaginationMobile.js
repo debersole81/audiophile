@@ -35,12 +35,23 @@ function SearchResultsPaginationMobile(props) {
         )
     };
 
+    if (searchResultsPagination.pages > 1) {
+        return (
+            <Container>
+                <Row className='row'>
+                    <Col className='col'>
+                        <Pagination className='mt-3 flex-wrap justify-content-center'>
+                            <Pagination.Prev className={searchResultsPagination.page === 1 ? 'disabled' : ''} onClick={handlePreviousSearchResultsPageMobile} />
+                            {pages.map((page) => (page.props.id < searchResultsMaxPagesMobile + 1 && page.props.id > searchResultsMinPagesMobile) ? page : null)}
+                            <Pagination.Next className={searchResultsPagination.page === searchResultsPagination.pages ? 'disabled' : ''} onClick={handleNextSearchResultsPageMobile} />
+                        </Pagination>
+                    </Col>
+                </Row>
+            </Container>
+        );
+    };
 
-
-
-    return (
-        <h1>Mobile pagination</h1>
-    );
+    return(null);
 };
 
 export default SearchResultsPaginationMobile;
