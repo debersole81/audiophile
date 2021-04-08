@@ -21,10 +21,8 @@ function AlbumVersionsPaginationMobile(props) {
     const { albumVersionsMinPages } = props.albumVersionsPaginationProps;
     const { albumVersionsMaxPages } = props.albumVersionsPaginationProps;
     const { handleCurrentAlbumVersionsPage } = props.albumVersionsPaginationProps;
-    const { handleFirstAlbumVersionsPage } = props.albumVersionsPaginationProps;
     const { handlePreviousAlbumVersionsPage } = props.albumVersionsPaginationProps;
     const { handleNextAlbumVersionsPage } = props.albumVersionsPaginationProps;
-    const { handleLastAlbumVersionsPage } = props.albumVersionsPaginationProps;
 
     /** Build pages array */
     //Variable to hold active page
@@ -50,11 +48,9 @@ function AlbumVersionsPaginationMobile(props) {
             <Row className='row'>
                 <Col className='col'>
                     <Pagination className='flex-wrap justify-content-center'>
-                        {/* <Pagination.First className={albumVersionsPagination.page === 1 ? 'disabled' : ''} onClick={handleFirstAlbumVersionsPage} /> */}
                         <Pagination.Prev className={albumVersionsPagination.page === 1 ? 'disabled' : ''} onClick={handlePreviousAlbumVersionsPage} />
                         {pages.map((page) => (page.props.id < albumVersionsMaxPages + 1 && page.props.id > albumVersionsMinPages) ? page : null)}
                         <Pagination.Next className={albumVersionsPagination.page === albumVersionsPagination.pages ? 'disabled' : ''} onClick={handleNextAlbumVersionsPage} />
-                        {/* <Pagination.Last className={albumVersionsPagination.page === albumVersionsPagination.pages ? 'disabled' : ''} onClick={handleLastAlbumVersionsPage} /> */}
                     </Pagination>
                 </Col>
             </Row>
