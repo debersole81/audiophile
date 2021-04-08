@@ -485,11 +485,15 @@ function ProtectedComponents(props) {
         albumVersionsPagination,
         albumVersionsMinPages,
         albumVersionsMaxPages,
+        albumVersionsMinPagesMobile,
+        albumVersionsMaxPagesMobile,
         handleCurrentAlbumVersionsPage,
         handleFirstAlbumVersionsPage,
         handlePreviousAlbumVersionsPage,
         handleNextAlbumVersionsPage,
         handleLastAlbumVersionsPage,
+        handlePreviousAlbumVersionsPageMobile,
+        handleNextAlbumVersionsPageMobile,
     }
     /* #endregion Props Objects*/
 
