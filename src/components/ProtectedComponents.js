@@ -110,11 +110,37 @@ function ProtectedComponents(props) {
 
     /** SearchResultsPagination component callback functions -- Mobile */
     /* Handle previous page button click */
+    const handlePreviousSearchResultsPageMobile = (e) => {
+        e.preventDefault();
 
+        //If the current search results page is greater than 1, set pageNum equal to the current page - 1
+        const pageNum = (searchResultsPagination.page > 1) ? searchResultsPagination.page - 1 : searchResultsPagination.page;
+
+        //If the remainder of pageNum divided by 3 equals 0, decrement min and max pages by 3
+        if ((pageNum) % 3 === 0) {
+            setSearchResultsMinPagesMobile(searchResultsMinPagesMobile - 3);
+            setSearchResultsMaxPagesMobile(searchResultsMaxPagesMobile - 3);
+        };
+
+        //Call Discogs API Search endpoint
+        //Set searchData
+        //Set searchResultsPagination
+        DiscogsAPISearch(search, pageNum)
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setSearchData(result.results);
+                    setSearchResultsPagination(result.pagination);
+                }
+            );
+
+        //Scroll to the top of the browser window after refreshing results
+        window.scrollTo(0, 0);
+    };
 
     /* Handle next page button click */
 
-
+    /** SearchResultsPagination component callback functions -- Desktop & Mobile */
     /* Handle current page click */
     const handleCurrentSearchResultsPage = (e) => {
         e.preventDefault();
