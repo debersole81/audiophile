@@ -267,7 +267,7 @@ function ProtectedComponents(props) {
         setAlbumVersionsMaxPagesMobile(3);
     };
 
-    /** AlbumVersionsPagination component callback functions -- Mobile specific */
+    /** AlbumVersionsPagination component callback functions -- Mobile */
     /* Handle previous page button click */
     const handlePreviousAlbumVersionsPageMobile = (e) => {
         e.preventDefault();
