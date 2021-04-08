@@ -43,15 +43,15 @@ function Search(props) {
                 </Row>
                 <Row className='row justify-content-center'>
                     <Col className='col' md={10} lg={8}>
-                        <Form className='search-form' onSubmit={props.searchProps.handleSearchSubmit}>
+                        <Form className='search-form' onSubmit={handleSearchSubmit}>
                             <Form.Group>
                                 <Form.Label srOnly>Search</Form.Label>
                                 <Form.Control
                                     type='text'
                                     name='search'
                                     placeholder='Type an album or artist name.'
-                                    value={props.searchProps.search}
-                                    onChange={props.searchProps.handleSearch}
+                                    value={search}
+                                    onChange={handleSearch}
                                 />
                             </Form.Group>
                         </Form>
