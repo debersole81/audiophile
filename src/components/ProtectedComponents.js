@@ -44,6 +44,8 @@ function ProtectedComponents(props) {
     const [albumVersionsPagination, setAlbumVersionsPagination] = useState({});
     const [albumVersionsMinPages, setAlbumVersionsMinPages] = useState(0);
     const [albumVersionsMaxPages, setAlbumVersionsMaxPages] = useState(5);
+    const [albumVersionsMobileMinPages, setAlbumVersionsMobileMinPages] = useState(0);
+    const [albumVersionsMobileMaxPages, setAlbumVersionsMobileMaxPages] = useState(3);
     /* #endregion State Variables*/
 
 
