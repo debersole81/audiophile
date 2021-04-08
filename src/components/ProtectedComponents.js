@@ -301,7 +301,7 @@ function ProtectedComponents(props) {
         const pageNum = (albumVersionsPagination.page < albumVersionsPagination.pages) ? albumVersionsPagination.page + 1 : albumVersionsPagination.page;
 
         //If pageNum is greater than the value of albumVersionsMaxPagesMobile, increment min and max pages by 3
-        if (pageNum > albumVersionsMaxPages) {
+        if (pageNum > albumVersionsMaxPagesMobile) {
             setAlbumVersionsMinPagesMobile(albumVersionsMinPagesMobile + 3);
             setAlbumVersionsMaxPagesMobile(albumVersionsMaxPagesMobile + 3);
         };
