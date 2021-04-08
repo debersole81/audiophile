@@ -2,7 +2,6 @@ import React from 'react';
 import '../App.css';
 import SearchResults from './SearchResults';
 import SearchResultsPaginationWrapper from './SearchResultsPaginationWrapper';
-import SearchResultsPagination from './SearchResultsPagination';
 import Form from 'react-bootstrap/Form';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Row from 'react-bootstrap/Row';
