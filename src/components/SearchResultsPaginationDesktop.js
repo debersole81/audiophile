@@ -1,5 +1,7 @@
 import React from 'react';
 import '../App.css';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Pagination from 'react-bootstrap/Pagination';
 
 function SearchResultsPaginationDesktop(props) {
@@ -36,15 +38,17 @@ function SearchResultsPaginationDesktop(props) {
 
     if (searchResultsPagination.pages > 1) {
         return (
-            <React.Fragment>
-                <Pagination className='mt-3 flex-wrap justify-content-center'>
-                    <Pagination.First className={searchResultsPagination.page === 1 ? 'disabled' : ''} onClick={handleFirstSearchResultsPage} />
-                    <Pagination.Prev className={searchResultsPagination.page === 1 ? 'disabled' : ''} onClick={handlePreviousSearchResultsPage} />
-                    {pages.map((page) => (page.props.id < searchResultsMaxPages + 1 && page.props.id > searchResultsMinPages) ? page : null)}
-                    <Pagination.Next className={searchResultsPagination.page === searchResultsPagination.pages ? 'disabled' : ''} onClick={handleNextSearchResultsPage} />
-                    <Pagination.Last className={searchResultsPagination.page === searchResultsPagination.pages ? 'disabled' : ''} onClick={handleLastSearchResultsPage} />
-                </Pagination>
-            </React.Fragment>
+            <Row className='row'>
+                <Col className='col'>
+                    <Pagination className='mt-3 flex-wrap justify-content-center'>
+                        <Pagination.First className={searchResultsPagination.page === 1 ? 'disabled' : ''} onClick={handleFirstSearchResultsPage} />
+                        <Pagination.Prev className={searchResultsPagination.page === 1 ? 'disabled' : ''} onClick={handlePreviousSearchResultsPage} />
+                        {pages.map((page) => (page.props.id < searchResultsMaxPages + 1 && page.props.id > searchResultsMinPages) ? page : null)}
+                        <Pagination.Next className={searchResultsPagination.page === searchResultsPagination.pages ? 'disabled' : ''} onClick={handleNextSearchResultsPage} />
+                        <Pagination.Last className={searchResultsPagination.page === searchResultsPagination.pages ? 'disabled' : ''} onClick={handleLastSearchResultsPage} />
+                    </Pagination>
+                </Col>
+            </Row>
         )
     };
 
