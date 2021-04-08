@@ -2,7 +2,7 @@ import React from 'react';
 import '../App.css';
 import Pagination from 'react-bootstrap/Pagination';
 
-function SearchResultsPagination(props) {
+function SearchResultsPaginationDesktop(props) {
 
     console.log('Render: SearchResultsPagination Component');
 
@@ -41,4 +41,4 @@ function SearchResultsPagination(props) {
 };
 
 
-export default SearchResultsPagination;
+export default SearchResultsPaginationDesktop;
