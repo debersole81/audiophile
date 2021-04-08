@@ -265,6 +265,10 @@ function ProtectedComponents(props) {
     };
 
     /** AlbumVersionsPagination component callback functions */
+    /* Mobile component specific */
+    
+
+
     /* Handle current page click */
     const handleCurrentAlbumVersionsPage = (e) => {
         e.preventDefault();
@@ -313,10 +317,10 @@ function ProtectedComponents(props) {
     const handlePreviousAlbumVersionsPage = (e) => {
         e.preventDefault();
 
-        //If the current albumVersions page is greater than 1, assign a value to pageNum that is equal to the current page - 1
+        //If the current page is greater than 1, set pageNum equal to the current page - 1
         const pageNum = (albumVersionsPagination.page > 1) ? albumVersionsPagination.page - 1 : albumVersionsPagination.page;
 
-        //Decrement min and max pages by 5
+        //If pageNum divided by 5 has a remainder equal to 0, decrement min and max pages by 5
         if ((pageNum) % 5 === 0) {
             setAlbumVersionsMinPages(albumVersionsMinPages - 5);
             setAlbumVersionsMaxPages(albumVersionsMaxPages - 5);
@@ -342,10 +346,10 @@ function ProtectedComponents(props) {
     const handleNextAlbumVersionsPage = (e) => {
         e.preventDefault();
 
-        //If the current albumVersions page is less than the total albumVersions pages, assign a value to pageNum that is equal to the current page + 1
+        //If the current page is less than the total pages, set pageNum equal to the current page + 1
         const pageNum = (albumVersionsPagination.page < albumVersionsPagination.pages) ? albumVersionsPagination.page + 1 : albumVersionsPagination.page;
 
-        //Increment min and max pages by 5
+        //If pageNum is greater than the value of albumVersionsMaxPages, increment min and max pages by 5
         if (pageNum > albumVersionsMaxPages) {
             setAlbumVersionsMinPages(albumVersionsMinPages + 5);
             setAlbumVersionsMaxPages(albumVersionsMaxPages + 5);
