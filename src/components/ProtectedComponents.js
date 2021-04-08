@@ -17,40 +17,44 @@ function ProtectedComponents(props) {
 
     console.log('Render: Protected Components');
 
-    /**Global variables*/
+    /* #region Global Variables */
     const history = useHistory();
+    /* #endregion Global Variables*/
 
-    /**State variables*/
-    /**Search component state variables*/
+
+    /* #region State Variables */
+    /** Search component state variables */
     const [search, setSearch] = useState('');
 
-    /**SearchResults component state variables*/
+    /** SearchResults component state variables */
     const [searchData, setSearchData] = useState([]);
 
-    /**SearchREsultsPagination component state variables*/
+    /** SearchResultsPagination component state variables */
     const [searchResultsPagination, setSearchResultsPagination] = useState({});
     const [searchResultsMinPages, setSearchResultsMinPages] = useState(0);
     const [searchResultsMaxPages, setSearchResultsMaxPages] = useState(5);
 
-    /**Album component state variables*/
+    /** Album component state variables */
     const [albumData, setAlbumData] = useState({});
 
-    /**AlbumVersions component state variables*/
+    /** AlbumVersions component state variables */
     const [albumVersionsData, setAlbumVersionsData] = useState({});
 
-    /**AlbumVersionsPagination component state variables*/
+    /** AlbumVersionsPagination component state variables */
     const [albumVersionsPagination, setAlbumVersionsPagination] = useState({});
     const [albumVersionsMinPages, setAlbumVersionsMinPages] = useState(0);
     const [albumVersionsMaxPages, setAlbumVersionsMaxPages] = useState(5);
+    /* #endregion State Variables*/
 
-    /**Callback functions*/
-    /**Search component callback functions*/
-    /**Handle search form input field*/
+
+    /* #region Callback Functions */
+    /** Search component callback functions */
+    /* Handle search form input field */
     const handleSearch = (({ target }) => {
         setSearch(target.value);
     });
 
-    /**Handle search form submit*/
+    /* Handle search form submit */
     const handleSearchSubmit = (e) => {
         e.preventDefault();
 
@@ -71,8 +75,8 @@ function ProtectedComponents(props) {
             );
     };
 
-    /**SearchResults component callback functions*/
-    /**Handle album click*/
+    /** SearchResults component callback functions */
+    /* Handle album click */
     const handleAlbumClick = (e) => {
         e.preventDefault();
 
@@ -100,8 +104,8 @@ function ProtectedComponents(props) {
                 })
     };
 
-    /**SearchResultsPagination component callback functions*/
-    /**Handle current page click*/
+    /** SearchResultsPagination component callback functions */
+    /* Handle current page click */
     const handleCurrentSearchResultsPage = (e) => {
         e.preventDefault();
 
@@ -124,7 +128,7 @@ function ProtectedComponents(props) {
         window.scroll(0, 0);
     };
 
-    /**Handle first page button click*/
+    /* Handle first page button click */
     const handleFirstSearchResultsPage = (e) => {
         e.preventDefault();
 
@@ -148,7 +152,7 @@ function ProtectedComponents(props) {
         window.scrollTo(0, 0);
     };
 
-    /**Handle previous page button click*/
+    /* Handle previous page button click */
     const handlePreviousSearchResultsPage = (e) => {
         e.preventDefault();
 
@@ -177,7 +181,7 @@ function ProtectedComponents(props) {
         window.scrollTo(0, 0);
     };
 
-    /**Handle next page button click*/
+    /* Handle next page button click */
     const handleNextSearchResultsPage = (e) => {
         e.preventDefault();
 
@@ -206,7 +210,7 @@ function ProtectedComponents(props) {
         window.scrollTo(0, 0);
     };
 
-    /**Handle last page button click*/
+    /* Handle last page button click */
     const handleLastSearchResultsPage = (e) => {
         e.preventDefault();
 
@@ -230,8 +234,8 @@ function ProtectedComponents(props) {
         window.scrollTo(0, 0);
     };
 
-    /**AlbumVersionsHeader component callback functions*/
-    /**Handle view album versions button click*/
+    /** AlbumVersionsHeader component callback functions */
+    /* Handle view album versions button click */
     const handleViewAlbumVersions = (e) => {
         e.preventDefault();
 
@@ -253,15 +257,15 @@ function ProtectedComponents(props) {
     console.log(albumVersionsData);
     console.log(albumVersionsPagination);
 
-    /**Handle hide albun versions button click*/
+    /* Handle hide albun versions button click */
     const handleHideAlbumVersions = (e) => {
         e.preventDefault();
 
         setAlbumVersionsData({});
     };
 
-    /**AlbumVersionsPagination component callback functions*/
-    /**Handle current page click*/
+    /** AlbumVersionsPagination component callback functions */
+    /* Handle current page click */
     const handleCurrentAlbumVersionsPage = (e) => {
         e.preventDefault();
 
@@ -284,7 +288,7 @@ function ProtectedComponents(props) {
         window.scroll(0, 1200);
     };
 
-    /**Handle first page button click*/
+    /* Handle first page button click */
     const handleFirstAlbumVersionsPage = (e) => {
         e.preventDefault();
 
@@ -308,7 +312,7 @@ function ProtectedComponents(props) {
         window.scroll(0, 1200);
     };
 
-    /**Handle previous page button click*/
+    /* Handle previous page button click */
     const handlePreviousAlbumVersionsPage = (e) => {
         e.preventDefault();
 
@@ -337,7 +341,7 @@ function ProtectedComponents(props) {
         window.scroll(0, 1200);
     };
 
-    /**Handle next page button click*/
+    /* Handle next page button click */
     const handleNextAlbumVersionsPage = (e) => {
         e.preventDefault();
 
@@ -366,7 +370,7 @@ function ProtectedComponents(props) {
         window.scroll(0, 1200);
     };
 
-    /**Handle last page button click*/
+    /* Handle last page button click */
     const handleLastAlbumVersionsPage = (e) => {
         e.preventDefault();
 
@@ -389,15 +393,17 @@ function ProtectedComponents(props) {
         //Scroll to the top of the albumVersions component after refreshing results
         window.scroll(0, 1200);
     };
+    /* #endregion Callback Functions */
 
-    /**Props objects*/
-    /**Search component props*/
+
+    /* #region Props Objects */
+    /** Search component props */
     const searchProps = { search, handleSearch, handleSearchSubmit };
 
-    /**SearchResults component props*/
+    /** SearchResults component props */
     const searchResultsProps = { searchData, handleAlbumClick };
 
-    /**SearchResultsPagination component props*/
+    /** SearchResultsPagination component props */
     const searchResultsPaginationProps = {
         searchResultsPagination,
         searchResultsMinPages,
@@ -409,17 +415,17 @@ function ProtectedComponents(props) {
         handleLastSearchResultsPage,
     };
 
-    /**Album component props*/
+    /** Album component props */
     const albumProps = { albumData };
 
-    /**AlbumVersions and AlbumVersionsHeader component props*/
+    /** AlbumVersions and AlbumVersionsHeader component props */
     const albumVersionsProps = {
         handleViewAlbumVersions,
         handleHideAlbumVersions,
         albumVersionsData,
     };
 
-    /**AlbumVersionsPagination component props*/
+    /** AlbumVersionsPagination component props */
     const albumVersionsPaginationProps = {
         albumVersionsPagination,
         albumVersionsMinPages,
@@ -430,8 +436,9 @@ function ProtectedComponents(props) {
         handleNextAlbumVersionsPage,
         handleLastAlbumVersionsPage,
     }
+    /* #endregion Props Objects*/
 
-
+    
     return (
         <div>
             <Header logoutSubmit={props.headerProps.logoutSubmit} />
