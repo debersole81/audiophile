@@ -269,13 +269,10 @@ function ProtectedComponents(props) {
     const handleCurrentAlbumVersionsPage = (e) => {
         e.preventDefault();
 
-        //Assign Pagination component page id to pageNum variable
-        const pageNum = e.target.id;
-
         //Call Discogs API Master Release Versions endpoint
         //Set albumVersionsData
         //Set albumVersionsPagination
-        discogsAPIMasterReleaseVersions(albumData.master_id, pageNum)
+        discogsAPIMasterReleaseVersions(albumData.master_id, e.target.id)
             .then(res => res.json())
             .then(
                 (result) => {
@@ -438,7 +435,7 @@ function ProtectedComponents(props) {
     }
     /* #endregion Props Objects*/
 
-    
+
     return (
         <div>
             <Header logoutSubmit={props.headerProps.logoutSubmit} />
