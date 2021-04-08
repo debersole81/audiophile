@@ -261,6 +261,10 @@ function ProtectedComponents(props) {
         e.preventDefault();
 
         setAlbumVersionsData({});
+        setAlbumVersionsMinPages(0);
+        setAlbumVersionsMaxPages(5);
+        setAlbumVersionsMinPagesMobile(0);
+        setAlbumVersionsMaxPagesMobile(3);
     };
 
     /** AlbumVersionsPagination component callback functions -- Mobile specific */
