@@ -33,6 +33,8 @@ function ProtectedComponents(props) {
     const [searchResultsPagination, setSearchResultsPagination] = useState({});
     const [searchResultsMinPages, setSearchResultsMinPages] = useState(0);
     const [searchResultsMaxPages, setSearchResultsMaxPages] = useState(5);
+    const [searchResultsMinPagesMobile, setSearchResultsMinPagesMobile] = useState(0);
+    const [searchResultsMaxPagesMobile, setSearchResultsMaxPagesMobile] = useState(3);
 
     /** Album component state variables */
     const [albumData, setAlbumData] = useState({});
@@ -106,7 +108,13 @@ function ProtectedComponents(props) {
                 })
     };
 
-    /** SearchResultsPagination component callback functions */
+    /** SearchResultsPagination component callback functions -- Mobile */
+    /* Handle previous page button click */
+
+
+    /* Handle next page button click */
+
+
     /* Handle current page click */
     const handleCurrentSearchResultsPage = (e) => {
         e.preventDefault();
