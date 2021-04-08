@@ -18,7 +18,24 @@ function SearchResultsPaginationMobile(props) {
     const { handlePreviousSearchResultsPageMobile } = props.searchResultsPaginationProps;
     const { handleNextSearchResultsPageMobile } = props.searchResultsPaginationProps;
 
-    
+    /** Build pages array */
+    //Variable to hold active page
+    const activePage = searchResultsPagination.page
+
+    //Empty array to store formatted page numbers
+    const pages = []
+
+    //Loop over pages and apply formatting
+    for (let i = 1; i <= searchResultsPagination.pages; i++) {
+        //Push page numbers onto pages array
+        pages.push(
+            <Pagination.Item key={i} id={i} className={(i === activePage ? 'active' : null)} onClick={handleCurrentSearchResultsPage}>
+                {i}
+            </Pagination.Item>
+        )
+    };
+
+
 
 
     return (
