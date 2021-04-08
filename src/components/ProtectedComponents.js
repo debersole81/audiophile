@@ -139,6 +139,34 @@ function ProtectedComponents(props) {
     };
 
     /* Handle next page button click */
+    const handleNextSearchResultsPageMobile = (e) => {
+        e.preventDefault();
+
+        //If the current search result page is less than the total search result pages, set pageNum to the current page + 1
+        const pageNum = (searchResultsPagination.page < searchResultsPagination.pages) ? searchResultsPagination.page + 1 : searchResultsPagination.page;
+
+        //If pageNum is greater than the value of searchResultsMaxPagesMobile, increment min and max pages by 3
+        if (pageNum > searchResultsMaxPagesMobile) {
+            setSearchResultsMinPagesMobile(searchResultsMinPagesMobile + 3);
+            setSearchResultsMaxPagesMobile(searchResultsMaxPagesMobile + 3);
+        };
+
+        //Call Discogs API Search endpoint
+        //Set searchData
+        //Set searchResultsPagination
+        DiscogsAPISearch(search, pageNum)
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setSearchData(result.results);
+                    setSearchResultsPagination(result.pagination);
+                }
+            );
+
+        //Scroll to the top of the browser window after refreshing results
+        window.scrollTo(0, 0);
+    };
+
 
     /** SearchResultsPagination component callback functions -- Desktop & Mobile */
     /* Handle current page click */
@@ -501,11 +529,15 @@ function ProtectedComponents(props) {
         searchResultsPagination,
         searchResultsMinPages,
         searchResultsMaxPages,
+        searchResultsMinPagesMobile,
+        searchResultsMaxPagesMobile,
         handleCurrentSearchResultsPage,
         handleFirstSearchResultsPage,
         handlePreviousSearchResultsPage,
         handleNextSearchResultsPage,
         handleLastSearchResultsPage,
+        handlePreviousSearchResultsPageMobile,
+        handleNextSearchResultsPageMobile,
     };
 
     /** Album component props */
