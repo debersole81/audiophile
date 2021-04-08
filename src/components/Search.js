@@ -1,7 +1,8 @@
 import React from 'react';
 import '../App.css';
 import SearchResults from './SearchResults';
-import SearchResultsPagination from './SearchResultsPagination'
+import SearchResultsPaginationWrapper from './SearchResultsPaginationWrapper';
+import SearchResultsPagination from './SearchResultsPagination';
 import Form from 'react-bootstrap/Form';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Row from 'react-bootstrap/Row';
@@ -51,7 +52,7 @@ function Search(props) {
                 </Row>
             </Jumbotron>
             <SearchResults {...props.searchResultsProps} />
-            <SearchResultsPagination {...props.searchResultsPaginationProps} />
+            <SearchResultsPaginationWrapper {...props.searchResultsPaginationProps} />
         </React.Fragment>
     );
 };
