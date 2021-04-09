@@ -6,7 +6,6 @@ import SearchResultsPaginationMobile from './SearchResultsPaginationMobile';
 
 function SeaarchResultsPaginationWrapper(props) {
     console.log('Render: SearchResultsPaginationWrapper Component');
-    console.log(props);
 
     /** Destructure width variable from useViewPort hook */
     const { width } = useViewPort();
