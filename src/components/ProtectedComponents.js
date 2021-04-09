@@ -37,6 +37,7 @@ function ProtectedComponents(props) {
     const [searchResultsMaxPagesMobile, setSearchResultsMaxPagesMobile] = useState(3);
 
     /** Album component state variables */
+    const [albumMasterData, setAlbumMasterData] = useState({});
     const [albumData, setAlbumData] = useState({});
 
     /** AlbumVersions component state variables */
@@ -91,14 +92,16 @@ function ProtectedComponents(props) {
         setAlbumVersionsMinPages(0);
         setAlbumVersionsMaxPages(5);
 
-        //Call Discogs API Master Release endpoint to retreive main_release ID
-        //Then call Discgos API Release endpoint passing main_release ID as param
-        //Set albumData
+        //Declare variable to store the value of main_release from Discogs API Master endpoint
+        // let mainRelease = null;
+        //Call Discogs API Master Release endpoint to retreive main_release ID           
         DiscogsAPIMasterRelease(e.target.id)
             .then(masterres => masterres.json())
             .then(
                 (result) => {
-                    console.log(result);
+                    // let mainRelease = result.main_release;
+                    // console.log (mainRelease);
+                    // setAlbumMasterData(result);
                     DiscogsAPIRelease(result.main_release)
                         .then(releaseres => releaseres.json())
                         .then(
@@ -106,8 +109,13 @@ function ProtectedComponents(props) {
                                 setAlbumData(result)
                                 history.push('/album');
                             })
+                        .then(setAlbumMasterData(result))
+
                 })
     };
+
+    console.log(albumData);
+    console.log(albumMasterData);
 
     /** SearchResultsPagination component callback functions -- Mobile */
     /* Handle previous page button click */
