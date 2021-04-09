@@ -303,8 +303,6 @@ function ProtectedComponents(props) {
     const handleViewAlbumVersions = (e) => {
         e.preventDefault();
 
-        console.log('clicked');
-
         //Call Discogs Master Release Versions endpoint
         //Set albumVersionsData
         discogsAPIMasterReleaseVersions(albumData.master_id)
