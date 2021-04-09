@@ -8,7 +8,6 @@ import Pagination from 'react-bootstrap/Pagination'
 function SearchResultsPaginationMobile(props) {
 
     console.log('Render: SearchResultsPaginationMobile Component')
-    console.log(props);
 
     /** Destructure props */
     const { searchResultsPagination } = props.searchResultsPaginationProps;
