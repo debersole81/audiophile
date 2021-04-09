@@ -19,8 +19,6 @@ function Search(props) {
 
     console.log('Render: Search Component');
 
-    console.log(props);
-
     /** Destructure props */
     const { search } = props.searchProps;
     const { handleSearch } = props.searchProps;
