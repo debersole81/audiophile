@@ -98,6 +98,7 @@ function ProtectedComponents(props) {
             .then(masterres => masterres.json())
             .then(
                 (result) => {
+                    console.log(result);
                     DiscogsAPIRelease(result.main_release)
                         .then(releaseres => releaseres.json())
                         .then(
@@ -309,7 +310,6 @@ function ProtectedComponents(props) {
             .then(res => res.json())
             .then(
                 (result) => {
-                    console.log(result);
                     setAlbumVersionsData(result.versions);
                     setAlbumVersionsPagination(result.pagination);
                 }
