@@ -1,11 +1,11 @@
 /**Helper function for Discgos API Release endpoint call*/
 
-const discogsAPIRelease = (main_release) => {
+const discogsAPIRelease = (id) => {
     
     /*Build URL*/
     const baseURL = 'https://api.discogs.com/releases/';
 
-    let url = baseURL + main_release;
+    let url = baseURL + id;
 
     /**Build HTTP request method + headers*/
     const requestOptions = {
