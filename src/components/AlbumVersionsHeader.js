@@ -30,7 +30,6 @@ function AlbumVersionsHeader(props) {
     const { albumData } = props.albumProps;
     const { handleViewAlbumVersions } = props.albumVersionsProps;
     const { handleHideAlbumVersions } = props.albumVersionsProps;
-    const { handleAlbumClick } = props.albumVersionsProps;
     const { albumVersionsData } = props.albumVersionsProps;
 
     console.log(albumData);
