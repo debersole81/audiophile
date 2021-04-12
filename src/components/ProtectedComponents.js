@@ -547,7 +547,10 @@ function ProtectedComponents(props) {
     };
 
     /** Album component props */
-    const albumProps = { albumData };
+    const albumProps = {
+        albumData,
+        albumMasterData,
+    };
 
     /** AlbumVersions and AlbumVersionsHeader component props */
     const albumVersionsProps = {
