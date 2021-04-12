@@ -12,8 +12,10 @@ function AlbumTracks(props) {
 
     /*Destructuring props*/
     const { albumData } = props.albumProps;
+    const { albumMasterData } = props.albumProps;
 
     console.log(albumData);
+    console.log(albumMasterData);
 
     return (
         <Container>
@@ -40,7 +42,7 @@ function AlbumTracks(props) {
                     </Table>
                 </Col>
             </Row>
-            <AlbumVersionsHeader {...props} />
+            {(albumData.id === albumMasterData.main_release) ? <AlbumVersionsHeader {...props} /> : null}
         </Container>
     );
 };
