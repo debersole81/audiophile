@@ -53,7 +53,35 @@ function ProtectedComponents(props) {
 
 
     /* #region Callback Functions */
-    /** Callbacks used in multiple components */
+    
+    /** Search component callback functions */
+    /* Handle search form input field */
+    const handleSearch = (({ target }) => {
+        setSearch(target.value);
+    });
+
+    /* Handle search form submit */
+    const handleSearchSubmit = (e) => {
+        e.preventDefault();
+
+        //Clear searchResultsMinPages & searchResultsMaxPages state
+        setSearchResultsMinPages(0);
+        setSearchResultsMaxPages(5);
+
+        //Call Discogs API Search endpoint
+        //Set searchData
+        //Set searchResultsPagination
+        DiscogsAPISearch(search)
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setSearchData(result.results);
+                    setSearchResultsPagination(result.pagination);
+                }
+            );
+    };
+
+    /** SearchResults component callback functions */
     /* Handle album click */
     const handleAlbumClick = (e) => {
         e.preventDefault();
@@ -90,34 +118,6 @@ function ProtectedComponents(props) {
     console.log(albumData);
     console.log(albumMasterData);
 
-    /** Search component callback functions */
-    /* Handle search form input field */
-    const handleSearch = (({ target }) => {
-        setSearch(target.value);
-    });
-
-    /* Handle search form submit */
-    const handleSearchSubmit = (e) => {
-        e.preventDefault();
-
-        //Clear searchResultsMinPages & searchResultsMaxPages state
-        setSearchResultsMinPages(0);
-        setSearchResultsMaxPages(5);
-
-        //Call Discogs API Search endpoint
-        //Set searchData
-        //Set searchResultsPagination
-        DiscogsAPISearch(search)
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    setSearchData(result.results);
-                    setSearchResultsPagination(result.pagination);
-                }
-            );
-    };
-
-    /** SearchResults component callback functions */
     /** SearchResultsPagination component callback functions -- Mobile */
     /* Handle previous page button click */
     const handlePreviousSearchResultsPageMobile = (e) => {
@@ -557,7 +557,6 @@ function ProtectedComponents(props) {
     const albumVersionsProps = {
         handleViewAlbumVersions,
         handleHideAlbumVersions,
-        handleAlbumClick,
         albumVersionsData,
     };
 
