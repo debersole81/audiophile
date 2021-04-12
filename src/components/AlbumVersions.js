@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import '../App.css';
 import AlbumVersionsPaginationWrapper from '../components/AlbumVersionsPaginationWrapper';
-import discogsAPIRelease from '../helper-functions/DiscogsAPIRelease';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
@@ -36,17 +35,6 @@ function AlbumVersions(props) {
     }, []);
 
 
-    const handleAlbumVersionClick = (e) => {
-        console.log(e.target.id);
-
-        discogsAPIRelease(e.target.id)
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    console.log(result);
-                })
-    };
-
     return (
         <Row>
             <Col>
@@ -72,7 +60,7 @@ function AlbumVersions(props) {
                                 <td>{album.catno}</td>
                                 <td>{album.country}</td>
                                 <td>{album.released}</td>
-                                <td><Button variant='dark' size='sm' id={album.id} onClick={handleAlbumVersionClick}>VIEW</Button></td>
+                                <td><Button variant='dark' size='sm' id={album.id}>VIEW</Button></td>
                             </tr>
                         </tbody>
                     )}
