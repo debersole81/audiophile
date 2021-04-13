@@ -346,7 +346,7 @@ function ProtectedComponents(props) {
             .then(res => res.json())
             .then(
                 (result) => {
-                    console.log(result);
+                    setAlbumReleaseData(result);
                 }
             )
     };
@@ -590,7 +590,11 @@ function ProtectedComponents(props) {
         handleLastAlbumReleasesPage,
         handlePreviousAlbumReleasesPageMobile,
         handleNextAlbumReleasesPageMobile,
-    }
+    };
+
+    /** AlbumRelease component props */
+    const albumReleaseProps = { albumReleaseData };
+
     /* #endregion Props Objects*/
 
 
