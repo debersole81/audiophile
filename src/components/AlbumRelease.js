@@ -92,7 +92,7 @@ function AlbumRelease(props) {
                         </Col>
                     </Row>
                 </Col>
-                <AlbumReleaseTracks />
+                <AlbumReleaseTracks {...props}/>
             </Row>
         </Container>);
 };
