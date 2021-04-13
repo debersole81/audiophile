@@ -336,6 +336,21 @@ function ProtectedComponents(props) {
         setAlbumReleasesMaxPagesMobile(3);
     };
 
+    /** AlbumReleases component callback functions */
+    /* Handle view release button click */
+    const handleViewAlbumRelease = (e) => {
+        e.preventDefault();
+
+        //Call Discogs API Release endpoint
+        DiscogsAPIRelease(e.target.id)
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    console.log(result);
+                }
+            )
+    };
+
     /** AlbumReleasesPagination component callback functions -- Mobile */
     /* Handle previous page button click */
     const handlePreviousAlbumReleasesPageMobile = (e) => {
