@@ -56,7 +56,7 @@ function AlbumReleasesHeader(props) {
                     <Button size='sm' variant='outline-light' className='album-versions-header-button' onClick={handleHideAlbumReleases}>HIDE VERSIONS</Button>
                 </Col>
             </Row>
-            <AlbumReleases albumReleasesProps={props.albumReleasesProps} albumVersionsPaginationProps={props.albumVersionsPaginationProps} />
+            <AlbumReleases albumReleasesProps={props.albumReleasesProps} albumReleasesPaginationProps={props.albumReleasesPaginationProps} />
         </Container>
     );
 };
