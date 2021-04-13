@@ -53,7 +53,7 @@ function AlbumReleases (props) {
                     {albumReleasesData.map((album, index) =>
                         <tbody key={index}>
                             <tr>
-                                <td><Image className='album-versions-img' src={album.thumb} alt='Album Cover Image' /></td>
+                                <td><Image className='album-releases-img' src={album.thumb} alt='Album Cover Image' /></td>
                                 <td>{album.title}</td>
                                 <td>{album.major_formats[0]}</td>
                                 <td>{album.label}</td>
