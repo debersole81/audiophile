@@ -9,6 +9,7 @@ import Table from 'react-bootstrap/Table';
 function AlbumTracks(props) {
 
     console.log('Render: AlbumTracks Component');
+    console.log(props);
 
     /*Destructuring props*/
     const { albumData } = props.albumProps;
@@ -39,7 +40,7 @@ function AlbumTracks(props) {
                     </Table>
                 </Col>
             </Row>
-            {(albumData.id === albumMasterData.main_release) ? <AlbumReleasesHeader {...props} /> : null}
+            {(albumData.id === albumMasterData.main_release) ? <AlbumReleasesHeader albumReleasesProps={props.albumReleasesProps} albumVersionsPaginationProps={props.albumVersionsPaginationProps} /> : null}
         </Container>
     );
 };
