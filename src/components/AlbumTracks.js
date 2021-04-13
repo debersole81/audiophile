@@ -40,7 +40,7 @@ function AlbumTracks(props) {
                     </Table>
                 </Col>
             </Row>
-            {(albumData.id === albumMasterData.main_release) ? <AlbumReleasesHeader albumReleasesProps={props.albumReleasesProps} albumVersionsPaginationProps={props.albumVersionsPaginationProps} /> : null}
+            {(albumData.id === albumMasterData.main_release) ? <AlbumReleasesHeader albumReleasesProps={props.albumReleasesProps} albumReleasesPaginationProps={props.albumReleasesPaginationProps} /> : null}
         </Container>
     );
 };
