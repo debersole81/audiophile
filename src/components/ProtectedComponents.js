@@ -573,6 +573,7 @@ function ProtectedComponents(props) {
         albumReleasesData,
         handleViewAlbumReleases,
         handleHideAlbumReleases,
+        handleViewAlbumRelease,
     };
 
     /** AlbumReleasesHeader and AlbumReleasesPagination component props */
