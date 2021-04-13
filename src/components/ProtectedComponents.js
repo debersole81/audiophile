@@ -621,7 +621,7 @@ function ProtectedComponents(props) {
                     />}
                 />
                 <Route exact path='/albumrelease' render={(props) =>
-                    <AlbumRelease />}
+                    <AlbumRelease albumReleaseProps={albumReleaseProps} />}
                 />
             </Switch>
         </div>
