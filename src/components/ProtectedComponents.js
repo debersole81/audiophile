@@ -95,16 +95,12 @@ function ProtectedComponents(props) {
         setAlbumReleasesMinPages(0);
         setAlbumReleasesMaxPages(5);
 
-        //Declare variable to store the value of main_release from Discogs API Master endpoint
-        // let mainRelease = null;
         //Call Discogs API Master Release endpoint to retreive main_release ID           
         DiscogsAPIMasterRelease(e.target.id)
             .then(masterres => masterres.json())
             .then(
                 (result) => {
-                    // let mainRelease = result.main_release;
-                    // console.log (mainRelease);
-                    // setAlbumMasterData(result);
+                    //Call Discogs API Release endpoint and pass main_release id from Master Release endpoint result
                     DiscogsAPIRelease(result.main_release)
                         .then(releaseres => releaseres.json())
                         .then(
@@ -342,11 +338,13 @@ function ProtectedComponents(props) {
         e.preventDefault();
 
         //Call Discogs API Release endpoint
+        //Set albumRelease data
         DiscogsAPIRelease(e.target.id)
             .then(res => res.json())
             .then(
                 (result) => {
                     setAlbumReleaseData(result);
+                    history.push('/albumrelease')
                 }
             )
     };
