@@ -43,12 +43,12 @@ function ProtectedComponents(props) {
     /** AlbumReleases component state variables */
     const [albumReleasesData, setalbumReleasesData] = useState({});
 
-    /** AlbumVersionsPagination component state variables */
-    const [albumVersionsPagination, setAlbumVersionsPagination] = useState({});
-    const [albumVersionsMinPages, setAlbumVersionsMinPages] = useState(0);
-    const [albumVersionsMaxPages, setAlbumVersionsMaxPages] = useState(5);
-    const [albumVersionsMinPagesMobile, setAlbumVersionsMinPagesMobile] = useState(0);
-    const [albumVersionsMaxPagesMobile, setAlbumVersionsMaxPagesMobile] = useState(3);
+    /** AlbumReleasesPaginationWrapper and AlbumReleasesPagination components state variables */
+    const [albumReleasesPagination, setAlbumReleasesPagination] = useState({});
+    const [albumReleasesMinPages, setAlbumReleasesMinPages] = useState(0);
+    const [albumReleasesMaxPages, setAlbumReleasesMaxPages] = useState(5);
+    const [albumReleasesMinPagesMobile, setAlbumReleasesMinPagesMobile] = useState(0);
+    const [albumReleasesMaxPagesMobile, setAlbumReleasesMaxPagesMobile] = useState(3);
     /* #endregion State Variables*/
 
 
@@ -89,9 +89,9 @@ function ProtectedComponents(props) {
         //Clear albumRelease data
         setalbumReleasesData({});
 
-        //Clear albumVersionsMinPages & albumVersionsMaxPages state
-        setAlbumVersionsMinPages(0);
-        setAlbumVersionsMaxPages(5);
+        //Clear albumReleasesMinPages & albumReleasesMaxPages state
+        setAlbumReleasesMinPages(0);
+        setAlbumReleasesMaxPages(5);
 
         //Declare variable to store the value of main_release from Discogs API Master endpoint
         // let mainRelease = null;
@@ -316,7 +316,7 @@ function ProtectedComponents(props) {
             .then(
                 (result) => {
                     setalbumReleasesData(result.versions);
-                    setAlbumVersionsPagination(result.pagination);
+                    setAlbumReleasesPagination(result.pagination);
                 }
             );
     };
@@ -327,196 +327,196 @@ function ProtectedComponents(props) {
 
         //Clear albumReleases and albumReleases Pagination data
         setalbumReleasesData({});
-        setAlbumVersionsPagination({});
-        setAlbumVersionsMinPages(0);
-        setAlbumVersionsMaxPages(5);
-        setAlbumVersionsMinPagesMobile(0);
-        setAlbumVersionsMaxPagesMobile(3);
+        setAlbumReleasesPagination({});
+        setAlbumReleasesMinPages(0);
+        setAlbumReleasesMaxPages(5);
+        setAlbumReleasesMinPagesMobile(0);
+        setAlbumReleasesMaxPagesMobile(3);
     };
 
-    /** AlbumVersionsPagination component callback functions -- Mobile */
+    /** AlbumReleasesPagination component callback functions -- Mobile */
     /* Handle previous page button click */
-    const handlePreviousAlbumVersionsPageMobile = (e) => {
+    const handlePreviousAlbumReleasesPageMobile = (e) => {
         e.preventDefault();
 
         //If the current page is greater than 1, set pageNum equal to the current page - 1
-        const pageNum = (albumVersionsPagination.page > 1) ? albumVersionsPagination.page - 1 : albumVersionsPagination.page;
+        const pageNum = (albumReleasesPagination.page > 1) ? albumReleasesPagination.page - 1 : albumReleasesPagination.page;
 
         //If pageNum divided by 3 has a remainder equal to 0, decrement min and max pages by 3
         if ((pageNum) % 3 === 0) {
-            setAlbumVersionsMinPagesMobile(albumVersionsMinPagesMobile - 3);
-            setAlbumVersionsMaxPagesMobile(albumVersionsMaxPagesMobile - 3);
+            setAlbumReleasesMinPagesMobile(albumReleasesMinPagesMobile - 3);
+            setAlbumReleasesMaxPagesMobile(albumReleasesMaxPagesMobile - 3);
         };
 
         //Call Discogs API Master Release endpoint
         //Set albumReleasesData
-        //Set albumVersionsPagination
+        //Set albumReleasesPagination
         discogsAPIMasterReleaseVersions(albumData.master_id, pageNum)
             .then(res => res.json())
             .then(
                 (result) => {
                     setalbumReleasesData(result.versions);
-                    setAlbumVersionsPagination(result.pagination);
+                    setAlbumReleasesPagination(result.pagination);
                 }
             );
 
-        //Scroll to the top of the albumVersions component after refreshing results
+        //Scroll to the top of the AlbumReleases component after refreshing results
         window.scroll(0, 1200);
     };
 
     /* Handle next page button click */
-    const handleNextAlbumVersionsPageMobile = (e) => {
+    const handleNextAlbumReleasesPageMobile = (e) => {
         e.preventDefault();
 
         //If the current page is less than the total pages, set pageNum equal to the current page + 1
-        const pageNum = (albumVersionsPagination.page < albumVersionsPagination.pages) ? albumVersionsPagination.page + 1 : albumVersionsPagination.page;
+        const pageNum = (albumReleasesPagination.page < albumReleasesPagination.pages) ? albumReleasesPagination.page + 1 : albumReleasesPagination.page;
 
-        //If pageNum is greater than the value of albumVersionsMaxPagesMobile, increment min and max pages by 3
-        if (pageNum > albumVersionsMaxPagesMobile) {
-            setAlbumVersionsMinPagesMobile(albumVersionsMinPagesMobile + 3);
-            setAlbumVersionsMaxPagesMobile(albumVersionsMaxPagesMobile + 3);
+        //If pageNum is greater than the value of albumReleasesMaxPagesMobile, increment min and max pages by 3
+        if (pageNum > albumReleasesMaxPagesMobile) {
+            setAlbumReleasesMinPagesMobile(albumReleasesMinPagesMobile + 3);
+            setAlbumReleasesMaxPagesMobile(albumReleasesMaxPagesMobile + 3);
         };
 
         //Call Discogs API Master Release endpoint
         //Set albumReleasesData
-        //Set albumVersionsPagination
+        //Set albumReleasesPagination
         discogsAPIMasterReleaseVersions(albumData.master_id, pageNum)
             .then(res => res.json())
             .then(
                 (result) => {
                     setalbumReleasesData(result.versions);
-                    setAlbumVersionsPagination(result.pagination);
+                    setAlbumReleasesPagination(result.pagination);
                 }
             );
 
-        //Scroll to the top of the albumVersions component after refreshing results
+        //Scroll to the top of the AlbumReleases component after refreshing results
         window.scroll(0, 1200);
     };
 
-    /** AlbumVersionsPagination component callback functions -- Desktop & Mobile */
+    /** AlbumReleasesPagination component callback functions -- Desktop & Mobile */
     /* Handle current page click */
-    const handleCurrentAlbumVersionsPage = (e) => {
+    const handleCurrentAlbumReleasesPage = (e) => {
         e.preventDefault();
 
         //Call Discogs API Master Release Versions endpoint
         //Set albumReleasesData
-        //Set albumVersionsPagination
+        //Set albumReleasesPagination
         discogsAPIMasterReleaseVersions(albumData.master_id, e.target.id)
             .then(res => res.json())
             .then(
                 (result) => {
                     setalbumReleasesData(result.versions);
-                    setAlbumVersionsPagination(result.pagination);
+                    setAlbumReleasesPagination(result.pagination);
                 }
             );
 
-        //Scroll to the top of the albumVersions component after refreshing results
+        //Scroll to the top of the AlbumReleases component after refreshing results
         window.scroll(0, 1200);
     };
 
     /* Handle first page button click */
-    const handleFirstAlbumVersionsPage = (e) => {
+    const handleFirstAlbumReleasesPage = (e) => {
         e.preventDefault();
 
         //Set min and max pages to initial values
-        setAlbumVersionsMinPages(0);
-        setAlbumVersionsMaxPages(5);
+        setAlbumReleasesMinPages(0);
+        setAlbumReleasesMaxPages(5);
 
         //Call Discogs API Master Release Versions endpoint
         //Set albumReleasesData
-        //Set albumVersionsPagination
+        //Set albumReleasesPagination
         discogsAPIMasterReleaseVersions(albumData.master_id, 1)
             .then(res => res.json())
             .then(
                 (result) => {
                     setalbumReleasesData(result.versions);
-                    setAlbumVersionsPagination(result.pagination);
+                    setAlbumReleasesPagination(result.pagination);
                 }
             );
 
-        //Scroll to the top of the albumVersions component after refreshing results
+        //Scroll to the top of the AlbumReleases component after refreshing results
         window.scroll(0, 1200);
     };
 
     /* Handle previous page button click */
-    const handlePreviousAlbumVersionsPage = (e) => {
+    const handlePreviousAlbumReleasesPage = (e) => {
         e.preventDefault();
 
         //If the current page is greater than 1, set pageNum equal to the current page - 1
-        const pageNum = (albumVersionsPagination.page > 1) ? albumVersionsPagination.page - 1 : albumVersionsPagination.page;
+        const pageNum = (albumReleasesPagination.page > 1) ? albumReleasesPagination.page - 1 : albumReleasesPagination.page;
 
         //If pageNum divided by 5 has a remainder equal to 0, decrement min and max pages by 5
         if ((pageNum) % 5 === 0) {
-            setAlbumVersionsMinPages(albumVersionsMinPages - 5);
-            setAlbumVersionsMaxPages(albumVersionsMaxPages - 5);
+            setAlbumReleasesMinPages(albumReleasesMinPages - 5);
+            setAlbumReleasesMaxPages(albumReleasesMaxPages - 5);
         };
 
         //Call Discogs API Master Release endpoint
         //Set albumReleasesData
-        //Set albumVersionsPagination
+        //Set albumReleasesPagination
         discogsAPIMasterReleaseVersions(albumData.master_id, pageNum)
             .then(res => res.json())
             .then(
                 (result) => {
                     setalbumReleasesData(result.versions);
-                    setAlbumVersionsPagination(result.pagination);
+                    setAlbumReleasesPagination(result.pagination);
                 }
             );
 
-        //Scroll to the top of the albumVersions component after refreshing results
+        //Scroll to the top of the AlbumReleases component after refreshing results
         window.scroll(0, 1200);
     };
 
     /* Handle next page button click */
-    const handleNextAlbumVersionsPage = (e) => {
+    const handleNextAlbumReleasesPage = (e) => {
         e.preventDefault();
 
         //If the current page is less than the total pages, set pageNum equal to the current page + 1
-        const pageNum = (albumVersionsPagination.page < albumVersionsPagination.pages) ? albumVersionsPagination.page + 1 : albumVersionsPagination.page;
+        const pageNum = (albumReleasesPagination.page < albumReleasesPagination.pages) ? albumReleasesPagination.page + 1 : albumReleasesPagination.page;
 
-        //If pageNum is greater than the value of albumVersionsMaxPages, increment min and max pages by 5
-        if (pageNum > albumVersionsMaxPages) {
-            setAlbumVersionsMinPages(albumVersionsMinPages + 5);
-            setAlbumVersionsMaxPages(albumVersionsMaxPages + 5);
+        //If pageNum is greater than the value of albumReleasesMaxPages, increment min and max pages by 5
+        if (pageNum > albumReleasesMaxPages) {
+            setAlbumReleasesMinPages(albumReleasesMinPages + 5);
+            setAlbumReleasesMaxPages(albumReleasesMaxPages + 5);
         };
 
         //Call Discogs API Master Release endpoint
         //Set albumReleasesData
-        //Set albumVersionsPagination
+        //Set albumReleasesPagination
         discogsAPIMasterReleaseVersions(albumData.master_id, pageNum)
             .then(res => res.json())
             .then(
                 (result) => {
                     setalbumReleasesData(result.versions);
-                    setAlbumVersionsPagination(result.pagination);
+                    setAlbumReleasesPagination(result.pagination);
                 }
             );
 
-        //Scroll to the top of the albumVersions component after refreshing results
+        //Scroll to the top of the AlbumReleases component after refreshing results
         window.scroll(0, 1200);
     };
 
     /* Handle last page button click */
-    const handleLastAlbumVersionsPage = (e) => {
+    const handleLastAlbumReleasesPage = (e) => {
         e.preventDefault();
 
         //Set min page to total albumVersions pages - 5 and max page to the value of the total albumVersions pages
-        setAlbumVersionsMinPages(albumVersionsPagination.pages - 5);
-        setAlbumVersionsMaxPages(albumVersionsPagination.pages);
+        setAlbumReleasesMinPages(albumReleasesPagination.pages - 5);
+        setAlbumReleasesMaxPages(albumReleasesPagination.pages);
 
         //Call Discogs API Master Release endpoint
         //Set albumReleasesData
-        //Set albumVersionsPagination
-        discogsAPIMasterReleaseVersions(albumData.master_id, albumVersionsPagination.pages)
+        //Set albumReleasesPagination
+        discogsAPIMasterReleaseVersions(albumData.master_id, albumReleasesPagination.pages)
             .then(res => res.json())
             .then(
                 (result) => {
                     setalbumReleasesData(result.versions);
-                    setAlbumVersionsPagination(result.pagination);
+                    setAlbumReleasesPagination(result.pagination);
                 }
             );
 
-        //Scroll to the top of the albumVersions component after refreshing results
+        //Scroll to the top of the AlbumReleases component after refreshing results
         window.scroll(0, 1200);
     };
     /* #endregion Callback Functions */
@@ -558,20 +558,20 @@ function ProtectedComponents(props) {
         handleHideAlbumReleases,
     };
 
-    /** AlbumVersionsPagination component props */
-    const albumVersionsPaginationProps = {
-        albumVersionsPagination,
-        albumVersionsMinPages,
-        albumVersionsMaxPages,
-        albumVersionsMinPagesMobile,
-        albumVersionsMaxPagesMobile,
-        handleCurrentAlbumVersionsPage,
-        handleFirstAlbumVersionsPage,
-        handlePreviousAlbumVersionsPage,
-        handleNextAlbumVersionsPage,
-        handleLastAlbumVersionsPage,
-        handlePreviousAlbumVersionsPageMobile,
-        handleNextAlbumVersionsPageMobile,
+    /** AlbumReleasesHeader and AlbumReleasesPagination component props */
+    const albumReleasesPaginationProps = {
+        albumReleasesPagination,
+        albumReleasesMinPages,
+        albumReleasesMaxPages,
+        albumReleasesMinPagesMobile,
+        albumReleasesMaxPagesMobile,
+        handleCurrentAlbumReleasesPage,
+        handleFirstAlbumReleasesPage,
+        handlePreviousAlbumReleasesPage,
+        handleNextAlbumReleasesPage,
+        handleLastAlbumReleasesPage,
+        handlePreviousAlbumReleasesPageMobile,
+        handleNextAlbumReleasesPageMobile,
     }
     /* #endregion Props Objects*/
 
@@ -595,7 +595,7 @@ function ProtectedComponents(props) {
                     <Album
                         albumProps={albumProps}
                         albumReleasesProps={albumReleasesProps}
-                        albumVersionsPaginationProps={albumVersionsPaginationProps}
+                        albumReleasesPaginationProps={albumReleasesPaginationProps}
                     />}
                 />
             </Switch>
