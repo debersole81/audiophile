@@ -5,6 +5,7 @@ import DiscogsAPIMasterRelease from '../helper-functions/DiscogsAPIMasterRelease
 import DiscogsAPIRelease from '../helper-functions/DiscogsAPIRelease';
 import discogsAPIMasterReleaseVersions from '../helper-functions/DiscogsAPIMasterReleaseVersions';
 import Album from './Album';
+import AlbumRelease from './AlbumRelease';
 import Collection from './Collection';
 import Dashboard from './Dashboard';
 import Header from './Header';
@@ -53,7 +54,7 @@ function ProtectedComponents(props) {
 
 
     /* #region Callback Functions */
-    
+
     /** Search component callback functions */
     /* Handle search form input field */
     const handleSearch = (({ target }) => {
@@ -597,6 +598,9 @@ function ProtectedComponents(props) {
                         albumReleasesProps={albumReleasesProps}
                         albumReleasesPaginationProps={albumReleasesPaginationProps}
                     />}
+                />
+                <Route exact path='/albumrelease' render={(props) =>
+                    <AlbumRelease />}
                 />
             </Switch>
         </div>
