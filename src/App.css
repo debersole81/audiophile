@@ -16,16 +16,16 @@
   .album-tracks-thead {
     text-align: center;
   }
-  /*AlbumVersionsHeader component*/
-  .album-versions-header-h5-col {
+  /*AlbumReleasesHeader component*/
+  .album-releases-header-h5-col {
     text-align: center;
     padding-bottom: .3em;
   }
-  .album-versions-header-button-col {
+  .album-releases-header-button-col {
     text-align: center;
     margin-top: .3em;
   }
-  .album-versions-header-button {
+  .album-releases-header-button {
     float: none !Important;
   }
 }
@@ -185,24 +185,24 @@
   padding: .3em .3em .3em .5em;
 }
 
-/*AlbumVersionsHeader Component styles*/
+/*AlbumReleasesHeader Component styles*/
 
-.album-versions-header-row {
+.album-releases-header-row {
   margin-top: 2em;
 }
 
-.album-versions-header-h5-col {
+.album-releases-header-h5-col {
   background-color: #343A40;
   padding-top: .1em;
 }
 
-.album-versions-header-button-col {
+.album-releases-header-button-col {
   background-color: #343A40;
   padding-top: .2em;
   padding-bottom: .2em;
 }
 
-.album-versions-header-thead {
+.album-releases-header-thead {
   display: inline-flex;
   font-weight: 400;
   background-color: #343A40;
@@ -211,16 +211,16 @@
   margin-bottom: .2em;
 }
 
-.album-versions-header-button {
+.album-releases-header-button {
   margin-top: .2em;
   margin-right: .4em;
   margin-bottom: .2em;
   float: right;
 }
 
-/*AlbumVersions Component styles*/
+/*AlbumReleases Component styles*/
 
-.album-versions-img {
+.album-releases-img {
   height: 5em;
   width: 5em;
 }
