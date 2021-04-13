@@ -28,8 +28,8 @@ function AlbumReleasesHeader(props) {
 
     /**Destructuring props*/
     const { albumReleasesData } = props.albumReleasesProps;
-    const { handleViewAlbumVersions } = props.albumReleasesProps;
-    const { handleHideAlbumVersions } = props.albumReleasesProps;
+    const { handleViewAlbumReleases } = props.albumReleasesProps;
+    const { handleHideAlbumReleases } = props.albumReleasesProps;
 
     if (Object.keys(albumReleasesData).length === 0 && albumReleasesData.constructor === Object) {
         return (
@@ -39,7 +39,7 @@ function AlbumReleasesHeader(props) {
                         <h5 className='album-versions-header-thead'>Album Versions</h5>
                     </Col>
                     <Col className='col album-versions-header-button-col' xs={12} s={12} lg={6}>
-                        <Button size='sm' variant='outline-light' className='album-versions-header-button' onClick={handleViewAlbumVersions}>SHOW VERSIONS</Button>
+                        <Button size='sm' variant='outline-light' className='album-versions-header-button' onClick={handleViewAlbumReleases}>SHOW VERSIONS</Button>
                     </Col>
                 </Row>
             </Container>
@@ -53,7 +53,7 @@ function AlbumReleasesHeader(props) {
                     <h5 className='album-versions-header-thead'>Album Versions</h5>
                 </Col>
                 <Col className='col album-versions-header-button-col' xs={12} s={12} lg={6}>
-                    <Button size='sm' variant='outline-light' className='album-versions-header-button' onClick={handleHideAlbumVersions}>HIDE VERSIONS</Button>
+                    <Button size='sm' variant='outline-light' className='album-versions-header-button' onClick={handleHideAlbumReleases}>HIDE VERSIONS</Button>
                 </Col>
             </Row>
             <AlbumReleases albumReleasesProps={props.albumReleasesProps} albumVersionsPaginationProps={props.albumVersionsPaginationProps} />
