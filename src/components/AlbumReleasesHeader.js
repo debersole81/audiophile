@@ -27,17 +27,11 @@ function AlbumReleasesHeader(props) {
     console.log(props);
 
     /**Destructuring props*/
-    const { albumData } = props.albumProps;
-    const { handleViewAlbumVersions } = props.albumVersionsProps;
-    const { handleHideAlbumVersions } = props.albumVersionsProps;
-    const { albumVersionsData } = props.albumVersionsProps;
+    const { albumReleasesData } = props.albumReleasesProps;
+    const { handleViewAlbumVersions } = props.albumReleasesProps;
+    const { handleHideAlbumVersions } = props.albumReleasesProps;
 
-    console.log(albumData);
-    console.log(albumVersionsData);
-
-    //pass handleAlbumVersions and albumVersionsData to the AlbumVersions component
-
-    if (Object.keys(albumVersionsData).length === 0 && albumVersionsData.constructor === Object) {
+    if (Object.keys(albumReleasesData).length === 0 && albumReleasesData.constructor === Object) {
         return (
             <Container>
                 <Row className='row album-versions-header-row'>
@@ -62,7 +56,7 @@ function AlbumReleasesHeader(props) {
                     <Button size='sm' variant='outline-light' className='album-versions-header-button' onClick={handleHideAlbumVersions}>HIDE VERSIONS</Button>
                 </Col>
             </Row>
-            <AlbumReleases albumVersionsProps={props.albumVersionsProps} albumVersionsPaginationProps={props.albumVersionsPaginationProps} />
+            <AlbumReleases albumReleasesProps={props.albumReleasesProps} albumVersionsPaginationProps={props.albumVersionsPaginationProps} />
         </Container>
     );
 };
