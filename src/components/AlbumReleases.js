@@ -9,7 +9,7 @@ import Image from 'react-bootstrap/Image';
 
 /**Notes
  * Each teable row will need to have an onClick and id attribute
- * id attribute will be equal to albumVersionsData.id
+ * id attribute will be equal to albumReleasesData.id
  * onClick attribute will fire a callback in protected components
  * Callback will call the discogsAPIrelease helper func
  * Response from callback will set albumData and rerender album component (via history.push)
@@ -21,13 +21,13 @@ import Image from 'react-bootstrap/Image';
 
 function AlbumReleases (props) {
 
-    console.log('Render: AlbumVersions Component')
+    console.log('Render: AlbumReleases Component')
     console.log(props);
 
     /**Destructure props*/
-    const { albumVersionsData } = props.albumVersionsProps;
+    const { albumReleasesData } = props.albumReleasesProps;
 
-    console.log(albumVersionsData);
+    console.log(albumReleasesData);
 
     /**Scroll to the bottom of the window on component mount*/
     useEffect(() => {
@@ -50,7 +50,7 @@ function AlbumReleases (props) {
                             <th>Release Year</th>
                         </tr>
                     </thead>
-                    {albumVersionsData.map((album, index) =>
+                    {albumReleasesData.map((album, index) =>
                         <tbody key={index}>
                             <tr>
                                 <td><Image className='album-versions-img' src={album.thumb} alt='Album Cover Image' /></td>
