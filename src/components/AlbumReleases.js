@@ -65,7 +65,7 @@ function AlbumReleases (props) {
                         </tbody>
                     )}
                 </Table>
-                <AlbumReleasesPaginationWrapper albumVersionsPaginationProps={props.albumVersionsPaginationProps} />
+                <AlbumReleasesPaginationWrapper albumReleasesPaginationProps={props.albumReleasesPaginationProps} />
             </Col>
         </Row>
     );
