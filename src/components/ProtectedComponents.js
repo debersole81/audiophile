@@ -41,7 +41,7 @@ function ProtectedComponents(props) {
     const [albumData, setAlbumData] = useState({});
 
     /** AlbumReleases component state variables */
-    const [albumReleasesData, setalbumReleasesData] = useState({});
+    const [albumReleasesData, setAlbumReleasesData] = useState({});
 
     /** AlbumReleasesPaginationWrapper and AlbumReleasesPagination components state variables */
     const [albumReleasesPagination, setAlbumReleasesPagination] = useState({});
@@ -87,7 +87,7 @@ function ProtectedComponents(props) {
         e.preventDefault();
 
         //Clear albumRelease data
-        setalbumReleasesData({});
+        setAlbumReleasesData({});
 
         //Clear albumReleasesMinPages & albumReleasesMaxPages state
         setAlbumReleasesMinPages(0);
@@ -315,7 +315,7 @@ function ProtectedComponents(props) {
             .then(res => res.json())
             .then(
                 (result) => {
-                    setalbumReleasesData(result.versions);
+                    setAlbumReleasesData(result.versions);
                     setAlbumReleasesPagination(result.pagination);
                 }
             );
@@ -326,7 +326,7 @@ function ProtectedComponents(props) {
         e.preventDefault();
 
         //Clear albumReleases and albumReleases Pagination data
-        setalbumReleasesData({});
+        setAlbumReleasesData({});
         setAlbumReleasesPagination({});
         setAlbumReleasesMinPages(0);
         setAlbumReleasesMaxPages(5);
@@ -355,7 +355,7 @@ function ProtectedComponents(props) {
             .then(res => res.json())
             .then(
                 (result) => {
-                    setalbumReleasesData(result.versions);
+                    setAlbumReleasesData(result.versions);
                     setAlbumReleasesPagination(result.pagination);
                 }
             );
@@ -384,7 +384,7 @@ function ProtectedComponents(props) {
             .then(res => res.json())
             .then(
                 (result) => {
-                    setalbumReleasesData(result.versions);
+                    setAlbumReleasesData(result.versions);
                     setAlbumReleasesPagination(result.pagination);
                 }
             );
@@ -405,7 +405,7 @@ function ProtectedComponents(props) {
             .then(res => res.json())
             .then(
                 (result) => {
-                    setalbumReleasesData(result.versions);
+                    setAlbumReleasesData(result.versions);
                     setAlbumReleasesPagination(result.pagination);
                 }
             );
@@ -429,7 +429,7 @@ function ProtectedComponents(props) {
             .then(res => res.json())
             .then(
                 (result) => {
-                    setalbumReleasesData(result.versions);
+                    setAlbumReleasesData(result.versions);
                     setAlbumReleasesPagination(result.pagination);
                 }
             );
@@ -458,7 +458,7 @@ function ProtectedComponents(props) {
             .then(res => res.json())
             .then(
                 (result) => {
-                    setalbumReleasesData(result.versions);
+                    setAlbumReleasesData(result.versions);
                     setAlbumReleasesPagination(result.pagination);
                 }
             );
@@ -487,7 +487,7 @@ function ProtectedComponents(props) {
             .then(res => res.json())
             .then(
                 (result) => {
-                    setalbumReleasesData(result.versions);
+                    setAlbumReleasesData(result.versions);
                     setAlbumReleasesPagination(result.pagination);
                 }
             );
@@ -511,7 +511,7 @@ function ProtectedComponents(props) {
             .then(res => res.json())
             .then(
                 (result) => {
-                    setalbumReleasesData(result.versions);
+                    setAlbumReleasesData(result.versions);
                     setAlbumReleasesPagination(result.pagination);
                 }
             );
