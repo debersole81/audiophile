@@ -8,34 +8,26 @@ function AlbumReleasesPaginationMobile(props) {
 
     console.log('Render: AlbumVersionPaginationMobile Component');
 
-    /** To fix this
-     * Max pages need to be 3
-     * Min pages need to be 0
-     * Remove first and last selectors
-     * Each time the prev or next button is clicked, min and max pages will increment by 3 until total pages are reached
-     * Build the state and function callbacks in here and then figure out how to abstract this for use in searchResults component 
-     */
-
     /** Destructure props */
-    const { albumVersionsPagination } = props.albumVersionsPaginationProps;
-    const { albumVersionsMinPagesMobile } = props.albumVersionsPaginationProps;
-    const { albumVersionsMaxPagesMobile } = props.albumVersionsPaginationProps;
-    const { handleCurrentAlbumVersionsPage } = props.albumVersionsPaginationProps;
-    const { handlePreviousAlbumVersionsPageMobile } = props.albumVersionsPaginationProps;
-    const { handleNextAlbumVersionsPageMobile } = props.albumVersionsPaginationProps;
+    const { albumReleasesPagination } = props.albumReleasesPaginationProps;
+    const { albumReleasesMinPagesMobile } = props.albumReleasesPaginationProps;
+    const { albumReleasesMaxPagesMobile } = props.albumReleasesPaginationProps;
+    const { handleCurrentAlbumReleasesPage } = props.albumReleasesPaginationProps;
+    const { handlePreviousAlbumReleasesPageMobile } = props.albumReleasesPaginationProps;
+    const { handleNextAlbumReleasesPageMobile } = props.albumReleasesPaginationProps;
 
     /** Build pages array */
     //Variable to hold active page
-    const activePage = albumVersionsPagination.page;
+    const activePage = albumReleasesPagination.page;
 
     //Empty array to store formatted page numbers
     const pages = [];
 
     //Loop over pages and apply formatting
-    for (let i = 1; i <= albumVersionsPagination.pages; i++) {
+    for (let i = 1; i <= albumReleasesPagination.pages; i++) {
         //Push page numbers onto pages array
         pages.push(
-            <Pagination.Item key={i} id={i} className={(i === activePage ? 'active' : null)} onClick={handleCurrentAlbumVersionsPage}>
+            <Pagination.Item key={i} id={i} className={(i === activePage ? 'active' : null)} onClick={handleCurrentAlbumReleasesPage}>
                 {i}
             </Pagination.Item>
         );
@@ -43,14 +35,14 @@ function AlbumReleasesPaginationMobile(props) {
 
     console.log(pages);
 
-    if (albumVersionsPagination.pages > 1) {
+    if (albumReleasesPagination.pages > 1) {
         return (
             <Row className='row'>
                 <Col className='col'>
                     <Pagination className='flex-wrap justify-content-center'>
-                        <Pagination.Prev className={albumVersionsPagination.page === 1 ? 'disabled' : ''} onClick={handlePreviousAlbumVersionsPageMobile} />
-                        {pages.map((page) => (page.props.id < albumVersionsMaxPagesMobile + 1 && page.props.id > albumVersionsMinPagesMobile) ? page : null)}
-                        <Pagination.Next className={albumVersionsPagination.page === albumVersionsPagination.pages ? 'disabled' : ''} onClick={handleNextAlbumVersionsPageMobile} />
+                        <Pagination.Prev className={albumReleasesPagination.page === 1 ? 'disabled' : ''} onClick={handlePreviousAlbumReleasesPageMobile} />
+                        {pages.map((page) => (page.props.id < albumReleasesMaxPagesMobile + 1 && page.props.id > albumReleasesMinPagesMobile) ? page : null)}
+                        <Pagination.Next className={albumReleasesPagination.page === albumReleasesPagination.pages ? 'disabled' : ''} onClick={handleNextAlbumReleasesPageMobile} />
                     </Pagination>
                 </Col>
             </Row>
