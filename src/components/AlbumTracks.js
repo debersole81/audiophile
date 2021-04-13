@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import AlbumVersionsHeader from '../components/AlbumVersionsHeader';
+import AlbumReleasesHeader from '../components/AlbumReleasesHeader';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
@@ -13,9 +13,6 @@ function AlbumTracks(props) {
     /*Destructuring props*/
     const { albumData } = props.albumProps;
     const { albumMasterData } = props.albumProps;
-
-    console.log(albumData);
-    console.log(albumMasterData);
 
     return (
         <Container>
@@ -42,7 +39,7 @@ function AlbumTracks(props) {
                     </Table>
                 </Col>
             </Row>
-            {(albumData.id === albumMasterData.main_release) ? <AlbumVersionsHeader {...props} /> : null}
+            {(albumData.id === albumMasterData.main_release) ? <AlbumReleasesHeader {...props} /> : null}
         </Container>
     );
 };
