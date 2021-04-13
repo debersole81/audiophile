@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import '../App.css';
-import AlbumVersionsPaginationWrapper from '../components/AlbumVersionsPaginationWrapper';
+import AlbumReleasesPaginationWrapper from '../components/AlbumReleasesPaginationWrapper';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
@@ -65,7 +65,7 @@ function AlbumReleases (props) {
                         </tbody>
                     )}
                 </Table>
-                <AlbumVersionsPaginationWrapper albumVersionsPaginationProps={props.albumVersionsPaginationProps} />
+                <AlbumReleasesPaginationWrapper albumVersionsPaginationProps={props.albumVersionsPaginationProps} />
             </Col>
         </Row>
     );
