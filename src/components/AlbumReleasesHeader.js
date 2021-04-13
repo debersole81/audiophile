@@ -36,10 +36,10 @@ function AlbumReleasesHeader(props) {
             <Container>
                 <Row className='row album-versions-header-row'>
                     <Col className='col album-versions-header-h5-col' xs={12} s={12} lg={6}>
-                        <h5 className='album-versions-header-thead'>Album Versions</h5>
+                        <h5 className='album-versions-header-thead'>Album Releases</h5>
                     </Col>
                     <Col className='col album-versions-header-button-col' xs={12} s={12} lg={6}>
-                        <Button size='sm' variant='outline-light' className='album-versions-header-button' onClick={handleViewAlbumReleases}>SHOW VERSIONS</Button>
+                        <Button size='sm' variant='outline-light' className='album-versions-header-button' onClick={handleViewAlbumReleases}>SHOW RELEASES</Button>
                     </Col>
                 </Row>
             </Container>
@@ -50,10 +50,10 @@ function AlbumReleasesHeader(props) {
         <Container>
             <Row className='row album-versions-header-row'>
                 <Col className='col album-versions-header-h5-col' xs={12} s={12} lg={6}>
-                    <h5 className='album-versions-header-thead'>Album Versions</h5>
+                    <h5 className='album-versions-header-thead'>Album Releases</h5>
                 </Col>
                 <Col className='col album-versions-header-button-col' xs={12} s={12} lg={6}>
-                    <Button size='sm' variant='outline-light' className='album-versions-header-button' onClick={handleHideAlbumReleases}>HIDE VERSIONS</Button>
+                    <Button size='sm' variant='outline-light' className='album-versions-header-button' onClick={handleHideAlbumReleases}>HIDE RELEASES</Button>
                 </Col>
             </Row>
             <AlbumReleases albumReleasesProps={props.albumReleasesProps} albumReleasesPaginationProps={props.albumReleasesPaginationProps} />
