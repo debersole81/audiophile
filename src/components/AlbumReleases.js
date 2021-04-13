@@ -19,7 +19,7 @@ import Image from 'react-bootstrap/Image';
 
 
 
-function AlbumVersions(props) {
+function AlbumReleases (props) {
 
     console.log('Render: AlbumVersions Component')
     console.log(props);
@@ -71,4 +71,4 @@ function AlbumVersions(props) {
     );
 };
 
-export default AlbumVersions;
+export default AlbumReleases;
