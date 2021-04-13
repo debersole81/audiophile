@@ -19,13 +19,14 @@ import Image from 'react-bootstrap/Image';
 
 
 
-function AlbumReleases (props) {
+function AlbumReleases(props) {
 
     console.log('Render: AlbumReleases Component')
     console.log(props);
 
     /**Destructure props*/
     const { albumReleasesData } = props.albumReleasesProps;
+    const { handleViewAlbumRelease } = props.albumReleasesProps;
 
     console.log(albumReleasesData);
 
@@ -60,7 +61,7 @@ function AlbumReleases (props) {
                                 <td>{album.catno}</td>
                                 <td>{album.country}</td>
                                 <td>{album.released}</td>
-                                <td><Button variant='dark' size='sm' id={album.id}>VIEW</Button></td>
+                                <td><Button variant='dark' size='sm' id={album.id} onClick={handleViewAlbumRelease}>VIEW</Button></td>
                             </tr>
                         </tbody>
                     )}
