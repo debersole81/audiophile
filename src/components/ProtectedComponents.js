@@ -43,6 +43,7 @@ function ProtectedComponents(props) {
 
     /** AlbumReleases component state variables */
     const [albumReleasesData, setAlbumReleasesData] = useState({});
+    const [albumReleaseData, setAlbumReleaseData] = useState({});
 
     /** AlbumReleasesPaginationWrapper and AlbumReleasesPagination components state variables */
     const [albumReleasesPagination, setAlbumReleasesPagination] = useState({});
