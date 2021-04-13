@@ -1,5 +1,5 @@
 import React from "react";
-import AlbumVersionsPaginationDesktop from '../components/AlbumVersionsPaginationDesktop';
+import AlbumReleasesPaginationDesktop from '../components/AlbumReleasesPaginationDesktop';
 import AlbumVersionsPaginationMobile from '../components/AlbumVersionsPaginationMobile';
 import { useViewPort } from '../custom-hooks/useViewPort';
 
@@ -13,7 +13,7 @@ function AlbumReleasesPaginationWrapper(props) {
     /** Declare variable for minimum breakpoint value  */
     const breakpoint = 381;
 
-    return (width < breakpoint ?  <AlbumVersionsPaginationMobile {...props} /> : <AlbumVersionsPaginationDesktop {...props} />);
+    return (width < breakpoint ?  <AlbumVersionsPaginationMobile {...props} /> : <AlbumReleasesPaginationDesktop {...props} />);
 };
 
 export default AlbumReleasesPaginationWrapper;
