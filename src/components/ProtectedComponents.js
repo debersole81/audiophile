@@ -115,9 +115,6 @@ function ProtectedComponents(props) {
                 })
     };
 
-    console.log(albumData);
-    console.log(albumMasterData);
-
     /** SearchResultsPagination component callback functions -- Mobile */
     /* Handle previous page button click */
     const handlePreviousSearchResultsPageMobile = (e) => {
@@ -176,7 +173,6 @@ function ProtectedComponents(props) {
         //Scroll to the top of the browser window after refreshing results
         window.scrollTo(0, 0);
     };
-
 
     /** SearchResultsPagination component callback functions -- Desktop & Mobile */
     /* Handle current page click */
