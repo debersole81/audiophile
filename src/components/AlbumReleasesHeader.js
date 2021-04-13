@@ -21,7 +21,7 @@ import Container from 'react-bootstrap/Container';
  */
 
 
-function AlbumVersionsHeader(props) {
+function AlbumReleasesHeader(props) {
 
     console.log('Render: AlbumVersionsHeader Component');
     console.log(props);
@@ -67,4 +67,4 @@ function AlbumVersionsHeader(props) {
     );
 };
 
-export default AlbumVersionsHeader;
+export default AlbumReleasesHeader;
