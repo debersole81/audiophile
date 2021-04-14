@@ -31,10 +31,10 @@ import { FaHeart, FaRecordVinyl } from 'react-icons/fa';
 
 function Album(props) {
     console.log('Render: Album Component');
- 
+
     /**Destructure props*/
     const { albumData } = props.albumProps;
-   
+
     /**State variables*/
 
     /**Album images modal component state variable*/
@@ -80,7 +80,7 @@ function Album(props) {
             <Row>
                 <Col className='col album-image-col' xs={12} s={12} md={7} lg={6} xl={5}>
                     <Image fluid src={albumData.images[0].uri} alt='Album Cover Art' />
-                    <Button variant='dark' className='album-images-button' onClick={handleShowModal} block>SEE MORE IMAGES</Button>
+                    {(Array.isArray(images) && images.length) ? <Button variant='dark' className='album-images-button' onClick={handleShowModal} block>SEE MORE IMAGES</Button> : null}
                     <Modal show={showModal} onHide={handleCloseModal} size='lg' aria-labelledby='contained-modal-title-vcenter' centered>
                         <Modal.Header closeButton />
                         <Modal.Body id='contained-modal-title-vcenter'>
@@ -111,7 +111,7 @@ function Album(props) {
                         </Col>
                     </Row>
                 </Col>
-                <AlbumTracks {...props}/>
+                <AlbumTracks {...props} />
             </Row>
         </Container>
     );
