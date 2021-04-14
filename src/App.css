@@ -1,13 +1,13 @@
 /** Row and Column visualization styles. For assisting with layout only */
 
-.row {
+/* .row {
   border: solid 2px red;
 }
 
 .col {
   border: solid 3px royalblue;
   background: lightblue;
-}
+} */
 
 /** Responsive styles */
 
@@ -172,9 +172,8 @@
 }
 
 .album-master-logo {
-  max-width: 45%;
-  max-height: 45%;
-  float: right;
+  max-width: 50%;
+  max-height: 50%;
 }
 
 .album-images-button {
