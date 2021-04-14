@@ -15,9 +15,9 @@ function AlbumReleaseTracks(props) {
 
     return (
         <Container>
-            <Row className='row album-tracks-row'>
+            <Row className='row album-release-tracks-row'>
                 <Col className='col'>
-                    <h5 className='album-tracks-thead'>Tracklist</h5>
+                    <h5 className='album-release-tracks-thead'>Tracklist</h5>
                     <Table bordered responsive>
                         <thead>
                             <tr>
