@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../App.css';
+import masterReleaseLogo from '../assets/master-release-logo.svg';
 import AlbumTracks from '../components/AlbumTracks'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -102,6 +103,9 @@ function Album(props) {
                             <p><strong>Cat #:</strong> {albumData.labels[0].catno}</p>
                             <p><strong>Release Country:</strong> {albumData.country}</p>
                             <p><strong>Release Year:</strong> {albumData.year}</p>
+                        </Col>
+                        <Col className='col album-master-logo-col'>
+                            <Image src={masterReleaseLogo} className='album-master-logo' alt='Album Master Release Logo' />
                         </Col>
                     </Row>
                     <Row className='album-add-buttons-row'>
