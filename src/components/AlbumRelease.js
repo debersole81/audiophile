@@ -56,12 +56,14 @@ function AlbumRelease(props) {
         };
     });
 
+    console.log(images);
+
     return (
         <Container>
             <Row>
                 <Col className='col album-release-image-col' xs={12} s={12} md={7} lg={6} xl={5}>
                     <Image fluid src={albumReleaseData.images[0].uri} alt='Album Cover Art' />
-                    <Button variant='dark' className='album-release-images-button' onClick={handleShowModal} block>SEE MORE IMAGES</Button>
+                    {(Array.isArray(images) && images.length) ? <Button variant='dark' className='album-release-images-button' onClick={handleShowModal} block>SEE MORE IMAGES</Button> : null}
                     <Modal show={showModal} onHide={handleCloseModal} size='lg' aria-labelledby='contained-modal-title-vcenter' centered>
                         <Modal.Header closeButton />
                         <Modal.Body id='contained-modal-title-vcenter'>
@@ -92,7 +94,7 @@ function AlbumRelease(props) {
                         </Col>
                     </Row>
                 </Col>
-                <AlbumReleaseTracks {...props}/>
+                <AlbumReleaseTracks {...props} />
             </Row>
         </Container>);
 };
