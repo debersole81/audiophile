@@ -1,4 +1,4 @@
-/*Row and Column visualization styles. For assisting with layout only*/
+/** Row and Column visualization styles. For assisting with layout only */
 
 .row {
   border: solid 2px red;
@@ -9,14 +9,15 @@
   background: lightblue;
 }
 
-/*Responsive styles*/
-
+/** Responsive styles */
 @media (max-width: 992px) {
-  /*AlbumTracks component*/
+  
+  /* AlbumTracks component */
   .album-tracks-thead {
     text-align: center;
   }
-  /*AlbumReleasesHeader component*/
+
+  /* AlbumReleasesHeader component */
   .album-releases-header-h5-col {
     text-align: center;
     padding-bottom: .3em;
@@ -28,10 +29,14 @@
   .album-releases-header-button {
     float: none !Important;
   }
+
+  /* AlbumReleaseTracks component */
+  .album-release-tracks-thead {
+    text-align: center;
+  }
 }
 
-/*Vendor prefix CSS properties*/
-
+/** Vendor prefix CSS properties */
 ::-webkit-input-placeholder {
   font-style: italic;
   font-size: 1rem;
@@ -54,15 +59,13 @@
   font-size: 1rem;
 }
 
-/*Custom page link styles*/
-
+/** Custom page link styles */
 .page-link {
   outline: none !Important;
   box-shadow: none !Important;
 }
 
-/*Custom pagination component styles*/
-
+/** Custom pagination component styles */
 .pagination>li {
   box-shadow: .3px .3px 4px rgba(0, 0, 0, 0.253);
 }
@@ -90,8 +93,7 @@
   border: solid 1px #6C757D;
 }
 
-/*Search Component Styles*/
-
+/** Search Component Styles */
 .search-jumbotron {
   text-align: center;
 }
@@ -109,8 +111,7 @@
   padding-top: .5em;
 }
 
-/*Search Results Component Styles*/
-
+/** Search Results Component Styles */
 .search-results-col {
   padding-top: .5em;
   padding-bottom: .5em;
@@ -145,8 +146,7 @@
   background-color: lightslategray;
 }
 
-/*Album Component Styles*/
-
+/** Album Component Styles */
 .album-image-col {
   justify-content: center;
 }
@@ -172,8 +172,7 @@
   margin-top: 2em;
 }
 
-/*AlbumTracks Component Styles*/
-
+/** AlbumTracks Component Styles */
 .album-tracks-row {
   margin-top: 2.2em;
 }
@@ -185,8 +184,7 @@
   padding: .3em .3em .3em .5em;
 }
 
-/*AlbumReleasesHeader Component styles*/
-
+/** AlbumReleasesHeader Component Styles */
 .album-releases-header-row {
   margin-top: 2em;
 }
@@ -218,9 +216,46 @@
   float: right;
 }
 
-/*AlbumReleases Component styles*/
-
+/* AlbumReleases Component styles */
 .album-releases-img {
   height: 5em;
   width: 5em;
+}
+
+/** AlbumRelease Component Styles */
+.album-release-image-col {
+  justify-content: center;
+}
+
+.album-release-details {
+  margin-top: 2em;
+}
+
+.album-release-details p {
+  margin: 0em;
+  font-size: 1rem;
+}
+
+.album-release-images-button {
+  margin-top: .70em;
+}
+
+.album-release-add-buttons-col {
+  margin-top: .5em;
+}
+
+.album-release-add-buttons-row {
+  margin-top: 2em;
+}
+
+/** AlbumReleaseTracks Component Styles */
+.album-release-tracks-row {
+  margin-top: 2.2em;
+}
+
+.album-release-tracks-thead {
+  font-weight: 400;
+  color: #FFFFFF;
+  background-color: #343A40;
+  padding: .3em .3em .3em .5em;
 }
