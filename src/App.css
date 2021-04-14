@@ -10,13 +10,12 @@
 }
 
 /** Responsive styles */
+
 @media (max-width: 992px) {
-  
   /* AlbumTracks component */
   .album-tracks-thead {
     text-align: center;
   }
-
   /* AlbumReleasesHeader component */
   .album-releases-header-h5-col {
     text-align: center;
@@ -29,7 +28,6 @@
   .album-releases-header-button {
     float: none !Important;
   }
-
   /* AlbumReleaseTracks component */
   .album-release-tracks-thead {
     text-align: center;
@@ -37,6 +35,7 @@
 }
 
 /** Vendor prefix CSS properties */
+
 ::-webkit-input-placeholder {
   font-style: italic;
   font-size: 1rem;
@@ -60,12 +59,14 @@
 }
 
 /** Custom page link styles */
+
 .page-link {
   outline: none !Important;
   box-shadow: none !Important;
 }
 
 /** Custom pagination component styles */
+
 .pagination>li {
   box-shadow: .3px .3px 4px rgba(0, 0, 0, 0.253);
 }
@@ -94,6 +95,7 @@
 }
 
 /** Search Component Styles */
+
 .search-jumbotron {
   text-align: center;
 }
@@ -112,6 +114,7 @@
 }
 
 /** Search Results Component Styles */
+
 .search-results-col {
   padding-top: .5em;
   padding-bottom: .5em;
@@ -147,6 +150,7 @@
 }
 
 /** Album Component Styles */
+
 .album-image-col {
   justify-content: center;
 }
@@ -158,6 +162,19 @@
 .album-details p {
   margin: 0em;
   font-size: 1rem;
+}
+
+.album-master-logo-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.album-master-logo {
+  max-width: 45%;
+  max-height: 45%;
+  float: right;
 }
 
 .album-images-button {
@@ -173,6 +190,7 @@
 }
 
 /** AlbumTracks Component Styles */
+
 .album-tracks-row {
   margin-top: 2.2em;
 }
@@ -185,6 +203,7 @@
 }
 
 /** AlbumReleasesHeader Component Styles */
+
 .album-releases-header-row {
   margin-top: 2em;
 }
@@ -217,12 +236,14 @@
 }
 
 /* AlbumReleases Component styles */
+
 .album-releases-img {
   height: 5em;
   width: 5em;
 }
 
 /** AlbumRelease Component Styles */
+
 .album-release-image-col {
   justify-content: center;
 }
@@ -249,6 +270,7 @@
 }
 
 /** AlbumReleaseTracks Component Styles */
+
 .album-release-tracks-row {
   margin-top: 2.2em;
 }
