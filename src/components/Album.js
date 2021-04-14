@@ -95,7 +95,7 @@ function Album(props) {
                     <h2 className='mt-3 mb-2'>{albumData.title}</h2>
                     <h3 className='text-muted'>{albumData.artists[0].name}</h3>
                     <Row className='album-details'>
-                        <Col>
+                        <Col className='col' xs={8} s={8} md={8} lg={7} xl={7}>
                             <p><strong>Format:</strong> {albumData.formats[0].name}</p>
                             <p><strong>Genre:</strong> {albumData.genres[0]}</p>
                             <p><strong>Style:</strong> {albumData.styles.join(', ')}</p>
@@ -104,7 +104,7 @@ function Album(props) {
                             <p><strong>Release Country:</strong> {albumData.country}</p>
                             <p><strong>Release Year:</strong> {albumData.year}</p>
                         </Col>
-                        <Col className='col album-master-logo-col'>
+                        <Col className='col album-master-logo-col' xs={4} s={4} md={4} lg={5} xl={5}>
                             <Image src={masterReleaseLogo} className='album-master-logo' alt='Album Master Release Logo' />
                         </Col>
                     </Row>
