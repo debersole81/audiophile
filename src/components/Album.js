@@ -35,6 +35,7 @@ function Album(props) {
 
     /**Destructure props*/
     const { albumData } = props.albumProps;
+    const { albumMasterData } = props.albumProps;
 
     /**State variables*/
 
@@ -104,9 +105,11 @@ function Album(props) {
                             <p><strong>Release Country:</strong> {albumData.country}</p>
                             <p><strong>Release Year:</strong> {albumData.year}</p>
                         </Col>
-                        <Col className='col album-master-logo-col' xs={4} s={4} md={4} lg={5} xl={5}>
-                            <Image src={masterReleaseLogo} className='album-master-logo' alt='Album Master Release Logo' />
-                        </Col>
+                        {(albumData.id === albumMasterData.main_release) ?
+                            <Col className='col album-master-logo-col' xs={4} s={4} md={4} lg={5} xl={5}>
+                                <Image src={masterReleaseLogo} className='album-master-logo' alt='Album Master Release Logo' />
+                            </Col> : null
+                        }
                     </Row>
                     <Row className='album-add-buttons-row'>
                         <Col>
