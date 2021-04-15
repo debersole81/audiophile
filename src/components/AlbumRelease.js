@@ -78,13 +78,13 @@ function AlbumRelease(props) {
                     <h3 className='text-muted'>{albumReleaseData.artists[0].name}</h3>
                     <Row className='album-release-details'>
                         <Col>
-                            <p><strong>Format:</strong> {albumReleaseData.formats[0].name}</p>
-                            <p><strong>Genre:</strong> {albumReleaseData.genres[0]}</p>
-                            <p><strong>Style:</strong> {albumReleaseData.styles.join(', ')}</p>
-                            <p><strong>Label:</strong> {albumReleaseData.labels[0].name}</p>
-                            <p><strong>Cat #:</strong> {albumReleaseData.labels[0].catno}</p>
-                            <p><strong>Release Country:</strong> {albumReleaseData.country}</p>
-                            <p><strong>Release Year:</strong> {albumReleaseData.year}</p>
+                            {(albumReleaseData.formats) ? <p><strong>Format:</strong> {albumReleaseData.formats[0].name} </p> : null}
+                            {(albumReleaseData.genres) ? <p><strong>Genre:</strong> {albumReleaseData.genres[0]}</p> : null}
+                            {(albumReleaseData.styles) ? <p><strong>Style:</strong> {albumReleaseData.styles.join(', ')}</p> : null}
+                            {(albumReleaseData.labels) ? <p><strong>Label:</strong> {albumReleaseData.labels[0].name}</p> : null}
+                            {(albumReleaseData.labels) ? <p><strong>Cat #:</strong> {albumReleaseData.labels[0].catno}</p> : null}
+                            {(albumReleaseData.country) ? <p><strong>Release Country:</strong> {albumReleaseData.country}</p> : null}
+                            {(albumReleaseData.year) ? <p><strong>Release Year:</strong> {albumReleaseData.year}</p> : null}
                         </Col>
                     </Row>
                     <Row className='album-release-add-buttons-row'>
