@@ -97,13 +97,13 @@ function Album(props) {
                     <h3 className='text-muted'>{albumData.artists[0].name}</h3>
                     <Row className='album-details'>
                         <Col className='col' xs={8} s={8} md={8} lg={7} xl={7}>
-                            <p><strong>Format:</strong> {albumData.formats[0].name}</p>
-                            <p><strong>Genre:</strong> {albumData.genres[0]}</p>
-                            <p><strong>Style:</strong> {albumData.styles.join(', ')}</p>
-                            <p><strong>Label:</strong> {albumData.labels[0].name}</p>
-                            <p><strong>Cat #:</strong> {albumData.labels[0].catno}</p>
-                            <p><strong>Release Country:</strong> {albumData.country}</p>
-                            <p><strong>Release Year:</strong> {albumData.year}</p>
+                        {(albumData.formats) ? <p><strong>Format:</strong> {albumData.formats[0].name} </p> : null}
+                            {(albumData.genres) ? <p><strong>Genre:</strong> {albumData.genres[0]}</p> : null}
+                            {(albumData.styles) ? <p><strong>Style:</strong> {albumData.styles.join(', ')}</p> : null}
+                            {(albumData.labels) ? <p><strong>Label:</strong> {albumData.labels[0].name}</p> : null}
+                            {(albumData.labels) ? <p><strong>Cat #:</strong> {albumData.labels[0].catno}</p> : null}
+                            {(albumData.country) ? <p><strong>Release Country:</strong> {albumData.country}</p> : null}
+                            {(albumData.year) ? <p><strong>Release Year:</strong> {albumData.year}</p> : null}
                         </Col>
                         {(albumData.id === albumMasterData.main_release) ?
                             <Col className='col album-master-logo-col' xs={4} s={4} md={4} lg={5} xl={5}>
