@@ -97,13 +97,19 @@
 /** Form styles */
 
 .signin-link {
-  display: flex;  
+  display: flex;
+  align-items: center;   
+}
+
+.signin-link>p {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .signin-link>button {
   display: flex;
-  border-width: 0em;
-  padding-top: 0em;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .signin>button {
