@@ -1,6 +1,6 @@
 import React from "react";
 
-function Login (props, state) {
+function SignIn () {
     return(
         <div>
             <h1>Login</h1>
@@ -10,8 +10,6 @@ function Login (props, state) {
                     type="text"
                     name="username"
                     placeholder="Username"
-                    value={state.username}
-                    onChange={props.loginProps.loginHandleChange}
                 />
                 </label>
                 <br />
@@ -20,12 +18,10 @@ function Login (props, state) {
                     type="text"
                     name="password"
                     placeholder="Password"
-                    value={state.password}
-                    onChange={props.loginProps.loginHandleChange}
                 />
                 </label>
                 <br />
-                <button onClick={props.loginProps.loginSubmit}>
+                <button>
                     Submit
                 </button>
                 <br />
@@ -34,4 +30,4 @@ function Login (props, state) {
     );
 }
 
-export default Login;
+export default SignIn;
