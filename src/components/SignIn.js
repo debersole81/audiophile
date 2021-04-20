@@ -21,7 +21,10 @@ function SignIn() {
                 <Form.Row className='row'>
                     <Col className='col signin-link'>
                         <p>No AudioPhile account?</p>
-                        <Button variant='link'>Sign up</Button>                        
+                        <Button variant='link'>Sign up</Button>
+                    </Col>
+                    <Col className='col signin'>
+                        <Button variant='dark'>SIGN IN</Button>
                     </Col>
                 </Form.Row>
             </Form>
