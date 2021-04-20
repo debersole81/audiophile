@@ -19,9 +19,9 @@ function SignIn() {
                     <Form.Control name='password' type='password' placeholder='Enter your password'></Form.Control>
                 </Form.Group>
                 <Form.Row className='row'>
-                    <Col className='col'>
+                    <Col className='col signin-link'>
                         <p>No AudioPhile account?</p>
-                        <Button variant='link'>Sign up</Button>
+                        <Button variant='link'>Sign up</Button>                        
                     </Col>
                 </Form.Row>
             </Form>
