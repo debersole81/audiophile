@@ -7,13 +7,13 @@ function App() {
 
   console.log('Render: App Component');
 
-  /**Notes*/
-  //Build a sign up form
-  //Build error handling for invalid username/password
-  //Implement Bootstrap
+  /** Notes 
+   * Build a sign up form
+   * Build error handling for invalid username/password
+   * Implement bootstrap
+  */
 
-
-  /**User database object*/
+  /* #region User Database Object */
   const userDatabase = [
     {
       id: 1,
@@ -26,21 +26,21 @@ function App() {
       password: "TestPassword2",
     },
   ];
+  /* #endregion User Database Object */
 
-  /**State variables*/
-  /*Login component state variables*/
-  /*Login form state object*/
+  /* #region State Variables */
+  /** Login component state variables */
   const [loginInput, setLoginInput] = useState([{
     username: "",
     password: "",
   }]);
 
-  /*User authentication state variable*/
-  const [userAuth, setUserAuth] = useState(true);
+  const [userAuth, setUserAuth] = useState(false);
+  /* #endregion State Variables */
 
-  /**Callback functions*/
-  /*Login component callback functions*/
-  /*Handle login form input fields*/
+  /* #region Callback Functions */
+  /** Login component callback functions */
+  /* Handle login form input fields */
   const loginHandleChange = (e) => {
     setLoginInput({
       ...loginInput,
@@ -48,7 +48,7 @@ function App() {
     });
   };
 
-  /*Handle login form button click*/
+  /* Handle login form button click */
   const loginSubmit = (e) => {
     e.preventDefault();
 
@@ -80,7 +80,7 @@ function App() {
     };
   };
 
-  /*Handle logout button submit*/
+  /* Handle logout button submit */
   const logoutSubmit = (e) => {
     e.preventDefault();
 
@@ -91,13 +91,19 @@ function App() {
       password: '',
     }]);
   };
+  /* #endregion Callback Functions */
 
-  /**Props objects*/
-  /*Login component props*/
-  const loginProps = { loginSubmit, loginInput, loginHandleChange };
+  /* #region Props Objects */
+  /** Login component props */
+  const loginProps = {
+    loginSubmit,
+    loginInput,
+    loginHandleChange,
+  };
 
-  /*Header component props*/
+  /** Header component props */
   const headerProps = { logoutSubmit };
+  /* #endregion Props Objects */
 
   return (
     <div>
@@ -105,8 +111,8 @@ function App() {
         return userAuth ? (<ProtectedComponents headerProps={headerProps} />) : (<Login loginProps={loginProps} />)
       }} />
     </div>
-  );
-}
+  );  
+};
 
 
 export default App;
