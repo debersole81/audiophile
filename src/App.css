@@ -96,11 +96,11 @@
 
 /** Form styles */
 
-.signin-container {
+.signin-form {
   max-width: 35%;
   margin: 30% auto;
   padding: 2em;
-  border: 1px solid #343A40;
+  border: 1px solid #cacdd1;
   border-radius: 5px;
   box-shadow: 1px 10px 20px 1px rgba(0, 0, 0, 0.253);
 }
@@ -116,11 +116,13 @@
 }
 
 .signin-link>p {
+  font-size: .85rem;
   margin-top: auto;
   margin-bottom: auto;
 }
 
 .signin-link>button {
+  font-size: .85rem;
   display: flex;
   margin-top: auto;
   margin-bottom: auto;
