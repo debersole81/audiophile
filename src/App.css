@@ -1,13 +1,13 @@
 /** Row and Column visualization styles. For assisting with layout only */
 
-/* .row {
+.row {
   border: solid 2px red;
 }
 
 .col {
   border: solid 3px royalblue;
   background: lightblue;
-} */
+}
 
 /** Responsive styles */
 
@@ -92,6 +92,18 @@
 .pagination>.active>a:hover {
   background-color: #343A40 !Important;
   border: solid 1px #6C757D;
+}
+
+/** Form styles */
+
+.signin-link {
+  display: flex;  
+}
+
+.signin-link>button {
+  display: flex;
+  border-width: 0em;
+  padding-top: 0em;
 }
 
 /** Search Component Styles */
