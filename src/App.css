@@ -106,6 +106,10 @@
   padding-top: 0em;
 }
 
+.signin>button {
+  float: right;
+}
+
 /** Search Component Styles */
 
 .search-jumbotron {
