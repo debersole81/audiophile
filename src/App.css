@@ -1,12 +1,12 @@
 /* #region Row and Column visualization styles. For assisting with layout only */
-.row {
+/* .row {
   border: solid 2px red;
 }
 
 .col {
   border: solid 3px royalblue;
   background: lightblue;
-}
+} */
 /* #endregion Row and Column visualization styles. For assisting with layout only */
 
 
@@ -115,7 +115,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 3em;
+  padding: 3.5em 3.5em 1.5em 3.5em;
   border: 1px solid #cacdd1;
   border-radius: 5px;
   box-shadow: 1px 10px 20px 1px rgba(0, 0, 0, 0.253);
@@ -126,18 +126,23 @@
   margin-bottom: 1em;
 }
 
-.signin-link {
-  display: flex;
-  align-items: center;   
+.signin-form-row {
+  margin-top: 3em;
 }
 
-.signin-link>p {
+.signin-link-col {
+  display: flex;
+  align-items: center;
+  margin-top: 1.2em;   
+}
+
+.signin-link-col>p {
   font-size: .85rem;
   margin-top: auto;
   margin-bottom: auto;
 }
 
-.signin-link>button {
+.signin-link-col>button {
   font-size: .85rem;
   display: flex;
   margin-top: auto;
