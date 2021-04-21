@@ -17,12 +17,12 @@ function SignIn() {
                 <Form.Control name='password' type='password' placeholder='Enter your password'></Form.Control>
             </Form.Group>
             <Form.Row className='row'>
-                <Col className='col signin-link' xl={8} lg={8} md={12} sm={12}>
+                <Col className='col signin-link' xl={12} lg={12} md={12} sm={12}>
                     <p>No AudioPhile account?</p>
                     <Button variant='link'>Sign up</Button>
                 </Col>
-                <Col className='col signin' xl={4} lg={4} md={12} sm={12}>
-                    <Button variant='dark'>SIGN IN</Button>
+                <Col className='col signin' xl={12} lg={12} md={12} sm={12}>
+                    <Button variant='dark' block>SIGN IN</Button>
                 </Col>
             </Form.Row>
         </Form>
