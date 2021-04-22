@@ -26,10 +26,10 @@ function SignUp() {
                 <Form.Control name='email' placeholder='Email' required></Form.Control>
             </Form.Group>
             <Form.Row className='row signin-form-row'>
-                <Col className='col'>
+                <Col className='col' xs={12} sm={12} md={12} lg={12} xl={12}>
                     <Button variant='dark' block>CREATE ACCOUNT</Button>
                 </Col>
-                <Col className='col signin-link-col'>
+                <Col className='col signin-link-col' xs={12} sm={12} md={12} lg={12} xl={12}>
                     <p>Have an AudioPhile account?</p>
                     <Button variant='link'>Sign In</Button>
                 </Col>
