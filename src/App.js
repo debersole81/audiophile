@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Route } from 'react-router-dom';
 import SignIn from './components/SignIn';
+import SignUp from './components/SignUp';
 import ProtectedComponents from './components/ProtectedComponents'
 
 function App() {
@@ -107,7 +108,8 @@ function App() {
 
   return (
     <div>
-      <SignIn />
+      {/* <SignIn /> */}
+      <SignUp />
       {/* <Route render={(props) => {
         return userAuth ? (<ProtectedComponents headerProps={headerProps} />) : (<Login loginProps={loginProps} />)
       }} /> */}
