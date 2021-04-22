@@ -1,6 +1,7 @@
 import React from "react";
 import '../App.css';
 import audioPhileAlbumLogo from '../assets/audiophile-album-logo.svg';
+import audioPhileLogoTextBlack from '../assets/audiophile-logo-text-black.svg';
 import { useViewPort } from '../custom-hooks/useViewPort';
 import Image from 'react-bootstrap/Image';
 import Form from 'react-bootstrap/Form';
@@ -42,9 +43,9 @@ function SignIn() {
     };
 
     return (
-        <Form className='signin-form'>
-            <Image src={audioPhileAlbumLogo} className='signin-form-logo' />
-            <h3 className='signin-header'>Sign in to AudioPhile</h3>
+        <Form className='signin-form-mobile'>
+            <Image src={audioPhileLogoTextBlack} className='signin-form-logo-mobile' />
+            <h3 className='signin-header-mobile'>Sign in to AudioPhile</h3>
             <Form.Group>
                 <Form.Label>Username*</Form.Label>
                 <Form.Control name='username' placeholder='Enter your username'></Form.Control>
