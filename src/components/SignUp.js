@@ -25,8 +25,17 @@ function SignUp() {
                 <Form.Label>Email Address*</Form.Label>
                 <Form.Control name='email' placeholder='Email' required></Form.Control>
             </Form.Group>
+            <Form.Row className='row signin-form-row'>
+                <Col className='col'>
+                    <Button variant='dark' block>CREATE ACCOUNT</Button>
+                </Col>
+                <Col className='col signin-link-col'>
+                    <p>Have an AudioPhile account?</p>
+                    <Button variant='link'>Sign In</Button>
+                </Col>
+            </Form.Row>
         </Form>
-        
+
     );
 };
 
