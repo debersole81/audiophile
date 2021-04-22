@@ -1,13 +1,13 @@
 /* #region Row and Column visualization styles. For assisting with layout only */
 
-.row {
+/* .row {
   border: solid 2px red;
 }
 
 .col {
   border: solid 3px royalblue;
   background: lightblue;
-}
+} */
 
 /* #endregion Row and Column visualization styles. For assisting with layout only */
 
@@ -112,6 +112,8 @@
 
 /** Auth Forms */
 
+/* Mobile styles */
+
 .auth-form-mobile {
   position: absolute;
   top: 50%;
@@ -137,6 +139,12 @@
   max-width: 100%;
   max-height: 100%;
 }
+
+.auth-pw-form-row-mobile {
+  margin-top: -1em;
+}
+
+/* Desktop styles */
 
 .auth-form {
   position: absolute;
@@ -183,7 +191,7 @@
 }
 
 .auth-pw-form-row {
-  margin-top: -1.3em;
+  margin-top: -1em;
 }
 
 .auth-pw-link-col {
@@ -192,13 +200,13 @@
 }
 
 .auth-pw-link-col>p {
-  font-size: .85em;
+  font-size: .85rem;
   margin-top: auto;
   margin-bottom: auto;
 }
 
 .auth-pw-link-col>button {
-  font-size: .85em;
+  font-size: .85rem;
   display: flex;
   margin-top: auto;
   margin-bottom: auto;
