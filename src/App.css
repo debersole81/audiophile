@@ -110,7 +110,8 @@
 
 /* #region Form styles */
 
-.signin-form-mobile {
+/** Auth Forms */
+.auth-form-mobile {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -123,13 +124,13 @@
   font-size: 1em;
 }
 
-.signin-header-mobile {
+.auth-header-mobile {
   font-size: 1.3em;
   text-align: center;
   padding-bottom: .5em;
 }
 
-.signin-form-logo-mobile {
+.auth-form-logo-mobile {
 	margin-top: 1.5em;
   margin-bottom: 2em;
   max-width: 100%;
@@ -137,7 +138,7 @@
 }
 
 
-.signin-form {
+.auth-form {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -148,38 +149,43 @@
   box-shadow: 1px 10px 20px 1px rgba(0, 0, 0, 0.253);
 }
 
-.signin-form-logo {
+.auth-form-logo {
 	margin-bottom: 2em;
 }
 
-.signin-header {
+.auth-header {
   font-size: 1.5rem;
   text-align: center;
   margin-bottom: 1em;
 }
 
-.signin-form-row {
+.auth-form-row {
   margin-top: 3em;
 }
 
-.signin-link-col {
+.auth-link-col {
   display: flex;
   align-items: center;
   margin-top: 1.2em;
 }
 
-.signin-link-col>p {
+.auth-link-col>p {
   font-size: .85rem;
   margin-top: auto;
   margin-bottom: auto;
 }
 
-.signin-link-col>button {
+.auth-link-col>button {
   font-size: .85rem;
   display: flex;
   margin-top: auto;
   margin-bottom: auto;
 }
+
+/** Sign Up Forms */
+
+
+
 
 /* #endregion Form styles */
 
