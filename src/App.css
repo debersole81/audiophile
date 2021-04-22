@@ -113,8 +113,7 @@
 /** Auth Forms */
 
 /* Mobile styles */
-
-.auth-form-mobile {
+.authform-mobile {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -127,26 +126,25 @@
   font-size: 1em;
 }
 
-.auth-header-mobile {
+.authform-header-mobile {
   font-size: 1.3em;
   text-align: center;
   padding-bottom: .5em;
 }
 
-.auth-form-logo-mobile {
+.authform-logo-mobile {
   margin-top: 1.5em;
   margin-bottom: 2em;
   max-width: 100%;
   max-height: 100%;
 }
 
-.auth-pw-form-row-mobile {
+.authform-pw-row-mobile {
   margin-top: -1em;
 }
 
 /* Desktop styles */
-
-.auth-form {
+.authform {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -157,55 +155,55 @@
   box-shadow: 1px 10px 20px 1px rgba(0, 0, 0, 0.253);
 }
 
-.auth-form-logo {
+.authform-logo {
   margin-bottom: 2em;
 }
 
-.auth-header {
+.authform-header {
   font-size: 1.5rem;
   text-align: center;
   margin-bottom: 1em;
 }
 
-.auth-form-row {
+.authform-row {
   margin-top: 3em;
 }
 
-.auth-link-col {
+.authform-link-col {
   display: flex;
   align-items: center;
   margin-top: 1.2em;
 }
 
-.auth-link-col>p {
+.authform-link-col>p {
   font-size: .85rem;
   margin-top: auto;
   margin-bottom: auto;
 }
 
-.auth-link-col>button {
+.authform-link-col>button {
   font-size: .85rem;
   display: flex;
   margin-top: auto;
   margin-bottom: auto;
 }
 
-.auth-pw-form-row {
+.authform-pw-row {
   margin-top: -1em;
 }
 
-.auth-pw-link-col {
+.authform-pw-link-col {
   display: flex;
   align-items: center;
 }
 
-.auth-pw-link-col>p {
+.authform-pw-link-col>p {
   font-size: .85rem;
   margin-top: auto;
   margin-bottom: auto;
 }
 
-.auth-pw-link-col>button {
+.authform-pw-link-col>button {
   font-size: .85rem;
   display: flex;
   margin-top: auto;

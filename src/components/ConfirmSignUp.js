@@ -17,9 +17,9 @@ function ConfirmSignUp() {
     if (width > breakpoint) {
         //Render desktop form
         return (
-            <Form className='auth-form'>
-                <Image src={audioPhileLogoTextBlack} className='auth-form-logo' />
-                <h3 className='auth-header'>Confirm your account</h3>
+            <Form className='authform'>
+                <Image src={audioPhileLogoTextBlack} className='authform-logo' />
+                <h3 className='authform-header'>Confirm your account</h3>
                 <Form.Group>
                     <Form.Label>Username*</Form.Label>
                     <Form.Control name='username' placeholder='Username state data' required></Form.Control>
@@ -28,13 +28,13 @@ function ConfirmSignUp() {
                     <Form.Label>Confirmation Code*</Form.Label>
                     <Form.Control name='authCode' type='password' placeholder='Enter your code' required></Form.Control>
                 </Form.Group>
-                <Form.Row className='row auth-pw-form-row'>
-                    <Col className='col auth-pw-link-col'>
+                <Form.Row className='row authform-pw-row'>
+                    <Col className='col authform-pw-link-col'>
                         <p>Lost your code?</p>
                         <Button variant='link'>Resend code</Button>
                     </Col>
                 </Form.Row>
-                <Form.Row className='row auth-form-row'>
+                <Form.Row className='row authform-row'>
                     <Col className='col' xs={12} sm={12} md={12} lg={12} xl={12}>
                         <Button variant='dark' block>CONFIRM</Button>
                     </Col>
