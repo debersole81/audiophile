@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import '../App.css';
 import audioPhileAlbumLogo from '../assets/audiophile-album-logo.svg';
 import { useViewPort } from '../custom-hooks/useViewPort';
@@ -16,6 +16,7 @@ function SignIn() {
     const breakpoint = 690;
 
     if (width > breakpoint) {
+    //Render desktop form
         return (
             <Form className='signin-form'>
                 <Image src={audioPhileAlbumLogo} className='signin-form-logo' />
@@ -41,6 +42,7 @@ function SignIn() {
         );
     };
 
+    //Render mobile form
     return (
         <Form className='signin-form-mobile'>
             <Image src={audioPhileAlbumLogo} className='signin-form-logo-mobile' />
