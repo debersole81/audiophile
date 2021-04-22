@@ -13,7 +13,7 @@ function SignIn() {
     const { width } = useViewPort();
 
     /** Declare variable for minimum breakpoint value */
-    const breakpoint = 690;
+    const breakpoint = 761;
 
     if (width > breakpoint) {
     //Render desktop form
@@ -29,6 +29,12 @@ function SignIn() {
                     <Form.Label>Password*</Form.Label>
                     <Form.Control name='password' type='password' placeholder='Enter your password' required></Form.Control>
                 </Form.Group>
+                <Form.Row className='row auth-pw-form-row'>
+                    <Col className='col auth-pw-link-col'>
+                        <p>Forgot your password?</p>
+                        <Button variant='link'>Reset password</Button>
+                    </Col>
+                </Form.Row>
                 <Form.Row className='row auth-form-row'>
                     <Col className='col' xs={12} sm={12} md={12} lg={12} xl={12}>
                         <Button variant='dark' block>SIGN IN</Button>
