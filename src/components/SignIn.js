@@ -44,7 +44,7 @@ function SignIn() {
 
     return (
         <Form className='signin-form-mobile'>
-            <Image src={audioPhileLogoTextBlack} className='signin-form-logo-mobile' />
+            <Image src={audioPhileAlbumLogo} className='signin-form-logo-mobile' />
             <h3 className='signin-header-mobile'>Sign in to AudioPhile</h3>
             <Form.Group>
                 <Form.Label>Username*</Form.Label>
