@@ -23,11 +23,11 @@ function SignIn() {
                 <h3 className='signin-header'>Sign in to AudioPhile</h3>
                 <Form.Group>
                     <Form.Label>Username*</Form.Label>
-                    <Form.Control name='username' placeholder='Enter your username'></Form.Control>
+                    <Form.Control name='username' placeholder='Enter your username' required></Form.Control>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Password*</Form.Label>
-                    <Form.Control name='password' type='password' placeholder='Enter your password'></Form.Control>
+                    <Form.Control name='password' type='password' placeholder='Enter your password' required></Form.Control>
                 </Form.Group>
                 <Form.Row className='row signin-form-row'>
                     <Col className='col' xs={12} sm={12} md={12} lg={12} xl={12}>
