@@ -1,4 +1,5 @@
 /* #region Row and Column visualization styles. For assisting with layout only */
+
 /* .row {
   border: solid 2px red;
 }
@@ -7,17 +8,13 @@
   border: solid 3px royalblue;
   background: lightblue;
 } */
-/* #endregion Row and Column visualization styles. For assisting with layout only */
 
+/* #endregion Row and Column visualization styles. For assisting with layout only */
 
 /* #region Responsive styles */
 
 @media (max-width: 768px) {
   /* Form styles */
-
-
-
-
 }
 
 @media (max-width: 992px) {
@@ -45,8 +42,8 @@
 
 /* #endregion Responsive styles */
 
-
 /* #region Vendor prefix CSS properties */
+
 ::-webkit-input-placeholder {
   font-style: italic;
   font-size: 1rem;
@@ -68,18 +65,20 @@
   font-style: italic;
   font-size: 1rem;
 }
+
 /* #endregion Vendor prefix CSS properties */
 
-
 /* #region Custom page link styles */
+
 .page-link {
   outline: none !Important;
   box-shadow: none !Important;
 }
+
 /* #endregion Custom page link styles */
 
-
 /* #region Custom pagination component styles */
+
 .pagination>li {
   box-shadow: .3px .3px 4px rgba(0, 0, 0, 0.253);
 }
@@ -106,19 +105,24 @@
   background-color: #343A40 !Important;
   border: solid 1px #6C757D;
 }
+
 /* #endregion Custom pagination component styles */
 
-
 /* #region Form styles */
+
 .signin-form {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 3.5em 3.5em 1.5em 3.5em;
+  padding: 0 3.5em 1.5em 3.5em;
   border: 1px solid #cacdd1;
   border-radius: 5px;
   box-shadow: 1px 10px 20px 1px rgba(0, 0, 0, 0.253);
+}
+
+.signin-form-logo {
+	margin-bottom: 3em;
 }
 
 .signin-header {
@@ -133,7 +137,7 @@
 .signin-link-col {
   display: flex;
   align-items: center;
-  margin-top: 1.2em;   
+  margin-top: 1.2em;
 }
 
 .signin-link-col>p {
@@ -151,8 +155,8 @@
 
 /* #endregion Form styles */
 
-
 /* #region Search Component Styles */
+
 .search-jumbotron {
   text-align: center;
 }
@@ -169,10 +173,11 @@
 .search-form {
   padding-top: .5em;
 }
+
 /* #endregion Search Component Styles */
 
-
 /* #region Search Results Component Styles */
+
 .search-results-col {
   padding-top: .5em;
   padding-bottom: .5em;
@@ -206,10 +211,11 @@
 .search-results.button {
   background-color: lightslategray;
 }
+
 /* #endregion Search Results Component Styles */
 
-
 /* #region Album Component Styles */
+
 .album-image-col {
   justify-content: center;
 }
@@ -246,10 +252,11 @@
 .album-add-buttons-row {
   margin-top: 2em;
 }
+
 /* #endregion Album Component Styles */
 
-
 /* #region AlbumTracks Component Styles */
+
 .album-tracks-row {
   margin-top: 2.2em;
 }
@@ -260,10 +267,11 @@
   background-color: #343A40;
   padding: .3em .3em .3em .5em;
 }
+
 /* #endregion AlbumTracks Component Styles */
 
-
 /* #region AlbumReleasesHeader Component Styles */
+
 .album-releases-header-row {
   margin-top: 2em;
 }
@@ -294,18 +302,20 @@
   margin-bottom: .2em;
   float: right;
 }
+
 /* #endregion AlbumReleasesHeader Component Styles */
 
-
 /* #region AlbumReleases Component styles */
+
 .album-releases-img {
   height: 5em;
   width: 5em;
 }
+
 /* #endregion AlbumReleases Component styles */
 
-
 /* #region AlbumRelease Component Styles */
+
 .album-release-image-col {
   justify-content: center;
 }
@@ -330,10 +340,11 @@
 .album-release-add-buttons-row {
   margin-top: 2em;
 }
+
 /* #endregion AlbumRelease Component Styles */
 
-
 /* #region AlbumReleaseTracks Component Styles */
+
 .album-release-tracks-row {
   margin-top: 2.2em;
 }
@@ -344,4 +355,5 @@
   background-color: #343A40;
   padding: .3em .3em .3em .5em;
 }
+
 /* #endregion AlbumReleaseTracks Component Styles */
