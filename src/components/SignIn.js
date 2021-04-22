@@ -18,9 +18,9 @@ function SignIn() {
     if (width > breakpoint) {
     //Render desktop form
         return (
-            <Form className='signin-form'>
-                <Image src={audioPhileAlbumLogo} className='signin-form-logo' />
-                <h3 className='signin-header'>Sign in to AudioPhile</h3>
+            <Form className='auth-form'>
+                <Image src={audioPhileAlbumLogo} className='auth-form-logo' />
+                <h3 className='auth-header'>Sign in to AudioPhile</h3>
                 <Form.Group>
                     <Form.Label>Username*</Form.Label>
                     <Form.Control name='username' placeholder='Enter your username' required></Form.Control>
@@ -29,11 +29,11 @@ function SignIn() {
                     <Form.Label>Password*</Form.Label>
                     <Form.Control name='password' type='password' placeholder='Enter your password' required></Form.Control>
                 </Form.Group>
-                <Form.Row className='row signin-form-row'>
+                <Form.Row className='row auth-form-row'>
                     <Col className='col' xs={12} sm={12} md={12} lg={12} xl={12}>
                         <Button variant='dark' block>SIGN IN</Button>
                     </Col>
-                    <Col className='col signin-link-col' xs={12} sm={12} md={12} lg={12} xl={12}>
+                    <Col className='col auth-link-col' xs={12} sm={12} md={12} lg={12} xl={12}>
                         <p>No AudioPhile account?</p>
                         <Button variant='link'>Sign up</Button>
                     </Col>
@@ -44,9 +44,9 @@ function SignIn() {
 
     //Render mobile form
     return (
-        <Form className='signin-form-mobile'>
-            <Image src={audioPhileAlbumLogo} className='signin-form-logo-mobile' />
-            <h3 className='signin-header-mobile'>Sign in to AudioPhile</h3>
+        <Form className='auth-form-mobile'>
+            <Image src={audioPhileAlbumLogo} className='auth-form-logo-mobile' />
+            <h3 className='auth-header-mobile'>Sign in to AudioPhile</h3>
             <Form.Group>
                 <Form.Label>Username*</Form.Label>
                 <Form.Control name='username' placeholder='Enter your username'></Form.Control>
@@ -55,7 +55,7 @@ function SignIn() {
                 <Form.Label>Password*</Form.Label>
                 <Form.Control name='password' type='password' placeholder='Enter your password'></Form.Control>
             </Form.Group>
-            <Form.Row className='row signin-form-row'>
+            <Form.Row className='row auth-form-row'>
                 <Col className='col' xs={12} sm={12} md={12} lg={12} xl={12}>
                     <Button variant='dark' size='sm' block>SIGN IN</Button>
                 </Col>
