@@ -1,7 +1,6 @@
 import React from "react";
 import '../App.css';
 import audioPhileAlbumLogo from '../assets/audiophile-album-logo.svg';
-import audioPhileLogoTextBlack from '../assets/audiophile-logo-text-black.svg';
 import { useViewPort } from '../custom-hooks/useViewPort';
 import Image from 'react-bootstrap/Image';
 import Form from 'react-bootstrap/Form';
