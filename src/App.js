@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import { Route } from 'react-router-dom';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
-import ProtectedComponents from './components/ProtectedComponents'
+import ConfirmSignUp from './components/ConfirmSignUp';
+import ResetPassword from './components/ResetPassword';
+import ConfirmResetPassword from './components/ConfirmResetPassword';
+import ProtectedComponents from './components/ProtectedComponents';
 
 function App() {
 
@@ -108,13 +111,16 @@ function App() {
 
   return (
     <div>
-      {/* <SignIn /> */}
-      <SignUp />
+      <SignIn />
+      {/* <SignUp /> */}
+      {/* <ConfirmSignUp /> */}
+      {/* <ResetPassword /> */}
+      {/* <ConfirmResetPassword /> */}
       {/* <Route render={(props) => {
         return userAuth ? (<ProtectedComponents headerProps={headerProps} />) : (<Login loginProps={loginProps} />)
       }} /> */}
     </div>
-  );  
+  );
 };
 
 

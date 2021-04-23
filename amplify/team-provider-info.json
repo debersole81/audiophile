@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-audiophileapp-dev-112226-authRole",
+      "UnauthRoleArn": "arn:aws:iam::370002668060:role/amplify-audiophileapp-dev-112226-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::370002668060:role/amplify-audiophileapp-dev-112226-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-audiophileapp-dev-112226-deployment",
+      "UnauthRoleName": "amplify-audiophileapp-dev-112226-unauthRole",
+      "StackName": "amplify-audiophileapp-dev-112226",
+      "StackId": "arn:aws:cloudformation:us-east-1:370002668060:stack/amplify-audiophileapp-dev-112226/b72487f0-a447-11eb-9007-0e007e135db7",
+      "AmplifyAppId": "d83yjx4iytzwo"
+    }
+  }
+}
