@@ -210,6 +210,65 @@
 }
 
 /** Confirm Account & Reset PW Auth Forms */
+
+/*Mobile Styles*/
+.authaccount-form-mobile {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  padding: 0 .8em 1.8em .8em;
+  border: 1px solid #cacdd1;
+  border-radius: 5px;
+  box-shadow: 1px 10px 20px 1px rgba(0, 0, 0, 0.253);
+  font-size: 1em;
+}
+
+.authaccount-logo-mobile {
+  margin-top: 2.5em;
+  margin-bottom: 2em;
+  max-width: 100%;
+  max-height: 100%;
+  padding-left: .5em;
+  padding-right: .5em;
+}
+
+.authaccount-header-mobile {
+  font-size: 1.1em;
+  text-align: center;
+  padding-bottom: .5em;
+}
+
+.authaccount-authcode-row-mobile {
+  margin-top: -1em;
+}
+
+.authaccount-authcode-link-col-mobile {
+  display: flex;
+  align-items: center;
+}
+
+.authaccount-authcode-link-col-mobile>p {
+  font-size: .85rem;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.authaccount-authcode-link-col-mobile>button {
+  font-size: .85rem;
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.authaccount-authcode-row-mobile {
+  margin-top: -1em;
+}
+
+
+
+/*Desktop Styles */
 .authaccount-form {
   position: absolute;
   top: 50%;
@@ -226,7 +285,7 @@
 }
 
 .authaccount-header {
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   text-align: center;
   margin-bottom: 1em;
 }
@@ -254,7 +313,7 @@
 }
 
 .authaccount-link-row {
-  margin-top: 2.5em;
+  margin-top: 2.1em;
 }
 
 .authaccount-link-col {
