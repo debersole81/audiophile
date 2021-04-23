@@ -110,8 +110,7 @@
 
 /* #region Form styles */
 
-/** Auth Forms */
-
+/** Sign-In & Sign-Up Auth Forms */
 /* Mobile styles */
 .authform-mobile {
   position: absolute;
@@ -210,7 +209,72 @@
   margin-bottom: auto;
 }
 
-/** Sign Up Forms */
+/** Confirm Account & Reset PW Auth Forms */
+.authaccount-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 3em 3.5em 1.5em 3.5em;
+  border: 1px solid #cacdd1;
+  border-radius: 5px;
+  box-shadow: 1px 10px 20px 1px rgba(0, 0, 0, 0.253);
+}
+
+.authaccount-logo {
+  margin-bottom: 2.2em;
+}
+
+.authaccount-header {
+  font-size: 1.35rem;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.authaccount-authcode-row {
+  margin-top: -1em;
+}
+
+.authaccount-authcode-col {
+  display: flex;
+  align-items: center;
+}
+
+.authaccount-authcode-col>p {
+  font-size: .85rem;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.authaccount-authcode-col>button {
+  font-size: .85rem;
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.authaccount-link-row {
+  margin-top: 2.5em;
+}
+
+.authaccount-link-col {
+  display: flex;
+  align-items: center;
+  margin-top: .5em;
+}
+
+.authaccount-link-col>p {
+  font-size: .85rem;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.authaccount-link-col>button {
+  font-size: .85rem;
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+}
 
 /* #endregion Form styles */
 
