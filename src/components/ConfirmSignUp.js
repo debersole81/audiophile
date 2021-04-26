@@ -7,12 +7,20 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 
-function ConfirmSignUp() {
-    /** Destructure width variable from useViewPort hook */
+function ConfirmSignUp(props) {
+
+    /* #region Props destructure */
+    const { onFormChange } = props;
+    /* #endregion Props destructure */
+
+    /* #region Custom hooks */
+    /** Implement custom hook to render mobile return at <= 761 px */
+    //Destructure width variable from useViewPort hook
     const { width } = useViewPort();
 
-    /** Declare variable for minimum breakpoint value */
+    //Declare variable for minimum breakpoint value
     const breakpoint = 761;
+    /* #endregion Custom hooks */
 
     if (width > breakpoint) {
         //Render desktop form
@@ -22,11 +30,11 @@ function ConfirmSignUp() {
                 <h3 className='authaccount-header'>Confirm your account</h3>
                 <Form.Group>
                     <Form.Label>Username*</Form.Label>
-                    <Form.Control name='username' placeholder='Username state data' required></Form.Control>
+                    <Form.Control name='username' placeholder='Username state data' onChange={onFormChange} required></Form.Control>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Confirmation Code*</Form.Label>
-                    <Form.Control name='authCode' type='password' placeholder='Enter your code' required></Form.Control>
+                    <Form.Control name='authCode' type='password' placeholder='Enter your code' onChange={onFormChange} required></Form.Control>
                 </Form.Group>
                 <Form.Row className='row authaccount-authcode-row'>
                     <Col className='col authaccount-authcode-col'>
@@ -53,11 +61,11 @@ function ConfirmSignUp() {
             <h3 className='authaccount-header-mobile'>Sign in to AudioPhile</h3>
             <Form.Group>
                     <Form.Label>Username*</Form.Label>
-                    <Form.Control name='username' placeholder='Username state data' required></Form.Control>
+                    <Form.Control name='username' placeholder='Username state data' onChange={onFormChange} required></Form.Control>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Confirmation Code*</Form.Label>
-                    <Form.Control name='authCode' type='password' placeholder='Enter your code' required></Form.Control>
+                    <Form.Control name='authCode' type='password' placeholder='Enter your code' onChange={onFormChange} required></Form.Control>
                 </Form.Group>
             {(width > 370 && width < breakpoint) ?
                 <Form.Row className='row authaccount-authcode-row-mobile'>
