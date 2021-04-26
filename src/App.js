@@ -18,20 +18,15 @@ function App() {
    * Implement bootstrap
   */
 
-  /* #region User Database Object */
-  const userDatabase = [
-    {
-      id: 1,
-      username: "Testuser",
-      password: "TestPassword",
-    },
-    {
-      id: 2,
-      username: "Testuser2",
-      password: "TestPassword2",
-    },
-  ];
-  /* #endregion User Database Object */
+  /* #region Initial form state object */
+  const initialFormState = {
+      username: '',
+      password: '',
+      email: '',
+      authCode: '',
+      formType: 'signIn'
+  };
+  /* #endregion Initial form state object */
 
   /* #region State Variables */
   /** Login component state variables */
