@@ -32,17 +32,33 @@ function App() {
   function onFormChange(e) {
     updateFormState(() => ({ ...formState, [e.target.name]: e.target.value }))
   };
+
+  /** User Sign In */
+  function signIn(e) {
+    e.preventDefault();
+    //Destructure formState
+    const { username, password } = formState;
+    //call AWS amplify Auth.signIn method
+    Auth.signIn(username, password)
+      .then(
+        updateFormState(() => ({ ...formState, formType: 'signedIn' }))
+      )
+      .catch(error => {
+        console.log(error);
+      })
+  };
+
   /* #endregion Callback Functions */
 
   console.log(formState);
 
   return (
     <React.Fragment>
-      {/* <SignIn onFormChange={onFormChange} /> */}
+      <SignIn onFormChange={onFormChange} signIn={signIn} />
       {/* <SignUp onFormChange={onFormChange} /> */}
       {/* <ConfirmSignUp onFormChange={onFormChange} /> */}
       {/* <ResetPassword onFormChange={onFormChange} /> */}
-      <ConfirmResetPassword onFormChange={onFormChange} />
+      {/* <ConfirmResetPassword onFormChange={onFormChange} /> */}
       {/* <Route render={(props) => {
         return userAuth ? (<ProtectedComponents headerProps={headerProps} />) : (<Login loginProps={loginProps} />)
       }} /> */}
