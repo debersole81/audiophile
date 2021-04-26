@@ -39,8 +39,8 @@ function App() {
   return (
     <React.Fragment>
       {/* <SignIn onFormChange={onFormChange} /> */}
-      <SignUp onFormChange={onFormChange} />
-      {/* <ConfirmSignUp /> */}
+      {/* <SignUp onFormChange={onFormChange} /> */}
+      <ConfirmSignUp onFormChange={onFormChange} />
       {/* <ResetPassword /> */}
       {/* <ConfirmResetPassword /> */}
       {/* <Route render={(props) => {
