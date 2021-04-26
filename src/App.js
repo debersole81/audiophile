@@ -28,57 +28,9 @@ function App() {
   /* #endregion State Variables */
 
   /* #region Callback Functions */
-  /** Login component callback functions */
-  /* Handle login form input fields */
-  const loginHandleChange = (e) => {
-    setLoginInput({
-      ...loginInput,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  /* Handle login form button click */
-  const loginSubmit = (e) => {
-    e.preventDefault();
-
-    const loginUsername = loginInput.username;
-    const loginPassword = loginInput.password;
-
-    let usernameValidation = -1;
-    let passwordValidation = false;
-    let databasePassword = null;
-
-    //Verify username and password against the user database object
-    userDatabase.forEach((value, index) => {
-      if (value.username === loginUsername) {
-        usernameValidation = index;
-        if (usernameValidation !== -1) {
-          databasePassword = userDatabase[usernameValidation].password;
-          return;
-        };
-      };
-    });
-
-    if (loginPassword === databasePassword) {
-      passwordValidation = true;
-    };
-
-    //Set userAuth state variable to true
-    if (usernameValidation > -1 && passwordValidation === true) {
-      setUserAuth(true);
-    };
-  };
-
-  /* Handle logout button submit */
-  const logoutSubmit = (e) => {
-    e.preventDefault();
-
-    //Set userAuth state variable to false and clear loginInput state
-    setUserAuth(false);
-    setLoginInput([{
-      username: '',
-      password: '',
-    }]);
+  /** Change handler for all auth forms */
+  function onFormChange(e) {
+    updateFormState(() => ({ ...formState, [e.target.name]: e.target.value}))
   };
   /* #endregion Callback Functions */
 
