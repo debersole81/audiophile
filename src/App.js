@@ -41,8 +41,8 @@ function App() {
       {/* <SignIn onFormChange={onFormChange} /> */}
       {/* <SignUp onFormChange={onFormChange} /> */}
       {/* <ConfirmSignUp onFormChange={onFormChange} /> */}
-      <ResetPassword onFormChange={onFormChange} />
-      {/* <ConfirmResetPassword /> */}
+      {/* <ResetPassword onFormChange={onFormChange} /> */}
+      <ConfirmResetPassword onFormChange={onFormChange} />
       {/* <Route render={(props) => {
         return userAuth ? (<ProtectedComponents headerProps={headerProps} />) : (<Login loginProps={loginProps} />)
       }} /> */}
