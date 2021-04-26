@@ -11,6 +11,7 @@ function SignIn(props) {
 
     /* #region Props destructure */
     const { onFormChange } = props;
+    const { signIn } = props;
     /* #endregion Props destructure */
 
     /* #region Custom hooks */
@@ -44,7 +45,7 @@ function SignIn(props) {
                 </Form.Row>
                 <Form.Row className='row authform-row'>
                     <Col className='col' xs={12} sm={12} md={12} lg={12} xl={12}>
-                        <Button variant='dark' block>SIGN IN</Button>
+                        <Button variant='dark' onClick={signIn} block>SIGN IN</Button>
                     </Col>
                     <Col className='col authform-link-col' xs={12} sm={12} md={12} lg={12} xl={12}>
                         <p>No AudioPhile account?</p>
