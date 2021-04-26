@@ -8,34 +8,23 @@ import ResetPassword from './components/ResetPassword';
 import ConfirmResetPassword from './components/ConfirmResetPassword';
 import ProtectedComponents from './components/ProtectedComponents';
 
+/* #region Initial form state object */
+const initialFormState = {
+    username: '',
+    password: '',
+    email: '',
+    authCode: '',
+    formType: 'signIn'
+};
+/* #endregion Initial form state object */
+
 function App() {
 
   console.log('Render: App Component');
 
-  /** Notes 
-   * Build a sign up form
-   * Build error handling for invalid username/password
-   * Implement bootstrap
-  */
-
-  /* #region Initial form state object */
-  const initialFormState = {
-      username: '',
-      password: '',
-      email: '',
-      authCode: '',
-      formType: 'signIn'
-  };
-  /* #endregion Initial form state object */
-
   /* #region State Variables */
-  /** Login component state variables */
-  const [loginInput, setLoginInput] = useState([{
-    username: "",
-    password: "",
-  }]);
-
-  const [userAuth, setUserAuth] = useState(false);
+  const [formState, updateFormState] = useState(initialFormState);
+  const [user, updateUser] = useState(null);
   /* #endregion State Variables */
 
   /* #region Callback Functions */
