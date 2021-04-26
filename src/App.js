@@ -27,6 +27,28 @@ function App() {
   const [user, updateUser] = useState(null);
   /* #endregion State Variables */
 
+  /* #region Form error handling */
+  function checkForErrors() {
+    //Destructure formState
+    const { username, password, email, authCode } = formState;
+    //Construct an errors object
+    const formErrors = {}
+    //Username errors
+    if (!username || username === '') formErrors.username = 'Username cannot be blank.'
+    //Password errors
+    if (!password || password === '') formErrors.password = 'Password cannot be blank.'
+    else if (!password.match(/[a-z]/) && !password.match(/[A-Z]/) && !password.match(/\d/)) formErrors.password = 'Password must contain one uppercase, lowercase, and numeric value.'
+    //Email errors
+    if (!email || email === '') formErrors.email = 'Email cannot be blank.'
+    //Authcode errors
+    if (!authCode || authCode == '') formErrors.authCode = 'Code cannot be blank.'
+
+    return formErrors;
+  };
+
+  /* #endregion Form error handling */
+
+
   /* #region Callback Functions */
   /** Change handler for all auth forms */
   function onFormChange(e) {
