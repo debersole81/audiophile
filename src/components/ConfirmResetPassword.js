@@ -7,13 +7,20 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 
-function ConfirmResetPassword() {
+function ConfirmResetPassword(props) {
 
-    /** Destructure width variable from useViewPort hook */
+    /* #region Props destructure */
+    const { onFormChange } = props;
+    /* #endregion Props destructure */
+
+    /* #region Custom hooks */
+    /** Implement custom hook to render mobile return at <= 761 px */
+    //Destructure width variable from useViewPort hook
     const { width } = useViewPort();
 
-    /** Declare variable for minimum breakpoint value */
+    //Declare variable for minimum breakpoint value
     const breakpoint = 761;
+    /* #endregion Custom hooks */
 
     if (width > breakpoint) {
         //Render desktop form
@@ -23,11 +30,11 @@ function ConfirmResetPassword() {
                 <h3 className='authaccount-header'>Reset your password</h3>
                 <Form.Group>
                     <Form.Label>Verification Code*</Form.Label>
-                    <Form.Control name='verificationcode' placeholder='Enter code' required></Form.Control>
+                    <Form.Control name='authCode' placeholder='Enter code' onChange={onFormChange} required></Form.Control>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>New Password*</Form.Label>
-                    <Form.Control name='newpassword' placeholder='Enter your new password' required></Form.Control>
+                    <Form.Control name='password' type='password' placeholder='Enter your new password' onChange={onFormChange} required></Form.Control>
                 </Form.Group>
                 <Form.Row className='row authaccount-link-row'>
                     <Col className='col' xs={12} sm={12} md={12} lg={12} xl={12}>
@@ -48,11 +55,11 @@ function ConfirmResetPassword() {
             <h3 className='authaccount-header-mobile'>Reset your password</h3>
             <Form.Group>
                 <Form.Label>Verification Code*</Form.Label>
-                <Form.Control name='verificationcode' placeholder='Enter code' required></Form.Control>
+                <Form.Control name='authCode' placeholder='Enter code' onChange={onFormChange} required></Form.Control>
             </Form.Group>
             <Form.Group>
                 <Form.Label>New Password*</Form.Label>
-                <Form.Control name='newpassword' placeholder='Enter your new password' required></Form.Control>
+                <Form.Control name='password' type='password' placeholder='Enter your new password' onChange={onFormChange} required></Form.Control>
             </Form.Group>
             <Form.Row className='row authaccount-link-row'>
                 <Col className='col' xs={12} sm={12} md={12} lg={12} xl={12}>
