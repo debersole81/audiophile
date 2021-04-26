@@ -33,15 +33,15 @@ function App() {
     updateFormState(() => ({ ...formState, [e.target.name]: e.target.value }))
   };
   /* #endregion Callback Functions */
-  
+
   console.log(formState);
 
   return (
     <React.Fragment>
       {/* <SignIn onFormChange={onFormChange} /> */}
       {/* <SignUp onFormChange={onFormChange} /> */}
-      <ConfirmSignUp onFormChange={onFormChange} />
-      {/* <ResetPassword /> */}
+      {/* <ConfirmSignUp onFormChange={onFormChange} /> */}
+      <ResetPassword onFormChange={onFormChange} />
       {/* <ConfirmResetPassword /> */}
       {/* <Route render={(props) => {
         return userAuth ? (<ProtectedComponents headerProps={headerProps} />) : (<Login loginProps={loginProps} />)
