@@ -38,8 +38,8 @@ function App() {
 
   return (
     <React.Fragment>
-      <SignIn onFormChange={onFormChange} />
-      {/* <SignUp /> */}
+      {/* <SignIn onFormChange={onFormChange} /> */}
+      <SignUp onFormChange={onFormChange} />
       {/* <ConfirmSignUp /> */}
       {/* <ResetPassword /> */}
       {/* <ConfirmResetPassword /> */}
