@@ -7,13 +7,20 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 
-function SignIn() {
+function SignIn(props) {
 
-    /** Destructure width variable from useViewPort hook */
+    /* #region Props destructure */
+    const { onFormChange } = props;
+    /* #endregion Props destructure */
+
+    /* #region Custom hooks */
+    /** Implement custom hook to render mobile return at <= 761 px */
+    //Destructure width variable from useViewPort hook
     const { width } = useViewPort();
 
-    /** Declare variable for minimum breakpoint value */
+    //Declare variable for minimum breakpoint value
     const breakpoint = 761;
+    /* #endregion Custom hooks */
 
     if (width > breakpoint) {
         //Render desktop form
@@ -23,11 +30,11 @@ function SignIn() {
                 <h3 className='authform-header'>Sign in to AudioPhile</h3>
                 <Form.Group>
                     <Form.Label>Username*</Form.Label>
-                    <Form.Control name='username' placeholder='Enter your username' required></Form.Control>
+                    <Form.Control name='username' placeholder='Enter your username' onChange={onFormChange} required></Form.Control>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Password*</Form.Label>
-                    <Form.Control name='password' type='password' placeholder='Enter your password' required></Form.Control>
+                    <Form.Control name='password' type='password' placeholder='Enter your password' onChange={onFormChange} required></Form.Control>
                 </Form.Group>
                 <Form.Row className='row authform-pw-row'>
                     <Col className='col authform-pw-link-col'>
@@ -55,11 +62,11 @@ function SignIn() {
             <h3 className='authform-header-mobile'>Sign in to AudioPhile</h3>
             <Form.Group>
                 <Form.Label>Username*</Form.Label>
-                <Form.Control name='username' placeholder='Enter your username'></Form.Control>
+                <Form.Control name='username' placeholder='Enter your username' onChange={onFormChange} required></Form.Control>
             </Form.Group>
             <Form.Group>
                 <Form.Label>Password*</Form.Label>
-                <Form.Control name='password' type='password' placeholder='Enter your password'></Form.Control>
+                <Form.Control name='password' type='password' placeholder='Enter your password' onChange={onFormChange} required></Form.Control>
             </Form.Group>
             {(width > 370 && width < breakpoint) ?
                 <Form.Row className='row authform-pw-row'>
