@@ -34,20 +34,9 @@ function App() {
   };
   /* #endregion Callback Functions */
 
-  /* #region Props Objects */
-  /** Login component props */
-  const loginProps = {
-    loginSubmit,
-    loginInput,
-    loginHandleChange,
-  };
-
-  /** Header component props */
-  const headerProps = { logoutSubmit };
-  /* #endregion Props Objects */
 
   return (
-    <div>
+    <React.Fragment>
       <SignIn />
       {/* <SignUp /> */}
       {/* <ConfirmSignUp /> */}
@@ -56,7 +45,7 @@ function App() {
       {/* <Route render={(props) => {
         return userAuth ? (<ProtectedComponents headerProps={headerProps} />) : (<Login loginProps={loginProps} />)
       }} /> */}
-    </div>
+    </React.Fragment>
   );
 };
 
