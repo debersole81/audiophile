@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route } from 'react-router-dom';
+import { Auth, Hub, Logger } from 'aws-amplify';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import ConfirmSignUp from './components/ConfirmSignUp';
