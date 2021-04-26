@@ -34,7 +34,7 @@ function ConfirmSignUp(props) {
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Confirmation Code*</Form.Label>
-                    <Form.Control name='authCode' type='password' placeholder='Enter your code' onChange={onFormChange} required></Form.Control>
+                    <Form.Control name='authCode' placeholder='Enter your code' onChange={onFormChange} required></Form.Control>
                 </Form.Group>
                 <Form.Row className='row authaccount-authcode-row'>
                     <Col className='col authaccount-authcode-col'>
@@ -65,7 +65,7 @@ function ConfirmSignUp(props) {
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Confirmation Code*</Form.Label>
-                    <Form.Control name='authCode' type='password' placeholder='Enter your code' onChange={onFormChange} required></Form.Control>
+                    <Form.Control name='authCode' placeholder='Enter your code' onChange={onFormChange} required></Form.Control>
                 </Form.Group>
             {(width > 370 && width < breakpoint) ?
                 <Form.Row className='row authaccount-authcode-row-mobile'>
