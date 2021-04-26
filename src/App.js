@@ -23,8 +23,9 @@ function App() {
   console.log('Render: App Component');
 
   /* #region State Variables */
-  const [formState, updateFormState] = useState(initialFormState);
-  const [user, updateUser] = useState(null);
+  const [formState, setFormState] = useState(initialFormState);
+  const [formErrors, setFormErrors] = useState({});
+  const [user, setUser] = useState(null);
   /* #endregion State Variables */
 
   /* #region Form error handling */
@@ -52,7 +53,7 @@ function App() {
   /* #region Callback Functions */
   /** Change handler for all auth forms */
   function onFormChange(e) {
-    updateFormState(() => ({ ...formState, [e.target.name]: e.target.value }))
+    setFormState(() => ({ ...formState, [e.target.name]: e.target.value }))
   };
 
   /** User Sign In */
@@ -63,7 +64,7 @@ function App() {
     //call AWS amplify Auth.signIn method
     Auth.signIn(username, password)
       .then(
-        updateFormState(() => ({ ...formState, formType: 'signedIn' }))
+        setFormState(() => ({ ...formState, formType: 'signedIn' }))
       )
       .catch(error => {
         console.log(error);
