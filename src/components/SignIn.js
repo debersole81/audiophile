@@ -79,7 +79,7 @@ function SignIn(props) {
                 :
                 <Form.Row className='row authform-pw-row-mobile'>
                     <Col className='col' xs={12} sm={12} md={12} lg={12} xl={12}>
-                        <Button variant='link' size='sm' block>Forgot password? Reset</Button>
+                        <Button variant='link' size='sm' onClick={signIn} block>Forgot password? Reset</Button>
                     </Col>
                 </Form.Row>
             }
