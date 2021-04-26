@@ -28,27 +28,70 @@ function App() {
   const [user, setUser] = useState(null);
   /* #endregion State Variables */
 
-  /* #region Form error handling */
-  function checkForErrors() {
-    //Destructure formState
-    const { username, password, email, authCode } = formState;
-    //Construct an errors object
-    const formErrors = {}
-    //Username errors
-    if (!username || username === '') formErrors.username = 'Username cannot be blank.'
-    //Password errors
-    if (!password || password === '') formErrors.password = 'Password cannot be blank.'
-    else if (!password.match(/[a-z]/) && !password.match(/[A-Z]/) && !password.match(/\d/)) formErrors.password = 'Password must contain one uppercase, lowercase, and numeric value.'
-    //Email errors
-    if (!email || email === '') formErrors.email = 'Email cannot be blank.'
-    //Authcode errors
-    if (!authCode || authCode == '') formErrors.authCode = 'Code cannot be blank.'
+  /* #region Form Error Validation Object */
+  //Destructure formState
+  const { username, password, email, authCode } = formState;
+  //Construct error validations object
+  const formErrorValidation = {
+    username: 'Username cannot be blank.',
+    password: 'Password cannot be blank.',
+    passwordLength: 'Password must contain at least 8 characters.',
+    passwordCharacters: 'Password must contain one uppercase, lowercase, and numberic character.',
+    email: 'Email cannot be blank.',
+    authCode: 'Code cannot be blank.',
+    signIn: function () {
+      //Construct errors object
+      const errors = {};
+      //Define conditionals
+      if (!username || username === '') errors.username = this.username;
+      if (!password || password === '') errors.password = this.password;
+      else if (password.length < 8) errors.password = this.passwordLength;
+      else if (!password.match(/[a-z]/) || !password.match(/[A-Z]/) || !password.match(/\d/)) errors.password = this.passwordCharacters;
+      
+      return errors
+    },
+    signUp: function () {
+      //Construct errors object
+      const errors = {};
+      //Define conditionals
+      if (!username || username === '') errors.username = this.username;
+      if (!password || password === '') errors.password = this.password;
+      else if (password.length < 8) errors.password = this.passwordLength;
+      else if (!password.match(/[a-z]/) || !password.match(/[A-Z]/) || !password.match(/\d/)) errors.password = this.passwordCharacters;
+      if (!email || email === '') errors.email = this.email;
+      
+      return errors
+    },
+    confirmSignUp: function () {
+      //Construct errors object
+      const errors = {};
+      //Define conditionals
+      if (!username || username === '') errors.username = this.username;
+      if (!authCode || authCode === '') errors.authCode = this.authCode;
+      
+      return errors
+    },
+    resetPassword: function () {
+      //Construct errors object
+      const errors = {};
+      //Define conditionals
+      if (!username || username === '') errors.username = this.username;
 
-    return formErrors;
+      return errors
+    },
+    confirmResetPassword: function () {
+      //Construct errors object
+      const errors = {};
+      //Define conditionals
+      if (!authCode || authCode === '') errors.authCode = this.authCode;
+      if (!password || password === '') errors.password = this.password;
+      else if (password.length < 8) errors.password = this.passwordLength;
+      else if (!password.match(/[a-z]/) || !password.match(/[A-Z]/) || !password.match(/\d/)) errors.password = this.passwordCharacters;
+
+      return errors
+    },
   };
-
-  /* #endregion Form error handling */
-
+  // /* #endregion Form Error Validation Object */
 
   /* #region Callback Functions */
   /** Change handler for all auth forms */
@@ -59,21 +102,32 @@ function App() {
   /** User Sign In */
   function signIn(e) {
     e.preventDefault();
-    //Destructure formState
-    const { username, password } = formState;
-    //call AWS amplify Auth.signIn method
-    Auth.signIn(username, password)
-      .then(
-        setFormState(() => ({ ...formState, formType: 'signedIn' }))
-      )
-      .catch(error => {
-        console.log(error);
-      })
+
+    //Check form for errors
+    const signInErrors = formErrorValidation.signIn();
+
+    if (Object.keys(signInErrors).length > 0) {
+      //Set formErrors
+      setFormErrors(signInErrors);
+    } else {
+      //No errors, proceed with signin auth
+      //Destructure formState
+      const { username, password } = formState;
+      //call AWS amplify Auth.signIn method
+      Auth.signIn(username, password)
+        .then(
+          setFormState(() => ({ ...formState, formType: 'signedIn' }))
+        )
+        .catch(error => {
+          console.log(error);
+        })
+    };
   };
 
   /* #endregion Callback Functions */
 
   console.log(formState);
+  console.log(formErrors);
 
   return (
     <React.Fragment>
