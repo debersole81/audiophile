@@ -10,11 +10,11 @@ import ProtectedComponents from './components/ProtectedComponents';
 
 /* #region Initial form state object */
 const initialFormState = {
-    username: '',
-    password: '',
-    email: '',
-    authCode: '',
-    formType: 'signIn'
+  username: '',
+  password: '',
+  email: '',
+  authCode: '',
+  formType: 'signIn'
 };
 /* #endregion Initial form state object */
 
@@ -30,14 +30,15 @@ function App() {
   /* #region Callback Functions */
   /** Change handler for all auth forms */
   function onFormChange(e) {
-    updateFormState(() => ({ ...formState, [e.target.name]: e.target.value}))
+    updateFormState(() => ({ ...formState, [e.target.name]: e.target.value }))
   };
   /* #endregion Callback Functions */
-
+  
+  console.log(formState);
 
   return (
     <React.Fragment>
-      <SignIn />
+      <SignIn onFormChange={onFormChange} />
       {/* <SignUp /> */}
       {/* <ConfirmSignUp /> */}
       {/* <ResetPassword /> */}
