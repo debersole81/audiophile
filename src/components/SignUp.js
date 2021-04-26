@@ -7,13 +7,20 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 
-function SignUp() {
+function SignUp(props) {
 
-    /** Destructure width variable from useViewPort hook */
+    /* #region Props destructure */
+    const { onFormChange } = props;
+    /* #endregion Props destructure */
+
+    /* #region Custom hooks */
+    /** Implement custom hook to render mobile return at <= 761 px */
+    //Destructure width variable from useViewPort hook
     const { width } = useViewPort();
 
-    /** Declare variable for minimum breakpoint value */
+    //Declare variable for minimum breakpoint value
     const breakpoint = 690;
+    /* #endregion Custom hooks */
 
     if (width > breakpoint) {
         //Render desktop form    
@@ -23,15 +30,15 @@ function SignUp() {
                 <h3 className='authform-header'>Create a new account</h3>
                 <Form.Group>
                     <Form.Label>Username*</Form.Label>
-                    <Form.Control name='username' placeholder='Username' required></Form.Control>
+                    <Form.Control name='username' placeholder='Username' onChange={onFormChange} required></Form.Control>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Password*</Form.Label>
-                    <Form.Control name='password' type='password' placeholder='Password' required></Form.Control>
+                    <Form.Control name='password' type='password' placeholder='Password' onChange={onFormChange} required></Form.Control>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Email Address*</Form.Label>
-                    <Form.Control name='email' placeholder='Email' required></Form.Control>
+                    <Form.Control name='email' placeholder='Email' onChange={onFormChange} required></Form.Control>
                 </Form.Group>
                 <Form.Row className='row authform-row'>
                     <Col className='col' xs={12} sm={12} md={12} lg={12} xl={12}>
@@ -53,11 +60,11 @@ function SignUp() {
             <h3 className='authform-header'>Create a new account</h3>
             <Form.Group>
                 <Form.Label>Username*</Form.Label>
-                <Form.Control name='username' placeholder='Username' required></Form.Control>
+                <Form.Control name='username' placeholder='Username' onChange={onFormChange} required></Form.Control>
             </Form.Group>
             <Form.Group>
                 <Form.Label>Password*</Form.Label>
-                <Form.Control name='password' type='password' placeholder='Password' required></Form.Control>
+                <Form.Control name='password' type='password' placeholder='Password' onChange={onFormChange} required></Form.Control>
             </Form.Group>
             <Form.Group>
                 <Form.Label>Email Address*</Form.Label>
