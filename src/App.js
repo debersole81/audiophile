@@ -115,7 +115,7 @@ function App() {
       //No errors, proceed with sign in auth
       //Destructure formState
       const { username, password } = formState;
-      //call AWS Amplify Auth.signIn method
+      //Call AWS Amplify Auth.signIn method
       Auth.signIn(username, password)
         .then(
           setFormState(() => ({ ...formState, formType: 'signedIn' }))
@@ -140,7 +140,7 @@ function App() {
       //No errors, proceed with sign up auth
       //Destructure formState
       const { username, password, email } = formState;
-      //call AWS Amplify Auth.signUp method
+      //Call AWS Amplify Auth.signUp method
       Auth.signUp({ username, password, attributes: { email } })
         .then(
           setFormState(() => ({ ...formState, formType: 'confirmSignUp' }))
@@ -149,8 +149,31 @@ function App() {
           console.log(error);
         })
     };
+  }
 
+  /** Confirm User Sign Up */
+  function confirmSignUp(e) {
+    e.preventDefault();
 
+    //Check form for errors
+    const confirmSignUpErrors = formErrorValidation.confirmSignUp();
+
+    if (Object.keys(confirmSignUpErrors).length > 0) {
+      //Set formErrors
+      setFormErrors(confirmSignUpErrors);
+    } else {
+      //No errors, preceed with confirming sign up auth
+      //Destructure formState
+      const { username, authCode } = formState;
+      //Call AWS Amplify Auth.confirmSignUp method
+      Auth.confirmSignUp(username, authCode)
+        .then(
+          setFormState(() => ({ ...formState, formType: 'signIn' }))
+        )
+        .catch(error => {
+          console.log(error);
+        })
+    };
   }
 
 
@@ -162,8 +185,8 @@ function App() {
   return (
     <React.Fragment>
       {/* <SignIn onFormChange={onFormChange} formErrors={formErrors} signIn={signIn} /> */}
-      <SignUp onFormChange={onFormChange} formErrors={formErrors} />
-      {/* <ConfirmSignUp onFormChange={onFormChange} /> */}
+      {/* <SignUp onFormChange={onFormChange} formErrors={formErrors} signUp={signUp} /> */}
+      <ConfirmSignUp onFormChange={onFormChange} formErrors={formErrors} confirmSignUp={confirmSignUp}/>
       {/* <ResetPassword onFormChange={onFormChange} /> */}
       {/* <ConfirmResetPassword onFormChange={onFormChange} /> */}
       {/* <Route render={(props) => {
