@@ -186,7 +186,7 @@ function App() {
     <React.Fragment>
       {/* <SignIn onFormChange={onFormChange} formErrors={formErrors} signIn={signIn} /> */}
       {/* <SignUp onFormChange={onFormChange} formErrors={formErrors} signUp={signUp} /> */}
-      <ConfirmSignUp onFormChange={onFormChange} formErrors={formErrors} confirmSignUp={confirmSignUp}/>
+      <ConfirmSignUp onFormChange={onFormChange} formState={formState} formErrors={formErrors} confirmSignUp={confirmSignUp} />
       {/* <ResetPassword onFormChange={onFormChange} /> */}
       {/* <ConfirmResetPassword onFormChange={onFormChange} /> */}
       {/* <Route render={(props) => {
