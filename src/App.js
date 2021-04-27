@@ -33,12 +33,12 @@ function App() {
   const { username, password, email, authCode } = formState;
   //Construct error validations object
   const formErrorValidation = {
-    username: 'Username cannot be blank.',
-    password: 'Password cannot be blank.',
-    passwordLength: 'Password must contain at least 8 characters.',
-    passwordCharacters: 'Password must contain one uppercase, lowercase, and numberic character.',
-    email: 'Email cannot be blank.',
-    authCode: 'Code cannot be blank.',
+    username: 'Username cannot be blank!',
+    password: 'Password cannot be blank!',
+    passwordLength: 'Password must contain at least 8 characters!',
+    passwordCharacters: 'Password must contain uppercase, lowercase, and numeric characters!',
+    email: 'Email cannot be blank!',
+    authCode: 'Code cannot be blank!',
     signIn: function () {
       //Construct errors object
       const errors = {};
@@ -47,7 +47,7 @@ function App() {
       if (!password || password === '') errors.password = this.password;
       else if (password.length < 8) errors.password = this.passwordLength;
       else if (!password.match(/[a-z]/) || !password.match(/[A-Z]/) || !password.match(/\d/)) errors.password = this.passwordCharacters;
-      
+
       return errors
     },
     signUp: function () {
@@ -59,7 +59,7 @@ function App() {
       else if (password.length < 8) errors.password = this.passwordLength;
       else if (!password.match(/[a-z]/) || !password.match(/[A-Z]/) || !password.match(/\d/)) errors.password = this.passwordCharacters;
       if (!email || email === '') errors.email = this.email;
-      
+
       return errors
     },
     confirmSignUp: function () {
@@ -68,7 +68,7 @@ function App() {
       //Define conditionals
       if (!username || username === '') errors.username = this.username;
       if (!authCode || authCode === '') errors.authCode = this.authCode;
-      
+
       return errors
     },
     resetPassword: function () {
@@ -96,7 +96,11 @@ function App() {
   /* #region Callback Functions */
   /** Change handler for all auth forms */
   function onFormChange(e) {
+    //Add form field inputs to the formState object
     setFormState(() => ({ ...formState, [e.target.name]: e.target.value }))
+    //If form errors exist, remove them from the formErrors object
+    if (Object.keys(formErrors))
+      setFormErrors(() => ({ ...formErrors, [e.target.name]: null }))
   };
 
   /** User Sign In */
