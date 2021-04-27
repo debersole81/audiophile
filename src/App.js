@@ -45,8 +45,6 @@ function App() {
       //Define conditionals
       if (!username || username === '') errors.username = this.username;
       if (!password || password === '') errors.password = this.password;
-      else if (password.length < 8) errors.password = this.passwordLength;
-      else if (!password.match(/[a-z]/) || !password.match(/[A-Z]/) || !password.match(/\d/)) errors.password = this.passwordCharacters;
 
       return errors
     },
