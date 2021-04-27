@@ -11,9 +11,12 @@ function ConfirmSignUp(props) {
 
     /* #region Props destructure */
     const { onFormChange } = props;
+    const { formState } = props;
     const { formErrors } = props;
     const { confirmSignUp } = props;
     /* #endregion Props destructure */
+
+    console.log(formState);
 
     /* #region Custom hooks */
     /** Implement custom hook to render mobile return at <= 761 px */
@@ -35,6 +38,7 @@ function ConfirmSignUp(props) {
                     <Form.Control
                         name='username'
                         placeholder='Username state data'
+                        value={formState.username}
                         onChange={onFormChange}
                         isInvalid={!!formErrors.username}
                         required>
@@ -84,6 +88,7 @@ function ConfirmSignUp(props) {
                 <Form.Control
                     name='username'
                     placeholder='Username state data'
+                    value={formState.username}
                     onChange={onFormChange}
                     isInvalid={!!formErrors.username}
                     required>
