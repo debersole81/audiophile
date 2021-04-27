@@ -33,12 +33,12 @@ function App() {
   const { username, password, email, authCode } = formState;
   //Construct error validations object
   const formErrorValidation = {
-    username: 'Username cannot be blank!',
-    password: 'Password cannot be blank!',
+    username: 'Username is required!',
+    password: 'Password is required!',
     passwordLength: 'Password must contain at least 8 characters!',
     passwordCharacters: 'Password must contain uppercase, lowercase, and numeric characters!',
-    email: 'Email cannot be blank!',
-    authCode: 'Code cannot be blank!',
+    email: 'Email is required!',
+    authCode: 'Code is required!',
     signIn: function () {
       //Construct errors object
       const errors = {};
@@ -112,10 +112,10 @@ function App() {
       //Set formErrors
       setFormErrors(signInErrors);
     } else {
-      //No errors, proceed with signin auth
+      //No errors, proceed with sign in auth
       //Destructure formState
       const { username, password } = formState;
-      //call AWS amplify Auth.signIn method
+      //call AWS Amplify Auth.signIn method
       Auth.signIn(username, password)
         .then(
           setFormState(() => ({ ...formState, formType: 'signedIn' }))
@@ -126,6 +126,34 @@ function App() {
     };
   };
 
+  /** User Sign Up */
+  function signUp(e) {
+    e.preventDefault();
+
+    //Check form for errors
+    const signUpErrors = formErrorValidation.signUp();
+
+    if (Object.keys(signUpErrors).length > 0) {
+      //Set formErrors
+      setFormErrors(signUpErrors);
+    } else {
+      //No errors, proceed with sign up auth
+      //Destructure formState
+      const { username, password, email } = formState;
+      //call AWS Amplify Auth.signUp method
+      Auth.signUp({ username, password, attributes: { email } })
+        .then(
+          setFormState(() => ({ ...formState, formType: 'confirmSignUp' }))
+        )
+        .catch(error => {
+          console.log(error);
+        })
+    };
+
+
+  }
+
+
   /* #endregion Callback Functions */
 
   console.log(formState);
@@ -133,8 +161,8 @@ function App() {
 
   return (
     <React.Fragment>
-      <SignIn onFormChange={onFormChange} formErrors={formErrors} signIn={signIn} />
-      {/* <SignUp onFormChange={onFormChange} /> */}
+      {/* <SignIn onFormChange={onFormChange} formErrors={formErrors} signIn={signIn} /> */}
+      <SignUp onFormChange={onFormChange} formErrors={formErrors} />
       {/* <ConfirmSignUp onFormChange={onFormChange} /> */}
       {/* <ResetPassword onFormChange={onFormChange} /> */}
       {/* <ConfirmResetPassword onFormChange={onFormChange} /> */}
