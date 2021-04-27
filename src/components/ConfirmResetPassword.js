@@ -34,7 +34,7 @@ function ConfirmResetPassword(props) {
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>New Password*</Form.Label>
-                    <Form.Control name='password' type='password' placeholder='Enter your new password' onChange={onFormChange} required></Form.Control>
+                    <Form.Control name='newPassword' type='password' placeholder='Enter your new password' onChange={onFormChange} required></Form.Control>
                 </Form.Group>
                 <Form.Row className='row authaccount-link-row'>
                     <Col className='col' xs={12} sm={12} md={12} lg={12} xl={12}>
