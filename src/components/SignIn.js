@@ -12,7 +12,10 @@ function SignIn(props) {
     /* #region Props destructure */
     const { onFormChange } = props;
     const { signIn } = props;
+    const { formErrors } = props;
     /* #endregion Props destructure */
+
+    console.log(formErrors);
 
     /* #region Custom hooks */
     /** Implement custom hook to render mobile return at <= 761 px */
@@ -31,11 +34,30 @@ function SignIn(props) {
                 <h3 className='authform-header'>Sign in to AudioPhile</h3>
                 <Form.Group>
                     <Form.Label>Username*</Form.Label>
-                    <Form.Control name='username' placeholder='Enter your username' onChange={onFormChange} required></Form.Control>
+                    <Form.Control
+                        name='username'
+                        placeholder='Enter your username'
+                        onChange={onFormChange}
+                        isInvalid={!!formErrors.username}
+                        required>
+                    </Form.Control>
+                    <Form.Control.Feedback className='global-form-feedback' type='inValid'>
+                        {formErrors.username}
+                    </Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Password*</Form.Label>
-                    <Form.Control name='password' type='password' placeholder='Enter your password' onChange={onFormChange} required></Form.Control>
+                    <Form.Control
+                        name='password'
+                        type='password'
+                        placeholder='Enter your password'
+                        onChange={onFormChange}
+                        isInvalid={!!formErrors.password}
+                        required>
+                    </Form.Control>
+                    <Form.Control.Feedback className='global-form-feedback' type='inValid'>
+                        {formErrors.password}
+                    </Form.Control.Feedback>
                 </Form.Group>
                 <Form.Row className='row authform-pw-row'>
                     <Col className='col authform-pw-link-col'>
