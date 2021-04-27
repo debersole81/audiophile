@@ -12,6 +12,7 @@ import ProtectedComponents from './components/ProtectedComponents';
 const initialFormState = {
   username: '',
   password: '',
+  newPassword: '',
   email: '',
   authCode: '',
   formType: 'signIn'
@@ -30,13 +31,16 @@ function App() {
 
   /* #region Form Error Validation Object */
   //Destructure formState
-  const { username, password, email, authCode } = formState;
+  const { username, password, newPassword, email, authCode } = formState;
   //Construct error validations object
   const formErrorValidation = {
     username: 'Username is required!',
     password: 'Password is required!',
     passwordLength: 'Password must contain at least 8 characters!',
     passwordCharacters: 'Password must contain uppercase, lowercase, and numeric characters!',
+    newPassword: 'Password is required!',
+    newPasswordLength: 'Password must contain at least 8 characters!',
+    newPasswordCharacters: 'Password must contain uppercase, lowercase, and numeric characters!',
     email: 'Email is required!',
     authCode: 'Code is required!',
     signIn: function () {
@@ -82,9 +86,9 @@ function App() {
       const errors = {};
       //Define conditionals
       if (!authCode || authCode === '') errors.authCode = this.authCode;
-      if (!password || password === '') errors.password = this.password;
-      else if (password.length < 8) errors.password = this.passwordLength;
-      else if (!password.match(/[a-z]/) || !password.match(/[A-Z]/) || !password.match(/\d/)) errors.password = this.passwordCharacters;
+      if (!newPassword || newPassword === '') errors.newPassword = this.newPassword;
+      else if (newPassword.length < 8) errors.newPassword = this.newPasswordLength;
+      else if (!newPassword.match(/[a-z]/) || !newPassword.match(/[A-Z]/) || !newPassword.match(/\d/)) errors.newPassword = this.newPasswordCharacters;
 
       return errors
     },
@@ -176,6 +180,8 @@ function App() {
     };
   }
 
+  /** Reset User Password */
+
 
   /* #endregion Callback Functions */
 
@@ -186,9 +192,9 @@ function App() {
     <React.Fragment>
       {/* <SignIn onFormChange={onFormChange} formErrors={formErrors} signIn={signIn} /> */}
       {/* <SignUp onFormChange={onFormChange} formErrors={formErrors} signUp={signUp} /> */}
-      <ConfirmSignUp onFormChange={onFormChange} formState={formState} formErrors={formErrors} confirmSignUp={confirmSignUp} />
+      {/* <ConfirmSignUp onFormChange={onFormChange} formState={formState} formErrors={formErrors} confirmSignUp={confirmSignUp} /> */}
       {/* <ResetPassword onFormChange={onFormChange} /> */}
-      {/* <ConfirmResetPassword onFormChange={onFormChange} /> */}
+      <ConfirmResetPassword onFormChange={onFormChange} />
       {/* <Route render={(props) => {
         return userAuth ? (<ProtectedComponents headerProps={headerProps} />) : (<Login loginProps={loginProps} />)
       }} /> */}
