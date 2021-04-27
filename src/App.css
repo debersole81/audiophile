@@ -108,7 +108,11 @@
 
 /* #endregion Custom pagination component styles */
 
-/* #region Form styles */
+/* #region Form Styles */
+/** Global Form Styles */
+.global-form-feedback {
+  color: rgb(219, 43, 43);
+}
 
 /** Sign-In & Sign-Up Auth Forms */
 /* Mobile styles */
@@ -210,7 +214,6 @@
 }
 
 /** Confirm Account & Reset PW Auth Forms */
-
 /*Mobile Styles*/
 .authaccount-form-mobile {
   position: absolute;
@@ -265,8 +268,6 @@
 .authaccount-authcode-row-mobile {
   margin-top: -1em;
 }
-
-
 
 /*Desktop Styles */
 .authaccount-form {
@@ -334,8 +335,7 @@
   margin-top: auto;
   margin-bottom: auto;
 }
-
-/* #endregion Form styles */
+/* #endregion Form Styles */
 
 /* #region Search Component Styles */
 
