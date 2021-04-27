@@ -11,6 +11,8 @@ function ConfirmSignUp(props) {
 
     /* #region Props destructure */
     const { onFormChange } = props;
+    const { formErrors } = props;
+    const { confirmSignUp } = props;
     /* #endregion Props destructure */
 
     /* #region Custom hooks */
@@ -30,11 +32,29 @@ function ConfirmSignUp(props) {
                 <h3 className='authaccount-header'>Confirm your account</h3>
                 <Form.Group>
                     <Form.Label>Username*</Form.Label>
-                    <Form.Control name='username' placeholder='Username state data' onChange={onFormChange} required></Form.Control>
+                    <Form.Control
+                        name='username'
+                        placeholder='Username state data'
+                        onChange={onFormChange}
+                        isInvalid={!!formErrors.username}
+                        required>
+                    </Form.Control>
+                    <Form.Control.Feedback className='global-form-feedback' type='inValid'>
+                        {formErrors.username}
+                    </Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Confirmation Code*</Form.Label>
-                    <Form.Control name='authCode' placeholder='Enter your code' onChange={onFormChange} required></Form.Control>
+                    <Form.Control
+                        name='authCode'
+                        placeholder='Enter your code'
+                        onChange={onFormChange}
+                        isInvalid={!!formErrors.authCode}
+                        required>
+                    </Form.Control>
+                    <Form.Control.Feedback className='global-form-feedback' type='inValid'>
+                        {formErrors.authCode}
+                    </Form.Control.Feedback>
                 </Form.Group>
                 <Form.Row className='row authaccount-authcode-row'>
                     <Col className='col authaccount-authcode-col'>
@@ -44,7 +64,7 @@ function ConfirmSignUp(props) {
                 </Form.Row>
                 <Form.Row className='row authaccount-link-row'>
                     <Col className='col' xs={12} sm={12} md={12} lg={12} xl={12}>
-                        <Button variant='dark' block>CONFIRM</Button>
+                        <Button variant='dark' onClick={confirmSignUp} block>CONFIRM</Button>
                     </Col>
                     <Col className='col authaccount-link-col' xs={12} sm={12} md={12} lg={12} xl={12}>
                         <Button variant='link' size='sm'>Return to sign in</Button>
@@ -60,13 +80,31 @@ function ConfirmSignUp(props) {
             <Image src={audioPhileLogoTextBlack} className='authaccount-logo-mobile' />
             <h3 className='authaccount-header-mobile'>Sign in to AudioPhile</h3>
             <Form.Group>
-                    <Form.Label>Username*</Form.Label>
-                    <Form.Control name='username' placeholder='Username state data' onChange={onFormChange} required></Form.Control>
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>Confirmation Code*</Form.Label>
-                    <Form.Control name='authCode' placeholder='Enter your code' onChange={onFormChange} required></Form.Control>
-                </Form.Group>
+                <Form.Label>Username*</Form.Label>
+                <Form.Control
+                    name='username'
+                    placeholder='Username state data'
+                    onChange={onFormChange}
+                    isInvalid={!!formErrors.username}
+                    required>
+                </Form.Control>
+                <Form.Control.Feedback className='global-form-feedback' type='inValid'>
+                    {formErrors.username}
+                </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group>
+                <Form.Label>Confirmation Code*</Form.Label>
+                <Form.Control
+                    name='authCode'
+                    placeholder='Enter your code'
+                    onChange={onFormChange}
+                    isInvalid={!!formErrors.authCode}
+                    required>
+                </Form.Control>
+                <Form.Control.Feedback className='global-form-feedback' type='inValid'>
+                    {formErrors.authCode}
+                </Form.Control.Feedback>
+            </Form.Group>
             {(width > 370 && width < breakpoint) ?
                 <Form.Row className='row authaccount-authcode-row-mobile'>
                     <Col className='col authaccount-authcode-link-col-mobile text-nowrap'>
