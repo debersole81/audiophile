@@ -307,11 +307,13 @@ function App() {
   const signInProps = { onFormChange, formErrors, signIn, signUpLink, resetPasswordLink };
 
   /** SignUp Component Props */
-  const signUpProps = { onFormChange, formErrors, signUp, signInLink }
+  const signUpProps = { onFormChange, formErrors, signUp, signInLink };
 
   /** Confirm SignUp Component Props */
-  const confirmSignUpProps = { onFormChange, formState, formErrors, confirmSignUp, signInLink, resendSignUpCodeLink }
+  const confirmSignUpProps = { onFormChange, formState, formErrors, confirmSignUp, signInLink, resendSignUpCodeLink };
 
+  /** Reset Password Component Props */
+  const resetPasswordProps = { onFormChange, formErrors, resetPassword, signInLink };
   /* #emdregion Props Objects */
 
 
@@ -323,8 +325,8 @@ function App() {
     <React.Fragment>
       {/* <SignIn signInProps={signInProps} /> */}
       {/* <SignUp signUpProps={signUpProps} /> */}
-      <ConfirmSignUp confirmSignUpProps={confirmSignUpProps} />
-      {/* <ResetPassword onFormChange={onFormChange} formErrors={formErrors} resetPassword={resetPassword} /> */}
+      {/* <ConfirmSignUp confirmSignUpProps={confirmSignUpProps} /> */}
+      <ResetPassword resetPasswordProps={resetPasswordProps} />
       {/* <ConfirmResetPassword onFormChange={onFormChange} formErrors={formErrors} confirmResetPassword={confirmResetPassword} /> */}
       {/* <Route render={(props) => {
         return userAuth ? (<ProtectedComponents headerProps={headerProps} />) : (<Login loginProps={loginProps} />)
