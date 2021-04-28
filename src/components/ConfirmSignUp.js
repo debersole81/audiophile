@@ -10,7 +10,7 @@ import Col from 'react-bootstrap/Col';
 function ConfirmSignUp(props) {
 
     /* #region Props destructure */
-    const { onFormChange, formState, formErrors, confirmSignUp } = props;
+    const { onFormChange, formState, formErrors, confirmSignUp, signInLink, resendSignUpCodeLink } = props.confirmSignUpProps;
     /* #endregion Props destructure */
 
     console.log(formState);
@@ -48,7 +48,7 @@ function ConfirmSignUp(props) {
                     <Form.Label>Confirmation Code*</Form.Label>
                     <Form.Control
                         name='authCode'
-                        placeholder='Enter your code'
+                        placeholder='Check your email for code'
                         onChange={onFormChange}
                         isInvalid={!!formErrors.authCode}
                         required>
@@ -60,7 +60,7 @@ function ConfirmSignUp(props) {
                 <Form.Row className='row authaccount-authcode-row'>
                     <Col className='col authaccount-authcode-col'>
                         <p>Lost your code?</p>
-                        <Button variant='link'>Resend code</Button>
+                        <Button variant='link' onClick={resendSignUpCodeLink}>Resend code</Button>
                     </Col>
                 </Form.Row>
                 <Form.Row className='row authaccount-link-row'>
@@ -68,7 +68,7 @@ function ConfirmSignUp(props) {
                         <Button variant='dark' onClick={confirmSignUp} block>CONFIRM</Button>
                     </Col>
                     <Col className='col authaccount-link-col' xs={12} sm={12} md={12} lg={12} xl={12}>
-                        <Button variant='link' size='sm'>Return to sign in</Button>
+                        <Button variant='link' size='sm' onClick={signInLink}>Return to sign in</Button>
                     </Col>
                 </Form.Row>
             </Form>
@@ -79,7 +79,7 @@ function ConfirmSignUp(props) {
     return (
         <Form className='authaccount-form-mobile'>
             <Image src={audioPhileLogoTextBlack} className='authaccount-logo-mobile' />
-            <h3 className='authaccount-header-mobile'>Sign in to AudioPhile</h3>
+            <h3 className='authaccount-header-mobile'>Confirm your account</h3>
             <Form.Group>
                 <Form.Label>Username*</Form.Label>
                 <Form.Control
@@ -98,7 +98,7 @@ function ConfirmSignUp(props) {
                 <Form.Label>Confirmation Code*</Form.Label>
                 <Form.Control
                     name='authCode'
-                    placeholder='Enter your code'
+                    placeholder='Check your email for code'
                     onChange={onFormChange}
                     isInvalid={!!formErrors.authCode}
                     required>
@@ -110,14 +110,14 @@ function ConfirmSignUp(props) {
             {(width > 370 && width < breakpoint) ?
                 <Form.Row className='row authaccount-authcode-row-mobile'>
                     <Col className='col authaccount-authcode-link-col-mobile text-nowrap'>
-                        <p>Forgot your password?</p>
-                        <Button variant='link'>Reset password</Button>
+                        <p>Lost your code?</p>
+                        <Button variant='link' onClick={resendSignUpCodeLink}>Resend code</Button>
                     </Col>
                 </Form.Row>
                 :
                 <Form.Row className='row authaccount-authcode-row-mobile'>
                     <Col className='col' xs={12} sm={12} md={12} lg={12} xl={12}>
-                        <Button variant='link' size='sm' block>Forgot password? Reset</Button>
+                        <Button variant='link' size='sm' onClick={resendSignUpCodeLink} block>Lost your code? Resend</Button>
                     </Col>
                 </Form.Row>
             }
@@ -126,7 +126,7 @@ function ConfirmSignUp(props) {
                     <Button variant='dark' size='sm' onClick={confirmSignUp} block>CONFIRM</Button>
                 </Col>
                 <Col className='col mt-2' xs={12} sm={12} md={12} lg={12} xl={12}>
-                    <Button variant='light' size='sm' block>RETURN TO SIGN UP</Button>
+                    <Button variant='light' size='sm' onClick={signInLink} block>RETURN TO SIGN IN</Button>
                 </Col>
             </Form.Row>
         </Form>
