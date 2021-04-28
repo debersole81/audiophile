@@ -197,7 +197,11 @@ function App() {
       //Call AWS Amplify Auth.forgotPassword method
       Auth.forgotPassword(username)
         .then(
-          setFormState(() => ({ ...formState, formType: 'confirmResetPassword' }))
+          setFormState(() => ({
+            ...formState,
+            authCode: '',
+            formType: 'confirmResetPassword'
+          }))
         )
         .catch(error => {
           console.log(error);
@@ -218,11 +222,11 @@ function App() {
     } else {
       //No errors, proceed with resetting user password
       //Destructure formState
-      const {username, authCode, newPassword} = formState;
+      const { username, authCode, newPassword } = formState;
       //Call AWS Amplify Auth.forgotPasswordSubmit method
       Auth.forgotPasswordSubmit(username, authCode, newPassword)
         .then(
-          setFormState(() => ({ ...formState, formType: 'signIn'}))
+          setFormState(() => ({ ...formState, formType: 'signIn' }))
         )
         .catch(error => {
           console.log(error);
@@ -234,9 +238,9 @@ function App() {
   /** Sign Up Link */
   function signUpLink(e) {
     e.preventDefault();
-    
+
     //Set formState and render the SignUp component
-    setFormState(() => ({ 
+    setFormState(() => ({
       ...formState,
       username: '',
       password: '',
@@ -270,6 +274,19 @@ function App() {
     }))
   };
 
+  /** Resend Password Reset Confirmation Code Link */
+  function resendConfirmationCodeLink(e) {
+    e.preventDefault();
+
+    //Destrucutre formState
+    const { username } = formState;
+    //Call AWS Amplify forgotPassword method
+    Auth.forgotPassword(username)
+      .catch(error => {
+        console.log(error)
+      })
+  }
+
   /* #endregion Callback Functions */
 
   console.log(formState);
@@ -277,11 +294,11 @@ function App() {
 
   return (
     <React.Fragment>
-      <SignIn onFormChange={onFormChange} formErrors={formErrors} signIn={signIn} signUpLink={signUpLink} />
+      {/* <SignIn onFormChange={onFormChange} formErrors={formErrors} signIn={signIn} signUpLink={signUpLink} /> */}
       {/* <SignUp onFormChange={onFormChange} formErrors={formErrors} signUp={signUp} /> */}
       {/* <ConfirmSignUp onFormChange={onFormChange} formState={formState} formErrors={formErrors} confirmSignUp={confirmSignUp} /> */}
       {/* <ResetPassword onFormChange={onFormChange} formErrors={formErrors} resetPassword={resetPassword} /> */}
-      {/* <ConfirmResetPassword onFormChange={onFormChange} formErrors={formErrors} confirmResetPassword={confirmResetPassword} /> */}
+      <ConfirmResetPassword onFormChange={onFormChange} formErrors={formErrors} confirmResetPassword={confirmResetPassword} />
       {/* <Route render={(props) => {
         return userAuth ? (<ProtectedComponents headerProps={headerProps} />) : (<Login loginProps={loginProps} />)
       }} /> */}
