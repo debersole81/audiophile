@@ -309,14 +309,15 @@ function App() {
   /** SignUp Component Props */
   const signUpProps = { onFormChange, formErrors, signUp, signInLink };
 
-  /** Confirm SignUp Component Props */
+  /** ConfirmSignUp Component Props */
   const confirmSignUpProps = { onFormChange, formState, formErrors, confirmSignUp, signInLink, resendSignUpCodeLink };
 
-  /** Reset Password Component Props */
+  /** ResetPassword Component Props */
   const resetPasswordProps = { onFormChange, formErrors, resetPassword, signInLink };
   /* #emdregion Props Objects */
 
-
+  /** ConfirmResetPassword Component Props  */
+  const confirmResetPasswordProps = { onFormChange, formErrors, confirmResetPassword, resendPasswordCodeLink, signInLink };
 
   console.log(formState);
   console.log(formErrors);
@@ -326,8 +327,8 @@ function App() {
       {/* <SignIn signInProps={signInProps} /> */}
       {/* <SignUp signUpProps={signUpProps} /> */}
       {/* <ConfirmSignUp confirmSignUpProps={confirmSignUpProps} /> */}
-      <ResetPassword resetPasswordProps={resetPasswordProps} />
-      {/* <ConfirmResetPassword onFormChange={onFormChange} formErrors={formErrors} confirmResetPassword={confirmResetPassword} /> */}
+      {/* <ResetPassword resetPasswordProps={resetPasswordProps} /> */}
+      <ConfirmResetPassword confirmResetPasswordProps={confirmResetPasswordProps} />
       {/* <Route render={(props) => {
         return userAuth ? (<ProtectedComponents headerProps={headerProps} />) : (<Login loginProps={loginProps} />)
       }} /> */}
