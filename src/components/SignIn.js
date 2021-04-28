@@ -10,7 +10,7 @@ import Col from 'react-bootstrap/Col';
 function SignIn(props) {
 
     /* #region Props destructure */
-    const { onFormChange, signIn, formErrors, signUpLink } = props;
+    const { onFormChange, signIn, formErrors, signUpLink, resetPasswordLink } = props.signInProps;
     /* #endregion Props destructure */
 
     console.log(formErrors);
@@ -60,7 +60,7 @@ function SignIn(props) {
                 <Form.Row className='row authform-pw-row'>
                     <Col className='col authform-pw-link-col'>
                         <p>Forgot your password?</p>
-                        <Button variant='link'>Reset password</Button>
+                        <Button variant='link' onClick={resetPasswordLink}>Reset password</Button>
                     </Col>
                 </Form.Row>
                 <Form.Row className='row authform-row'>
@@ -112,7 +112,7 @@ function SignIn(props) {
                 <Form.Row className='row authform-pw-row'>
                     <Col className='col authform-pw-link-col text-nowrap'>
                         <p>Forgot your password?</p>
-                        <Button variant='link'>Reset password</Button>
+                        <Button variant='link' onClick={resetPasswordLink}>Reset password</Button>
                     </Col>
                 </Form.Row>
                 :
