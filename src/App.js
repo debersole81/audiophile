@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Route } from 'react-router-dom';
 import { Auth, Hub, Logger } from 'aws-amplify';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
@@ -247,6 +246,8 @@ function App() {
       email: '',
       formType: 'signUp',
     }))
+    //Clear formErrors state
+    setFormErrors({})
   };
 
   /** Resend Sign Up Confirmation Code Link */
@@ -274,6 +275,8 @@ function App() {
       password: '',
       formType: 'signIn',
     }))
+    //Clear formErrors state
+    setFormErrors({})
   };
 
   /** Reset Password Link */
@@ -286,6 +289,8 @@ function App() {
       username: '',
       formType: 'resetPassword',
     }))
+    //Clear formErrors state
+    setFormErrors({})
   };
 
   /** Resend Password Reset Confirmation Code Link */
