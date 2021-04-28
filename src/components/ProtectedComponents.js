@@ -598,7 +598,7 @@ function ProtectedComponents(props) {
 
     return (
         <div>
-            <Header logoutSubmit={props.headerProps.logoutSubmit} />
+            <Header />
             <Switch>
                 <Route exact path='/' component={Dashboard} />
                 <Route exact path='/collection' component={Collection} />
