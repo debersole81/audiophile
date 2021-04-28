@@ -166,7 +166,7 @@ function App() {
       //Set formErrors
       setFormErrors(confirmSignUpErrors);
     } else {
-      //No errors, preceed with confirming sign up auth
+      //No errors, proceed with confirming sign up auth
       //Destructure formState
       const { username, authCode } = formState;
       //Call AWS Amplify Auth.confirmSignUp method
@@ -181,8 +181,54 @@ function App() {
   }
 
   /** Reset User Password */
+  function resetPassword(e) {
+    e.preventDefault();
 
+    //Check form for errors
+    const resetPasswordErrors = formErrorValidation.resetPassword();
 
+    if (Object.keys(resetPasswordErrors).length > 0) {
+      //Set formErrors
+      setFormErrors(resetPasswordErrors);
+    } else {
+      //No errors, proceed with resetting user password
+      //Destructure formState
+      const { username } = formState;
+      //Call AWS Amplify Auth.forgotPassword method
+      Auth.forgotPassword(username)
+        .then(
+          setFormState(() => ({ ...formState, formType: 'confirmResetPassword' }))
+        )
+        .catch(error => {
+          console.log(error);
+        })
+    };
+  }
+
+  /** Confirm Reset User Password */
+  function confirmResetPassword(e) {
+    e.preventDefault();
+
+    //Check form for errors
+    const confirmResetPasswordErrors = formErrorValidation.confirmResetPassword()
+
+    if (Object.keys(confirmResetPasswordErrors).length > 0) {
+      //Set formErrors
+      setFormErrors(confirmResetPasswordErrors);
+    } else {
+      //No errors, proceed with resetting user password
+      //Destructure formState
+      const {username, authCode, newPassword} = formState;
+      //Call AWS Amplify Auth.forgotPasswordSubmit method
+      Auth.forgotPasswordSubmit(username, authCode, newPassword)
+        .then(
+          setFormState(() => ({ ...formState, formType: 'signIn'}))
+        )
+        .catch(error => {
+          console.log(error);
+        })
+    };
+  };
   /* #endregion Callback Functions */
 
   console.log(formState);
@@ -193,8 +239,8 @@ function App() {
       {/* <SignIn onFormChange={onFormChange} formErrors={formErrors} signIn={signIn} /> */}
       {/* <SignUp onFormChange={onFormChange} formErrors={formErrors} signUp={signUp} /> */}
       {/* <ConfirmSignUp onFormChange={onFormChange} formState={formState} formErrors={formErrors} confirmSignUp={confirmSignUp} /> */}
-      {/* <ResetPassword onFormChange={onFormChange} /> */}
-      <ConfirmResetPassword onFormChange={onFormChange} />
+      {/* <ResetPassword onFormChange={onFormChange} formErrors={formErrors} resetPassword={resetPassword} /> */}
+      <ConfirmResetPassword onFormChange={onFormChange} formErrors={formErrors} confirmResetPassword={confirmResetPassword} />
       {/* <Route render={(props) => {
         return userAuth ? (<ProtectedComponents headerProps={headerProps} />) : (<Login loginProps={loginProps} />)
       }} /> */}
