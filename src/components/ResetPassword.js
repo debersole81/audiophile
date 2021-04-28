@@ -43,7 +43,7 @@ function ResetPassword(props) {
                 </Form.Group>
                 <Form.Row className='row authaccount-link-row'>
                     <Col className='col' xs={12} sm={12} md={12} lg={12} xl={12}>
-                        <Button variant='dark' onClick={resetPassword} block>SEND CODE</Button>
+                        <Button variant='dark' onClick={resetPassword} block>EMAIL MY CODE</Button>
                     </Col>
                     <Col className='col authaccount-link-col' xs={12} sm={12} md={12} lg={12} xl={12}>
                         <Button variant='link' size='sm'>Return to sign in</Button>
@@ -73,7 +73,7 @@ function ResetPassword(props) {
             </Form.Group>
             <Form.Row className='row authaccount-link-row'>
                 <Col className='col' xs={12} sm={12} md={12} lg={12} xl={12}>
-                    <Button variant='dark' size='sm' onClick={resetPassword} block>SEND CODE</Button>
+                    <Button variant='dark' size='sm' onClick={resetPassword} block>EMAIL MY CODE</Button>
                 </Col>
                 <Col className='col mt-2' xs={12} sm={12} md={12} lg={12} xl={12}>
                     <Button variant='light' size='sm' block>RETURN TO SIGN UP</Button>
