@@ -40,6 +40,11 @@ function ConfirmResetPassword(props) {
                     <Form.Control.Feedback className='global-form-feedback' type='inValid'>
                         {formErrors.authCode}
                     </Form.Control.Feedback>
+                    <Form.Row className='row authaccount-resendcode-row'>
+                        <Col className='col authaccount-resendcode-col'>
+                            <Button variant='link'>Resend code</Button>
+                        </Col>
+                    </Form.Row>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>New Password*</Form.Label>
@@ -84,6 +89,11 @@ function ConfirmResetPassword(props) {
                 <Form.Control.Feedback className='global-form-feedback' type='inValid'>
                     {formErrors.authCode}
                 </Form.Control.Feedback>
+                <Form.Row className='row authaccount-resendcode-row'>
+                    <Col className='col authaccount-resendcode-col'>
+                        <Button variant='link'>Resend code</Button>
+                    </Col>
+                </Form.Row>
             </Form.Group>
             <Form.Group>
                 <Form.Label>New Password*</Form.Label>
