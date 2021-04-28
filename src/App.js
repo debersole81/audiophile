@@ -96,7 +96,7 @@ function App() {
   // /* #endregion Form Error Validation Object */
 
   /* #region Callback Functions */
-  /** Change handler for all auth forms */
+  /** Change Handler for all Auth Forms */
   function onFormChange(e) {
     //Add form field inputs to the formState object
     setFormState(() => ({ ...formState, [e.target.name]: e.target.value }))
@@ -318,17 +318,22 @@ function App() {
 
   /** ConfirmResetPassword Component Props  */
   const confirmResetPasswordProps = { onFormChange, formErrors, confirmResetPassword, resendPasswordCodeLink, signInLink };
+  /* #endregion Props Objects */
 
   console.log(formState);
   console.log(formErrors);
 
+  /** Destructure formType */
+  const { formType } = formState;
+
   return (
     <React.Fragment>
-      {/* <SignIn signInProps={signInProps} /> */}
-      {/* <SignUp signUpProps={signUpProps} /> */}
-      {/* <ConfirmSignUp confirmSignUpProps={confirmSignUpProps} /> */}
-      {/* <ResetPassword resetPasswordProps={resetPasswordProps} /> */}
-      <ConfirmResetPassword confirmResetPasswordProps={confirmResetPasswordProps} />
+      {formType === 'signIn' && <SignIn signInProps={signInProps} />}
+      {formType === 'signUp' && <SignUp signUpProps={signUpProps} />}
+      {formType === 'confirmSignUp' && <ConfirmSignUp confirmSignUpProps={confirmSignUpProps} />}
+      {formType === 'resetPassword' && <ResetPassword resetPasswordProps={resetPasswordProps} />}
+      {formType === 'confirmResetPassword' && <ConfirmResetPassword confirmResetPasswordProps={confirmResetPasswordProps} />}
+      {formType === 'signedIn' && <ProtectedComponents />}
       {/* <Route render={(props) => {
         return userAuth ? (<ProtectedComponents headerProps={headerProps} />) : (<Login loginProps={loginProps} />)
       }} /> */}
