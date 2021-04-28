@@ -233,12 +233,28 @@ function App() {
   /**Form Link Callback Functions */
   /** Sign Up Link */
   function signUpLink(e) {
+    e.preventDefault();
+    
+    //Set formState and render the SignUp component
     setFormState(() => ({ 
       ...formState,
       username: '',
       password: '',
       email: '',
       formType: 'signUp',
+    }))
+  };
+
+  /** Sign In Link */
+  function signInLink(e) {
+    e.preventDefault();
+
+    //Set formState and render the SignIn component
+    setFormState(() => ({
+      ...formState,
+      username: '',
+      password: '',
+      formType: 'signIn',
     }))
   };
 
