@@ -258,6 +258,17 @@ function App() {
     }))
   };
 
+  /** Reset Password Link */
+  function resetPasswordLink(e) {
+    e.preventDefault();
+
+    //Set formState and render the ResetPassword component
+    setFormState(() => ({
+      ...formState,
+      username: '',
+      formType: 'resetPassword',
+    }))
+  };
 
   /* #endregion Callback Functions */
 
