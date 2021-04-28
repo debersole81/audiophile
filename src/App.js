@@ -249,6 +249,20 @@ function App() {
     }))
   };
 
+  /** Resend Sign Up Confirmation Code Link */
+  function resendSignUpCodeLink(e) {
+    e.preventDefault();
+
+    //Destructure formState
+    const { username } = formState;
+    //Call AWS Amplify resendSignUp method
+    Auth.resendSignUp(username)
+      .then(console.log('Code resent successfully'))
+      .catch(error => {
+        console.log('Error resending code:', error);
+      })
+  };
+
   /** Sign In Link */
   function signInLink(e) {
     e.preventDefault();
@@ -275,7 +289,7 @@ function App() {
   };
 
   /** Resend Password Reset Confirmation Code Link */
-  function resendConfirmationCodeLink(e) {
+  function resendPasswordCodeLink(e) {
     e.preventDefault();
 
     //Destrucutre formState
@@ -295,6 +309,9 @@ function App() {
   /** SignUp Component Props */
   const signUpProps = { onFormChange, formErrors, signUp, signInLink }
 
+  /** Confirm SignUp Component Props */
+  const confirmSignUpProps = { onFormChange, formState, formErrors, confirmSignUp, signInLink, resendSignUpCodeLink }
+
   /* #emdregion Props Objects */
 
 
@@ -305,8 +322,8 @@ function App() {
   return (
     <React.Fragment>
       {/* <SignIn signInProps={signInProps} /> */}
-      <SignUp signUpProps={signUpProps} />
-      {/* <ConfirmSignUp onFormChange={onFormChange} formState={formState} formErrors={formErrors} confirmSignUp={confirmSignUp} /> */}
+      {/* <SignUp signUpProps={signUpProps} /> */}
+      <ConfirmSignUp confirmSignUpProps={confirmSignUpProps} />
       {/* <ResetPassword onFormChange={onFormChange} formErrors={formErrors} resetPassword={resetPassword} /> */}
       {/* <ConfirmResetPassword onFormChange={onFormChange} formErrors={formErrors} confirmResetPassword={confirmResetPassword} /> */}
       {/* <Route render={(props) => {
