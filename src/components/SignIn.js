@@ -10,7 +10,7 @@ import Col from 'react-bootstrap/Col';
 function SignIn(props) {
 
     /* #region Props destructure */
-    const { onFormChange, signIn, formErrors } = props;
+    const { onFormChange, signIn, formErrors, signUpLink } = props;
     /* #endregion Props destructure */
 
     console.log(formErrors);
@@ -69,7 +69,7 @@ function SignIn(props) {
                     </Col>
                     <Col className='col authform-link-col' xs={12} sm={12} md={12} lg={12} xl={12}>
                         <p>No AudioPhile account?</p>
-                        <Button variant='link'>Sign up</Button>
+                        <Button variant='link' onClick={signUpLink}>Sign up</Button>
                     </Col>
                 </Form.Row>
             </Form>
