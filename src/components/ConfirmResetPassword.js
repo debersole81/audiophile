@@ -10,7 +10,7 @@ import Col from 'react-bootstrap/Col';
 function ConfirmResetPassword(props) {
 
     /* #region Props destructure */
-    const { onFormChange } = props;
+    const { onFormChange, formErrors, confirmResetPassword } = props;
     /* #endregion Props destructure */
 
     /* #region Custom hooks */
@@ -30,15 +30,34 @@ function ConfirmResetPassword(props) {
                 <h3 className='authaccount-header'>Reset your password</h3>
                 <Form.Group>
                     <Form.Label>Verification Code*</Form.Label>
-                    <Form.Control name='authCode' placeholder='Enter code' onChange={onFormChange} required></Form.Control>
+                    <Form.Control
+                        name='authCode'
+                        placeholder='Enter code'
+                        onChange={onFormChange}
+                        isInvalid={!!formErrors.authCode}
+                        required>
+                    </Form.Control>
+                    <Form.Control.Feedback className='global-form-feedback' type='inValid'>
+                        {formErrors.authCode}
+                    </Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>New Password*</Form.Label>
-                    <Form.Control name='newPassword' type='password' placeholder='Enter your new password' onChange={onFormChange} required></Form.Control>
+                    <Form.Control
+                        name='newPassword'
+                        type='password'
+                        placeholder='Enter your new password'
+                        onChange={onFormChange}
+                        isInvalid={!!formErrors.newPassword}
+                        required>
+                    </Form.Control>
+                    <Form.Control.Feedback className='global-form-feedback' type='inValid'>
+                        {formErrors.newPassword}
+                    </Form.Control.Feedback>
                 </Form.Group>
                 <Form.Row className='row authaccount-link-row'>
                     <Col className='col' xs={12} sm={12} md={12} lg={12} xl={12}>
-                        <Button variant='dark' block>SUBMIT</Button>
+                        <Button variant='dark' onClick={confirmResetPassword} block>SUBMIT</Button>
                     </Col>
                     <Col className='col authaccount-link-col' xs={12} sm={12} md={12} lg={12} xl={12}>
                         <Button variant='link' size='sm'>Return to sign in</Button>
@@ -55,15 +74,34 @@ function ConfirmResetPassword(props) {
             <h3 className='authaccount-header-mobile'>Reset your password</h3>
             <Form.Group>
                 <Form.Label>Verification Code*</Form.Label>
-                <Form.Control name='authCode' placeholder='Enter code' onChange={onFormChange} required></Form.Control>
+                <Form.Control
+                    name='authCode'
+                    placeholder='Enter code'
+                    onChange={onFormChange}
+                    isInvalid={!!formErrors.authCode}
+                    required>
+                </Form.Control>
+                <Form.Control.Feedback className='global-form-feedback' type='inValid'>
+                    {formErrors.authCode}
+                </Form.Control.Feedback>
             </Form.Group>
             <Form.Group>
                 <Form.Label>New Password*</Form.Label>
-                <Form.Control name='password' type='password' placeholder='Enter your new password' onChange={onFormChange} required></Form.Control>
+                <Form.Control
+                    name='newPassword'
+                    type='password'
+                    placeholder='Enter your new password'
+                    onChange={onFormChange}
+                    isInvalid={!!formErrors.newPassword}
+                    required>
+                </Form.Control>
+                <Form.Control.Feedback className='global-form-feedback' type='inValid'>
+                    {formErrors.newPassword}
+                </Form.Control.Feedback>
             </Form.Group>
             <Form.Row className='row authaccount-link-row'>
                 <Col className='col' xs={12} sm={12} md={12} lg={12} xl={12}>
-                    <Button variant='dark' size='sm' block>SUBMIT</Button>
+                    <Button variant='dark' size='sm' onClick={confirmResetPassword} block>SUBMIT</Button>
                 </Col>
                 <Col className='col mt-2' xs={12} sm={12} md={12} lg={12} xl={12}>
                     <Button variant='light' size='sm' block>RETURN TO SIGN UP</Button>
