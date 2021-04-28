@@ -109,13 +109,17 @@
 /* #endregion Custom pagination component styles */
 
 /* #region Form Styles */
+
 /** Global Form Styles */
+
 .global-form-feedback {
   color: rgb(219, 43, 43);
 }
 
 /** Sign-In & Sign-Up Auth Forms */
+
 /* Mobile styles */
+
 .authform-mobile {
   position: absolute;
   top: 50%;
@@ -147,6 +151,7 @@
 }
 
 /* Desktop styles */
+
 .authform {
   position: absolute;
   top: 50%;
@@ -214,7 +219,9 @@
 }
 
 /** Confirm Account & Reset PW Auth Forms */
+
 /*Mobile Styles*/
+
 .authaccount-form-mobile {
   position: absolute;
   top: 50%;
@@ -270,6 +277,7 @@
 }
 
 /*Desktop Styles */
+
 .authaccount-form {
   position: absolute;
   top: 50%;
@@ -334,6 +342,22 @@
   display: flex;
   margin-top: auto;
   margin-bottom: auto;
+}
+
+.authaccount-resendcode-row {
+  margin-top: -.1em;
+}
+
+.authaccount-resendcode-col {
+  display: flex;
+}
+
+.authaccount-resendcode-col>button {
+  font-size: .85rem;
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: -.8em;
 }
 /* #endregion Form Styles */
 
