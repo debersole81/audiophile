@@ -10,7 +10,7 @@ import Col from 'react-bootstrap/Col';
 function ResetPassword(props) {
 
     /* #region Props destructure */
-    const { onFormChange, formErrors, resetPassword } = props;
+    const { onFormChange, formErrors, resetPassword, signInLink } = props.resetPasswordProps;
     /* #endregion Props destructure */
 
     /* #region Custom hooks */
@@ -46,7 +46,7 @@ function ResetPassword(props) {
                         <Button variant='dark' onClick={resetPassword} block>EMAIL MY CODE</Button>
                     </Col>
                     <Col className='col authaccount-link-col' xs={12} sm={12} md={12} lg={12} xl={12}>
-                        <Button variant='link' size='sm'>Return to sign in</Button>
+                        <Button variant='link' size='sm' onClick={signInLink}>Return to sign in</Button>
                     </Col>
                 </Form.Row>
             </Form>
@@ -76,7 +76,7 @@ function ResetPassword(props) {
                     <Button variant='dark' size='sm' onClick={resetPassword} block>EMAIL MY CODE</Button>
                 </Col>
                 <Col className='col mt-2' xs={12} sm={12} md={12} lg={12} xl={12}>
-                    <Button variant='light' size='sm' block>RETURN TO SIGN UP</Button>
+                    <Button variant='light' size='sm' onClick={signInLink} block>RETURN TO SIGN UP</Button>
                 </Col>
             </Form.Row>
         </Form>
