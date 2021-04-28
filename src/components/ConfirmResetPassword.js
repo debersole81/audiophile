@@ -10,7 +10,7 @@ import Col from 'react-bootstrap/Col';
 function ConfirmResetPassword(props) {
 
     /* #region Props destructure */
-    const { onFormChange, formErrors, confirmResetPassword } = props;
+    const { onFormChange, formErrors, confirmResetPassword, resendPasswordCodeLink, signInLink } = props.confirmResetPasswordProps;
     /* #endregion Props destructure */
 
     /* #region Custom hooks */
@@ -42,7 +42,7 @@ function ConfirmResetPassword(props) {
                     </Form.Control.Feedback>
                     <Form.Row className='row authaccount-resendcode-row'>
                         <Col className='col authaccount-resendcode-col'>
-                            <Button variant='link'>Resend code</Button>
+                            <Button variant='link' onClick={resendPasswordCodeLink}>Resend code</Button>
                         </Col>
                     </Form.Row>
                 </Form.Group>
@@ -65,7 +65,7 @@ function ConfirmResetPassword(props) {
                         <Button variant='dark' onClick={confirmResetPassword} block>SUBMIT</Button>
                     </Col>
                     <Col className='col authaccount-link-col' xs={12} sm={12} md={12} lg={12} xl={12}>
-                        <Button variant='link' size='sm'>Return to sign in</Button>
+                        <Button variant='link' size='sm' onClick={signInLink}>Return to sign in</Button>
                     </Col>
                 </Form.Row>
             </Form>
@@ -91,7 +91,7 @@ function ConfirmResetPassword(props) {
                 </Form.Control.Feedback>
                 <Form.Row className='row authaccount-resendcode-row'>
                     <Col className='col authaccount-resendcode-col'>
-                        <Button variant='link'>Resend code</Button>
+                        <Button variant='link' onClick={resendPasswordCodeLink}>Resend code</Button>
                     </Col>
                 </Form.Row>
             </Form.Group>
@@ -114,7 +114,7 @@ function ConfirmResetPassword(props) {
                     <Button variant='dark' size='sm' onClick={confirmResetPassword} block>SUBMIT</Button>
                 </Col>
                 <Col className='col mt-2' xs={12} sm={12} md={12} lg={12} xl={12}>
-                    <Button variant='light' size='sm' block>RETURN TO SIGN UP</Button>
+                    <Button variant='light' size='sm' onClick={signInLink} block>RETURN TO SIGN UP</Button>
                 </Col>
             </Form.Row>
         </Form>
