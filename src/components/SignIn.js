@@ -10,9 +10,7 @@ import Col from 'react-bootstrap/Col';
 function SignIn(props) {
 
     /* #region Props destructure */
-    const { onFormChange } = props;
-    const { signIn } = props;
-    const { formErrors } = props;
+    const { onFormChange, signIn, formErrors } = props;
     /* #endregion Props destructure */
 
     console.log(formErrors);

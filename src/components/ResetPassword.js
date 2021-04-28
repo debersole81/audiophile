@@ -10,7 +10,7 @@ import Col from 'react-bootstrap/Col';
 function ResetPassword(props) {
 
     /* #region Props destructure */
-    const { onFormChange } = props;
+    const { onFormChange, formErrors, resetPassword } = props;
     /* #endregion Props destructure */
 
     /* #region Custom hooks */
@@ -30,11 +30,20 @@ function ResetPassword(props) {
                 <h3 className='authaccount-header'>Reset your password</h3>
                 <Form.Group>
                     <Form.Label>Username*</Form.Label>
-                    <Form.Control name='username' placeholder='Enter your username' onChange={onFormChange} required></Form.Control>
+                    <Form.Control
+                        name='username'
+                        placeholder='Enter your username'
+                        onChange={onFormChange}
+                        isInvalid={!!formErrors.username}
+                        required>
+                    </Form.Control>
+                    <Form.Control.Feedback className='global-form-feedback' type='inValid'>
+                        {formErrors.username}
+                    </Form.Control.Feedback>
                 </Form.Group>
                 <Form.Row className='row authaccount-link-row'>
                     <Col className='col' xs={12} sm={12} md={12} lg={12} xl={12}>
-                        <Button variant='dark' block>SEND CODE</Button>
+                        <Button variant='dark' onClick={resetPassword} block>SEND CODE</Button>
                     </Col>
                     <Col className='col authaccount-link-col' xs={12} sm={12} md={12} lg={12} xl={12}>
                         <Button variant='link' size='sm'>Return to sign in</Button>
@@ -51,11 +60,20 @@ function ResetPassword(props) {
             <h3 className='authaccount-header-mobile'>Reset your password</h3>
             <Form.Group>
                 <Form.Label>Username*</Form.Label>
-                <Form.Control name='username' placeholder='Enter your username' onChange={onFormChange} required></Form.Control>
+                <Form.Control
+                    name='username'
+                    placeholder='Enter your username'
+                    onChange={onFormChange}
+                    isInvalid={!!formErrors.username}
+                    required>
+                </Form.Control>
+                <Form.Control.Feedback className='global-form-feedback' type='inValid'>
+                    {formErrors.username}
+                </Form.Control.Feedback>
             </Form.Group>
             <Form.Row className='row authaccount-link-row'>
                 <Col className='col' xs={12} sm={12} md={12} lg={12} xl={12}>
-                    <Button variant='dark' size='sm' block>SEND CODE</Button>
+                    <Button variant='dark' size='sm' onClick={resetPassword} block>SEND CODE</Button>
                 </Col>
                 <Col className='col mt-2' xs={12} sm={12} md={12} lg={12} xl={12}>
                     <Button variant='light' size='sm' block>RETURN TO SIGN UP</Button>

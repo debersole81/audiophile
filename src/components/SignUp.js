@@ -10,9 +10,7 @@ import Col from 'react-bootstrap/Col';
 function SignUp(props) {
 
     /* #region Props destructure */
-    const { onFormChange } = props;
-    const { signUp } = props;
-    const { formErrors } = props;
+    const { onFormChange, signUp, formErrors } = props;
     /* #endregion Props destructure */
 
     /* #region Custom hooks */
@@ -130,7 +128,7 @@ function SignUp(props) {
             </Form.Group>
             <Form.Row className='row authform-row'>
                 <Col className='col' xs={12} sm={12} md={12} lg={12} xl={12}>
-                    <Button variant='dark' size='sm' block>CREATE ACCOUNT</Button>
+                    <Button variant='dark' size='sm' onClick={signUp} block>CREATE ACCOUNT</Button>
                 </Col>
                 <Col className='col mt-2' xs={12} sm={12} md={12} lg={12} xl={12}>
                     <Button variant='light' size='sm' block>RETURN TO SIGN IN</Button>

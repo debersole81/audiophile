@@ -10,10 +10,7 @@ import Col from 'react-bootstrap/Col';
 function ConfirmSignUp(props) {
 
     /* #region Props destructure */
-    const { onFormChange } = props;
-    const { formState } = props;
-    const { formErrors } = props;
-    const { confirmSignUp } = props;
+    const { onFormChange, formState, formErrors, confirmSignUp } = props;
     /* #endregion Props destructure */
 
     console.log(formState);
@@ -126,7 +123,7 @@ function ConfirmSignUp(props) {
             }
             <Form.Row className='row authaccount-link-row'>
                 <Col className='col' xs={12} sm={12} md={12} lg={12} xl={12}>
-                    <Button variant='dark' size='sm' block>CONFIRM</Button>
+                    <Button variant='dark' size='sm' onClick={confirmSignUp} block>CONFIRM</Button>
                 </Col>
                 <Col className='col mt-2' xs={12} sm={12} md={12} lg={12} xl={12}>
                     <Button variant='light' size='sm' block>RETURN TO SIGN UP</Button>
