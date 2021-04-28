@@ -292,6 +292,8 @@ function App() {
   /** SignIn Component Props */
   const signInProps = { onFormChange, formErrors, signIn, signUpLink, resetPasswordLink };
 
+  /** SignUp Component Props */
+  const signUpProps = { onFormChange, formErrors, signUp, signInLink }
 
   /* #emdregion Props Objects */
 
@@ -302,8 +304,8 @@ function App() {
 
   return (
     <React.Fragment>
-      <SignIn signInProps={signInProps} />
-      {/* <SignUp onFormChange={onFormChange} formErrors={formErrors} signUp={signUp} /> */}
+      {/* <SignIn signInProps={signInProps} /> */}
+      <SignUp signUpProps={signUpProps} />
       {/* <ConfirmSignUp onFormChange={onFormChange} formState={formState} formErrors={formErrors} confirmSignUp={confirmSignUp} /> */}
       {/* <ResetPassword onFormChange={onFormChange} formErrors={formErrors} resetPassword={resetPassword} /> */}
       {/* <ConfirmResetPassword onFormChange={onFormChange} formErrors={formErrors} confirmResetPassword={confirmResetPassword} /> */}
