@@ -286,19 +286,27 @@ function App() {
         console.log(error)
       })
   }
-
   /* #endregion Callback Functions */
+
+  /* #region Props Objects */
+  /** SignIn Component Props */
+  const signInProps = { onFormChange, formErrors, signIn, signUpLink, resetPasswordLink };
+
+
+  /* #emdregion Props Objects */
+
+
 
   console.log(formState);
   console.log(formErrors);
 
   return (
     <React.Fragment>
-      {/* <SignIn onFormChange={onFormChange} formErrors={formErrors} signIn={signIn} signUpLink={signUpLink} /> */}
+      <SignIn signInProps={signInProps} />
       {/* <SignUp onFormChange={onFormChange} formErrors={formErrors} signUp={signUp} /> */}
       {/* <ConfirmSignUp onFormChange={onFormChange} formState={formState} formErrors={formErrors} confirmSignUp={confirmSignUp} /> */}
       {/* <ResetPassword onFormChange={onFormChange} formErrors={formErrors} resetPassword={resetPassword} /> */}
-      <ConfirmResetPassword onFormChange={onFormChange} formErrors={formErrors} confirmResetPassword={confirmResetPassword} />
+      {/* <ConfirmResetPassword onFormChange={onFormChange} formErrors={formErrors} confirmResetPassword={confirmResetPassword} /> */}
       {/* <Route render={(props) => {
         return userAuth ? (<ProtectedComponents headerProps={headerProps} />) : (<Login loginProps={loginProps} />)
       }} /> */}
