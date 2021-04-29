@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Auth, Hub, Logger } from 'aws-amplify';
+import { Auth } from 'aws-amplify';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import ConfirmSignUp from './components/ConfirmSignUp';
@@ -27,6 +27,28 @@ function App() {
   const [formErrors, setFormErrors] = useState({});
   const [user, setUser] = useState(null);
   /* #endregion State Variables */
+
+  /* #region Hooks */
+  // useEffect(() => {
+  //   setFormState(() => ({ ...formState, formType: null}))
+  //   checkUser()
+  // }, [])
+  /* #endregion Hooks */
+
+  /* #region Persist Authenticated User */
+  // function checkUser() {
+  //   //Set user equal to the resolve of AWS Auth.currentAuthenticatedUser call
+  //   Auth.currentAuthenticatedUser()
+  //     .then((user) => {
+  //       console.log(user)
+  //       setUser(user)
+  //       setFormState(() => ({ ...formState, formType: 'signedIn' }))
+  //     })
+  //     .catch(error => { console.log(error) })
+  // };
+
+  // console.log(user)
+  /* #endregion Persist Authenticated User */
 
   /* #region Form Error Validation Object */
   //Destructure formState
