@@ -118,16 +118,16 @@ function SignIn(props) {
                 :
                 <Form.Row className='row authform-pw-row-mobile'>
                     <Col className='col' xs={12} sm={12} md={12} lg={12} xl={12}>
-                        <Button variant='link' size='sm' onClick={signIn} block>Forgot password? Reset</Button>
+                        <Button variant='link' size='sm' onClick={resetPasswordLink} block>Forgot password? Reset</Button>
                     </Col>
                 </Form.Row>
             }
             <Form.Row className='row authform-row'>
                 <Col className='col' xs={12} sm={12} md={12} lg={12} xl={12}>
-                    <Button variant='dark' size='sm' block>SIGN IN</Button>
+                    <Button variant='dark' size='sm' onClick={signIn} block>SIGN IN</Button>
                 </Col>
                 <Col className='col mt-2' xs={12} sm={12} md={12} lg={12} xl={12}>
-                    <Button variant='light' size='sm' block>SIGN UP</Button>
+                    <Button variant='light' size='sm' onClick={signUpLink} block>SIGN UP</Button>
                 </Col>
             </Form.Row>
         </Form>
