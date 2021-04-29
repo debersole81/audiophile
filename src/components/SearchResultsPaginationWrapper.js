@@ -13,7 +13,12 @@ function SeaarchResultsPaginationWrapper(props) {
     /** Declare variable for minimum breakpoint value */
     const breakpoint = 381;
 
-    return ( width > breakpoint ? <SearchResultsPaginationDesktop {...props} /> : <SearchResultsPaginationMobile {...props} />  );
+    return (
+        <React.Fragment>
+            {width > breakpoint && <SearchResultsPaginationDesktop {...props} />}
+            {width < breakpoint && <SearchResultsPaginationMobile {...props} />}
+        </React.Fragment>
+    );
 };
 
 export default SeaarchResultsPaginationWrapper;
