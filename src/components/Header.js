@@ -7,6 +7,8 @@ import audioPhileLogoText from '../assets/audiophile-logo-text-white.svg';
 
 function Header(props) {
 
+    const { logOut } = props;
+
     return (
         <Navbar bg='dark' variant='dark' className='p-4 mb-5' expand='lg'>
             <Navbar.Brand href='#home'>
@@ -36,7 +38,7 @@ function Header(props) {
                     <LinkContainer exact to="/search">
                         <Nav.Link>Search</Nav.Link>
                     </LinkContainer>
-                    <Button variant='outline-light' className='btn-sm'>Logout</Button>
+                    <Button variant='outline-light' className='btn-sm' onClick={logOut}>Logout</Button>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
