@@ -360,7 +360,7 @@ function App() {
       {formType === 'confirmSignUp' && <ConfirmSignUp confirmSignUpProps={confirmSignUpProps} />}
       {formType === 'resetPassword' && <ResetPassword resetPasswordProps={resetPasswordProps} />}
       {formType === 'confirmResetPassword' && <ConfirmResetPassword confirmResetPasswordProps={confirmResetPasswordProps} />}
-      {formType === 'signedIn' && <ProtectedComponents />}
+      {formType === 'signedIn' && <ProtectedComponents logOut={logOut}/>}
     </React.Fragment>
   );
 };
