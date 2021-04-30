@@ -38,6 +38,25 @@ function App() {
   }, [])
   /* #endregion Persist Authenticated User */
 
+  /** Auto Logout Authenticated User */
+  //Build events object  
+  //Add event listener to each event
+  //Declare Methods
+    //Warn
+    //setTimeout
+    //clearTimeout
+  
+    //resetTimeout - called in add event listener
+      //clearTimeout()
+      //setTimeout()
+  
+      //Build cleanup method
+    //clearTimeout
+    //Remove event listener
+
+
+
+
   /* #region Form Error Validation Object */
   //Destructure formState
   const { username, password, newPassword, email, authCode } = formState;
