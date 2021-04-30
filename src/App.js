@@ -320,13 +320,11 @@ function App() {
   /** Lougout Authenticated User */
   function logOut(e) {
     e.preventDefault();
-    
-    console.log('clicked');
     //Remove user from local storage
+    window.localStorage.clear();
     //Set formState
-
-  }
-
+    setFormState(() => ({ formType: 'signIn' }))
+  };
   /* #endregion Callback Functions */
 
   /* #region Props Objects */
@@ -360,7 +358,7 @@ function App() {
       {formType === 'confirmSignUp' && <ConfirmSignUp confirmSignUpProps={confirmSignUpProps} />}
       {formType === 'resetPassword' && <ResetPassword resetPasswordProps={resetPasswordProps} />}
       {formType === 'confirmResetPassword' && <ConfirmResetPassword confirmResetPasswordProps={confirmResetPasswordProps} />}
-      {formType === 'signedIn' && <ProtectedComponents logOut={logOut}/>}
+      {formType === 'signedIn' && <ProtectedComponents logOut={logOut} />}
     </React.Fragment>
   );
 };
