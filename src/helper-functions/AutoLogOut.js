@@ -25,7 +25,7 @@ function autoLogOut() {
     /** Declare timer method */
     const setTimer = () => {
         // warnTimer = setTimeout(warn, 1000);
-        logoutTimer = setTimeout(logout, 8000);
+        logoutTimer = setTimeout(logout, 600 * 1000);
     };
 
     /** Declare clear timer method */
