@@ -27,29 +27,15 @@ function App() {
   const [formErrors, setFormErrors] = useState({});
   /* #endregion State Variables */
 
-  /* #region Hooks */
+  /* #region Persist Authenticated User */
   useEffect(() => {
+    //Call AWS Amplify Auth.currentAuthenticatedUser method
     Auth.currentAuthenticatedUser()
       .then((user) => {
         console.log(user)
         setFormState(() => ({ formType: 'signedIn' }))
       })
   }, [])
-  /* #endregion Hooks */
-
-  /* #region Persist Authenticated User */
-  // function checkUser() {
-  //   //Set user equal to the resolve of AWS Auth.currentAuthenticatedUser call
-  //   Auth.currentAuthenticatedUser()
-  //     .then((user) => {
-  //       console.log(user)
-  //       setUser(user)
-  //       setFormState(() => ({ ...formState, formType: 'signedIn' }))
-  //     })
-  //     .catch(error => { console.log(error) })
-  // };
-
-  // console.log(user)
   /* #endregion Persist Authenticated User */
 
   /* #region Form Error Validation Object */
@@ -329,6 +315,18 @@ function App() {
         console.log(error)
       })
   }
+
+  /** Logout Callback Functions */
+  /** Lougout Authenticated User */
+  function logOut(e) {
+    e.preventDefault();
+    
+    console.log('clicked');
+    //Remove user from local storage
+    //Set formState
+
+  }
+
   /* #endregion Callback Functions */
 
   /* #region Props Objects */
