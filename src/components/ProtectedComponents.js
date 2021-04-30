@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Route, Switch, useHistory } from 'react-router-dom';
 import DiscogsAPISearch from '../helper-functions/DiscogsAPISearch';
 import DiscogsAPIMasterRelease from '../helper-functions/DiscogsAPIMasterRelease';
@@ -12,12 +12,21 @@ import Header from './Header';
 import Randomizer from './Randomizer';
 import Search from './Search';
 import WishList from './WishList';
+import { autoLogOut } from "../helper-functions/AutoLogOut";
+
 
 
 function ProtectedComponents(props) {
 
     console.log('Render: Protected Components');
 
+    /**#region Auto Logout Authenticated User */
+    useEffect(() => {
+        autoLogOut()
+    }, [])
+    /**#region Auto Logout Authenticated User */
+
+    
     /* #region Global Variables */
     const history = useHistory();
     /* #endregion Global Variables*/
