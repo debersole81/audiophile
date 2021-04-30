@@ -21,13 +21,13 @@ function autoLogOut() {
 
     /** Declare timer method */
     const setTimer = () => {
-        warnTimer = setTimeout(warn, 1000);
-        logoutTimer = setTimeout(logout, 5000);
+        // warnTimer = setTimeout(warn, 1000);
+        logoutTimer = setTimeout(logout, 10000);
     };
 
     /** Declare clear timer method */
     const clearTimer = () => {
-        if (warnTimer) clearTimeout(warnTimer);
+        // if (warnTimer) clearTimeout(warnTimer);
         if (logoutTimer) clearTimeout(logoutTimer);
     };
 
