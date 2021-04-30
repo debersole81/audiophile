@@ -11,18 +11,21 @@ function autoLogOut() {
         'keypress'
     ];
 
-    let warnTimer;
+    // let warnTimer;
     let logoutTimer;
 
     /** Warn authenticated user of auto logout */
     // const warn = () => alert('You will be logged out due to inactivity. Click ok to remain logged in');
     /** Clear local storage when user is logged out */
-    const logout = () => window.localStorage.clear();
+    const logout = () => {
+        window.localStorage.clear();
+        window.location.reload();
+    };
 
     /** Declare timer method */
     const setTimer = () => {
         // warnTimer = setTimeout(warn, 1000);
-        logoutTimer = setTimeout(logout, 10000);
+        logoutTimer = setTimeout(logout, 8000);
     };
 
     /** Declare clear timer method */
