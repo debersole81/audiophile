@@ -25,14 +25,16 @@ function App() {
   /* #region State Variables */
   const [formState, setFormState] = useState(initialFormState);
   const [formErrors, setFormErrors] = useState({});
-  const [user, setUser] = useState(null);
   /* #endregion State Variables */
 
   /* #region Hooks */
-  // useEffect(() => {
-  //   setFormState(() => ({ ...formState, formType: null}))
-  //   checkUser()
-  // }, [])
+  useEffect(() => {
+    Auth.currentAuthenticatedUser()
+      .then((user) => {
+        console.log(user)
+        setFormState(() => ({ formType: 'signedIn' }))
+      })
+  }, [])
   /* #endregion Hooks */
 
   /* #region Persist Authenticated User */
@@ -361,9 +363,6 @@ function App() {
       {formType === 'resetPassword' && <ResetPassword resetPasswordProps={resetPasswordProps} />}
       {formType === 'confirmResetPassword' && <ConfirmResetPassword confirmResetPasswordProps={confirmResetPasswordProps} />}
       {formType === 'signedIn' && <ProtectedComponents />}
-      {/* <Route render={(props) => {
-        return userAuth ? (<ProtectedComponents headerProps={headerProps} />) : (<Login loginProps={loginProps} />)
-      }} /> */}
     </React.Fragment>
   );
 };
