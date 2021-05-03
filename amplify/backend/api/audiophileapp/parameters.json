@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "audiophileapp",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authaudiophileapp8cf8dee8",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

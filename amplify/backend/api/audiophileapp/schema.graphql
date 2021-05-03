@@ -1,0 +1,25 @@
+type Collection @model @auth(rules: [{ allow: owner }]) {
+  id: ID!
+  releaseID: Int!
+  albumName: String!
+  artistName: String!
+  label: String!
+  releaseYear: Int!
+  albumImage: S3Object
+}
+
+type WishList @model @auth(rules: [{ allow: owner }]) {
+  id: ID!
+  releaseID: Int!
+  albumName: String!
+  artistName: String!
+  label: String!
+  releaseYear: Int!
+  albumImage: S3Object
+}
+
+type S3Object {
+  bucket: String!
+  region: String!
+  key: String!
+}
