@@ -23,5 +23,11 @@
         }
       }
     }
+  },
+  "storage": {
+    "audiophile08": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation"
+    }
   }
 }
