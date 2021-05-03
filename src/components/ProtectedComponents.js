@@ -23,6 +23,10 @@ function ProtectedComponents(props) {
     /**#region Auto Logout Authenticated User */
     useEffect(() => {
         autoLogOut()
+        //Clear authenticate user from local storage on window close
+        window.onbeforeunload = () => {
+            localStorage.clear();
+        };
     }, [])
     /**#region Auto Logout Authenticated User */
 
