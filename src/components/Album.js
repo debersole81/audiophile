@@ -34,8 +34,7 @@ function Album(props) {
     console.log('Render: Album Component');
 
     /**Destructure props*/
-    const { albumData } = props.albumProps;
-    const { albumMasterData } = props.albumProps;
+    const { albumData, albumMasterData, addAlbumToCollection, addAlbumToWishList } = props.albumProps;
 
     /**State variables*/
 
@@ -97,7 +96,7 @@ function Album(props) {
                     <h3 className='text-muted'>{albumData.artists[0].name}</h3>
                     <Row className='album-details'>
                         <Col className='col' xs={8} s={8} md={8} lg={7} xl={7}>
-                        {(albumData.formats) ? <p><strong>Format:</strong> {albumData.formats[0].name} </p> : null}
+                            {(albumData.formats) ? <p><strong>Format:</strong> {albumData.formats[0].name} </p> : null}
                             {(albumData.genres) ? <p><strong>Genre:</strong> {albumData.genres[0]}</p> : null}
                             {(albumData.styles) ? <p><strong>Style:</strong> {albumData.styles.join(', ')}</p> : null}
                             {(albumData.labels) ? <p><strong>Label:</strong> {albumData.labels[0].name}</p> : null}
@@ -113,8 +112,8 @@ function Album(props) {
                     </Row>
                     <Row className='album-add-buttons-row'>
                         <Col>
-                            <Button variant='dark' size='sm' block><FaRecordVinyl /> ADD TO COLLECTION</Button>
-                            <Button variant='dark' size='sm' block><FaHeart /> ADD TO WISHLIST</Button>
+                            <Button variant='dark' size='sm' onClick={addAlbumToCollection} block><FaRecordVinyl /> ADD TO COLLECTION</Button>
+                            <Button variant='dark' size='sm' onClick={addAlbumToWishList} block><FaHeart /> ADD TO WISHLIST</Button>
                         </Col>
                     </Row>
                 </Col>
