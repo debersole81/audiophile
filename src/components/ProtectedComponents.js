@@ -126,6 +126,11 @@ function ProtectedComponents(props) {
                 })
     };
 
+    
+    console.log(searchData);
+    console.log(albumData);
+    console.log(albumMasterData);
+    
     /** SearchResultsPagination component callback functions -- Mobile */
     /* Handle previous page button click */
     const handlePreviousSearchResultsPageMobile = (e) => {
