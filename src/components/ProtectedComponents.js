@@ -331,6 +331,23 @@ function ProtectedComponents(props) {
         window.scrollTo(0, 0);
     };
 
+    /** Album component callback functions */
+    /* Add album to user's collection */
+    function addAlbumToCollection(e) {
+        e.preventDefault();
+
+        console.log('clicked');
+    }
+
+    /* Add album to user's wishlist */
+    function addAlbumToWishList(e) {
+        e.preventDefault();
+
+        console.log('clicked');
+    }
+
+
+
     /** AlbumReleasesHeader component callback functions */
     /* Handle view album releases button click */
     const handleViewAlbumReleases = (e) => {
@@ -593,6 +610,8 @@ function ProtectedComponents(props) {
     const albumProps = {
         albumData,
         albumMasterData,
+        addAlbumToCollection,
+        addAlbumToWishList,
     };
 
     /** AlbumReleasesHeader and AlbumReleases component props */
