@@ -1,9 +1,9 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getCollection = /* GraphQL */ `
-  query GetCollection($id: ID!) {
-    getCollection(id: $id) {
+export const getCollectionAlbum = /* GraphQL */ `
+  query GetCollectionAlbum($id: ID!) {
+    getCollectionAlbum(id: $id) {
       id
       entryType
       albumId
@@ -24,13 +24,17 @@ export const getCollection = /* GraphQL */ `
     }
   }
 `;
-export const listCollections = /* GraphQL */ `
-  query ListCollections(
-    $filter: ModelCollectionFilterInput
+export const listCollectionAlbums = /* GraphQL */ `
+  query ListCollectionAlbums(
+    $filter: ModelCollectionAlbumFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listCollections(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listCollectionAlbums(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
       items {
         id
         entryType
@@ -54,9 +58,9 @@ export const listCollections = /* GraphQL */ `
     }
   }
 `;
-export const getWishList = /* GraphQL */ `
-  query GetWishList($id: ID!) {
-    getWishList(id: $id) {
+export const getCollectionRelease = /* GraphQL */ `
+  query GetCollectionRelease($id: ID!) {
+    getCollectionRelease(id: $id) {
       id
       entryType
       albumId
@@ -77,13 +81,127 @@ export const getWishList = /* GraphQL */ `
     }
   }
 `;
-export const listWishLists = /* GraphQL */ `
-  query ListWishLists(
-    $filter: ModelWishListFilterInput
+export const listCollectionReleases = /* GraphQL */ `
+  query ListCollectionReleases(
+    $filter: ModelCollectionReleaseFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listWishLists(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listCollectionReleases(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        entryType
+        albumId
+        masterId
+        mainReleaseId
+        albumName
+        artistName
+        label
+        releaseYear
+        albumImage {
+          bucket
+          region
+          key
+        }
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+`;
+export const getWishListAlbum = /* GraphQL */ `
+  query GetWishListAlbum($id: ID!) {
+    getWishListAlbum(id: $id) {
+      id
+      entryType
+      albumId
+      masterId
+      mainReleaseId
+      albumName
+      artistName
+      label
+      releaseYear
+      albumImage {
+        bucket
+        region
+        key
+      }
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const listWishListAlbums = /* GraphQL */ `
+  query ListWishListAlbums(
+    $filter: ModelWishListAlbumFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listWishListAlbums(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        entryType
+        albumId
+        masterId
+        mainReleaseId
+        albumName
+        artistName
+        label
+        releaseYear
+        albumImage {
+          bucket
+          region
+          key
+        }
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+`;
+export const getWishListRelease = /* GraphQL */ `
+  query GetWishListRelease($id: ID!) {
+    getWishListRelease(id: $id) {
+      id
+      entryType
+      albumId
+      masterId
+      mainReleaseId
+      albumName
+      artistName
+      label
+      releaseYear
+      albumImage {
+        bucket
+        region
+        key
+      }
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const listWishListReleases = /* GraphQL */ `
+  query ListWishListReleases(
+    $filter: ModelWishListReleaseFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listWishListReleases(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
       items {
         id
         entryType

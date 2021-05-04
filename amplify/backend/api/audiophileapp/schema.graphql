@@ -1,4 +1,4 @@
-type Collection @model @auth(rules: [{ allow: owner }]) {
+type CollectionAlbum @model @auth(rules: [{ allow: owner }]) {
   id: ID!
   entryType: String!
   albumId: Int!
@@ -11,7 +11,33 @@ type Collection @model @auth(rules: [{ allow: owner }]) {
   albumImage: S3Object
 }
 
-type WishList @model @auth(rules: [{ allow: owner }]) {
+type CollectionRelease @model @auth(rules: [{ allow: owner }]) {
+  id: ID!
+  entryType: String!
+  albumId: Int!
+  masterId: Int!
+  mainReleaseId: Int!
+  albumName: String!
+  artistName: String!
+  label: String!
+  releaseYear: Int!
+  albumImage: S3Object
+}
+
+type WishListAlbum @model @auth(rules: [{ allow: owner }]) {
+  id: ID!
+  entryType: String!
+  albumId: Int!
+  masterId: Int!
+  mainReleaseId: Int!
+  albumName: String!
+  artistName: String!
+  label: String!
+  releaseYear: Int!
+  albumImage: S3Object
+}
+
+type WishListRelease @model @auth(rules: [{ allow: owner }]) {
   id: ID!
   entryType: String!
   albumId: Int!

@@ -1,12 +1,12 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createCollection = /* GraphQL */ `
-  mutation CreateCollection(
-    $input: CreateCollectionInput!
-    $condition: ModelCollectionConditionInput
+export const createCollectionAlbum = /* GraphQL */ `
+  mutation CreateCollectionAlbum(
+    $input: CreateCollectionAlbumInput!
+    $condition: ModelCollectionAlbumConditionInput
   ) {
-    createCollection(input: $input, condition: $condition) {
+    createCollectionAlbum(input: $input, condition: $condition) {
       id
       entryType
       albumId
@@ -27,12 +27,12 @@ export const createCollection = /* GraphQL */ `
     }
   }
 `;
-export const updateCollection = /* GraphQL */ `
-  mutation UpdateCollection(
-    $input: UpdateCollectionInput!
-    $condition: ModelCollectionConditionInput
+export const updateCollectionAlbum = /* GraphQL */ `
+  mutation UpdateCollectionAlbum(
+    $input: UpdateCollectionAlbumInput!
+    $condition: ModelCollectionAlbumConditionInput
   ) {
-    updateCollection(input: $input, condition: $condition) {
+    updateCollectionAlbum(input: $input, condition: $condition) {
       id
       entryType
       albumId
@@ -53,12 +53,12 @@ export const updateCollection = /* GraphQL */ `
     }
   }
 `;
-export const deleteCollection = /* GraphQL */ `
-  mutation DeleteCollection(
-    $input: DeleteCollectionInput!
-    $condition: ModelCollectionConditionInput
+export const deleteCollectionAlbum = /* GraphQL */ `
+  mutation DeleteCollectionAlbum(
+    $input: DeleteCollectionAlbumInput!
+    $condition: ModelCollectionAlbumConditionInput
   ) {
-    deleteCollection(input: $input, condition: $condition) {
+    deleteCollectionAlbum(input: $input, condition: $condition) {
       id
       entryType
       albumId
@@ -79,12 +79,12 @@ export const deleteCollection = /* GraphQL */ `
     }
   }
 `;
-export const createWishList = /* GraphQL */ `
-  mutation CreateWishList(
-    $input: CreateWishListInput!
-    $condition: ModelWishListConditionInput
+export const createCollectionRelease = /* GraphQL */ `
+  mutation CreateCollectionRelease(
+    $input: CreateCollectionReleaseInput!
+    $condition: ModelCollectionReleaseConditionInput
   ) {
-    createWishList(input: $input, condition: $condition) {
+    createCollectionRelease(input: $input, condition: $condition) {
       id
       entryType
       albumId
@@ -105,12 +105,12 @@ export const createWishList = /* GraphQL */ `
     }
   }
 `;
-export const updateWishList = /* GraphQL */ `
-  mutation UpdateWishList(
-    $input: UpdateWishListInput!
-    $condition: ModelWishListConditionInput
+export const updateCollectionRelease = /* GraphQL */ `
+  mutation UpdateCollectionRelease(
+    $input: UpdateCollectionReleaseInput!
+    $condition: ModelCollectionReleaseConditionInput
   ) {
-    updateWishList(input: $input, condition: $condition) {
+    updateCollectionRelease(input: $input, condition: $condition) {
       id
       entryType
       albumId
@@ -131,12 +131,168 @@ export const updateWishList = /* GraphQL */ `
     }
   }
 `;
-export const deleteWishList = /* GraphQL */ `
-  mutation DeleteWishList(
-    $input: DeleteWishListInput!
-    $condition: ModelWishListConditionInput
+export const deleteCollectionRelease = /* GraphQL */ `
+  mutation DeleteCollectionRelease(
+    $input: DeleteCollectionReleaseInput!
+    $condition: ModelCollectionReleaseConditionInput
   ) {
-    deleteWishList(input: $input, condition: $condition) {
+    deleteCollectionRelease(input: $input, condition: $condition) {
+      id
+      entryType
+      albumId
+      masterId
+      mainReleaseId
+      albumName
+      artistName
+      label
+      releaseYear
+      albumImage {
+        bucket
+        region
+        key
+      }
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const createWishListAlbum = /* GraphQL */ `
+  mutation CreateWishListAlbum(
+    $input: CreateWishListAlbumInput!
+    $condition: ModelWishListAlbumConditionInput
+  ) {
+    createWishListAlbum(input: $input, condition: $condition) {
+      id
+      entryType
+      albumId
+      masterId
+      mainReleaseId
+      albumName
+      artistName
+      label
+      releaseYear
+      albumImage {
+        bucket
+        region
+        key
+      }
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const updateWishListAlbum = /* GraphQL */ `
+  mutation UpdateWishListAlbum(
+    $input: UpdateWishListAlbumInput!
+    $condition: ModelWishListAlbumConditionInput
+  ) {
+    updateWishListAlbum(input: $input, condition: $condition) {
+      id
+      entryType
+      albumId
+      masterId
+      mainReleaseId
+      albumName
+      artistName
+      label
+      releaseYear
+      albumImage {
+        bucket
+        region
+        key
+      }
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const deleteWishListAlbum = /* GraphQL */ `
+  mutation DeleteWishListAlbum(
+    $input: DeleteWishListAlbumInput!
+    $condition: ModelWishListAlbumConditionInput
+  ) {
+    deleteWishListAlbum(input: $input, condition: $condition) {
+      id
+      entryType
+      albumId
+      masterId
+      mainReleaseId
+      albumName
+      artistName
+      label
+      releaseYear
+      albumImage {
+        bucket
+        region
+        key
+      }
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const createWishListRelease = /* GraphQL */ `
+  mutation CreateWishListRelease(
+    $input: CreateWishListReleaseInput!
+    $condition: ModelWishListReleaseConditionInput
+  ) {
+    createWishListRelease(input: $input, condition: $condition) {
+      id
+      entryType
+      albumId
+      masterId
+      mainReleaseId
+      albumName
+      artistName
+      label
+      releaseYear
+      albumImage {
+        bucket
+        region
+        key
+      }
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const updateWishListRelease = /* GraphQL */ `
+  mutation UpdateWishListRelease(
+    $input: UpdateWishListReleaseInput!
+    $condition: ModelWishListReleaseConditionInput
+  ) {
+    updateWishListRelease(input: $input, condition: $condition) {
+      id
+      entryType
+      albumId
+      masterId
+      mainReleaseId
+      albumName
+      artistName
+      label
+      releaseYear
+      albumImage {
+        bucket
+        region
+        key
+      }
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const deleteWishListRelease = /* GraphQL */ `
+  mutation DeleteWishListRelease(
+    $input: DeleteWishListReleaseInput!
+    $condition: ModelWishListReleaseConditionInput
+  ) {
+    deleteWishListRelease(input: $input, condition: $condition) {
       id
       entryType
       albumId

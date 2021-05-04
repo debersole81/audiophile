@@ -1,9 +1,9 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateCollection = /* GraphQL */ `
-  subscription OnCreateCollection($owner: String!) {
-    onCreateCollection(owner: $owner) {
+export const onCreateCollectionAlbum = /* GraphQL */ `
+  subscription OnCreateCollectionAlbum($owner: String!) {
+    onCreateCollectionAlbum(owner: $owner) {
       id
       entryType
       albumId
@@ -24,9 +24,9 @@ export const onCreateCollection = /* GraphQL */ `
     }
   }
 `;
-export const onUpdateCollection = /* GraphQL */ `
-  subscription OnUpdateCollection($owner: String!) {
-    onUpdateCollection(owner: $owner) {
+export const onUpdateCollectionAlbum = /* GraphQL */ `
+  subscription OnUpdateCollectionAlbum($owner: String!) {
+    onUpdateCollectionAlbum(owner: $owner) {
       id
       entryType
       albumId
@@ -47,9 +47,9 @@ export const onUpdateCollection = /* GraphQL */ `
     }
   }
 `;
-export const onDeleteCollection = /* GraphQL */ `
-  subscription OnDeleteCollection($owner: String!) {
-    onDeleteCollection(owner: $owner) {
+export const onDeleteCollectionAlbum = /* GraphQL */ `
+  subscription OnDeleteCollectionAlbum($owner: String!) {
+    onDeleteCollectionAlbum(owner: $owner) {
       id
       entryType
       albumId
@@ -70,9 +70,9 @@ export const onDeleteCollection = /* GraphQL */ `
     }
   }
 `;
-export const onCreateWishList = /* GraphQL */ `
-  subscription OnCreateWishList($owner: String!) {
-    onCreateWishList(owner: $owner) {
+export const onCreateCollectionRelease = /* GraphQL */ `
+  subscription OnCreateCollectionRelease($owner: String!) {
+    onCreateCollectionRelease(owner: $owner) {
       id
       entryType
       albumId
@@ -93,9 +93,9 @@ export const onCreateWishList = /* GraphQL */ `
     }
   }
 `;
-export const onUpdateWishList = /* GraphQL */ `
-  subscription OnUpdateWishList($owner: String!) {
-    onUpdateWishList(owner: $owner) {
+export const onUpdateCollectionRelease = /* GraphQL */ `
+  subscription OnUpdateCollectionRelease($owner: String!) {
+    onUpdateCollectionRelease(owner: $owner) {
       id
       entryType
       albumId
@@ -116,9 +116,147 @@ export const onUpdateWishList = /* GraphQL */ `
     }
   }
 `;
-export const onDeleteWishList = /* GraphQL */ `
-  subscription OnDeleteWishList($owner: String!) {
-    onDeleteWishList(owner: $owner) {
+export const onDeleteCollectionRelease = /* GraphQL */ `
+  subscription OnDeleteCollectionRelease($owner: String!) {
+    onDeleteCollectionRelease(owner: $owner) {
+      id
+      entryType
+      albumId
+      masterId
+      mainReleaseId
+      albumName
+      artistName
+      label
+      releaseYear
+      albumImage {
+        bucket
+        region
+        key
+      }
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const onCreateWishListAlbum = /* GraphQL */ `
+  subscription OnCreateWishListAlbum($owner: String!) {
+    onCreateWishListAlbum(owner: $owner) {
+      id
+      entryType
+      albumId
+      masterId
+      mainReleaseId
+      albumName
+      artistName
+      label
+      releaseYear
+      albumImage {
+        bucket
+        region
+        key
+      }
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const onUpdateWishListAlbum = /* GraphQL */ `
+  subscription OnUpdateWishListAlbum($owner: String!) {
+    onUpdateWishListAlbum(owner: $owner) {
+      id
+      entryType
+      albumId
+      masterId
+      mainReleaseId
+      albumName
+      artistName
+      label
+      releaseYear
+      albumImage {
+        bucket
+        region
+        key
+      }
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const onDeleteWishListAlbum = /* GraphQL */ `
+  subscription OnDeleteWishListAlbum($owner: String!) {
+    onDeleteWishListAlbum(owner: $owner) {
+      id
+      entryType
+      albumId
+      masterId
+      mainReleaseId
+      albumName
+      artistName
+      label
+      releaseYear
+      albumImage {
+        bucket
+        region
+        key
+      }
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const onCreateWishListRelease = /* GraphQL */ `
+  subscription OnCreateWishListRelease($owner: String!) {
+    onCreateWishListRelease(owner: $owner) {
+      id
+      entryType
+      albumId
+      masterId
+      mainReleaseId
+      albumName
+      artistName
+      label
+      releaseYear
+      albumImage {
+        bucket
+        region
+        key
+      }
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const onUpdateWishListRelease = /* GraphQL */ `
+  subscription OnUpdateWishListRelease($owner: String!) {
+    onUpdateWishListRelease(owner: $owner) {
+      id
+      entryType
+      albumId
+      masterId
+      mainReleaseId
+      albumName
+      artistName
+      label
+      releaseYear
+      albumImage {
+        bucket
+        region
+        key
+      }
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const onDeleteWishListRelease = /* GraphQL */ `
+  subscription OnDeleteWishListRelease($owner: String!) {
+    onDeleteWishListRelease(owner: $owner) {
       id
       entryType
       albumId
