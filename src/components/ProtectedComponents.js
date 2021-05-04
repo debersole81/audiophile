@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Route, Switch, useHistory } from 'react-router-dom';
+import { Storage, API, graphqlOperation } from 'aws-amplify';
+import { createCollectionAlbum, createCollectionRelease, createWishListAlbum, createWishListRelease } from '../graphql/mutations';
+import { listCollectionAlbums, listCollectionReleases, listWishListAlbums, listWishListReleases} from '../graphql/queries';
+import config from '../aws-exports';
 import DiscogsAPISearch from '../helper-functions/DiscogsAPISearch';
 import DiscogsAPIMasterRelease from '../helper-functions/DiscogsAPIMasterRelease';
 import DiscogsAPIRelease from '../helper-functions/DiscogsAPIRelease';
@@ -30,9 +34,14 @@ function ProtectedComponents(props) {
     }, [])
     /**#region Auto Logout Authenticated User */
 
-    
+
     /* #region Global Variables */
+    /** useHistory hook variable. */
     const history = useHistory();
+
+    /** Config for Amplify S3 Bucket */
+    
+
     /* #endregion Global Variables*/
 
 
@@ -126,11 +135,11 @@ function ProtectedComponents(props) {
                 })
     };
 
-    
+
     console.log(searchData);
     console.log(albumData);
     console.log(albumMasterData);
-    
+
     /** SearchResultsPagination component callback functions -- Mobile */
     /* Handle previous page button click */
     const handlePreviousSearchResultsPageMobile = (e) => {
