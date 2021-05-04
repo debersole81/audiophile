@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Route, Switch, useHistory } from 'react-router-dom';
 import { Storage, API, graphqlOperation } from 'aws-amplify';
 import { createCollectionAlbum, createCollectionRelease, createWishListAlbum, createWishListRelease } from '../graphql/mutations';
-import { listCollectionAlbums, listCollectionReleases, listWishListAlbums, listWishListReleases} from '../graphql/queries';
+import { listCollectionAlbums, listCollectionReleases, listWishListAlbums, listWishListReleases } from '../graphql/queries';
 import config from '../aws-exports';
 import DiscogsAPISearch from '../helper-functions/DiscogsAPISearch';
 import DiscogsAPIMasterRelease from '../helper-functions/DiscogsAPIMasterRelease';
@@ -25,13 +25,13 @@ function ProtectedComponents(props) {
     console.log('Render: Protected Components');
 
     /**#region Auto Logout Authenticated User */
-    useEffect(() => {
-        autoLogOut()
-        //Clear authenticate user from local storage on window close
-        window.onbeforeunload = () => {
-            localStorage.clear();
-        };
-    }, [])
+    // useEffect(() => {
+    //     autoLogOut()
+    //     //Clear authenticate user from local storage on window close
+    //     window.onbeforeunload = () => {
+    //         localStorage.clear();
+    //     };
+    // }, [])
     /**#region Auto Logout Authenticated User */
 
 
@@ -40,8 +40,10 @@ function ProtectedComponents(props) {
     const history = useHistory();
 
     /** Config for Amplify S3 Bucket */
-    
-
+    const {
+        aws_user_files_s3_bucket_region: region,
+        aws_user_files_s3_bucket: bucket
+    } = config
     /* #endregion Global Variables*/
 
 
