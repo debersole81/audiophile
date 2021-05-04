@@ -1,6 +1,9 @@
 type Collection @model @auth(rules: [{ allow: owner }]) {
   id: ID!
-  releaseID: Int!
+  entryType: String!
+  albumId: Int!
+  masterId: Int!
+  mainReleaseId: Int!
   albumName: String!
   artistName: String!
   label: String!
@@ -10,7 +13,10 @@ type Collection @model @auth(rules: [{ allow: owner }]) {
 
 type WishList @model @auth(rules: [{ allow: owner }]) {
   id: ID!
-  releaseID: Int!
+  entryType: String!
+  albumId: Int!
+  masterId: Int!
+  mainReleaseId: Int!
   albumName: String!
   artistName: String!
   label: String!

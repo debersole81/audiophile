@@ -8,7 +8,10 @@ export const createCollection = /* GraphQL */ `
   ) {
     createCollection(input: $input, condition: $condition) {
       id
-      releaseID
+      entryType
+      albumId
+      masterId
+      mainReleaseId
       albumName
       artistName
       label
@@ -31,7 +34,10 @@ export const updateCollection = /* GraphQL */ `
   ) {
     updateCollection(input: $input, condition: $condition) {
       id
-      releaseID
+      entryType
+      albumId
+      masterId
+      mainReleaseId
       albumName
       artistName
       label
@@ -54,7 +60,10 @@ export const deleteCollection = /* GraphQL */ `
   ) {
     deleteCollection(input: $input, condition: $condition) {
       id
-      releaseID
+      entryType
+      albumId
+      masterId
+      mainReleaseId
       albumName
       artistName
       label
@@ -77,7 +86,10 @@ export const createWishList = /* GraphQL */ `
   ) {
     createWishList(input: $input, condition: $condition) {
       id
-      releaseID
+      entryType
+      albumId
+      masterId
+      mainReleaseId
       albumName
       artistName
       label
@@ -100,7 +112,10 @@ export const updateWishList = /* GraphQL */ `
   ) {
     updateWishList(input: $input, condition: $condition) {
       id
-      releaseID
+      entryType
+      albumId
+      masterId
+      mainReleaseId
       albumName
       artistName
       label
@@ -123,7 +138,10 @@ export const deleteWishList = /* GraphQL */ `
   ) {
     deleteWishList(input: $input, condition: $condition) {
       id
-      releaseID
+      entryType
+      albumId
+      masterId
+      mainReleaseId
       albumName
       artistName
       label

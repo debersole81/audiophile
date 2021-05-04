@@ -25,7 +25,7 @@
     }
   },
   "storage": {
-    "audiophile08": {
+    "audiophileimages": {
       "service": "S3",
       "providerPlugin": "awscloudformation"
     }

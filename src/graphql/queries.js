@@ -5,7 +5,10 @@ export const getCollection = /* GraphQL */ `
   query GetCollection($id: ID!) {
     getCollection(id: $id) {
       id
-      releaseID
+      entryType
+      albumId
+      masterId
+      mainReleaseId
       albumName
       artistName
       label
@@ -30,7 +33,10 @@ export const listCollections = /* GraphQL */ `
     listCollections(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        releaseID
+        entryType
+        albumId
+        masterId
+        mainReleaseId
         albumName
         artistName
         label
@@ -52,7 +58,10 @@ export const getWishList = /* GraphQL */ `
   query GetWishList($id: ID!) {
     getWishList(id: $id) {
       id
-      releaseID
+      entryType
+      albumId
+      masterId
+      mainReleaseId
       albumName
       artistName
       label
@@ -77,7 +86,10 @@ export const listWishLists = /* GraphQL */ `
     listWishLists(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        releaseID
+        entryType
+        albumId
+        masterId
+        mainReleaseId
         albumName
         artistName
         label

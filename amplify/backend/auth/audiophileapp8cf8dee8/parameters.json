@@ -1,6 +1,6 @@
 {
     "identityPoolName": "audiophileapp8cf8dee8_identitypool_8cf8dee8",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "audiop8cf8dee8",
     "userPoolName": "audiophileapp8cf8dee8_userpool_8cf8dee8",
     "autoVerifiedAttributes": [
