@@ -348,7 +348,7 @@ function ProtectedComponents(props) {
             key,
         }
 
-        /* Build object to upload album data to S3 */
+        /* Build object to upload album data to GraphQL API */
         const inputData = {
             releaseType: 'Master',
             albumId: albumData.id,
@@ -362,7 +362,7 @@ function ProtectedComponents(props) {
         }
 
         /* Upload album image to S3 bucket and then upload album data to GraphQL API*/
-        
+
 
 
     }
