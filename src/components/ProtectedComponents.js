@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Route, Switch, useHistory } from 'react-router-dom';
-import { Storage, API, graphqlOperation } from 'aws-amplify';
+import { API, graphqlOperation } from 'aws-amplify';
 import { createCollectionAlbum, createCollectionRelease, createWishListAlbum, createWishListRelease } from '../graphql/mutations';
 import { listCollectionAlbums, listCollectionReleases, listWishListAlbums, listWishListReleases } from '../graphql/queries';
-import { v4 as uuidv4 } from 'uuid';
-import config from '../aws-exports';
 import DiscogsAPISearch from '../helper-functions/DiscogsAPISearch';
 import DiscogsAPIMasterRelease from '../helper-functions/DiscogsAPIMasterRelease';
 import DiscogsAPIRelease from '../helper-functions/DiscogsAPIRelease';
@@ -613,6 +611,23 @@ function ProtectedComponents(props) {
         //Scroll to the top of the AlbumReleases component after refreshing results
         window.scroll(0, 1200);
     };
+
+    /** AlbumRelease component callback functions */
+    /* Add release to user's collection */
+    function addReleaseToCollection(e) {
+        e.preventDefault();
+
+        console.log('clicked');
+    }
+
+    /* Add release to user's wishlist */
+    function addReleaseToWishList(e) {
+        e.preventDefault();
+
+        console.log('clicked');
+    }
+
+
     /* #endregion Callback Functions */
 
 
