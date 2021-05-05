@@ -687,7 +687,11 @@ function ProtectedComponents(props) {
     };
 
     /** AlbumRelease component props */
-    const albumReleaseProps = { albumReleaseData };
+    const albumReleaseProps = {
+        albumReleaseData,
+        addReleaseToCollection,
+        addReleaseToWishList,
+    };
 
     /* #endregion Props Objects*/
 
