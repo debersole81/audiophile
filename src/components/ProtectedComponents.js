@@ -26,13 +26,17 @@ function ProtectedComponents(props) {
     console.log('Render: Protected Components');
 
     /**#region Auto Logout Authenticated User */
-    // useEffect(() => {
-    //     autoLogOut()
-    //     //Clear authenticate user from local storage on window close
-    //     window.onbeforeunload = () => {
-    //         localStorage.clear();
-    //     };
-    // }, [])
+    useEffect(() => {
+        // autoLogOut()
+        // //Clear authenticate user from local storage on window close
+        // window.onbeforeunload = () => {
+        //     localStorage.clear();
+        // };
+        API.graphql(graphqlOperation(listCollectionAlbums))
+            .then((result) => {
+                console.log(result)
+            })
+    }, [])
     /**#region Auto Logout Authenticated User */
 
 
@@ -358,24 +362,31 @@ function ProtectedComponents(props) {
             artistName: albumData.artists[0].name,
             label: albumData.labels[0].name,
             releaseYear: albumData.year,
-            albumImage: imageForUpload,
+            albumImage: albumData.thumb,
         }
 
         console.log(inputData);
-        console.log(createCollectionAlbum);
 
-        /* Upload album image to S3 bucket and then upload album data to GraphQL API*/
-        Storage.put(key, file)
+        API.graphql(graphqlOperation(createCollectionAlbum, { input: inputData }))
+            .then(console.log('Sucessfully stored album to collection'))
             .catch(error => {
                 console.log(error)
             })
-            .then(() => {
-                API.graphql(graphqlOperation(createCollectionAlbum, { input: inputData }))
-                    .catch(error => {
-                        console.log(error)
-                    })
-                    .then(console.log('Sucessfully stored album to collection'))
-            })
+
+
+
+        /* Upload album image to S3 bucket and then upload album data to GraphQL API*/
+        // Storage.put(key, file)
+        //     .catch(error => {
+        //         console.log(error)
+        //     })
+        //     .then(() => {
+        //         API.graphql(graphqlOperation(createCollectionAlbum, { input: inputData }))
+        //             .catch(error => {
+        //                 console.log(error)
+        //             })
+        //             .then(console.log('Sucessfully stored album to collection'))
+        //     })
     }
 
     /* Add album to user's wishlist */
