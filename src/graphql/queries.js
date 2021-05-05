@@ -5,7 +5,7 @@ export const getCollectionAlbum = /* GraphQL */ `
   query GetCollectionAlbum($id: ID!) {
     getCollectionAlbum(id: $id) {
       id
-      entryType
+      releaseType
       albumId
       masterId
       mainReleaseId
@@ -37,7 +37,7 @@ export const listCollectionAlbums = /* GraphQL */ `
     ) {
       items {
         id
-        entryType
+        releaseType
         albumId
         masterId
         mainReleaseId
@@ -62,7 +62,7 @@ export const getCollectionRelease = /* GraphQL */ `
   query GetCollectionRelease($id: ID!) {
     getCollectionRelease(id: $id) {
       id
-      entryType
+      releaseType
       albumId
       masterId
       mainReleaseId
@@ -94,7 +94,7 @@ export const listCollectionReleases = /* GraphQL */ `
     ) {
       items {
         id
-        entryType
+        releaseType
         albumId
         masterId
         mainReleaseId
@@ -119,7 +119,7 @@ export const getWishListAlbum = /* GraphQL */ `
   query GetWishListAlbum($id: ID!) {
     getWishListAlbum(id: $id) {
       id
-      entryType
+      releaseType
       albumId
       masterId
       mainReleaseId
@@ -147,7 +147,7 @@ export const listWishListAlbums = /* GraphQL */ `
     listWishListAlbums(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        entryType
+        releaseType
         albumId
         masterId
         mainReleaseId
@@ -172,7 +172,7 @@ export const getWishListRelease = /* GraphQL */ `
   query GetWishListRelease($id: ID!) {
     getWishListRelease(id: $id) {
       id
-      entryType
+      releaseType
       albumId
       masterId
       mainReleaseId
@@ -204,7 +204,7 @@ export const listWishListReleases = /* GraphQL */ `
     ) {
       items {
         id
-        entryType
+        releaseType
         albumId
         masterId
         mainReleaseId

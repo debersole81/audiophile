@@ -35,6 +35,7 @@ function Album(props) {
 
     /**Destructure props*/
     const { albumData, albumMasterData, addAlbumToCollection, addAlbumToWishList } = props.albumProps;
+    console.log(albumData, albumMasterData);
 
     /**State variables*/
 

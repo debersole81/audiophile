@@ -5,7 +5,7 @@ export const onCreateCollectionAlbum = /* GraphQL */ `
   subscription OnCreateCollectionAlbum($owner: String!) {
     onCreateCollectionAlbum(owner: $owner) {
       id
-      entryType
+      releaseType
       albumId
       masterId
       mainReleaseId
@@ -28,7 +28,7 @@ export const onUpdateCollectionAlbum = /* GraphQL */ `
   subscription OnUpdateCollectionAlbum($owner: String!) {
     onUpdateCollectionAlbum(owner: $owner) {
       id
-      entryType
+      releaseType
       albumId
       masterId
       mainReleaseId
@@ -51,7 +51,7 @@ export const onDeleteCollectionAlbum = /* GraphQL */ `
   subscription OnDeleteCollectionAlbum($owner: String!) {
     onDeleteCollectionAlbum(owner: $owner) {
       id
-      entryType
+      releaseType
       albumId
       masterId
       mainReleaseId
@@ -74,7 +74,7 @@ export const onCreateCollectionRelease = /* GraphQL */ `
   subscription OnCreateCollectionRelease($owner: String!) {
     onCreateCollectionRelease(owner: $owner) {
       id
-      entryType
+      releaseType
       albumId
       masterId
       mainReleaseId
@@ -97,7 +97,7 @@ export const onUpdateCollectionRelease = /* GraphQL */ `
   subscription OnUpdateCollectionRelease($owner: String!) {
     onUpdateCollectionRelease(owner: $owner) {
       id
-      entryType
+      releaseType
       albumId
       masterId
       mainReleaseId
@@ -120,7 +120,7 @@ export const onDeleteCollectionRelease = /* GraphQL */ `
   subscription OnDeleteCollectionRelease($owner: String!) {
     onDeleteCollectionRelease(owner: $owner) {
       id
-      entryType
+      releaseType
       albumId
       masterId
       mainReleaseId
@@ -143,7 +143,7 @@ export const onCreateWishListAlbum = /* GraphQL */ `
   subscription OnCreateWishListAlbum($owner: String!) {
     onCreateWishListAlbum(owner: $owner) {
       id
-      entryType
+      releaseType
       albumId
       masterId
       mainReleaseId
@@ -166,7 +166,7 @@ export const onUpdateWishListAlbum = /* GraphQL */ `
   subscription OnUpdateWishListAlbum($owner: String!) {
     onUpdateWishListAlbum(owner: $owner) {
       id
-      entryType
+      releaseType
       albumId
       masterId
       mainReleaseId
@@ -189,7 +189,7 @@ export const onDeleteWishListAlbum = /* GraphQL */ `
   subscription OnDeleteWishListAlbum($owner: String!) {
     onDeleteWishListAlbum(owner: $owner) {
       id
-      entryType
+      releaseType
       albumId
       masterId
       mainReleaseId
@@ -212,7 +212,7 @@ export const onCreateWishListRelease = /* GraphQL */ `
   subscription OnCreateWishListRelease($owner: String!) {
     onCreateWishListRelease(owner: $owner) {
       id
-      entryType
+      releaseType
       albumId
       masterId
       mainReleaseId
@@ -235,7 +235,7 @@ export const onUpdateWishListRelease = /* GraphQL */ `
   subscription OnUpdateWishListRelease($owner: String!) {
     onUpdateWishListRelease(owner: $owner) {
       id
-      entryType
+      releaseType
       albumId
       masterId
       mainReleaseId
@@ -258,7 +258,7 @@ export const onDeleteWishListRelease = /* GraphQL */ `
   subscription OnDeleteWishListRelease($owner: String!) {
     onDeleteWishListRelease(owner: $owner) {
       id
-      entryType
+      releaseType
       albumId
       masterId
       mainReleaseId

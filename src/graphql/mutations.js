@@ -8,7 +8,7 @@ export const createCollectionAlbum = /* GraphQL */ `
   ) {
     createCollectionAlbum(input: $input, condition: $condition) {
       id
-      entryType
+      releaseType
       albumId
       masterId
       mainReleaseId
@@ -34,7 +34,7 @@ export const updateCollectionAlbum = /* GraphQL */ `
   ) {
     updateCollectionAlbum(input: $input, condition: $condition) {
       id
-      entryType
+      releaseType
       albumId
       masterId
       mainReleaseId
@@ -60,7 +60,7 @@ export const deleteCollectionAlbum = /* GraphQL */ `
   ) {
     deleteCollectionAlbum(input: $input, condition: $condition) {
       id
-      entryType
+      releaseType
       albumId
       masterId
       mainReleaseId
@@ -86,7 +86,7 @@ export const createCollectionRelease = /* GraphQL */ `
   ) {
     createCollectionRelease(input: $input, condition: $condition) {
       id
-      entryType
+      releaseType
       albumId
       masterId
       mainReleaseId
@@ -112,7 +112,7 @@ export const updateCollectionRelease = /* GraphQL */ `
   ) {
     updateCollectionRelease(input: $input, condition: $condition) {
       id
-      entryType
+      releaseType
       albumId
       masterId
       mainReleaseId
@@ -138,7 +138,7 @@ export const deleteCollectionRelease = /* GraphQL */ `
   ) {
     deleteCollectionRelease(input: $input, condition: $condition) {
       id
-      entryType
+      releaseType
       albumId
       masterId
       mainReleaseId
@@ -164,7 +164,7 @@ export const createWishListAlbum = /* GraphQL */ `
   ) {
     createWishListAlbum(input: $input, condition: $condition) {
       id
-      entryType
+      releaseType
       albumId
       masterId
       mainReleaseId
@@ -190,7 +190,7 @@ export const updateWishListAlbum = /* GraphQL */ `
   ) {
     updateWishListAlbum(input: $input, condition: $condition) {
       id
-      entryType
+      releaseType
       albumId
       masterId
       mainReleaseId
@@ -216,7 +216,7 @@ export const deleteWishListAlbum = /* GraphQL */ `
   ) {
     deleteWishListAlbum(input: $input, condition: $condition) {
       id
-      entryType
+      releaseType
       albumId
       masterId
       mainReleaseId
@@ -242,7 +242,7 @@ export const createWishListRelease = /* GraphQL */ `
   ) {
     createWishListRelease(input: $input, condition: $condition) {
       id
-      entryType
+      releaseType
       albumId
       masterId
       mainReleaseId
@@ -268,7 +268,7 @@ export const updateWishListRelease = /* GraphQL */ `
   ) {
     updateWishListRelease(input: $input, condition: $condition) {
       id
-      entryType
+      releaseType
       albumId
       masterId
       mainReleaseId
@@ -294,7 +294,7 @@ export const deleteWishListRelease = /* GraphQL */ `
   ) {
     deleteWishListRelease(input: $input, condition: $condition) {
       id
-      entryType
+      releaseType
       albumId
       masterId
       mainReleaseId
