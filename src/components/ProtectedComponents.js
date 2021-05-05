@@ -40,7 +40,7 @@ function ProtectedComponents(props) {
     /** useHistory hook variable. */
     const history = useHistory();
 
-    /** Config for Amplify S3 Bucket */
+    /** Amplify S3 Bucket Config */
     const {
         aws_user_files_s3_bucket_region: region,
         aws_user_files_s3_bucket: bucket
@@ -337,19 +337,32 @@ function ProtectedComponents(props) {
     function addAlbumToCollection(e) {
         e.preventDefault();
 
-        /** Upload album thumb image to S3 */
+        /* Build scaffolding to upload album thumb image to S3 */
         const file = albumData.thumb;
         const fileName = albumData.thumb.split('/')[8].split('.')[0];
         const key = `${uuidv4()}${fileName}`;
-        //Build S3 object
+        //Build object to interface with S3 schema
         const imageForUpload = {
             bucket,
             region,
             key,
         }
-        console.log(imageForUpload);
 
+        /* Build object to upload album data to S3 */
+        const inputData = {
+            releaseType: 'Master',
+            albumId: albumData.id,
+            masterId: albumData.master_id,
+            mainReleaseId: albumMasterData.main_release,
+            albumTitle: albumData.title,
+            artistName: albumData.artists[0].name,
+            label: albumData.labels[0].name,
+            releaseYear: albumData.year,
+            albumImage: imageForUpload,
+        }
 
+        /* Upload album image to S3 bucket and then upload album data to GraphQL API*/
+        
 
 
     }
