@@ -337,10 +337,14 @@ function ProtectedComponents(props) {
         e.preventDefault();
 
         /** Upload album thumb image to S3 */
-        const extension = albumData.thumb.split('.')[3];
+        const fileType = albumData.thumb.split('.')[3];
+        const fileName = albumData.thumb.split('/')[8].split('.')[0];
+
+        console.log(fileType, fileName);
+
+        
 
 
-        console.log('clicked');
     }
 
     /* Add album to user's wishlist */
