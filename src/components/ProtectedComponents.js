@@ -336,6 +336,10 @@ function ProtectedComponents(props) {
     function addAlbumToCollection(e) {
         e.preventDefault();
 
+        /** Upload album thumb image to S3 */
+        const extension = albumData.thumb.split('.')[3];
+
+
         console.log('clicked');
     }
 
