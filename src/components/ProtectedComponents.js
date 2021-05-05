@@ -358,7 +358,25 @@ function ProtectedComponents(props) {
     function addAlbumToWishList(e) {
         e.preventDefault();
 
-        console.log('clicked');
+        /* Build object to upload album data to GraphQL API */
+        const inputData = {
+            releaseType: 'Master',
+            albumId: albumData.id,
+            masterId: albumData.master_id,
+            mainReleaseId: albumMasterData.main_release,
+            albumTitle: albumData.title,
+            artistName: albumData.artists[0].name,
+            label: albumData.labels[0].name,
+            releaseYear: albumData.year,
+            albumImage: albumData.images[0].uri,
+        }
+
+        /* Upload album data to GraphQL API  */
+        API.graphql(graphqlOperation(createWishListAlbum, { input: inputData }))
+            .then(console.log('Sucessfully stored album to collection'))
+            .catch(error => {
+                console.log(error)
+            })
     }
 
 
