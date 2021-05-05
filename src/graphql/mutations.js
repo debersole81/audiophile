@@ -12,7 +12,7 @@ export const createCollectionAlbum = /* GraphQL */ `
       albumId
       masterId
       mainReleaseId
-      albumName
+      albumTitle
       artistName
       label
       releaseYear
@@ -38,7 +38,7 @@ export const updateCollectionAlbum = /* GraphQL */ `
       albumId
       masterId
       mainReleaseId
-      albumName
+      albumTitle
       artistName
       label
       releaseYear
@@ -64,7 +64,7 @@ export const deleteCollectionAlbum = /* GraphQL */ `
       albumId
       masterId
       mainReleaseId
-      albumName
+      albumTitle
       artistName
       label
       releaseYear
@@ -90,7 +90,7 @@ export const createCollectionRelease = /* GraphQL */ `
       albumId
       masterId
       mainReleaseId
-      albumName
+      albumTitle
       artistName
       label
       releaseYear
@@ -116,7 +116,7 @@ export const updateCollectionRelease = /* GraphQL */ `
       albumId
       masterId
       mainReleaseId
-      albumName
+      albumTitle
       artistName
       label
       releaseYear
@@ -142,7 +142,7 @@ export const deleteCollectionRelease = /* GraphQL */ `
       albumId
       masterId
       mainReleaseId
-      albumName
+      albumTitle
       artistName
       label
       releaseYear
@@ -168,7 +168,7 @@ export const createWishListAlbum = /* GraphQL */ `
       albumId
       masterId
       mainReleaseId
-      albumName
+      albumTitle
       artistName
       label
       releaseYear
@@ -194,7 +194,7 @@ export const updateWishListAlbum = /* GraphQL */ `
       albumId
       masterId
       mainReleaseId
-      albumName
+      albumTitle
       artistName
       label
       releaseYear
@@ -220,7 +220,7 @@ export const deleteWishListAlbum = /* GraphQL */ `
       albumId
       masterId
       mainReleaseId
-      albumName
+      albumTitle
       artistName
       label
       releaseYear
@@ -246,7 +246,7 @@ export const createWishListRelease = /* GraphQL */ `
       albumId
       masterId
       mainReleaseId
-      albumName
+      albumTitle
       artistName
       label
       releaseYear
@@ -272,7 +272,7 @@ export const updateWishListRelease = /* GraphQL */ `
       albumId
       masterId
       mainReleaseId
-      albumName
+      albumTitle
       artistName
       label
       releaseYear
@@ -298,7 +298,7 @@ export const deleteWishListRelease = /* GraphQL */ `
       albumId
       masterId
       mainReleaseId
-      albumName
+      albumTitle
       artistName
       label
       releaseYear
