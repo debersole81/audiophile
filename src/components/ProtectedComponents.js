@@ -44,14 +44,6 @@ function ProtectedComponents(props) {
     /** useHistory hook variable. */
     const history = useHistory();
 
-    /** Amplify S3 Bucket Config */
-    const {
-        aws_user_files_s3_bucket_region: region,
-        aws_user_files_s3_bucket: bucket
-    } = config
-    /* #endregion Global Variables*/
-
-
     /* #region State Variables */
     /** Search component state variables */
     const [search, setSearch] = useState('');
@@ -340,17 +332,6 @@ function ProtectedComponents(props) {
     /* Add album to user's collection */
     function addAlbumToCollection(e) {
         e.preventDefault();
-
-        /* Build scaffolding to upload album thumb image to S3 */
-        const file = albumData.thumb;
-        const fileName = albumData.thumb.split('/')[8].split('.')[0];
-        const key = `${uuidv4()}${fileName}`;
-        //Build object to interface with S3 schema
-        const imageForUpload = {
-            bucket,
-            region,
-            key,
-        }
 
         /* Build object to upload album data to GraphQL API */
         const inputData = {
