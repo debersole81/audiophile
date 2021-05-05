@@ -343,31 +343,15 @@ function ProtectedComponents(props) {
             artistName: albumData.artists[0].name,
             label: albumData.labels[0].name,
             releaseYear: albumData.year,
-            albumImage: albumData.thumb,
+            albumImage: albumData.images[0].uri,
         }
 
-        console.log(inputData);
-
+        /* Upload album data to GraphQL API  */
         API.graphql(graphqlOperation(createCollectionAlbum, { input: inputData }))
             .then(console.log('Sucessfully stored album to collection'))
             .catch(error => {
                 console.log(error)
             })
-
-
-
-        /* Upload album image to S3 bucket and then upload album data to GraphQL API*/
-        // Storage.put(key, file)
-        //     .catch(error => {
-        //         console.log(error)
-        //     })
-        //     .then(() => {
-        //         API.graphql(graphqlOperation(createCollectionAlbum, { input: inputData }))
-        //             .catch(error => {
-        //                 console.log(error)
-        //             })
-        //             .then(console.log('Sucessfully stored album to collection'))
-        //     })
     }
 
     /* Add album to user's wishlist */
