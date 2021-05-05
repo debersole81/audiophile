@@ -623,7 +623,6 @@ function ProtectedComponents(props) {
             releaseType: 'Release',
             albumId: albumReleaseData.id,
             masterId: albumReleaseData.master_id,
-            mainReleaseId: '',
             albumTitle: albumReleaseData.title,
             artistName: albumReleaseData.artists[0].name,
             label: albumReleaseData.labels[0].name,
@@ -633,7 +632,7 @@ function ProtectedComponents(props) {
 
         /* Upload release data to GraphQL API  */
         API.graphql(graphqlOperation(createCollectionRelease, { input: inputData }))
-            .then(console.log('Sucessfully stored release to collection'))
+            // .then(console.log('Sucessfully stored release to collection'))
             .catch(error => {
                 console.log(error)
             })
