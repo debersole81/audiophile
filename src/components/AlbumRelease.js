@@ -14,7 +14,7 @@ function AlbumRelease(props) {
     console.log('Render: AlbumRelease Component');
 
     /** Destructure props */
-    const { albumReleaseData } = props.albumReleaseProps;
+    const { albumReleaseData, addReleaseToCollection, addReleaseToWishList } = props.albumReleaseProps;
     console.log(albumReleaseData);
 
     /** State variables */
@@ -89,8 +89,8 @@ function AlbumRelease(props) {
                     </Row>
                     <Row className='album-release-add-buttons-row'>
                         <Col>
-                            <Button variant='dark' size='sm' block><FaRecordVinyl /> ADD TO COLLECTION</Button>
-                            <Button variant='dark' size='sm' block><FaHeart /> ADD TO WISHLIST</Button>
+                            <Button variant='dark' size='sm' onClick={addReleaseToCollection} block><FaRecordVinyl /> ADD TO COLLECTION</Button>
+                            <Button variant='dark' size='sm' onClick={addReleaseToWishList} block><FaHeart /> ADD TO WISHLIST</Button>
                         </Col>
                     </Row>
                 </Col>
