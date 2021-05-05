@@ -3,6 +3,7 @@ import { Route, Switch, useHistory } from 'react-router-dom';
 import { Storage, API, graphqlOperation } from 'aws-amplify';
 import { createCollectionAlbum, createCollectionRelease, createWishListAlbum, createWishListRelease } from '../graphql/mutations';
 import { listCollectionAlbums, listCollectionReleases, listWishListAlbums, listWishListReleases } from '../graphql/queries';
+import { v4 as uuidv4 } from 'uuid';
 import config from '../aws-exports';
 import DiscogsAPISearch from '../helper-functions/DiscogsAPISearch';
 import DiscogsAPIMasterRelease from '../helper-functions/DiscogsAPIMasterRelease';
@@ -342,7 +343,7 @@ function ProtectedComponents(props) {
 
         console.log(fileType, fileName);
 
-        
+
 
 
     }
