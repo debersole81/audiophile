@@ -16,11 +16,7 @@ export const createCollectionAlbum = /* GraphQL */ `
       artistName
       label
       releaseYear
-      albumImage {
-        bucket
-        region
-        key
-      }
+      albumImage
       createdAt
       updatedAt
       owner
@@ -42,11 +38,7 @@ export const updateCollectionAlbum = /* GraphQL */ `
       artistName
       label
       releaseYear
-      albumImage {
-        bucket
-        region
-        key
-      }
+      albumImage
       createdAt
       updatedAt
       owner
@@ -68,11 +60,7 @@ export const deleteCollectionAlbum = /* GraphQL */ `
       artistName
       label
       releaseYear
-      albumImage {
-        bucket
-        region
-        key
-      }
+      albumImage
       createdAt
       updatedAt
       owner
@@ -94,11 +82,7 @@ export const createCollectionRelease = /* GraphQL */ `
       artistName
       label
       releaseYear
-      albumImage {
-        bucket
-        region
-        key
-      }
+      albumImage
       createdAt
       updatedAt
       owner
@@ -120,11 +104,7 @@ export const updateCollectionRelease = /* GraphQL */ `
       artistName
       label
       releaseYear
-      albumImage {
-        bucket
-        region
-        key
-      }
+      albumImage
       createdAt
       updatedAt
       owner
@@ -146,11 +126,7 @@ export const deleteCollectionRelease = /* GraphQL */ `
       artistName
       label
       releaseYear
-      albumImage {
-        bucket
-        region
-        key
-      }
+      albumImage
       createdAt
       updatedAt
       owner
@@ -172,11 +148,7 @@ export const createWishListAlbum = /* GraphQL */ `
       artistName
       label
       releaseYear
-      albumImage {
-        bucket
-        region
-        key
-      }
+      albumImage
       createdAt
       updatedAt
       owner
@@ -198,11 +170,7 @@ export const updateWishListAlbum = /* GraphQL */ `
       artistName
       label
       releaseYear
-      albumImage {
-        bucket
-        region
-        key
-      }
+      albumImage
       createdAt
       updatedAt
       owner
@@ -224,11 +192,7 @@ export const deleteWishListAlbum = /* GraphQL */ `
       artistName
       label
       releaseYear
-      albumImage {
-        bucket
-        region
-        key
-      }
+      albumImage
       createdAt
       updatedAt
       owner
@@ -250,11 +214,7 @@ export const createWishListRelease = /* GraphQL */ `
       artistName
       label
       releaseYear
-      albumImage {
-        bucket
-        region
-        key
-      }
+      albumImage
       createdAt
       updatedAt
       owner
@@ -276,11 +236,7 @@ export const updateWishListRelease = /* GraphQL */ `
       artistName
       label
       releaseYear
-      albumImage {
-        bucket
-        region
-        key
-      }
+      albumImage
       createdAt
       updatedAt
       owner
@@ -302,11 +258,7 @@ export const deleteWishListRelease = /* GraphQL */ `
       artistName
       label
       releaseYear
-      albumImage {
-        bucket
-        region
-        key
-      }
+      albumImage
       createdAt
       updatedAt
       owner

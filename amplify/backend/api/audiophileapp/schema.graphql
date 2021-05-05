@@ -8,7 +8,7 @@ type CollectionAlbum @model @auth(rules: [{ allow: owner }]) {
   artistName: String!
   label: String!
   releaseYear: Int!
-  albumImage: S3Object
+  albumImage: String!
 }
 
 type CollectionRelease @model @auth(rules: [{ allow: owner }]) {
@@ -21,7 +21,7 @@ type CollectionRelease @model @auth(rules: [{ allow: owner }]) {
   artistName: String!
   label: String!
   releaseYear: Int!
-  albumImage: S3Object
+  albumImage: String!
 }
 
 type WishListAlbum @model @auth(rules: [{ allow: owner }]) {
@@ -34,7 +34,7 @@ type WishListAlbum @model @auth(rules: [{ allow: owner }]) {
   artistName: String!
   label: String!
   releaseYear: Int!
-  albumImage: S3Object
+  albumImage: String!
 }
 
 type WishListRelease @model @auth(rules: [{ allow: owner }]) {
@@ -47,11 +47,5 @@ type WishListRelease @model @auth(rules: [{ allow: owner }]) {
   artistName: String!
   label: String!
   releaseYear: Int!
-  albumImage: S3Object
-}
-
-type S3Object {
-  bucket: String!
-  region: String!
-  key: String!
+  albumImage: String!
 }

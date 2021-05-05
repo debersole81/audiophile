@@ -9,15 +9,11 @@ export const onCreateCollectionAlbum = /* GraphQL */ `
       albumId
       masterId
       mainReleaseId
-      albumName
+      albumTitle
       artistName
       label
       releaseYear
-      albumImage {
-        bucket
-        region
-        key
-      }
+      albumImage
       createdAt
       updatedAt
       owner
@@ -32,15 +28,11 @@ export const onUpdateCollectionAlbum = /* GraphQL */ `
       albumId
       masterId
       mainReleaseId
-      albumName
+      albumTitle
       artistName
       label
       releaseYear
-      albumImage {
-        bucket
-        region
-        key
-      }
+      albumImage
       createdAt
       updatedAt
       owner
@@ -55,15 +47,11 @@ export const onDeleteCollectionAlbum = /* GraphQL */ `
       albumId
       masterId
       mainReleaseId
-      albumName
+      albumTitle
       artistName
       label
       releaseYear
-      albumImage {
-        bucket
-        region
-        key
-      }
+      albumImage
       createdAt
       updatedAt
       owner
@@ -78,15 +66,11 @@ export const onCreateCollectionRelease = /* GraphQL */ `
       albumId
       masterId
       mainReleaseId
-      albumName
+      albumTitle
       artistName
       label
       releaseYear
-      albumImage {
-        bucket
-        region
-        key
-      }
+      albumImage
       createdAt
       updatedAt
       owner
@@ -101,15 +85,11 @@ export const onUpdateCollectionRelease = /* GraphQL */ `
       albumId
       masterId
       mainReleaseId
-      albumName
+      albumTitle
       artistName
       label
       releaseYear
-      albumImage {
-        bucket
-        region
-        key
-      }
+      albumImage
       createdAt
       updatedAt
       owner
@@ -124,15 +104,11 @@ export const onDeleteCollectionRelease = /* GraphQL */ `
       albumId
       masterId
       mainReleaseId
-      albumName
+      albumTitle
       artistName
       label
       releaseYear
-      albumImage {
-        bucket
-        region
-        key
-      }
+      albumImage
       createdAt
       updatedAt
       owner
@@ -147,15 +123,11 @@ export const onCreateWishListAlbum = /* GraphQL */ `
       albumId
       masterId
       mainReleaseId
-      albumName
+      albumTitle
       artistName
       label
       releaseYear
-      albumImage {
-        bucket
-        region
-        key
-      }
+      albumImage
       createdAt
       updatedAt
       owner
@@ -170,15 +142,11 @@ export const onUpdateWishListAlbum = /* GraphQL */ `
       albumId
       masterId
       mainReleaseId
-      albumName
+      albumTitle
       artistName
       label
       releaseYear
-      albumImage {
-        bucket
-        region
-        key
-      }
+      albumImage
       createdAt
       updatedAt
       owner
@@ -193,15 +161,11 @@ export const onDeleteWishListAlbum = /* GraphQL */ `
       albumId
       masterId
       mainReleaseId
-      albumName
+      albumTitle
       artistName
       label
       releaseYear
-      albumImage {
-        bucket
-        region
-        key
-      }
+      albumImage
       createdAt
       updatedAt
       owner
@@ -216,15 +180,11 @@ export const onCreateWishListRelease = /* GraphQL */ `
       albumId
       masterId
       mainReleaseId
-      albumName
+      albumTitle
       artistName
       label
       releaseYear
-      albumImage {
-        bucket
-        region
-        key
-      }
+      albumImage
       createdAt
       updatedAt
       owner
@@ -239,15 +199,11 @@ export const onUpdateWishListRelease = /* GraphQL */ `
       albumId
       masterId
       mainReleaseId
-      albumName
+      albumTitle
       artistName
       label
       releaseYear
-      albumImage {
-        bucket
-        region
-        key
-      }
+      albumImage
       createdAt
       updatedAt
       owner
@@ -262,15 +218,11 @@ export const onDeleteWishListRelease = /* GraphQL */ `
       albumId
       masterId
       mainReleaseId
-      albumName
+      albumTitle
       artistName
       label
       releaseYear
-      albumImage {
-        bucket
-        region
-        key
-      }
+      albumImage
       createdAt
       updatedAt
       owner

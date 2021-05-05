@@ -9,15 +9,11 @@ export const getCollectionAlbum = /* GraphQL */ `
       albumId
       masterId
       mainReleaseId
-      albumName
+      albumTitle
       artistName
       label
       releaseYear
-      albumImage {
-        bucket
-        region
-        key
-      }
+      albumImage
       createdAt
       updatedAt
       owner
@@ -41,15 +37,11 @@ export const listCollectionAlbums = /* GraphQL */ `
         albumId
         masterId
         mainReleaseId
-        albumName
+        albumTitle
         artistName
         label
         releaseYear
-        albumImage {
-          bucket
-          region
-          key
-        }
+        albumImage
         createdAt
         updatedAt
         owner
@@ -66,15 +58,11 @@ export const getCollectionRelease = /* GraphQL */ `
       albumId
       masterId
       mainReleaseId
-      albumName
+      albumTitle
       artistName
       label
       releaseYear
-      albumImage {
-        bucket
-        region
-        key
-      }
+      albumImage
       createdAt
       updatedAt
       owner
@@ -98,15 +86,11 @@ export const listCollectionReleases = /* GraphQL */ `
         albumId
         masterId
         mainReleaseId
-        albumName
+        albumTitle
         artistName
         label
         releaseYear
-        albumImage {
-          bucket
-          region
-          key
-        }
+        albumImage
         createdAt
         updatedAt
         owner
@@ -123,15 +107,11 @@ export const getWishListAlbum = /* GraphQL */ `
       albumId
       masterId
       mainReleaseId
-      albumName
+      albumTitle
       artistName
       label
       releaseYear
-      albumImage {
-        bucket
-        region
-        key
-      }
+      albumImage
       createdAt
       updatedAt
       owner
@@ -151,15 +131,11 @@ export const listWishListAlbums = /* GraphQL */ `
         albumId
         masterId
         mainReleaseId
-        albumName
+        albumTitle
         artistName
         label
         releaseYear
-        albumImage {
-          bucket
-          region
-          key
-        }
+        albumImage
         createdAt
         updatedAt
         owner
@@ -176,15 +152,11 @@ export const getWishListRelease = /* GraphQL */ `
       albumId
       masterId
       mainReleaseId
-      albumName
+      albumTitle
       artistName
       label
       releaseYear
-      albumImage {
-        bucket
-        region
-        key
-      }
+      albumImage
       createdAt
       updatedAt
       owner
@@ -208,15 +180,11 @@ export const listWishListReleases = /* GraphQL */ `
         albumId
         masterId
         mainReleaseId
-        albumName
+        albumTitle
         artistName
         label
         releaseYear
-        albumImage {
-          bucket
-          region
-          key
-        }
+        albumImage
         createdAt
         updatedAt
         owner
