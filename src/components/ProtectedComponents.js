@@ -136,6 +136,7 @@ function ProtectedComponents(props) {
     console.log(searchData);
     console.log(albumData);
     console.log(albumMasterData);
+    console.log(albumReleaseData);
 
     /** SearchResultsPagination component callback functions -- Mobile */
     /* Handle previous page button click */
@@ -617,7 +618,26 @@ function ProtectedComponents(props) {
     function addReleaseToCollection(e) {
         e.preventDefault();
 
-        console.log('clicked');
+        /* Build object to upload release data to GraphQL API */
+        const inputData = {
+            releaseType: 'Release',
+            albumId: albumReleaseData.id,
+            masterId: albumReleaseData.master_id,
+            mainReleaseId: '',
+            albumTitle: albumReleaseData.title,
+            artistName: albumReleaseData.artists[0].name,
+            label: albumReleaseData.labels[0].name,
+            releaseYear: albumReleaseData.year,
+            albumImage: albumReleaseData.images[0].uri,
+        }
+
+        /* Upload release data to GraphQL API  */
+        API.graphql(graphqlOperation(createCollectionRelease, { input: inputData }))
+            .then(console.log('Sucessfully stored release to collection'))
+            .catch(error => {
+                console.log(error)
+            })
+
     }
 
     /* Add release to user's wishlist */

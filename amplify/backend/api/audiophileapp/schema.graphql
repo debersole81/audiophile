@@ -16,7 +16,6 @@ type CollectionRelease @model @auth(rules: [{ allow: owner }]) {
   releaseType: String!
   albumId: Int!
   masterId: Int!
-  mainReleaseId: Int!
   albumTitle: String!
   artistName: String!
   label: String!
@@ -42,7 +41,6 @@ type WishListRelease @model @auth(rules: [{ allow: owner }]) {
   releaseType: String!
   albumId: Int!
   masterId: Int!
-  mainReleaseId: Int!
   albumTitle: String!
   artistName: String!
   label: String!

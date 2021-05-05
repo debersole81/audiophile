@@ -57,7 +57,6 @@ export const getCollectionRelease = /* GraphQL */ `
       releaseType
       albumId
       masterId
-      mainReleaseId
       albumTitle
       artistName
       label
@@ -85,7 +84,6 @@ export const listCollectionReleases = /* GraphQL */ `
         releaseType
         albumId
         masterId
-        mainReleaseId
         albumTitle
         artistName
         label
@@ -151,7 +149,6 @@ export const getWishListRelease = /* GraphQL */ `
       releaseType
       albumId
       masterId
-      mainReleaseId
       albumTitle
       artistName
       label
@@ -179,7 +176,6 @@ export const listWishListReleases = /* GraphQL */ `
         releaseType
         albumId
         masterId
-        mainReleaseId
         albumTitle
         artistName
         label

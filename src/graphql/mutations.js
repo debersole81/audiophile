@@ -77,7 +77,6 @@ export const createCollectionRelease = /* GraphQL */ `
       releaseType
       albumId
       masterId
-      mainReleaseId
       albumTitle
       artistName
       label
@@ -99,7 +98,6 @@ export const updateCollectionRelease = /* GraphQL */ `
       releaseType
       albumId
       masterId
-      mainReleaseId
       albumTitle
       artistName
       label
@@ -121,7 +119,6 @@ export const deleteCollectionRelease = /* GraphQL */ `
       releaseType
       albumId
       masterId
-      mainReleaseId
       albumTitle
       artistName
       label
@@ -209,7 +206,6 @@ export const createWishListRelease = /* GraphQL */ `
       releaseType
       albumId
       masterId
-      mainReleaseId
       albumTitle
       artistName
       label
@@ -231,7 +227,6 @@ export const updateWishListRelease = /* GraphQL */ `
       releaseType
       albumId
       masterId
-      mainReleaseId
       albumTitle
       artistName
       label
@@ -253,7 +248,6 @@ export const deleteWishListRelease = /* GraphQL */ `
       releaseType
       albumId
       masterId
-      mainReleaseId
       albumTitle
       artistName
       label
