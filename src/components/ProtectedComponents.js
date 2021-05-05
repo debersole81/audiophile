@@ -361,10 +361,21 @@ function ProtectedComponents(props) {
             albumImage: imageForUpload,
         }
 
+        console.log(inputData);
+        console.log(createCollectionAlbum);
+
         /* Upload album image to S3 bucket and then upload album data to GraphQL API*/
-
-
-
+        Storage.put(key, file)
+            .catch(error => {
+                console.log(error)
+            })
+            .then(() => {
+                API.graphql(graphqlOperation(createCollectionAlbum, { input: inputData }))
+                    .catch(error => {
+                        console.log(error)
+                    })
+                    .then(console.log('Sucessfully stored album to collection'))
+            })
     }
 
     /* Add album to user's wishlist */
