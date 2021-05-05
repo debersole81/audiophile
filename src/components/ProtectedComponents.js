@@ -338,10 +338,16 @@ function ProtectedComponents(props) {
         e.preventDefault();
 
         /** Upload album thumb image to S3 */
-        const fileType = albumData.thumb.split('.')[3];
+        const file = albumData.thumb;
         const fileName = albumData.thumb.split('/')[8].split('.')[0];
-
-        console.log(fileType, fileName);
+        const key = `${uuidv4()}${fileName}`;
+        //Build S3 object
+        const imageForUpload = {
+            bucket,
+            region,
+            key,
+        }
+        console.log(imageForUpload);
 
 
 
