@@ -4,7 +4,7 @@ type CollectionAlbum @model @auth(rules: [{ allow: owner }]) {
   albumId: Int!
   masterId: Int!
   mainReleaseId: Int!
-  albumName: String!
+  albumTitle: String!
   artistName: String!
   label: String!
   releaseYear: Int!
@@ -17,7 +17,7 @@ type CollectionRelease @model @auth(rules: [{ allow: owner }]) {
   albumId: Int!
   masterId: Int!
   mainReleaseId: Int!
-  albumName: String!
+  albumTitle: String!
   artistName: String!
   label: String!
   releaseYear: Int!
@@ -30,7 +30,7 @@ type WishListAlbum @model @auth(rules: [{ allow: owner }]) {
   albumId: Int!
   masterId: Int!
   mainReleaseId: Int!
-  albumName: String!
+  albumTitle: String!
   artistName: String!
   label: String!
   releaseYear: Int!
@@ -43,7 +43,7 @@ type WishListRelease @model @auth(rules: [{ allow: owner }]) {
   albumId: Int!
   masterId: Int!
   mainReleaseId: Int!
-  albumName: String!
+  albumTitle: String!
   artistName: String!
   label: String!
   releaseYear: Int!
