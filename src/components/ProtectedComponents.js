@@ -385,15 +385,15 @@ function ProtectedComponents(props) {
             .catch(error => {
                 console.log(error)
             })
-        
+
         /* Fetch albums from user's collection */
         API.graphql(graphqlOperation(listCollectionAlbums))
-        .then((data) => {
-            setUserCollectionAlbums(data.data.listCollectionAlbums.items);
-        })
-        .catch((error) => {
-            console.log(error);
-        })
+            .then((data) => {
+                setUserCollectionAlbums(data.data.listCollectionAlbums.items);
+            })
+            .catch((error) => {
+                console.log(error);
+            })
     }
 
     /* Add album to user's wishlist */
@@ -417,6 +417,14 @@ function ProtectedComponents(props) {
         API.graphql(graphqlOperation(createWishListAlbum, { input: inputData }))
             .catch(error => {
                 console.log(error)
+            })
+
+        API.graphql(graphqlOperation(listWishListAlbums))
+            .then((data) => {
+                setUserWishListAlbums(data.data.listWishListAlbums.items);
+            })
+            .catch((error) => {
+                console.log(error);
             })
     }
 
