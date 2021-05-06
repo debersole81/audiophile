@@ -385,6 +385,15 @@ function ProtectedComponents(props) {
             .catch(error => {
                 console.log(error)
             })
+        
+        /* Fetch albums from user's collection */
+        API.graphql(graphqlOperation(listCollectionAlbums))
+        .then((data) => {
+            setUserCollectionAlbums(data.data.listCollectionAlbums.items);
+        })
+        .catch((error) => {
+            console.log(error);
+        })
     }
 
     /* Add album to user's wishlist */
@@ -406,7 +415,6 @@ function ProtectedComponents(props) {
 
         /* Upload album data to GraphQL API  */
         API.graphql(graphqlOperation(createWishListAlbum, { input: inputData }))
-            .then(console.log('Sucessfully stored album to collection'))
             .catch(error => {
                 console.log(error)
             })
