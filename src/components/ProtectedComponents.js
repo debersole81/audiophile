@@ -45,28 +45,33 @@ function ProtectedComponents(props) {
             .catch((error) => {
                 console.log(error);
             })
-        
+
         /* Fetch releases from user's collection */
         API.graphql(graphqlOperation(listCollectionReleases))
-        .then((data) => {
-            setUserCollectionReleases(data.data.listCollectionReleases.items);
-        })
-        .catch((error) => {
-            console.log(error);
-        })
+            .then((data) => {
+                setUserCollectionReleases(data.data.listCollectionReleases.items);
+            })
+            .catch((error) => {
+                console.log(error);
+            })
 
         /* Fetch albums from user's wishlist */
         API.graphql(graphqlOperation(listWishListAlbums))
-        .then((data) => {
-            setUserWishListAlbums(data.data.listWishListAlbums.items);
-        })
-        .catch((error) => {
-            console.log(error);
-        })
-        
-        /* Fetch releases from user's wishlist */
+            .then((data) => {
+                setUserWishListAlbums(data.data.listWishListAlbums.items);
+            })
+            .catch((error) => {
+                console.log(error);
+            })
 
-        
+        /* Fetch releases from user's wishlist */
+        API.graphql(graphqlOperation(listWishListReleases))
+            .then((data) => {
+                setUserWishListReleases(data.data.listWishListReleases.items);
+            })
+            .catch((error) => {
+                console.log(error);
+            })
     }, [])
     /**#region Global hooks */
 
