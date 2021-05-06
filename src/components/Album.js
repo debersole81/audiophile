@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../App.css';
 import masterReleaseLogo from '../assets/master-release-logo.svg';
 import AlbumTracks from '../components/AlbumTracks'
@@ -43,13 +43,14 @@ function Album(props) {
 
     console.log(albumData);
     console.log(userCollectionAlbums);
-    
+    console.log(userWishListAlbums);
 
-    /**State variables*/
-    /**Album images modal component state variable*/
+    /*#region State Variables*/
+    /** Album images modal component state variable */
     const [showModal, setShowModal] = useState(false);
+    /*#endregion State Variables*/
 
-    /**Callback functions*/
+    /* #region Callback Functions */
     /**Handle show more images button click*/
     const handleShowModal = (e) => {
         e.preventDefault();
@@ -57,20 +58,20 @@ function Album(props) {
         //Set showModal state to true
         setShowModal(true);
     };
-
+    
     /**Handle modal close button click*/
     const handleCloseModal = (e) => {
         //Set showModal to false
         setShowModal(false);
     };
+    /* #endregion Callback Functions */
 
-    /**Prepare images for carousel react bootstrap component*/
+    /* #region Carousel Component Formatting */
     //Declare empty array
     const images = [];
 
     //Format images and push onto images array
     albumData.images.forEach((element, index) => {
-
         if (element.type === 'secondary') {
             images.push(
                 <Carousel.Item key={index}>
@@ -83,6 +84,7 @@ function Album(props) {
             )
         };
     });
+    /* #endregion Carousel Component Formatting */
 
     return (
         <Container>
@@ -120,8 +122,14 @@ function Album(props) {
                     </Row>
                     <Row className='album-add-buttons-row'>
                         <Col>
-                            <Button variant='dark' size='sm' onClick={addAlbumToCollection} block><FaRecordVinyl /> ADD TO COLLECTION</Button>
-                            <Button variant='dark' size='sm' onClick={addAlbumToWishList} block><FaHeart /> ADD TO WISHLIST</Button>
+                            {(userCollectionAlbums.some(element => (element.albumId === albumData.id))) ?
+                                <Button variant='dark' size='sm' block><FaRecordVinyl /> REMOVE FROM COLLECTION</Button> :
+                                <Button variant='dark' size='sm' onClick={addAlbumToCollection} block><FaHeart /> ADD TO COLLECTION</Button>
+                            }
+                            {(userWishListAlbums.some(element => (element.albumId === albumData.id))) ?
+                                <Button variant='dark' size='sm' block><FaHeart /> REMOVE FROM WISHLIST</Button> :
+                                <Button variant='dark' size='sm' onClick={addAlbumToWishList} block><FaHeart /> ADD TO WISHLIST</Button>
+                            }
                         </Col>
                     </Row>
                 </Col>
