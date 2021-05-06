@@ -41,10 +41,6 @@ function Album(props) {
         userWishListAlbums
     } = props.albumProps;
 
-    console.log(albumData);
-    console.log(userCollectionAlbums);
-    console.log(userWishListAlbums);
-
     /*#region State Variables*/
     /** Album images modal component state variable */
     const [showModal, setShowModal] = useState(false);
