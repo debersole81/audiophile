@@ -30,6 +30,12 @@ function ProtectedComponents(props) {
         // window.onbeforeunload = () => {
         //     localStorage.clear();
         // };
+
+        //Will need a GraphQL api call for all of the queries
+        //Will need state variable objects for each call
+        //This state will get updated here, and in the handlers for adding and deleting albums
+        //Combine objects in collection and wishlist components
+
         API.graphql(graphqlOperation(listCollectionAlbums))
             .then((result) => {
                 console.log(result)
@@ -636,14 +642,29 @@ function ProtectedComponents(props) {
             .catch(error => {
                 console.log(error)
             })
-
     }
 
     /* Add release to user's wishlist */
     function addReleaseToWishList(e) {
         e.preventDefault();
+        /* Build object to upload release data to GraphQL API */
+        const inputData = {
+            releaseType: 'Release',
+            albumId: albumReleaseData.id,
+            masterId: albumReleaseData.master_id,
+            albumTitle: albumReleaseData.title,
+            artistName: albumReleaseData.artists[0].name,
+            label: albumReleaseData.labels[0].name,
+            releaseYear: albumReleaseData.year,
+            albumImage: albumReleaseData.images[0].uri,
+        }
 
-        console.log('clicked');
+        /* Upload release data to GraphQL API  */
+        API.graphql(graphqlOperation(createWishListRelease, { input: inputData }))
+            // .then(console.log('Sucessfully stored release to collection'))
+            .catch(error => {
+                console.log(error)
+            })
     }
 
 
