@@ -36,13 +36,19 @@ function ProtectedComponents(props) {
         //This state will get updated here, and in the handlers for adding and deleting albums
         //Combine objects in collection and wishlist components
 
+        /* Fetch albums from user's collection */
         API.graphql(graphqlOperation(listCollectionAlbums))
-            .then((result) => {
-                console.log(result)
+            .then((data) => {
+                setUserCollectionAlbums(data.data.listCollectionAlbums.items);
             })
+            .catch((error) => {
+                console.log(error);
+            })
+        
+        /* Fetch releases from user's collection */
+        
     }, [])
     /**#region Auto Logout Authenticated User */
-
 
     /* #region Global Variables */
     /** useHistory hook variable. */
@@ -54,7 +60,12 @@ function ProtectedComponents(props) {
     const [userCollectionReleases, setUserCollectionReleases] = useState({});
     const [userWishListAlbums, setUserWishListAlbums] = useState({});
     const [userWishListReleases, setUserWishListReleases] = useState({});
-        
+
+    console.log(userCollectionAlbums);
+    console.log(userCollectionReleases);
+    console.log(userWishListAlbums);
+    console.log(userWishListReleases);
+
     /** Search component state variables */
     const [search, setSearch] = useState('');
 
