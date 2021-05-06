@@ -46,6 +46,16 @@ function ProtectedComponents(props) {
             })
         
         /* Fetch releases from user's collection */
+        API.graphql(graphqlOperation(listCollectionReleases))
+        .then((data) => {
+            setUserCollectionReleases(data.data.listCollectionReleases.items);
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+
+        /* Fetch albums from user's wishlist */
+        /* Fetch releases from user's wishlist */
         
     }, [])
     /**#region Auto Logout Authenticated User */
