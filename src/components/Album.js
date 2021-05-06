@@ -33,7 +33,17 @@ import { FaHeart, FaRecordVinyl } from 'react-icons/fa';
 function Album(props) {
 
     /**Destructure props*/
-    const { albumData, albumMasterData, addAlbumToCollection, addAlbumToWishList } = props.albumProps;
+    const { albumData,
+        albumMasterData,
+        addAlbumToCollection,
+        addAlbumToWishList,
+        userCollectionAlbums,
+        userWishListAlbums
+    } = props.albumProps;
+
+    console.log(albumData);
+    console.log(userCollectionAlbums);
+    
 
     /**State variables*/
     /**Album images modal component state variable*/
