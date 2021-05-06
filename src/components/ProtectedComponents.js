@@ -23,7 +23,7 @@ function ProtectedComponents(props) {
 
     console.log('Render: Protected Components');
 
-    /**#region Auto Logout Authenticated User */
+    /**#region Global hooks */
     useEffect(() => {
         // autoLogOut()
         // //Clear authenticate user from local storage on window close
@@ -36,6 +36,7 @@ function ProtectedComponents(props) {
         //This state will get updated here, and in the handlers for adding and deleting albums
         //Combine objects in collection and wishlist components
 
+        /** Fetch user collection data */
         /* Fetch albums from user's collection */
         API.graphql(graphqlOperation(listCollectionAlbums))
             .then((data) => {
@@ -55,10 +56,19 @@ function ProtectedComponents(props) {
         })
 
         /* Fetch albums from user's wishlist */
+        API.graphql(graphqlOperation(listWishListAlbums))
+        .then((data) => {
+            setUserWishListAlbums(data.data.listWishListAlbums.items);
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+        
         /* Fetch releases from user's wishlist */
+
         
     }, [])
-    /**#region Auto Logout Authenticated User */
+    /**#region Global hooks */
 
     /* #region Global Variables */
     /** useHistory hook variable. */
