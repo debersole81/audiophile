@@ -49,6 +49,12 @@ function ProtectedComponents(props) {
     const history = useHistory();
 
     /* #region State Variables */
+    /** User library state variables */
+    const [userCollectionAlbums, setUserCollectionAlbums] = useState({});
+    const [userCollectionReleases, setUserCollectionReleases] = useState({});
+    const [userWishListAlbums, setUserWishListAlbums] = useState({});
+    const [userWishListReleases, setUserWishListReleases] = useState({});
+        
     /** Search component state variables */
     const [search, setSearch] = useState('');
 
