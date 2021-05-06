@@ -13,7 +13,12 @@ import { FaHeart, FaRecordVinyl } from 'react-icons/fa';
 function AlbumRelease(props) {
 
     /** Destructure props */
-    const { albumReleaseData, addReleaseToCollection, addReleaseToWishList } = props.albumReleaseProps;
+    const { albumReleaseData,
+        addReleaseToCollection,
+        addReleaseToWishList,
+        userCollectionReleases,
+        userWishListReleases
+    } = props.albumReleaseProps;
 
     /** State variables */
     /* Album release images modal component state variable */
@@ -54,8 +59,6 @@ function AlbumRelease(props) {
         };
     });
 
-    console.log(images);
-
     return (
         <Container>
             <Row>
@@ -87,8 +90,14 @@ function AlbumRelease(props) {
                     </Row>
                     <Row className='album-release-add-buttons-row'>
                         <Col>
-                            <Button variant='dark' size='sm' onClick={addReleaseToCollection} block><FaRecordVinyl /> ADD TO COLLECTION</Button>
-                            <Button variant='dark' size='sm' onClick={addReleaseToWishList} block><FaHeart /> ADD TO WISHLIST</Button>
+                            {(userCollectionReleases.some((element) => (element.albumId === albumReleaseData.id))) ?
+                                <Button variant='dark' size='sm' block><FaRecordVinyl /> REMOVE FROM COLLECTION</Button> :
+                                <Button variant='dark' size='sm' onClick={addReleaseToCollection} block><FaRecordVinyl /> ADD TO COLLECTION</Button>
+                            }
+                            {(userWishListReleases.some((element) => (element.albumId === albumReleaseData.id))) ?
+                                <Button variant='dark' size='sm' block><FaHeart /> REMOVE FROM WISHLIST</Button> :
+                                <Button variant='dark' size='sm' onClick={addReleaseToWishList} block><FaHeart /> ADD TO WISHLIST</Button>
+                            }
                         </Col>
                     </Row>
                 </Col>
