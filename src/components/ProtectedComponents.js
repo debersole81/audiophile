@@ -726,6 +726,8 @@ function ProtectedComponents(props) {
         albumMasterData,
         addAlbumToCollection,
         addAlbumToWishList,
+        userCollectionAlbums,
+        userWishListAlbums,
     };
 
     /** AlbumReleasesHeader and AlbumReleases component props */
