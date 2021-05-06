@@ -717,7 +717,7 @@ function ProtectedComponents(props) {
         handleNextSearchResultsPage,
         handleLastSearchResultsPage,
         handlePreviousSearchResultsPageMobile,
-        handleNextSearchResultsPageMobile,
+        handleNextSearchResultsPageMobile
     };
 
     /** Album component props */
@@ -727,7 +727,7 @@ function ProtectedComponents(props) {
         addAlbumToCollection,
         addAlbumToWishList,
         userCollectionAlbums,
-        userWishListAlbums,
+        userWishListAlbums
     };
 
     /** AlbumReleasesHeader and AlbumReleases component props */
@@ -735,7 +735,7 @@ function ProtectedComponents(props) {
         albumReleasesData,
         handleViewAlbumReleases,
         handleHideAlbumReleases,
-        handleViewAlbumRelease,
+        handleViewAlbumRelease
     };
 
     /** AlbumReleasesHeader and AlbumReleasesPagination component props */
@@ -751,7 +751,7 @@ function ProtectedComponents(props) {
         handleNextAlbumReleasesPage,
         handleLastAlbumReleasesPage,
         handlePreviousAlbumReleasesPageMobile,
-        handleNextAlbumReleasesPageMobile,
+        handleNextAlbumReleasesPageMobile
     };
 
     /** AlbumRelease component props */
@@ -759,8 +759,9 @@ function ProtectedComponents(props) {
         albumReleaseData,
         addReleaseToCollection,
         addReleaseToWishList,
+        userCollectionReleases,
+        userWishListReleases
     };
-
     /* #endregion Props Objects*/
 
 
