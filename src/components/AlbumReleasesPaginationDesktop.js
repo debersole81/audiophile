@@ -6,8 +6,6 @@ import Pagination from 'react-bootstrap/Pagination';
 
 function AlbumReleasesPaginationDesktop(props) {
 
-    console.log('Render: AlbumReleasesPaginationDesktop Component');
-
     /** Destructure props */
     const { albumReleasesPagination } = props.albumReleasesPaginationProps;
     const { albumReleasesMinPages } = props.albumReleasesPaginationProps;

@@ -17,8 +17,6 @@ import Col from 'react-bootstrap/Col';
 
 function Search(props) {
 
-    console.log('Render: Search Component');
-
     /** Destructure props */
     const { search } = props.searchProps;
     const { handleSearch } = props.searchProps;

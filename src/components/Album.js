@@ -31,14 +31,11 @@ import { FaHeart, FaRecordVinyl } from 'react-icons/fa';
  */
 
 function Album(props) {
-    console.log('Render: Album Component');
 
     /**Destructure props*/
     const { albumData, albumMasterData, addAlbumToCollection, addAlbumToWishList } = props.albumProps;
-    console.log(albumData, albumMasterData);
 
     /**State variables*/
-
     /**Album images modal component state variable*/
     const [showModal, setShowModal] = useState(false);
 

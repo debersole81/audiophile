@@ -13,8 +13,6 @@ function SignIn(props) {
     const { onFormChange, signIn, formErrors, signUpLink, resetPasswordLink } = props.signInProps;
     /* #endregion Props destructure */
 
-    console.log(formErrors);
-
     /* #region Custom hooks */
     /** Implement custom hook to render mobile return at <= 761 px */
     //Destructure width variable from useViewPort hook

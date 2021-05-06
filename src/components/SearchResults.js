@@ -8,8 +8,6 @@ import Button from 'react-bootstrap/Button';
 
 function SearchResults(props) {
 
-    console.log('Render: Search Results Component');
-
     /** Destructure props */
     const { searchData } = props.searchResultsProps;
     const { handleAlbumClick } = props.searchResultsProps;    

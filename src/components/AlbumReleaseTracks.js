@@ -7,9 +7,6 @@ import Table from 'react-bootstrap/Table';
 
 function AlbumReleaseTracks(props) {
 
-    console.log('Render: AlbumReleaseTracks Component');
-    console.log(props);
-
     /** Destructuring props */
     const { albumReleaseData } = props.albumReleaseProps;
 

@@ -23,9 +23,6 @@ import Container from 'react-bootstrap/Container';
 
 function AlbumReleasesHeader(props) {
 
-    console.log('Render: AlbumVersionsHeader Component');
-    console.log(props);
-
     /**Destructuring props*/
     const { albumReleasesData } = props.albumReleasesProps;
     const { handleViewAlbumReleases } = props.albumReleasesProps;

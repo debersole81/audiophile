@@ -13,8 +13,6 @@ function ConfirmSignUp(props) {
     const { onFormChange, formState, formErrors, confirmSignUp, signInLink, resendSignUpCodeLink } = props.confirmSignUpProps;
     /* #endregion Props destructure */
 
-    console.log(formState);
-
     /* #region Custom hooks */
     /** Implement custom hook to render mobile return at <= 761 px */
     //Destructure width variable from useViewPort hook

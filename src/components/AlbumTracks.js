@@ -8,9 +8,6 @@ import Table from 'react-bootstrap/Table';
 
 function AlbumTracks(props) {
 
-    console.log('Render: AlbumTracks Component');
-    console.log(props);
-
     /*Destructuring props*/
     const { albumData } = props.albumProps;
     const { albumMasterData } = props.albumProps;

@@ -21,20 +21,14 @@ import Image from 'react-bootstrap/Image';
 
 function AlbumReleases(props) {
 
-    console.log('Render: AlbumReleases Component')
-    console.log(props);
-
     /**Destructure props*/
     const { albumReleasesData } = props.albumReleasesProps;
     const { handleViewAlbumRelease } = props.albumReleasesProps;
-
-    console.log(albumReleasesData);
 
     /**Scroll to the bottom of the window on component mount*/
     useEffect(() => {
         window.scroll(0, 1200)
     }, []);
-
 
     return (
         <Row>

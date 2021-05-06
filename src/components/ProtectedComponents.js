@@ -21,8 +21,6 @@ import { autoLogOut } from "../helper-functions/AutoLogOut";
 
 function ProtectedComponents(props) {
 
-    console.log('Render: Protected Components');
-
     /**#region Global hooks */
     useEffect(() => {
         // autoLogOut()
@@ -85,11 +83,6 @@ function ProtectedComponents(props) {
     const [userCollectionReleases, setUserCollectionReleases] = useState({});
     const [userWishListAlbums, setUserWishListAlbums] = useState({});
     const [userWishListReleases, setUserWishListReleases] = useState({});
-
-    console.log(userCollectionAlbums);
-    console.log(userCollectionReleases);
-    console.log(userWishListAlbums);
-    console.log(userWishListReleases);
 
     /** Search component state variables */
     const [search, setSearch] = useState('');
@@ -179,12 +172,6 @@ function ProtectedComponents(props) {
 
                 })
     };
-
-
-    console.log(searchData);
-    console.log(albumData);
-    console.log(albumMasterData);
-    console.log(albumReleaseData);
 
     /** SearchResultsPagination component callback functions -- Mobile */
     /* Handle previous page button click */
@@ -395,7 +382,6 @@ function ProtectedComponents(props) {
 
         /* Upload album data to GraphQL API  */
         API.graphql(graphqlOperation(createCollectionAlbum, { input: inputData }))
-            .then(console.log('Sucessfully stored album to collection'))
             .catch(error => {
                 console.log(error)
             })
@@ -680,7 +666,6 @@ function ProtectedComponents(props) {
 
         /* Upload release data to GraphQL API  */
         API.graphql(graphqlOperation(createCollectionRelease, { input: inputData }))
-            // .then(console.log('Sucessfully stored release to collection'))
             .catch(error => {
                 console.log(error)
             })
@@ -703,7 +688,6 @@ function ProtectedComponents(props) {
 
         /* Upload release data to GraphQL API  */
         API.graphql(graphqlOperation(createWishListRelease, { input: inputData }))
-            // .then(console.log('Sucessfully stored release to collection'))
             .catch(error => {
                 console.log(error)
             })

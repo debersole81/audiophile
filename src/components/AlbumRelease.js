@@ -11,11 +11,9 @@ import Carousel from 'react-bootstrap/Carousel';
 import { FaHeart, FaRecordVinyl } from 'react-icons/fa';
 
 function AlbumRelease(props) {
-    console.log('Render: AlbumRelease Component');
 
     /** Destructure props */
     const { albumReleaseData, addReleaseToCollection, addReleaseToWishList } = props.albumReleaseProps;
-    console.log(albumReleaseData);
 
     /** State variables */
     /* Album release images modal component state variable */

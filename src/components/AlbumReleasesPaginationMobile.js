@@ -6,8 +6,6 @@ import Pagination from 'react-bootstrap/Pagination';
 
 function AlbumReleasesPaginationMobile(props) {
 
-    console.log('Render: AlbumVersionPaginationMobile Component');
-
     /** Destructure props */
     const { albumReleasesPagination } = props.albumReleasesPaginationProps;
     const { albumReleasesMinPagesMobile } = props.albumReleasesPaginationProps;
@@ -32,8 +30,6 @@ function AlbumReleasesPaginationMobile(props) {
             </Pagination.Item>
         );
     };
-
-    console.log(pages);
 
     if (albumReleasesPagination.pages > 1) {
         return (

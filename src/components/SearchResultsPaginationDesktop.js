@@ -7,8 +7,6 @@ import Pagination from 'react-bootstrap/Pagination';
 
 function SearchResultsPaginationDesktop(props) {
 
-    console.log('Render: SearchResultsPagination Component');
-
     /** Destructure props */
     const { searchResultsPagination } = props.searchResultsPaginationProps;
     const { searchResultsMinPages } = props.searchResultsPaginationProps;
