@@ -449,12 +449,35 @@ function ProtectedComponents(props) {
                 setUserCollectionAlbums(data.data.listCollectionAlbums.items);
             })
             .catch((error) => {
-                console.log(error);
+                console.log(error)
             })
-    }
-
+    };
 
     /* Remove album from user's wishlist*/
+    function deleteAlbumFromWishList(e) {
+        e.preventDefault();
+
+        /* Build object to delete album data from GraphQL API */
+        const inputData = {
+            id: e.target.id
+        }
+
+        /* Delete album data from GraphQL API */
+        API.graphql(graphqlOperation(deleteWishListAlbum), { input: inputData })
+            .catch((error) => {
+                console.log(error)
+            })
+
+        /* Fetch albums from user's wishlist */
+        API.graphql(graphqlOperation(listWishListAlbums))
+            .then((data) => {
+                setUserWishListAlbums(data.data.listWishListAlbums.items);
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    };
+
 
     /** AlbumReleasesHeader component callback functions */
     /* Handle view album releases button click */
@@ -734,8 +757,6 @@ function ProtectedComponents(props) {
                 console.log(error)
             })
     }
-
-
     /* #endregion Callback Functions */
 
 
@@ -769,8 +790,9 @@ function ProtectedComponents(props) {
         addAlbumToCollection,
         addAlbumToWishList,
         deleteAlbumFromCollection,
+        deleteAlbumFromWishList,
         userCollectionAlbums,
-        userWishListAlbums,
+        userWishListAlbums
     };
 
     /** AlbumReleasesHeader and AlbumReleases component props */
