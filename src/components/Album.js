@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import '../App.css';
 import masterReleaseLogo from '../assets/master-release-logo.svg';
 import AlbumTracks from '../components/AlbumTracks'
@@ -20,16 +20,6 @@ import { FaHeart, FaRecordVinyl } from 'react-icons/fa';
  * 
  */
 
-/**
- * Tweaks to wishlist/collection buttons
- * If the album is in collection, render remove from collection button, don't render wishlist
- * If the albbum is in wishlist, render remove from wishlist, don't render collection
- */
-
-/**
- * Refactor css. Can I move anything inline?
- */
-
 function Album(props) {
 
     /**Destructure props*/
@@ -37,14 +27,18 @@ function Album(props) {
         albumMasterData,
         addAlbumToCollection,
         addAlbumToWishList,
+        deleteAlbumFromCollection,
         userCollectionAlbums,
         userWishListAlbums
     } = props.albumProps;
 
-    /*#region State Variables*/
+    console.log(userCollectionAlbums);
+    console.log(userWishListAlbums);
+
+    /* #region State Variables*/
     /** Album images modal component state variable */
     const [showModal, setShowModal] = useState(false);
-    /*#endregion State Variables*/
+    /* #endregion State Variables*/
 
     /* #region Callback Functions */
     /**Handle show more images button click*/
@@ -54,7 +48,7 @@ function Album(props) {
         //Set showModal state to true
         setShowModal(true);
     };
-    
+
     /**Handle modal close button click*/
     const handleCloseModal = (e) => {
         //Set showModal to false
@@ -81,6 +75,33 @@ function Album(props) {
         };
     });
     /* #endregion Carousel Component Formatting */
+
+    /* #region Extract GraphQL album id's for delete mutation */
+    let collectionAlbumId;
+    let wishListAlbumId;
+    
+    //Map through each element in userCollectionAlbums
+    userCollectionAlbums.forEach((element) => {
+        //Compare userCollectionAlbums albumId to albumData id
+        if(element.albumId === albumData.id) {
+            //Set collectionAlbumId equal to the matching element's GraphQL generated id   
+            return(collectionAlbumId = element.id)
+        }; 
+    })
+    
+    //Map through each element in userWishListAlbums
+    userWishListAlbums.forEach((element) => {
+        //Compare userCollectionAlbums albumId to albumData id
+        if(element.albumId === albumData.id) {
+            //Set collectionAlbumId equal to the matching element's GraphQL generated id   
+            return(wishListAlbumId = element.id)
+        }; 
+    })
+
+    console.log(collectionAlbumId);
+    console.log(wishListAlbumId);
+
+    /* #endregion Extract GraphQL album id's for delete mutation */
 
     return (
         <Container>
@@ -119,12 +140,12 @@ function Album(props) {
                     <Row className='album-add-buttons-row'>
                         <Col>
                             {(userCollectionAlbums.some(element => (element.albumId === albumData.id))) ?
-                                <Button variant='dark' size='sm' block><FaRecordVinyl /> REMOVE FROM COLLECTION</Button> :
+                                <Button variant='dark' size='sm' id={collectionAlbumId} onClick={deleteAlbumFromCollection} block><FaRecordVinyl /> REMOVE FROM COLLECTION</Button> :
                                 <Button variant='dark' size='sm' onClick={addAlbumToCollection} block><FaHeart /> ADD TO COLLECTION</Button>
                             }
                             {(userWishListAlbums.some(element => (element.albumId === albumData.id))) ?
                                 <Button variant='dark' size='sm' block><FaHeart /> REMOVE FROM WISHLIST</Button> :
-                                <Button variant='dark' size='sm' onClick={addAlbumToWishList} block><FaHeart /> ADD TO WISHLIST</Button>
+                                <Button variant='dark' size='sm' id={wishListAlbumId} onClick={addAlbumToWishList} block><FaHeart /> ADD TO WISHLIST</Button>
                             }
                         </Col>
                     </Row>
