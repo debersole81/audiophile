@@ -468,7 +468,7 @@ function ProtectedComponents(props) {
         }
 
         /* Delete album data from GraphQL API */
-        API.graphql(graphqlOperation(deleteWishListAlbum), { input: inputData })
+        API.graphql(graphqlOperation(deleteWishListAlbum, { input: inputData }))
             .catch((error) => {
                 console.log(error)
             })
