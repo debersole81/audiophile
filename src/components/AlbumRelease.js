@@ -16,6 +16,7 @@ function AlbumRelease(props) {
     const { albumReleaseData,
         addReleaseToCollection,
         addReleaseToWishList,
+        deleteReleaseFromCollection,
         userCollectionReleases,
         userWishListReleases
     } = props.albumReleaseProps;
@@ -81,7 +82,7 @@ function AlbumRelease(props) {
         //Compare userWishListReleases albumId to albumReleaseData id
         if (element.albumId === albumReleaseData.id) {
             //Set wishListReleaseId equal to the matching element's GraphQL generated id
-            return(wishListReleaseId = element.id)
+            return (wishListReleaseId = element.id)
         }
     })
 
@@ -123,7 +124,7 @@ function AlbumRelease(props) {
                     <Row className='album-release-add-buttons-row'>
                         <Col>
                             {(userCollectionReleases.some((element) => (element.albumId === albumReleaseData.id))) ?
-                                <Button variant='dark' size='sm' block><FaRecordVinyl /> REMOVE FROM COLLECTION</Button> :
+                                <Button variant='dark' size='sm' id={collectionReleaseId} onClick={deleteReleaseFromCollection} block><FaRecordVinyl /> REMOVE FROM COLLECTION</Button> :
                                 <Button variant='dark' size='sm' onClick={addReleaseToCollection} block><FaRecordVinyl /> ADD TO COLLECTION</Button>
                             }
                             {(userWishListReleases.some((element) => (element.albumId === albumReleaseData.id))) ?
