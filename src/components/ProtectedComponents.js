@@ -809,13 +809,33 @@ function ProtectedComponents(props) {
                         console.log(error)
                     })
             })
-
-
     }
 
     /* Delete release from user's wishlist */
+    function deleteReleaseFromWishList(e) {
+        e.preventDefault();
 
+        /* Build object to delete release data from GraphQL API */
+        const inputData = {
+            id: e.target.id
+        }
 
+        /* Delete release data from GraphQL API */
+        API.graphql(graphqlOperation(deleteWishListRelease, { input: inputData }))
+            .catch((error) => {
+                console.log(error)
+            })
+            /* Fetch releases from user's wishlist */
+            .then(() => {
+                API.graphql(graphqlOperation(listWishListReleases))
+                    .then((data) => {
+                        setUserWishListReleases(data.data.listWishListReleases.items);
+                    })
+                    .catch((error) => {
+                        console.log(error)
+                    })
+            })
+    }
     /* #endregion Callback Functions */
 
 
@@ -884,6 +904,7 @@ function ProtectedComponents(props) {
         addReleaseToCollection,
         addReleaseToWishList,
         deleteReleaseFromCollection,
+        deleteReleaseFromWishList,
         userCollectionReleases,
         userWishListReleases
     };
@@ -891,7 +912,7 @@ function ProtectedComponents(props) {
 
 
     return (
-        <div>
+        <React.Fragment>
             <Header logOut={props.logOut} />
             <Switch>
                 <Route exact path='/' component={Dashboard} />
@@ -916,7 +937,7 @@ function ProtectedComponents(props) {
                     <AlbumRelease albumReleaseProps={albumReleaseProps} />}
                 />
             </Switch>
-        </div>
+        </React.Fragment>
     );
 };
 
