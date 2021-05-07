@@ -740,6 +740,16 @@ function ProtectedComponents(props) {
             .catch(error => {
                 console.log(error)
             })
+            /* Fetch releases from user's collection */
+            .then(() => {
+                API.graphql(graphqlOperation(listCollectionReleases))
+                    .then((data) => {
+                        setUserCollectionReleases(data.data.listCollectionReleases.items)
+                    })
+                    .catch((error) => {
+                        console.log(error)
+                    })
+            })
     }
 
     /* Add release to user's wishlist */
@@ -761,6 +771,16 @@ function ProtectedComponents(props) {
         API.graphql(graphqlOperation(createWishListRelease, { input: inputData }))
             .catch(error => {
                 console.log(error)
+            })
+            /* Fetch releases from user's wishlist */
+            .then(() => {
+                API.graphql(graphqlOperation(listWishListReleases))
+                    .then((data) => {
+                        setUserWishListReleases(data.data.listWishListReleases.items)
+                    })
+                    .catch((error) => {
+                        console.log(error)
+                    })
             })
     }
     /* #endregion Callback Functions */
