@@ -17,6 +17,7 @@ function AlbumRelease(props) {
         addReleaseToCollection,
         addReleaseToWishList,
         deleteReleaseFromCollection,
+        deleteReleaseFromWishList,
         userCollectionReleases,
         userWishListReleases
     } = props.albumReleaseProps;
@@ -128,7 +129,7 @@ function AlbumRelease(props) {
                                 <Button variant='dark' size='sm' onClick={addReleaseToCollection} block><FaRecordVinyl /> ADD TO COLLECTION</Button>
                             }
                             {(userWishListReleases.some((element) => (element.albumId === albumReleaseData.id))) ?
-                                <Button variant='dark' size='sm' block><FaHeart /> REMOVE FROM WISHLIST</Button> :
+                                <Button variant='dark' size='sm' id={wishListReleaseId} onClick={deleteReleaseFromWishList} block><FaHeart /> REMOVE FROM WISHLIST</Button> :
                                 <Button variant='dark' size='sm' onClick={addReleaseToWishList} block><FaHeart /> ADD TO WISHLIST</Button>
                             }
                         </Col>
