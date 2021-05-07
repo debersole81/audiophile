@@ -86,12 +86,7 @@ function AlbumRelease(props) {
             return (wishListReleaseId = element.id)
         }
     })
-
-    console.log(collectionReleaseId);
-    console.log(wishListReleaseId);
-
     /* #endregion GraphQL Album Id's */
-
 
     return (
         <Container>
