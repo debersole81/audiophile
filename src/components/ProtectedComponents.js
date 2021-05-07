@@ -755,6 +755,7 @@ function ProtectedComponents(props) {
     /* Add release to user's wishlist */
     function addReleaseToWishList(e) {
         e.preventDefault();
+
         /* Build object to upload release data to GraphQL API */
         const inputData = {
             releaseType: 'Release',
@@ -783,6 +784,38 @@ function ProtectedComponents(props) {
                     })
             })
     }
+
+    /* Delete release from user's collection */
+    function deleteReleaseFromCollection(e) {
+        e.preventDefault();
+
+        /* Build object to delete release data from GraphQL API */
+        const inputData = {
+            id: e.target.id
+        }
+
+        /* Delete release data from GraphQL API */
+        API.graphql(graphqlOperation(deleteCollectionRelease, { input: inputData }))
+            .catch((error) => {
+                console.log(error)
+            })
+            /* Fetch releases from user's collection */
+            .then(() => {
+                API.graphql(graphqlOperation(listCollectionReleases))
+                    .then((data) => {
+                        setUserCollectionReleases(data.data.listCollectionReleases.items);
+                    })
+                    .catch((error) => {
+                        console.log(error)
+                    })
+            })
+
+
+    }
+
+    /* Delete release from user's wishlist */
+
+
     /* #endregion Callback Functions */
 
 
@@ -850,6 +883,7 @@ function ProtectedComponents(props) {
         albumReleaseData,
         addReleaseToCollection,
         addReleaseToWishList,
+        deleteReleaseFromCollection,
         userCollectionReleases,
         userWishListReleases
     };
