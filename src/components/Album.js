@@ -32,9 +32,6 @@ function Album(props) {
         userWishListAlbums
     } = props.albumProps;
 
-    console.log(userCollectionAlbums);
-    console.log(userWishListAlbums);
-
     /* #region State Variables*/
     /** Album images modal component state variable */
     const [showModal, setShowModal] = useState(false);
@@ -97,10 +94,6 @@ function Album(props) {
             return(wishListAlbumId = element.id)
         }; 
     })
-
-    console.log(collectionAlbumId);
-    console.log(wishListAlbumId);
-
     /* #endregion Extract GraphQL album id's for delete mutation */
 
     return (
@@ -141,7 +134,7 @@ function Album(props) {
                         <Col>
                             {(userCollectionAlbums.some(element => (element.albumId === albumData.id))) ?
                                 <Button variant='dark' size='sm' id={collectionAlbumId} onClick={deleteAlbumFromCollection} block><FaRecordVinyl /> REMOVE FROM COLLECTION</Button> :
-                                <Button variant='dark' size='sm' onClick={addAlbumToCollection} block><FaHeart /> ADD TO COLLECTION</Button>
+                                <Button variant='dark' size='sm' onClick={addAlbumToCollection} block><FaRecordVinyl /> ADD TO COLLECTION</Button>
                             }
                             {(userWishListAlbums.some(element => (element.albumId === albumData.id))) ?
                                 <Button variant='dark' size='sm' block><FaHeart /> REMOVE FROM WISHLIST</Button> :
