@@ -12,19 +12,21 @@ import { FaHeart, FaRecordVinyl } from 'react-icons/fa';
 
 function AlbumRelease(props) {
 
-    /** Destructure props */
+    /* #region Destructure Props */
     const { albumReleaseData,
         addReleaseToCollection,
         addReleaseToWishList,
         userCollectionReleases,
         userWishListReleases
     } = props.albumReleaseProps;
+    /* #endregion Destructure Props */
 
-    /** State variables */
+    /* #region State Variables */
     /* Album release images modal component state variable */
     const [showModal, setShowModal] = useState(false);
+    /* #endregion State Variables */
 
-    /** Callback functions */
+    /* #region Callback Functions */
     /* Handle show more images button click */
     const handleShowModal = (e) => {
         e.preventDefault();
@@ -38,8 +40,9 @@ function AlbumRelease(props) {
         //Set showModal to false
         setShowModal(false);
     };
+    /* #endregion Callback Functions */
 
-    /** Prepare images for carousel react bootstrap component */
+    /* #region Carousel Component Formatting */
     //Declare empty array
     const images = [];
 
@@ -58,6 +61,35 @@ function AlbumRelease(props) {
             )
         };
     });
+    /* #endregion Carousel Component Formatting */
+
+    /* #region GraphQL Album Id's */
+    let collectionReleaseId;
+    let wishListReleaseId;
+
+    //Map through each element in userCollectionReleases
+    userCollectionReleases.forEach((element) => {
+        //Compare userCollectionReleases albumId to albumReleaseData id
+        if (element.albumId === albumReleaseData.id) {
+            //Set collectionReleaseId equal to the matching element's GraphQL generated id
+            return (collectionReleaseId = element.id)
+        }
+    })
+
+    //Map through each element in userWishListReleases
+    userWishListReleases.forEach((element) => {
+        //Compare userWishListReleases albumId to albumReleaseData id
+        if (element.albumId === albumReleaseData.id) {
+            //Set wishListReleaseId equal to the matching element's GraphQL generated id
+            return(wishListReleaseId = element.id)
+        }
+    })
+
+    console.log(collectionReleaseId);
+    console.log(wishListReleaseId);
+
+    /* #endregion GraphQL Album Id's */
+
 
     return (
         <Container>
