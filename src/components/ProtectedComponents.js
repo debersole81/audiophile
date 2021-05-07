@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Route, Switch, useHistory } from 'react-router-dom';
 import { API, graphqlOperation } from 'aws-amplify';
-import { createCollectionAlbum, createCollectionRelease, createWishListAlbum, createWishListRelease } from '../graphql/mutations';
+import { createCollectionAlbum, createCollectionRelease, createWishListAlbum, createWishListRelease, deleteCollectionAlbum, deleteCollectionRelease, deleteWishListAlbum, deleteWishListRelease } from '../graphql/mutations';
 import { listCollectionAlbums, listCollectionReleases, listWishListAlbums, listWishListReleases } from '../graphql/queries';
 import DiscogsAPISearch from '../helper-functions/DiscogsAPISearch';
 import DiscogsAPIMasterRelease from '../helper-functions/DiscogsAPIMasterRelease';
@@ -79,10 +79,10 @@ function ProtectedComponents(props) {
 
     /* #region State Variables */
     /** User library state variables */
-    const [userCollectionAlbums, setUserCollectionAlbums] = useState({});
-    const [userCollectionReleases, setUserCollectionReleases] = useState({});
-    const [userWishListAlbums, setUserWishListAlbums] = useState({});
-    const [userWishListReleases, setUserWishListReleases] = useState({});
+    const [userCollectionAlbums, setUserCollectionAlbums] = useState([]);
+    const [userCollectionReleases, setUserCollectionReleases] = useState([]);
+    const [userWishListAlbums, setUserWishListAlbums] = useState([]);
+    const [userWishListReleases, setUserWishListReleases] = useState([]);
 
     /** Search component state variables */
     const [search, setSearch] = useState('');
@@ -115,7 +115,6 @@ function ProtectedComponents(props) {
 
 
     /* #region Callback Functions */
-
     /** Search component callback functions */
     /* Handle search form input field */
     const handleSearch = (({ target }) => {
@@ -415,10 +414,11 @@ function ProtectedComponents(props) {
 
         /* Upload album data to GraphQL API  */
         API.graphql(graphqlOperation(createWishListAlbum, { input: inputData }))
-            .catch(error => {
+            .catch((error) => {
                 console.log(error)
             })
 
+        /* Fetch albums from user's wishlist */
         API.graphql(graphqlOperation(listWishListAlbums))
             .then((data) => {
                 setUserWishListAlbums(data.data.listWishListAlbums.items);
@@ -428,7 +428,33 @@ function ProtectedComponents(props) {
             })
     }
 
+    /* Remove album from user's collection */
+    function deleteAlbumFromCollection(e) {
+        e.preventDefault();
 
+        /* Build object to delete album data from GraphQL API */
+        const inputData = {
+            id: e.target.id
+        }
+
+        /* Delete album data from GraphQL API */
+        API.graphql(graphqlOperation(deleteCollectionAlbum, { input: inputData }))
+            .catch((error) => {
+                console.log(error)
+            })
+
+        /* Fetch albums from user's collection */
+        API.graphql(graphqlOperation(listCollectionAlbums))
+            .then((data) => {
+                setUserCollectionAlbums(data.data.listCollectionAlbums.items);
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    }
+
+
+    /* Remove album from user's wishlist*/
 
     /** AlbumReleasesHeader component callback functions */
     /* Handle view album releases button click */
@@ -742,8 +768,9 @@ function ProtectedComponents(props) {
         albumMasterData,
         addAlbumToCollection,
         addAlbumToWishList,
+        deleteAlbumFromCollection,
         userCollectionAlbums,
-        userWishListAlbums
+        userWishListAlbums,
     };
 
     /** AlbumReleasesHeader and AlbumReleases component props */
