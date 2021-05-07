@@ -381,17 +381,18 @@ function ProtectedComponents(props) {
 
         /* Upload album data to GraphQL API  */
         API.graphql(graphqlOperation(createCollectionAlbum, { input: inputData }))
-            .catch(error => {
+            .catch((error) => {
                 console.log(error)
             })
-
-        /* Fetch albums from user's collection */
-        API.graphql(graphqlOperation(listCollectionAlbums))
-            .then((data) => {
-                setUserCollectionAlbums(data.data.listCollectionAlbums.items);
-            })
-            .catch((error) => {
-                console.log(error);
+            /* Fetch albums from user's collection */
+            .then(() => {
+                (API.graphql(graphqlOperation(listCollectionAlbums)))
+                    .then((data) => {
+                        setUserCollectionAlbums(data.data.listCollectionAlbums.items)
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    })
             })
     }
 
@@ -417,14 +418,15 @@ function ProtectedComponents(props) {
             .catch((error) => {
                 console.log(error)
             })
-
-        /* Fetch albums from user's wishlist */
-        API.graphql(graphqlOperation(listWishListAlbums))
-            .then((data) => {
-                setUserWishListAlbums(data.data.listWishListAlbums.items);
-            })
-            .catch((error) => {
-                console.log(error);
+            /* Fetch albums from user's wishlist */
+            .then(() => {
+                API.graphql(graphqlOperation(listWishListAlbums))
+                    .then((data) => {
+                        setUserWishListAlbums(data.data.listWishListAlbums.items);
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    })
             })
     }
 
@@ -442,20 +444,23 @@ function ProtectedComponents(props) {
             .catch((error) => {
                 console.log(error)
             })
-
-        /* Fetch albums from user's collection */
-        API.graphql(graphqlOperation(listCollectionAlbums))
-            .then((data) => {
-                setUserCollectionAlbums(data.data.listCollectionAlbums.items);
-            })
-            .catch((error) => {
-                console.log(error)
+            /* Fetch albums from user's collection */
+            .then(() => {
+                API.graphql(graphqlOperation(listCollectionAlbums))
+                    .then((data) => {
+                        setUserCollectionAlbums(data.data.listCollectionAlbums.items);
+                    })
+                    .catch((error) => {
+                        console.log(error)
+                    })
             })
     };
 
     /* Remove album from user's wishlist*/
     function deleteAlbumFromWishList(e) {
         e.preventDefault();
+
+        console.log(e.target.id);
 
         /* Build object to delete album data from GraphQL API */
         const inputData = {
@@ -467,14 +472,15 @@ function ProtectedComponents(props) {
             .catch((error) => {
                 console.log(error)
             })
-
-        /* Fetch albums from user's wishlist */
-        API.graphql(graphqlOperation(listWishListAlbums))
-            .then((data) => {
-                setUserWishListAlbums(data.data.listWishListAlbums.items);
-            })
-            .catch((error) => {
-                console.log(error)
+            /* Fetch albums from user's wishlist */
+            .then(() => {
+                API.graphql(graphqlOperation(listWishListAlbums))
+                    .then((data) => {
+                        setUserWishListAlbums(data.data.listWishListAlbums.items);
+                    })
+                    .catch((error) => {
+                        console.log(error)
+                    })
             })
     };
 
