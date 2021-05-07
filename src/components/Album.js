@@ -22,15 +22,17 @@ import { FaHeart, FaRecordVinyl } from 'react-icons/fa';
 
 function Album(props) {
 
-    /**Destructure props*/
+    /* #region Destructure Props*/
     const { albumData,
         albumMasterData,
         addAlbumToCollection,
         addAlbumToWishList,
         deleteAlbumFromCollection,
+        deleteAlbumFromWishList,
         userCollectionAlbums,
         userWishListAlbums
     } = props.albumProps;
+    /* #endregion Destructure Props*/
 
     /* #region State Variables*/
     /** Album images modal component state variable */
@@ -73,28 +75,28 @@ function Album(props) {
     });
     /* #endregion Carousel Component Formatting */
 
-    /* #region Extract GraphQL album id's for delete mutation */
+    /* #region GraphQL Album Id's */
     let collectionAlbumId;
     let wishListAlbumId;
-    
+
     //Map through each element in userCollectionAlbums
     userCollectionAlbums.forEach((element) => {
         //Compare userCollectionAlbums albumId to albumData id
-        if(element.albumId === albumData.id) {
+        if (element.albumId === albumData.id) {
             //Set collectionAlbumId equal to the matching element's GraphQL generated id   
-            return(collectionAlbumId = element.id)
-        }; 
+            return (collectionAlbumId = element.id)
+        };
     })
-    
+
     //Map through each element in userWishListAlbums
     userWishListAlbums.forEach((element) => {
         //Compare userCollectionAlbums albumId to albumData id
-        if(element.albumId === albumData.id) {
+        if (element.albumId === albumData.id) {
             //Set collectionAlbumId equal to the matching element's GraphQL generated id   
-            return(wishListAlbumId = element.id)
-        }; 
+            return (wishListAlbumId = element.id)
+        };
     })
-    /* #endregion Extract GraphQL album id's for delete mutation */
+    /* #endregion GraphQL Album Id's */
 
     return (
         <Container>
@@ -137,8 +139,8 @@ function Album(props) {
                                 <Button variant='dark' size='sm' onClick={addAlbumToCollection} block><FaRecordVinyl /> ADD TO COLLECTION</Button>
                             }
                             {(userWishListAlbums.some(element => (element.albumId === albumData.id))) ?
-                                <Button variant='dark' size='sm' block><FaHeart /> REMOVE FROM WISHLIST</Button> :
-                                <Button variant='dark' size='sm' id={wishListAlbumId} onClick={addAlbumToWishList} block><FaHeart /> ADD TO WISHLIST</Button>
+                                <Button variant='dark' size='sm' id={wishListAlbumId} onClick={deleteAlbumFromWishList} block><FaHeart /> REMOVE FROM WISHLIST</Button> :
+                                <Button variant='dark' size='sm' onClick={addAlbumToWishList} block><FaHeart /> ADD TO WISHLIST</Button>
                             }
                         </Col>
                     </Row>
