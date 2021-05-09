@@ -14,7 +14,7 @@ function useViewPort() {
         //Listen to viewport width changes and fire window resize callback
         window.addEventListener('resize', handleWindowResize);
         //Remove event listener when component unmounts
-        return () => window.addEventListener('resize', handleWindowResize);
+        return () => window.removeEventListener('resize', handleWindowResize);
     }, []);
 
     /** Return width for use in component */
