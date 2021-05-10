@@ -76,6 +76,7 @@ function ProtectedComponents(props) {
     /* #region Global Variables */
     /** useHistory hook variable. */
     const history = useHistory();
+    /* #endregion Global Variables */
 
     /* #region State Variables */
     /** User library state variables */
@@ -112,7 +113,6 @@ function ProtectedComponents(props) {
     const [albumReleasesMinPagesMobile, setAlbumReleasesMinPagesMobile] = useState(0);
     const [albumReleasesMaxPagesMobile, setAlbumReleasesMaxPagesMobile] = useState(3);
     /* #endregion State Variables*/
-
 
     /* #region Callback Functions */
     /** Search component callback functions */
@@ -838,8 +838,11 @@ function ProtectedComponents(props) {
     }
     /* #endregion Callback Functions */
 
-
     /* #region Props Objects */
+    /** Collection component props */
+    const collectionProps = { userCollectionAlbums, userCollectionReleases }
+
+
     /** Search component props */
     const searchProps = { search, handleSearch, handleSearchSubmit };
 
@@ -910,7 +913,6 @@ function ProtectedComponents(props) {
     };
     /* #endregion Props Objects*/
 
-
     return (
         <React.Fragment>
             <Header logOut={props.logOut} />
@@ -919,6 +921,11 @@ function ProtectedComponents(props) {
                 <Route exact path='/collection' component={Collection} />
                 <Route exact path='/wishlist' component={WishList} />
                 <Route exact path='/randomizer' component={Randomizer} />
+                <Route exact path='/collection' render={(props) =>
+                    <Collection
+                        collectionProps={collectionProps}
+                    />}
+                />
                 <Route exact path='/search' render={(props) =>
                     <Search
                         searchProps={searchProps}
