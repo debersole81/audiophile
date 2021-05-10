@@ -85,6 +85,9 @@ function ProtectedComponents(props) {
     const [userWishListAlbums, setUserWishListAlbums] = useState([]);
     const [userWishListReleases, setUserWishListReleases] = useState([]);
 
+    console.log(userCollectionAlbums);
+    console.log(userCollectionReleases);
+
     /** Search component state variables */
     const [search, setSearch] = useState('');
 
@@ -840,7 +843,7 @@ function ProtectedComponents(props) {
 
     /* #region Props Objects */
     /** Collection component props */
-    const collectionProps = { userCollectionAlbums, userCollectionReleases }
+    const collectionProps = { userCollectionAlbums, userCollectionReleases };
 
 
     /** Search component props */
@@ -918,14 +921,13 @@ function ProtectedComponents(props) {
             <Header logOut={props.logOut} />
             <Switch>
                 <Route exact path='/' component={Dashboard} />
-                <Route exact path='/collection' component={Collection} />
-                <Route exact path='/wishlist' component={WishList} />
-                <Route exact path='/randomizer' component={Randomizer} />
                 <Route exact path='/collection' render={(props) =>
                     <Collection
                         collectionProps={collectionProps}
                     />}
                 />
+                <Route exact path='/wishlist' component={WishList} />
+                <Route exact path='/randomizer' component={Randomizer} />
                 <Route exact path='/search' render={(props) =>
                     <Search
                         searchProps={searchProps}
