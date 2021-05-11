@@ -131,11 +131,15 @@ function App() {
       const { username, password } = formState;
       //Call AWS Amplify Auth.signIn method
       Auth.signIn(username, password)
-        .then(
-          setFormState(() => ({ ...formState, formType: 'signedIn' }))
-        )
         .catch(error => {
           console.log(error);
+        })
+        .then(() => {
+          Auth.currentAuthenticatedUser()
+            .then((user) => {
+              console.log(user)
+              setFormState(() => ({ formType: 'signedIn' }))
+            })
         })
     };
   };
