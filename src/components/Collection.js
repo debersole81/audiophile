@@ -1,4 +1,10 @@
 import React from "react";
+import '../App.css';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 /**Notes
  * When an album in the collection is clicked, use the handleAlbumClick callback in ProtectedComponents to render the album
@@ -37,14 +43,41 @@ function Collection(props) {
     console.log(sortedUserCollection);
     /* #endregion Join and Sort User Albums and Releases */
 
-   
-    return (
-        <React.Fragment>
-            {/* {Object.fromEntries(Object.entries(groupedUserCollection).map(({key, value}, index) => {
-                <h3>{value}</h3>
-            }))} */}
-        </React.Fragment>
-    );
+
+    if (Array.isArray(sortedUserCollection) && sortedUserCollection.length) {
+        return (
+            <Container>
+                <Row>
+                    {sortedUserCollection.map((albums) =>
+                        <Col key={albums.albumId} className='col user-libary-col'>
+                            <Card className='user-library-card'>
+                                <div className='overflow'>
+                                    <Card.Img className='user-library-card-img overflow' variant='top' src={albums.albumImage} alt='Album Cover Art' />
+                                </div>
+                                <Card.Body>
+                                    <Card.Title className='text-truncate'>{albums.albumTitle}</Card.Title>
+                                    <Card.Subtitle className='mb-2 text-truncate text-muted'>{albums.artistName}</Card.Subtitle>
+                                    {/* <Card.Text>
+                                        {albums.label}<br />
+                                        {albums.releaseYear}<br />
+                                    </Card.Text> */}
+                                    {/* <Col>
+                                        <Button className='mt-2' variant='secondary' size='sm' block>View</Button>
+                                    </Col>
+                                    <Col>
+                                        <Button className='mt-1' variant='secondary' size='sm' block>Remove</Button>
+                                    </Col> */}
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    )}
+                </Row>
+            </Container>
+        );
+    }
+
+    return (null);
+    //Search for albums text + button
 };
 
 export default Collection;
