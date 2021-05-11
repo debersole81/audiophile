@@ -1,10 +1,14 @@
 import React from "react";
 import '../App.css';
+import masterReleaseLogo from '../assets/master-release-logo.svg';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import Image from 'react-bootstrap/Image';
+
 
 /**Notes
  * When an album in the collection is clicked, use the handleAlbumClick callback in ProtectedComponents to render the album
@@ -56,17 +60,20 @@ function Collection(props) {
                                 </div>
                                 <Card.Body>
                                     <Card.Title className='text-truncate'>{albums.albumTitle}</Card.Title>
-                                    <Card.Subtitle className='mb-2 text-truncate text-muted'>{albums.artistName}</Card.Subtitle>
-                                    {/* <Card.Text>
-                                        {albums.label}<br />
-                                        {albums.releaseYear}<br />
-                                    </Card.Text> */}
-                                    {/* <Col>
-                                        <Button className='mt-2' variant='secondary' size='sm' block>View</Button>
-                                    </Col>
-                                    <Col>
-                                        <Button className='mt-1' variant='secondary' size='sm' block>Remove</Button>
-                                    </Col> */}
+                                    <Card.Subtitle className='mb-4 text-truncate text-muted'>{albums.artistName}</Card.Subtitle>
+                                    <Row className='row'>
+                                        <Col className='col' xs={4} s={4} md={4} lg={4} xl={4}>
+                                            <Image className='user-library-album-master-logo' src={masterReleaseLogo} alt='Album Master Release Logo'/>
+                                        </Col>
+                                        <Col className='col' xs={8} s={8} md={8 }lg={8} xl={8}>
+                                            <ButtonGroup className='user-library-btn-group'>
+                                                <Button variant='outline-dark' size='sm' block>Remove</Button>
+                                            </ButtonGroup>
+                                            <ButtonGroup className='user-library-btn-group'>
+                                                <Button className='pl-3 pr-3' variant='outline-dark' size='sm' block>View</Button>
+                                            </ButtonGroup>
+                                        </Col>
+                                    </Row>
                                 </Card.Body>
                             </Card>
                         </Col>
