@@ -848,6 +848,15 @@ function ProtectedComponents(props) {
         deleteReleaseFromCollection 
     };
 
+    /** WishList component props */
+    const wishListProps = {
+        userWishListAlbums,
+        userWishListReleases,
+        handleAlbumClick,
+        handleViewAlbumRelease,
+        deleteAlbumFromWishList,
+        deleteReleaseFromWishList
+    };
 
     /** Search component props */
     const searchProps = { search, handleSearch, handleSearchSubmit };
@@ -929,7 +938,11 @@ function ProtectedComponents(props) {
                         collectionProps={collectionProps}
                     />}
                 />
-                <Route exact path='/wishlist' component={WishList} />
+                <Route exact path='/wishlist' render={(props) => 
+                    <WishList
+                        wishListProps={wishListProps}
+                    />}
+                />
                 <Route exact path='/randomizer' component={Randomizer} />
                 <Route exact path='/search' render={(props) =>
                     <Search
