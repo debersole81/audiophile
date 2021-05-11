@@ -54,7 +54,6 @@ function WishList(props) {
     //Declare a new variable to hold the sorted userCollection array
     const sortedUserWishList = userWishList.sort(compare);
     /* #endregion Join and Sort User Albums and Releases */
-    console.log(sortedUserWishList);
 
     if (Array.isArray(sortedUserWishList) && sortedUserWishList.length) {
         return (
