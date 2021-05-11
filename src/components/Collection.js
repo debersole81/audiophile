@@ -67,7 +67,7 @@ function Collection(props) {
                     </Row>
                     <Row className='row'>
                         <Col className='col'>
-                            <p>You've got great taste! Browse your collection of albums here.</p>
+                            <p className='lead text-muted'>You've got great taste! Browse your collection of albums here.</p>
                         </Col>
                     </Row>
                 </Jumbotron>
