@@ -5,12 +5,13 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
 function SearchResults(props) {
 
     /** Destructure props */
     const { searchData } = props.searchResultsProps;
-    const { handleAlbumClick } = props.searchResultsProps;    
+    const { handleAlbumClick } = props.searchResultsProps;
 
     if (Array.isArray(searchData) && searchData.length) {
         return (
@@ -29,7 +30,7 @@ function SearchResults(props) {
                                         {results.label[0]}<br />
                                         {results.year}<br />
                                     </Card.Text>
-                                    <Button variant='dark' size='sm' id={results.master_id} onClick={handleAlbumClick} block>View</Button>
+                                    <Button variant='outline-dark' size='sm' id={results.master_id} onClick={handleAlbumClick} block>View</Button>
                                 </Card.Body>
                             </Card>
                         </Col>
