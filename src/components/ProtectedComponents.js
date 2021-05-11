@@ -843,7 +843,9 @@ function ProtectedComponents(props) {
         userCollectionAlbums,
         userCollectionReleases,
         handleAlbumClick,
-        handleViewAlbumRelease 
+        handleViewAlbumRelease,
+        deleteAlbumFromCollection,
+        deleteReleaseFromCollection 
     };
 
 
