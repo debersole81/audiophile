@@ -28,11 +28,7 @@ function Search(props) {
                 <Row className='row'>
                     <Col className='col'>
                         <h1>Search Albums</h1>
-                    </Col>
-                </Row>
-                <Row className='row'>
-                    <Col className='col'>
-                        <p className='search-p lead text-muted'>Find an album to add to your collection or wishlist.</p>
+                        <p className='lead text-muted'>Find an album to add to your collection or wishlist.</p>
                     </Col>
                 </Row>
                 <Row className='row justify-content-center'>
