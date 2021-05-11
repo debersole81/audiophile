@@ -1,13 +1,13 @@
 /* #region Row and Column Visualization Styles. For Assisting with Layout Only */
 
-.row {
+/* .row {
   border: solid 2px red;
 }
 
 .col {
   border: solid 3px royalblue;
   background: lightblue;
-}
+} */
 
 /* #endregion Row and Column visualization styles. For assisting with layout only */
 
@@ -588,6 +588,7 @@
 
 .user-library-btn-group {
   float: right;
+  padding-top: .6em;
 }
 
 .user-library-album-master-logo {
