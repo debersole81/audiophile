@@ -11,11 +11,6 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Image from 'react-bootstrap/Image';
 import Jumbotron from "react-bootstrap/Jumbotron";
 
-
-/**Notes
- * When an album in the collection is clicked, use the handleAlbumClick callback in ProtectedComponents to render the album
- */
-
 function Collection(props) {
 
     /* #region Global Variables */
@@ -58,7 +53,6 @@ function Collection(props) {
     };
     //Declare a new variable to hold the sorted userCollection array
     const sortedUserCollection = userCollection.sort(compare);
-    console.log(sortedUserCollection);
     /* #endregion Join and Sort User Albums and Releases */
 
     if (Array.isArray(sortedUserCollection) && sortedUserCollection.length) {
