@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from 'react-router-dom';
 import '../App.css';
 import masterReleaseLogo from '../assets/master-release-logo.svg';
 import Container from 'react-bootstrap/Container';
@@ -16,6 +17,11 @@ import Jumbotron from "react-bootstrap/Jumbotron";
  */
 
 function Collection(props) {
+
+    /* #region Global Variables */
+    /** useHistory hook variable. */
+    const history = useHistory();
+    /* #endregion Global Variables */
 
     /* #region Destructure Props */
     const {
@@ -54,7 +60,6 @@ function Collection(props) {
     const sortedUserCollection = userCollection.sort(compare);
     console.log(sortedUserCollection);
     /* #endregion Join and Sort User Albums and Releases */
-
 
     // if (Array.isArray(sortedUserCollection) && sortedUserCollection.length) {
     //     return (
@@ -132,14 +137,12 @@ function Collection(props) {
                 <Row className='row'>
                     <Col className='col'>
                         <h1>Search for albums to add to your collection.</h1>
-                        <Button variant='outline-dark' className='col-6 mx-auto' size='sm' block>Search</Button>
+                        <Button variant='outline-dark' className='col-6 mx-auto' size='sm' onClick={() => history.push('/search')}block>Search</Button>
                     </Col>
                 </Row>
             </Container>
         </React.Fragment>
     );
-
-    //Search for albums text + button
 };
 
 export default Collection;
