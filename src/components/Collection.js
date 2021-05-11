@@ -27,7 +27,7 @@ function Collection(props) {
         // If artistNames are equal, sort by albumTitle
         if (firstArtistName === secondArtistName) {
             return (firstAlbumTitle > secondAlbumTitle) ? 1 : (firstAlbumTitle < secondAlbumTitle) ? -1 : 0;
-        //If artistNames are not equal, sort first by artistName and then repeat loop to sort albumTitles
+            //If artistNames are not equal, sort first by artistName and then repeat loop to sort albumTitles
         } else {
             return (firstArtistName < secondArtistName) ? -1 : 1;
         }
@@ -35,15 +35,15 @@ function Collection(props) {
     //Declare a new variable to hold the sorted userCollection array
     const sortedUserCollection = userCollection.sort(compare);
     console.log(sortedUserCollection);
-
-
-
-
     /* #endregion Join and Sort User Albums and Releases */
 
-
+   
     return (
-        <h1>Collection</h1>
+        <React.Fragment>
+            {/* {Object.fromEntries(Object.entries(groupedUserCollection).map(({key, value}, index) => {
+                <h3>{value}</h3>
+            }))} */}
+        </React.Fragment>
     );
 };
 
