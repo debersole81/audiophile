@@ -4,22 +4,44 @@ import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import { LinkContainer } from 'react-router-bootstrap';
 import audioPhileLogoText from '../assets/audiophile-logo-text-white.svg';
+import { useViewPort } from '../custom-hooks/useViewPort';
 
 function Header(props) {
 
+    /* #region Destructure Props */
     const { logOut } = props;
+    /* #endregion Destructure Props */
+
+    /* #region Set Mobile Breakpoint with Custom Hook
+    /** Destructure width variable from useViewPort hook */
+    const { width } = useViewPort();
+
+    /** Declare variable for minimum breakpoint value */
+    const breakpoint = 345;
+    /* #endregion Set Mobile Breakpoint with Custom Hook */
+
 
     return (
-        <Navbar bg='dark' variant='dark' className='p-4 mb-5' expand='lg'>
-            <Navbar.Brand href='#home'>
-                <img
-                    src={audioPhileLogoText}
-                    height={30}
-                    width={225}
-                    className='d-inline-block align-top'
-                    alt='AudioPhile logo'
-                />
-            </Navbar.Brand>
+        <Navbar collapseOnSelect sticky='top' bg='dark' variant='dark' className='p-4 mb-5' expand='lg'>
+            {(width > breakpoint) ?
+                <Navbar.Brand href='#home'>
+                    <img
+                        src={audioPhileLogoText}
+                        height={30}
+                        width={225}
+                        className='d-inline-block align-top'
+                        alt='AudioPhile logo'
+                    />
+                </Navbar.Brand> :
+                <Navbar.Brand href='#home'>
+                    <img
+                        src={audioPhileLogoText}
+                        height={30}
+                        width={160}
+                        className='d-inline-block align-top'
+                        alt='AudioPhile logo'
+                    />
+                </Navbar.Brand>}
             <Navbar.Toggle aria-controls='basic-navbar-nav' />
             <Navbar.Collapse id='basic-navbar-nav'>
                 <Nav className='ml-auto'>
