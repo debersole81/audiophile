@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Auth } from 'aws-amplify';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
@@ -20,7 +21,10 @@ const initialFormState = {
 
 function App() {
 
-  console.log('Render: App Component');
+  /* #region Global Variables */
+  /** useHistory hook variable. */
+  const history = useHistory();
+  /* #endregion Global Variables */
 
   /* #region State Variables */
   const [formState, setFormState] = useState(initialFormState);
@@ -31,8 +35,7 @@ function App() {
   useEffect(() => {
     //Call AWS Amplify Auth.currentAuthenticatedUser method
     Auth.currentAuthenticatedUser()
-      .then((user) => {
-        console.log(user)
+      .then(() => {
         setFormState(() => ({ formType: 'signedIn' }))
       })
 
@@ -134,10 +137,10 @@ function App() {
         .catch(error => {
           console.log(error);
         })
+        //Retreive authenticated user from local storage
         .then(() => {
           Auth.currentAuthenticatedUser()
-            .then((user) => {
-              console.log(user)
+            .then(() => {
               setFormState(() => ({ formType: 'signedIn' }))
             })
         })
@@ -329,6 +332,8 @@ function App() {
     window.localStorage.clear();
     //Set formState
     setFormState(() => ({ formType: 'signIn' }))
+    //Redirect user to login screen
+    history.push('/');
   };
   /* #endregion Callback Functions */
 
@@ -350,9 +355,6 @@ function App() {
   const confirmResetPasswordProps = { onFormChange, formErrors, confirmResetPassword, resendPasswordCodeLink, signInLink };
   /* #endregion Props Objects */
 
-  console.log(formState);
-  console.log(formErrors);
-
   /** Destructure formType */
   const { formType } = formState;
 
@@ -367,6 +369,5 @@ function App() {
     </React.Fragment>
   );
 };
-
 
 export default App;
