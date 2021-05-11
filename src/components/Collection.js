@@ -17,7 +17,12 @@ import Image from 'react-bootstrap/Image';
 function Collection(props) {
 
     /* #region Destructure Props */
-    const { userCollectionAlbums, userCollectionReleases } = props.collectionProps;
+    const {
+        userCollectionAlbums,
+        userCollectionReleases,
+        handleAlbumClick,
+        handleViewAlbumRelease
+    } = props.collectionProps;
     /* #endregion Destructure Props */
 
     /* #region Join and Sort User Albums and Releases */
@@ -63,16 +68,26 @@ function Collection(props) {
                                     <Card.Subtitle className='mb-4 text-truncate text-muted'>{albums.artistName}</Card.Subtitle>
                                     <Row className='row'>
                                         <Col className='col' xs={4} s={4} md={4} lg={4} xl={4}>
-                                            <Image className='user-library-album-master-logo' src={masterReleaseLogo} alt='Album Master Release Logo'/>
+                                            <Image className='user-library-album-master-logo' src={masterReleaseLogo} alt='Album Master Release Logo' />
                                         </Col>
-                                        <Col className='col' xs={8} s={8} md={8 }lg={8} xl={8}>
-                                            <ButtonGroup className='user-library-btn-group'>
-                                                <Button variant='outline-dark' size='sm' block>Remove</Button>
-                                            </ButtonGroup>
-                                            <ButtonGroup className='user-library-btn-group'>
-                                                <Button className='pl-3 pr-3' variant='outline-dark' size='sm' block>View</Button>
-                                            </ButtonGroup>
-                                        </Col>
+                                        {(albums.albumId === albums.mainReleaseId) ?
+                                            <Col className='col' xs={8} s={8} md={8} lg={8} xl={8}>
+                                                <ButtonGroup className='user-library-btn-group'>
+                                                    <Button variant='outline-dark' size='sm' block>Remove</Button>
+                                                </ButtonGroup>
+                                                <ButtonGroup className='user-library-btn-group'>
+                                                    <Button id={albums.masterId} className='pl-3 pr-3' variant='outline-dark' size='sm' onClick={handleAlbumClick} block>View</Button>
+                                                </ButtonGroup>
+                                            </Col> :
+                                            <Col className='col' xs={8} s={8} md={8} lg={8} xl={8}>
+                                                <ButtonGroup className='user-library-btn-group'>
+                                                    <Button variant='outline-dark' size='sm' block>Remove</Button>
+                                                </ButtonGroup>
+                                                <ButtonGroup className='user-library-btn-group'>
+                                                    <Button id={albums.albumId} className='pl-3 pr-3' variant='outline-dark' size='sm' onClick={handleViewAlbumRelease} block>View</Button>
+                                                </ButtonGroup>
+                                            </Col>
+                                        }
                                     </Row>
                                 </Card.Body>
                             </Card>
