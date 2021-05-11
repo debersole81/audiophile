@@ -85,9 +85,6 @@ function ProtectedComponents(props) {
     const [userWishListAlbums, setUserWishListAlbums] = useState([]);
     const [userWishListReleases, setUserWishListReleases] = useState([]);
 
-    console.log(userCollectionAlbums);
-    console.log(userCollectionReleases);
-
     /** Search component state variables */
     const [search, setSearch] = useState('');
 
@@ -487,7 +484,6 @@ function ProtectedComponents(props) {
             })
     };
 
-
     /** AlbumReleasesHeader component callback functions */
     /* Handle view album releases button click */
     const handleViewAlbumReleases = (e) => {
@@ -843,7 +839,12 @@ function ProtectedComponents(props) {
 
     /* #region Props Objects */
     /** Collection component props */
-    const collectionProps = { userCollectionAlbums, userCollectionReleases };
+    const collectionProps = { 
+        userCollectionAlbums,
+        userCollectionReleases,
+        handleAlbumClick,
+        handleViewAlbumRelease 
+    };
 
 
     /** Search component props */
