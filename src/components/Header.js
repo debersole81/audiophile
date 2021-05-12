@@ -1,4 +1,5 @@
 import React from "react";
+import '../App.css';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
@@ -57,10 +58,10 @@ function Header(props) {
                     <LinkContainer exact to="/randomizer">
                         <Nav.Link>Randomizer</Nav.Link>
                     </LinkContainer>
-                    <LinkContainer exact to="/search">
+                    <LinkContainer className='mr-3' exact to="/search">
                         <Nav.Link>Search</Nav.Link>
                     </LinkContainer>
-                    <Button variant='outline-light' className='btn-sm' onClick={logOut}>Logout</Button>
+                    <Button variant='outline-light' size='sm' className='header-btn' onClick={logOut}>Logout</Button>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
