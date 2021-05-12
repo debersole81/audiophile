@@ -366,6 +366,12 @@
 
 /* #endregion Form Styles */
 
+/* #region Header Styles*/
+.header-btn {
+  height: 2.5em;
+}
+/* #endregion Header Styles*/
+
 /* #region Search Component Styles */
 
 .search-jumbotron {
