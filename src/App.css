@@ -374,7 +374,8 @@
 
 /* #region Dashboard Styles */
 .dashboard-col {
-  padding-bottom: 4em;
+  padding-top: 1.5em;
+  padding-bottom: 2em;
 }
 
 .dashboard-image {
