@@ -16,18 +16,18 @@ function Dashboard() {
         <Container>
             <Row className='row'>
                 <Col className='dashboard-col'>
-                    <Image src={collection} className='img-fluid dashboard-image' />
+                    <Image src={collection} className='img-fluid dashboard-image' alt='Collection text on a picture of headphones leaning against a stack of vinyl albums' />
                 </Col>
                 <Col className='dashboard-col'>
-                    <Image src={wishList} className='img-fluid dashboard-image' />
+                    <Image src={wishList} className='img-fluid dashboard-image' alt='Wish List text on a picture of a woman holding a vinyl record' />
                 </Col>
             </Row>
             <Row className='row'>
                 <Col className='dashboard-col'>
-                    <Image src={search} className='img-fluid dashboard-image' />
+                    <Image src={search} className='img-fluid dashboard-image' alt='Search text on a picture of a person searching through vinyl albums'/>
                 </Col>
                 <Col className='dashboard-col'>
-                    <Image src={randomizer} className='img-fluid dashboard-image' />
+                    <Image src={randomizer} className='img-fluid dashboard-image' alt='Randomizer text on a picture of stacked of vinyl albums' />
                 </Col>
             </Row>
         </Container>
