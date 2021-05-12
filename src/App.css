@@ -372,6 +372,17 @@
 }
 /* #endregion Header Styles*/
 
+/* #region Dashboard Styles */
+.dashboard-col {
+  padding-bottom: 4em;
+}
+
+.dashboard-image {
+  box-shadow: 5px 10px 20px 5px rgba(0, 0, 0, 0.253)
+}
+
+/* #endregion Dashboard Styles */
+
 /* #region Search Component Styles */
 
 .search-jumbotron {
