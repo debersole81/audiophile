@@ -12,6 +12,7 @@ import AlbumRelease from './AlbumRelease';
 import Collection from './Collection';
 import Dashboard from './Dashboard';
 import Header from './Header';
+import Footer from './Footer';
 import Randomizer from './Randomizer';
 import Search from './Search';
 import WishList from './WishList';
@@ -962,6 +963,7 @@ function ProtectedComponents(props) {
                     <AlbumRelease albumReleaseProps={albumReleaseProps} />}
                 />
             </Switch>
+            <Footer />
         </React.Fragment>
     );
 };
