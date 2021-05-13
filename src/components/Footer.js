@@ -1,9 +1,10 @@
 import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
+import '../App.css';
 
 function Footer() {
     return (
-        <Navbar fixed='bottom' bg='dark' variant='dark' className='p-4' />
+        <Navbar sticky='bottom' bg='dark' variant='dark' className='footer' />
     );
 };
 
