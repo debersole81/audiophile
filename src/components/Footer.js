@@ -4,7 +4,7 @@ import '../App.css';
 
 function Footer() {
     return (
-        <Navbar sticky='bottom' bg='dark' variant='dark' className='footer' />
+        <Navbar bg='dark' variant='dark' className='footer' />
     );
 };
 
