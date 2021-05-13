@@ -66,8 +66,6 @@ function App() {
   }
   /* #endregion Sign In Modal */
 
-  console.log(showModal);
-
   /* #region Form Error Validation Object */
   //Destructure formState
   const { username, password, newPassword, email, authCode } = formState;
@@ -157,7 +155,7 @@ function App() {
     } else {
       //No errors, proceed with sign in auth
       //Destructure formState
-      const { username, password, formType } = formState;
+      const { username, password } = formState;
       //Call AWS Amplify Auth.signIn method
       Auth.signIn(username, password)
         .catch(error => {
@@ -169,7 +167,7 @@ function App() {
             .then(() => {
               setFormState(() => ({ formType: 'signedIn' }))
               setShowModal(false)
-            })  
+            })
         })
     };
   };
