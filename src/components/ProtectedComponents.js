@@ -16,7 +16,7 @@ import Footer from './Footer';
 import Randomizer from './Randomizer';
 import Search from './Search';
 import WishList from './WishList';
-import { autoLogOut } from "../helper-functions/AutoLogOut";
+// import { autoLogOut } from "../helper-functions/AutoLogOut";
 
 
 
