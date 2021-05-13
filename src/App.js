@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Auth } from 'aws-amplify';
+import './App.css';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import ConfirmSignUp from './components/ConfirmSignUp';
 import ResetPassword from './components/ResetPassword';
 import ConfirmResetPassword from './components/ConfirmResetPassword';
 import ProtectedComponents from './components/ProtectedComponents';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
+import audioPhileLogoTextBlack from './assets/audiophile-logo-text-black.svg';
 
 /* #region Initial form state object */
 const initialFormState = {
@@ -38,9 +42,13 @@ function App() {
     Auth.currentAuthenticatedUser()
       .then(() => {
         setFormState(() => ({ formType: 'signedIn' }))
+        setShowModal(false);
       })
 
   }, [])
+
+
+
   /* #endregion Persist Authenticated User */
 
   /* #region Sign In Modal */
@@ -52,6 +60,10 @@ function App() {
     };
   }, [])
 
+  /** Close the modal */
+  function closeModal() {
+    setShowModal(false);
+  }
   /* #endregion Sign In Modal */
 
   console.log(showModal);
@@ -145,7 +157,7 @@ function App() {
     } else {
       //No errors, proceed with sign in auth
       //Destructure formState
-      const { username, password } = formState;
+      const { username, password, formType } = formState;
       //Call AWS Amplify Auth.signIn method
       Auth.signIn(username, password)
         .catch(error => {
@@ -156,7 +168,8 @@ function App() {
           Auth.currentAuthenticatedUser()
             .then(() => {
               setFormState(() => ({ formType: 'signedIn' }))
-            })
+              setShowModal(false)
+            })  
         })
     };
   };
@@ -374,6 +387,25 @@ function App() {
 
   return (
     <React.Fragment>
+      <Modal show={showModal} onHide={closeModal} aria-labelledby='contained-modal-title-vcenter' centered>
+        <Modal.Header closeButton>
+          <img
+            src={audioPhileLogoTextBlack}
+            height={30}
+            width={225}
+            className='d-inline-block align-top'
+            alt='AudioPhile logo'
+          />
+        </Modal.Header>
+        <Modal.Body id='contained-modal-title-vcenter'>
+          <h4>Welcome to AudioPhile</h4>
+          <p className='app-modal'>To proceed as a guest, close this window and click sign in.</p>
+          <p>You may also create an account if you prefer a customized experience.</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={closeModal} variant='dark'>Close</Button>
+        </Modal.Footer>
+      </Modal>
       {formType === 'signIn' && <SignIn signInProps={signInProps} />}
       {formType === 'signUp' && <SignUp signUpProps={signUpProps} />}
       {formType === 'confirmSignUp' && <ConfirmSignUp confirmSignUpProps={confirmSignUpProps} />}
