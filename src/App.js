@@ -29,6 +29,7 @@ function App() {
   /* #region State Variables */
   const [formState, setFormState] = useState(initialFormState);
   const [formErrors, setFormErrors] = useState({});
+  const [showModal, setShowModal] = useState(false);
   /* #endregion State Variables */
 
   /* #region Persist Authenticated User */
@@ -41,6 +42,19 @@ function App() {
 
   }, [])
   /* #endregion Persist Authenticated User */
+
+  /* #region Sign In Modal */
+  /** Set showModal state on component render */
+  //Only show modal if username and password are defaulted to guest account values
+  useEffect(() => {
+    if (initialFormState.username === 'guest' && initialFormState.password === 'AudioPhileGuest123') {
+      setShowModal(true);
+    };
+  }, [])
+
+  /* #endregion Sign In Modal */
+
+  console.log(showModal);
 
   /* #region Form Error Validation Object */
   //Destructure formState
