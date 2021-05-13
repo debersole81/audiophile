@@ -10,7 +10,7 @@ import Col from 'react-bootstrap/Col';
 function SignIn(props) {
 
     /* #region Props destructure */
-    const { onFormChange, signIn, formErrors, signUpLink, resetPasswordLink } = props.signInProps;
+    const { onFormChange, signIn, formState, formErrors, signUpLink, resetPasswordLink } = props.signInProps;
     /* #endregion Props destructure */
 
     /* #region Custom hooks */
@@ -33,6 +33,7 @@ function SignIn(props) {
                     <Form.Control
                         name='username'
                         placeholder='Enter your username'
+                        value={formState.username}
                         onChange={onFormChange}
                         isInvalid={!!formErrors.username}
                         required>
@@ -47,6 +48,7 @@ function SignIn(props) {
                         name='password'
                         type='password'
                         placeholder='Enter your password'
+                        value={formState.password}
                         onChange={onFormChange}
                         isInvalid={!!formErrors.password}
                         required>
