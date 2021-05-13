@@ -385,6 +385,16 @@
 
 /* #endregion Header Styles*/
 
+/* #region Footer Styles*/
+
+.footer {
+  padding-bottom: 3em;
+  margin-top: 1.5em;
+}
+
+
+/* #endregion Footer Styles*/
+
 /* #region Dashboard Styles */
 
 .dashboard-col {
