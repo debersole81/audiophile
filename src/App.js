@@ -316,8 +316,8 @@ function App() {
     //Set formState and render the SignIn component
     setFormState(() => ({
       ...formState,
-      username: '',
-      password: '',
+      username: 'guest',
+      password: 'AudioPhileGuest123',
       formType: 'signIn',
     }))
     //Clear formErrors state
