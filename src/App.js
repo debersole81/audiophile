@@ -10,8 +10,8 @@ import ProtectedComponents from './components/ProtectedComponents';
 
 /* #region Initial form state object */
 const initialFormState = {
-  username: '',
-  password: '',
+  username: 'guest',
+  password: 'AudioPhileGuest123',
   newPassword: '',
   email: '',
   authCode: '',
@@ -331,7 +331,7 @@ function App() {
     //Remove user from local storage
     window.localStorage.clear();
     //Set formState
-    setFormState(() => ({ formType: 'signIn' }))
+    setFormState(() => ({ username: 'guest', password: 'AudioPhileGuest123', formType: 'signIn' }))
     //Redirect user to login screen
     history.push('/');
   };
@@ -339,7 +339,7 @@ function App() {
 
   /* #region Props Objects */
   /** SignIn Component Props */
-  const signInProps = { onFormChange, formErrors, signIn, signUpLink, resetPasswordLink };
+  const signInProps = { onFormChange, formState, formErrors, signIn, signUpLink, resetPasswordLink };
 
   /** SignUp Component Props */
   const signUpProps = { onFormChange, formErrors, signUp, signInLink };
