@@ -24,7 +24,7 @@ function Header(props) {
     return (
         <Navbar collapseOnSelect sticky='top' bg='dark' variant='dark' className='p-4 mb-5' expand='lg'>
             {(width > breakpoint) ?
-                <Navbar.Brand href='#home'>
+                <Navbar.Brand href='/'>
                     <img
                         src={audioPhileLogoText}
                         height={30}
