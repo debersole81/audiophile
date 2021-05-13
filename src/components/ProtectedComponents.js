@@ -840,13 +840,13 @@ function ProtectedComponents(props) {
 
     /* #region Props Objects */
     /** Collection component props */
-    const collectionProps = { 
+    const collectionProps = {
         userCollectionAlbums,
         userCollectionReleases,
         handleAlbumClick,
         handleViewAlbumRelease,
         deleteAlbumFromCollection,
-        deleteReleaseFromCollection 
+        deleteReleaseFromCollection
     };
 
     /** WishList component props */
@@ -931,39 +931,43 @@ function ProtectedComponents(props) {
 
     return (
         <React.Fragment>
-            <Header logOut={props.logOut} />
-            <Switch>
-                <Route exact path='/' component={Dashboard} />
-                <Route exact path='/collection' render={(props) =>
-                    <Collection
-                        collectionProps={collectionProps}
-                    />}
-                />
-                <Route exact path='/wishlist' render={(props) => 
-                    <WishList
-                        wishListProps={wishListProps}
-                    />}
-                />
-                <Route exact path='/randomizer' component={Randomizer} />
-                <Route exact path='/search' render={(props) =>
-                    <Search
-                        searchProps={searchProps}
-                        searchResultsProps={searchResultsProps}
-                        searchResultsPaginationProps={searchResultsPaginationProps}
-                    />}
-                />
-                <Route exact path='/album' render={(props) =>
-                    <Album
-                        albumProps={albumProps}
-                        albumReleasesProps={albumReleasesProps}
-                        albumReleasesPaginationProps={albumReleasesPaginationProps}
-                    />}
-                />
-                <Route exact path='/albumrelease' render={(props) =>
-                    <AlbumRelease albumReleaseProps={albumReleaseProps} />}
-                />
-            </Switch>
-            <Footer />
+            <div className='page-container'>
+                <div className='content-wrap'>
+                    <Header logOut={props.logOut} />
+                    <Switch>
+                        <Route exact path='/' component={Dashboard} />
+                        <Route exact path='/collection' render={(props) =>
+                            <Collection
+                                collectionProps={collectionProps}
+                            />}
+                        />
+                        <Route exact path='/wishlist' render={(props) =>
+                            <WishList
+                                wishListProps={wishListProps}
+                            />}
+                        />
+                        <Route exact path='/randomizer' component={Randomizer} />
+                        <Route exact path='/search' render={(props) =>
+                            <Search
+                                searchProps={searchProps}
+                                searchResultsProps={searchResultsProps}
+                                searchResultsPaginationProps={searchResultsPaginationProps}
+                            />}
+                        />
+                        <Route exact path='/album' render={(props) =>
+                            <Album
+                                albumProps={albumProps}
+                                albumReleasesProps={albumReleasesProps}
+                                albumReleasesPaginationProps={albumReleasesPaginationProps}
+                            />}
+                        />
+                        <Route exact path='/albumrelease' render={(props) =>
+                            <AlbumRelease albumReleaseProps={albumReleaseProps} />}
+                        />
+                    </Switch>
+                </div>
+                <Footer />
+            </div>
         </React.Fragment>
     );
 };
