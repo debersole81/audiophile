@@ -22,7 +22,7 @@ function Header(props) {
     /* #endregion Set Mobile Breakpoint with Custom Hook */
 
     return (
-        <Navbar collapseOnSelect sticky='top' bg='dark' variant='dark' className='p-4 mb-5' expand='lg'>
+        <Navbar collapseOnSelect sticky='top' bg='dark' variant='dark' className='p-4 header' expand='lg'>
             {(width > breakpoint) ?
                 <Navbar.Brand href='/'>
                     <img
