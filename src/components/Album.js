@@ -99,7 +99,7 @@ function Album(props) {
     /* #endregion GraphQL Album Id's */
 
     return (
-        <Container>
+        <Container className='mt-3'>
             <Row>
                 <Col className='col album-image-col' xs={12} s={12} md={7} lg={6} xl={5}>
                     <Image fluid src={albumData.images[0].uri} alt='Album Cover Art' />
