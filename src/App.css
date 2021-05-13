@@ -369,13 +369,24 @@
 
 /* #endregion Form Styles */
 
+/* #region App Component Styles */
+
+.app-modal {
+  padding-top: 1em;
+}
+
+/* #endregion App Component Styles */
+
 /* #region Header Styles*/
+
 .header-btn {
   height: 2.5em;
 }
+
 /* #endregion Header Styles*/
 
 /* #region Dashboard Styles */
+
 .dashboard-col {
   padding-top: 1.2em;
   padding-bottom: 2em;
