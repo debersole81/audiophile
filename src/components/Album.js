@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import '../App.css';
 import masterReleaseLogo from '../assets/master-release-logo.svg';
 import AlbumTracks from '../components/AlbumTracks'
