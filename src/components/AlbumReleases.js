@@ -55,7 +55,7 @@ function AlbumReleases(props) {
                                 <td>{album.catno}</td>
                                 <td>{album.country}</td>
                                 <td>{album.released}</td>
-                                <td><Button variant='dark' size='sm' id={album.id} onClick={handleViewAlbumRelease}>VIEW</Button></td>
+                                <td><Button variant='dark' size='sm' id={album.id} onClick={handleViewAlbumRelease}>View</Button></td>
                             </tr>
                         </tbody>
                     )}
