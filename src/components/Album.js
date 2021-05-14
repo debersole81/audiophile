@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../App.css';
 import masterReleaseLogo from '../assets/master-release-logo.svg';
 import AlbumTracks from '../components/AlbumTracks'
@@ -12,7 +12,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import { FaHeart, FaRecordVinyl } from 'react-icons/fa';
 
 /**
- * Develop a way to restor previous state (albumData) after a page reload in the browser
+ * Develop a way to restore previous state (albumData) after a page reload in the browser
  * Two researched options to accomplish--
  * Save state locally via localstorage/indexedDB
  * Save state at server side
@@ -103,7 +103,7 @@ function Album(props) {
             <Row>
                 <Col className='col album-image-col' xs={12} s={12} md={7} lg={6} xl={5}>
                     <Image fluid src={albumData.images[0].uri} alt='Album Cover Art' />
-                    {(Array.isArray(images) && images.length) ? <Button variant='dark' className='album-images-button' onClick={handleShowModal} block>SEE MORE IMAGES</Button> : null}
+                    {(Array.isArray(images) && images.length) ? <Button variant='dark' className='album-images-button' onClick={handleShowModal} block>See More Images</Button> : null}
                     <Modal show={showModal} onHide={handleCloseModal} size='lg' aria-labelledby='contained-modal-title-vcenter' centered>
                         <Modal.Header closeButton />
                         <Modal.Body id='contained-modal-title-vcenter'>
@@ -135,12 +135,12 @@ function Album(props) {
                     <Row className='album-add-buttons-row'>
                         <Col>
                             {(userCollectionAlbums.some(element => (element.albumId === albumData.id))) ?
-                                <Button variant='dark' size='sm' id={collectionAlbumId} onClick={deleteAlbumFromCollection} block><FaRecordVinyl /> REMOVE FROM COLLECTION</Button> :
-                                <Button variant='dark' size='sm' onClick={addAlbumToCollection} block><FaRecordVinyl /> ADD TO COLLECTION</Button>
+                                <Button variant='dark' size='sm' id={collectionAlbumId} onClick={deleteAlbumFromCollection} block><FaRecordVinyl /> Remove From Collection</Button> :
+                                <Button variant='dark' size='sm' onClick={addAlbumToCollection} block><FaRecordVinyl /> Add To Collection</Button>
                             }
                             {(userWishListAlbums.some(element => (element.albumId === albumData.id))) ?
-                                <Button variant='dark' size='sm' id={wishListAlbumId} onClick={deleteAlbumFromWishList} block><FaHeart /> REMOVE FROM WISHLIST</Button> :
-                                <Button variant='dark' size='sm' onClick={addAlbumToWishList} block><FaHeart /> ADD TO WISHLIST</Button>
+                                <Button variant='dark' size='sm' id={wishListAlbumId} onClick={deleteAlbumFromWishList} block><FaHeart /> Remove From Wishlist</Button> :
+                                <Button variant='dark' size='sm' onClick={addAlbumToWishList} block><FaHeart /> Add To Wishlist</Button>
                             }
                         </Col>
                     </Row>
@@ -149,7 +149,6 @@ function Album(props) {
             </Row>
         </Container>
     );
-
 };
 
 export default Album;
