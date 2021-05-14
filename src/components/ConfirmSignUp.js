@@ -63,7 +63,7 @@ function ConfirmSignUp(props) {
                 </Form.Row>
                 <Form.Row className='row authaccount-link-row'>
                     <Col className='col' xs={12} sm={12} md={12} lg={12} xl={12}>
-                        <Button variant='dark' onClick={confirmSignUp} block>CONFIRM</Button>
+                        <Button variant='dark' onClick={confirmSignUp} block>Confirm</Button>
                     </Col>
                     <Col className='col authaccount-link-col' xs={12} sm={12} md={12} lg={12} xl={12}>
                         <Button variant='link' size='sm' onClick={signInLink}>Return to sign in</Button>
@@ -121,10 +121,10 @@ function ConfirmSignUp(props) {
             }
             <Form.Row className='row authaccount-link-row'>
                 <Col className='col' xs={12} sm={12} md={12} lg={12} xl={12}>
-                    <Button variant='dark' size='sm' onClick={confirmSignUp} block>CONFIRM</Button>
+                    <Button variant='dark' size='sm' onClick={confirmSignUp} block>Confirm</Button>
                 </Col>
                 <Col className='col mt-2' xs={12} sm={12} md={12} lg={12} xl={12}>
-                    <Button variant='light' size='sm' onClick={signInLink} block>RETURN TO SIGN IN</Button>
+                    <Button variant='light' size='sm' onClick={signInLink} block>Return To Sign In</Button>
                 </Col>
             </Form.Row>
         </Form>

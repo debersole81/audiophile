@@ -70,7 +70,7 @@ function SignUp(props) {
                 </Form.Group>
                 <Form.Row className='row authform-row'>
                     <Col className='col' xs={12} sm={12} md={12} lg={12} xl={12}>
-                        <Button variant='dark' onClick={signUp} block>CREATE ACCOUNT</Button>
+                        <Button variant='dark' onClick={signUp} block>Create Account</Button>
                     </Col>
                     <Col className='col authform-link-col' xs={12} sm={12} md={12} lg={12} xl={12}>
                         <p>Have an account?</p>
@@ -128,10 +128,10 @@ function SignUp(props) {
             </Form.Group>
             <Form.Row className='row authform-row'>
                 <Col className='col' xs={12} sm={12} md={12} lg={12} xl={12}>
-                    <Button variant='dark' size='sm' onClick={signUp} block>CREATE ACCOUNT</Button>
+                    <Button variant='dark' size='sm' onClick={signUp} block>Create Account</Button>
                 </Col>
                 <Col className='col mt-2' xs={12} sm={12} md={12} lg={12} xl={12}>
-                    <Button variant='light' size='sm' onClick={signInLink} block>RETURN TO SIGN IN</Button>
+                    <Button variant='light' size='sm' onClick={signInLink} block>Return To Sign In</Button>
                 </Col>
             </Form.Row>
         </Form>

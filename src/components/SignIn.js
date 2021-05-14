@@ -65,7 +65,7 @@ function SignIn(props) {
                 </Form.Row>
                 <Form.Row className='row authform-row'>
                     <Col className='col' xs={12} sm={12} md={12} lg={12} xl={12}>
-                        <Button variant='dark' onClick={signIn} block>SIGN IN</Button>
+                        <Button variant='dark' onClick={signIn} block>Sign In</Button>
                     </Col>
                     <Col className='col authform-link-col' xs={12} sm={12} md={12} lg={12} xl={12}>
                         <p>No AudioPhile account?</p>
@@ -124,10 +124,10 @@ function SignIn(props) {
             }
             <Form.Row className='row authform-row'>
                 <Col className='col' xs={12} sm={12} md={12} lg={12} xl={12}>
-                    <Button variant='dark' size='sm' onClick={signIn} block>SIGN IN</Button>
+                    <Button variant='dark' size='sm' onClick={signIn} block>Sign In</Button>
                 </Col>
                 <Col className='col mt-2' xs={12} sm={12} md={12} lg={12} xl={12}>
-                    <Button variant='light' size='sm' onClick={signUpLink} block>SIGN UP</Button>
+                    <Button variant='light' size='sm' onClick={signUpLink} block>Sign Up</Button>
                 </Col>
             </Form.Row>
         </Form>
