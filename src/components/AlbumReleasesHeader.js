@@ -36,7 +36,7 @@ function AlbumReleasesHeader(props) {
                         <h5 className='album-releases-header-thead'>Album Releases</h5>
                     </Col>
                     <Col className='col album-releases-header-button-col' xs={12} s={12} lg={6}>
-                        <Button size='sm' variant='outline-light' className='album-releases-header-button' onClick={handleViewAlbumReleases}>SHOW RELEASES</Button>
+                        <Button size='sm' variant='outline-light' className='album-releases-header-button' onClick={handleViewAlbumReleases}>Show Releases</Button>
                     </Col>
                 </Row>
             </Container>
@@ -50,7 +50,7 @@ function AlbumReleasesHeader(props) {
                     <h5 className='album-releases-header-thead'>Album Releases</h5>
                 </Col>
                 <Col className='col album-releases-header-button-col' xs={12} s={12} lg={6}>
-                    <Button size='sm' variant='outline-light' className='album-releases-header-button' onClick={handleHideAlbumReleases}>HIDE RELEASES</Button>
+                    <Button size='sm' variant='outline-light' className='album-releases-header-button' onClick={handleHideAlbumReleases}>Hide Releases</Button>
                 </Col>
             </Row>
             <AlbumReleases albumReleasesProps={props.albumReleasesProps} albumReleasesPaginationProps={props.albumReleasesPaginationProps} />
