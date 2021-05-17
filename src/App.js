@@ -8,14 +8,11 @@ import ConfirmSignUp from './components/ConfirmSignUp';
 import ResetPassword from './components/ResetPassword';
 import ConfirmResetPassword from './components/ConfirmResetPassword';
 import ProtectedComponents from './components/ProtectedComponents';
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
-import audioPhileLogoTextBlack from './assets/audiophile-logo-text-black.svg';
 
 /* #region Initial form state object */
 const initialFormState = {
-  username: 'guest',
-  password: 'AudioPhileGuest123',
+  username: '',
+  password: '',
   newPassword: '',
   email: '',
   authCode: '',
@@ -33,7 +30,6 @@ function App() {
   /* #region State Variables */
   const [formState, setFormState] = useState(initialFormState);
   const [formErrors, setFormErrors] = useState({});
-  const [showModal, setShowModal] = useState(false);
   /* #endregion State Variables */
 
   /* #region Persist Authenticated User */
@@ -42,26 +38,10 @@ function App() {
     Auth.currentAuthenticatedUser()
       .then(() => {
         setFormState(() => ({ formType: 'signedIn' }))
-        setShowModal(false);
       })
 
   }, [])
   /* #endregion Persist Authenticated User */
-
-  /* #region Sign In Modal */
-  /** Set showModal state on component render */
-  //Only show modal if username and password are defaulted to guest account values
-  useEffect(() => {
-    if (initialFormState.username === 'guest' && initialFormState.password === 'AudioPhileGuest123') {
-      setShowModal(true);
-    };
-  }, [])
-
-  /** Close the modal */
-  function closeModal() {
-    setShowModal(false);
-  }
-  /* #endregion Sign In Modal */
 
   /* #region Form Error Validation Object */
   //Destructure formState
@@ -181,7 +161,6 @@ function App() {
           Auth.currentAuthenticatedUser()
             .then(() => {
               setFormState(() => ({ formType: 'signedIn' }))
-              setShowModal(false)
             })
         })
     };
@@ -329,8 +308,8 @@ function App() {
     //Set formState and render the SignIn component
     setFormState(() => ({
       ...formState,
-      username: 'guest',
-      password: 'AudioPhileGuest123',
+      username: '',
+      password: '',
       formType: 'signIn',
     }))
     //Clear formErrors state
@@ -371,7 +350,7 @@ function App() {
     //Remove user from local storage
     window.localStorage.clear();
     //Set formState
-    setFormState(() => ({ username: 'guest', password: 'AudioPhileGuest123', formType: 'signIn' }))
+    setFormState(() => ({ formType: 'signIn' }))
     //Redirect user to login screen
     history.push('/');
   };
@@ -379,7 +358,7 @@ function App() {
 
   /* #region Props Objects */
   /** SignIn Component Props */
-  const signInProps = { onFormChange, formState, formErrors, signIn, guestSignIn, signUpLink, resetPasswordLink };
+  const signInProps = { onFormChange, formErrors, signIn, guestSignIn, signUpLink, resetPasswordLink };
 
   /** SignUp Component Props */
   const signUpProps = { onFormChange, formErrors, signUp, signInLink };
@@ -400,25 +379,6 @@ function App() {
 
   return (
     <React.Fragment>
-      <Modal show={showModal} onHide={closeModal} aria-labelledby='contained-modal-title-vcenter' centered>
-        <Modal.Header closeButton>
-          <img
-            src={audioPhileLogoTextBlack}
-            height={30}
-            width={225}
-            className='d-inline-block align-top'
-            alt='AudioPhile logo'
-          />
-        </Modal.Header>
-        <Modal.Body id='contained-modal-title-vcenter'>
-          <h4>Welcome to AudioPhile</h4>
-          <p className='app-modal'>To proceed as a guest, close this window and click sign in.</p>
-          <p>You may also create an account if you prefer a customized experience.</p>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={closeModal} variant='dark'>Close</Button>
-        </Modal.Footer>
-      </Modal>
       {formType === 'signIn' && <SignIn signInProps={signInProps} />}
       {formType === 'signUp' && <SignUp signUpProps={signUpProps} />}
       {formType === 'confirmSignUp' && <ConfirmSignUp confirmSignUpProps={confirmSignUpProps} />}
