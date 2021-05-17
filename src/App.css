@@ -14,6 +14,7 @@
 /* #region Responsive Styles */
 
 @media (max-width: 992px) {
+
   /** AlbumTracks component */
   .album-tracks-thead {
     text-align: center;
@@ -38,6 +39,20 @@
     margin-bottom: 3em;
   }
 }
+
+@media (min-width: 1500px) {
+  /**Search component */
+  .search-form-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .search-button {
+    /* float: left; */
+    margin-left: -6.5em;
+  }
+} 
 
 /* #endregion Responsive Styles */
 
@@ -436,7 +451,25 @@
 }
 
 .search-form {
+  padding-top: .5em;  
+}
+
+.search-form-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: -2em;
+}
+
+.search-button-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-button {
   padding-top: .5em;
+  padding-bottom: .5em;
 }
 
 /* #endregion Search Component Styles */
