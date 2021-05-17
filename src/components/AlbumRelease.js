@@ -89,11 +89,11 @@ function AlbumRelease(props) {
     /* #endregion GraphQL Album Id's */
 
     return (
-        <Container>
+        <Container className='mt-3'>
             <Row>
                 <Col className='col album-release-image-col' xs={12} s={12} md={7} lg={6} xl={5}>
                     <Image fluid src={albumReleaseData.images[0].uri} alt='Album Cover Art' />
-                    {(Array.isArray(images) && images.length) ? <Button variant='dark' className='album-release-images-button' onClick={handleShowModal} block>SEE MORE IMAGES</Button> : null}
+                    {(Array.isArray(images) && images.length) ? <Button variant='dark' className='album-release-images-button' onClick={handleShowModal} block>See More Images</Button> : null}
                     <Modal show={showModal} onHide={handleCloseModal} size='lg' aria-labelledby='contained-modal-title-vcenter' centered>
                         <Modal.Header closeButton />
                         <Modal.Body id='contained-modal-title-vcenter'>
@@ -120,12 +120,12 @@ function AlbumRelease(props) {
                     <Row className='album-release-add-buttons-row'>
                         <Col>
                             {(userCollectionReleases.some((element) => (element.albumId === albumReleaseData.id))) ?
-                                <Button variant='dark' size='sm' id={collectionReleaseId} onClick={deleteReleaseFromCollection} block><FaRecordVinyl /> REMOVE FROM COLLECTION</Button> :
-                                <Button variant='dark' size='sm' onClick={addReleaseToCollection} block><FaRecordVinyl /> ADD TO COLLECTION</Button>
+                                <Button variant='dark' size='sm' id={collectionReleaseId} onClick={deleteReleaseFromCollection} block><FaRecordVinyl /> Remove From Collection</Button> :
+                                <Button variant='dark' size='sm' onClick={addReleaseToCollection} block><FaRecordVinyl /> Add To Collection</Button>
                             }
                             {(userWishListReleases.some((element) => (element.albumId === albumReleaseData.id))) ?
-                                <Button variant='dark' size='sm' id={wishListReleaseId} onClick={deleteReleaseFromWishList} block><FaHeart /> REMOVE FROM WISHLIST</Button> :
-                                <Button variant='dark' size='sm' onClick={addReleaseToWishList} block><FaHeart /> ADD TO WISHLIST</Button>
+                                <Button variant='dark' size='sm' id={wishListReleaseId} onClick={deleteReleaseFromWishList} block><FaHeart /> Remove From Wishlist</Button> :
+                                <Button variant='dark' size='sm' onClick={addReleaseToWishList} block><FaHeart /> Add To Wishlist</Button>
                             }
                         </Col>
                     </Row>
