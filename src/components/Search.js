@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 
 
 /**Notes
@@ -32,17 +33,24 @@ function Search(props) {
                     </Col>
                 </Row>
                 <Row className='row justify-content-center'>
-                    <Col className='col' md={10} lg={8}>
+                    <Col className='col' md={10} lg={8} xl={8}>
                         <Form className='search-form' onSubmit={handleSearchSubmit}>
                             <Form.Group>
                                 <Form.Label srOnly>Search</Form.Label>
-                                <Form.Control
-                                    type='text'
-                                    name='search'
-                                    placeholder='Type an album or artist name.'
-                                    value={search}
-                                    onChange={handleSearch}
-                                />
+                                <Row className='row justify-content-center'>
+                                    <Col className='col search-form-col' xs={10} sm={11} md={11} lg={11} xl={11}>
+                                        <Form.Control
+                                            type='text'
+                                            name='search'
+                                            placeholder='Type an album or artist name.'
+                                            value={search}
+                                            onChange={handleSearch}
+                                        />
+                                    </Col>
+                                    <Col className='col search-button-col' xs={2} sm={1} md={1} lg={1} xl={1}>
+                                        <Button variant='dark' size='sm' className='search-button' onClick={handleSearchSubmit}>Go!</Button>
+                                    </Col>
+                                </Row>
                             </Form.Group>
                         </Form>
                     </Col>
