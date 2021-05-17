@@ -379,7 +379,7 @@ function App() {
 
   /* #region Props Objects */
   /** SignIn Component Props */
-  const signInProps = { onFormChange, formState, formErrors, signIn, signUpLink, resetPasswordLink };
+  const signInProps = { onFormChange, formState, formErrors, signIn, guestSignIn, signUpLink, resetPasswordLink };
 
   /** SignUp Component Props */
   const signUpProps = { onFormChange, formErrors, signUp, signInLink };
