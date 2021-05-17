@@ -10,7 +10,7 @@ import Col from 'react-bootstrap/Col';
 function SignIn(props) {
 
     /* #region Props destructure */
-    const { onFormChange, signIn, formState, formErrors, signUpLink, resetPasswordLink } = props.signInProps;
+    const { onFormChange, signIn, guestSignIn, formState, formErrors, signUpLink, resetPasswordLink } = props.signInProps;
     /* #endregion Props destructure */
 
     /* #region Custom hooks */
@@ -66,6 +66,7 @@ function SignIn(props) {
                 <Form.Row className='row authform-row'>
                     <Col className='col' xs={12} sm={12} md={12} lg={12} xl={12}>
                         <Button variant='dark' onClick={signIn} block>Sign In</Button>
+                        <Button variant='dark' onClick={guestSignIn} block>Continue as Guest</Button>
                     </Col>
                     <Col className='col authform-link-col' xs={12} sm={12} md={12} lg={12} xl={12}>
                         <p>No AudioPhile account?</p>
@@ -125,6 +126,7 @@ function SignIn(props) {
             <Form.Row className='row authform-row'>
                 <Col className='col' xs={12} sm={12} md={12} lg={12} xl={12}>
                     <Button variant='dark' size='sm' onClick={signIn} block>Sign In</Button>
+                    <Button variant='dark' size='sm' onClick={guestSignIn} block>Continue as Guest</Button>
                 </Col>
                 <Col className='col mt-2' xs={12} sm={12} md={12} lg={12} xl={12}>
                     <Button variant='light' size='sm' onClick={signUpLink} block>Sign Up</Button>
