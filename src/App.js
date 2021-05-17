@@ -46,9 +46,6 @@ function App() {
       })
 
   }, [])
-
-
-
   /* #endregion Persist Authenticated User */
 
   /* #region Sign In Modal */
@@ -141,6 +138,24 @@ function App() {
     if (Object.keys(formErrors))
       setFormErrors(() => ({ ...formErrors, [e.target.name]: null }))
   };
+
+  /** Guest User Sign In */
+  function guestSignIn(e) {
+    e.preventDefault();
+
+    //Call AWS Amplify Auth.sign method, pass in guest account credentials
+    Auth.signIn('guest', 'AudioPhileGuest123')
+      .catch(error => {
+        console.log(error);
+      })
+      //Retrieve authenticated user from local storage
+      .then(() => {
+        Auth.currentAuthenticatedUser()
+          .then(() => {
+            setFormState(() => ({ formType: 'signedIn' }))
+          })
+      })
+  }
 
   /** User Sign In */
   function signIn(e) {
