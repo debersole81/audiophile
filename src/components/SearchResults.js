@@ -8,9 +8,11 @@ import Button from 'react-bootstrap/Button';
 
 function SearchResults(props) {
 
-    /** Destructure props */
-    const { searchData } = props.searchResultsProps;
-    const { handleAlbumClick } = props.searchResultsProps;
+    /* #region Props destructure */
+    const { searchData, searchDataLoading, handleAlbumClick } = props.searchResultsProps;
+    /* #endregion Props destructure */
+
+    console.log(searchDataLoading);
 
     if (Array.isArray(searchData) && searchData.length) {
         return (
@@ -40,10 +42,6 @@ function SearchResults(props) {
     }
 
     return (null);
-    // //     <Container className='text-center'>
-    //         <h1>Search for something!</h1>
-    //     </Container>
-    // );
 };
 
 
