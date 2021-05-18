@@ -864,7 +864,7 @@ function ProtectedComponents(props) {
     const searchProps = { search, handleSearch, handleSearchSubmit };
 
     /** SearchResults component props */
-    const searchResultsProps = { searchData, handleAlbumClick };
+    const searchResultsProps = { searchData, searchDataLoading, handleAlbumClick };
 
     /** SearchResultsPagination component props */
     const searchResultsPaginationProps = {
