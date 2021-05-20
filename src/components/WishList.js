@@ -22,7 +22,7 @@ function WishList(props) {
     const {
         userWishListAlbums,
         userWishListReleases,
-        handleAlbumClick,
+        albumClick,
         handleViewAlbumRelease,
         deleteAlbumFromWishList,
         deleteReleaseFromWishList
@@ -95,7 +95,7 @@ function WishList(props) {
                                                         <Button id={albums.id} variant='outline-dark' size='sm' onClick={deleteAlbumFromWishList} block>Remove</Button>
                                                     </ButtonGroup>
                                                     <ButtonGroup className='user-library-btn-group'>
-                                                        <Button id={albums.masterId} className='pl-3 pr-3' variant='outline-dark' size='sm' onClick={handleAlbumClick} block>View</Button>
+                                                        <Button id={albums.masterId} className='pl-3 pr-3' variant='outline-dark' size='sm' onClick={albumClick} block>View</Button>
                                                     </ButtonGroup>
                                                 </Col> :
                                                 <Col className='col' xs={8} s={8} md={8} lg={8} xl={8}>

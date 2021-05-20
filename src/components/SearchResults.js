@@ -9,7 +9,7 @@ import Button from 'react-bootstrap/Button';
 function SearchResults(props) {
 
     /* #region Props destructure */
-    const { searchData, searchDataLoading, handleAlbumClick } = props.searchResultsProps;
+    const { searchData, searchDataLoading, albumClick } = props.searchResultsProps;
     /* #endregion Props destructure */
 
     console.log(searchDataLoading);
@@ -31,7 +31,7 @@ function SearchResults(props) {
                                         {results.label[0]}<br />
                                         {results.year}<br />
                                     </Card.Text>
-                                    <Button variant='outline-dark' size='sm' id={results.master_id} onClick={handleAlbumClick} block>View</Button>
+                                    <Button variant='outline-dark' size='sm' id={results.master_id} onClick={albumClick} block>View</Button>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -43,6 +43,5 @@ function SearchResults(props) {
 
     return (null);
 };
-
 
 export default SearchResults;
