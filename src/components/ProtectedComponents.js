@@ -118,13 +118,13 @@ function ProtectedComponents(props) {
 
     /* #region Callback Functions */
     /** Search component callback functions */
-    /* Change handler for search form field */
+    /* Search Form Change Handler */
     function onSearchFormChange(e) {
         setSearch(() => (e.target.value))
     };
 
-    /* Handle search form submit */
-    const handleSearchSubmit = (e) => {
+    /* Search Form Submit */
+    function searchSubmit (e) {
         e.preventDefault();
 
         //Clear searchResultsMinPages & searchResultsMaxPages state
@@ -860,8 +860,8 @@ function ProtectedComponents(props) {
         deleteReleaseFromWishList
     };
 
-    /** Search component props */
-    const searchProps = { search, onSearchFormChange, handleSearchSubmit };
+    /** Search Component Props */
+    const searchProps = { search, onSearchFormChange, searchSubmit };
 
     /** SearchResults component props */
     const searchResultsProps = { searchData, searchDataLoading, handleAlbumClick };
