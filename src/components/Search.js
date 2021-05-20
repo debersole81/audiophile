@@ -18,10 +18,9 @@ import Button from 'react-bootstrap/Button';
 
 function Search(props) {
 
-    /** Destructure props */
-    const { search } = props.searchProps;
-    const { handleSearch } = props.searchProps;
-    const { handleSearchSubmit } = props.searchProps;
+    /** #region Props destructure */
+    const { search, onSearchFormChange, handleSearchSubmit } = props.searchProps;
+    /** #endregion Props destructure */
 
     return (
         <React.Fragment>
@@ -44,7 +43,7 @@ function Search(props) {
                                             name='search'
                                             placeholder='Type an album or artist name.'
                                             value={search}
-                                            onChange={handleSearch}
+                                            onChange={onSearchFormChange}
                                         />
                                     </Col>
                                     <Col className='col search-button-col' xs={2} sm={1} md={1} lg={1} xl={1}>
