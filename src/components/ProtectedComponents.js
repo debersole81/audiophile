@@ -117,7 +117,7 @@ function ProtectedComponents(props) {
     /* #endregion State Variables*/
 
     /* #region Callback Functions */
-    /** Search component callback functions */
+    /** Search Component Callback Functions */
     /* Search Form Change Handler */
     function onSearchFormChange(e) {
         setSearch(() => (e.target.value))
@@ -144,9 +144,9 @@ function ProtectedComponents(props) {
             );
     };
 
-    /** SearchResults component callback functions */
-    /* Handle album click */
-    const handleAlbumClick = (e) => {
+    /** SearchResults Component Callback Functions */
+    /* Album Click */
+    function albumClick (e) {
         e.preventDefault();
 
         //Clear albumRelease data
@@ -844,7 +844,7 @@ function ProtectedComponents(props) {
     const collectionProps = {
         userCollectionAlbums,
         userCollectionReleases,
-        handleAlbumClick,
+        albumClick,
         handleViewAlbumRelease,
         deleteAlbumFromCollection,
         deleteReleaseFromCollection
@@ -854,7 +854,7 @@ function ProtectedComponents(props) {
     const wishListProps = {
         userWishListAlbums,
         userWishListReleases,
-        handleAlbumClick,
+        albumClick,
         handleViewAlbumRelease,
         deleteAlbumFromWishList,
         deleteReleaseFromWishList
@@ -864,7 +864,7 @@ function ProtectedComponents(props) {
     const searchProps = { search, onSearchFormChange, searchSubmit };
 
     /** SearchResults component props */
-    const searchResultsProps = { searchData, searchDataLoading, handleAlbumClick };
+    const searchResultsProps = { searchData, searchDataLoading, albumClick };
 
     /** SearchResultsPagination component props */
     const searchResultsPaginationProps = {
