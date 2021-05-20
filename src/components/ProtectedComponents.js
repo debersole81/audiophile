@@ -118,10 +118,10 @@ function ProtectedComponents(props) {
 
     /* #region Callback Functions */
     /** Search component callback functions */
-    /* Handle search form input field */
-    const handleSearch = (({ target }) => {
-        setSearch(target.value);
-    });
+    /* Change handler for search form field */
+    function onSearchFormChange(e) {
+        setSearch(() => (e.target.value))
+    };
 
     /* Handle search form submit */
     const handleSearchSubmit = (e) => {
@@ -861,7 +861,7 @@ function ProtectedComponents(props) {
     };
 
     /** Search component props */
-    const searchProps = { search, handleSearch, handleSearchSubmit };
+    const searchProps = { search, onSearchFormChange, handleSearchSubmit };
 
     /** SearchResults component props */
     const searchResultsProps = { searchData, searchDataLoading, handleAlbumClick };
