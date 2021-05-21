@@ -174,9 +174,9 @@ function ProtectedComponents(props) {
                 })
     };
 
-    /** SearchResultsPagination component callback functions -- Mobile */
-    /* Handle previous page button click */
-    const handlePreviousSearchResultsPageMobile = (e) => {
+    /** SearchResultsPagination Component Callback Functions -- Mobile */
+    /* Handle Previous Page Button Click */
+    function previousSearchResultsPageMobile (e) {
         e.preventDefault();
 
         //If the current search results page is greater than 1, set pageNum equal to the current page - 1
@@ -204,8 +204,8 @@ function ProtectedComponents(props) {
         window.scrollTo(0, 0);
     };
 
-    /* Handle next page button click */
-    const handleNextSearchResultsPageMobile = (e) => {
+    /* Handle Next Page Button Click */
+    function nextSearchResultsPageMobile (e) {
         e.preventDefault();
 
         //If the current search result page is less than the total search result pages, set pageNum to the current page + 1
@@ -878,8 +878,8 @@ function ProtectedComponents(props) {
         handlePreviousSearchResultsPage,
         handleNextSearchResultsPage,
         handleLastSearchResultsPage,
-        handlePreviousSearchResultsPageMobile,
-        handleNextSearchResultsPageMobile
+        previousSearchResultsPageMobile,
+        nextSearchResultsPageMobile
     };
 
     /** Album component props */
