@@ -124,7 +124,7 @@ function ProtectedComponents(props) {
     };
 
     /* Search Form Submit */
-    function searchSubmit (e) {
+    function searchSubmit(e) {
         e.preventDefault();
 
         //Clear searchResultsMinPages & searchResultsMaxPages state
@@ -146,7 +146,7 @@ function ProtectedComponents(props) {
 
     /** SearchResults Component Callback Functions */
     /* Album Click */
-    function albumClick (e) {
+    function albumClick(e) {
         e.preventDefault();
 
         //Clear albumRelease data
@@ -176,7 +176,7 @@ function ProtectedComponents(props) {
 
     /** SearchResultsPagination Component Callback Functions -- Mobile */
     /* Handle Previous Page Button Click */
-    function previousSearchResultsPageMobile (e) {
+    function previousSearchResultsPageMobile(e) {
         e.preventDefault();
 
         //If the current search results page is greater than 1, set pageNum equal to the current page - 1
@@ -205,7 +205,7 @@ function ProtectedComponents(props) {
     };
 
     /* Handle Next Page Button Click */
-    function nextSearchResultsPageMobile (e) {
+    function nextSearchResultsPageMobile(e) {
         e.preventDefault();
 
         //If the current search result page is less than the total search result pages, set pageNum to the current page + 1
@@ -499,6 +499,7 @@ function ProtectedComponents(props) {
                 (result) => {
                     setAlbumReleasesData(result.versions);
                     setAlbumReleasesPagination(result.pagination);
+                    window.scroll(0, 1200)
                 }
             );
     };
@@ -514,11 +515,12 @@ function ProtectedComponents(props) {
         setAlbumReleasesMaxPages(5);
         setAlbumReleasesMinPagesMobile(0);
         setAlbumReleasesMaxPagesMobile(3);
+        window.scroll(0, 0);
     };
 
     /** AlbumReleases Component Callback Functions */
     /* Handle view release button click */
-    function viewAlbumRelease (e) {
+    function viewAlbumRelease(e) {
         e.preventDefault();
 
         //Call Discogs API Release endpoint
