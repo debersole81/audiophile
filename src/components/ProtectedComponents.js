@@ -235,7 +235,7 @@ function ProtectedComponents(props) {
 
     /** SearchResultsPagination component callback functions -- Desktop & Mobile */
     /* Handle current page click */
-    const handleCurrentSearchResultsPage = (e) => {
+    function currentSearchResultsPage(e) {
         e.preventDefault();
 
         //Assign Pagination component page id to pageNum variable
@@ -258,7 +258,7 @@ function ProtectedComponents(props) {
     };
 
     /* Handle first page button click */
-    const handleFirstSearchResultsPage = (e) => {
+    function firstSearchResultsPage(e) {
         e.preventDefault();
 
         //Set min and max pages to initial values
@@ -282,7 +282,7 @@ function ProtectedComponents(props) {
     };
 
     /* Handle previous page button click */
-    const handlePreviousSearchResultsPage = (e) => {
+    function previousSearchResultsPage(e) {
         e.preventDefault();
 
         //If the current search results page is greater than 1, assign a value to pageNum that is equal to the current page - 1
@@ -311,7 +311,7 @@ function ProtectedComponents(props) {
     };
 
     /* Handle next page button click */
-    const handleNextSearchResultsPage = (e) => {
+    function nextSearchResultsPage(e) {
         e.preventDefault();
 
         //If the current search result page is less than the total search result pages, assign a value to pageNum that is equal to the current page + 1
@@ -340,7 +340,7 @@ function ProtectedComponents(props) {
     };
 
     /* Handle last page button click */
-    const handleLastSearchResultsPage = (e) => {
+    function lastSearchResultsPage(e) {
         e.preventDefault();
 
         //Set min page to total search result pages - 5 and max page to the value to total search result pages
@@ -873,11 +873,11 @@ function ProtectedComponents(props) {
         searchResultsMaxPages,
         searchResultsMinPagesMobile,
         searchResultsMaxPagesMobile,
-        handleCurrentSearchResultsPage,
-        handleFirstSearchResultsPage,
-        handlePreviousSearchResultsPage,
-        handleNextSearchResultsPage,
-        handleLastSearchResultsPage,
+        currentSearchResultsPage,
+        firstSearchResultsPage,
+        previousSearchResultsPage,
+        nextSearchResultsPage,
+        lastSearchResultsPage,
         previousSearchResultsPageMobile,
         nextSearchResultsPageMobile
     };
