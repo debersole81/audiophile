@@ -233,7 +233,7 @@ function ProtectedComponents(props) {
         window.scrollTo(0, 0);
     };
 
-    /** SearchResultsPagination component callback functions -- Desktop & Mobile */
+    /** SearchResultsPagination Component Callback Functions -- Desktop & Mobile */
     /* Handle current page click */
     function currentSearchResultsPage(e) {
         e.preventDefault();
@@ -363,7 +363,7 @@ function ProtectedComponents(props) {
         window.scrollTo(0, 0);
     };
 
-    /** Album component callback functions */
+    /** Album Component Callback Functions */
     /* Add album to user's collection */
     function addAlbumToCollection(e) {
         e.preventDefault();
@@ -486,9 +486,9 @@ function ProtectedComponents(props) {
             })
     };
 
-    /** AlbumReleasesHeader component callback functions */
+    /** AlbumReleasesHeader Component Callback Functions */
     /* Handle view album releases button click */
-    const handleViewAlbumReleases = (e) => {
+    function viewAlbumReleases(e) {
         e.preventDefault();
 
         //Call Discogs Master Release Versions endpoint
@@ -504,7 +504,7 @@ function ProtectedComponents(props) {
     };
 
     /* Handle hide albun releases button click */
-    const handleHideAlbumReleases = (e) => {
+    function hideAlbumReleases(e) {
         e.preventDefault();
 
         //Clear albumReleases and albumReleases Pagination data
@@ -897,8 +897,8 @@ function ProtectedComponents(props) {
     /** AlbumReleasesHeader and AlbumReleases component props */
     const albumReleasesProps = {
         albumReleasesData,
-        handleViewAlbumReleases,
-        handleHideAlbumReleases,
+        viewAlbumReleases,
+        hideAlbumReleases,
         handleViewAlbumRelease
     };
 
