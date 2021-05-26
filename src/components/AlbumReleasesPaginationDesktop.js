@@ -6,16 +6,18 @@ import Pagination from 'react-bootstrap/Pagination';
 
 function AlbumReleasesPaginationDesktop(props) {
 
-    /** Destructure props */
-    const { albumReleasesPagination } = props.albumReleasesPaginationProps;
-    const { albumReleasesMinPages } = props.albumReleasesPaginationProps;
-    const { albumReleasesMaxPages } = props.albumReleasesPaginationProps;
-    const { handleCurrentAlbumReleasesPage } = props.albumReleasesPaginationProps;
-    const { handleFirstAlbumReleasesPage } = props.albumReleasesPaginationProps;
-    const { handlePreviousAlbumReleasesPage } = props.albumReleasesPaginationProps;
-    const { handleNextAlbumReleasesPage } = props.albumReleasesPaginationProps;
-    const { handleLastAlbumReleasesPage } = props.albumReleasesPaginationProps;
+    /** #region Props Destructure */
+    const { albumReleasesPagination,
+        albumReleasesMinPages,
+        albumReleasesMaxPages,
+        currentAlbumReleasesPage,
+        firstAlbumReleasesPage,
+        previousAlbumReleasesPage,
+        nextAlbumReleasesPage,
+        lastAlbumReleasesPage
+    } = props.albumReleasesPaginationProps;
 
+    /* #region Page Number Formatting and Prep for Rendering */
     /** Build pages array */
     //Variable to hold active page
     const activePage = albumReleasesPagination.page;
@@ -27,22 +29,23 @@ function AlbumReleasesPaginationDesktop(props) {
     for (let i = 1; i <= albumReleasesPagination.pages; i++) {
         //Push page numbers onto pages array
         pages.push(
-            <Pagination.Item key={i} id={i} className={(i === activePage ? 'active' : null)} onClick={handleCurrentAlbumReleasesPage}>
+            <Pagination.Item key={i} id={i} className={(i === activePage ? 'active' : null)} onClick={currentAlbumReleasesPage}>
                 {i}
             </Pagination.Item>
         );
     };
+    /* #endregion Page Number Formatting and Prep for Rendering */
 
     if (albumReleasesPagination.pages > 1) {
         return (
             <Row className='row'>
                 <Col className='col'>
                     <Pagination className='flex-wrap justify-content-center'>
-                        <Pagination.First className={albumReleasesPagination.page === 1 ? 'disabled' : ''} onClick={handleFirstAlbumReleasesPage} />
-                        <Pagination.Prev className={albumReleasesPagination.page === 1 ? 'disabled' : ''} onClick={handlePreviousAlbumReleasesPage} />
+                        <Pagination.First className={albumReleasesPagination.page === 1 ? 'disabled' : ''} onClick={firstAlbumReleasesPage} />
+                        <Pagination.Prev className={albumReleasesPagination.page === 1 ? 'disabled' : ''} onClick={previousAlbumReleasesPage} />
                         {pages.map((page) => (page.props.id < albumReleasesMaxPages + 1 && page.props.id > albumReleasesMinPages) ? page : null)}
-                        <Pagination.Next className={albumReleasesPagination.page === albumReleasesPagination.pages ? 'disabled' : ''} onClick={handleNextAlbumReleasesPage} />
-                        <Pagination.Last className={albumReleasesPagination.page === albumReleasesPagination.pages ? 'disabled' : ''} onClick={handleLastAlbumReleasesPage} />
+                        <Pagination.Next className={albumReleasesPagination.page === albumReleasesPagination.pages ? 'disabled' : ''} onClick={nextAlbumReleasesPage} />
+                        <Pagination.Last className={albumReleasesPagination.page === albumReleasesPagination.pages ? 'disabled' : ''} onClick={lastAlbumReleasesPage} />
                     </Pagination>
                 </Col>
             </Row>

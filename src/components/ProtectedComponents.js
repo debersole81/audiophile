@@ -535,9 +535,9 @@ function ProtectedComponents(props) {
             )
     };
 
-    /** AlbumReleasesPagination component callback functions -- Mobile */
+    /** AlbumReleasesPagination Component Callback Functions -- Mobile */
     /* Handle previous page button click */
-    const handlePreviousAlbumReleasesPageMobile = (e) => {
+    function previousAlbumReleasesPageMobile(e) {
         e.preventDefault();
 
         //If the current page is greater than 1, set pageNum equal to the current page - 1
@@ -566,7 +566,7 @@ function ProtectedComponents(props) {
     };
 
     /* Handle next page button click */
-    const handleNextAlbumReleasesPageMobile = (e) => {
+    function nextAlbumReleasesPageMobile(e) {
         e.preventDefault();
 
         //If the current page is less than the total pages, set pageNum equal to the current page + 1
@@ -594,9 +594,9 @@ function ProtectedComponents(props) {
         window.scroll(0, 1200);
     };
 
-    /** AlbumReleasesPagination component callback functions -- Desktop & Mobile */
+    /** AlbumReleasesPagination Component Callback Functions -- Desktop & Mobile */
     /* Handle current page click */
-    const handleCurrentAlbumReleasesPage = (e) => {
+    function currentAlbumReleasesPage(e) {
         e.preventDefault();
 
         //Call Discogs API Master Release Versions endpoint
@@ -616,7 +616,7 @@ function ProtectedComponents(props) {
     };
 
     /* Handle first page button click */
-    const handleFirstAlbumReleasesPage = (e) => {
+    function firstAlbumReleasesPage(e) {
         e.preventDefault();
 
         //Set min and max pages to initial values
@@ -640,7 +640,7 @@ function ProtectedComponents(props) {
     };
 
     /* Handle previous page button click */
-    const handlePreviousAlbumReleasesPage = (e) => {
+    function previousAlbumReleasesPage(e) {
         e.preventDefault();
 
         //If the current page is greater than 1, set pageNum equal to the current page - 1
@@ -669,7 +669,7 @@ function ProtectedComponents(props) {
     };
 
     /* Handle next page button click */
-    const handleNextAlbumReleasesPage = (e) => {
+    function nextAlbumReleasesPage(e) {
         e.preventDefault();
 
         //If the current page is less than the total pages, set pageNum equal to the current page + 1
@@ -698,7 +698,7 @@ function ProtectedComponents(props) {
     };
 
     /* Handle last page button click */
-    const handleLastAlbumReleasesPage = (e) => {
+    function lastAlbumReleasesPage(e) {
         e.preventDefault();
 
         //Set min page to total albumVersions pages - 5 and max page to the value of the total albumVersions pages
@@ -721,7 +721,7 @@ function ProtectedComponents(props) {
         window.scroll(0, 1200);
     };
 
-    /** AlbumRelease component callback functions */
+    /** AlbumRelease Component Callback Functions */
     /* Add release to user's collection */
     function addReleaseToCollection(e) {
         e.preventDefault();
@@ -911,13 +911,13 @@ function ProtectedComponents(props) {
         albumReleasesMaxPages,
         albumReleasesMinPagesMobile,
         albumReleasesMaxPagesMobile,
-        handleCurrentAlbumReleasesPage,
-        handleFirstAlbumReleasesPage,
-        handlePreviousAlbumReleasesPage,
-        handleNextAlbumReleasesPage,
-        handleLastAlbumReleasesPage,
-        handlePreviousAlbumReleasesPageMobile,
-        handleNextAlbumReleasesPageMobile
+        currentAlbumReleasesPage,
+        firstAlbumReleasesPage,
+        previousAlbumReleasesPage,
+        nextAlbumReleasesPage,
+        lastAlbumReleasesPage,
+        previousAlbumReleasesPageMobile,
+        nextAlbumReleasesPageMobile
     };
 
     /** AlbumRelease component props */
