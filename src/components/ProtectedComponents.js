@@ -168,6 +168,7 @@ function ProtectedComponents(props) {
                             (result) => {
                                 setAlbumData(result)
                                 history.push('/album');
+                                window.scroll(0, 0)
                             })
                         .then(setAlbumMasterData(result))
 
@@ -531,6 +532,7 @@ function ProtectedComponents(props) {
                 (result) => {
                     setAlbumReleaseData(result);
                     history.push('/albumrelease')
+                    window.scroll(0, 0)
                 }
             )
     };
