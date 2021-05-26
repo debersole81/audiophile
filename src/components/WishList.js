@@ -23,7 +23,7 @@ function WishList(props) {
         userWishListAlbums,
         userWishListReleases,
         albumClick,
-        handleViewAlbumRelease,
+        viewAlbumRelease,
         deleteAlbumFromWishList,
         deleteReleaseFromWishList
     } = props.wishListProps;
@@ -103,7 +103,7 @@ function WishList(props) {
                                                         <Button id={albums.id} variant='outline-dark' size='sm' onClick={deleteReleaseFromWishList} block>Remove</Button>
                                                     </ButtonGroup>
                                                     <ButtonGroup className='user-library-btn-group'>
-                                                        <Button id={albums.albumId} className='pl-3 pr-3' variant='outline-dark' size='sm' onClick={handleViewAlbumRelease} block>View</Button>
+                                                        <Button id={albums.albumId} className='pl-3 pr-3' variant='outline-dark' size='sm' onClick={viewAlbumRelease} block>View</Button>
                                                     </ButtonGroup>
                                                 </Col>
                                             }

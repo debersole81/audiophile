@@ -23,7 +23,7 @@ function Collection(props) {
         userCollectionAlbums,
         userCollectionReleases,
         albumClick,
-        handleViewAlbumRelease,
+        viewAlbumRelease,
         deleteAlbumFromCollection,
         deleteReleaseFromColection
     } = props.collectionProps;
@@ -103,7 +103,7 @@ function Collection(props) {
                                                         <Button id={albums.id} variant='outline-dark' size='sm' onClick={deleteReleaseFromColection} block>Remove</Button>
                                                     </ButtonGroup>
                                                     <ButtonGroup className='user-library-btn-group'>
-                                                        <Button id={albums.albumId} className='pl-3 pr-3' variant='outline-dark' size='sm' onClick={handleViewAlbumRelease} block>View</Button>
+                                                        <Button id={albums.albumId} className='pl-3 pr-3' variant='outline-dark' size='sm' onClick={viewAlbumRelease} block>View</Button>
                                                     </ButtonGroup>
                                                 </Col>
                                             }

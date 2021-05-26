@@ -516,9 +516,9 @@ function ProtectedComponents(props) {
         setAlbumReleasesMaxPagesMobile(3);
     };
 
-    /** AlbumReleases component callback functions */
+    /** AlbumReleases Component Callback Functions */
     /* Handle view release button click */
-    const handleViewAlbumRelease = (e) => {
+    function viewAlbumRelease (e) {
         e.preventDefault();
 
         //Call Discogs API Release endpoint
@@ -845,7 +845,7 @@ function ProtectedComponents(props) {
         userCollectionAlbums,
         userCollectionReleases,
         albumClick,
-        handleViewAlbumRelease,
+        viewAlbumRelease,
         deleteAlbumFromCollection,
         deleteReleaseFromCollection
     };
@@ -855,7 +855,7 @@ function ProtectedComponents(props) {
         userWishListAlbums,
         userWishListReleases,
         albumClick,
-        handleViewAlbumRelease,
+        viewAlbumRelease,
         deleteAlbumFromWishList,
         deleteReleaseFromWishList
     };
@@ -899,7 +899,7 @@ function ProtectedComponents(props) {
         albumReleasesData,
         viewAlbumReleases,
         hideAlbumReleases,
-        handleViewAlbumRelease
+        viewAlbumRelease
     };
 
     /** AlbumReleasesHeader and AlbumReleasesPagination component props */
