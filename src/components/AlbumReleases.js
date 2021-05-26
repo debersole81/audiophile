@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import '../App.css';
 import AlbumReleasesPaginationWrapper from '../components/AlbumReleasesPaginationWrapper';
 import Row from 'react-bootstrap/Row';
