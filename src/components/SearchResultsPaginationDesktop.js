@@ -7,16 +7,19 @@ import Pagination from 'react-bootstrap/Pagination';
 
 function SearchResultsPaginationDesktop(props) {
 
-    /** Destructure props */
-    const { searchResultsPagination } = props.searchResultsPaginationProps;
-    const { searchResultsMinPages } = props.searchResultsPaginationProps;
-    const { searchResultsMaxPages } = props.searchResultsPaginationProps;
-    const { handleCurrentSearchResultsPage } = props.searchResultsPaginationProps;
-    const { handleFirstSearchResultsPage } = props.searchResultsPaginationProps;
-    const { handlePreviousSearchResultsPage } = props.searchResultsPaginationProps;
-    const { handleNextSearchResultsPage } = props.searchResultsPaginationProps;
-    const { handleLastSearchResultsPage } = props.searchResultsPaginationProps;
+    /** #region Props Destructure */
+    const { searchResultsPagination,
+        searchResultsMinPages,
+        searchResultsMaxPages,
+        currentSearchResultsPage,
+        firstSearchResultsPage,
+        previousSearchResultsPage,
+        nextSearchResultsPage,
+        lastSearchResultsPage
+    } = props.searchResultsPaginationProps;
+    /** #endregion Props Destructure */
 
+    /* #region Page Number Formatting and Prep for Rendering */
     /** Build pages array */
     //Variable to hold active page
     const activePage = searchResultsPagination.page
@@ -28,11 +31,12 @@ function SearchResultsPaginationDesktop(props) {
     for (let i = 1; i <= searchResultsPagination.pages; i++) {
         //Push page numbers onto pages array
         pages.push(
-            <Pagination.Item key={i} id={i} className={(i === activePage ? 'active' : null)} onClick={handleCurrentSearchResultsPage}>
+            <Pagination.Item key={i} id={i} className={(i === activePage ? 'active' : null)} onClick={currentSearchResultsPage}>
                 {i}
             </Pagination.Item>
         )
     };
+    /* #endregion Page Number Formatting and Prep for Rendering */
 
     if (searchResultsPagination.pages > 1) {
         return (
@@ -40,11 +44,11 @@ function SearchResultsPaginationDesktop(props) {
                 <Row className='row'>
                     <Col className='col'>
                         <Pagination className='mt-3 flex-wrap justify-content-center'>
-                            <Pagination.First className={searchResultsPagination.page === 1 ? 'disabled' : ''} onClick={handleFirstSearchResultsPage} />
-                            <Pagination.Prev className={searchResultsPagination.page === 1 ? 'disabled' : ''} onClick={handlePreviousSearchResultsPage} />
+                            <Pagination.First className={searchResultsPagination.page === 1 ? 'disabled' : ''} onClick={firstSearchResultsPage} />
+                            <Pagination.Prev className={searchResultsPagination.page === 1 ? 'disabled' : ''} onClick={previousSearchResultsPage} />
                             {pages.map((page) => (page.props.id < searchResultsMaxPages + 1 && page.props.id > searchResultsMinPages) ? page : null)}
-                            <Pagination.Next className={searchResultsPagination.page === searchResultsPagination.pages ? 'disabled' : ''} onClick={handleNextSearchResultsPage} />
-                            <Pagination.Last className={searchResultsPagination.page === searchResultsPagination.pages ? 'disabled' : ''} onClick={handleLastSearchResultsPage} />
+                            <Pagination.Next className={searchResultsPagination.page === searchResultsPagination.pages ? 'disabled' : ''} onClick={nextSearchResultsPage} />
+                            <Pagination.Last className={searchResultsPagination.page === searchResultsPagination.pages ? 'disabled' : ''} onClick={lastSearchResultsPage} />
                         </Pagination>
                     </Col>
                 </Row>
@@ -54,6 +58,5 @@ function SearchResultsPaginationDesktop(props) {
 
     return (null);
 };
-
 
 export default SearchResultsPaginationDesktop;
