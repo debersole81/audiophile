@@ -13,14 +13,6 @@ function AlbumReleases(props) {
     const { albumReleasesData, viewAlbumRelease } = props.albumReleasesProps;
     /* #endregion Props Destructure */
 
-    /* #region Auto Scroll */
-    /**Scroll to the bottom of the window on component mount*/
-    // useEffect(() => {
-    //figure out a way to return this only if the view releases or one of the pagination links are clicked.
-    //     window.scroll(0, 1200)
-    // }, []);
-    /* #endregion Auto Scroll */
-
     return (
         <Row>
             <Col>
