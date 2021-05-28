@@ -22,8 +22,8 @@ function WishList(props) {
     const {
         userWishListAlbums,
         userWishListReleases,
-        handleAlbumClick,
-        handleViewAlbumRelease,
+        albumClick,
+        viewAlbumRelease,
         deleteAlbumFromWishList,
         deleteReleaseFromWishList
     } = props.wishListProps;
@@ -95,7 +95,7 @@ function WishList(props) {
                                                         <Button id={albums.id} variant='outline-dark' size='sm' onClick={deleteAlbumFromWishList} block>Remove</Button>
                                                     </ButtonGroup>
                                                     <ButtonGroup className='user-library-btn-group'>
-                                                        <Button id={albums.masterId} className='pl-3 pr-3' variant='outline-dark' size='sm' onClick={handleAlbumClick} block>View</Button>
+                                                        <Button id={albums.masterId} className='pl-3 pr-3' variant='outline-dark' size='sm' onClick={albumClick} block>View</Button>
                                                     </ButtonGroup>
                                                 </Col> :
                                                 <Col className='col' xs={8} s={8} md={8} lg={8} xl={8}>
@@ -103,7 +103,7 @@ function WishList(props) {
                                                         <Button id={albums.id} variant='outline-dark' size='sm' onClick={deleteReleaseFromWishList} block>Remove</Button>
                                                     </ButtonGroup>
                                                     <ButtonGroup className='user-library-btn-group'>
-                                                        <Button id={albums.albumId} className='pl-3 pr-3' variant='outline-dark' size='sm' onClick={handleViewAlbumRelease} block>View</Button>
+                                                        <Button id={albums.albumId} className='pl-3 pr-3' variant='outline-dark' size='sm' onClick={viewAlbumRelease} block>View</Button>
                                                     </ButtonGroup>
                                                 </Col>
                                             }

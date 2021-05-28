@@ -8,9 +8,11 @@ import Button from 'react-bootstrap/Button';
 
 function SearchResults(props) {
 
-    /** Destructure props */
-    const { searchData } = props.searchResultsProps;
-    const { handleAlbumClick } = props.searchResultsProps;
+    /* #region Props destructure */
+    const { searchData, searchDataLoading, albumClick } = props.searchResultsProps;
+    /* #endregion Props destructure */
+
+    console.log(searchDataLoading);
 
     if (Array.isArray(searchData) && searchData.length) {
         return (
@@ -29,7 +31,7 @@ function SearchResults(props) {
                                         {results.label[0]}<br />
                                         {results.year}<br />
                                     </Card.Text>
-                                    <Button variant='outline-dark' size='sm' id={results.master_id} onClick={handleAlbumClick} block>View</Button>
+                                    <Button variant='outline-dark' size='sm' id={results.master_id} onClick={albumClick} block>View</Button>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -40,11 +42,6 @@ function SearchResults(props) {
     }
 
     return (null);
-    // //     <Container className='text-center'>
-    //         <h1>Search for something!</h1>
-    //     </Container>
-    // );
 };
-
 
 export default SearchResults;

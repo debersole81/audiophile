@@ -22,10 +22,10 @@ function Collection(props) {
     const {
         userCollectionAlbums,
         userCollectionReleases,
-        handleAlbumClick,
-        handleViewAlbumRelease,
+        albumClick,
+        viewAlbumRelease,
         deleteAlbumFromCollection,
-        deleteReleaseFromColection
+        deleteReleaseFromCollection
     } = props.collectionProps;
     /* #endregion Destructure Props */
 
@@ -95,15 +95,15 @@ function Collection(props) {
                                                         <Button id={albums.id} variant='outline-dark' size='sm' onClick={deleteAlbumFromCollection} block>Remove</Button>
                                                     </ButtonGroup>
                                                     <ButtonGroup className='user-library-btn-group'>
-                                                        <Button id={albums.masterId} className='pl-3 pr-3' variant='outline-dark' size='sm' onClick={handleAlbumClick} block>View</Button>
+                                                        <Button id={albums.masterId} className='pl-3 pr-3' variant='outline-dark' size='sm' onClick={albumClick} block>View</Button>
                                                     </ButtonGroup>
                                                 </Col> :
                                                 <Col className='col' xs={8} s={8} md={8} lg={8} xl={8}>
                                                     <ButtonGroup className='user-library-btn-group'>
-                                                        <Button id={albums.id} variant='outline-dark' size='sm' onClick={deleteReleaseFromColection} block>Remove</Button>
+                                                        <Button id={albums.id} variant='outline-dark' size='sm' onClick={deleteReleaseFromCollection} block>Remove</Button>
                                                     </ButtonGroup>
                                                     <ButtonGroup className='user-library-btn-group'>
-                                                        <Button id={albums.albumId} className='pl-3 pr-3' variant='outline-dark' size='sm' onClick={handleViewAlbumRelease} block>View</Button>
+                                                        <Button id={albums.albumId} className='pl-3 pr-3' variant='outline-dark' size='sm' onClick={viewAlbumRelease} block>View</Button>
                                                     </ButtonGroup>
                                                 </Col>
                                             }

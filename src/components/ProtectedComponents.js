@@ -91,6 +91,7 @@ function ProtectedComponents(props) {
 
     /** SearchResults component state variables */
     const [searchData, setSearchData] = useState([]);
+    const [searchDataLoading, setSearchDataLoading] = useState(false);
 
     /** SearchResultsPagination component state variables */
     const [searchResultsPagination, setSearchResultsPagination] = useState({});
@@ -116,14 +117,14 @@ function ProtectedComponents(props) {
     /* #endregion State Variables*/
 
     /* #region Callback Functions */
-    /** Search component callback functions */
-    /* Handle search form input field */
-    const handleSearch = (({ target }) => {
-        setSearch(target.value);
-    });
+    /** Search Component Callback Functions */
+    /* Search Form Change Handler */
+    function onSearchFormChange(e) {
+        setSearch(() => (e.target.value))
+    };
 
-    /* Handle search form submit */
-    const handleSearchSubmit = (e) => {
+    /* Search Form Submit */
+    function searchSubmit(e) {
         e.preventDefault();
 
         //Clear searchResultsMinPages & searchResultsMaxPages state
@@ -143,9 +144,9 @@ function ProtectedComponents(props) {
             );
     };
 
-    /** SearchResults component callback functions */
-    /* Handle album click */
-    const handleAlbumClick = (e) => {
+    /** SearchResults Component Callback Functions */
+    /* Album Click */
+    function albumClick(e) {
         e.preventDefault();
 
         //Clear albumRelease data
@@ -167,15 +168,16 @@ function ProtectedComponents(props) {
                             (result) => {
                                 setAlbumData(result)
                                 history.push('/album');
+                                window.scroll(0, 0)
                             })
                         .then(setAlbumMasterData(result))
 
                 })
     };
 
-    /** SearchResultsPagination component callback functions -- Mobile */
-    /* Handle previous page button click */
-    const handlePreviousSearchResultsPageMobile = (e) => {
+    /** SearchResultsPagination Component Callback Functions -- Mobile */
+    /* Handle Previous Page Button Click */
+    function previousSearchResultsPageMobile(e) {
         e.preventDefault();
 
         //If the current search results page is greater than 1, set pageNum equal to the current page - 1
@@ -203,8 +205,8 @@ function ProtectedComponents(props) {
         window.scrollTo(0, 0);
     };
 
-    /* Handle next page button click */
-    const handleNextSearchResultsPageMobile = (e) => {
+    /* Handle Next Page Button Click */
+    function nextSearchResultsPageMobile(e) {
         e.preventDefault();
 
         //If the current search result page is less than the total search result pages, set pageNum to the current page + 1
@@ -232,9 +234,9 @@ function ProtectedComponents(props) {
         window.scrollTo(0, 0);
     };
 
-    /** SearchResultsPagination component callback functions -- Desktop & Mobile */
+    /** SearchResultsPagination Component Callback Functions -- Desktop & Mobile */
     /* Handle current page click */
-    const handleCurrentSearchResultsPage = (e) => {
+    function currentSearchResultsPage(e) {
         e.preventDefault();
 
         //Assign Pagination component page id to pageNum variable
@@ -257,7 +259,7 @@ function ProtectedComponents(props) {
     };
 
     /* Handle first page button click */
-    const handleFirstSearchResultsPage = (e) => {
+    function firstSearchResultsPage(e) {
         e.preventDefault();
 
         //Set min and max pages to initial values
@@ -281,7 +283,7 @@ function ProtectedComponents(props) {
     };
 
     /* Handle previous page button click */
-    const handlePreviousSearchResultsPage = (e) => {
+    function previousSearchResultsPage(e) {
         e.preventDefault();
 
         //If the current search results page is greater than 1, assign a value to pageNum that is equal to the current page - 1
@@ -310,7 +312,7 @@ function ProtectedComponents(props) {
     };
 
     /* Handle next page button click */
-    const handleNextSearchResultsPage = (e) => {
+    function nextSearchResultsPage(e) {
         e.preventDefault();
 
         //If the current search result page is less than the total search result pages, assign a value to pageNum that is equal to the current page + 1
@@ -339,7 +341,7 @@ function ProtectedComponents(props) {
     };
 
     /* Handle last page button click */
-    const handleLastSearchResultsPage = (e) => {
+    function lastSearchResultsPage(e) {
         e.preventDefault();
 
         //Set min page to total search result pages - 5 and max page to the value to total search result pages
@@ -362,7 +364,7 @@ function ProtectedComponents(props) {
         window.scrollTo(0, 0);
     };
 
-    /** Album component callback functions */
+    /** Album Component Callback Functions */
     /* Add album to user's collection */
     function addAlbumToCollection(e) {
         e.preventDefault();
@@ -485,9 +487,9 @@ function ProtectedComponents(props) {
             })
     };
 
-    /** AlbumReleasesHeader component callback functions */
+    /** AlbumReleasesHeader Component Callback Functions */
     /* Handle view album releases button click */
-    const handleViewAlbumReleases = (e) => {
+    function viewAlbumReleases(e) {
         e.preventDefault();
 
         //Call Discogs Master Release Versions endpoint
@@ -498,12 +500,13 @@ function ProtectedComponents(props) {
                 (result) => {
                     setAlbumReleasesData(result.versions);
                     setAlbumReleasesPagination(result.pagination);
+                    window.scroll(0, 1200)
                 }
             );
     };
 
     /* Handle hide albun releases button click */
-    const handleHideAlbumReleases = (e) => {
+    function hideAlbumReleases(e) {
         e.preventDefault();
 
         //Clear albumReleases and albumReleases Pagination data
@@ -513,11 +516,12 @@ function ProtectedComponents(props) {
         setAlbumReleasesMaxPages(5);
         setAlbumReleasesMinPagesMobile(0);
         setAlbumReleasesMaxPagesMobile(3);
+        window.scroll(0, 0);
     };
 
-    /** AlbumReleases component callback functions */
+    /** AlbumReleases Component Callback Functions */
     /* Handle view release button click */
-    const handleViewAlbumRelease = (e) => {
+    function viewAlbumRelease(e) {
         e.preventDefault();
 
         //Call Discogs API Release endpoint
@@ -528,13 +532,14 @@ function ProtectedComponents(props) {
                 (result) => {
                     setAlbumReleaseData(result);
                     history.push('/albumrelease')
+                    window.scroll(0, 0)
                 }
             )
     };
 
-    /** AlbumReleasesPagination component callback functions -- Mobile */
+    /** AlbumReleasesPagination Component Callback Functions -- Mobile */
     /* Handle previous page button click */
-    const handlePreviousAlbumReleasesPageMobile = (e) => {
+    function previousAlbumReleasesPageMobile(e) {
         e.preventDefault();
 
         //If the current page is greater than 1, set pageNum equal to the current page - 1
@@ -563,7 +568,7 @@ function ProtectedComponents(props) {
     };
 
     /* Handle next page button click */
-    const handleNextAlbumReleasesPageMobile = (e) => {
+    function nextAlbumReleasesPageMobile(e) {
         e.preventDefault();
 
         //If the current page is less than the total pages, set pageNum equal to the current page + 1
@@ -591,9 +596,9 @@ function ProtectedComponents(props) {
         window.scroll(0, 1200);
     };
 
-    /** AlbumReleasesPagination component callback functions -- Desktop & Mobile */
+    /** AlbumReleasesPagination Component Callback Functions -- Desktop & Mobile */
     /* Handle current page click */
-    const handleCurrentAlbumReleasesPage = (e) => {
+    function currentAlbumReleasesPage(e) {
         e.preventDefault();
 
         //Call Discogs API Master Release Versions endpoint
@@ -613,7 +618,7 @@ function ProtectedComponents(props) {
     };
 
     /* Handle first page button click */
-    const handleFirstAlbumReleasesPage = (e) => {
+    function firstAlbumReleasesPage(e) {
         e.preventDefault();
 
         //Set min and max pages to initial values
@@ -637,7 +642,7 @@ function ProtectedComponents(props) {
     };
 
     /* Handle previous page button click */
-    const handlePreviousAlbumReleasesPage = (e) => {
+    function previousAlbumReleasesPage(e) {
         e.preventDefault();
 
         //If the current page is greater than 1, set pageNum equal to the current page - 1
@@ -666,7 +671,7 @@ function ProtectedComponents(props) {
     };
 
     /* Handle next page button click */
-    const handleNextAlbumReleasesPage = (e) => {
+    function nextAlbumReleasesPage(e) {
         e.preventDefault();
 
         //If the current page is less than the total pages, set pageNum equal to the current page + 1
@@ -695,7 +700,7 @@ function ProtectedComponents(props) {
     };
 
     /* Handle last page button click */
-    const handleLastAlbumReleasesPage = (e) => {
+    function lastAlbumReleasesPage(e) {
         e.preventDefault();
 
         //Set min page to total albumVersions pages - 5 and max page to the value of the total albumVersions pages
@@ -718,7 +723,7 @@ function ProtectedComponents(props) {
         window.scroll(0, 1200);
     };
 
-    /** AlbumRelease component callback functions */
+    /** AlbumRelease Component Callback Functions */
     /* Add release to user's collection */
     function addReleaseToCollection(e) {
         e.preventDefault();
@@ -843,8 +848,8 @@ function ProtectedComponents(props) {
     const collectionProps = {
         userCollectionAlbums,
         userCollectionReleases,
-        handleAlbumClick,
-        handleViewAlbumRelease,
+        albumClick,
+        viewAlbumRelease,
         deleteAlbumFromCollection,
         deleteReleaseFromCollection
     };
@@ -853,17 +858,17 @@ function ProtectedComponents(props) {
     const wishListProps = {
         userWishListAlbums,
         userWishListReleases,
-        handleAlbumClick,
-        handleViewAlbumRelease,
+        albumClick,
+        viewAlbumRelease,
         deleteAlbumFromWishList,
         deleteReleaseFromWishList
     };
 
-    /** Search component props */
-    const searchProps = { search, handleSearch, handleSearchSubmit };
+    /** Search Component Props */
+    const searchProps = { search, onSearchFormChange, searchSubmit };
 
     /** SearchResults component props */
-    const searchResultsProps = { searchData, handleAlbumClick };
+    const searchResultsProps = { searchData, searchDataLoading, albumClick };
 
     /** SearchResultsPagination component props */
     const searchResultsPaginationProps = {
@@ -872,13 +877,13 @@ function ProtectedComponents(props) {
         searchResultsMaxPages,
         searchResultsMinPagesMobile,
         searchResultsMaxPagesMobile,
-        handleCurrentSearchResultsPage,
-        handleFirstSearchResultsPage,
-        handlePreviousSearchResultsPage,
-        handleNextSearchResultsPage,
-        handleLastSearchResultsPage,
-        handlePreviousSearchResultsPageMobile,
-        handleNextSearchResultsPageMobile
+        currentSearchResultsPage,
+        firstSearchResultsPage,
+        previousSearchResultsPage,
+        nextSearchResultsPage,
+        lastSearchResultsPage,
+        previousSearchResultsPageMobile,
+        nextSearchResultsPageMobile
     };
 
     /** Album component props */
@@ -896,9 +901,9 @@ function ProtectedComponents(props) {
     /** AlbumReleasesHeader and AlbumReleases component props */
     const albumReleasesProps = {
         albumReleasesData,
-        handleViewAlbumReleases,
-        handleHideAlbumReleases,
-        handleViewAlbumRelease
+        viewAlbumReleases,
+        hideAlbumReleases,
+        viewAlbumRelease
     };
 
     /** AlbumReleasesHeader and AlbumReleasesPagination component props */
@@ -908,13 +913,13 @@ function ProtectedComponents(props) {
         albumReleasesMaxPages,
         albumReleasesMinPagesMobile,
         albumReleasesMaxPagesMobile,
-        handleCurrentAlbumReleasesPage,
-        handleFirstAlbumReleasesPage,
-        handlePreviousAlbumReleasesPage,
-        handleNextAlbumReleasesPage,
-        handleLastAlbumReleasesPage,
-        handlePreviousAlbumReleasesPageMobile,
-        handleNextAlbumReleasesPageMobile
+        currentAlbumReleasesPage,
+        firstAlbumReleasesPage,
+        previousAlbumReleasesPage,
+        nextAlbumReleasesPage,
+        lastAlbumReleasesPage,
+        previousAlbumReleasesPageMobile,
+        nextAlbumReleasesPageMobile
     };
 
     /** AlbumRelease component props */

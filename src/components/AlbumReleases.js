@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import '../App.css';
 import AlbumReleasesPaginationWrapper from '../components/AlbumReleasesPaginationWrapper';
 import Row from 'react-bootstrap/Row';
@@ -7,28 +7,11 @@ import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
 import Image from 'react-bootstrap/Image';
 
-/**Notes
- * Each teable row will need to have an onClick and id attribute
- * id attribute will be equal to albumReleasesData.id
- * onClick attribute will fire a callback in protected components
- * Callback will call the discogsAPIrelease helper func
- * Response from callback will set albumData and rerender album component (via history.push)
- * Set overflow vals on table to create vertical scrolling feature
- */
-
-
-
-
 function AlbumReleases(props) {
 
-    /**Destructure props*/
-    const { albumReleasesData } = props.albumReleasesProps;
-    const { handleViewAlbumRelease } = props.albumReleasesProps;
-
-    /**Scroll to the bottom of the window on component mount*/
-    useEffect(() => {
-        window.scroll(0, 1200)
-    }, []);
+    /* #region Props Destructure */
+    const { albumReleasesData, viewAlbumRelease } = props.albumReleasesProps;
+    /* #endregion Props Destructure */
 
     return (
         <Row>
@@ -55,7 +38,7 @@ function AlbumReleases(props) {
                                 <td>{album.catno}</td>
                                 <td>{album.country}</td>
                                 <td>{album.released}</td>
-                                <td><Button variant='dark' size='sm' id={album.id} onClick={handleViewAlbumRelease}>View</Button></td>
+                                <td><Button variant='dark' size='sm' id={album.id} onClick={viewAlbumRelease}>View</Button></td>
                             </tr>
                         </tbody>
                     )}

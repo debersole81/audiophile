@@ -7,14 +7,17 @@ import Pagination from 'react-bootstrap/Pagination'
 
 function SearchResultsPaginationMobile(props) {
 
-    /** Destructure props */
-    const { searchResultsPagination } = props.searchResultsPaginationProps;
-    const { searchResultsMinPagesMobile } = props.searchResultsPaginationProps;
-    const { searchResultsMaxPagesMobile } = props.searchResultsPaginationProps;
-    const { handleCurrentSearchResultsPage } = props.searchResultsPaginationProps;
-    const { handlePreviousSearchResultsPageMobile } = props.searchResultsPaginationProps;
-    const { handleNextSearchResultsPageMobile } = props.searchResultsPaginationProps;
+    /* #region Props Destructure */
+    const { searchResultsPagination,
+        searchResultsMinPagesMobile,
+        searchResultsMaxPagesMobile,
+        handleCurrentSearchResultsPage,
+        previousSearchResultsPageMobile,
+        nextSearchResultsPageMobile
+    } = props.searchResultsPaginationProps;
+    /* #endregion Props Destructure */
 
+    /* #region Page Number Formatting and Prep for Rendering */
     /** Build pages array */
     //Variable to hold active page
     const activePage = searchResultsPagination.page
@@ -31,6 +34,7 @@ function SearchResultsPaginationMobile(props) {
             </Pagination.Item>
         )
     };
+    /* #endregion Page Number Formatting and Prep for Rendering */
 
     if (searchResultsPagination.pages > 1) {
         return (
@@ -38,9 +42,9 @@ function SearchResultsPaginationMobile(props) {
                 <Row className='row'>
                     <Col className='col'>
                         <Pagination className='mt-3 flex-wrap justify-content-center'>
-                            <Pagination.Prev className={searchResultsPagination.page === 1 ? 'disabled' : ''} onClick={handlePreviousSearchResultsPageMobile} />
+                            <Pagination.Prev className={searchResultsPagination.page === 1 ? 'disabled' : ''} onClick={previousSearchResultsPageMobile} />
                             {pages.map((page) => (page.props.id < searchResultsMaxPagesMobile + 1 && page.props.id > searchResultsMinPagesMobile) ? page : null)}
-                            <Pagination.Next className={searchResultsPagination.page === searchResultsPagination.pages ? 'disabled' : ''} onClick={handleNextSearchResultsPageMobile} />
+                            <Pagination.Next className={searchResultsPagination.page === searchResultsPagination.pages ? 'disabled' : ''} onClick={nextSearchResultsPageMobile} />
                         </Pagination>
                     </Col>
                 </Row>
@@ -48,7 +52,7 @@ function SearchResultsPaginationMobile(props) {
         );
     };
 
-    return(null);
+    return (null);
 };
 
 export default SearchResultsPaginationMobile;
