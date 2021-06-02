@@ -7,11 +7,12 @@ import Jumbotron from 'react-bootstrap/Jumbotron';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import Spinner from 'react-bootstrap/Spinner';
 
 function Search(props) {
 
     /** #region Props destructure */
-    const { search, onSearchFormChange, searchSubmit } = props.searchProps;
+    const { search, onSearchFormChange, searchSubmit, searchDataLoading } = props.searchProps;
     /** #endregion Props destructure */
 
     return (
@@ -39,7 +40,19 @@ function Search(props) {
                                         />
                                     </Col>
                                     <Col className='col search-button-col' xs={2} sm={1} md={1} lg={1} xl={1}>
-                                        <Button variant='dark' size='sm' className='search-button' onClick={searchSubmit}>Go!</Button>
+                                        {(searchDataLoading) ?
+                                            <Button variant='dark' size='sm' className='search-button'>
+                                                <Spinner
+                                                    as='span'
+                                                    animation='border'
+                                                    size='sm'
+                                                    role='status'
+                                                    aria-hidden='true'
+                                                />
+                                                <span className='sr-only'>Loading...</span>
+                                            </Button> :
+                                            <Button variant='dark' size='sm' className='search-button' onClick={searchSubmit}>Go!</Button>
+                                        }
                                     </Col>
                                 </Row>
                             </Form.Group>
