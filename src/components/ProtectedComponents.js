@@ -468,8 +468,6 @@ function ProtectedComponents(props) {
     function deleteAlbumFromWishList(e) {
         e.preventDefault();
 
-        console.log(e.target.id);
-
         /* Build object to delete album data from GraphQL API */
         const inputData = {
             id: e.target.id
