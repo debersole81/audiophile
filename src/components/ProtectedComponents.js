@@ -127,6 +127,9 @@ function ProtectedComponents(props) {
     function searchSubmit(e) {
         e.preventDefault();
 
+        //Set searchDataLoading to true
+        setSearchDataLoading(true);
+
         //Clear searchResultsMinPages & searchResultsMaxPages state
         setSearchResultsMinPages(0);
         setSearchResultsMaxPages(5);
@@ -140,6 +143,8 @@ function ProtectedComponents(props) {
                 (result) => {
                     setSearchData(result.results);
                     setSearchResultsPagination(result.pagination);
+                    //Set searchDataLoading to false
+                    setSearchDataLoading(false);
                 }
             );
     };
