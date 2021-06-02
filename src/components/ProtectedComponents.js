@@ -88,10 +88,10 @@ function ProtectedComponents(props) {
 
     /** Search component state variables */
     const [search, setSearch] = useState('');
+    const [searchDataLoading, setSearchDataLoading] = useState(false);
 
     /** SearchResults component state variables */
     const [searchData, setSearchData] = useState([]);
-    const [searchDataLoading, setSearchDataLoading] = useState(false);
 
     /** SearchResultsPagination component state variables */
     const [searchResultsPagination, setSearchResultsPagination] = useState({});
@@ -127,6 +127,9 @@ function ProtectedComponents(props) {
     function searchSubmit(e) {
         e.preventDefault();
 
+        //Set searchDataLoading to true
+        setSearchDataLoading(true);
+
         //Clear searchResultsMinPages & searchResultsMaxPages state
         setSearchResultsMinPages(0);
         setSearchResultsMaxPages(5);
@@ -140,6 +143,8 @@ function ProtectedComponents(props) {
                 (result) => {
                     setSearchData(result.results);
                     setSearchResultsPagination(result.pagination);
+                    //Set searchDataLoading to false
+                    setSearchDataLoading(false);
                 }
             );
     };
@@ -865,10 +870,10 @@ function ProtectedComponents(props) {
     };
 
     /** Search Component Props */
-    const searchProps = { search, onSearchFormChange, searchSubmit };
+    const searchProps = { search, onSearchFormChange, searchSubmit, searchDataLoading };
 
     /** SearchResults component props */
-    const searchResultsProps = { searchData, searchDataLoading, albumClick };
+    const searchResultsProps = { searchData, albumClick };
 
     /** SearchResultsPagination component props */
     const searchResultsPaginationProps = {
