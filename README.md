@@ -5,6 +5,7 @@
 ---
 
 AudioPhile is a full-stack, multi-page web application to help users manage their physical music collection. Utilizes external APIs and an integrated backend environment that allows users to create an account, sign in, search for albums, and build a personalized collection and wish list.
+<br></br>
 
 ![AudioPhileOverview](src/assets/audiophile-overview.gif)
 
