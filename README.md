@@ -1,18 +1,18 @@
-![AudioPhile](src/assets/audiophile_markdown-logo.png)
+<p align='center'>
+    <img src='src/assets/audiophile_markdown-logo.png' alt='AudioPhile logo' />
+</p>
+
+---
 
 # **AudioPhile**
 AudioPhile is a full-stack, multi-page web application to help users manage their physical music collection. Utilizes external APIs and an integrated backend environment that allows users to create an account, sign in, search for albums, and build a personalized collection and wish list.
 
-<p align='center'>
- <img src='/assets/audiophile-overview.gif' alt='AudioPhile overview'/>
-</p>
+![AudioPhileOverview](src/assets/audiophile-overview.gif)
 
 ## **Demo**
 Here is a working, live demo: https://master.d83yjx4iytzwo.amplifyapp.com/
-<br></br>
 
 ## **Features**
---- 
 ### **Search**
 Users can search for an artist, album, or the combination of an artist and album. Results are paginated and include master release versions of an artist's album collection or master release versions of an individual album. Feature uses the Discogs RESTful API Search endpoint. Requests resolve to a JSON-formatted object that is rendered on the search UI component.
 
