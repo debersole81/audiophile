@@ -21,13 +21,13 @@ Users can search for an artist, album, or the combination of an artist and album
 Users can click an album master release version in the search UI component to render album details including format, genre, style, label, release catalogue number, release country, release year, track list, and images of album artwork and liner notes. Feature uses the Discogs RESTful API Master Release and Release endpoints. Requests resolve to a JSON-formatted object that is rendered on the album UI component.
 
 ### **Album Release Versions**
-Users can view versions of an album's master release by clicking the 'Show Releases' button on the album UI component. This action renders a paginated list of album releases in a table that displays a release's cover image, title, format, label, release catalogue number, release country, release year, and a button to view more details. Feature uses the Discogs RESTful API Master Release Versions endpoint. Requests resolve to a JSON-formatted objet that is rendered on the album UI component.
+Users can view versions of an album's master release by clicking the 'Show Releases' button on the album UI component. This action renders a paginated list of album releases in a table that displays a release's cover image, title, format, label, release catalogue number, release country, release year, and a button to view more details. Feature uses the Discogs RESTful API Master Release Versions endpoint. Requests resolve to a JSON-formatted object that is rendered on the album UI component.
 
 ### **Album Release Version Details**
 Users can view an album release version by clicking the 'View' button that renders on each row of the album release version table in the album UI component. This action renders album release version details including format, genre, style, label, release catalogue number, release country, release year, track list, and images of album artwork and liner notes. Feature uses the Discogs RESTful API Release endpoint. Requests resolve to a JSON-formatted object that is rendered on the album release UI component.
 
 ### **User Collection and Wishlist**
-Users can add album master release and album release versions to their collection or wishlist by simply clicking on the 'Add to Collection' or 'Add to Wishlist' buttons on the album and album release UI components. Feature uses AWS AppSync and a GraphQL API to update and list the backend data source.
+Users can add album master release and album release versions to their collection or wishlist by clicking on the 'Add to Collection' or 'Add to Wishlist' buttons on the album and album release UI components. Feature uses AWS AppSync and a GraphQL API to update and list the backend data source.
 <br></br>
 
 ## **User Authentication**
