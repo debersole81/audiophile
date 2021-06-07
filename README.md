@@ -3,14 +3,11 @@
 # **AudioPhile**
 AudioPhile is a full-stack, multi-page web application to help users manage their physical music collection. Utilizes external APIs and an integrated backend environment that allows users to create an account, sign in, search for albums, and build a personalized collection and wish list.
 
-<br></br>
-
-![AudioPhileOverview](src/assets/audiophile-overview.gif)
-
-<br></br>
+<p align='center'>
+ <img src='/assets/audiophile-overview.gif' alt='AudioPhile overview'/>
+</p>
 
 ## **Demo**
----
 Here is a working, live demo: https://master.d83yjx4iytzwo.amplifyapp.com/
 <br></br>
 
@@ -30,27 +27,21 @@ Users can view an album release version by clicking the 'View' button that rende
 
 ### **User Collection and Wishlist**
 Users can add album master release and album release versions to their collection or wishlist by simply clicking on the 'Add to Collection' or 'Add to Wishlist' buttons on the album and album release UI components. Feature uses AWS AppSync and a GraphQL API to update and list the backend data source.
-<br></br>
 
 ## **User Authentication**
----
 User authentication features leverage AWS Amplify and Amazon Cognito to provide user sign-up, sign-in, password management, and multi-factor authentication. Users can create an account by clicking sign up on the login UI component. After completing the username, password, and email address fields, an account confirmation email is sent to the user's provided email address. User account confirmation is complete after the user enters the confirmation code in the account confirmation UI component. The user may then use their credentials to sign in.
 
 ![AudioPhileSignUp](src/assets/audiophile-signup.gif)
-<br></br>
 
 ## **Built With**
----
 * [ReactJS](https://reactjs.org/) - a JavaScript library for building user interfaces.
 * [React Bootstrap](https://react-bootstrap.github.io/) - UI component library that replaces the Bootstrap Javascript and dependencies like jQuery.
 * [React Router](https://reactrouter.com/) - a collection of navigational components that compose declaratively in React applications.
 * [AWS Amplify](https://aws.amazon.com/amplify/) - a set of tools and services powered by Amazon Web Services (AWS) to help developers build scalable, full-stack applications.
 * [AWS AppSync](https://aws.amazon.com/appsync/) - AWS service to help developers build application backends with a single GraphQL API endpoint.
 * [Amazon Cognito](https://aws.amazon.com/cognito/) -  AWS service that adds user sign-up, sign-in and access control to web and mobile applications.
-<br></br>
 
 ## **Pending Features and Improvements**
----
 * Implementation of a state container, like [Redux](https://redux.js.org/) or similary library.
 * Build randomizer feature that will allow users to view a randomly generated album from their collection.
 * Implementation of error handling and user alerts across the application.
