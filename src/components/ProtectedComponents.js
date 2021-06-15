@@ -250,6 +250,9 @@ function ProtectedComponents(props) {
     function currentSearchResultsPage(e) {
         e.preventDefault();
 
+        //Set searchDataLoading to true
+        setSearchDataLoading(true);
+
         //Assign Pagination component page id to pageNum variable
         const pageNum = e.target.id;
 
@@ -262,6 +265,8 @@ function ProtectedComponents(props) {
                 (result) => {
                     setSearchData(result.results);
                     setSearchResultsPagination(result.pagination);
+                    //Set searchDataLoading to false
+                    setSearchDataLoading(false);
                 }
             );
 
