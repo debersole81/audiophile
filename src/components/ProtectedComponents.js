@@ -89,6 +89,7 @@ function ProtectedComponents(props) {
     /** Search component state variables */
     const [search, setSearch] = useState('');
     const [searchDataLoading, setSearchDataLoading] = useState(false);
+    console.log(searchDataLoading);
 
     /** SearchResults component state variables */
     const [searchData, setSearchData] = useState([]);
@@ -185,6 +186,9 @@ function ProtectedComponents(props) {
     function previousSearchResultsPageMobile(e) {
         e.preventDefault();
 
+        //Set searchDataLoading to true
+        setSearchDataLoading(true);
+
         //If the current search results page is greater than 1, set pageNum equal to the current page - 1
         const pageNum = (searchResultsPagination.page > 1) ? searchResultsPagination.page - 1 : searchResultsPagination.page;
 
@@ -203,6 +207,8 @@ function ProtectedComponents(props) {
                 (result) => {
                     setSearchData(result.results);
                     setSearchResultsPagination(result.pagination);
+                    //Set searchDataLoading to false
+                    setSearchDataLoading(false);
                 }
             );
 
