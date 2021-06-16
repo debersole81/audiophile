@@ -220,6 +220,9 @@ function ProtectedComponents(props) {
     function nextSearchResultsPageMobile(e) {
         e.preventDefault();
 
+        //Set searchDataLoading to true
+        setSearchDataLoading(true);
+
         //If the current search result page is less than the total search result pages, set pageNum to the current page + 1
         const pageNum = (searchResultsPagination.page < searchResultsPagination.pages) ? searchResultsPagination.page + 1 : searchResultsPagination.page;
 
@@ -238,6 +241,8 @@ function ProtectedComponents(props) {
                 (result) => {
                     setSearchData(result.results);
                     setSearchResultsPagination(result.pagination);
+                    //Set searchDataLoading to false
+                    setSearchDataLoading(false);
                 }
             );
 
