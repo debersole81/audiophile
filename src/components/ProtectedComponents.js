@@ -282,6 +282,9 @@ function ProtectedComponents(props) {
     /* Handle first page button click */
     function firstSearchResultsPage(e) {
         e.preventDefault();
+        
+        //Set searchDataLoading to true
+        searchDataLoading(true);
 
         //Set min and max pages to initial values
         setSearchResultsMinPages(0);
@@ -296,6 +299,8 @@ function ProtectedComponents(props) {
                 (result) => {
                     setSearchData(result.results);
                     setSearchResultsPagination(result.pagination);
+                    //Set searchDataLoading to false
+                    setSearchDataLoading(false);
                 }
             );
 
