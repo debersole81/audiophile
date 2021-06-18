@@ -284,7 +284,7 @@ function ProtectedComponents(props) {
         e.preventDefault();
         
         //Set searchDataLoading to true
-        searchDataLoading(true);
+        setSearchDataLoading(true);
 
         //Set min and max pages to initial values
         setSearchResultsMinPages(0);
@@ -312,6 +312,9 @@ function ProtectedComponents(props) {
     function previousSearchResultsPage(e) {
         e.preventDefault();
 
+        //Set searchDataLoading to true
+        setSearchDataLoading(true);
+
         //If the current search results page is greater than 1, assign a value to pageNum that is equal to the current page - 1
         const pageNum = (searchResultsPagination.page > 1) ? searchResultsPagination.page - 1 : searchResultsPagination.page;
 
@@ -330,6 +333,8 @@ function ProtectedComponents(props) {
                 (result) => {
                     setSearchData(result.results);
                     setSearchResultsPagination(result.pagination);
+                    //Set searchDataLoading to false
+                    setSearchDataLoading(false);
                 }
             );
 
