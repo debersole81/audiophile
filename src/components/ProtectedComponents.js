@@ -899,7 +899,7 @@ function ProtectedComponents(props) {
     const searchProps = { search, onSearchFormChange, searchSubmit, searchDataLoading };
 
     /** SearchResults component props */
-    const searchResultsProps = { searchData, albumClick };
+    const searchResultsProps = { searchData, albumClick, searchDataLoading };
 
     /** SearchResultsPagination component props */
     const searchResultsPaginationProps = {
