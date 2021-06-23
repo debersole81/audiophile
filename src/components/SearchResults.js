@@ -9,7 +9,7 @@ import Button from 'react-bootstrap/Button';
 function SearchResults(props) {
 
     /* #region Props destructure */
-    const { searchData, albumClick } = props.searchResultsProps;
+    const { searchData, albumClick, searchDataLoading } = props.searchResultsProps;
     /* #endregion Props destructure */
 
     if (Array.isArray(searchData) && searchData.length) {
