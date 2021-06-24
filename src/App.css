@@ -413,8 +413,23 @@
 }
 
 .footer {
-  padding-bottom: 3em;
+  padding-bottom: 1em;
   margin-top: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1em;  
+}
+
+.footer-p {
+  color: #E9ECEF;
+  font-size: 1em;
 }
 
 /* #endregion Footer Styles*/
