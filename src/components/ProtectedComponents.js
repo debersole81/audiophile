@@ -88,7 +88,7 @@ function ProtectedComponents(props) {
 
     /** Search component state variables */
     const [search, setSearch] = useState('');
-    const [searchDataLoading, setSearchDataLoading] = useState(false);
+    const [searchDataLoading, setSearchDataLoading] = useState(true);
 
     /** SearchResults component state variables */
     const [searchData, setSearchData] = useState([]);
