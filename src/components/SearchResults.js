@@ -15,12 +15,14 @@ function SearchResults(props) {
 
     if (searchDataLoading) {
         return (
-            <img
-                src={audioPhileLoadingTextBlack}
-                height={125}
-                width={250}
-                alt='Album data is loading'
-            />
+            <div>
+                <img
+                    src={audioPhileLoadingTextBlack}
+                    height={115}
+                    width={215}
+                    alt='Album data is loading...'
+                />
+            </div>
         )
     }
 
