@@ -5,6 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import audioPhileLoadingTextBlack from '../assets/audiophile-loading-text-black.svg';
 
 function SearchResults(props) {
 
@@ -13,7 +14,14 @@ function SearchResults(props) {
     /* #endregion Props destructure */
 
     if (searchDataLoading) {
-        return (<h1>Loading...</h1>)
+        return (
+            <img
+                src={audioPhileLoadingTextBlack}
+                height={125}
+                width={250}
+                alt='Album data is loading'
+            />
+        )
     }
 
     if (Array.isArray(searchData) && searchData.length && !searchDataLoading) {
