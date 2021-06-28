@@ -1,13 +1,13 @@
 import React from "react";
 import "../App.css";
 
-function Loading() {
+function Loading({ width }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       viewBox="0 0 283.21 49.21"
-      width={215}
+      width={width}
     >
       <title>Loading</title>
       <g id="Layer_2" data-name="Layer 2">
