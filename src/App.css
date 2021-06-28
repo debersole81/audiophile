@@ -14,27 +14,31 @@
 /* #region Responsive Styles */
 
 @media (max-width: 992px) {
-
   /** AlbumTracks component */
   .album-tracks-thead {
     text-align: center;
   }
+
   /** AlbumReleasesHeader component */
   .album-releases-header-h5-col {
     text-align: center;
-    padding-bottom: .3em;
+    padding-bottom: 0.3em;
   }
+
   .album-releases-header-button-col {
     text-align: center;
-    margin-top: .3em;
+    margin-top: 0.3em;
   }
+
   .album-releases-header-button {
-    float: none !Important;
+    float: none !important;
   }
+
   /** AlbumReleaseTracks component */
   .album-release-tracks-thead {
     text-align: center;
   }
+
   .header {
     margin-bottom: 3em;
   }
@@ -52,7 +56,7 @@
     /* float: left; */
     margin-left: -6.5em;
   }
-} 
+}
 
 /* #endregion Responsive Styles */
 
@@ -85,8 +89,8 @@
 /* #region Custom Page Link Styles */
 
 .page-link {
-  outline: none !Important;
-  box-shadow: none !Important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 /* #endregion Custom Page Link Styles */
@@ -101,31 +105,34 @@
 
 /* #region Custom Pagination Component Styles */
 
-.pagination>li {
-  box-shadow: .3px .3px 4px rgba(0, 0, 0, 0.253);
+.pagination > li {
+  box-shadow: 0.3px 0.3px 4px rgba(0, 0, 0, 0.253);
 }
 
-.pagination>li>a {
+.pagination > li > a {
   background-color: white;
   color: #000000;
 }
 
-.pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover {
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover {
   color: white;
-  background-color: #343A40;
+  background-color: #343a40;
   border-color: #ddd;
 }
 
-.pagination>.active>a {
+.pagination > .active > a {
   color: white;
-  background-color: #343A40 !Important;
-  border: solid 1px #6C757D !Important;
-  box-shadow: .3px .3px 4px #6C757D !Important;
+  background-color: #343a40 !important;
+  border: solid 1px #6c757d !important;
+  box-shadow: 0.3px 0.3px 4px #6c757d !important;
 }
 
-.pagination>.active>a:hover {
-  background-color: #343A40 !Important;
-  border: solid 1px #6C757D;
+.pagination > .active > a:hover {
+  background-color: #343a40 !important;
+  border: solid 1px #6c757d;
 }
 
 /* #endregion Custom Pagination Component Styles */
@@ -148,7 +155,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 75%;
-  padding: 0 .8em 1.8em .8em;
+  padding: 0 0.8em 1.8em 0.8em;
   border: 1px solid #cacdd1;
   border-radius: 5px;
   box-shadow: 1px 10px 20px 1px rgba(0, 0, 0, 0.253);
@@ -158,7 +165,7 @@
 .authform-header-mobile {
   font-size: 1.3em;
   text-align: center;
-  padding-bottom: .5em;
+  padding-bottom: 0.5em;
 }
 
 .authform-logo-mobile {
@@ -205,14 +212,14 @@
   margin-top: 1.2em;
 }
 
-.authform-link-col>p {
-  font-size: .85rem;
+.authform-link-col > p {
+  font-size: 0.85rem;
   margin-top: auto;
   margin-bottom: auto;
 }
 
-.authform-link-col>button {
-  font-size: .85rem;
+.authform-link-col > button {
+  font-size: 0.85rem;
   display: flex;
   margin-top: auto;
   margin-bottom: auto;
@@ -227,14 +234,14 @@
   align-items: center;
 }
 
-.authform-pw-link-col>p {
-  font-size: .85rem;
+.authform-pw-link-col > p {
+  font-size: 0.85rem;
   margin-top: auto;
   margin-bottom: auto;
 }
 
-.authform-pw-link-col>button {
-  font-size: .85rem;
+.authform-pw-link-col > button {
+  font-size: 0.85rem;
   display: flex;
   margin-top: auto;
   margin-bottom: auto;
@@ -250,7 +257,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 75%;
-  padding: 0 .8em 1.8em .8em;
+  padding: 0 0.8em 1.8em 0.8em;
   border: 1px solid #cacdd1;
   border-radius: 5px;
   box-shadow: 1px 10px 20px 1px rgba(0, 0, 0, 0.253);
@@ -262,14 +269,14 @@
   margin-bottom: 2em;
   max-width: 100%;
   max-height: 100%;
-  padding-left: .5em;
-  padding-right: .5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
 
 .authaccount-header-mobile {
   font-size: 1.1em;
   text-align: center;
-  padding-bottom: .5em;
+  padding-bottom: 0.5em;
 }
 
 .authaccount-authcode-row-mobile {
@@ -281,14 +288,14 @@
   align-items: center;
 }
 
-.authaccount-authcode-link-col-mobile>p {
-  font-size: .85rem;
+.authaccount-authcode-link-col-mobile > p {
+  font-size: 0.85rem;
   margin-top: auto;
   margin-bottom: auto;
 }
 
-.authaccount-authcode-link-col-mobile>button {
-  font-size: .85rem;
+.authaccount-authcode-link-col-mobile > button {
+  font-size: 0.85rem;
   display: flex;
   margin-top: auto;
   margin-bottom: auto;
@@ -330,14 +337,14 @@
   align-items: center;
 }
 
-.authaccount-authcode-col>p {
-  font-size: .85rem;
+.authaccount-authcode-col > p {
+  font-size: 0.85rem;
   margin-top: auto;
   margin-bottom: auto;
 }
 
-.authaccount-authcode-col>button {
-  font-size: .85rem;
+.authaccount-authcode-col > button {
+  font-size: 0.85rem;
   display: flex;
   margin-top: auto;
   margin-bottom: auto;
@@ -350,36 +357,36 @@
 .authaccount-link-col {
   display: flex;
   align-items: center;
-  margin-top: .5em;
+  margin-top: 0.5em;
 }
 
-.authaccount-link-col>p {
-  font-size: .85rem;
+.authaccount-link-col > p {
+  font-size: 0.85rem;
   margin-top: auto;
   margin-bottom: auto;
 }
 
-.authaccount-link-col>button {
-  font-size: .85rem;
+.authaccount-link-col > button {
+  font-size: 0.85rem;
   display: flex;
   margin-top: auto;
   margin-bottom: auto;
 }
 
 .authaccount-resendcode-row {
-  margin-top: -.1em;
+  margin-top: -0.1em;
 }
 
 .authaccount-resendcode-col {
   display: flex;
 }
 
-.authaccount-resendcode-col>button {
-  font-size: .85rem;
+.authaccount-resendcode-col > button {
+  font-size: 0.85rem;
   display: flex;
   margin-top: auto;
   margin-bottom: auto;
-  margin-left: -.8em;
+  margin-left: -0.8em;
 }
 
 /* #endregion Form Styles */
@@ -424,11 +431,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 1em;  
+  padding-top: 1em;
 }
 
 .footer-p {
-  color: #E9ECEF;
+  color: #e9ecef;
   font-size: 1em;
 }
 
@@ -442,7 +449,7 @@
 }
 
 .dashboard-image {
-  box-shadow: 5px 10px 20px 5px rgba(0, 0, 0, 0.253)
+  box-shadow: 5px 10px 20px 5px rgba(0, 0, 0, 0.253);
 }
 
 /* #endregion Dashboard Styles */
@@ -462,11 +469,11 @@
 
 .search-jumbotron p {
   font-size: 1.5rem;
-  padding-top: .3em;
+  padding-top: 0.3em;
 }
 
 .search-form {
-  padding-top: .5em;  
+  padding-top: 0.5em;
 }
 
 .search-form-col {
@@ -483,8 +490,8 @@
 }
 
 .search-button {
-  padding-top: .5em;
-  padding-bottom: .5em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
 
 /* #endregion Search Component Styles */
@@ -495,8 +502,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: .5em;
-  padding-bottom: .5em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
 
 .search-results-card {
@@ -550,11 +557,11 @@
 }
 
 .album-images-button {
-  margin-top: .70em;
+  margin-top: 0.7em;
 }
 
 .album-add-buttons-col {
-  margin-top: .5em;
+  margin-top: 0.5em;
 }
 
 .album-add-buttons-row {
@@ -571,9 +578,9 @@
 
 .album-tracks-thead {
   font-weight: 400;
-  color: #FFFFFF;
-  background-color: #343A40;
-  padding: .3em .3em .3em .5em;
+  color: #ffffff;
+  background-color: #343a40;
+  padding: 0.3em 0.3em 0.3em 0.5em;
 }
 
 /* #endregion AlbumTracks Component Styles */
@@ -585,29 +592,29 @@
 }
 
 .album-releases-header-h5-col {
-  background-color: #343A40;
-  padding-top: .1em;
+  background-color: #343a40;
+  padding-top: 0.1em;
 }
 
 .album-releases-header-button-col {
-  background-color: #343A40;
-  padding-top: .2em;
-  padding-bottom: .2em;
+  background-color: #343a40;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
 }
 
 .album-releases-header-thead {
   display: inline-flex;
   font-weight: 400;
-  background-color: #343A40;
-  color: #FFFFFF;
-  margin-top: .3em;
-  margin-bottom: .2em;
+  background-color: #343a40;
+  color: #ffffff;
+  margin-top: 0.3em;
+  margin-bottom: 0.2em;
 }
 
 .album-releases-header-button {
-  margin-top: .2em;
-  margin-right: .4em;
-  margin-bottom: .2em;
+  margin-top: 0.2em;
+  margin-right: 0.4em;
+  margin-bottom: 0.2em;
   float: right;
 }
 
@@ -638,11 +645,11 @@
 }
 
 .album-release-images-button {
-  margin-top: .70em;
+  margin-top: 0.7em;
 }
 
 .album-release-add-buttons-col {
-  margin-top: .5em;
+  margin-top: 0.5em;
 }
 
 .album-release-add-buttons-row {
@@ -659,9 +666,9 @@
 
 .album-release-tracks-thead {
   font-weight: 400;
-  color: #FFFFFF;
-  background-color: #343A40;
-  padding: .3em .3em .3em .5em;
+  color: #ffffff;
+  background-color: #343a40;
+  padding: 0.3em 0.3em 0.3em 0.5em;
 }
 
 /* #endregion AlbumReleaseTracks Component Styles */
@@ -681,7 +688,7 @@
 
 .user-library-jumbotron p {
   font-size: 1.5rem;
-  padding-top: .3em;
+  padding-top: 0.3em;
 }
 
 .user-library-card {
@@ -704,7 +711,7 @@
 
 .user-library-btn-group {
   float: right;
-  padding-top: .6em;
+  padding-top: 0.6em;
 }
 
 .user-library-album-master-logo {
@@ -724,8 +731,29 @@
   margin-bottom: 1em;
 }
 
-/* .user-library-card-img:hover {
-  transform: scale(1.8);
-} */
-
 /* #endregion User Library Styles*/
+
+/* #region Loading Graphic Style*/
+.loading-dots {
+  animation: dots 2s ease-in-out infinite;
+}
+
+.loading-dots-2 {
+  animation: dots 2s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.loading-dots-3 {
+  animation: dots 2s ease-in-out infinite;
+  animation-delay: 0.7s;
+}
+/* #endregion Loading Graphic Style*/
+
+/* #region keyframes */
+
+@keyframes dots {
+  50% {
+    opacity: 0;
+  }
+}
+/* #endregion keyframes */
