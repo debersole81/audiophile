@@ -17,7 +17,7 @@ function SearchResults(props) {
   if (searchDataLoading) {
     return (
       <div>
-        <Loading />
+        <Loading width={215} />
       </div>
     );
   }
