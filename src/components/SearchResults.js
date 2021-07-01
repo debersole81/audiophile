@@ -16,9 +16,9 @@ function SearchResults(props) {
   //Return loading component if search data is still loading
   if (searchDataLoading) {
     return (
-      <div>
+      <Container className='search-results-loading'>
         <Loading width={215} />
-      </div>
+      </Container>
     );
   }
 
