@@ -523,6 +523,13 @@
   transition: transform 0.5s ease;
 }
 
+.search-results-loading {
+  display: flex;
+  height: 40vh;
+  justify-content: center;
+  align-items: center;
+}
+
 /* .search-results-card-img:hover {
   transform: scale(1.8);
 } */
