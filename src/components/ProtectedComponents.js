@@ -994,13 +994,13 @@ function ProtectedComponents(props) {
               path="/wishlist"
               render={(props) => <WishList wishListProps={wishListProps} />}
             />
-              <Route
-                exact
-                path="/randomizer"
-                render={(props) => (
-                  <Randomizer randomizerProps={randomizerProps} />
-                )}
-              />
+            <Route
+              exact
+              path="/randomizer"
+              render={(props) => (
+                <Randomizer randomizerProps={randomizerProps} />
+              )}
+            />
             <Route
               exact
               path="/search"
