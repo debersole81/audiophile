@@ -970,6 +970,9 @@ function ProtectedComponents(props) {
     userCollectionReleases,
     userWishListReleases,
   };
+
+  /** Randomizer component props */
+  const randomizerProps = { userCollectionAlbums, userCollectionReleases };
   /* #endregion Props Objects*/
 
   return (
@@ -1024,7 +1027,9 @@ function ProtectedComponents(props) {
             <Route
               exact
               path="/randomizer"
-              render={(props) => <Randomizer />}
+              render={(props) => (
+                <Randomizer randomizerProps={randomizerProps} />
+              )}
             />
           </Switch>
         </div>
