@@ -62,9 +62,9 @@ function Header(props) {
           <LinkContainer exact to="/wishlist">
             <Nav.Link>Wish List</Nav.Link>
           </LinkContainer>
-          {/* <LinkContainer exact to="/randomizer">
-                        <Nav.Link>Randomizer</Nav.Link>
-                    </LinkContainer> */}
+          <LinkContainer exact to="/randomizer">
+            <Nav.Link>Randomizer</Nav.Link>
+          </LinkContainer>
           <LinkContainer className="mr-3" exact to="/search">
             <Nav.Link>Search</Nav.Link>
           </LinkContainer>
