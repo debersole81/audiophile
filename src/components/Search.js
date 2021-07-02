@@ -89,9 +89,11 @@ function Search(props) {
         </Row>
       </Jumbotron>
       <SearchResults searchResultsProps={props.searchResultsProps} />
-      {(!searchDataLoading) && <SearchResultsPaginationWrapper
-        searchResultsPaginationProps={props.searchResultsPaginationProps}
-      />}
+      {!searchDataLoading && (
+        <SearchResultsPaginationWrapper
+          searchResultsPaginationProps={props.searchResultsPaginationProps}
+        />
+      )}
     </React.Fragment>
   );
 }
