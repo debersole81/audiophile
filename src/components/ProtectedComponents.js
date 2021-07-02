@@ -33,7 +33,7 @@ import WishList from "./WishList";
 // import { autoLogOut } from "../helper-functions/AutoLogOut";
 
 function ProtectedComponents(props) {
-  /**#region Global hooks */
+  /* #region Global hooks */
   useEffect(() => {
     // autoLogOut()
     // //Clear authenticate user from local storage on window close
@@ -83,7 +83,7 @@ function ProtectedComponents(props) {
         console.log(error);
       });
   }, []);
-  /**#region Global hooks */
+  /* #endregion Global hooks */
 
   /* #region Global Variables */
   /** useHistory hook variable. */
@@ -1020,6 +1020,11 @@ function ProtectedComponents(props) {
               render={(props) => (
                 <AlbumRelease albumReleaseProps={albumReleaseProps} />
               )}
+            />
+            <Route
+              exact
+              path="/randomizer"
+              render={(props) => <Randomizer />}
             />
           </Switch>
         </div>
