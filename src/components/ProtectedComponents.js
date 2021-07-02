@@ -994,7 +994,13 @@ function ProtectedComponents(props) {
               path="/wishlist"
               render={(props) => <WishList wishListProps={wishListProps} />}
             />
-            <Route exact path="/randomizer" component={Randomizer} />
+              <Route
+                exact
+                path="/randomizer"
+                render={(props) => (
+                  <Randomizer randomizerProps={randomizerProps} />
+                )}
+              />
             <Route
               exact
               path="/search"
@@ -1022,13 +1028,6 @@ function ProtectedComponents(props) {
               path="/albumrelease"
               render={(props) => (
                 <AlbumRelease albumReleaseProps={albumReleaseProps} />
-              )}
-            />
-            <Route
-              exact
-              path="/randomizer"
-              render={(props) => (
-                <Randomizer randomizerProps={randomizerProps} />
               )}
             />
           </Switch>
