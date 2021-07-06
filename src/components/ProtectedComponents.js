@@ -879,6 +879,25 @@ function ProtectedComponents(props) {
           });
       });
   }
+
+  /** Randomizer Component Callback Functions */
+  /*Select a random album from a user's collection */
+  function selectRandomAlbum(e) {
+    e.preventDefault();
+
+    //Combine user's albums and releases into new array
+    const userCollection = userCollectionAlbums.concat(userCollectionReleases);
+
+    //Select a random album from user's collection after 2 seconds
+    setTimeout(() => {
+      setRandomAlbum(
+        userCollection[Math.floor(Math.random() * userCollection.length)]
+      );
+    }, 2000);
+  }
+
+  console.log(randomAlbum);
+
   /* #endregion Callback Functions */
 
   /* #region Props Objects */
