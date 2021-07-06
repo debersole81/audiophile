@@ -13,17 +13,15 @@ import React from "react";
 
 function Randomizer(props) {
   /* #region Destructure Props */
-  const { userCollectionAlbums, userCollectionReleases } =
-    props.randomizerProps;
+  const { selectRandomAlbum } = props.randomizerProps;
   /* #endregion Destructure Props */
 
-  //Concat user albums and releases, assign to a variable
-  const userCollection = userCollectionAlbums.concat(userCollectionReleases);
-  //Should I sort the albums before randomizing?
-
-  console.log(userCollection);
-
-  return <h1>Randomizer</h1>;
+  return (
+    <div>
+      <h1>Randomizer</h1>
+      <button onClick={selectRandomAlbum}>Randomize</button>
+    </div>
+  );
 }
 
 export default Randomizer;
