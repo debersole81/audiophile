@@ -13,7 +13,7 @@ import React from "react";
 
 function Randomizer(props) {
   /* #region Destructure Props */
-  const { selectRandomAlbum } = props.randomizerProps;
+  const { selectRandomAlbum, randomAlbum, albumClick } = props.randomizerProps;
   /* #endregion Destructure Props */
 
   return (
