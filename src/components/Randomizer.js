@@ -19,6 +19,7 @@ function Randomizer(props) {
   return (
     <div>
       <h1>Randomizer</h1>
+      <img src={randomAlbum.albumImage}/>
       <button onClick={selectRandomAlbum}>Randomize</button>
     </div>
   );
