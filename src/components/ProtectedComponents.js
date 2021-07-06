@@ -996,7 +996,7 @@ function ProtectedComponents(props) {
   };
 
   /** Randomizer component props */
-  const randomizerProps = { userCollectionAlbums, userCollectionReleases };
+  const randomizerProps = { selectRandomAlbum };
   /* #endregion Props Objects*/
 
   return (
