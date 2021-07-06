@@ -1004,7 +1004,7 @@ function ProtectedComponents(props) {
   };
 
   /** Randomizer component props */
-  const randomizerProps = { selectRandomAlbum };
+  const randomizerProps = { selectRandomAlbum, randomAlbum, albumClick };
   /* #endregion Props Objects*/
 
   return (
