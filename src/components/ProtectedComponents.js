@@ -885,6 +885,10 @@ function ProtectedComponents(props) {
   function selectRandomAlbum(e) {
     e.preventDefault();
 
+    //Cleanup state
+    setRandomize(true);
+    setRandomAlbum({});
+
     //Combine user's albums and releases into new array
     const userCollection = userCollectionAlbums.concat(userCollectionReleases);
 
@@ -893,10 +897,14 @@ function ProtectedComponents(props) {
       setRandomAlbum(
         userCollection[Math.floor(Math.random() * userCollection.length)]
       );
+
+      //Set randomize to false
+      setRandomize(false);
     }, 2000);
   }
 
   console.log(randomAlbum);
+  console.log(randomize);
 
   /* #endregion Callback Functions */
 
