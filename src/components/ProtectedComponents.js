@@ -129,6 +129,11 @@ function ProtectedComponents(props) {
     useState(0);
   const [albumReleasesMaxPagesMobile, setAlbumReleasesMaxPagesMobile] =
     useState(3);
+
+  /** Randomizer component state variables */
+  const [randomize, setRandomize] = useState(true);
+  const [randomAlbum, setRandomAlbum] = useState({});
+
   /* #endregion State Variables*/
 
   /* #region Callback Functions */
