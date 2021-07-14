@@ -24,7 +24,16 @@ function Randomizer(props) {
 
   //If randomize is true, return spinning album logo
   if (randomize) {
-    return <Image src={audioPhileAlbumLogoFull} alt="AudioPhile album logo" />;
+    return (
+      <Container className='randomize-album-logo'>
+        <Image
+          src={audioPhileAlbumLogoFull}
+          width={500}
+          alt="AudioPhile album logo"
+        />
+        ;
+      </Container>
+    );
   }
 
   //After randomize has finished, return the selected album
