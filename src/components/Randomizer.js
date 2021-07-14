@@ -1,4 +1,8 @@
 import React from "react";
+import "../App.css";
+import Container from "react-bootstrap/Container";
+import Image from "react-bootstrap/Image";
+import Button from "react-bootstrap/Button";
 
 /**Notes
  * Display the image of the AudioPhile LP logo
@@ -19,7 +23,7 @@ function Randomizer(props) {
   return (
     <div>
       <h1>Randomizer</h1>
-      <img src={randomAlbum.albumImage}/>
+      <img src={randomAlbum.albumImage} />
       <button onClick={selectRandomAlbum}>Randomize</button>
     </div>
   );
