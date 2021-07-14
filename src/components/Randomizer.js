@@ -1,5 +1,6 @@
 import React from "react";
 import "../App.css";
+import audioPhileAlbumLogoFull from "../assets/audiophile-album-logo-full.svg"
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button";
