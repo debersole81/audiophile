@@ -1,6 +1,6 @@
 import React from "react";
 import "../App.css";
-import audioPhileAlbumLogoFull from "../assets/audiophile-album-logo-full.svg"
+import audioPhileAlbumLogoFull from "../assets/audiophile-album-logo-full.svg";
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button";
@@ -18,9 +18,16 @@ import Button from "react-bootstrap/Button";
 
 function Randomizer(props) {
   /* #region Destructure Props */
-  const { selectRandomAlbum, randomAlbum, albumClick } = props.randomizerProps;
+  const { selectRandomAlbum, randomAlbum, randomize, albumClick } =
+    props.randomizerProps;
   /* #endregion Destructure Props */
 
+  //If randomize is true, return spinning album logo
+  if (randomize) {
+    return <Image src={audioPhileAlbumLogoFull} alt="AudioPhile album logo" />;
+  }
+
+  //After randomize has finished, return the selected album
   return (
     <div>
       <h1>Randomizer</h1>
