@@ -756,6 +756,12 @@
 }
 /* #endregion Loading Graphic Style*/
 
+/* #region Randomizer Component styles */
+.randomize-album-logo {
+  animation: spinning 1.5s linear infinite;
+}
+/* #endregion Randomizer Component styles */
+
 /* #region keyframes */
 
 @keyframes dots {
@@ -763,4 +769,12 @@
     opacity: 0;
   }
 }
+
+@keyframes spinning {
+   to {
+    transform: rotate(360deg);
+    transform-origin: center;
+  }
+}
+
 /* #endregion keyframes */
