@@ -4,6 +4,8 @@ import audioPhileAlbumLogoFull from "../assets/audiophile-album-logo-full.svg";
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 /**Notes
  * Display the image of the AudioPhile LP logo
@@ -25,14 +27,23 @@ function Randomizer(props) {
   //If randomize is true, return spinning album logo
   if (randomize) {
     return (
-      <Container className="randomize">
-        <Image
-          className="randomize-album-logo"
-          width={500}
-          src={audioPhileAlbumLogoFull}
-          alt="AudioPhile album logo"
-        />
-        ;
+      <Container>
+        <Row className="row">
+          <Col className="col randomize">
+            <Image
+              className="randomize-album-logo"
+              src={audioPhileAlbumLogoFull}
+              alt="AudioPhile album logo"
+            />
+          </Col>
+        </Row>
+        <Row className="row">
+          <Col className="col randomize-btn">
+            <Button variant="dark" size="sm">
+              Randomize
+            </Button>
+          </Col>
+        </Row>
       </Container>
     );
   }
