@@ -757,6 +757,13 @@
 /* #endregion Loading Graphic Style*/
 
 /* #region Randomizer Component styles */
+.randomize {
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
 .randomize-album-logo {
   animation: spinning infinite 20s linear;
 }
