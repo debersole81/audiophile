@@ -1,13 +1,13 @@
 /* #region Row and Column Visualization Styles. For Assisting with Layout Only */
 
-/* .row {
+.row {
   border: solid 2px red;
 }
 
 .col {
   border: solid 3px royalblue;
   background: lightblue;
-} */
+}
 
 /* #endregion Row and Column visualization styles. For assisting with layout only */
 
@@ -758,7 +758,6 @@
 
 /* #region Randomizer Component styles */
 .randomize {
-  min-height: 85vh;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -766,6 +765,17 @@
 
 .randomize-album-logo {
   animation: spinning infinite 2.5s linear;
+  width: 50%;
+}
+
+.randomize-btn {
+  display: flex;
+  justify-content: center;
+  padding-top: 1.5em;  
+}
+
+.randomize-btn>button {
+  padding: .35em 11em .35em 11em;
 }
 /* #endregion Randomizer Component styles */
 
