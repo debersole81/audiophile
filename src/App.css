@@ -765,7 +765,7 @@
 }
 
 .randomize-album-logo {
-  animation: spinning infinite 20s linear;
+  animation: spinning infinite 2.5s linear;
 }
 /* #endregion Randomizer Component styles */
 
