@@ -25,7 +25,7 @@ function Randomizer(props) {
   //If randomize is true, return spinning album logo
   if (randomize) {
     return (
-      <Container>
+      <Container className="randomize">
         <Image
           className="randomize-album-logo"
           width={500}
