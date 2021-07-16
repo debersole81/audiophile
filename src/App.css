@@ -758,7 +758,7 @@
 
 /* #region Randomizer Component styles */
 .randomize-album-logo {
-  animation: spinning 1.5s linear infinite;
+  animation: spinning infinite 20s linear;
 }
 /* #endregion Randomizer Component styles */
 
@@ -771,9 +771,11 @@
 }
 
 @keyframes spinning {
-   to {
+  from {
+    transform: rotate(0deg)
+  }
+  to {
     transform: rotate(360deg);
-    transform-origin: center;
   }
 }
 
