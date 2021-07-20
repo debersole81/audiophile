@@ -24,8 +24,6 @@ function Randomizer(props) {
     props.randomizerProps;
   /* #endregion Destructure Props */
 
-  /**This structure should allow me to remove the class altering syntax in ProtectedComponents */
-  //Build a return statement that returns the static album logo and a button if randomize is false
 
   //If randomize is true, return spinning album logo without the button
   if (randomize) {
@@ -40,24 +38,44 @@ function Randomizer(props) {
             />
           </Col>
         </Row>
-        <Row className="row">
-          <Col className="col randomize-btn">
-            <Button variant="dark" size="sm" onClick={selectRandomAlbum}>
-              Randomize
-            </Button>
-          </Col>
-        </Row>
       </Container>
     );
   }
 
   //After randomize has finished, return the selected album and a button that re-randomizes
+  if (
+    Object.keys(randomAlbum).length > 0 &&
+    randomAlbum.constructor === Object
+  ) {
+    return (
+      <div>
+        <h1>Randomizer</h1>
+        <img src={randomAlbum.albumImage} />
+        <button onClick={selectRandomAlbum}>Randomize</button>
+      </div>
+    );
+  }
+
+  //Return static album logo and randomize button by default
   return (
-    <div>
-      <h1>Randomizer</h1>
-      <img src={randomAlbum.albumImage} />
-      <button onClick={selectRandomAlbum}>Randomize</button>
-    </div>
+    <Container>
+      <Row className="row">
+        <Col className="col randomize">
+          <Image
+            className="randomize-album-logo-static"
+            src={audioPhileAlbumLogoFull}
+            alt="AudioPhile album logo"
+          />
+        </Col>
+      </Row>
+      <Row className="row">
+        <Col className="col randomize-btn">
+          <Button variant="dark" size="sm" onClick={selectRandomAlbum}>
+            Randomize
+          </Button>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
