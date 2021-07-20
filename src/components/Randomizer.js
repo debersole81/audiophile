@@ -24,7 +24,10 @@ function Randomizer(props) {
     props.randomizerProps;
   /* #endregion Destructure Props */
 
-  //If randomize is true, return spinning album logo
+  /**This structure should allow me to remove the class altering syntax in ProtectedComponents */
+  //Build a return statement that returns the static album logo and a button if randomize is false
+
+  //If randomize is true, return spinning album logo without the button
   if (randomize) {
     return (
       <Container>
@@ -48,7 +51,7 @@ function Randomizer(props) {
     );
   }
 
-  //After randomize has finished, return the selected album
+  //After randomize has finished, return the selected album and a button that re-randomizes
   return (
     <div>
       <h1>Randomizer</h1>
