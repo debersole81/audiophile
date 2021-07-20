@@ -131,7 +131,7 @@ function ProtectedComponents(props) {
     useState(3);
 
   /** Randomizer component state variables */
-  const [randomize, setRandomize] = useState(true);
+  const [randomize, setRandomize] = useState(false);
   const [randomAlbum, setRandomAlbum] = useState({});
 
   /* #endregion State Variables*/
@@ -888,10 +888,6 @@ function ProtectedComponents(props) {
     //Cleanup state
     setRandomize(true);
     setRandomAlbum({});
-
-    //Add spinning animation to album logo
-    let albumLogoElement = document.getElementsByClassName("randomize-album-logo")
-    console.log(albumLogoElement);
 
     //Combine user's albums and releases into new array
     const userCollection = userCollectionAlbums.concat(userCollectionReleases);
