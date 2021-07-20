@@ -763,7 +763,12 @@
   align-content: center;
 }
 
+.randomize-album-logo-static {
+  width: 50%;
+}
+
 .randomize-album-logo {
+  animation-play-state: running;
   animation: spinning infinite 2.5s linear;
   width: 50%;
 }
