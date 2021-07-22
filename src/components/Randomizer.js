@@ -6,6 +6,7 @@ import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Jumbotron from "react-bootstrap/Jumbotron";
 
 /**Notes
  * Display the image of the AudioPhile LP logo
@@ -58,6 +59,13 @@ function Randomizer(props) {
   //Return static album logo and randomize button by default
   return (
     <React.Fragment>
+      <Jumbotron className="randomize-jumbotron">
+        <Row className="row">
+          <Col className="col">
+            <h1>Randomizer</h1>
+          </Col>
+        </Row>
+      </Jumbotron>
       <Container>
         <Row className="row">
           <Col className="col randomize">
