@@ -24,7 +24,6 @@ function Randomizer(props) {
     props.randomizerProps;
   /* #endregion Destructure Props */
 
-
   //If randomize is true, return spinning album logo without the button
   if (randomize) {
     return (
@@ -58,24 +57,26 @@ function Randomizer(props) {
 
   //Return static album logo and randomize button by default
   return (
-    <Container>
-      <Row className="row">
-        <Col className="col randomize">
-          <Image
-            className="randomize-album-logo-static"
-            src={audioPhileAlbumLogoFull}
-            alt="AudioPhile album logo"
-          />
-        </Col>
-      </Row>
-      <Row className="row">
-        <Col className="col randomize-btn">
-          <Button variant="dark" size="sm" onClick={selectRandomAlbum}>
-            Randomize
-          </Button>
-        </Col>
-      </Row>
-    </Container>
+    <React.Fragment>
+      <Container>
+        <Row className="row">
+          <Col className="col randomize">
+            <Image
+              className="randomize-album-logo-static"
+              src={audioPhileAlbumLogoFull}
+              alt="AudioPhile album logo"
+            />
+          </Col>
+        </Row>
+        <Row className="row">
+          <Col className="col randomize-btn">
+            <Button variant="dark" size="sm" onClick={selectRandomAlbum}>
+              Randomize
+            </Button>
+          </Col>
+        </Row>
+      </Container>
+    </React.Fragment>
   );
 }
 
