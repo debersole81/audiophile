@@ -779,7 +779,7 @@
   padding-top: 1.5em;  
 }
 
-.randomize-btn>button {
+.randomize-btn button {
   padding: .35em 11em .35em 11em;
 }
 
@@ -788,6 +788,10 @@
   padding-top: 2.5em;
   padding-bottom: 1.5em;
   margin-bottom: 3em;
+}
+
+.randomize-jumbotron p {
+  line-height: .6em;
 }
 
 /* #endregion Randomizer Component styles */
