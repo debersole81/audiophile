@@ -67,7 +67,7 @@ function Randomizer(props) {
         </Row>
         <Row className="row">
           <Col className="col">
-            <p className="lead text-muted">Can't decide what album to listen to? Let the AudioPhile randomizer help!</p>
+            <p className="lead text-muted">Can't decide what album to listen to? The AudioPhile randomizer can help!</p>
             <p className="lead text-muted">Press the randomize button below to select an album from your collection.</p>
           </Col>
         </Row>
