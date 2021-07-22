@@ -756,7 +756,7 @@
 }
 /* #endregion Loading Graphic Style*/
 
-/* #region Randomizer Component styles */
+/* #region Randomizer Component Styles */
 .randomize {
   display: flex;
   justify-content: center;
@@ -782,6 +782,14 @@
 .randomize-btn>button {
   padding: .35em 11em .35em 11em;
 }
+
+.randomize-jumbotron {
+  text-align: center;
+  padding-top: 2.5em;
+  padding-bottom: 1.5em;
+  margin-bottom: 3em;
+}
+
 /* #endregion Randomizer Component styles */
 
 /* #region keyframes */
