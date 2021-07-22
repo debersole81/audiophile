@@ -798,6 +798,8 @@
   line-height: .6em;
 }
 
+/* Create media query with a target width of <768px*/
+
 /* #endregion Randomizer Component styles */
 
 /* #region keyframes */

@@ -26,6 +26,7 @@ function Randomizer(props) {
   /* #endregion Destructure Props */
 
   //If randomize is true, return spinning album logo without the button
+  //Add jumbtron from default return statement here. Styling should match
   if (randomize) {
     return (
       <Container>
