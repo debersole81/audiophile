@@ -90,12 +90,14 @@ function Randomizer(props) {
             </Col>
           </Row>
         </Jumbotron>
-
-        <div>
-          <h1>Randomizer</h1>
-          <img src={randomAlbum.albumImage} />
+        <Container>
+          <Row>
+            <Col>
+              <Image src={randomAlbum.albumImage} alt="Album cover image." />
+            </Col>
+          </Row>
           <button onClick={selectRandomAlbum}>Randomize</button>
-        </div>
+        </Container>
       </React.Fragment>
     );
   }
