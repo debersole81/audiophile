@@ -29,17 +29,38 @@ function Randomizer(props) {
   //Add jumbtron from default return statement here. Styling should match
   if (randomize) {
     return (
-      <Container>
-        <Row className="row">
-          <Col className="col randomize">
-            <Image
-              className="randomize-album-logo"
-              src={audioPhileAlbumLogoFull}
-              alt="AudioPhile album logo"
-            />
-          </Col>
-        </Row>
-      </Container>
+      <React.Fragment>
+        <Jumbotron className="randomize-jumbotron">
+          <Row className="row">
+            <Col className="col">
+              <h1>Randomizer</h1>
+            </Col>
+          </Row>
+          <Row className="row">
+            <Col className="col">
+              <p className="lead text-muted">
+                Can't decide what album to listen to? The AudioPhile randomizer
+                can help!
+              </p>
+              <p className="lead text-muted">
+                Press the randomize button below to select an album from your
+                collection.
+              </p>
+            </Col>
+          </Row>
+        </Jumbotron>
+        <Container>
+          <Row className="row">
+            <Col className="col randomize">
+              <Image
+                className="randomize-album-logo"
+                src={audioPhileAlbumLogoFull}
+                alt="AudioPhile album logo"
+              />
+            </Col>
+          </Row>
+        </Container>
+      </React.Fragment>
     );
   }
 
@@ -68,8 +89,14 @@ function Randomizer(props) {
         </Row>
         <Row className="row">
           <Col className="col">
-            <p className="lead text-muted">Can't decide what album to listen to? The AudioPhile randomizer can help!</p>
-            <p className="lead text-muted">Press the randomize button below to select an album from your collection.</p>
+            <p className="lead text-muted">
+              Can't decide what album to listen to? The AudioPhile randomizer
+              can help!
+            </p>
+            <p className="lead text-muted">
+              Press the randomize button below to select an album from your
+              collection.
+            </p>
           </Col>
         </Row>
       </Jumbotron>
