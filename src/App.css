@@ -1,13 +1,13 @@
 /* #region Row and Column Visualization Styles. For Assisting with Layout Only */
 
-/* .row {
+.row {
   border: solid 2px red;
 }
 
 .col {
   border: solid 3px royalblue;
   background: lightblue;
-} */
+}
 
 /* #endregion Row and Column visualization styles. For assisting with layout only */
 
@@ -796,6 +796,14 @@
 
 .randomize-jumbotron p {
   line-height: .6em;
+}
+
+.randomize-album-card {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.5em;
+  width: 18em;
 }
 
 /* Create media query with a target width of <768px*/
