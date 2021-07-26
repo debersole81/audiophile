@@ -889,6 +889,9 @@ function ProtectedComponents(props) {
     setRandomize(true);
     setRandomAlbum({});
 
+    //Scroll to the middle of the browser window
+    window.scroll(0, 1200);
+
     //Combine user's albums and releases into new array
     const userCollection = userCollectionAlbums.concat(userCollectionReleases);
 
@@ -1004,7 +1007,12 @@ function ProtectedComponents(props) {
   };
 
   /** Randomizer component props */
-  const randomizerProps = { selectRandomAlbum, randomAlbum, randomize, albumClick };
+  const randomizerProps = {
+    selectRandomAlbum,
+    randomAlbum,
+    randomize,
+    albumClick,
+  };
   /* #endregion Props Objects*/
 
   return (
