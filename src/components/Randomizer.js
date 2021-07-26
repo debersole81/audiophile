@@ -7,6 +7,7 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Jumbotron from "react-bootstrap/Jumbotron";
+import Card from "react-bootstrap/Card";
 
 /**Notes
  * Display the image of the AudioPhile LP logo
@@ -93,7 +94,16 @@ function Randomizer(props) {
         <Container>
           <Row>
             <Col>
-              <Image src={randomAlbum.albumImage} alt="Album cover image." />
+              <Card className='randomize-album-card'>
+                <div className="overflow">
+                  <Card.Img
+                    // className='randomizer-album-img'
+                    variant='top'
+                    src={randomAlbum.albumImage}
+                    alt="Album Cover Art."
+                  />
+                </div>
+              </Card>
             </Col>
           </Row>
           <button onClick={selectRandomAlbum}>Randomize</button>
