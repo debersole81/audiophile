@@ -70,11 +70,33 @@ function Randomizer(props) {
     randomAlbum.constructor === Object
   ) {
     return (
-      <div>
-        <h1>Randomizer</h1>
-        <img src={randomAlbum.albumImage} />
-        <button onClick={selectRandomAlbum}>Randomize</button>
-      </div>
+      <React.Fragment>
+        <Jumbotron className="randomize-jumbotron">
+          <Row className="row">
+            <Col className="col">
+              <h1>Randomizer</h1>
+            </Col>
+          </Row>
+          <Row className="row">
+            <Col className="col">
+              <p className="lead text-muted">
+                Can't decide what album to listen to? The AudioPhile randomizer
+                can help!
+              </p>
+              <p className="lead text-muted">
+                Press the randomize button below to select an album from your
+                collection.
+              </p>
+            </Col>
+          </Row>
+        </Jumbotron>
+
+        <div>
+          <h1>Randomizer</h1>
+          <img src={randomAlbum.albumImage} />
+          <button onClick={selectRandomAlbum}>Randomize</button>
+        </div>
+      </React.Fragment>
     );
   }
 
