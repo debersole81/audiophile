@@ -134,7 +134,7 @@ function Randomizer(props) {
                     )}
                     <Col className="col" xs={8} s={8} md={8} lg={8} xl={8}>
                       <Button
-                        id={randomAlbum.albumId}
+                        id={randomAlbum.Id}
                         variant="outline-dark"
                         size="sm"
                         onClick={albumClick}
