@@ -107,6 +107,9 @@ function Randomizer(props) {
                   <Card.Title className="text-truncate">
                     {randomAlbum.albumTitle}
                   </Card.Title>
+                  <Card.Subtitle className="mb-4 text-truncate text-muted">
+                    {randomAlbum.artistName}
+                  </Card.Subtitle>
                 </Card.Body>
               </Card>
             </Col>
