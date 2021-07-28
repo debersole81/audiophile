@@ -97,12 +97,17 @@ function Randomizer(props) {
               <Card className='randomize-album-card'>
                 <div className="overflow">
                   <Card.Img
-                    // className='randomizer-album-img'
+                    className='randomize-album-img'
                     variant='top'
                     src={randomAlbum.albumImage}
                     alt="Album Cover Art."
                   />
                 </div>
+                <Card.Body>
+                  <Card.Title>
+                    {randomAlbum.albumTitle}
+                  </Card.Title>
+                </Card.Body>
               </Card>
             </Col>
           </Row>
