@@ -1,6 +1,7 @@
 import React from "react";
 import "../App.css";
 import audioPhileAlbumLogoFull from "../assets/audiophile-album-logo-full.svg";
+import masterReleaseLogo from "../assets/master-release-logo.svg";
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button";
@@ -25,6 +26,8 @@ function Randomizer(props) {
   const { selectRandomAlbum, randomAlbum, randomize, albumClick } =
     props.randomizerProps;
   /* #endregion Destructure Props */
+
+  console.log(randomAlbum);
 
   //If randomize is true, return spinning album logo without the button
   //Add jumbtron from default return statement here. Styling should match
@@ -110,6 +113,17 @@ function Randomizer(props) {
                   <Card.Subtitle className="mb-4 text-truncate text-muted">
                     {randomAlbum.artistName}
                   </Card.Subtitle>
+                  <Row className="row">
+                    {randomAlbum.albumId === randomAlbum.mainReleaseId ? (
+                      <Col className="col">
+                          <Image 
+                            className="randomizer-album-master-logo"
+                            src={masterReleaseLogo}
+                            alt="Album Master Release Logo"
+                          />
+                      </Col>
+                    ) : (null)}
+                  </Row>
                 </Card.Body>
               </Card>
             </Col>
