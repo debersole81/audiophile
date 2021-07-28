@@ -97,11 +97,11 @@ function Randomizer(props) {
         <Container>
           <Row>
             <Col>
-              <Card className='randomize-album-card'>
+              <Card className="randomize-album-card">
                 <div className="overflow">
                   <Card.Img
-                    className='randomize-album-img'
-                    variant='top'
+                    className="randomize-album-img"
+                    variant="top"
                     src={randomAlbum.albumImage}
                     alt="Album Cover Art."
                   />
@@ -115,14 +115,33 @@ function Randomizer(props) {
                   </Card.Subtitle>
                   <Row className="row">
                     {randomAlbum.albumId === randomAlbum.mainReleaseId ? (
-                      <Col className="col">
-                          <Image 
-                            className="randomizer-album-master-logo"
-                            src={masterReleaseLogo}
-                            alt="Album Master Release Logo"
-                          />
+                      <Col className="col" xs={4} s={4} md={4} lg={4} xl={4}>
+                        <Image
+                          className="randomize-album-master-logo"
+                          src={masterReleaseLogo}
+                          alt="Album Master Release Logo"
+                        />
                       </Col>
-                    ) : (null)}
+                    ) : (
+                      <Col
+                        className="col"
+                        xs={4}
+                        s={4}
+                        md={4}
+                        lg={4}
+                        xl={4}
+                      ></Col>
+                    )}
+                    <Col className="col" xs={8} s={8} md={8} lg={8} xl={8}>
+                      <Button
+                        id={randomAlbum.albumId}
+                        variant="outline-dark"
+                        size="sm"
+                        onClick={albumClick}
+                      >
+                        View
+                      </Button>
+                    </Col>
                   </Row>
                 </Card.Body>
               </Card>
