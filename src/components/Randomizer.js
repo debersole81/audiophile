@@ -30,7 +30,6 @@ function Randomizer(props) {
   console.log(randomAlbum);
 
   //If randomize is true, return spinning album logo without the button
-  //Add jumbtron from default return statement here. Styling should match
   if (randomize) {
     return (
       <React.Fragment>
@@ -123,16 +122,30 @@ function Randomizer(props) {
                         />
                       </Col>
                     ) : null}
-                    <Col className="col">
-                      <Button
-                        id={randomAlbum.masterId}
-                        variant="outline-dark"
-                        size="sm"
-                        onClick={albumClick}
-                      >
-                        View
-                      </Button>
-                    </Col>
+                    {randomAlbum.albumId === randomAlbum.mainRealeaseId ? (
+                      <Col className="col">
+                        <Button
+                          id={randomAlbum.masterId}
+                          variant="outline-dark"
+                          size="sm"
+                          onClick={albumClick}
+                        >
+                          View
+                        </Button>
+                      </Col>
+                    ) : (
+                      <Col className="col">
+                        <Button
+                          id={randomAlbum.masterId}
+                          variant="outline-dark"
+                          size="sm"
+                          onClick={albumClick}
+                          block
+                        >
+                          View
+                        </Button>
+                      </Col>
+                    )}
                   </Row>
                 </Card.Body>
               </Card>
