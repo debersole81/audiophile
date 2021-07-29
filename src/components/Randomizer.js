@@ -122,16 +122,7 @@ function Randomizer(props) {
                           alt="Album Master Release Logo"
                         />
                       </Col>
-                    ) : (
-                      <Col
-                        className="col"
-                        xs={4}
-                        s={4}
-                        md={4}
-                        lg={4}
-                        xl={4}
-                      ></Col>
-                    )}
+                    ) : null}
                     <Col className="col" xs={8} s={8} md={8} lg={8} xl={8}>
                       <Button
                         id={randomAlbum.masterId}
