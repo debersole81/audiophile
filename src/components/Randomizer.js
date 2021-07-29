@@ -123,7 +123,7 @@ function Randomizer(props) {
                         />
                       </Col>
                     ) : null}
-                    <Col className="col" xs={8} s={8} md={8} lg={8} xl={8}>
+                    <Col className="col">
                       <Button
                         id={randomAlbum.masterId}
                         variant="outline-dark"
