@@ -813,11 +813,11 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1.5em;
-  width: 18em;
+  width: 25em;
 }
 
 .randomize-album-img {
-  height: 18em;
+  height: 25em;
   transform: scale(1);
   transition: transform 0.5s ease;
 }
