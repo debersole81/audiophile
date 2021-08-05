@@ -151,7 +151,13 @@ function Randomizer(props) {
               </Card>
             </Col>
           </Row>
-          <button onClick={selectRandomAlbum}>Randomize</button>
+          <Row className="row">
+            <Col className="col randomize-again-btn">
+              <Button variant="dark" size="sm" onClick={selectRandomAlbum}>
+                Randomize Again
+              </Button>
+            </Col>
+          </Row>
         </Container>
       </React.Fragment>
     );
