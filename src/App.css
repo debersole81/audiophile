@@ -817,6 +817,10 @@
   max-height: 80%;
 }
 
+.randomize-album-view-btn {
+  margin-top: 2em;
+}
+
 /* Create media query with a target width of <768px*/
 
 /* #endregion Randomizer Component styles */
