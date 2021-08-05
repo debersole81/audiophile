@@ -1,13 +1,13 @@
 /* #region Row and Column Visualization Styles. For Assisting with Layout Only */
 
-.row {
+/* .row {
   border: solid 2px red;
 }
 
 .col {
   border: solid 3px royalblue;
   background: lightblue;
-}
+} */
 
 /* #endregion Row and Column visualization styles. For assisting with layout only */
 
@@ -783,6 +783,16 @@
   padding: .35em 11em .35em 11em;
 }
 
+.randomize-again-btn {
+  display: flex;
+  justify-content: center;
+  padding-top: 1.5em;  
+}
+
+.randomize-again-btn button {
+  padding: .35em 6.5em .35em 6.5em;
+}
+
 .randomize-jumbotron {
   text-align: center;
   padding-top: 2.5em;
@@ -816,7 +826,6 @@
   max-width: 80%;
   max-height: 80%;
 }
-
 
 /* Create media query with a target width of <768px*/
 
