@@ -139,6 +139,7 @@ function Randomizer(props) {
                           id={randomAlbum.masterId}
                           variant="outline-dark"
                           size="sm"
+                          className="randomize-album-view-btn"
                           onClick={albumClick}
                           block
                         >
