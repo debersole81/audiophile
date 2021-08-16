@@ -155,7 +155,7 @@ function Randomizer(props) {
           <Row className="row">
             <Col className="col randomize-btn">
               <Button variant="dark" size="sm" onClick={selectRandomAlbum}>
-                Randomize Again
+                Randomize
               </Button>
             </Col>
           </Row>
