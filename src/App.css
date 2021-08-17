@@ -12,7 +12,7 @@
 /* #endregion Row and Column visualization styles. For assisting with layout only */
 
 /* #region Responsive Styles */
-@media (min-width: 1500px) {
+@media screen and (min-width: 1500px) {
   /**Search component */
   .search-form-col {
     display: flex;
@@ -26,7 +26,7 @@
   }
 }
 
-@media (max-width: 992px) {
+@media screen and (max-width: 992px) {
   /** AlbumTracks component */
   .album-tracks-thead {
     text-align: center;
@@ -57,12 +57,16 @@
   }
 }
 
-@media (max-width: 767px) {
-  
+@media screen and (max-width: 767px) {
+  /* Randomizer component */
   .randomize-album-logo-static {
     width: 70% !important;
   }
 
+}
+
+@media screen and (max-width: 414px) {
+  
 }
 
 /* #endregion Responsive Styles */
