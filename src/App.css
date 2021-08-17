@@ -12,6 +12,19 @@
 /* #endregion Row and Column visualization styles. For assisting with layout only */
 
 /* #region Responsive Styles */
+@media (min-width: 1500px) {
+  /**Search component */
+  .search-form-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .search-button {
+    /* float: left; */
+    margin-left: -6.5em;
+  }
+}
 
 @media (max-width: 992px) {
   /** AlbumTracks component */
@@ -44,18 +57,12 @@
   }
 }
 
-@media (min-width: 1500px) {
-  /**Search component */
-  .search-form-col {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+@media (max-width: 768px) {
+  
+  /* .randomize-album-logo-static {
+    width: 70%;
+  } */
 
-  .search-button {
-    /* float: left; */
-    margin-left: -6.5em;
-  }
 }
 
 /* #endregion Responsive Styles */
@@ -776,11 +783,11 @@
 .randomize-btn {
   display: flex;
   justify-content: center;
-  padding-top: 1.5em;  
+  padding-top: 1.5em;
 }
 
 .randomize-btn button {
-  padding: .35em 12.2em .35em 12.2em;
+  padding: 0.35em 12.2em 0.35em 12.2em;
 }
 
 .randomize-jumbotron {
@@ -791,11 +798,12 @@
 }
 
 .randomize-jumbotron h1 {
-  padding-bottom: .6em;
+  padding-bottom: 0.6em;
 }
 
 .randomize-jumbotron p {
-  line-height: .6em;
+  display: block;
+  line-height: 1.2em;
 }
 
 .randomize-album-card {
@@ -835,7 +843,7 @@
 
 @keyframes spinning {
   from {
-    transform: rotate(0deg)
+    transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
