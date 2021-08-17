@@ -784,13 +784,13 @@
   width: 50%;
 }
 
-.randomize-btn {
+.randomize-btn-col {
   display: flex;
   justify-content: center;
   padding-top: 1.5em;
 }
 
-.randomize-btn button {
+.randomize-btn-col button {
   padding: 0.35em 12.2em 0.35em 12.2em;
 }
 
