@@ -62,11 +62,13 @@
   .randomize-album-logo-static {
     width: 70% !important;
   }
-
 }
 
 @media screen and (max-width: 414px) {
-  
+  /*Randomizer compoent*/
+  .randomize-btn-col button {
+    padding: 0.35em 6.3em 0.35em 6.3em !important;
+  }
 }
 
 /* #endregion Responsive Styles */
