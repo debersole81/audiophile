@@ -57,11 +57,11 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   
-  /* .randomize-album-logo-static {
-    width: 70%;
-  } */
+  .randomize-album-logo-static {
+    width: 70% !important;
+  }
 
 }
 
