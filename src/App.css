@@ -1,13 +1,13 @@
 /* #region Row and Column Visualization Styles. For Assisting with Layout Only */
 
-/* .row {
+.row {
   border: solid 2px red;
 }
 
 .col {
   border: solid 3px royalblue;
   background: lightblue;
-} */
+}
 
 /* #endregion Row and Column visualization styles. For assisting with layout only */
 
@@ -61,6 +61,23 @@
   /* Randomizer component */
   .randomize-album-logo-static {
     width: 70% !important;
+  }
+}
+
+@media screen and (max-width: 445px) {
+  /* Randomizer component */
+  .randomize-album-card {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5em;
+    width: auto;
+  }
+
+  .randomize-album-img {
+    height: auto;
+    transform: scale(1);
+    transition: transform 0.5s ease;
   }
 }
 
@@ -832,11 +849,11 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1.5em;
-  width: 26em;
+  max-width: 26em;
 }
 
 .randomize-album-img {
-  height: 26em;
+  max-height: 26em;
   transform: scale(1);
   transition: transform 0.5s ease;
 }
