@@ -906,9 +906,6 @@ function ProtectedComponents(props) {
     }, 2000);
   }
 
-  console.log(randomAlbum);
-  console.log(randomize);
-
   /* #endregion Callback Functions */
 
   /* #region Props Objects */
