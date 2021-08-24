@@ -1,13 +1,13 @@
 /* #region Row and Column Visualization Styles. For Assisting with Layout Only */
 
-.row {
+/* .row {
   border: solid 2px red;
 }
 
 .col {
   border: solid 3px royalblue;
   background: lightblue;
-}
+} */
 
 /* #endregion Row and Column visualization styles. For assisting with layout only */
 
@@ -97,6 +97,13 @@
   .randomize-album-logo-static {
     width: 78% !important;
   }
+
+  .randomize-album-logo {
+    animation-play-state: running;
+    animation: spinning infinite 2.5s linear;
+    width: 78% !important;
+  }
+  
 
   .randomize-btn-col button {
     padding: 0.35em 6.3em 0.35em 6.3em !important;
