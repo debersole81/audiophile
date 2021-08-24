@@ -27,8 +27,6 @@ function Randomizer(props) {
     props.randomizerProps;
   /* #endregion Destructure Props */
 
-  console.log(randomAlbum);
-
   //If randomize is true, return spinning album logo without the button
   if (randomize) {
     return (
