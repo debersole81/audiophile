@@ -44,11 +44,13 @@ function Dashboard() {
           </Link>
         </Col>
         <Col className="dashboard-col">
-          <Image
-            src={randomizer}
-            className="img-fluid dashboard-image"
-            alt="Randomizer text on a picture of stacked of vinyl albums"
-          />
+          <Link to="/randomizer">
+            <Image
+              src={randomizer}
+              className="img-fluid dashboard-image"
+              alt="Randomizer text on a picture of stacked of vinyl albums"
+            />
+          </Link>
         </Col>
       </Row>
     </Container>
